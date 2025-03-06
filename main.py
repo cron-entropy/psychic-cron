@@ -22,9 +22,6 @@ def get_result_json(result):
 def check_wordpress(url):
     logging.debug(f"Checking if {url} is wordpress")
     result = run_command(f"docker run --rm wpscanteam/wpscan --url https://{url} --detection-mode passive --format json")
-    if result.returncode != 0:
-        logging.error("Error in running command")
-        logging.error(result.stderr)
     return result.returncode == 0
 
 def scan_sites(sites, wpscan_api_keys):
@@ -80,7 +77,7 @@ def google_dork(quantity, database):
             if check_wordpress(domain) and not database.contains("sites", "domain", domain):
                 logging.debug(f"Found WordPress site: {domain}")
                 wordpress_sites.append(domain)
-                database.add("sites", { "domain": domain })
+                database.add("sites", **{ "domain": domain })
                 logging.debug(f"Found {len(wordpress_sites)} wordpress sites")
                 if len(wordpress_sites) >= quantity:
                     return wordpress_sites  
