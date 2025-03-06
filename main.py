@@ -22,6 +22,9 @@ def get_result_json(result):
 def check_wordpress(url):
     logging.debug(f"Checking if {url} is wordpress")
     result = run_command(f"docker run -it --rm wpscanteam/wpscan --url https://{url} --detection-mode passive --format json")
+    if result.returncode != 0:
+        logging.error("Error in running command")
+        logging.error(result.stderr)
     return result.returncode == 0
 
 def scan_sites(sites, wpscan_api_keys):
