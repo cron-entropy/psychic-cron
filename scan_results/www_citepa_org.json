@@ -1,0 +1,176 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741232826,
+    "start_memory": 48832512,
+    "target_url": "https://www.citepa.org/",
+    "target_ip": "213.186.33.2",
+    "effective_url": "https://www.citepa.org/",
+    "interesting_findings": [
+        {
+            "url": "https://www.citepa.org/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: OVHcloud",
+                "x-powered-by: PHP/8.2"
+            ]
+        },
+        {
+            "url": "https://www.citepa.org/robots.txt",
+            "to_s": "robots.txt found: https://www.citepa.org/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/en/\r"
+            ]
+        },
+        {
+            "url": "https://www.citepa.org/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.citepa.org/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.citepa.org/readme.html",
+            "to_s": "WordPress readme found: https://www.citepa.org/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.citepa.org/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.citepa.org/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.citepa.org/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.citepa.org/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.1",
+        "release_date": "2024-11-21",
+        "status": "outdated",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.citepa.org/feed/, <generator>https://wordpress.org/?v=6.7.1</generator>"
+        ],
+        "confirmed_by": {
+            "Meta Generator (Passive Detection)": {
+                "confidence": 60,
+                "interesting_entries": [
+                    "https://www.citepa.org/, Match: 'WordPress 6.7.1'"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "citepa",
+        "location": "https://www.citepa.org/wp-content/themes/citepa/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://www.citepa.org/wp-content/themes/citepa/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.citepa.org/wp-content/themes/citepa/style.css",
+        "style_name": "citepa",
+        "style_uri": "http://underscores.me/",
+        "description": "Description",
+        "author": "Underscores.me",
+        "author_uri": "http://underscores.me/",
+        "template": null,
+        "license": "GNU General Public License v2 or later",
+        "license_uri": "LICENSE",
+        "tags": "custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready",
+        "text_domain": "citepa",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 46,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 24,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.0.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.citepa.org/wp-content/themes/citepa/style.css, Match: 'Version: 1.0.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 8,
+        "requests_remaining": 1
+    },
+    "stop_time": 1741232850,
+    "elapsed": 24,
+    "requests_done": 58,
+    "cached_requests": 7,
+    "data_sent": 13173,
+    "data_sent_humanised": "12.864 KB",
+    "data_received": 5129538,
+    "data_received_humanised": "4.892 MB",
+    "used_memory": 273195008,
+    "used_memory_humanised": "260.539 MB"
+}

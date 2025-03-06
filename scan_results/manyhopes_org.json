@@ -1,0 +1,463 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741232793,
+    "start_memory": 48746496,
+    "target_url": "https://manyhopes.org/",
+    "target_ip": "69.163.205.247",
+    "effective_url": "https://manyhopes.org/",
+    "interesting_findings": [
+        {
+            "url": "https://manyhopes.org/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: Apache"
+            ]
+        },
+        {
+            "url": "https://manyhopes.org/robots.txt",
+            "to_s": "robots.txt found: https://manyhopes.org/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://manyhopes.org/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://manyhopes.org/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://manyhopes.org/readme.html",
+            "to_s": "WordPress readme found: https://manyhopes.org/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://manyhopes.org/wp-content/debug.log",
+            "to_s": "Debug Log found: https://manyhopes.org/wp-content/debug.log",
+            "type": "debug_log",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://codex.wordpress.org/Debugging_in_WordPress"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://manyhopes.org/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://manyhopes.org/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://manyhopes.org/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://manyhopes.org/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://manyhopes.org/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://manyhopes.org/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "dyad",
+        "location": "https://manyhopes.org/wp-content/themes/dyad/",
+        "latest_version": "1.0.10",
+        "last_updated": "2016-04-22T00:00:00.000Z",
+        "outdated": false,
+        "readme_url": "https://manyhopes.org/wp-content/themes/dyad/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://manyhopes.org/wp-content/themes/dyad/style.css?ver=6.7.2",
+        "style_name": "Dyad",
+        "style_uri": "https://wordpress.com/themes/dyad/",
+        "description": "Dyad pairs your written content and images together in perfect balance. The theme is geared towards photographers, foodies, artists, and anyone who is looking for a strong photographic presence on their website.",
+        "author": "Automattic",
+        "author_uri": "http://wordpress.com/themes",
+        "template": null,
+        "license": "GNU General Public License v2 or later",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "blue, yellow, dark, responsive-layout, custom-colors, custom-header, custom-menu, editor-style, featured-images, rtl-language-support, sticky-post, threaded-comments, translation-ready, photoblogging",
+        "text_domain": "dyad",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.0.10",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://manyhopes.org/wp-content/themes/dyad/style.css?ver=6.7.2, Match: 'Version: 1.0.10'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "premium-addons-for-elementor": {
+            "slug": "premium-addons-for-elementor",
+            "location": "https://manyhopes.org/wp-content/plugins/premium-addons-for-elementor/",
+            "latest_version": "4.10.87",
+            "last_updated": "2025-02-27T14:37:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Premium Addons for Elementor < 4.10.29 - Contributor+ Stored Cross-Site Scripting",
+                    "fixed_in": "4.10.29",
+                    "references": {
+                        "cve": [
+                            "2024-3885"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4111ba11-ad79-466a-9669-3c35730a331a"
+                        ],
+                        "wpvulndb": [
+                            "f927339c-2e00-4cd0-936f-b63e14047bc3"
+                        ]
+                    }
+                },
+                {
+                    "title": "Premium Addons for Elementor < 4.10.29 - Contributor+ Stored Cross-Site Scripting",
+                    "fixed_in": "4.10.29",
+                    "references": {
+                        "cve": [
+                            "2024-3647"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/48fdece5-2996-426f-b77c-ae0b35bcd0ce"
+                        ],
+                        "wpvulndb": [
+                            "cea7f982-e9f7-4275-bd95-5a4e114b3850"
+                        ]
+                    }
+                },
+                {
+                    "title": "Premium Addons for Elementor < 4.10.31 - Contributor+ Stored XSS",
+                    "fixed_in": "4.10.31",
+                    "references": {
+                        "cve": [
+                            "2024-4203"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/51fab95e-336d-4544-8b8e-c4e9002321ec"
+                        ],
+                        "wpvulndb": [
+                            "15bd732f-bdf5-4596-be9b-b3f691fc54cb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Premium Addons for Elementor < 4.10.32 - Contributor+ Stored XSS",
+                    "fixed_in": "4.10.32",
+                    "references": {
+                        "cve": [
+                            "2024-4378"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f891a6c8-3d06-432e-8651-bb689015af1c"
+                        ],
+                        "wpvulndb": [
+                            "2cccba37-ddaf-49d2-89a2-bc594583c2eb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Premium Addons for Elementor < 4.10.32 - Authenticated (Contributor+) Stored Cross-Site Scripting via Fancy Text Widget",
+                    "fixed_in": "4.10.32",
+                    "references": {
+                        "cve": [
+                            "2024-4376"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b49d166f-4df0-4997-a078-0be8fcd92576"
+                        ],
+                        "wpvulndb": [
+                            "ad6030ee-a3f5-493b-beaf-da5706295867"
+                        ]
+                    }
+                },
+                {
+                    "title": "Premium Addons for Elementor < 4.10.32 - Contributor+ DOM-Based Stored Cross-Site Scripting via Global Tooltip",
+                    "fixed_in": "4.10.32",
+                    "references": {
+                        "cve": [
+                            "2024-4379"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/cb0261c6-0477-4769-b92a-b49a192df4bb"
+                        ],
+                        "wpvulndb": [
+                            "69052b96-6d64-49a7-8bdd-807da31ba860"
+                        ]
+                    }
+                },
+                {
+                    "title": "Premium Addons for Elementor < 4.10.32 - Missing Authorization to Information Disclosure",
+                    "fixed_in": "4.10.32",
+                    "references": {
+                        "cve": [
+                            "2024-4205"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/175cb977-dcba-429f-814c-6de078e23472"
+                        ],
+                        "wpvulndb": [
+                            "e8fbcf7b-35f3-4de4-857a-2301b0e6f6f7"
+                        ]
+                    }
+                },
+                {
+                    "title": "Premium Addons for Elementor < 4.10.34 - Authenticated (Contributor+) DOM-Based Stored Cross-Site Scripting",
+                    "fixed_in": "4.10.34",
+                    "references": {
+                        "cve": [
+                            "2024-5553"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a80a3108-c685-4e26-9ecd-a0fe6ad4860c"
+                        ],
+                        "wpvulndb": [
+                            "1609ced4-012f-4945-870f-a741d9d31c46"
+                        ]
+                    }
+                },
+                {
+                    "title": "Premium Addons for Elementor < 4.10.36 - Contributor+ Stored Cross-Site Scripting via Countdown Widget",
+                    "fixed_in": "4.10.36",
+                    "references": {
+                        "cve": [
+                            "2024-6340"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/9ed80507-f3e5-45a8-9498-8cebf97155ff"
+                        ],
+                        "wpvulndb": [
+                            "789a7c27-e14a-4967-a3b3-7e1d1286e574"
+                        ]
+                    }
+                },
+                {
+                    "title": "Premium Addons for Elementor < 4.10.36 - Regular Expressions Denial of Service",
+                    "fixed_in": "4.10.36",
+                    "references": {
+                        "cve": [
+                            "2024-6434"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/3c59d95a-b7f1-4a04-bbf4-bab2c42d6d75"
+                        ],
+                        "wpvulndb": [
+                            "76ecc6f8-3324-4df9-b79b-a68cd9c9fcf6"
+                        ]
+                    }
+                },
+                {
+                    "title": "Premium Addons for Elementor < 4.10.37 - Authenticated (Contributor+) Stored DOM-Based Cross-Site Scripting via Animated Text Widget",
+                    "fixed_in": "4.10.37",
+                    "references": {
+                        "cve": [
+                            "2024-6495"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/005fc05c-6d82-49ca-b114-a3e64a3a572f"
+                        ],
+                        "wpvulndb": [
+                            "7918803f-4268-4af9-8b5c-5d902b3a6fae"
+                        ]
+                    }
+                },
+                {
+                    "title": "Premium Addons for Elementor < 4.10.35 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "4.10.35",
+                    "references": {
+                        "cve": [
+                            "2024-37922"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a155c289-558c-4209-8d9a-bf085fecaf8a"
+                        ],
+                        "wpvulndb": [
+                            "d59a761a-ee6a-43fc-85b1-aff8c560933e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Premium Addons for Elementor < 4.10.39 - Missing Authorization to Authenticated (Contributor+) Arbitrary Content Deletion and Arbitrary Title Update",
+                    "fixed_in": "4.10.39",
+                    "references": {
+                        "cve": [
+                            "2024-6824"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b2840b9e-1baf-460c-ba11-43e4279ece27"
+                        ],
+                        "wpvulndb": [
+                            "da8f52fc-e62d-4894-bc13-711e01b815b1"
+                        ]
+                    }
+                },
+                {
+                    "title": "Premium Addons for Elementor < 4.10.53 - Authenticated (Contributor+) Stored Cross-Site Scripting via Media Grid Widget",
+                    "fixed_in": "4.10.53",
+                    "references": {
+                        "cve": [
+                            "2024-8681"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/de207181-0163-4222-ac16-d7b74179ff9b"
+                        ],
+                        "wpvulndb": [
+                            "0251b858-17cf-4070-a89e-714e30f44672"
+                        ]
+                    }
+                },
+                {
+                    "title": "Premium Addons for Elementor < 4.10.61 - Authenticated (Contributor+) DOM-Based Stored Cross-Site Scripting via Video Box Widget",
+                    "fixed_in": "4.10.61",
+                    "references": {
+                        "cve": [
+                            "2024-10266"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c6102c07-2776-4963-8d16-a779c5979275"
+                        ],
+                        "wpvulndb": [
+                            "a963b2d2-d3dc-4832-963e-55913a41c1e1"
+                        ]
+                    }
+                },
+                {
+                    "title": "Premium Addons for Elementor < 4.10.57 - Missing Authorization",
+                    "fixed_in": "4.10.57",
+                    "references": {
+                        "cve": [
+                            "2024-56225"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/575a648a-6bf0-42d9-964e-59800e856bd0"
+                        ],
+                        "wpvulndb": [
+                            "c0f7d868-7873-4b29-826a-444d6223a2b4"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "4.10.28",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://manyhopes.org/wp-content/plugins/premium-addons-for-elementor/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://manyhopes.org/wp-content/plugins/premium-addons-for-elementor/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 8,
+        "requests_remaining": 1
+    },
+    "stop_time": 1741232820,
+    "elapsed": 27,
+    "requests_done": 63,
+    "cached_requests": 7,
+    "data_sent": 16539,
+    "data_sent_humanised": "16.151 KB",
+    "data_received": 1358458,
+    "data_received_humanised": "1.296 MB",
+    "used_memory": 273436672,
+    "used_memory_humanised": "260.77 MB"
+}

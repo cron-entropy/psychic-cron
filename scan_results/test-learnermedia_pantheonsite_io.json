@@ -1,0 +1,206 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741232776,
+    "start_memory": 48762880,
+    "target_url": "https://test-learnermedia.pantheonsite.io/",
+    "target_ip": "23.185.0.4",
+    "effective_url": "https://test-learnermedia.pantheonsite.io/",
+    "interesting_findings": [
+        {
+            "url": "https://test-learnermedia.pantheonsite.io/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: nginx",
+                "x-pantheon-styx-hostname: styx-fe4-a-7748b9776f-4pz2s",
+                "x-styx-req-id: 75281698-fa3d-11ef-8d77-36d033eb5295",
+                "x-served-by: cache-chi-kigq8000084-CHI, cache-den-kden1300049-DEN",
+                "x-cache-hits: 0, 1",
+                "x-timer: S1741232775.599221,VS0,VE8",
+                "x-robots-tag: noindex",
+                "via: 1.1 varnish, 1.1 varnish"
+            ]
+        },
+        {
+            "url": "https://test-learnermedia.pantheonsite.io/robots.txt",
+            "to_s": "robots.txt found: https://test-learnermedia.pantheonsite.io/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://test-learnermedia.pantheonsite.io/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://test-learnermedia.pantheonsite.io/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://test-learnermedia.pantheonsite.io/readme.html",
+            "to_s": "WordPress readme found: https://test-learnermedia.pantheonsite.io/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://test-learnermedia.pantheonsite.io/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://test-learnermedia.pantheonsite.io/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.1",
+        "release_date": "2024-11-21",
+        "status": "outdated",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://test-learnermedia.pantheonsite.io/feed/, <generator>https://wordpress.org/?v=6.7.1</generator>",
+            "https://test-learnermedia.pantheonsite.io/comments/feed/, <generator>https://wordpress.org/?v=6.7.1</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "learner-custom",
+        "location": "https://test-learnermedia.pantheonsite.io/wp-content/themes/learner-custom/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://test-learnermedia.pantheonsite.io/wp-content/themes/learner-custom/README.md",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://test-learnermedia.pantheonsite.io/wp-content/themes/learner-custom/style.css",
+        "style_name": "Annenberg Learner",
+        "style_uri": "http://learner.org",
+        "description": "A custom theme built with Foundation, Sass and Gulp",
+        "author": "Kristin Falkner",
+        "author_uri": "https://www.kristinfalkner.com",
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": "learner-custom",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 20,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 10,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": null,
+        "parents": []
+    },
+    "plugins": {
+        "search-filter-pro": {
+            "slug": "search-filter-pro",
+            "location": "https://test-learnermedia.pantheonsite.io/wp-content/plugins/search-filter-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Search Filter Pro < 2.5.18 - Admin+ Stored XSS",
+                    "fixed_in": "2.5.18",
+                    "references": {
+                        "cve": [
+                            "2024-6481"
+                        ],
+                        "url": [
+                            "https://searchandfilter.com/documentation/changelog/"
+                        ],
+                        "wpvulndb": [
+                            "53357868-2bcb-48eb-8abd-83186ff8d027"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "2.4.6",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://test-learnermedia.pantheonsite.io/wp-content/plugins/search-filter-pro/README.txt"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 5,
+        "requests_remaining": 10
+    },
+    "stop_time": 1741232785,
+    "elapsed": 9,
+    "requests_done": 48,
+    "cached_requests": 7,
+    "data_sent": 13766,
+    "data_sent_humanised": "13.443 KB",
+    "data_received": 649626,
+    "data_received_humanised": "634.4 KB",
+    "used_memory": 278179840,
+    "used_memory_humanised": "265.293 MB"
+}
