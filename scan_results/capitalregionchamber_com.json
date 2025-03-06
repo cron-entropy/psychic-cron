@@ -1,0 +1,192 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741276689,
+    "start_memory": 48726016,
+    "target_url": "https://capitalregionchamber.com/",
+    "target_ip": "64.91.228.181",
+    "effective_url": "https://capitalregionchamber.com/",
+    "interesting_findings": [
+        {
+            "url": "https://capitalregionchamber.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server: Apache"
+            ]
+        },
+        {
+            "url": "https://capitalregionchamber.com/robots.txt",
+            "to_s": "robots.txt found: https://capitalregionchamber.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://capitalregionchamber.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://capitalregionchamber.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://capitalregionchamber.com/readme.html",
+            "to_s": "WordPress readme found: https://capitalregionchamber.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://capitalregionchamber.com/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://capitalregionchamber.com/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://capitalregionchamber.com/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://capitalregionchamber.com/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://capitalregionchamber.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://capitalregionchamber.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Emoji Settings (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://capitalregionchamber.com/, Match: 'wp-includes\\/js\\/wp-emoji-release.min.js?ver=6.7.2'"
+        ],
+        "confirmed_by": {
+            "Most Common Wp Includes Query Parameter In Homepage (Passive Detection)": {
+                "confidence": 80,
+                "interesting_entries": [
+                    "https://capitalregionchamber.com/wp-includes/css/dist/block-library/style.min.css?ver=6.7.2",
+                    "https://capitalregionchamber.com/wp-includes/js/comment-reply.min.js?ver=6.7.2"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "BASE",
+        "location": "https://capitalregionchamber.com/wp-content/themes/BASE/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://capitalregionchamber.com/wp-content/themes/BASE/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://capitalregionchamber.com/wp-content/themes/BASE/style.css",
+        "style_name": "ACRC",
+        "style_uri": "http://www.overit.com",
+        "description": null,
+        "author": "Overit",
+        "author_uri": "http://www.overit.com",
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": "fluid-layout, responsive-layout, accessibility-ready, translation-ready, microformats, rtl-language-support",
+        "text_domain": null,
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 16,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 8,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.5",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://capitalregionchamber.com/wp-content/themes/BASE/style.css, Match: 'Version: 1.5'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 8,
+        "requests_remaining": "Unlimited"
+    },
+    "stop_time": 1741276737,
+    "elapsed": 48,
+    "requests_done": 60,
+    "cached_requests": 7,
+    "data_sent": 14893,
+    "data_sent_humanised": "14.544 KB",
+    "data_received": 799158,
+    "data_received_humanised": "780.428 KB",
+    "used_memory": 283725824,
+    "used_memory_humanised": "270.582 MB"
+}

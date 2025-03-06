@@ -25,4 +25,14 @@ jobs:
         run: python main.py
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          WPSCAN_API_KEYS: ${{ secrets.WPSCAN_API_KEYS }}  
+          WPSCAN_API_KEYS: ${{ secrets.WPSCAN_API_KEYS }}
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Automated update from Psychic Cron"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

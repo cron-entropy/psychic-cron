@@ -1,0 +1,283 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741276621,
+    "start_memory": 48738304,
+    "target_url": "https://vmfa.museum/",
+    "target_ip": "44.202.29.13",
+    "effective_url": "https://vmfa.museum/",
+    "interesting_findings": [
+        {
+            "url": "https://vmfa.museum/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server: Apache/2.4.58 (Amazon Linux) OpenSSL/3.0.8"
+            ]
+        },
+        {
+            "url": "https://vmfa.museum/robots.txt",
+            "to_s": "robots.txt found: https://vmfa.museum/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php",
+                "/wp-content/uploads/wpo/wpo-plugins-tables-list.json"
+            ]
+        },
+        {
+            "url": "https://vmfa.museum/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://vmfa.museum/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 30,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://vmfa.museum/readme.html",
+            "to_s": "WordPress readme found: https://vmfa.museum/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://vmfa.museum/wp-content/backup-db/",
+            "to_s": "A backup directory has been found: https://vmfa.museum/wp-content/backup-db/",
+            "type": "backup_db",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 70,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://github.com/wpscanteam/wpscan/issues/422"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://vmfa.museum/wp-signup.php",
+            "to_s": "This site seems to be a multisite",
+            "type": "multisite",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Glossary#Multisite"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://vmfa.museum/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://vmfa.museum/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://vmfa.museum/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://vmfa.museum/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://vmfa.museum/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://vmfa.museum/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "1.0",
+        "release_date": "2004-01-03",
+        "status": "unknown",
+        "found_by": "Most Common Wp Includes Query Parameter In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://vmfa.museum/wp-includes/css/dist/block-library/style.min.css?ver=1.0"
+        ],
+        "confirmed_by": {
+            "Common Wp Includes Query Parameter In Homepage (Passive Detection)": {
+                "confidence": 10,
+                "interesting_entries": [
+                    "https://vmfa.museum/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=1.0"
+                ]
+            },
+            "Query Parameter In Install Page (Aggressive Detection)": {
+                "confidence": 100,
+                "interesting_entries": [
+                    "https://vmfa.museum/wp-includes/css/dashicons.min.css?ver=1.0",
+                    "https://vmfa.museum/wp-includes/css/buttons.min.css?ver=1.0",
+                    "https://vmfa.museum/wp-admin/css/forms.min.css?ver=1.0",
+                    "https://vmfa.museum/wp-admin/css/l10n.min.css?ver=1.0",
+                    "https://vmfa.museum/wp-admin/css/install.min.css?ver=1.0"
+                ]
+            }
+        },
+        "vulnerabilities": [
+            {
+                "title": "WordPress <= 4.9.4 - Application Denial of Service (DoS) (unpatched)",
+                "fixed_in": null,
+                "references": {
+                    "cve": [
+                        "2018-6389"
+                    ],
+                    "url": [
+                        "https://baraktawily.blogspot.fr/2018/02/how-to-dos-29-of-world-wide-websites.html",
+                        "https://github.com/quitten/doser.py",
+                        "https://thehackernews.com/2018/02/wordpress-dos-exploit.html"
+                    ],
+                    "wpvulndb": [
+                        "5e0c1ddd-fdd0-421b-bdbe-3eee6b75c919"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress <= 4.9.6 - Authenticated Arbitrary File Deletion",
+                "fixed_in": null,
+                "references": {
+                    "cve": [
+                        "2018-12895"
+                    ],
+                    "url": [
+                        "https://blog.ripstech.com/2018/wordpress-file-delete-to-code-execution/",
+                        "http://blog.vulnspy.com/2018/06/27/Wordpress-4-9-6-Arbitrary-File-Delection-Vulnerbility-Exploit/",
+                        "https://github.com/WordPress/WordPress/commit/c9dce0606b0d7e6f494d4abe7b193ac046a322cd",
+                        "https://wordpress.org/news/2018/07/wordpress-4-9-7-security-and-maintenance-release/",
+                        "https://www.wordfence.com/blog/2018/07/details-of-an-additional-file-deletion-vulnerability-patched-in-wordpress-4-9-7/"
+                    ],
+                    "wpvulndb": [
+                        "42ab2bd9-bbb1-4f25-a632-1811c5130bb4"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress <= 5.2.2 - Cross-Site Scripting (XSS) in URL Sanitisation",
+                "fixed_in": "5.2.3",
+                "references": {
+                    "cve": [
+                        "2019-16222"
+                    ],
+                    "url": [
+                        "https://wordpress.org/news/2019/09/wordpress-5-2-3-security-and-maintenance-release/",
+                        "https://github.com/WordPress/WordPress/commit/30ac67579559fe42251b5a9f887211bf61a8ed68",
+                        "https://hackerone.com/reports/339483"
+                    ],
+                    "wpvulndb": [
+                        "4494a903-5a73-4cad-8c14-1e7b4da2be61"
+                    ]
+                }
+            }
+        ]
+    },
+    "main_theme": {
+        "slug": "vmfa",
+        "location": "https://vmfa.museum/wp-content/themes/vmfa/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://vmfa.museum/wp-content/themes/vmfa/README.md",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://vmfa.museum/wp-content/themes/vmfa/style.css",
+        "style_name": "vmfa",
+        "style_uri": "http://www.rtslabs.com/",
+        "description": "Base theme for VMFA.",
+        "author": "RTS Labs",
+        "author_uri": "http://www.rtslabs.com/",
+        "template": null,
+        "license": "GNU General Public License",
+        "license_uri": "license.txt",
+        "tags": null,
+        "text_domain": "vmfa",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 54,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 26,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://vmfa.museum/wp-content/themes/vmfa/style.css, Match: 'Version: 1.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 14,
+        "requests_remaining": "Unlimited"
+    },
+    "stop_time": 1741276642,
+    "elapsed": 21,
+    "requests_done": 93,
+    "cached_requests": 8,
+    "data_sent": 21643,
+    "data_sent_humanised": "21.136 KB",
+    "data_received": 1136683,
+    "data_received_humanised": "1.084 MB",
+    "used_memory": 285904896,
+    "used_memory_humanised": "272.66 MB"
+}

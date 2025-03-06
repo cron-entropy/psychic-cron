@@ -1,0 +1,104 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741276648,
+    "start_memory": 48869376,
+    "target_url": "https://celios.co.id/",
+    "target_ip": "103.163.138.124",
+    "effective_url": "https://celios.co.id/",
+    "interesting_findings": [
+        {
+            "url": "https://celios.co.id/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-litespeed-cache: hit",
+                "server: LiteSpeed",
+                "alt-svc: h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+            ]
+        },
+        {
+            "url": "https://celios.co.id/robots.txt",
+            "to_s": "robots.txt found: https://celios.co.id/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://celios.co.id/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://celios.co.id/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "hello-theme-child-master",
+        "location": "https://celios.co.id/wp-content/themes/hello-theme-child-master/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://celios.co.id/wp-content/themes/hello-theme-child-master/style.css?ver=2.0.0",
+        "style_name": null,
+        "style_uri": null,
+        "description": null,
+        "author": null,
+        "author_uri": null,
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 70,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": null,
+        "parents": []
+    },
+    "plugins": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 7,
+        "requests_remaining": "Unlimited"
+    },
+    "stop_time": 1741276679,
+    "elapsed": 31,
+    "requests_done": 61,
+    "cached_requests": 6,
+    "data_sent": 13735,
+    "data_sent_humanised": "13.413 KB",
+    "data_received": 360953,
+    "data_received_humanised": "352.493 KB",
+    "used_memory": 275685376,
+    "used_memory_humanised": "262.914 MB"
+}
