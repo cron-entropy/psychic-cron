@@ -1,0 +1,181 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741277431,
+    "start_memory": 48844800,
+    "target_url": "https://alfredgalichon.com/",
+    "target_ip": "213.186.33.3",
+    "effective_url": "https://alfredgalichon.com/",
+    "interesting_findings": [
+        {
+            "url": "https://alfredgalichon.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: OVHcloud",
+                "x-powered-by: PHP/8.0"
+            ]
+        },
+        {
+            "url": "https://alfredgalichon.com/robots.txt",
+            "to_s": "robots.txt found: https://alfredgalichon.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://alfredgalichon.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://alfredgalichon.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://alfredgalichon.com/readme.html",
+            "to_s": "WordPress readme found: https://alfredgalichon.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://alfredgalichon.com/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://alfredgalichon.com/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://alfredgalichon.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://alfredgalichon.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.1.7",
+        "release_date": "2024-06-24",
+        "status": "outdated",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://alfredgalichon.com/feed/, <generator>https://wordpress.org/?v=6.1.7</generator>"
+        ],
+        "confirmed_by": {
+            "Emoji Settings (Passive Detection)": {
+                "confidence": 60,
+                "interesting_entries": [
+                    "https://alfredgalichon.com/, Match: 'wp-includes\\/js\\/wp-emoji-release.min.js?ver=6.1.7'"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "verbose",
+        "location": "https://alfredgalichon.com/wp-content/themes/verbose/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://alfredgalichon.com/wp-content/themes/verbose/style.css",
+        "style_name": "Verbose",
+        "style_uri": "http://www.nerdfury.net/verbose",
+        "description": "Verbose, a fixed-width WordPress theme with a red, white and blue color scheme.",
+        "author": "Modi Cozby",
+        "author_uri": "http://www.nerdfury.net",
+        "template": null,
+        "license": "GPL",
+        "license_uri": "http://www.gnu.org/licenses/gpl.html",
+        "tags": "two-columns, fixed-width, minimalistic, simple, elegant, red, blue, white",
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://alfredgalichon.com/wp-content/themes/verbose/style.css, Match: 'Version: 1.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 2,
+        "requests_remaining": "Unlimited"
+    },
+    "stop_time": 1741277447,
+    "elapsed": 15,
+    "requests_done": 38,
+    "cached_requests": 7,
+    "data_sent": 9733,
+    "data_sent_humanised": "9.505 KB",
+    "data_received": 159759,
+    "data_received_humanised": "156.015 KB",
+    "used_memory": 280727552,
+    "used_memory_humanised": "267.723 MB"
+}

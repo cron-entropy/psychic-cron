@@ -1,0 +1,187 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741277289,
+    "start_memory": 48644096,
+    "target_url": "https://www.victoriahotels.asia/",
+    "target_ip": "172.67.69.215",
+    "effective_url": "https://www.victoriahotels.asia/en/",
+    "interesting_findings": [
+        {
+            "url": "https://www.victoriahotels.asia/en/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "cf-ray: 91c31c344fbff048-DFW",
+                "cf-cache-status: HIT",
+                "cf-apo-via: tcache",
+                "cf-edge-cache: cache,platform=wordpress",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=CW1zOzJdfCqbP1JXImiHOc1nfWuZKa1F%2FV72WJcXk6Z3EXNT%2B712Tc5CiU%2BLNkP1DE2PbiW9JiwuqpreUQtNzYYFqgFOxm77FeQ9%2BkHhbuDDS17OyGpk7p2Cmg1m6%2FVTraCq3erqq8D8\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "alt-svc: h3=\":443\"; ma=86400",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=32839&min_rtt=32492&rtt_var=337&sent=150&recv=72&lost=0&retrans=0&sent_bytes=159052&recv_bytes=1240&delivery_rate=2265816&cwnd=92&unsent_bytes=0&cid=a6d494241e709ccf&ts=8706&x=0\""
+            ]
+        },
+        {
+            "url": "https://www.victoriahotels.asia/robots.txt",
+            "to_s": "robots.txt found: https://www.victoriahotels.asia/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/\r",
+                "/wp-includes/\r",
+                "/wp-content/plugins/\r",
+                "/wp-content/themes/\r",
+                "/wp-login.php\r"
+            ]
+        },
+        {
+            "url": "https://www.victoriahotels.asia/readme.html",
+            "to_s": "WordPress readme found: https://www.victoriahotels.asia/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.victoriahotels.asia/wp-content/backup-db/",
+            "to_s": "A backup directory has been found: https://www.victoriahotels.asia/wp-content/backup-db/",
+            "type": "backup_db",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 70,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://github.com/wpscanteam/wpscan/issues/422"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.victoriahotels.asia/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://www.victoriahotels.asia/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.victoriahotels.asia/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.victoriahotels.asia/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.victoriahotels.asia/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.victoriahotels.asia/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.4.2",
+        "release_date": "2023-12-06",
+        "status": "insecure",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.victoriahotels.asia/en/feed/, <generator>https://wordpress.org/?v=6.4.2</generator>"
+        ],
+        "confirmed_by": {
+            "Meta Generator (Passive Detection)": {
+                "confidence": 60,
+                "interesting_entries": [
+                    "https://www.victoriahotels.asia/en/, Match: 'WordPress 6.4.2'"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "hello-elementor-child-victoria-hotel",
+        "location": "https://www.victoriahotels.asia/wp-content/themes/hello-elementor-child-victoria-hotel/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.victoriahotels.asia/wp-content/cache/min/1/wp-content/themes/hello-elementor-child-victoria-hotel/style.css?ver=1730265696",
+        "style_name": null,
+        "style_uri": null,
+        "description": null,
+        "author": null,
+        "author_uri": null,
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": null,
+        "parents": []
+    },
+    "plugins": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 8,
+        "requests_remaining": "Unlimited"
+    },
+    "stop_time": 1741277359,
+    "elapsed": 70,
+    "requests_done": 77,
+    "cached_requests": 6,
+    "data_sent": 28330,
+    "data_sent_humanised": "27.666 KB",
+    "data_received": 4245056,
+    "data_received_humanised": "4.048 MB",
+    "used_memory": 280653824,
+    "used_memory_humanised": "267.652 MB"
+}

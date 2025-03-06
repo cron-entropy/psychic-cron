@@ -1,0 +1,160 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741277367,
+    "start_memory": 48910336,
+    "target_url": "https://enzoscucina.com.au/",
+    "target_ip": "103.26.237.136",
+    "effective_url": "https://enzoscucina.com.au/",
+    "interesting_findings": [
+        {
+            "url": "https://enzoscucina.com.au/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server: Apache"
+            ]
+        },
+        {
+            "url": "https://enzoscucina.com.au/robots.txt",
+            "to_s": "robots.txt found: https://enzoscucina.com.au/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://enzoscucina.com.au/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://enzoscucina.com.au/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 30,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://enzoscucina.com.au/readme.html",
+            "to_s": "WordPress readme found: https://enzoscucina.com.au/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://enzoscucina.com.au/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://enzoscucina.com.au/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Query Parameter In Install Page (Aggressive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://enzoscucina.com.au/wp-includes/css/dashicons.min.css?ver=6.7.2",
+            "https://enzoscucina.com.au/wp-includes/css/buttons.min.css?ver=6.7.2",
+            "https://enzoscucina.com.au/wp-admin/css/forms.min.css?ver=6.7.2",
+            "https://enzoscucina.com.au/wp-admin/css/l10n.min.css?ver=6.7.2",
+            "https://enzoscucina.com.au/wp-admin/css/install.min.css?ver=6.7.2"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "enzos",
+        "location": "https://enzoscucina.com.au/wp-content/themes/enzos/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://enzoscucina.com.au/wp-content/themes/enzos/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://enzoscucina.com.au/wp-content/themes/enzos/style.css",
+        "style_name": "Enzos",
+        "style_uri": null,
+        "description": null,
+        "author": null,
+        "author_uri": null,
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.0.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://enzoscucina.com.au/wp-content/themes/enzos/style.css, Match: 'Version: 1.0.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 16,
+        "requests_remaining": "Unlimited"
+    },
+    "stop_time": 1741277426,
+    "elapsed": 59,
+    "requests_done": 96,
+    "cached_requests": 7,
+    "data_sent": 33160,
+    "data_sent_humanised": "32.383 KB",
+    "data_received": 1039677,
+    "data_received_humanised": "1015.31 KB",
+    "used_memory": 290369536,
+    "used_memory_humanised": "276.918 MB"
+}
