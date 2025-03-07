@@ -1,12 +1,27 @@
 <html>
   <head>
-    <title>{{ title }}</title>
+    <title></title>
   </head>
   <body>
-    <h1>{{ heading }}</h1>
+    <h1></h1>
     <ul>
-      {% for item in items %}
-        <li>{{ item }}</li>
+      {% for result in results %}
+        <li>{{ result.target_url }}</li>
+        <ul>
+          {% for plugin in result.plugins %}
+            <li>{{ plugin.plugin }}</li>
+            <ul>
+              {% for vuln in plugin.vulns %}
+                <li>{{ vuln.vuln }}</li>
+                <ul>
+                  {% for cve in vuln.cves %}
+                    <li>{{ cve.id }} {{ cve.score }}</li>
+                  {% endfor %}
+                </ul>
+              {% endfor %}
+            </ul>
+          {% endfor %}
+        </ul>
       {% endfor %}
     </ul>
   </body>

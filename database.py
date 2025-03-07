@@ -25,6 +25,16 @@ class Database:
         except sqlite3.Error:
             return False
 
+    def get(self, table, select_column, where_column, where_value):
+        try:
+            sql = f"SELECT {select_column} FROM {table} WHERE {where_column} = ?"
+            self.cursor.execute(sql, (where_value,))
+            result = self.cursor.fetchone()
+            return result[0] if result else None
+        except sqlite3.Error as e:
+            logging.error(f"Error fetching value: {e}")
+            return None
+
     def contains(self, table, column, value):
         try:
             self.cursor.execute(f"SELECT 1 FROM {table} WHERE {column} = ?", (value,))
