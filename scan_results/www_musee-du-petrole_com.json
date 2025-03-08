@@ -1,0 +1,214 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741404564,
+    "start_memory": 48816128,
+    "target_url": "https://www.musee-du-petrole.com/",
+    "target_ip": "193.41.194.61",
+    "effective_url": "https://www.musee-du-petrole.com/",
+    "interesting_findings": [
+        {
+            "url": "https://www.musee-du-petrole.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-ua-compatible: IE=edge",
+                "server: Apache/2.4.52 (Unix) OpenSSL/1.1.1k PHP/8.2.27"
+            ]
+        },
+        {
+            "url": "https://www.musee-du-petrole.com/robots.txt",
+            "to_s": "robots.txt found: https://www.musee-du-petrole.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://www.musee-du-petrole.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.musee-du-petrole.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.musee-du-petrole.com/readme.html",
+            "to_s": "WordPress readme found: https://www.musee-du-petrole.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.musee-du-petrole.com/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.musee-du-petrole.com/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.musee-du-petrole.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.musee-du-petrole.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.musee-du-petrole.com/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.musee-du-petrole.com/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "generatepress",
+        "location": "https://www.musee-du-petrole.com/wp-content/themes/generatepress/",
+        "latest_version": "3.5.1",
+        "last_updated": "2024-09-04T00:00:00.000Z",
+        "outdated": false,
+        "readme_url": "https://www.musee-du-petrole.com/wp-content/themes/generatepress/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.musee-du-petrole.com/wp-content/themes/generatepress/style.css",
+        "style_name": "GeneratePress",
+        "style_uri": "https://generatepress.com",
+        "description": "GeneratePress is a lightweight WordPress theme built with a focus on speed and usability. Performance is important to us, which is why a fresh GeneratePress install adds less than 10kb (gzipped) to your page size. We take full advantage of the block editor (Gutenberg), which gives you more control over creating your content. If you use page builders, GeneratePress is the right theme for you. It is completely compatible with all major page builders, including Beaver Builder and Elementor. Thanks to our emphasis on WordPress coding standards, we can boast full compatibility with all well-coded plugins, including WooCommerce. GeneratePress is fully responsive, uses valid HTML/CSS, and is translated into over 25 languages by our amazing community of users. A few of our many features include 60+ color controls, powerful dynamic typography, 5 navigation locations, 5 sidebar layouts, dropdown menus (click or hover), and 9 widget areas. Learn more and check out our powerful premium version at https://generatepress.com",
+        "author": "Tom Usborne",
+        "author_uri": "https://tomusborne.com",
+        "template": null,
+        "license": "GNU General Public License v2 or later",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "two-columns, three-columns, one-column, right-sidebar, left-sidebar, footer-widgets, blog, e-commerce, flexible-header, full-width-template, buddypress, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, rtl-language-support, featured-images, theme-options",
+        "text_domain": "generatepress",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 20,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 10,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "3.5.1",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.musee-du-petrole.com/wp-content/themes/generatepress/style.css, Match: 'Version: 3.5.1'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "advanced-wp-columns": {
+            "slug": "advanced-wp-columns",
+            "location": "https://www.musee-du-petrole.com/wp-content/plugins/advanced-wp-columns/",
+            "latest_version": "2.0.6",
+            "last_updated": "2015-12-28T03:37:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Advanced WP Columns <= 2.0.6 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2022-3426"
+                        ],
+                        "wpvulndb": [
+                            "bc90594e-1018-494a-b473-6416e274c59f"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "2.0",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.musee-du-petrole.com/wp-content/plugins/advanced-wp-columns/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 8,
+        "requests_remaining": 17
+    },
+    "stop_time": 1741404576,
+    "elapsed": 12,
+    "requests_done": 54,
+    "cached_requests": 7,
+    "data_sent": 15735,
+    "data_sent_humanised": "15.366 KB",
+    "data_received": 454913,
+    "data_received_humanised": "444.251 KB",
+    "used_memory": 260505600,
+    "used_memory_humanised": "248.438 MB"
+}

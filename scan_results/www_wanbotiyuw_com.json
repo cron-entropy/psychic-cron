@@ -1,0 +1,166 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741404580,
+    "start_memory": 48721920,
+    "target_url": "https://www.wanbotiyuw.com/",
+    "target_ip": "23.224.105.54",
+    "effective_url": "https://www.wanbotiyuw.com/",
+    "interesting_findings": [
+        {
+            "url": "https://www.wanbotiyuw.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server: nginx"
+            ]
+        },
+        {
+            "url": "https://www.wanbotiyuw.com/robots.txt",
+            "to_s": "robots.txt found: https://www.wanbotiyuw.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://www.wanbotiyuw.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.wanbotiyuw.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.wanbotiyuw.com/readme.html",
+            "to_s": "WordPress readme found: https://www.wanbotiyuw.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.wanbotiyuw.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.wanbotiyuw.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Most Common Wp Includes Query Parameter In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.wanbotiyuw.com/wp-includes/css/dist/block-library/style.min.css?ver=6.7.2"
+        ],
+        "confirmed_by": {
+            "Rss Generator (Aggressive Detection)": {
+                "confidence": 100,
+                "interesting_entries": [
+                    "https://www.wanbotiyuw.com/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+                    "https://www.wanbotiyuw.com/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "begin lts",
+        "location": "https://www.wanbotiyuw.com/wp-content/themes/begin%2520lts/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.wanbotiyuw.com/wp-content/themes/begin%20lts/style.css?ver=LTS",
+        "style_name": "Begin",
+        "style_uri": "https://www.ytaomb.com",
+        "description": "HTML5+CSS3 \u54cd\u5e94\u5f0f\u8bbe\u8ba1\uff0c\u535a\u5ba2\u3001\u6742\u5fd7\u3001\u56fe\u7247\u3001\u516c\u53f8\u4f01\u4e1a\u591a\u79cd\u5e03\u5c40\u53ef\u9009\uff0c\u96c6\u6210SEO\u81ea\u5b9a\u4e49\u529f\u80fd\uff0c\u4e30\u5bcc\u7684\u4e3b\u9898\u9009\u9879\uff0c\u4f17\u591a\u5b9e\u7528\u5c0f\u5de5\u5177\u3002",
+        "author": "\u77e5\u66f4\u9e1f",
+        "author_uri": "https://www.ytaomb.com/",
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 70,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": {
+            "number": "LTS",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.wanbotiyuw.com/wp-content/themes/begin%20lts/style.css?ver=LTS, Match: 'Version: LTS'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 6,
+        "requests_remaining": 23
+    },
+    "stop_time": 1741404777,
+    "elapsed": 197,
+    "requests_done": 48,
+    "cached_requests": 6,
+    "data_sent": 11986,
+    "data_sent_humanised": "11.705 KB",
+    "data_received": 671270,
+    "data_received_humanised": "655.537 KB",
+    "used_memory": 274927616,
+    "used_memory_humanised": "262.191 MB"
+}

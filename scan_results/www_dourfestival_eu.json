@@ -1,0 +1,166 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741404540,
+    "start_memory": 48898048,
+    "target_url": "https://www.dourfestival.eu/",
+    "target_ip": "145.239.37.162",
+    "effective_url": "https://www.dourfestival.eu/",
+    "interesting_findings": [
+        {
+            "url": "https://www.dourfestival.eu/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: OVHcloud",
+                "x-powered-by: PHP/8.2"
+            ]
+        },
+        {
+            "url": "https://www.dourfestival.eu/robots.txt",
+            "to_s": "robots.txt found: https://www.dourfestival.eu/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://www.dourfestival.eu/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.dourfestival.eu/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.dourfestival.eu/readme.html",
+            "to_s": "WordPress readme found: https://www.dourfestival.eu/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.dourfestival.eu/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.dourfestival.eu/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.dourfestival.eu/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.dourfestival.eu/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.dourfestival.eu/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.dourfestival.eu/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "dour-2025",
+        "location": "https://www.dourfestival.eu/wp-content/themes/dour-2025/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": true,
+        "error_log_url": null,
+        "style_url": "https://www.dourfestival.eu/wp-content/themes/dour-2025/style.css?ver=1.0.O.",
+        "style_name": "Dour 2025",
+        "style_uri": null,
+        "description": null,
+        "author": "Gr\u00e9gory Ruelle",
+        "author_uri": null,
+        "template": "hello-elementor",
+        "license": "GNU General Public License v3 or later.",
+        "license_uri": "https://www.gnu.org/licenses/gpl-3.0.html",
+        "tags": null,
+        "text_domain": "dour",
+        "found_by": "Css Style In 404 Page (Passive Detection)",
+        "confidence": 70,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.0.0.2",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.dourfestival.eu/wp-content/themes/dour-2025/style.css?ver=1.0.O., Match: 'Version: 1.0.0.2'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 11,
+        "requests_remaining": 14
+    },
+    "stop_time": 1741404559,
+    "elapsed": 19,
+    "requests_done": 80,
+    "cached_requests": 8,
+    "data_sent": 22071,
+    "data_sent_humanised": "21.554 KB",
+    "data_received": 1843755,
+    "data_received_humanised": "1.758 MB",
+    "used_memory": 291344384,
+    "used_memory_humanised": "277.848 MB"
+}
