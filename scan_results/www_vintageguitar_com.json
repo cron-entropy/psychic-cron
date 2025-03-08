@@ -1,0 +1,758 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741430781,
+    "start_memory": 48672768,
+    "target_url": "https://www.vintageguitar.com/",
+    "target_ip": "206.130.127.18",
+    "effective_url": "https://www.vintageguitar.com/",
+    "interesting_findings": [
+        {
+            "url": "https://www.vintageguitar.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server: Apache/2.4.62 (cPanel) OpenSSL/1.1.1w mod_bwlimited/1.4"
+            ]
+        },
+        {
+            "url": "https://www.vintageguitar.com/robots.txt",
+            "to_s": "robots.txt found: https://www.vintageguitar.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-content/uploads/wc-logs/\r",
+                "/wp-content/uploads/woocommerce_transient_files/\r",
+                "/wp-content/uploads/woocommerce_uploads/\r",
+                "/wp-admin/\r",
+                "/wp-admin/admin-ajax.php\r",
+                "/wp-content/uploads/wpo/wpo-plugins-tables-list.json\r"
+            ]
+        },
+        {
+            "url": "https://www.vintageguitar.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.vintageguitar.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.vintageguitar.com/readme.html",
+            "to_s": "WordPress readme found: https://www.vintageguitar.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.vintageguitar.com/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.vintageguitar.com/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.vintageguitar.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.vintageguitar.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.vintageguitar.com/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.vintageguitar.com/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.vintageguitar.com/random-posts-test-page/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "Newspaper",
+        "location": "https://www.vintageguitar.com/wp-content/themes/Newspaper/",
+        "latest_version": "12.6.9",
+        "last_updated": "2025-02-10T22:13:45.000Z",
+        "outdated": true,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.vintageguitar.com/wp-content/themes/Newspaper/style.css?ver=11.4",
+        "style_name": "Newspaper",
+        "style_uri": "http://tagdiv.com",
+        "description": "Premium WordPress template, clean and easy to use.",
+        "author": "tagDiv",
+        "author_uri": "http://themeforest.net/user/tagDiv/portfolio",
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": "black, white, one-column, two-columns, fixed-layout",
+        "text_domain": "newspaper",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [
+            {
+                "title": "Newspaper < 12 - Reflected Cross-Site Scripting",
+                "fixed_in": "12",
+                "references": {
+                    "cve": [
+                        "2022-2627"
+                    ],
+                    "wpvulndb": [
+                        "038327d0-568f-4011-9b7e-3da39e8b6aea"
+                    ]
+                }
+            },
+            {
+                "title": "Newspaper < 12 - Reflected Cross-Site Scripting",
+                "fixed_in": "12",
+                "references": {
+                    "cve": [
+                        "2022-2167"
+                    ],
+                    "wpvulndb": [
+                        "ad35fbae-1e90-47a0-b1d2-f8d91a5db90e"
+                    ]
+                }
+            },
+            {
+                "title": "tagDiv Composer < 3.5 - Unauthenticated Account Takeover",
+                "fixed_in": "12.1",
+                "references": {
+                    "cve": [
+                        "2022-3477"
+                    ],
+                    "wpvulndb": [
+                        "993a95d2-6fce-48de-ae17-06ce2db829ef"
+                    ]
+                }
+            },
+            {
+                "title": "Newspaper < 12.6.6 - Authenticated (Author+) Stored Cross-Site Scripting via Attachment Meta",
+                "fixed_in": "12.6.6",
+                "references": {
+                    "cve": [
+                        "2024-3815"
+                    ],
+                    "url": [
+                        "https://www.wordfence.com/threat-intel/vulnerabilities/id/6f0a332f-b761-44b3-86e8-82411455ba3e"
+                    ],
+                    "wpvulndb": [
+                        "f35d6a9e-b48b-4419-8b81-3032318a67a9"
+                    ]
+                }
+            }
+        ],
+        "version": {
+            "number": "11.4",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.vintageguitar.com/wp-content/themes/Newspaper/style.css?ver=11.4, Match: 'Version: \t\t11.4'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://www.vintageguitar.com/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.4",
+            "last_updated": "2025-02-18T06:51:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.0.2",
+                "confidence": 90,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.vintageguitar.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.0.2"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.vintageguitar.com/wp-content/plugins/contact-form-7/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "gravity-forms-sticky-list": {
+            "slug": "gravity-forms-sticky-list",
+            "location": "https://www.vintageguitar.com/wp-content/plugins/gravity-forms-sticky-list/",
+            "latest_version": "1.5.2",
+            "last_updated": "2019-02-06T21:45:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Freemius Library < 2.2.4 - Subscriber+ Arbitrary Option Update ",
+                    "fixed_in": null,
+                    "references": {
+                        "url": [
+                            "https://wptavern.com/freemius-patches-severe-vulnerability-in-library-used-by-popular-wordpress-plugins",
+                            "https://freemius.com/blog/sdk-security-vulnerability/",
+                            "https://github.com/Freemius/wordpress-sdk/commit/50a7ca3d921d59e1d2b39bb6ab3c6c7efde494b8",
+                            "https://plugins.trac.wordpress.org/changeset/2039381/"
+                        ],
+                        "wpvulndb": [
+                            "6ff37c2e-e21d-4abc-bafe-8ca6a2c1ed76"
+                        ]
+                    }
+                },
+                {
+                    "title": "Unauthorised AJAX Calls via Freemius",
+                    "fixed_in": null,
+                    "references": {
+                        "wpvulndb": [
+                            "b7d9c54a-9a9a-48ad-bb78-e30340963236"
+                        ]
+                    }
+                },
+                {
+                    "title": "Freemius SDK < 2.5.10 - Reflected Cross-Site Scripting",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2023-33999"
+                        ],
+                        "wpvulndb": [
+                            "39d1f22f-ea34-4d94-9dc2-12661cf69d36"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "1.5.1",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.vintageguitar.com/wp-content/plugins/gravity-forms-sticky-list/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "js_composer": {
+            "slug": "js_composer",
+            "location": "https://www.vintageguitar.com/wp-content/plugins/js_composer/",
+            "latest_version": "8.2",
+            "last_updated": "2025-02-04T20:20:30.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                },
+                "Body Tag (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WPBakery Page Builder < 6.4.1 - Authenticated Stored Cross-Site Scripting (XSS)",
+                    "fixed_in": "6.4.1",
+                    "references": {
+                        "cve": [
+                            "2020-28650"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2020/10/vulnerability-exposes-over-4-million-sites-using-wpbakery/"
+                        ],
+                        "wpvulndb": [
+                            "11285589-1b22-4ec0-adfc-f2add70db4d7"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Page Builder < 6.13.0 - Contributor+ Stored XSS",
+                    "fixed_in": "6.13.0",
+                    "references": {
+                        "cve": [
+                            "2023-31213"
+                        ],
+                        "wpvulndb": [
+                            "ee99521d-be25-41ef-8988-5cfd66e9c5ca"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Title tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1841"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/34d21418-4faf-40bf-a960-79482a592722"
+                        ],
+                        "wpvulndb": [
+                            "787a71f8-1179-4442-9441-87fbe83a7e67"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Custom Heading tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1842"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/674e6722-d293-4572-80bf-984e74c3e33f"
+                        ],
+                        "wpvulndb": [
+                            "8ebfad34-7b46-4783-9fad-c96ab4f4c737"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Button onclick attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1805"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7a571386-fae1-4a56-8567-9d3e23249de1"
+                        ],
+                        "wpvulndb": [
+                            "b87926cd-0fe0-49df-8c61-9df1363a67a8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Author",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1840"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/cb8ecbbc-ada9-4887-92e6-25a587ecfb84"
+                        ],
+                        "wpvulndb": [
+                            "b41c2343-3be4-4bd9-ae5d-69ae96ba23ae"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Page Builder < 7.7 - Authenticated (Contributor+) Stored Cross-Site Scripting via VC Single Image link attribute",
+                    "fixed_in": "7.7",
+                    "references": {
+                        "cve": [
+                            "2024-5265"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/35a5114e-5c5f-4003-8bb3-77243ffbac1a"
+                        ],
+                        "wpvulndb": [
+                            "3b067a13-ee58-44c9-80af-ae04af6256c8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5708"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/23ff12f0-eb9d-4bb3-8db0-0e794c0f0594"
+                        ],
+                        "wpvulndb": [
+                            "992e5d47-e290-420a-adf8-f552a929e51d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Local File Inclusion",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5709"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7fad30c8-fd8a-4cf2-a3aa-16a374231b87"
+                        ],
+                        "wpvulndb": [
+                            "6e3e1944-67f7-405e-ae4f-f0ab8c6c9acd"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "4.11.2",
+                "confidence": 70,
+                "found_by": "Body Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.vintageguitar.com/, Match: 'js-comp-ver-4.11.2'"
+                ],
+                "confirmed_by": {
+                    "Query Parameter (Passive Detection)": {
+                        "confidence": 10,
+                        "interesting_entries": [
+                            "https://www.vintageguitar.com/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=4.11.2"
+                        ]
+                    }
+                }
+            }
+        },
+        "td-composer": {
+            "slug": "td-composer",
+            "location": "https://www.vintageguitar.com/wp-content/plugins/td-composer/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "tagDiv Composer < 3.5 - Unauthenticated Account Takeover",
+                    "fixed_in": "3.5",
+                    "references": {
+                        "cve": [
+                            "2022-3477"
+                        ],
+                        "wpvulndb": [
+                            "993a95d2-6fce-48de-ae17-06ce2db829ef"
+                        ]
+                    }
+                },
+                {
+                    "title": "tagDiv Composer < 4.0 - Reflected Cross-site Scripting",
+                    "fixed_in": "4.0",
+                    "references": {
+                        "cve": [
+                            "2023-1596"
+                        ],
+                        "wpvulndb": [
+                            "cada9be9-522a-4ce8-847d-c8fff2ddcc07"
+                        ]
+                    }
+                },
+                {
+                    "title": "tagDiv Composer < 4.2 - Unauthenticated Stored XSS",
+                    "fixed_in": "4.2",
+                    "references": {
+                        "cve": [
+                            "2023-3169"
+                        ],
+                        "wpvulndb": [
+                            "e6d8216d-ace4-48ba-afca-74da0dc5abb5"
+                        ]
+                    }
+                },
+                {
+                    "title": "tagDiv Composer < 4.2 - Admin+ Stored XSS",
+                    "fixed_in": "4.2",
+                    "references": {
+                        "cve": [
+                            "2023-3170"
+                        ],
+                        "wpvulndb": [
+                            "e95ff3c6-283b-4e5e-bea0-1f1375da08da"
+                        ]
+                    }
+                },
+                {
+                    "title": "tagDiv Composer < 4.9 - Authenticated (Contributor+) Stored Cross-Site Scripting via button Shortcode",
+                    "fixed_in": "4.9",
+                    "references": {
+                        "cve": [
+                            "2024-3888"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/466fc6f3-7b2d-4975-a838-16e27bc9f9b5"
+                        ],
+                        "wpvulndb": [
+                            "67463f9e-2ed1-45b2-a204-f49f469f4423"
+                        ]
+                    }
+                },
+                {
+                    "title": "tagDiv Composer < 4.9 - Authenticated (Author+) Stored Cross-Site Scripting via Attachment Meta",
+                    "fixed_in": "4.9",
+                    "references": {
+                        "cve": [
+                            "2024-3814"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4c2a88c3-5c11-4b42-b8f8-aafecf6c4c74"
+                        ],
+                        "wpvulndb": [
+                            "04ab667d-12cb-4118-b177-f5096b0b1cc5"
+                        ]
+                    }
+                },
+                {
+                    "title": "tagDiv Composer < 4.9 - Authenticated (Contributor+) Local File Inclusion via Shortcode",
+                    "fixed_in": "4.9",
+                    "references": {
+                        "cve": [
+                            "2024-3813"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/87b7bc4a-4d2f-4bcb-a9d5-72e31c95c09e"
+                        ],
+                        "wpvulndb": [
+                            "9f20123f-f649-4d14-8868-a966729002a0"
+                        ]
+                    }
+                },
+                {
+                    "title": "tagDiv Composer < 5.1 - Reflected Cross-Site Scripting via envato_code[]",
+                    "fixed_in": "5.1",
+                    "references": {
+                        "cve": [
+                            "2024-5212"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/db95415a-5354-498b-8368-58c47d9948de"
+                        ],
+                        "wpvulndb": [
+                            "cbdb2027-a36f-44d9-b8a8-8670bbb2afc8"
+                        ]
+                    }
+                },
+                {
+                    "title": "tagDiv Composer < 5.1 - Reflected Cross-Site Scripting via envato_code[]",
+                    "fixed_in": "5.1",
+                    "references": {
+                        "cve": [
+                            "2024-3886"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ed9db9c1-c6b5-459e-9820-ec4ee47b244e"
+                        ],
+                        "wpvulndb": [
+                            "577da199-4625-4b47-a066-29cd616f24cd"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "td-standard-pack": {
+            "slug": "td-standard-pack",
+            "location": "https://www.vintageguitar.com/wp-content/plugins/td-standard-pack/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "woocommerce": {
+            "slug": "woocommerce",
+            "location": "https://www.vintageguitar.com/wp-content/plugins/woocommerce/",
+            "latest_version": "9.7.1",
+            "last_updated": "2025-03-04T15:28:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Woocommerce < 9.7.1 - Shop Manager+ Stored XSS via New Product Form",
+                    "fixed_in": "9.7.1",
+                    "references": {
+                        "cve": [
+                            "2025-26762"
+                        ],
+                        "url": [
+                            "https://developer.woocommerce.com/2025/03/04/woocommerce-9-7-1-dot-release/"
+                        ],
+                        "wpvulndb": [
+                            "94cbfc1b-9a55-44fa-b1d9-0c47980ace3c"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "9.5.1",
+                "confidence": 100,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.vintageguitar.com/, Match: 'WooCommerce 9.5.1'"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.vintageguitar.com/wp-content/plugins/woocommerce/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wp-super-cache": {
+            "slug": "wp-super-cache",
+            "location": "https://www.vintageguitar.com/wp-content/plugins/wp-super-cache/",
+            "latest_version": "2.0.0",
+            "last_updated": "2025-01-31T13:09:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.12.4",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.vintageguitar.com/wp-content/plugins/wp-super-cache/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 9,
+        "requests_remaining": 16
+    },
+    "stop_time": 1741430909,
+    "elapsed": 128,
+    "requests_done": 209,
+    "cached_requests": 7,
+    "data_sent": 57828,
+    "data_sent_humanised": "56.473 KB",
+    "data_received": 60495318,
+    "data_received_humanised": "57.693 MB",
+    "used_memory": 281935872,
+    "used_memory_humanised": "268.875 MB"
+}

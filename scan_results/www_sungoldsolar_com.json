@@ -1,0 +1,932 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741430329,
+    "start_memory": 48824320,
+    "target_url": "https://www.sungoldsolar.com/",
+    "target_ip": "162.214.217.180",
+    "effective_url": "https://www.sungoldsolar.com/",
+    "interesting_findings": [
+        {
+            "url": "https://www.sungoldsolar.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server: Apache"
+            ]
+        },
+        {
+            "url": "https://www.sungoldsolar.com/robots.txt",
+            "to_s": "robots.txt found: https://www.sungoldsolar.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php",
+                "/wp-content/uploads/wpo/wpo-plugins-tables-list.json"
+            ]
+        },
+        {
+            "url": "https://www.sungoldsolar.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.sungoldsolar.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.sungoldsolar.com/readme.html",
+            "to_s": "WordPress readme found: https://www.sungoldsolar.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.sungoldsolar.com/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.sungoldsolar.com/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.sungoldsolar.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.sungoldsolar.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.sungoldsolar.com/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.sungoldsolar.com/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "astra-child",
+        "location": "https://www.sungoldsolar.com/wp-content/themes/astra-child/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": true,
+        "error_log_url": null,
+        "style_url": "https://www.sungoldsolar.com/wp-content/themes/astra-child/style.css?ver=1.0.0",
+        "style_name": "Astra Child",
+        "style_uri": null,
+        "description": "Astra is the fastest, fully customizable & beautiful theme suitable for blogs, personal portfolios and business websites. It is very lightweight (less than 50KB on frontend) and offers unparalleled speed. Built with SEO in mind, Astra comes with schema.org code integrated so search engines will love your site. Astra offers plenty of sidebar options and widget areas giving you a full control for customizations. Furthermore, we have included special features and templates so feel free to choose any of your favorite page builder plugin to create pages flexibly. Some of the other features: # WooCommerce Ready # Responsive # Compatible with major plugins # Translation Ready # Extendible with premium addons # Regularly updated # Designed, Developed, Maintained & Supported by Brainstorm Force. Looking for a perfect base theme? Look no further. Astra is fast, fully customizable and beautiful theme!",
+        "author": "Brainstorm Force",
+        "author_uri": "http://wpastra.com/about/",
+        "template": "astra",
+        "license": "GNU General Public License v2 or later",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": null,
+        "text_domain": "astra-child",
+        "found_by": "Css Style In 404 Page (Passive Detection)",
+        "confidence": 70,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.0.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.sungoldsolar.com/wp-content/themes/astra-child/style.css?ver=1.0.0, Match: 'Version: 1.0.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "astra-addon": {
+            "slug": "astra-addon",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/astra-addon/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.8.13",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sungoldsolar.com/wp-content/plugins/astra-addon/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "cf7-redirect-thank-you-page": {
+            "slug": "cf7-redirect-thank-you-page",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/cf7-redirect-thank-you-page/",
+            "latest_version": "1.0.8",
+            "last_updated": "2025-01-11T19:10:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.0.8",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sungoldsolar.com/wp-content/plugins/cf7-redirect-thank-you-page/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.4",
+            "last_updated": "2025-02-18T06:51:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Hidden Input (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.0.1",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.sungoldsolar.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.0.1"
+                ],
+                "confirmed_by": {
+                    "Hidden Input (Passive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.sungoldsolar.com/, Match: '6.0.1'"
+                        ]
+                    },
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.sungoldsolar.com/wp-content/plugins/contact-form-7/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "cookie-law-info": {
+            "slug": "cookie-law-info",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/cookie-law-info/",
+            "latest_version": "3.2.8",
+            "last_updated": "2024-11-27T05:03:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.2.8",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sungoldsolar.com/wp-content/plugins/cookie-law-info/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.sungoldsolar.com/wp-content/plugins/cookie-law-info/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "depicter": {
+            "slug": "depicter",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/depicter/",
+            "latest_version": "3.6.1",
+            "last_updated": "2024-12-24T12:06:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.6.1",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sungoldsolar.com/wp-content/plugins/depicter/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/elementor/",
+            "latest_version": "3.27.6",
+            "last_updated": "2025-02-18T15:16:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.27.6",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.sungoldsolar.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.27.6",
+                    "https://www.sungoldsolar.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.27.6"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.sungoldsolar.com/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.sungoldsolar.com/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor-pro": {
+            "slug": "elementor-pro",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/elementor-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.27.5",
+                "confidence": 90,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.sungoldsolar.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.27.5",
+                    "https://www.sungoldsolar.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.27.5",
+                    "https://www.sungoldsolar.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.27.5"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.sungoldsolar.com/wp-content/plugins/elementor-pro/changelog.txt, Match: '#### 3.27.5 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementskit": {
+            "slug": "elementskit",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/elementskit/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "ElementsKit and ElementsKit Pro < 2.2.0 - Contributor+ Stored XSS",
+                    "fixed_in": "2.2.0",
+                    "references": {
+                        "cve": [
+                            "2021-24258"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/04/recent-patches-rock-the-elementor-ecosystem/"
+                        ],
+                        "wpvulndb": [
+                            "47b47b86-899b-4de3-8a3c-2d5d1774298f"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via 'ekit_btn_id'",
+                    "fixed_in": "3.6.1",
+                    "references": {
+                        "cve": [
+                            "2024-3598"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a9e4b14f-0f55-47bc-8e40-19b262e50561"
+                        ],
+                        "wpvulndb": [
+                            "36f303a8-6482-4013-96dd-c93428adadc2"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.1 - Authenticated (Contributor+) Local File Inclusion via Price Menu, Hotspot, and Advanced Toggle Widgets",
+                    "fixed_in": "3.6.1",
+                    "references": {
+                        "cve": [
+                            "2024-3500"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c8ae0a47-cba5-468e-8d25-7b7176373b9c"
+                        ],
+                        "wpvulndb": [
+                            "7f210486-4350-450d-aebd-5851f24398b1"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.2 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "3.6.2",
+                    "references": {
+                        "cve": [
+                            "2024-4452"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/488ac848-786e-4100-a387-5a40e8fc4175"
+                        ],
+                        "wpvulndb": [
+                            "fc35b1b8-7cf9-4020-aa9b-491fc1ed54c6"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit PRO < 3.6.3 - Authenticated (Contributor+) Server-Side Request Forgery",
+                    "fixed_in": "3.6.3",
+                    "references": {
+                        "cve": [
+                            "2024-4404"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/6417269d-3d49-4f33-b92a-5aacb052bab0"
+                        ],
+                        "wpvulndb": [
+                            "7ba6054e-3412-46bd-8024-a268523ec9fb"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons and Templates Library < 3.6.3 - Authenticated (Contributor+) Stored Cross-Site Scripting via Motion Text and Table Widgets",
+                    "fixed_in": "3.6.3",
+                    "references": {
+                        "cve": [
+                            "2024-5263"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/2e718554-1096-4a16-968d-f00b65e1361d"
+                        ],
+                        "wpvulndb": [
+                            "64a3f488-b6f7-4466-82ef-5046b0f1dbff"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.6 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "3.6.6",
+                    "references": {
+                        "cve": [
+                            "2024-7064"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/181e6f3a-dbcf-44a6-b725-6325d9e56453"
+                        ],
+                        "wpvulndb": [
+                            "2a342f4c-e56e-438a-b0d2-4476dec30d6e"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.7 - Authenticated (Contributor+) Sensitive Information Exposure",
+                    "fixed_in": "3.6.7",
+                    "references": {
+                        "cve": [
+                            "2024-7063"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d35dd18b-0f05-482f-aef3-08977cbec8a0"
+                        ],
+                        "wpvulndb": [
+                            "91bd87df-45a2-4b56-b79e-f274e0677dc2"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.7.9 - Authenticated (Contributor+) DOM-Based Stored Cross-Site Scripting via url Parameter",
+                    "fixed_in": "3.7.9",
+                    "references": {
+                        "cve": [
+                            "2025-0321"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/204cfe20-9df1-4f6c-a38c-a21b43dde385"
+                        ],
+                        "wpvulndb": [
+                            "3f2442ef-123e-4efa-9b49-331405cce87f"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "elementskit-lite": {
+            "slug": "elementskit-lite",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/elementskit-lite/",
+            "latest_version": "3.4.4",
+            "last_updated": "2025-03-04T04:06:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.4.4",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sungoldsolar.com/wp-content/plugins/elementskit-lite/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "embedpress": {
+            "slug": "embedpress",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/embedpress/",
+            "latest_version": "4.2.0",
+            "last_updated": "2025-03-04T07:54:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.1.10",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sungoldsolar.com/wp-content/plugins/embedpress/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "essential-addons-for-elementor-lite": {
+            "slug": "essential-addons-for-elementor-lite",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/essential-addons-for-elementor-lite/",
+            "latest_version": "6.1.4",
+            "last_updated": "2025-02-17T10:24:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.1.4",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sungoldsolar.com/wp-content/plugins/essential-addons-for-elementor-lite/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.sungoldsolar.com/wp-content/plugins/essential-addons-for-elementor-lite/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "gs-logo-slider": {
+            "slug": "gs-logo-slider",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/gs-logo-slider/",
+            "latest_version": "3.7.3",
+            "last_updated": "2025-01-16T09:55:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.7.3",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sungoldsolar.com/wp-content/plugins/gs-logo-slider/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.sungoldsolar.com/wp-content/plugins/gs-logo-slider/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "gtranslate": {
+            "slug": "gtranslate",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/gtranslate/",
+            "latest_version": "3.0.7",
+            "last_updated": "2024-11-26T20:21:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.0.7",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sungoldsolar.com/wp-content/plugins/gtranslate/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.sungoldsolar.com/wp-content/plugins/gtranslate/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "krs-elements": {
+            "slug": "krs-elements",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/krs-elements/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "sticky-buttons": {
+            "slug": "sticky-buttons",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/sticky-buttons/",
+            "latest_version": "4.1.2",
+            "last_updated": "2025-01-10T13:25:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Multiple Plugins from Wow-Company - Reflected XSS",
+                    "fixed_in": "3.1.1",
+                    "references": {
+                        "cve": [
+                            "2023-2362"
+                        ],
+                        "wpvulndb": [
+                            "27e70507-fd68-4915-88cf-0b96ed55208e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Sticky Buttons < 3.2.3 - Authenticated (Admin+) Stored Cross-Site Scripting",
+                    "fixed_in": "3.2.3",
+                    "references": {
+                        "cve": [
+                            "2024-0703"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b3c070be-e955-4076-9878-0b1044766397"
+                        ],
+                        "wpvulndb": [
+                            "9a5d2332-6e9d-4ec2-9e50-809ffc589c0e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Sticky Buttons < 3.2.4 - Button Deletion via CSRF",
+                    "fixed_in": "3.2.4",
+                    "references": {
+                        "cve": [
+                            "2024-3475"
+                        ],
+                        "wpvulndb": [
+                            "bf540242-5306-4c94-ad50-782d0d5b127f"
+                        ]
+                    }
+                },
+                {
+                    "title": "Sticky Buttons < 4.1.2 - Cross-Site Request Forgery to Settings Update",
+                    "fixed_in": "4.1.2",
+                    "references": {
+                        "cve": [
+                            "2025-24720"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/70dd560c-975c-4c64-a0e0-de856c5bae3a"
+                        ],
+                        "wpvulndb": [
+                            "c347059b-6c00-415b-85e2-5acfa16babbd"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "table-of-contents-plus": {
+            "slug": "table-of-contents-plus",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/table-of-contents-plus/",
+            "latest_version": "2411.1",
+            "last_updated": "2024-11-21T13:15:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "2411.1",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sungoldsolar.com/wp-content/plugins/table-of-contents-plus/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "tablepress": {
+            "slug": "tablepress",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/tablepress/",
+            "latest_version": "3.0.4",
+            "last_updated": "2025-02-20T06:01:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.0.3",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sungoldsolar.com/wp-content/plugins/tablepress/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.sungoldsolar.com/wp-content/plugins/tablepress/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "ultimate-elementor": {
+            "slug": "ultimate-elementor",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/ultimate-elementor/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "wp-rocket": {
+            "slug": "wp-rocket",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/wp-rocket/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Comment (Passive Detection)": {
+                    "confidence": 30,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.18.1",
+                "confidence": 60,
+                "found_by": "Translation File (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sungoldsolar.com/wp-content/plugins/wp-rocket/languages/rocket.pot, Match: 'Project-Id-Version: WP Rocket 3.18.1'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wpcf7-redirect": {
+            "slug": "wpcf7-redirect",
+            "location": "https://www.sungoldsolar.com/wp-content/plugins/wpcf7-redirect/",
+            "latest_version": "3.1.10",
+            "last_updated": "2025-01-10T13:28:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.1.9",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sungoldsolar.com/wp-content/plugins/wpcf7-redirect/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 22,
+        "requests_remaining": "Unlimited"
+    },
+    "stop_time": 1741430443,
+    "elapsed": 114,
+    "requests_done": 258,
+    "cached_requests": 6,
+    "data_sent": 60347,
+    "data_sent_humanised": "58.933 KB",
+    "data_received": 6807144,
+    "data_received_humanised": "6.492 MB",
+    "used_memory": 339058688,
+    "used_memory_humanised": "323.352 MB"
+}

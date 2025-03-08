@@ -1,0 +1,1422 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741430448,
+    "start_memory": 48906240,
+    "target_url": "https://www.auscregion5.org.bw/",
+    "target_ip": "169.1.20.6",
+    "effective_url": "https://www.auscregion5.org.bw/",
+    "interesting_findings": [
+        {
+            "url": "https://www.auscregion5.org.bw/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-litespeed-cache: hit",
+                "server: LiteSpeed",
+                "alt-svc: h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+            ]
+        },
+        {
+            "url": "https://www.auscregion5.org.bw/robots.txt",
+            "to_s": "robots.txt found: https://www.auscregion5.org.bw/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php",
+                "http://www.auscregion5.org.bw/wp-content/uploads/wpforms/"
+            ]
+        },
+        {
+            "url": "https://www.auscregion5.org.bw/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.auscregion5.org.bw/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.auscregion5.org.bw/readme.html",
+            "to_s": "WordPress readme found: https://www.auscregion5.org.bw/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.auscregion5.org.bw/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.auscregion5.org.bw/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.auscregion5.org.bw/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.auscregion5.org.bw/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.4.5",
+        "release_date": "2024-06-24",
+        "status": "outdated",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.auscregion5.org.bw/feed/, <generator>https://wordpress.org/?v=6.4.5</generator>",
+            "https://www.auscregion5.org.bw/comments/feed/, <generator>https://wordpress.org/?v=6.4.5</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "au-child",
+        "location": "https://www.auscregion5.org.bw/wp-content/themes/au-child/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": true,
+        "error_log_url": null,
+        "style_url": "https://www.auscregion5.org.bw/wp-content/themes/au-child/style.css?ver=6.4.5",
+        "style_name": "AUSCR5 Child",
+        "style_uri": "http://evirtek.com",
+        "description": "Child for AUSCR5",
+        "author": "Evirtek",
+        "author_uri": "http://evirtek.com",
+        "template": "au",
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "14.3",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.auscregion5.org.bw/wp-content/themes/au-child/style.css?ver=6.4.5, Match: 'Version: \t\t14.3'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://www.auscregion5.org.bw/wp-content/plugins/elementor/",
+            "latest_version": "3.27.6",
+            "last_updated": "2025-02-18T15:16:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Elementor Website Builder < 3.16.5 - Authenticated (Contributor+) Stored Cross-Site Scripting via get_inline_svg()",
+                    "fixed_in": "3.16.5",
+                    "references": {
+                        "cve": [
+                            "2023-47505"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b44ef21f-464e-487a-ba5a-fe889e4c488c"
+                        ],
+                        "wpvulndb": [
+                            "62b53acf-6551-4ea7-8727-039a3c9ba7ce"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.16.5 - Missing Authorization to Arbitrary Attachment Read",
+                    "fixed_in": "3.16.5",
+                    "references": {
+                        "cve": [
+                            "2023-47504"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c873c76a-144e-4945-8fa2-c9ffe0e3c061"
+                        ],
+                        "wpvulndb": [
+                            "e60f0f7e-4c3b-4107-803a-8e03526859ed"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.18.2 - Contributor+ Arbitrary File Upload to RCE via Template Import",
+                    "fixed_in": "3.18.2",
+                    "references": {
+                        "cve": [
+                            "2023-48777"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5b6d0a38-ac28-41c9-9da1-b30b3657b463"
+                        ],
+                        "wpvulndb": [
+                            "a6b3b14c-f06b-4506-9b88-854f155ebca9"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.19.1 - Authenticated(Contributor+) Arbitrary File Deletion and PHAR Deserialization",
+                    "fixed_in": "3.19.1",
+                    "references": {
+                        "cve": [
+                            "2024-24934"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4915b769-9499-40ac-835e-279e3a910558"
+                        ],
+                        "wpvulndb": [
+                            "4d7dfcc6-8c32-4e0d-b3bb-7e2685916e2b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder \u2013 More than Just a Page Builder < 3.19.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via get_image_alt",
+                    "fixed_in": "3.19.0",
+                    "references": {
+                        "cve": [
+                            "2024-0506"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4473d3f6-e324-40f5-b92b-167f76b17332"
+                        ],
+                        "wpvulndb": [
+                            "57af46d9-9a26-4085-9829-e0add7893332"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.20.3 - Contributor+ DOM Stored XSS",
+                    "fixed_in": "3.20.3",
+                    "references": {
+                        "cve": [
+                            "2024-2117"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c8d7448a-b8a6-4b0b-92df-a15272fc56bf"
+                        ],
+                        "wpvulndb": [
+                            "22e8d017-79f5-40c8-8a2c-e0ee42ba80c8"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.21.6 - Contributor+ DOM Stored XSS",
+                    "fixed_in": "3.21.6",
+                    "references": {
+                        "cve": [
+                            "2024-4619"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c7e1028e-e04b-46c4-b574-889d9fc1069d"
+                        ],
+                        "wpvulndb": [
+                            "8b8f30d6-bd11-4155-bfd2-3ac15248382b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.22.2 - Contributor+ Arbitrary SVG Download",
+                    "fixed_in": "3.22.2",
+                    "references": {
+                        "cve": [
+                            "2024-37437"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f11bc707-2465-4b64-945a-c0db6e9043dd"
+                        ],
+                        "wpvulndb": [
+                            "e6d56be1-9a2a-426f-88ca-1ffa773622c1"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder \u2013 More than Just a Page Builder < 3.24.0 - Authenticated (Contributor+) Stored Cross-Site Scripting in the URL Parameter in Multiple Widgets",
+                    "fixed_in": "3.24.0",
+                    "references": {
+                        "cve": [
+                            "2024-5416"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a99a64f7-1ea8-4de6-b24f-1f69bf25c1f5"
+                        ],
+                        "wpvulndb": [
+                            "5200943b-5e07-4342-a090-f78435e30d30"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.24.6 - Contributor+ Information Exposure via get_image_alt",
+                    "fixed_in": "3.24.6",
+                    "references": {
+                        "cve": [
+                            "2024-6757"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/96fa9ed7-6c13-4356-8a25-8a309be2b0e9"
+                        ],
+                        "wpvulndb": [
+                            "dce5ad0c-3ce9-498f-b0f7-8dfd6ee82e40"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.25.8 - Contributor+ Stored XSS",
+                    "fixed_in": "3.25.8",
+                    "references": {
+                        "cve": [
+                            "2024-8236"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b1305be5-8267-475f-b962-62e3930116e1"
+                        ],
+                        "wpvulndb": [
+                            "78f0847b-3f59-43cf-87db-2cadda862aa3"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.25.10 - Contributor+ Stored XSS via Typography Settings",
+                    "fixed_in": "3.25.10",
+                    "references": {
+                        "cve": [
+                            "2024-10453"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f23604b7-5a7f-4be7-bc73-cb4facdd1e73"
+                        ],
+                        "wpvulndb": [
+                            "2e05843d-1797-4da9-99ec-06376484fb32"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.27.5 - Contributor+ Stored XSS",
+                    "fixed_in": "3.27.5",
+                    "references": {
+                        "cve": [
+                            "2024-13445"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a11e702-34d2-49ee-8762-cc3614a7950a"
+                        ],
+                        "wpvulndb": [
+                            "25374232-2f9c-453d-bc47-124f80e67a92"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.25.11 - Contributor+ Stored XSS",
+                    "fixed_in": "3.25.11",
+                    "references": {
+                        "cve": [
+                            "2024-54444"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/wordpress/plugin/elementor/vulnerability/wordpress-elementor-plugin-3-25-10-cross-site-scripting-xss-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "61e1476a-cb14-46f9-b68c-4fd5b5c39597"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.16.4",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.auscregion5.org.bw/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.16.4",
+                    "https://www.auscregion5.org.bw/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.16.4"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.auscregion5.org.bw/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.auscregion5.org.bw/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor-pro": {
+            "slug": "elementor-pro",
+            "location": "https://www.auscregion5.org.bw/wp-content/plugins/elementor-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Elementor Pro < 3.19.3 - Authenticated (Contributor+) Information Exposure",
+                    "fixed_in": "3.19.3",
+                    "references": {
+                        "cve": [
+                            "2024-23523"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ecc8996a-d95c-4711-ac7d-523f5100c7fc"
+                        ],
+                        "wpvulndb": [
+                            "52195b1a-31b9-46da-bed8-7fdd2c6c8c14"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder Pro < 3.20.2 - Authententicated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "3.20.2",
+                    "references": {
+                        "cve": [
+                            "2024-1364"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/531954dd-ed3f-4626-adab-c1bba8407c89"
+                        ],
+                        "wpvulndb": [
+                            "d332bb66-e69c-4d11-8ff2-2c35d7ce2808"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder Pro < 3.20.2 - Authenticated (Contributor+) DOM-Based Stored Cross-Site Scripting via video_html_tag",
+                    "fixed_in": "3.20.2",
+                    "references": {
+                        "cve": [
+                            "2024-2781"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/54970085-5206-45b6-adcf-11e6dd4cd633"
+                        ],
+                        "wpvulndb": [
+                            "964c149d-fb08-4f86-a9a8-34a4412b5fdd"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder Pro < 3.20.2 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "3.20.2",
+                    "references": {
+                        "cve": [
+                            "2024-2121"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8698d6dd-7376-4d29-8a5c-21c239a7aa03"
+                        ],
+                        "wpvulndb": [
+                            "a48b0031-02f6-4871-beb3-0f61e1cd3d28"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder \u2013 More than Just a Page Builder < 3.20.2 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Navigation",
+                    "fixed_in": "3.20.2",
+                    "references": {
+                        "cve": [
+                            "2024-2120"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/de1742d4-f498-4ad4-b6a1-88cb60e83afc"
+                        ],
+                        "wpvulndb": [
+                            "ed24ea21-967a-43e3-8219-daed594c6e11"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder Pro < 3.20.2 - Authenticated (Contributor+) Stored Cross-Site Scripting via Form Widget SVGZ File Upload",
+                    "fixed_in": "3.20.2",
+                    "references": {
+                        "cve": [
+                            "2024-1521"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ecd01ea6-9476-47e1-9959-3f8d9ce1c1f3"
+                        ],
+                        "wpvulndb": [
+                            "249f4270-610c-4422-b34f-e714358fb398"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder Pro < 3.21.2 - Authenticated (Contributor+) DOM-Based Stored Cross-Site Scripting",
+                    "fixed_in": "3.21.2",
+                    "references": {
+                        "cve": [
+                            "2024-4107"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/0d5d47bd-4f05-4dc7-84c1-f7bc1196ee16"
+                        ],
+                        "wpvulndb": [
+                            "f54baf17-050d-4972-9631-3026dfb04496"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Pro < 3.21.3 - Reflected Cross-Site Scripting",
+                    "fixed_in": "3.21.3",
+                    "references": {
+                        "cve": [
+                            "2024-35656"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/2001d14c-2738-4d34-b465-0a76c2f772e6"
+                        ],
+                        "wpvulndb": [
+                            "b69f5b22-654f-459f-875d-ea6ba984b699"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder Pro \u2013 More than Just a Page Builder < 3.25.11 - Authenticated (Contributor+) Sensitive Information Exposure via Shortcode",
+                    "fixed_in": "3.25.11",
+                    "references": {
+                        "cve": [
+                            "2024-8494"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/94ada60f-1e20-454e-a9d7-7849be764d81"
+                        ],
+                        "wpvulndb": [
+                            "771699f9-aa9b-4352-8382-5fbc17f364c2"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.18.3",
+                "confidence": 90,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.auscregion5.org.bw/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.18.3",
+                    "https://www.auscregion5.org.bw/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.18.3",
+                    "https://www.auscregion5.org.bw/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.18.3"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.auscregion5.org.bw/wp-content/plugins/elementor-pro/changelog.txt, Match: '#### 3.18.3 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "elfsight-youtube-gallery-cc": {
+            "slug": "elfsight-youtube-gallery-cc",
+            "location": "https://www.auscregion5.org.bw/wp-content/plugins/elfsight-youtube-gallery-cc/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "essential-addons-for-elementor-lite": {
+            "slug": "essential-addons-for-elementor-lite",
+            "location": "https://www.auscregion5.org.bw/wp-content/plugins/essential-addons-for-elementor-lite/",
+            "latest_version": "6.1.4",
+            "last_updated": "2025-02-17T10:24:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Essential Addons for Elementor < 5.9.3 - Contributor+ Stored XSS",
+                    "fixed_in": "5.9.3",
+                    "references": {
+                        "cve": [
+                            "2023-7044"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/6e770e98-3c13-4e37-b51b-4c39bce2cb42"
+                        ],
+                        "wpvulndb": [
+                            "10a73fea-68b4-4861-8ac1-b5ac278fed11"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor < 5.9.5 - Contributor+ Stored Cross-Site Scripting via Image URl",
+                    "fixed_in": "5.9.5",
+                    "references": {
+                        "cve": [
+                            "2024-0585"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/417baa1c-29f0-4fec-8008-5b52359b3328"
+                        ],
+                        "wpvulndb": [
+                            "6955630f-29c0-4996-9184-325ea153dfcf"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor < 5.9.5 - Contributor+ Stored Cross-Site Scritping",
+                    "fixed_in": "5.9.5",
+                    "references": {
+                        "cve": [
+                            "2024-0586"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c00ff4bd-d846-4e3f-95ed-2a6430c47ebf"
+                        ],
+                        "wpvulndb": [
+                            "427af876-f60c-4219-b5de-1c72b41c0136"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor < 5.9.8 - Contributor+ Stored XSS",
+                    "fixed_in": "5.9.8",
+                    "references": {
+                        "cve": [
+                            "2024-0954"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/875db71d-c799-40b9-95e1-74d53046b0a9"
+                        ],
+                        "wpvulndb": [
+                            "d6f1740c-9e31-4be1-81ff-62bfd5b568fe"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor \u2013 Best Elementor Templates, Widgets, Kits & WooCommerce Builders < 5.9.9 - Contributor+ Stored Cross-Site Scripting via Filterable Gallery",
+                    "fixed_in": "5.9.9",
+                    "references": {
+                        "cve": [
+                            "2024-1171"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/fafdd087-9637-41df-bc5a-97e1a02ea744"
+                        ],
+                        "wpvulndb": [
+                            "49240593-fb6a-4d8c-a369-c4606cd9ee24"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor \u2013 Best Elementor Templates, Widgets, Kits & WooCommerce Builders < 5.9.9 - Contributor+ Stored Cross-Site Scripting via Accordion",
+                    "fixed_in": "5.9.9",
+                    "references": {
+                        "cve": [
+                            "2024-1172"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f2ff2cc6-b584-442b-890b-033a0a047c24"
+                        ],
+                        "wpvulndb": [
+                            "0a8dde9a-bac0-498d-a68e-466a29401a08"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor \u2013 Best Elementor Templates, Widgets, Kits & WooCommerce Builders < 5.9.9 - Contributor+ Stored Cross-Site Scripting",
+                    "fixed_in": "5.9.9",
+                    "references": {
+                        "cve": [
+                            "2024-1276"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/af8bee01-15bc-485e-8b01-8b68b199b34d"
+                        ],
+                        "wpvulndb": [
+                            "538a02f8-1aac-4f5e-ad22-7b98745be27e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor \u2013 Best Elementor Templates, Widgets, Kits & WooCommerce Builders < 5.9.9 - Contributor+ Stored Cross-Site Scripting",
+                    "fixed_in": "5.9.9",
+                    "references": {
+                        "cve": [
+                            "2024-1236"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/43014ecd-72d9-44cc-be24-c0c9790ddc20"
+                        ],
+                        "wpvulndb": [
+                            "5e0c33f9-178d-42ca-bc5f-f1354be951e5"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor < 5.9.10 - Contributor+ Stored Cross-Site Scripting via Data Table",
+                    "fixed_in": "5.9.10",
+                    "references": {
+                        "cve": [
+                            "2024-1537"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/81a48c61-4191-4252-9230-9df8fc5e3443"
+                        ],
+                        "wpvulndb": [
+                            "76499eab-5dee-4f9a-b7cf-d89d46ce5e8b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor < 5.9.10 - Contributor+ Stored Cross-Site Scripting via Event Calendar",
+                    "fixed_in": "5.9.10",
+                    "references": {
+                        "cve": [
+                            "2024-1536"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/12dc9e63-17bb-4755-be3c-ae8b26edd3cd"
+                        ],
+                        "wpvulndb": [
+                            "fc358e07-84d1-48c2-bc0a-72c399b3163c"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor < 5.9.12 - Contributor+ Stored XSS",
+                    "fixed_in": "5.9.12",
+                    "references": {
+                        "cve": [
+                            "2024-2650"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7242d808-9c33-4b3f-bda6-b4b72ca37de9"
+                        ],
+                        "wpvulndb": [
+                            "8a3c90da-f467-4795-b912-afe7c43e8258"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor < 5.9.12 - Contributor+ Stored XSS",
+                    "fixed_in": "5.9.12",
+                    "references": {
+                        "cve": [
+                            "2024-2623"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/baa92aee-a0a0-45d4-aa12-1449a829930c"
+                        ],
+                        "wpvulndb": [
+                            "78d2f15c-a336-4749-bd1e-9507165061f3"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor < 5.9.14 - Unauthenticated Private/Draft Posts Access",
+                    "fixed_in": "5.9.14",
+                    "references": {
+                        "cve": [
+                            "2024-2974"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/78f96d7f-aeca-4959-9573-0fb6402de007"
+                        ],
+                        "wpvulndb": [
+                            "e2aa7fa0-d9c4-4a41-9479-350ea2ba375a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor < 5.9.14 - Author+ PHP Object Injection",
+                    "fixed_in": "5.9.14",
+                    "references": {
+                        "cve": [
+                            "2024-3018"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/342049e5-834e-4867-8174-01ca7bb0caa2"
+                        ],
+                        "wpvulndb": [
+                            "1f720bb4-0018-4d46-83bb-034cb4d5c372"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor < 5.9.15 - Contributor+ Store XSS via Widget URL",
+                    "fixed_in": "5.9.15",
+                    "references": {
+                        "cve": [
+                            "2024-3333"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/aa5bdaf9-fbde-40d4-a72a-fd24489818b3"
+                        ],
+                        "wpvulndb": [
+                            "9833f8a9-837f-4e62-9050-c6f656b873a4"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor \u2013 Best Elementor Templates, Widgets, Kits & WooCommerce Builders < 5.9.16 - Contributor+ Stored Cross-Site Scripting",
+                    "fixed_in": "5.9.16",
+                    "references": {
+                        "cve": [
+                            "2024-4003"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/1cf3190c-e247-4bcc-99e0-2ab2d2fa0590"
+                        ],
+                        "wpvulndb": [
+                            "de4bd46a-d2fa-48ca-8344-3d7cc30667c5"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor  < 5.9.16 - Contributor+ Stored Cross-Site Scripting ",
+                    "fixed_in": "5.9.16",
+                    "references": {
+                        "cve": [
+                            "2024-3728"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/284ea577-ff67-4681-995b-f7bb5ef0ff3e"
+                        ],
+                        "wpvulndb": [
+                            "2c8eed37-8784-4c48-b819-e2dd4301ca20"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor  < 5.9.16 - Information Exposure",
+                    "fixed_in": "5.9.16",
+                    "references": {
+                        "cve": [
+                            "2024-3733"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/3d604f7a-947c-43f4-bba6-e7e98b2d7844"
+                        ],
+                        "wpvulndb": [
+                            "11c8df8e-822e-402e-b94f-81d15a7dfe0a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor \u2013 Best Elementor Templates, Widgets, Kits & WooCommerce Builders < 5.9.18 - Contributor+ Stored XSS",
+                    "fixed_in": "5.9.18",
+                    "references": {
+                        "cve": [
+                            "2024-4156"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/23a66e6b-cec0-4110-9bef-a5d41ce1c954"
+                        ],
+                        "wpvulndb": [
+                            "0341204b-0260-451f-ae5c-66d3afd81f9f"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor  < 5.9.20 - Contributor+ DOM-Based Stored Cross-Site Scripting via Several Widgets",
+                    "fixed_in": "5.9.20",
+                    "references": {
+                        "cve": [
+                            "2024-4449"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/57ed6c7e-ca8d-476d-adce-905b2cd2eda8"
+                        ],
+                        "wpvulndb": [
+                            "8841d5cd-c127-4777-b972-d8427d4eebaa"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor \u2013 Best Elementor Templates, Widgets, Kits & WooCommerce Builders < 5.9.20 - Contributor+ Stored Cross-Site Scripting via 'Interactive Circles'",
+                    "fixed_in": "5.9.20",
+                    "references": {
+                        "cve": [
+                            "2024-4275"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/91f50b65-f001-4c73-bfe3-1aed3fc10d26"
+                        ],
+                        "wpvulndb": [
+                            "2c2569a5-ed2a-43b4-a6ce-a7d022e8e1ee"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor \u2013 Best Elementor Templates, Widgets, Kits & WooCommerce Builders < 5.9.20 - Contributor+ Stored Cross-Site Scripting via 'Dual Color Header', 'Event Calendar', & 'Advanced Data Table'",
+                    "fixed_in": "5.9.20",
+                    "references": {
+                        "cve": [
+                            "2024-4448"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/21e12c72-7898-4896-9852-ebb10e5f9a3b"
+                        ],
+                        "wpvulndb": [
+                            "88adc90c-c6fd-4ede-adc9-6352f14865ba"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor < 5.9.21 - Contributor+ Stored Cross-Site Scripting",
+                    "fixed_in": "5.9.21",
+                    "references": {
+                        "cve": [
+                            "2024-4624"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/bedad627-0ccb-41c1-be8d-753f57be618f"
+                        ],
+                        "wpvulndb": [
+                            "8d3e9c10-0d69-4cc0-89b8-cb03fbed6a80"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor < 5.9.16 - Contributor+ Stored XSS",
+                    "fixed_in": "5.9.16",
+                    "references": {
+                        "cve": [
+                            "2024-34764"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/essential-addons-for-elementor-lite/wordpress-essential-addons-for-elementor-plugin-5-9-15-cross-site-scripting-xss-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "a1576ab5-3031-4c4f-a23b-a8223d782d47"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor < 5.9.22 - Contributor+ Stored Cross-Site Scripting via Twitter Feed",
+                    "fixed_in": "5.9.22",
+                    "references": {
+                        "cve": [
+                            "2024-5073"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c8db80ef-5863-41dd-b33f-850984a72ee6"
+                        ],
+                        "wpvulndb": [
+                            "01ce1a9e-0147-4dcf-b7e7-8ac8981b66a9"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor \u2013 Best Elementor Templates, Widgets, Kits & WooCommerce Builders < 5.9.24 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "5.9.24",
+                    "references": {
+                        "cve": [
+                            "2024-5189"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/aa70238b-530e-4c90-82f4-c3113887d0e1"
+                        ],
+                        "wpvulndb": [
+                            "9b5b4899-630b-45c7-8fd3-6227594a3353"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor \u2013 Best Elementor Templates, Widgets, Kits & WooCommerce Builders < 5.9.23 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "5.9.23",
+                    "references": {
+                        "cve": [
+                            "2024-5188"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5a1d5fd1-80b6-4d62-9837-59ee1e020373"
+                        ],
+                        "wpvulndb": [
+                            "cc3a2660-8612-42f1-bbba-714a0e35ae67"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor < 5.9.27 - Contributor+ Stored Cross-Site Scripting",
+                    "fixed_in": "5.9.27",
+                    "references": {
+                        "cve": [
+                            "2024-39649"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/eee7cad6-7910-4860-add9-c500d1f6eff3"
+                        ],
+                        "wpvulndb": [
+                            "cc22a6d6-ec4a-4d99-b9bd-a5e8a7b3190b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor \u2013 Best Elementor Templates, Widgets, Kits & WooCommerce Builders < 6.0.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via no_more_items_text Parameter",
+                    "fixed_in": "6.0.0",
+                    "references": {
+                        "cve": [
+                            "2024-7092"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/718c60c1-6117-4959-a907-d0ef457f7185"
+                        ],
+                        "wpvulndb": [
+                            "1f60d021-f6f6-4b0f-a4bc-33d9ceb5585a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor -- Best Elementor Templates, Widgets, Kits & WooCommerce Builders < 6.0.4 - Authenticated (Contributor+) Stored Cross-Site Scripting via Fancy Text Widget",
+                    "fixed_in": "6.0.4",
+                    "references": {
+                        "cve": [
+                            "2024-8440"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c5960396-5320-4978-aa82-2e33700daa43"
+                        ],
+                        "wpvulndb": [
+                            "67d77982-c78a-4157-ba61-3e92fde4b11e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor < 6.0.4 - Authenticated (Contributor+) Stored Cross-Site Scripting via Filterable Gallery Widget",
+                    "fixed_in": "6.0.4",
+                    "references": {
+                        "cve": [
+                            "2024-8742"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/76c292dc-e9da-4256-82df-58ac5def4771"
+                        ],
+                        "wpvulndb": [
+                            "e5f8716d-e776-4b05-b2c2-a305ed71a0a2"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor \u2013 Best Elementor Addon, Templates, Widgets, Kits & WooCommerce Builders < 6.0.8 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.0.8",
+                    "references": {
+                        "cve": [
+                            "2024-8961"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/45ef20aa-18e3-4ad8-a94e-76e29de5b562"
+                        ],
+                        "wpvulndb": [
+                            "3e29634c-31c7-493c-8a4a-1fbd0c0c17ab"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor \u2013 Best Elementor Addon, Templates, Widgets, Kits & WooCommerce Builders < 6.0.10 - Authenticated (Author+) Sensitive Information Exposure to Privilege Escalation",
+                    "fixed_in": "6.0.10",
+                    "references": {
+                        "cve": [
+                            "2024-8979"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/34d09086-be33-40cf-b5bf-d6c03cf0b68a"
+                        ],
+                        "wpvulndb": [
+                            "c65ffc91-b5e2-48f1-a6c2-dfdc4edb580d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor \u2013 Best Elementor Addon, Templates, Widgets, Kits & WooCommerce Builders < 6.0.10 - Authenticated (Contributor+) Sensitive Information Exposure",
+                    "fixed_in": "6.0.10",
+                    "references": {
+                        "cve": [
+                            "2024-8978"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/baae8fb9-b87c-4f61-88da-871c4c83615b"
+                        ],
+                        "wpvulndb": [
+                            "d6c28b29-bcd1-4d7b-b177-771673ab57e6"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Addons for Elementor < 6.0.8 - Contributor+ Stored XSS",
+                    "fixed_in": "6.0.8",
+                    "references": {
+                        "cve": [
+                            "2024-56063"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/167d3e1d-be74-4bfb-b3bf-e2c53d90e12f"
+                        ],
+                        "wpvulndb": [
+                            "8d2716aa-ab69-4758-ab3f-9813f6d9173c"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "5.8.9",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.auscregion5.org.bw/wp-content/plugins/essential-addons-for-elementor-lite/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.auscregion5.org.bw/wp-content/plugins/essential-addons-for-elementor-lite/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "jet-blog": {
+            "slug": "jet-blog",
+            "location": "https://www.auscregion5.org.bw/wp-content/plugins/jet-blog/",
+            "latest_version": "2.4.3",
+            "last_updated": "2025-02-12T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "jet-elements": {
+            "slug": "jet-elements",
+            "location": "https://www.auscregion5.org.bw/wp-content/plugins/jet-elements/",
+            "latest_version": "2.7.4.1",
+            "last_updated": "2025-03-01T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "JetElements For Elementor < 2.6.13.1 - Missing Authorization to Unauthenticated Arbitrary Attachment Download",
+                    "fixed_in": "2.6.13.1",
+                    "references": {
+                        "cve": [
+                            "2023-48759"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d199e597-64ed-4dcc-a153-b5c8e4e9e93d"
+                        ],
+                        "wpvulndb": [
+                            "cf9c4f4f-d7ba-41c5-b817-61f5879119f8"
+                        ]
+                    }
+                },
+                {
+                    "title": "JetElements < 2.6.20.1 - Authenticated (Contributor+) Arbitrary Local File Inclusion",
+                    "fixed_in": "2.6.20.1",
+                    "references": {
+                        "cve": [
+                            "2024-7145"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/793f27ec-a3bb-4273-a41c-cc5b04c8e8fc"
+                        ],
+                        "wpvulndb": [
+                            "b662edc4-80d7-4a4e-a4d3-31bc94257cf2"
+                        ]
+                    }
+                },
+                {
+                    "title": "JetElements < 2.6.20.1 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "2.6.20.1",
+                    "references": {
+                        "cve": [
+                            "2024-7144"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c5e64adf-49b3-4e85-8dc1-918f7e92965b"
+                        ],
+                        "wpvulndb": [
+                            "c8adfc30-3ad4-4514-b50a-1c3f04a9299a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Jet Elements < 2.7.3 - Authenticated (Contributor+) Stored Cross-Site Scripting via Multiple Widgets",
+                    "fixed_in": "2.7.3",
+                    "references": {
+                        "cve": [
+                            "2025-0371"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ded2f366-375c-4cf6-9cbd-c969a3b3d6d5"
+                        ],
+                        "wpvulndb": [
+                            "3e40c945-5ff3-4d3a-b690-3b2dc1a77c74"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "superfly-menu": {
+            "slug": "superfly-menu",
+            "location": "https://www.auscregion5.org.bw/wp-content/plugins/superfly-menu/",
+            "latest_version": null,
+            "last_updated": "2024-08-01T23:22:48.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WordPress Menu Plugin \u2014 Superfly Responsive Menu <= 5.0.25 - Authenticated (Subscriber+) Stored Cross-Site Scripting",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2024-32553"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/701bcf98-fcb4-4722-9bf1-b94efe3bb1fd"
+                        ],
+                        "wpvulndb": [
+                            "3647aa46-928c-44b3-9a71-a703513c61dc"
+                        ]
+                    }
+                },
+                {
+                    "title": "WordPress Menu Plugin \u2014 Superfly Responsive Menu < 5.0.30 - Cross-Site Request Forgery to Arbitrary File Deletion",
+                    "fixed_in": "5.0.30",
+                    "references": {
+                        "cve": [
+                            "2024-3238"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/3608fce3-0869-4516-ae08-68108f733c37"
+                        ],
+                        "wpvulndb": [
+                            "31fe3e73-241e-48e0-aae9-f3c9d5abe868"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "ubermenu": {
+            "slug": "ubermenu",
+            "location": "https://www.auscregion5.org.bw/wp-content/plugins/ubermenu/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Uber Menu < 3.8.3 - Authenticated (Contributor+) Stored Cross-Site Scripting via Multiple Shortcodes",
+                    "fixed_in": "3.8.3",
+                    "references": {
+                        "cve": [
+                            "2024-4710"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/96161594-9513-49f7-91ab-9ad05b900a81"
+                        ],
+                        "wpvulndb": [
+                            "12e6f32d-0a11-4f38-9672-dfd33564f1e4"
+                        ]
+                    }
+                },
+                {
+                    "title": "UberMenu < 3.8.4 - Cross-Site Request Forgery to Settings Reset",
+                    "fixed_in": "3.8.4",
+                    "references": {
+                        "cve": [
+                            "2024-3593"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/621ef583-bf99-4b81-ae9c-b4f1c86b86aa"
+                        ],
+                        "wpvulndb": [
+                            "310e19e2-c7e2-4244-9ec2-287718992036"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "wpforms": {
+            "slug": "wpforms",
+            "location": "https://www.auscregion5.org.bw/wp-content/plugins/wpforms/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "WPForms Pro < 1.7.7 - CSV Injection",
+                    "fixed_in": "1.7.7",
+                    "references": {
+                        "cve": [
+                            "2022-3574"
+                        ],
+                        "wpvulndb": [
+                            "0eae5189-81af-4344-9e96-dd1f4e223d41"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPForms Pro < 1.8.5.4 - Unauthenticated Stored Cross-Site Scripting via Form Submission",
+                    "fixed_in": "1.8.5.4",
+                    "references": {
+                        "cve": [
+                            "2023-7063"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/31c080b8-ba00-4e96-8961-2a1c3a017004"
+                        ],
+                        "wpvulndb": [
+                            "6d642d46-a2fe-4b07-a53d-1935126b7e6b"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 11,
+        "requests_remaining": 12
+    },
+    "stop_time": 1741430497,
+    "elapsed": 48,
+    "requests_done": 231,
+    "cached_requests": 7,
+    "data_sent": 64390,
+    "data_sent_humanised": "62.881 KB",
+    "data_received": 1888041,
+    "data_received_humanised": "1.801 MB",
+    "used_memory": 310452224,
+    "used_memory_humanised": "296.07 MB"
+}

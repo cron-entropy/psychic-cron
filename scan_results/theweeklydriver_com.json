@@ -1,0 +1,449 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741430502,
+    "start_memory": 48824320,
+    "target_url": "https://theweeklydriver.com/",
+    "target_ip": "172.67.74.41",
+    "effective_url": "https://theweeklydriver.com/",
+    "interesting_findings": [
+        {
+            "url": "https://theweeklydriver.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "cf-ray: 91d1b8a6487d07e9-IAD",
+                "cf-cache-status: HIT",
+                "cf-apo-via: tcache",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=JS1FfgHTo%2BkGG0Cqjsw%2BlItlqxxc6HPqtN0eXwzh5To8OK606jtW%2BG7P7tMueOGMg0pBALaM7cGgc6r0IzexkBHSUXa%2FX7aM4e%2F9naYIpzHlSpssakYym5ZZ6nKRuH5Bihs5Xfs%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "alt-svc: h3=\":443\"; ma=86400",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=5291&min_rtt=5225&rtt_var=1163&sent=5&recv=8&lost=0&retrans=0&sent_bytes=3423&recv_bytes=818&delivery_rate=545662&cwnd=252&unsent_bytes=0&cid=a911bdd487411352&ts=30&x=0\""
+            ]
+        },
+        {
+            "url": "https://theweeklydriver.com/robots.txt",
+            "to_s": "robots.txt found: https://theweeklydriver.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/cgi-bin/\r",
+                "/tmp/\r"
+            ]
+        },
+        {
+            "url": "https://theweeklydriver.com/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://theweeklydriver.com/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Most Common Wp Includes Query Parameter In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://theweeklydriver.com/wp-includes/css/dist/block-library/style.min.css?ver=6.7.2"
+        ],
+        "confirmed_by": {
+            "Query Parameter In Install Page (Aggressive Detection)": {
+                "confidence": 100,
+                "interesting_entries": [
+                    "https://theweeklydriver.com/wp-includes/css/dashicons.min.css?ver=6.7.2",
+                    "https://theweeklydriver.com/wp-includes/css/buttons.min.css?ver=6.7.2",
+                    "https://theweeklydriver.com/wp-admin/css/forms.min.css?ver=6.7.2",
+                    "https://theweeklydriver.com/wp-admin/css/l10n.min.css?ver=6.7.2",
+                    "https://theweeklydriver.com/wp-admin/css/install.min.css?ver=6.7.2"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "generatepress",
+        "location": "https://theweeklydriver.com/wp-content/themes/generatepress/",
+        "latest_version": "3.5.1",
+        "last_updated": "2024-09-04T00:00:00.000Z",
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://theweeklydriver.com/wp-content/themes/generatepress/style.css",
+        "style_name": null,
+        "style_uri": null,
+        "description": null,
+        "author": null,
+        "author_uri": null,
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 10,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 8,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": null,
+        "parents": []
+    },
+    "plugins": {
+        "complianz-gdpr-premium": {
+            "slug": "complianz-gdpr-premium",
+            "location": "https://theweeklydriver.com/wp-content/plugins/complianz-gdpr-premium/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Complianz (Free < 6.3.4, Premium < 6.3.6) - Translator SQLi",
+                    "fixed_in": "6.3.6",
+                    "references": {
+                        "cve": [
+                            "2022-3494"
+                        ],
+                        "wpvulndb": [
+                            "71db75c0-5907-4237-884f-8db88b1a9b34"
+                        ]
+                    }
+                },
+                {
+                    "title": "Complianz - GDPR/CCPA Cookie Consent < 6.4.2 - Contributor+ Stored XSS",
+                    "fixed_in": "6.4.2",
+                    "references": {
+                        "cve": [
+                            "2023-1069"
+                        ],
+                        "wpvulndb": [
+                            "caacc50c-822e-46e9-bc0b-681349fd0dda"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "google-site-kit": {
+            "slug": "google-site-kit",
+            "location": "https://theweeklydriver.com/wp-content/plugins/google-site-kit/",
+            "latest_version": "1.147.0",
+            "last_updated": "2025-02-25T15:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Meta Tag (Passive Detection)",
+            "confidence": 40,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.147.0",
+                "confidence": 60,
+                "found_by": "Meta Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://theweeklydriver.com/, Match: 'Site Kit by Google 1.147.0'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "gp-premium": {
+            "slug": "gp-premium",
+            "location": "https://theweeklydriver.com/wp-content/plugins/gp-premium/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "GP Premium < 2.4.1 - Reflected Cross-Site Scripting",
+                    "fixed_in": "2.4.1",
+                    "references": {
+                        "cve": [
+                            "2024-3469"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/1a697391-f30d-403f-9046-8fa219a49302"
+                        ],
+                        "wpvulndb": [
+                            "0628b80c-279d-4434-839c-fb9bd26d1ad7"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "novashare": {
+            "slug": "novashare",
+            "location": "https://theweeklydriver.com/wp-content/plugins/novashare/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "perfmatters": {
+            "slug": "perfmatters",
+            "location": "https://theweeklydriver.com/wp-content/plugins/perfmatters/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Perfmatters < 2.1.7 - Reflected Cross-Site Scripting",
+                    "fixed_in": "2.1.7",
+                    "references": {
+                        "cve": [
+                            "2023-47876"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/612fb73f-e488-453f-a2a4-32969f91122b"
+                        ],
+                        "wpvulndb": [
+                            "51183e0d-d440-41b9-ba3a-c7b9a4eef5a7"
+                        ]
+                    }
+                },
+                {
+                    "title": "Perfmatters < 2.1.7 - Cross-Site Request Forgery",
+                    "fixed_in": "2.1.7",
+                    "references": {
+                        "cve": [
+                            "2023-47875"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/95f5b4df-5214-4f36-8dd5-a1a816fbc3db"
+                        ],
+                        "wpvulndb": [
+                            "2bf36300-ec71-48e1-8ba8-10a3d60a40c5"
+                        ]
+                    }
+                },
+                {
+                    "title": "Perfmatters < 2.1.7 - Missing Authorization",
+                    "fixed_in": "2.1.7",
+                    "references": {
+                        "cve": [
+                            "2023-47874"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b078e446-61e7-4ce1-b9a9-480ccc388c72"
+                        ],
+                        "wpvulndb": [
+                            "b198f9f4-8df5-4662-a56f-d6c341183ad8"
+                        ]
+                    }
+                },
+                {
+                    "title": "Perfmatters < 2.2.0 - Authenticated (Subscriber+) Stored Cross-Site Scripting",
+                    "fixed_in": "2.2.0",
+                    "references": {
+                        "cve": [
+                            "2023-47877"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/cc4a7efd-f4f4-44a7-bd55-a6ae3a1d3521"
+                        ],
+                        "wpvulndb": [
+                            "b928044f-28e2-46ba-b654-3202f1a8e95f"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "simple-tags": {
+            "slug": "simple-tags",
+            "location": "https://theweeklydriver.com/wp-content/plugins/simple-tags/",
+            "latest_version": "3.32.0",
+            "last_updated": "2025-03-03T14:57:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "TaxoPress < 3.0.7.2 - Authenticated Stored Cross-Site Scripting (XSS)",
+                    "fixed_in": "3.0.7.2",
+                    "references": {
+                        "cve": [
+                            "2021-24444"
+                        ],
+                        "wpvulndb": [
+                            "a31321fe-adc6-4480-a220-35aedca52b8b"
+                        ]
+                    }
+                },
+                {
+                    "title": "TaxoPress < 3.4.5 - Reflected Cross-Site Scripting",
+                    "fixed_in": "3.4.5",
+                    "references": {
+                        "wpvulndb": [
+                            "b5509e79-1f17-48be-afcb-26329112dd9f"
+                        ]
+                    }
+                },
+                {
+                    "title": "TaxoPress < 3.6.5 - Editor+ Stored XSS",
+                    "fixed_in": "3.6.5",
+                    "references": {
+                        "cve": [
+                            "2023-2168",
+                            "2023-2169",
+                            "2023-2170"
+                        ],
+                        "wpvulndb": [
+                            "bcba8a87-4c9e-4b0e-a47e-f89da994d1c3"
+                        ]
+                    }
+                },
+                {
+                    "title": "WordPress Tag and Category Manager \u2013 AI Autotagger < 3.20.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "3.20.0",
+                    "references": {
+                        "cve": [
+                            "2024-2830"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/0f537479-d5ec-46bb-a04e-2c33a2abc759"
+                        ],
+                        "wpvulndb": [
+                            "94b2bf74-481d-473d-b57d-ab28ea933e34"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "wp-rocket": {
+            "slug": "wp-rocket",
+            "location": "https://theweeklydriver.com/wp-content/plugins/wp-rocket/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Comment (Passive Detection)": {
+                    "confidence": 30,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WP Rocket <= 2.10.3 - Local File Inclusion (LFI)",
+                    "fixed_in": "2.10.4",
+                    "references": {
+                        "cve": [
+                            "2017-11658"
+                        ],
+                        "url": [
+                            "https://wp-rocket.me/changelog",
+                            "https://gist.github.com/Shinkurt/157dbb3767c9489f3d754f79b183a890"
+                        ],
+                        "wpvulndb": [
+                            "5484d821-7017-47a8-90d8-7d87cb5e0e50"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 9,
+        "requests_remaining": 16
+    },
+    "stop_time": 1741430776,
+    "elapsed": 273,
+    "requests_done": 223,
+    "cached_requests": 7,
+    "data_sent": 50741,
+    "data_sent_humanised": "49.552 KB",
+    "data_received": 2543134,
+    "data_received_humanised": "2.425 MB",
+    "used_memory": 272080896,
+    "used_memory_humanised": "259.477 MB"
+}

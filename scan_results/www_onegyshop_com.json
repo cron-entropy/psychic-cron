@@ -1,0 +1,1417 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741430924,
+    "start_memory": 48861184,
+    "target_url": "https://www.onegyshop.com/",
+    "target_ip": "165.140.70.70",
+    "effective_url": "https://www.onegyshop.com/",
+    "interesting_findings": [
+        {
+            "url": "https://www.onegyshop.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-powered-by: PHP/8.1.31",
+                "x-litespeed-cache: hit",
+                "server: LiteSpeed",
+                "alt-svc: h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+            ]
+        },
+        {
+            "url": "https://www.onegyshop.com/robots.txt",
+            "to_s": "robots.txt found: https://www.onegyshop.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-content/uploads/wc-logs/",
+                "/wp-content/uploads/woocommerce_transient_files/",
+                "/wp-content/uploads/woocommerce_uploads/",
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Emoji Settings (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.onegyshop.com/, Match: 'wp-includes\\/js\\/wp-emoji-release.min.js?ver=6.7.2'"
+        ],
+        "confirmed_by": {
+            "Meta Generator (Passive Detection)": {
+                "confidence": 60,
+                "interesting_entries": [
+                    "https://www.onegyshop.com/, Match: 'WordPress 6.7.2'"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "online-shop",
+        "location": "https://www.onegyshop.com/wp-content/themes/online-shop/",
+        "latest_version": "3.1.1",
+        "last_updated": "2025-02-06T00:00:00.000Z",
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.onegyshop.com/wp-content/themes/online-shop/style.css?ver=1.3.2",
+        "style_name": null,
+        "style_uri": null,
+        "description": null,
+        "author": null,
+        "author_uri": null,
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 70,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": null,
+        "parents": []
+    },
+    "plugins": {
+        "add-search-to-menu": {
+            "slug": "add-search-to-menu",
+            "location": "https://www.onegyshop.com/wp-content/plugins/add-search-to-menu/",
+            "latest_version": "5.5.9",
+            "last_updated": "2025-01-29T11:01:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Ivory Search < 4.5.11 -  Authenticated Reflected Cross-Site Scripting (XSS)",
+                    "fixed_in": "4.5.11",
+                    "references": {
+                        "wpvulndb": [
+                            "7794b721-bbd5-43f6-b3af-b86426b359a2"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ivory Search < 4.6.1 - Reflected Cross Site Scripting (XSS)",
+                    "fixed_in": "4.6.1",
+                    "references": {
+                        "cve": [
+                            "2021-24234"
+                        ],
+                        "url": [
+                            "https://www.getastra.com/blog/911/plugin-exploit/reflected-xss-vulnerability-in-ivory-search-wp-plugin/",
+                            "https://www.jinsonvarghese.com/reflected-xss-vulnerability-found-in-ivory-search-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "ecc620be-8e29-4860-9d32-86b5814a3835"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ivory Search < 4.7 - Reflected Cross-Site Scripting",
+                    "fixed_in": "4.7",
+                    "references": {
+                        "cve": [
+                            "2021-36869"
+                        ],
+                        "wpvulndb": [
+                            "e3c6b9b7-5b6f-44db-8204-9cfedfced1cd"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ivory Search < 4.8 - Contributor+ Stored Cross-Site Scripting",
+                    "fixed_in": "4.8",
+                    "references": {
+                        "wpvulndb": [
+                            "8eb624d0-4d43-4c25-86b7-41ff5d595bb8"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ivory Search < 5.4.1 - Multiple Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "5.4.1",
+                    "references": {
+                        "cve": [
+                            "2021-25105"
+                        ],
+                        "wpvulndb": [
+                            "a9ab9e84-7f5e-4e7c-8647-114d9e02e59f"
+                        ]
+                    }
+                },
+                {
+                    "title": "Unauthorised AJAX Calls via Freemius",
+                    "fixed_in": "5.4.4",
+                    "references": {
+                        "wpvulndb": [
+                            "6dae6dca-7474-4008-9fe5-4c62b9f12d0a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ivory Search < 5.4.7 - Reflected Cross-Site Scripting",
+                    "fixed_in": "5.4.7",
+                    "references": {
+                        "wpvulndb": [
+                            "1b1fe9af-6b09-4239-a0f1-7e503aacecbd"
+                        ]
+                    }
+                },
+                {
+                    "title": "Freemius SDK < 2.5.10 - Reflected Cross-Site Scripting",
+                    "fixed_in": "5.5.2",
+                    "references": {
+                        "cve": [
+                            "2023-33999"
+                        ],
+                        "wpvulndb": [
+                            "58ab5352-d783-431a-b0a5-382381cc13fd"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ivory Search \u2013 WordPress Search Plugin < 5.5.6 - Subscriber+ Index Creation",
+                    "fixed_in": "5.5.6",
+                    "references": {
+                        "cve": [
+                            "2024-3233"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/cc9935d8-7790-457b-88bf-bee5e13b0f5a"
+                        ],
+                        "wpvulndb": [
+                            "083e5eb6-2ab0-4f76-ba93-909672e9eab2"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ivory Search \u2013 WordPress Search Plugin < 5.5.7 - Information Exposure via AJAX Search Form",
+                    "fixed_in": "5.5.7",
+                    "references": {
+                        "cve": [
+                            "2024-6835"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/013f7c26-8348-4c54-af61-473a720a5095"
+                        ],
+                        "wpvulndb": [
+                            "080563b7-8188-4e52-b50e-10c5c5f349a5"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "astra-sites": {
+            "slug": "astra-sites",
+            "location": "https://www.onegyshop.com/wp-content/plugins/astra-sites/",
+            "latest_version": "4.4.14",
+            "last_updated": "2025-02-24T12:35:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Starter Templates < 2.7.1 - Contributor+ Block Import to Stored XSS",
+                    "fixed_in": "2.7.1",
+                    "references": {
+                        "cve": [
+                            "2021-42360"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/11/over-1-million-sites-impacted-by-vulnerability-in-starter-templates-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "f7f2e9f9-685d-42ba-bde1-01372c9c7c73"
+                        ]
+                    }
+                },
+                {
+                    "title": "Starter Templates <= 3.1.20 - Settings Update via CSRF",
+                    "fixed_in": "3.1.21",
+                    "references": {
+                        "cve": [
+                            "2022-46851"
+                        ],
+                        "wpvulndb": [
+                            "9e06baec-abf5-4032-a1fe-f7a0f9b19187"
+                        ]
+                    }
+                },
+                {
+                    "title": "Starter Templates <= 3.2.5 - Incorrect Authorization",
+                    "fixed_in": "3.2.6",
+                    "references": {
+                        "cve": [
+                            "2023-41805"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ebd78e52-f20d-42be-8f68-3d09d5abf837"
+                        ],
+                        "wpvulndb": [
+                            "3399b6cd-9d5d-4e36-a527-f0a73897ee0c"
+                        ]
+                    }
+                },
+                {
+                    "title": "Starter Templates <= 3.2.4 - Authenticated (Contributor+) Server-Side Request Forgery",
+                    "fixed_in": "3.2.5",
+                    "references": {
+                        "cve": [
+                            "2023-41804"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/6e0bdbba-2b67-42b9-8c26-115d472aed0e"
+                        ],
+                        "wpvulndb": [
+                            "fbedd0b1-a622-4114-ab94-9575797b0c9e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Starter Templates \u2014 Elementor, WordPress & Beaver Builder Templates < 4.1.7 - Contributor+ Server-Side Request Forgery",
+                    "fixed_in": "4.1.7",
+                    "references": {
+                        "cve": [
+                            "2024-1467"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/cf5075f9-9658-4a09-bd38-34a72f6560f4"
+                        ],
+                        "wpvulndb": [
+                            "2abb23e5-9e4a-4108-a1da-6d0442194e86"
+                        ]
+                    }
+                },
+                {
+                    "title": "Starter Templates \u2014 Elementor, WordPress & Beaver Builder Templates < 4.2.2 - Contributor+ Stored Cross-Site Scripting",
+                    "fixed_in": "4.2.2",
+                    "references": {
+                        "cve": [
+                            "2024-4630"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/25edb9e8-65ea-41d1-a95f-09be110ec1d2"
+                        ],
+                        "wpvulndb": [
+                            "530ec495-fbb4-4c47-8700-da72cfa6416b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Starter Templates < 4.4.1 - Author+ Stored XSS",
+                    "fixed_in": "4.4.1",
+                    "references": {
+                        "cve": [
+                            "2024-47345"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/astra-sites/wordpress-starter-templates-elementor-wordpress-beaver-builder-templates-plugin-4-4-0-cross-site-scripting-xss-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "3a0761fd-f853-4842-b306-73bfdc94da1a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Starter Templates < 4.4.10 - Cross-Site Request Forgery",
+                    "fixed_in": "4.4.10",
+                    "references": {
+                        "cve": [
+                            "2025-24568"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/014392ee-4b24-4b81-954e-fc87727436ab"
+                        ],
+                        "wpvulndb": [
+                            "fb4cede3-576f-4d70-b486-cf072337bf44"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "chat-widgets-for-multivendor-marketplaces": {
+            "slug": "chat-widgets-for-multivendor-marketplaces",
+            "location": "https://www.onegyshop.com/wp-content/plugins/chat-widgets-for-multivendor-marketplaces/",
+            "latest_version": "2.1.1",
+            "last_updated": "2022-12-08T19:15:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "coblocks": {
+            "slug": "coblocks",
+            "location": "https://www.onegyshop.com/wp-content/plugins/coblocks/",
+            "latest_version": "3.1.14",
+            "last_updated": "2024-12-20T22:31:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Page Builder Gutenberg Blocks < 3.1.7 - Contributor+ Stored XSS",
+                    "fixed_in": "3.1.7",
+                    "references": {
+                        "cve": [
+                            "2024-2369"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-2369/"
+                        ],
+                        "wpvulndb": [
+                            "252dfc35-4c8c-4304-aa09-73dfe986b10d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Page Builder Gutenberg Blocks \u2013 CoBlocks < 3.1.7 - Contributor+ Stored XSS",
+                    "fixed_in": "3.1.7",
+                    "references": {
+                        "cve": [
+                            "2024-1049"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/56d1d152-946f-47c9-b0d5-76513370677f"
+                        ],
+                        "wpvulndb": [
+                            "c0dc37d2-01b4-49ae-94c7-8dbd00c0f50e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Page Builder Gutenberg Blocks \u2013 CoBlocks < 3.1.10 - Authenticated (Contributor+) Stored Cross-Site Scripting via Social Profiles",
+                    "fixed_in": "3.1.10",
+                    "references": {
+                        "cve": [
+                            "2024-2933"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/020d14f8-e8e2-4da2-9a4b-4d15cb0994c8"
+                        ],
+                        "wpvulndb": [
+                            "fc0d6908-5556-4b9a-88ad-7b871203a662"
+                        ]
+                    }
+                },
+                {
+                    "title": "CoBlocks < 3.1.12 - Contributor+ SSRF",
+                    "fixed_in": "3.1.12",
+                    "references": {
+                        "cve": [
+                            "2024-4260"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-4260/"
+                        ],
+                        "wpvulndb": [
+                            "69f33e20-8ff4-491c-8f37-a4eadd4ea8cf"
+                        ]
+                    }
+                },
+                {
+                    "title": "CoBlocks < 3.1.13 - Editor+ Stored XSS",
+                    "fixed_in": "3.1.13",
+                    "references": {
+                        "cve": [
+                            "2024-7132"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-7132/"
+                        ],
+                        "wpvulndb": [
+                            "16deb743-6fe9-43a2-9586-d92cfe1daa17"
+                        ]
+                    }
+                },
+                {
+                    "title": "CoBlocks < 3.1.14 - Missing Authorization",
+                    "fixed_in": "3.1.14",
+                    "references": {
+                        "cve": [
+                            "2025-24751"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/9699970f-76a4-4f10-9836-4e46ac8d6914"
+                        ],
+                        "wpvulndb": [
+                            "f1cba904-189d-48a2-83d1-c1c2cf86edf5"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://www.onegyshop.com/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.4",
+            "last_updated": "2025-02-18T06:51:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.0.4",
+                "confidence": 10,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.onegyshop.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.0.4"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "easy-pricing-tables": {
+            "slug": "easy-pricing-tables",
+            "location": "https://www.onegyshop.com/wp-content/plugins/easy-pricing-tables/",
+            "latest_version": "4.0.2",
+            "last_updated": "2025-03-01T07:12:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Easy Pricing Tables < 3.1.3 - Arbitrary Post Removal via CSRF",
+                    "fixed_in": "3.1.3",
+                    "references": {
+                        "cve": [
+                            "2021-25098"
+                        ],
+                        "wpvulndb": [
+                            "960a634d-a88a-4d90-9ac3-7d24b1fe07fe"
+                        ]
+                    }
+                },
+                {
+                    "title": "Easy Pricing Tables < 3.2.1 - Reflected Cross-Site-Scripting",
+                    "fixed_in": "3.2.1",
+                    "references": {
+                        "cve": [
+                            "2022-1904"
+                        ],
+                        "wpvulndb": [
+                            "92215d07-d129-49b4-a838-0de1a944c06b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Easy Pricing Tables < 3.1.3 - Author+ Stored Cross-Site Scripting",
+                    "fixed_in": "3.1.3",
+                    "references": {
+                        "cve": [
+                            "2021-36866"
+                        ],
+                        "wpvulndb": [
+                            "79d78d51-3947-4c25-b16b-b35baaf2cf77"
+                        ]
+                    }
+                },
+                {
+                    "title": "Pricing Tables WordPress Plugin \u2013 Easy Pricing Tables < 3.2.3 - Contributor+ Stored XSS via Shortcode",
+                    "fixed_in": "3.2.3",
+                    "references": {
+                        "cve": [
+                            "2022-4654"
+                        ],
+                        "wpvulndb": [
+                            "a29744cd-b760-4757-8564-883d59fa4881"
+                        ]
+                    }
+                },
+                {
+                    "title": "Pricing Tables WordPress Plugin \u2013 Easy Pricing Tables < 3.2.6 - Reflected Cross-Site Scripting",
+                    "fixed_in": "3.2.6",
+                    "references": {
+                        "cve": [
+                            "2024-8871"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a5e4f40b-c028-4283-ba02-c77408136713"
+                        ],
+                        "wpvulndb": [
+                            "e78fcf41-20ae-4c3a-a722-c22295020ba2"
+                        ]
+                    }
+                },
+                {
+                    "title": "Pricing Tables WordPress Plugin \u2013 Easy Pricing Tables < 3.2.7 - Authenticated (Contributor+) Stored Cross-Site Scripting via fontFamily Attribute",
+                    "fixed_in": "3.2.7",
+                    "references": {
+                        "cve": [
+                            "2024-8323"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/68fb1fd3-16aa-467f-b5f6-a6126b05e088"
+                        ],
+                        "wpvulndb": [
+                            "baeba6d5-54a4-4764-811d-a00a30e93da3"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "editorplus": {
+            "slug": "editorplus",
+            "location": "https://www.onegyshop.com/wp-content/plugins/editorplus/",
+            "latest_version": "2.10.0",
+            "last_updated": "2023-11-09T08:21:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://www.onegyshop.com/wp-content/plugins/elementor/",
+            "latest_version": "3.27.6",
+            "last_updated": "2025-02-18T15:16:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "5.35.0",
+                "confidence": 10,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.onegyshop.com/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.35.0"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "google-site-kit": {
+            "slug": "google-site-kit",
+            "location": "https://www.onegyshop.com/wp-content/plugins/google-site-kit/",
+            "latest_version": "1.147.0",
+            "last_updated": "2025-02-25T15:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Meta Tag (Passive Detection)",
+            "confidence": 40,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.147.0",
+                "confidence": 60,
+                "found_by": "Meta Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.onegyshop.com/, Match: 'Site Kit by Google 1.147.0'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "gutentor": {
+            "slug": "gutentor",
+            "location": "https://www.onegyshop.com/wp-content/plugins/gutentor/",
+            "latest_version": "3.4.6",
+            "last_updated": "2025-02-06T16:13:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Freemius SDK < 2.5.10 - Reflected Cross-Site Scripting",
+                    "fixed_in": "1.0.3",
+                    "references": {
+                        "cve": [
+                            "2023-33999"
+                        ],
+                        "wpvulndb": [
+                            "9f01090f-df5b-4d9e-bc4d-fac9150fdfe6"
+                        ]
+                    }
+                },
+                {
+                    "title": "Gutentor < 3.3.6 - Contributor+ Stored XSS",
+                    "fixed_in": "3.3.6",
+                    "references": {
+                        "cve": [
+                            "2024-5417"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-5417/"
+                        ],
+                        "wpvulndb": [
+                            "fb7d6839-9ccb-4a0f-9dca-d6841f666a1b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Gutentor - Gutenberg Blocks - Page Builder for Gutenberg Editor < 3.3.6 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "3.3.6",
+                    "references": {
+                        "cve": [
+                            "2024-43308"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c3b1ff70-7e37-4f74-bd72-ecda81d13d83"
+                        ],
+                        "wpvulndb": [
+                            "e8e6429a-9077-43ac-a525-5c7d18873710"
+                        ]
+                    }
+                },
+                {
+                    "title": "Gutentor \u2013 Gutenberg Blocks \u2013 Page Builder for Gutenberg Editor < 3.4.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via Countdown Widget",
+                    "fixed_in": "3.4.0",
+                    "references": {
+                        "cve": [
+                            "2024-10178"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/17ecebfd-b07f-415f-892f-e069ab84031a"
+                        ],
+                        "wpvulndb": [
+                            "56d923f3-0fe6-45c9-83ef-830864aa1db7"
+                        ]
+                    }
+                },
+                {
+                    "title": "Gutentor < 3.4.4 - Contributor+ Stored XSS",
+                    "fixed_in": "3.4.4",
+                    "references": {
+                        "cve": [
+                            "2025-22293"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/wordpress/plugin/gutentor/vulnerability/wordpress-gutentor-plugin-3-4-0-cross-site-scripting-xss-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "d2bb7181-845a-413e-9864-ec3f3bc23b1e"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "magical-products-display": {
+            "slug": "magical-products-display",
+            "location": "https://www.onegyshop.com/wp-content/plugins/magical-products-display/",
+            "latest_version": "1.1.26",
+            "last_updated": "2025-01-02T07:15:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "megamenu": {
+            "slug": "megamenu",
+            "location": "https://www.onegyshop.com/wp-content/plugins/megamenu/",
+            "latest_version": "3.4.1",
+            "last_updated": "2024-11-20T10:25:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.4.1",
+                "confidence": 10,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.onegyshop.com/wp-content/plugins/megamenu/js/maxmegamenu.js?ver=3.4.1"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "q2w3-fixed-widget": {
+            "slug": "q2w3-fixed-widget",
+            "location": "https://www.onegyshop.com/wp-content/plugins/q2w3-fixed-widget/",
+            "latest_version": "6.2.3",
+            "last_updated": "2023-03-30T07:15:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "quadmenu": {
+            "slug": "quadmenu",
+            "location": "https://www.onegyshop.com/wp-content/plugins/quadmenu/",
+            "latest_version": "3.2.0",
+            "last_updated": "2025-01-23T18:19:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "QuadMenu < 2.0.7 - Unauthenticated RCE via compiler_save",
+                    "fixed_in": "2.0.7",
+                    "references": {
+                        "url": [
+                            "https://sh3llcon.org/la-debilidad-de-wordpress/"
+                        ],
+                        "wpvulndb": [
+                            "a69ead38-93ed-460d-ba1d-0e1446850ef4"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "simple-social-buttons": {
+            "slug": "simple-social-buttons",
+            "location": "https://www.onegyshop.com/wp-content/plugins/simple-social-buttons/",
+            "latest_version": "5.4.0",
+            "last_updated": "2025-01-03T13:42:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Comment (Passive Detection)": {
+                    "confidence": 30,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "5.4.0",
+                "confidence": 80,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.onegyshop.com/wp-content/plugins/simple-social-buttons/assets/css/front.css?ver=5.4.0",
+                    "https://www.onegyshop.com/wp-content/plugins/simple-social-buttons/assets/js/front.js?ver=5.4.0"
+                ],
+                "confirmed_by": {
+                    "Comment (Passive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.onegyshop.com/, Match: 'Tags generated by Simple Social Buttons 5.4.0'"
+                        ]
+                    }
+                }
+            }
+        },
+        "ultimate-post": {
+            "slug": "ultimate-post",
+            "location": "https://www.onegyshop.com/wp-content/plugins/ultimate-post/",
+            "latest_version": "4.1.24",
+            "last_updated": "2025-02-17T06:56:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "PostX Gutenberg Blocks Saved Templates Addon < 2.4.10 - Private Content Disclosure",
+                    "fixed_in": "2.4.10",
+                    "references": {
+                        "cve": [
+                            "2021-24661"
+                        ],
+                        "wpvulndb": [
+                            "8d966ff1-9c88-43c7-8f4b-93c88e214677"
+                        ]
+                    }
+                },
+                {
+                    "title": "PostX Gutenberg Blocks Saved Templates Addon < 2.4.10 - Contributor+ Stored Cross-Site Scripting",
+                    "fixed_in": "2.4.10",
+                    "references": {
+                        "cve": [
+                            "2021-24660"
+                        ],
+                        "wpvulndb": [
+                            "af14ac23-843d-4f80-beaf-237618109edd"
+                        ]
+                    }
+                },
+                {
+                    "title": "PostX Gutenberg Blocks for Post Grid < 2.4.10 - Contributor+ Stored Cross-Site Scripting",
+                    "fixed_in": "2.4.10",
+                    "references": {
+                        "cve": [
+                            "2021-24659"
+                        ],
+                        "wpvulndb": [
+                            "5f2fe510-7513-4d33-82d9-3107b3b3f2ae"
+                        ]
+                    }
+                },
+                {
+                    "title": "PostX Gutenberg Blocks for Post Grid < 2.4.10 - Missing Access Controls",
+                    "fixed_in": "2.4.10",
+                    "references": {
+                        "cve": [
+                            "2021-24652"
+                        ],
+                        "wpvulndb": [
+                            "5375bd3e-a30d-4f24-9b17-470b28a8231c"
+                        ]
+                    }
+                },
+                {
+                    "title": "PostX - Gutenberg Post Grid Blocks < 3.0.6 - Reflected Cross-Site Scripting",
+                    "fixed_in": "3.0.6",
+                    "references": {
+                        "cve": [
+                            "2023-3992"
+                        ],
+                        "wpvulndb": [
+                            "c43b669f-0377-4402-833c-817b75001888"
+                        ]
+                    }
+                },
+                {
+                    "title": "PostX - Gutenberg Blocks for Post Grid < 2.9.10 - Reflected Cross-Site Scripting",
+                    "fixed_in": "2.9.10",
+                    "references": {
+                        "cve": [
+                            "2023-36385"
+                        ],
+                        "wpvulndb": [
+                            "ba4c8f4c-2e53-41fc-b39f-9f133a81855c"
+                        ]
+                    }
+                },
+                {
+                    "title": "PostX \u2013 Gutenberg Blocks for Post Grid < 3.2.4 - Incorrect Authorization",
+                    "fixed_in": "3.2.4",
+                    "references": {
+                        "cve": [
+                            "2024-31246"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c2fd1bd8-dcc2-4c9a-be3f-b0a58992a239"
+                        ],
+                        "wpvulndb": [
+                            "9bdcb3dc-07aa-4ca5-aacb-1ee5c2b8256f"
+                        ]
+                    }
+                },
+                {
+                    "title": "PostX < 4.0.2 - Contributor+ Stored XSS",
+                    "fixed_in": "4.0.2",
+                    "references": {
+                        "cve": [
+                            "2024-3239"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-3239/"
+                        ],
+                        "wpvulndb": [
+                            "dfa1421b-41b0-4b25-95ef-0843103e1f5e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid Gutenberg Blocks and WordPress Blog Plugin \u2013 PostX  < 4.0.2 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "4.0.2",
+                    "references": {
+                        "cve": [
+                            "2024-32564"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/cce4d44a-4613-4230-ace1-2d26c7c487b3"
+                        ],
+                        "wpvulndb": [
+                            "a845b84b-6181-424b-803d-41792790c874"
+                        ]
+                    }
+                },
+                {
+                    "title": "PostX < 4.1.0 - Contributor+ Stored XSS",
+                    "fixed_in": "4.1.0",
+                    "references": {
+                        "cve": [
+                            "2024-4305"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-4305/"
+                        ],
+                        "wpvulndb": [
+                            "635be98d-4c17-4e75-871f-9794d85a2eb1"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid Gutenberg Blocks and WordPress Blog Plugin \u2013 PostX < 4.1.2 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "4.1.2",
+                    "references": {
+                        "cve": [
+                            "2024-5223"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7234d4b9-a575-428a-9d08-2dc62ba41c30"
+                        ],
+                        "wpvulndb": [
+                            "f609cf76-6f16-4a2b-8bfa-fcede843003a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid Gutenberg Blocks and WordPress Blog Plugin \u2013 PostX < 4.1.3 - Missing Authorization to Arbitrary Options Update",
+                    "fixed_in": "4.1.3",
+                    "references": {
+                        "cve": [
+                            "2024-5326"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/07a3db33-3787-4b63-835d-8e3026206842"
+                        ],
+                        "wpvulndb": [
+                            "f36ba1a2-f5ed-493d-b6ed-50b651b23dcf"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid Gutenberg Blocks and WordPress Blog Plugin \u2013 PostX < 4.1.0 - Authenticated (Contributor+) Stored Cross=Site Scripting",
+                    "fixed_in": "4.1.0",
+                    "references": {
+                        "cve": [
+                            "2024-4305"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4dcc3f47-8504-4aa6-af60-03edeaa39fd7"
+                        ],
+                        "wpvulndb": [
+                            "9e3d8885-d16a-4086-9d87-fa4a4ee33a1b"
+                        ]
+                    }
+                },
+                {
+                    "title": "PostX < 4.1.13 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "4.1.13",
+                    "references": {
+                        "cve": [
+                            "2024-50443"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f9eb02f4-ad47-41f2-b3a7-e3f73d7a1bc3"
+                        ],
+                        "wpvulndb": [
+                            "17774dcb-5334-49a7-a3b2-40e96feee707"
+                        ]
+                    }
+                },
+                {
+                    "title": "PostX < 4.1.17 - Missing Authorization to Arbitrary Plugin Installation/Activation",
+                    "fixed_in": "4.1.17",
+                    "references": {
+                        "cve": [
+                            "2024-10728"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/076f36fb-c2fb-43e0-a027-1351d3995489"
+                        ],
+                        "wpvulndb": [
+                            "1c8e50a8-fe44-4dbc-8aff-1335ced40043"
+                        ]
+                    }
+                },
+                {
+                    "title": "PostX < 4.1.16 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "4.1.16",
+                    "references": {
+                        "cve": [
+                            "2024-53818"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/af55ea6c-01f6-4c87-91bb-a0ff98e92256"
+                        ],
+                        "wpvulndb": [
+                            "1e893eed-236a-4bba-9c50-4824d69cf3ee"
+                        ]
+                    }
+                },
+                {
+                    "title": "PostX < 4.1.16 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "4.1.16",
+                    "references": {
+                        "cve": [
+                            "2024-50513"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/97df0ac7-3240-4d2b-aa2c-779c8e9359e8"
+                        ],
+                        "wpvulndb": [
+                            "5306c4b5-bd7a-4a24-b637-b8c203fc5b16"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "wc-frontend-manager": {
+            "slug": "wc-frontend-manager",
+            "location": "https://www.onegyshop.com/wp-content/plugins/wc-frontend-manager/",
+            "latest_version": "6.7.14",
+            "last_updated": "2025-01-12T07:49:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "WCFM - Frontend Manager for WooCommerce < 6.5.12 - Customer/Subscriber+ SQL Injection",
+                    "fixed_in": "6.5.12",
+                    "references": {
+                        "cve": [
+                            "2021-24835"
+                        ],
+                        "wpvulndb": [
+                            "c493ac9c-67d1-48a9-be21-824b1a1d56c2"
+                        ]
+                    }
+                },
+                {
+                    "title": "WCFM Frontend Manager < 6.6.0 - Multiple CSRF",
+                    "fixed_in": "6.6.0",
+                    "references": {
+                        "cve": [
+                            "2022-4938"
+                        ],
+                        "wpvulndb": [
+                            "2d3ca603-2a65-4706-9c0a-d22791c2ed4e"
+                        ]
+                    }
+                },
+                {
+                    "title": "WCFM Frontend Manager < 6.6.1 - Subscriber+ Unauthorised AJAX Calls",
+                    "fixed_in": "6.6.1",
+                    "references": {
+                        "cve": [
+                            "2022-4937"
+                        ],
+                        "wpvulndb": [
+                            "9b73853e-6935-4b92-851b-1c5fc0a264f0"
+                        ]
+                    }
+                },
+                {
+                    "title": "WCFM \u2013 Frontend Manager for WooCommerce < 6.7.9 - Authenticated (Shop manager+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.9",
+                    "references": {
+                        "cve": [
+                            "2024-29929"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e30e4615-f9b6-4ff6-a227-82cace868f93"
+                        ],
+                        "wpvulndb": [
+                            "caeddc6f-1ee2-4aac-a7ed-3f4f2fc053b5"
+                        ]
+                    }
+                },
+                {
+                    "title": "WCFM \u2013 Frontend Manager for WooCommerce along with Bookings Subscription Listings Compatible < 6.7.13 - Insecure Direct Object Reference to Account Takeover/Privilege Escalation",
+                    "fixed_in": "6.7.13",
+                    "references": {
+                        "cve": [
+                            "2024-8290"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/79172fe3-c0cf-48c4-8bc5-862c628c1a09"
+                        ],
+                        "wpvulndb": [
+                            "2ba108bd-caa0-4259-add2-193908728f66"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "woo-product-carousel-slider-and-grid-ultimate": {
+            "slug": "woo-product-carousel-slider-and-grid-ultimate",
+            "location": "https://www.onegyshop.com/wp-content/plugins/woo-product-carousel-slider-and-grid-ultimate/",
+            "latest_version": "1.10.2",
+            "last_updated": "2025-03-04T05:33:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Product Carousel Slider & Grid Ultimate for WooCommerce < 1.9.8 - Authenticated(Contributor+) PHP Object Injection",
+                    "fixed_in": "1.9.8",
+                    "references": {
+                        "cve": [
+                            "2024-1950"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ed8636bf-229a-42a5-a19c-332679613dd2"
+                        ],
+                        "wpvulndb": [
+                            "58952650-7435-481e-97e3-8ce5b89d38f5"
+                        ]
+                    }
+                },
+                {
+                    "title": "Product Carousel Slider & Grid Ultimate for WooCommerce < 1.10.0 - Contributor+ Local File Inclusion",
+                    "fixed_in": "1.10.0",
+                    "references": {
+                        "cve": [
+                            "2024-44048"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/wordpress/plugin/woo-product-carousel-slider-and-grid-ultimate/vulnerability/wordpress-product-carousel-slider-grid-ultimate-for-woocommerce-plugin-1-9-10-authenticated-local-file-inclusion-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "1c00ea2a-64b9-428d-ad67-4fe1ba20d55d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Product Carousel Slider & Grid Ultimate for WooCommerce < 1.10.0 - Authenticated (Contributor+) Local File Inclusion via 'theme'",
+                    "fixed_in": "1.10.0",
+                    "references": {
+                        "cve": [
+                            "2024-12040"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/1c22de8c-e6e1-4b85-8d9f-619e9f63129e"
+                        ],
+                        "wpvulndb": [
+                            "cd2e1e0e-b281-44ca-9cde-9f70285fbde5"
+                        ]
+                    }
+                },
+                {
+                    "title": "Product Carousel Slider & Grid Ultimate for WooCommerce < 1.10.1 - Authenticated (Editor+) Stored Cross-Site Scripting",
+                    "fixed_in": "1.10.1",
+                    "references": {
+                        "cve": [
+                            "2025-24681"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7229d6b1-0c11-477c-8569-f5d57930d0d6"
+                        ],
+                        "wpvulndb": [
+                            "c73141ed-6358-4bc2-b887-d20c36b9d0f3"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "woocommerce": {
+            "slug": "woocommerce",
+            "location": "https://www.onegyshop.com/wp-content/plugins/woocommerce/",
+            "latest_version": "9.7.1",
+            "last_updated": "2025-03-04T15:28:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Woocommerce < 9.7.1 - Shop Manager+ Stored XSS via New Product Form",
+                    "fixed_in": "9.7.1",
+                    "references": {
+                        "cve": [
+                            "2025-26762"
+                        ],
+                        "url": [
+                            "https://developer.woocommerce.com/2025/03/04/woocommerce-9-7-1-dot-release/"
+                        ],
+                        "wpvulndb": [
+                            "94cbfc1b-9a55-44fa-b1d9-0c47980ace3c"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "9.7.0",
+                "confidence": 60,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.onegyshop.com/, Match: 'WooCommerce 9.7.0'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "woocommerce-google-analytics-integration": {
+            "slug": "woocommerce-google-analytics-integration",
+            "location": "https://www.onegyshop.com/wp-content/plugins/woocommerce-google-analytics-integration/",
+            "latest_version": "2.1.13",
+            "last_updated": "2025-02-18T14:04:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://www.onegyshop.com/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T08:44:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "24.6",
+                "confidence": 60,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.onegyshop.com/, Match: 'optimized with the Yoast SEO plugin v24.6 -'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "yaycurrency": {
+            "slug": "yaycurrency",
+            "location": "https://www.onegyshop.com/wp-content/plugins/yaycurrency/",
+            "latest_version": "3.1.0",
+            "last_updated": "2025-01-09T20:56:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 24,
+        "requests_remaining": 1
+    },
+    "stop_time": 1741432492,
+    "elapsed": 1567,
+    "requests_done": 250,
+    "cached_requests": 6,
+    "data_sent": 22946,
+    "data_sent_humanised": "22.408 KB",
+    "data_received": 489053,
+    "data_received_humanised": "477.591 KB",
+    "used_memory": 278294528,
+    "used_memory_humanised": "265.402 MB"
+}

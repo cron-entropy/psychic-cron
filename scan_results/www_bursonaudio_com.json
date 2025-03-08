@@ -1,0 +1,531 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741430143,
+    "start_memory": 48717824,
+    "target_url": "https://www.bursonaudio.com/",
+    "target_ip": "3.162.112.30",
+    "effective_url": "https://www.bursonaudio.com/",
+    "interesting_findings": [
+        {
+            "url": "https://www.bursonaudio.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "referrer-policy: no-referrer-when-downgrade",
+                "server: Apache/2.4.62 () PHP/7.4.33",
+                "x-powered-by: PHP/7.4.33",
+                "via: 1.1 ded2db8c78a1ad7377261200a0bb44fa.cloudfront.net (CloudFront)",
+                "x-amz-cf-pop: IAD61-P2",
+                "x-amz-cf-id: jcTvOvx0NTJuthj0sC8X7809ukGfgzBXL3P0iKFJOGcjctbE4Twi1w=="
+            ]
+        },
+        {
+            "url": "https://www.bursonaudio.com/robots.txt",
+            "to_s": "robots.txt found: https://www.bursonaudio.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-content/uploads/wc-logs/",
+                "/wp-content/uploads/woocommerce_transient_files/",
+                "/wp-content/uploads/woocommerce_uploads/",
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php",
+                "/wp-content/uploads/wpo/wpo-plugins-tables-list.json"
+            ]
+        },
+        {
+            "url": "https://www.bursonaudio.com/readme.html",
+            "to_s": "WordPress readme found: https://www.bursonaudio.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.bursonaudio.com/wp-content/debug.log",
+            "to_s": "Debug Log found: https://www.bursonaudio.com/wp-content/debug.log",
+            "type": "debug_log",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://codex.wordpress.org/Debugging_in_WordPress"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.bursonaudio.com/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.bursonaudio.com/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.bursonaudio.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.bursonaudio.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.bursonaudio.com/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.bursonaudio.com/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.bursonaudio.com/products/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "Avada",
+        "location": "https://www.bursonaudio.com/wp-content/themes/Avada/",
+        "latest_version": "7.11.14",
+        "last_updated": "2025-01-30T01:01:28.000Z",
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.bursonaudio.com/wp-content/themes/Avada/style.css",
+        "style_name": "Avada",
+        "style_uri": "https://avada.com/",
+        "description": "The Avada Website Builder is the ultimate design and creation suite. Design Anything, Build Everything, Fast. The #1 selling product of all time on ThemeForest.",
+        "author": "ThemeFusion",
+        "author_uri": "https://themeforest.net/user/ThemeFusion",
+        "template": null,
+        "license": "Themeforest Split Licence",
+        "license_uri": "-",
+        "tags": null,
+        "text_domain": "Avada",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 16,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 8,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "7.11.14",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.bursonaudio.com/wp-content/themes/Avada/style.css, Match: 'Version: 7.11.14'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "aco-product-labels-for-woocommerce": {
+            "slug": "aco-product-labels-for-woocommerce",
+            "location": "https://www.bursonaudio.com/wp-content/plugins/aco-product-labels-for-woocommerce/",
+            "latest_version": "1.5.11",
+            "last_updated": "2025-01-28T10:30:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.5.11",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.bursonaudio.com/wp-content/plugins/aco-product-labels-for-woocommerce/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.bursonaudio.com/wp-content/plugins/aco-product-labels-for-woocommerce/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "complianz-gdpr": {
+            "slug": "complianz-gdpr",
+            "location": "https://www.bursonaudio.com/wp-content/plugins/complianz-gdpr/",
+            "latest_version": "7.3.0",
+            "last_updated": "2025-02-12T15:28:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "7.3.0",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.bursonaudio.com/wp-content/plugins/complianz-gdpr/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.bursonaudio.com/wp-content/plugins/complianz-gdpr/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "ean-for-woocommerce": {
+            "slug": "ean-for-woocommerce",
+            "location": "https://www.bursonaudio.com/wp-content/plugins/ean-for-woocommerce/",
+            "latest_version": "5.4.2",
+            "last_updated": "2025-02-04T12:37:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "5.4.2",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.bursonaudio.com/wp-content/plugins/ean-for-woocommerce/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.bursonaudio.com/wp-content/plugins/ean-for-woocommerce/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elegant-elements-fusion-builder": {
+            "slug": "elegant-elements-fusion-builder",
+            "location": "https://www.bursonaudio.com/wp-content/plugins/elegant-elements-fusion-builder/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "mailchimp-for-woocommerce": {
+            "slug": "mailchimp-for-woocommerce",
+            "location": "https://www.bursonaudio.com/wp-content/plugins/mailchimp-for-woocommerce/",
+            "latest_version": "5.2",
+            "last_updated": "2025-02-04T15:51:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "5.2",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.bursonaudio.com/wp-content/plugins/mailchimp-for-woocommerce/README.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.bursonaudio.com/wp-content/plugins/mailchimp-for-woocommerce/README.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "photo-gallery": {
+            "slug": "photo-gallery",
+            "location": "https://www.bursonaudio.com/wp-content/plugins/photo-gallery/",
+            "latest_version": "1.8.34",
+            "last_updated": "2025-02-26T17:51:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.8.34",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.bursonaudio.com/wp-content/plugins/photo-gallery/css/styles.min.css?ver=1.8.34",
+                    "https://www.bursonaudio.com/wp-content/plugins/photo-gallery/js/scripts.min.js?ver=1.8.34"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.bursonaudio.com/wp-content/plugins/photo-gallery/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "usp-pro": {
+            "slug": "usp-pro",
+            "location": "https://www.bursonaudio.com/wp-content/plugins/usp-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.5.3",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.bursonaudio.com/wp-content/plugins/usp-pro/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "woocommerce": {
+            "slug": "woocommerce",
+            "location": "https://www.bursonaudio.com/wp-content/plugins/woocommerce/",
+            "latest_version": "9.7.1",
+            "last_updated": "2025-03-04T15:28:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Woocommerce < 9.7.1 - Shop Manager+ Stored XSS via New Product Form",
+                    "fixed_in": "9.7.1",
+                    "references": {
+                        "cve": [
+                            "2025-26762"
+                        ],
+                        "url": [
+                            "https://developer.woocommerce.com/2025/03/04/woocommerce-9-7-1-dot-release/"
+                        ],
+                        "wpvulndb": [
+                            "94cbfc1b-9a55-44fa-b1d9-0c47980ace3c"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "9.6.2",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.bursonaudio.com/wp-content/plugins/woocommerce/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "woocommerce-google-adwords-conversion-tracking-tag": {
+            "slug": "woocommerce-google-adwords-conversion-tracking-tag",
+            "location": "https://www.bursonaudio.com/wp-content/plugins/woocommerce-google-adwords-conversion-tracking-tag/",
+            "latest_version": "1.46.1",
+            "last_updated": "2025-01-27T05:46:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.46.1",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.bursonaudio.com/wp-content/plugins/woocommerce-google-adwords-conversion-tracking-tag/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.bursonaudio.com/wp-content/plugins/woocommerce-google-adwords-conversion-tracking-tag/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "woocommerce-payments": {
+            "slug": "woocommerce-payments",
+            "location": "https://www.bursonaudio.com/wp-content/plugins/woocommerce-payments/",
+            "latest_version": "9.0.0",
+            "last_updated": "2025-02-26T12:12:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "9.0.0",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.bursonaudio.com/wp-content/plugins/woocommerce-payments/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.bursonaudio.com/wp-content/plugins/woocommerce-payments/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {
+        "https://www.bursonaudio.com/wp-config.php-save": {
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {}
+        }
+    },
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 12,
+        "requests_remaining": 2
+    },
+    "stop_time": 1741430323,
+    "elapsed": 179,
+    "requests_done": 215,
+    "cached_requests": 7,
+    "data_sent": 78510,
+    "data_sent_humanised": "76.67 KB",
+    "data_received": 4931538704,
+    "data_received_humanised": "4.593 GB",
+    "used_memory": 250953728,
+    "used_memory_humanised": "239.328 MB"
+}

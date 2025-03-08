@@ -1,0 +1,277 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741430912,
+    "start_memory": 49000448,
+    "target_url": "https://limpioca.com/",
+    "target_ip": "104.21.16.1",
+    "effective_url": "https://limpioca.com/",
+    "interesting_findings": [
+        {
+            "url": "https://limpioca.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-powered-by: PHP/8.0.30",
+                "x-litespeed-cache: hit",
+                "x-turbo-charged-by: LiteSpeed",
+                "cf-cache-status: DYNAMIC",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=Y%2FudYEgqMLR5wnAozbo8uV4yzhu5sl5PViFUs8NAs1JMatcExbxpqZMUvAV2MRC%2BQybeNn0Hx84EfRHiVNiySIp6Nf6Xula4%2BPTM2W3HtHMiikF2UxDpqjYfJ6SmWRI%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "cf-ray: 91d1c2b9b848d654-IAD",
+                "alt-svc: h3=\":443\"; ma=86400",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=10184&min_rtt=5008&rtt_var=11253&sent=6&recv=8&lost=0&retrans=0&sent_bytes=3412&recv_bytes=807&delivery_rate=570287&cwnd=253&unsent_bytes=0&cid=3317735ad50ebab0&ts=272&x=0\""
+            ]
+        },
+        {
+            "url": "https://limpioca.com/robots.txt",
+            "to_s": "robots.txt found: https://limpioca.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://limpioca.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://limpioca.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 30,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://limpioca.com/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://limpioca.com/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://limpioca.com/shop/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "i-craft",
+        "location": "https://limpioca.com/wp-content/themes/i-craft/",
+        "latest_version": "3.5.5",
+        "last_updated": "2022-06-03T00:00:00.000Z",
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://limpioca.com/wp-content/themes/i-craft/style.css?ver=2016-07-18",
+        "style_name": "i-craft",
+        "style_uri": "http://www.templatesnext.org/i-craft/",
+        "description": "The i-craft responsive WooCommerce ecommerce multipupose theme packed with features like product carousels, unlimited color, boxed/wide layout, product search, optional login menu item and shopping cart in main navigation, multiple blog layout, etc. It comes with custom slider and option to use any 3rd party slider in any page or post through page/post meta option. Supports Multilingual and RTL.",
+        "author": "templatesnext team",
+        "author_uri": "http://templatesnext.org/",
+        "template": null,
+        "license": "GNU General Public License v2 or later",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "one-column, news, blog, two-columns, rtl-language-support, right-sidebar, left-sidebar, custom-colors, custom-menu, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, e-commerce",
+        "text_domain": "i-craft",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 70,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": {
+            "number": "3.5.5",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://limpioca.com/wp-content/themes/i-craft/style.css?ver=2016-07-18, Match: 'Version: \t\t\t3.5.5'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "templatesnext-toolkit": {
+            "slug": "templatesnext-toolkit",
+            "location": "https://limpioca.com/wp-content/plugins/templatesnext-toolkit/",
+            "latest_version": "3.2.9",
+            "last_updated": "2023-01-17T16:17:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "TemplatesNext ToolKit < 3.2.8 - Contributor+ Stored XSS via Shortcode",
+                    "fixed_in": "3.2.8",
+                    "references": {
+                        "cve": [
+                            "2022-4678"
+                        ],
+                        "wpvulndb": [
+                            "6a36d665-a0ca-4346-8e55-cf9ba45966cc"
+                        ]
+                    }
+                },
+                {
+                    "title": "TemplatesNext ToolKit < 3.2.9 - Contributor+ Stored XSS",
+                    "fixed_in": "3.2.9",
+                    "references": {
+                        "cve": [
+                            "2023-0333"
+                        ],
+                        "wpvulndb": [
+                            "e86ff4d5-d549-4c71-b80e-6a9b3bfddbfc"
+                        ]
+                    }
+                },
+                {
+                    "title": "TemplatesNext ToolKit < 3.2.8 - Contributor+ Stored XSS",
+                    "fixed_in": "3.2.8",
+                    "references": {
+                        "cve": [
+                            "2023-22712"
+                        ],
+                        "wpvulndb": [
+                            "bc36c4cc-5279-4cc3-8e8d-edbbb14e42c6"
+                        ]
+                    }
+                },
+                {
+                    "title": "TemplatesNext ToolKit <= 3.2.9 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2025-22310"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/540b1b4e-474d-48a8-ac8c-b7cd589ddc4c"
+                        ],
+                        "wpvulndb": [
+                            "2a50bc6f-1e19-43e4-92f9-6d319291524c"
+                        ]
+                    }
+                },
+                {
+                    "title": "TemplatesNext ToolKit <= 3.2.9 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2024-13559"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/775b6034-617a-4d84-a8fe-773ffbd9742a"
+                        ],
+                        "wpvulndb": [
+                            "c0cae91d-a067-4685-8c99-0869bddab98f"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "woocommerce": {
+            "slug": "woocommerce",
+            "location": "https://limpioca.com/wp-content/plugins/woocommerce/",
+            "latest_version": "9.7.1",
+            "last_updated": "2025-03-04T15:28:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Woocommerce < 9.7.1 - Shop Manager+ Stored XSS via New Product Form",
+                    "fixed_in": "9.7.1",
+                    "references": {
+                        "cve": [
+                            "2025-26762"
+                        ],
+                        "url": [
+                            "https://developer.woocommerce.com/2025/03/04/woocommerce-9-7-1-dot-release/"
+                        ],
+                        "wpvulndb": [
+                            "94cbfc1b-9a55-44fa-b1d9-0c47980ace3c"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "9.7.0",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://limpioca.com/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=9.7.0",
+                    "https://limpioca.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=9.7.0",
+                    "https://limpioca.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=9.7.0",
+                    "https://limpioca.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=9.7.0"
+                ],
+                "confirmed_by": {
+                    "Meta Generator (Passive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://limpioca.com/, Match: 'WooCommerce 9.7.0'"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 4,
+        "requests_remaining": 21
+    },
+    "stop_time": 1741430920,
+    "elapsed": 8,
+    "requests_done": 184,
+    "cached_requests": 6,
+    "data_sent": 38407,
+    "data_sent_humanised": "37.507 KB",
+    "data_received": 660557,
+    "data_received_humanised": "645.075 KB",
+    "used_memory": 269012992,
+    "used_memory_humanised": "256.551 MB"
+}
