@@ -26,7 +26,7 @@ def check_wordpress(url):
 
 def scan_sites(sites, wpscan_api_keys):
     for site, api_key in zip(sites, wpscan_api_keys):
-        result = run_command(f"docker run --rm wpscanteam/wpscan --url https://{site} --api-token {api_key} --enumerate vp --format json", quiet=True)
+        result = run_command(f"docker run --rm wpscanteam/wpscan --url https://{site} --api-token {api_key} --format json", quiet=True)
         json_result = get_result_json(result)
         filename = f"scan_results/{site.replace('.', '_')}.json"
         with open(filename, "w", encoding="utf-8") as f:
