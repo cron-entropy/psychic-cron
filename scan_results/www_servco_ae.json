@@ -1,0 +1,984 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741517267,
+    "start_memory": 48762880,
+    "target_url": "https://www.servco.ae/",
+    "target_ip": "65.108.124.24",
+    "effective_url": "https://www.servco.ae/",
+    "interesting_findings": [
+        {
+            "url": "https://www.servco.ae/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: nginx"
+            ]
+        },
+        {
+            "url": "https://www.servco.ae/robots.txt",
+            "to_s": "robots.txt found: https://www.servco.ae/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://www.servco.ae/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.servco.ae/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.servco.ae/readme.html",
+            "to_s": "WordPress readme found: https://www.servco.ae/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Emoji Settings (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.servco.ae/, Match: 'wp-includes\\/js\\/wp-emoji-release.min.js?ver=6.7.2'"
+        ],
+        "confirmed_by": {
+            "Meta Generator (Passive Detection)": {
+                "confidence": 60,
+                "interesting_entries": [
+                    "https://www.servco.ae/, Match: 'WordPress 6.7.2'"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "servco",
+        "location": "https://www.servco.ae/wp-content/themes/servco/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.servco.ae/wp-content/themes/servco/style.css",
+        "style_name": null,
+        "style_uri": null,
+        "description": null,
+        "author": null,
+        "author_uri": null,
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": null,
+        "parents": []
+    },
+    "plugins": {
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://www.servco.ae/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.4",
+            "last_updated": "2025-02-18T06:51:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Hidden Input (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.0.4",
+                "confidence": 70,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.servco.ae/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.0.4"
+                ],
+                "confirmed_by": {
+                    "Hidden Input (Passive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.servco.ae/, Match: '6.0.4'"
+                        ]
+                    }
+                }
+            }
+        },
+        "essential-grid": {
+            "slug": "essential-grid",
+            "location": "https://www.servco.ae/wp-content/plugins/essential-grid/",
+            "latest_version": "3.1.8",
+            "last_updated": "2025-02-19T02:24:33.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Essential Grid < 3.1.1 - Reflected XSS",
+                    "fixed_in": "3.1.1",
+                    "references": {
+                        "cve": [
+                            "2023-47684"
+                        ],
+                        "wpvulndb": [
+                            "fe53efb3-7677-47df-81c8-8c0e4eb7997e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Grid < 3.0.19 - Missing Authorization",
+                    "fixed_in": "3.0.19",
+                    "references": {
+                        "cve": [
+                            "2023-47771"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/326618eb-186b-44a2-a779-00d5366bfff2"
+                        ],
+                        "wpvulndb": [
+                            "0a88f201-cf6c-42bd-85fb-5eec50cb9ff1"
+                        ]
+                    }
+                },
+                {
+                    "title": "Essential Grid < 3.1.2 - Unauthenticated Private Post Disclosure",
+                    "fixed_in": "3.1.2",
+                    "references": {
+                        "cve": [
+                            "2024-3235"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/adadac1e-3d92-41a5-90d4-b2028c8c40c0"
+                        ],
+                        "wpvulndb": [
+                            "069fe8f4-9525-470f-a423-2a5b680c7f65"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "js_composer": {
+            "slug": "js_composer",
+            "location": "https://www.servco.ae/wp-content/plugins/js_composer/",
+            "latest_version": "8.2",
+            "last_updated": "2025-02-04T20:20:30.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Body Tag (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Title tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1841"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/34d21418-4faf-40bf-a960-79482a592722"
+                        ],
+                        "wpvulndb": [
+                            "787a71f8-1179-4442-9441-87fbe83a7e67"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Custom Heading tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1842"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/674e6722-d293-4572-80bf-984e74c3e33f"
+                        ],
+                        "wpvulndb": [
+                            "8ebfad34-7b46-4783-9fad-c96ab4f4c737"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Button onclick attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1805"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7a571386-fae1-4a56-8567-9d3e23249de1"
+                        ],
+                        "wpvulndb": [
+                            "b87926cd-0fe0-49df-8c61-9df1363a67a8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Author",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1840"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/cb8ecbbc-ada9-4887-92e6-25a587ecfb84"
+                        ],
+                        "wpvulndb": [
+                            "b41c2343-3be4-4bd9-ae5d-69ae96ba23ae"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Page Builder < 7.7 - Authenticated (Contributor+) Stored Cross-Site Scripting via VC Single Image link attribute",
+                    "fixed_in": "7.7",
+                    "references": {
+                        "cve": [
+                            "2024-5265"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/35a5114e-5c5f-4003-8bb3-77243ffbac1a"
+                        ],
+                        "wpvulndb": [
+                            "3b067a13-ee58-44c9-80af-ae04af6256c8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5708"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/23ff12f0-eb9d-4bb3-8db0-0e794c0f0594"
+                        ],
+                        "wpvulndb": [
+                            "992e5d47-e290-420a-adf8-f552a929e51d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Local File Inclusion",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5709"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7fad30c8-fd8a-4cf2-a3aa-16a374231b87"
+                        ],
+                        "wpvulndb": [
+                            "6e3e1944-67f7-405e-ae4f-f0ab8c6c9acd"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "7.4",
+                "confidence": 80,
+                "found_by": "Body Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.servco.ae/, Match: 'js-comp-ver-7.4'"
+                ],
+                "confirmed_by": {
+                    "Query Parameter (Passive Detection)": {
+                        "confidence": 20,
+                        "interesting_entries": [
+                            "https://www.servco.ae/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=7.4",
+                            "https://www.servco.ae/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=7.4"
+                        ]
+                    }
+                }
+            }
+        },
+        "popup-builder": {
+            "slug": "popup-builder",
+            "location": "https://www.servco.ae/wp-content/plugins/popup-builder/",
+            "latest_version": "4.3.6",
+            "last_updated": "2025-01-23T17:26:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Popup Builder <= 3.44 - SQL Injection",
+                    "fixed_in": "3.45",
+                    "references": {
+                        "cve": [
+                            "2019-14695"
+                        ],
+                        "url": [
+                            "https://fortiguard.com/zeroday/FG-VD-19-102",
+                            "https://www.fortinet.com/blog/threat-research/wordpress-plugin-sql-injection-vulnerability.html"
+                        ],
+                        "wpvulndb": [
+                            "6de2c4fc-2b0d-427e-8108-5503659f6ba2"
+                        ]
+                    }
+                },
+                {
+                    "title": "Popup Builder < 3.0 - SQL injection via PHP Deserialization",
+                    "fixed_in": "3.0",
+                    "references": {
+                        "cve": [
+                            "2020-9006"
+                        ],
+                        "url": [
+                            "https://zeroauth.ltd/blog/2020/02/16/cve-2020-9006-popup-builder-wp-plugin-sql-injection-via-php-deserialization/"
+                        ],
+                        "wpvulndb": [
+                            "2ab5c75b-b390-4aa6-aa0b-c1d4e1e3e737"
+                        ]
+                    }
+                },
+                {
+                    "title": "Popup Builder < 3.64.1 - Multiple Issues",
+                    "fixed_in": "3.64.1",
+                    "references": {
+                        "cve": [
+                            "2020-10196",
+                            "2020-10195"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2020/03/vulnerabilities-patched-in-popup-builder-plugin-affecting-over-100000-sites/"
+                        ],
+                        "wpvulndb": [
+                            "d2df1d73-ed0f-4911-b827-998384f937b4"
+                        ]
+                    }
+                },
+                {
+                    "title": "Popup Builder < 3.74 - Authenticated Reflected Cross-Site Scripting (XSS)",
+                    "fixed_in": "3.74",
+                    "references": {
+                        "cve": [
+                            "2021-24152"
+                        ],
+                        "wpvulndb": [
+                            "597e9686-f4e2-43bf-85ef-c5967e5652bd"
+                        ]
+                    }
+                },
+                {
+                    "title": "Popup Builder < 4.0.7 - LFI to RCE",
+                    "fixed_in": "4.0.7",
+                    "references": {
+                        "cve": [
+                            "2021-25082"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2659117"
+                        ],
+                        "wpvulndb": [
+                            "0f90f10c-4b0a-46da-ac1f-aa6a03312132"
+                        ]
+                    }
+                },
+                {
+                    "title": "Popup Builder < 4.0.7 - Admin+ SQL Injection",
+                    "fixed_in": "4.0.7",
+                    "references": {
+                        "cve": [
+                            "2022-0228"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2659117"
+                        ],
+                        "wpvulndb": [
+                            "22facac2-52f4-4e5f-be59-1d2934b260d9"
+                        ]
+                    }
+                },
+                {
+                    "title": "Popup Builder < 4.1.1 - SQL Injection to Reflected Cross-Site Scripting",
+                    "fixed_in": "4.1.1",
+                    "references": {
+                        "cve": [
+                            "2022-0479"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2686454"
+                        ],
+                        "wpvulndb": [
+                            "0d2bbbaf-fbfd-4921-ba4e-684e2e77e816"
+                        ]
+                    }
+                },
+                {
+                    "title": "Popup Builder < 4.1.11 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "4.1.11",
+                    "references": {
+                        "cve": [
+                            "2022-1894"
+                        ],
+                        "wpvulndb": [
+                            "68af14ef-ca66-40d6-a1e5-09f74e2cd971"
+                        ]
+                    }
+                },
+                {
+                    "title": "Popup Builder < 4.1.12 - Settings Update via CSRF",
+                    "fixed_in": "4.1.12",
+                    "references": {
+                        "cve": [
+                            "2022-29495"
+                        ],
+                        "wpvulndb": [
+                            "ca0f90ef-af9a-4628-9032-b536a0e6cd9b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Popup Builder < 4.1.1 - Popup Status Change via CSRF",
+                    "fixed_in": "4.1.1",
+                    "references": {
+                        "cve": [
+                            "2022-32289"
+                        ],
+                        "wpvulndb": [
+                            "f0e39557-fe07-4df0-8cc3-4d292f1f545d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Popup Builder < 4.2.0 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "4.2.0",
+                    "references": {
+                        "cve": [
+                            "2023-3226"
+                        ],
+                        "wpvulndb": [
+                            "941a9aa7-f4b2-474a-84d9-9a74c99079e2"
+                        ]
+                    }
+                },
+                {
+                    "title": "Popup Builder < 4.2.3 - Unauthenticated Stored XSS",
+                    "fixed_in": "4.2.3",
+                    "references": {
+                        "cve": [
+                            "2023-6000"
+                        ],
+                        "url": [
+                            "https://wpscan.com/blog/stored-xss-fixed-in-popup-builder-4-2-3/"
+                        ],
+                        "wpvulndb": [
+                            "cdb3a8bd-4ee0-4ce0-9029-0490273bcfc8"
+                        ]
+                    }
+                },
+                {
+                    "title": "popup-builder < 4.2.6 - Admin+ SSRF & File Read",
+                    "fixed_in": "4.2.6",
+                    "references": {
+                        "cve": [
+                            "2023-6294"
+                        ],
+                        "wpvulndb": [
+                            "eaeb5706-b19c-4266-b7df-889558ee2614"
+                        ]
+                    }
+                },
+                {
+                    "title": "Popup Builder < 4.2.7 - Contributor Stored XSS",
+                    "fixed_in": "4.2.7",
+                    "references": {
+                        "cve": [
+                            "2024-30184"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/popup-builder/wordpress-popup-builder-plugin-4-2-6-cross-site-scripting-xss-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "2e0821b9-7284-460b-b60d-eebf9439e9db"
+                        ]
+                    }
+                },
+                {
+                    "title": "Popup Builder < 4.3.0 - Authenticated(Contributor+) Stored Cross-Site Scripting via Custom JS",
+                    "fixed_in": "4.3.0",
+                    "references": {
+                        "cve": [
+                            "2024-2506"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/804a973e-4650-428c-910f-09e4fc3aa4bb"
+                        ],
+                        "wpvulndb": [
+                            "aecb5d1f-0790-46d4-b7a8-2da13369be59"
+                        ]
+                    }
+                },
+                {
+                    "title": "Popup Builder \u2013 Create highly converting, mobile friendly marketing popups < 4.3.2 - Missing Authorization and Nonce Exposure",
+                    "fixed_in": "4.3.2",
+                    "references": {
+                        "cve": [
+                            "2023-6696"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/9f86ec30-7a9d-4c36-8559-bde331c8b958"
+                        ],
+                        "wpvulndb": [
+                            "8d5ed338-ccf5-4110-94e6-c7124b280282"
+                        ]
+                    }
+                },
+                {
+                    "title": "Popup Builder < 4.3.2 - Missing Authorization in Multiple AJAX Actions",
+                    "fixed_in": "4.3.2",
+                    "references": {
+                        "cve": [
+                            "2024-2544"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/04802c63-4a5d-4948-9ef1-cf89c4cc757e"
+                        ],
+                        "wpvulndb": [
+                            "401628d3-842e-4145-b8b9-ec8ea0ecd673"
+                        ]
+                    }
+                },
+                {
+                    "title": "Popup Builder <= 4.3.4 - Sensitive Information Exposure via Imported Subscribers CSV File",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2024-2541"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/086cd6a0-adb6-4e12-b34c-630297f036f3"
+                        ],
+                        "wpvulndb": [
+                            "c9e9fb80-c73d-4b42-baa8-a1695ad7bdff"
+                        ]
+                    }
+                },
+                {
+                    "title": "Popup Builder < 4.3.5 - Admin+ Stored XSS",
+                    "fixed_in": "4.3.5",
+                    "references": {
+                        "cve": [
+                            "2024-9428"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-9428/"
+                        ],
+                        "wpvulndb": [
+                            "6e246547-e509-48db-88ae-b2f943398377"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "revslider": {
+            "slug": "revslider",
+            "location": "https://www.servco.ae/wp-content/plugins/revslider/",
+            "latest_version": "6.7.29",
+            "last_updated": "2025-02-19T04:05:08.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Revolution Slider <= 6.6.12 - Author+ Remote Code Execution",
+                    "fixed_in": "6.6.13",
+                    "references": {
+                        "cve": [
+                            "2023-2359"
+                        ],
+                        "wpvulndb": [
+                            "a8350890-e6d4-4b04-a158-2b0ee3748e65"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.15 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.6.15",
+                    "references": {
+                        "cve": [
+                            "2023-47772"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/772e843b-00ea-45f5-b730-c9a793d4c2db"
+                        ],
+                        "wpvulndb": [
+                            "3cde24f3-aaad-4eb3-b6ba-a518afe66fbe"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.16 - Authenticated (Author+) Arbitrary File Upload",
+                    "fixed_in": "6.6.16",
+                    "references": {
+                        "cve": [
+                            "2023-47784"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e2d29afd-06e8-461a-918f-38228441a51a"
+                        ],
+                        "wpvulndb": [
+                            "1b841a64-fb0a-434f-b7b4-0777f0480c87"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.19 - Author+ Insecure Deserialization leading to RCE",
+                    "fixed_in": "6.6.19",
+                    "references": {
+                        "cve": [
+                            "2023-6528"
+                        ],
+                        "wpvulndb": [
+                            "36ced447-84ea-4162-80d2-6df226cb53cb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Revslider < 6.7.0 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.0",
+                    "references": {
+                        "cve": [
+                            "2024-2306"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f6af1e90-9bad-470b-9e00-137000c0450c"
+                        ],
+                        "wpvulndb": [
+                            "8238962e-feca-4a45-b335-3c92e668c889"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.8 - Authenticated (Author+) Stored Cross-Site Scripting via htmltag Parameter",
+                    "fixed_in": "6.7.8",
+                    "references": {
+                        "cve": [
+                            "2024-4092"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8437abcc-3e34-4a8a-bfe2-2ff7c9f41164"
+                        ],
+                        "wpvulndb": [
+                            "50dd9668-c263-4bfd-8a94-00a3ad9f656d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting via Add Layer class, id, and title Attributes",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-4581"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a99b8eb9-1511-4ec0-98f4-c0e0c989fa28"
+                        ],
+                        "wpvulndb": [
+                            "4a436977-1295-40e8-9957-bda1b0a3e6d6"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Contributor+) Stored Cross-Site Scripting via Elementor wrapperid and zindex",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-4637"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/457b5066-da37-4877-9abe-c912bc201f29"
+                        ],
+                        "wpvulndb": [
+                            "32b1ee26-525a-4b1e-bdf0-881f0d161788"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.0 - Missing Authorization",
+                    "fixed_in": "6.7.0",
+                    "references": {
+                        "cve": [
+                            "2024-34444"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/14feb451-2ece-467b-abf0-7abac26e40c1"
+                        ],
+                        "wpvulndb": [
+                            "f893fd2d-d040-408a-a800-99bf02e32230"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-34443"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/64852bc8-aeba-458d-9235-94bd4c4ec429"
+                        ],
+                        "wpvulndb": [
+                            "f79b835f-a3a2-40e1-91cc-987604b0a593"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.14 - Authenticated (Administrator+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.14",
+                    "references": {
+                        "cve": [
+                            "2024-37449"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a8fc6a5-a28a-4d6b-8d63-c5e2f4d26422"
+                        ],
+                        "wpvulndb": [
+                            "6d7c04cb-b3c1-4003-866b-a3301929e2aa"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.19 - Authenticated (Author+) Stored Cross-Site Scripting via SVG File Upload",
+                    "fixed_in": "6.7.19",
+                    "references": {
+                        "cve": [
+                            "2024-8107"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/22b59b36-ba47-4c10-8f43-a29ae3b9d446"
+                        ],
+                        "wpvulndb": [
+                            "278e6259-cb64-4cc1-91c6-2cf2178dd1d0"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "6.5.25",
+                "confidence": 60,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.servco.ae/, Match: 'Powered by Slider Revolution 6.5.25'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "trx_addons": {
+            "slug": "trx_addons",
+            "location": "https://www.servco.ae/wp-content/plugins/trx_addons/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "ThemeREX Addons - Remote Code Execution",
+                    "fixed_in": "1.6.50.2",
+                    "references": {
+                        "cve": [
+                            "2020-10257"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2020/02/zero-day-vulnerability-in-themerex-addons-plugin-exploited-in-the-wild",
+                            "https://themerex.net/wp/themerex-addons-vulnerability-fixed/",
+                            "https://www.wordfence.com/blog/2020/03/zero-day-vulnerability-in-themerex-addons-now-patched/"
+                        ],
+                        "wpvulndb": [
+                            "4ed4e60e-5bbb-4010-a7fe-40eadd8dee64"
+                        ]
+                    }
+                },
+                {
+                    "title": "ThemeREX Addons < 2.34.0 - Authenticated (Contributor+) Local File Inclusion via Shortcode",
+                    "fixed_in": "2.34.0",
+                    "references": {
+                        "cve": [
+                            "2025-0682"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/15a9718f-f877-4e33-8f7a-950791c4ca85"
+                        ],
+                        "wpvulndb": [
+                            "720ca6d1-ee75-4328-8958-39e95f3cb2f4"
+                        ]
+                    }
+                },
+                {
+                    "title": "ThemeREX Addons < 2.34.0 - Unauthenticated Arbitrary File Upload in trx_addons_uploads_save_data",
+                    "fixed_in": "2.34.0",
+                    "references": {
+                        "cve": [
+                            "2024-13448"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7c1372bd-821d-439c-9b11-dfa5f08dd0dd"
+                        ],
+                        "wpvulndb": [
+                            "876d9d29-4705-4c75-b151-8140b2709155"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "vc-extensions-bundle": {
+            "slug": "vc-extensions-bundle",
+            "location": "https://www.servco.ae/wp-content/plugins/vc-extensions-bundle/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 9,
+        "requests_remaining": 16
+    },
+    "stop_time": 1741517288,
+    "elapsed": 21,
+    "requests_done": 206,
+    "cached_requests": 7,
+    "data_sent": 44130,
+    "data_sent_humanised": "43.096 KB",
+    "data_received": 1796656,
+    "data_received_humanised": "1.713 MB",
+    "used_memory": 297603072,
+    "used_memory_humanised": "283.816 MB"
+}

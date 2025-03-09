@@ -1,0 +1,771 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741516716,
+    "start_memory": 48975872,
+    "target_url": "https://starcomnetwork.net/",
+    "target_ip": "172.67.130.64",
+    "effective_url": "https://starcomnetwork.net/",
+    "interesting_findings": [
+        {
+            "url": "https://starcomnetwork.net/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-litespeed-tag: 1ef1_HTTP.200",
+                "cf-cache-status: DYNAMIC",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=ZQ01ftCPIsQujdSeLdElVaoOCCVbl4CHOYlAoKLYj9lgXaY5eGrm23h2nkniG53lV6IqILBQFX%2Fs7p5598A9gs%2FGAai%2BwyaxWNlEG%2FZf52%2BxkKs%2FeqyeMkn9fiefcD14S6rFGsM%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "cf-ray: 91d9f175fdb622c8-ORD",
+                "alt-svc: h3=\":443\"; ma=86400",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=2948&min_rtt=2887&rtt_var=856&sent=7&recv=7&lost=0&retrans=0&sent_bytes=3410&recv_bytes=816&delivery_rate=1483893&cwnd=253&unsent_bytes=0&cid=700e04286c21410b&ts=1393&x=0\""
+            ]
+        },
+        {
+            "url": "https://starcomnetwork.net/robots.txt",
+            "to_s": "robots.txt found: https://starcomnetwork.net/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://starcomnetwork.net/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://starcomnetwork.net/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://starcomnetwork.net/readme.html",
+            "to_s": "WordPress readme found: https://starcomnetwork.net/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://starcomnetwork.net/wp-signup.php",
+            "to_s": "This site seems to be a multisite",
+            "type": "multisite",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Glossary#Multisite"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://starcomnetwork.net/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://starcomnetwork.net/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://starcomnetwork.net/wp-signup.php",
+            "to_s": "Registration is enabled: https://starcomnetwork.net/wp-signup.php",
+            "type": "registration",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://starcomnetwork.net/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://starcomnetwork.net/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://starcomnetwork.net/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://starcomnetwork.net/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://starcomnetwork.net/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://starcomnetwork.net/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://starcomnetwork.net/feed/podcast/starcom-network/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "hello-elementor",
+        "location": "https://starcomnetwork.net/wp-content/themes/hello-elementor/",
+        "latest_version": "3.3.0",
+        "last_updated": "2025-01-21T00:00:00.000Z",
+        "outdated": false,
+        "readme_url": "https://starcomnetwork.net/wp-content/themes/hello-elementor/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://starcomnetwork.net/wp-content/themes/hello-elementor/style.css",
+        "style_name": "Hello Elementor",
+        "style_uri": "https://elementor.com/hello-theme/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash",
+        "description": "Hello Elementor is a lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor site builder plugin. The theme is free, open-source, and designed for users who want a flexible, easy-to-use, and customizable website. The theme, which is optimized for performance, provides a solid foundation for users to build their own unique designs using the Elementor drag-and-drop site builder. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.",
+        "author": "Elementor Team",
+        "author_uri": "https://elementor.com/?utm_source=wp-themes&utm_campaign=author-uri&utm_medium=wp-dash",
+        "template": null,
+        "license": "GNU General Public License v3 or later.",
+        "license_uri": "https://www.gnu.org/licenses/gpl-3.0.html",
+        "tags": "accessibility-ready, flexible-header, custom-colors, custom-menu, custom-logo, featured-images, rtl-language-support, threaded-comments, translation-ready,",
+        "text_domain": "hello-elementor",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 12,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 6,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "3.3.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://starcomnetwork.net/wp-content/themes/hello-elementor/style.css, Match: 'Version: 3.3.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "advanced-ads": {
+            "slug": "advanced-ads",
+            "location": "https://starcomnetwork.net/wp-content/plugins/advanced-ads/",
+            "latest_version": "1.56.3",
+            "last_updated": "2025-02-25T10:15:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.56.1",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://starcomnetwork.net/wp-content/plugins/advanced-ads/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "advanced-ads-pro": {
+            "slug": "advanced-ads-pro",
+            "location": "https://starcomnetwork.net/wp-content/plugins/advanced-ads-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.28.2",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://starcomnetwork.net/wp-content/plugins/advanced-ads-pro/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "advanced-ads-tracking": {
+            "slug": "advanced-ads-tracking",
+            "location": "https://starcomnetwork.net/wp-content/plugins/advanced-ads-tracking/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.8.4",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://starcomnetwork.net/wp-content/plugins/advanced-ads-tracking/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://starcomnetwork.net/wp-content/plugins/elementor/",
+            "latest_version": "3.27.6",
+            "last_updated": "2025-02-18T15:16:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Elementor Website Builder < 3.27.5 - Contributor+ Stored XSS",
+                    "fixed_in": "3.27.5",
+                    "references": {
+                        "cve": [
+                            "2024-13445"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a11e702-34d2-49ee-8762-cc3614a7950a"
+                        ],
+                        "wpvulndb": [
+                            "25374232-2f9c-453d-bc47-124f80e67a92"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.27.3",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://starcomnetwork.net/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.27.3",
+                    "https://starcomnetwork.net/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.27.3"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://starcomnetwork.net/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://starcomnetwork.net/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor-pro": {
+            "slug": "elementor-pro",
+            "location": "https://starcomnetwork.net/wp-content/plugins/elementor-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.27.2",
+                "confidence": 80,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://starcomnetwork.net/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.27.2",
+                    "https://starcomnetwork.net/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.27.2"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://starcomnetwork.net/wp-content/plugins/elementor-pro/changelog.txt, Match: '#### 3.27.2 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "feedzy-rss-feeds": {
+            "slug": "feedzy-rss-feeds",
+            "location": "https://starcomnetwork.net/wp-content/plugins/feedzy-rss-feeds/",
+            "latest_version": "5.0.3",
+            "last_updated": "2025-02-07T14:48:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "5.0.2",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://starcomnetwork.net/wp-content/plugins/feedzy-rss-feeds/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "google-site-kit": {
+            "slug": "google-site-kit",
+            "location": "https://starcomnetwork.net/wp-content/plugins/google-site-kit/",
+            "latest_version": "1.147.0",
+            "last_updated": "2025-02-25T15:00:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Meta Tag (Passive Detection)",
+            "confidence": 40,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.145.0",
+                "confidence": 100,
+                "found_by": "Meta Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://starcomnetwork.net/, Match: 'Site Kit by Google 1.145.0'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://starcomnetwork.net/wp-content/plugins/google-site-kit/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://starcomnetwork.net/wp-content/plugins/google-site-kit/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "jet-blog": {
+            "slug": "jet-blog",
+            "location": "https://starcomnetwork.net/wp-content/plugins/jet-blog/",
+            "latest_version": "2.4.3",
+            "last_updated": "2025-02-12T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "jet-engine": {
+            "slug": "jet-engine",
+            "location": "https://starcomnetwork.net/wp-content/plugins/jet-engine/",
+            "latest_version": "3.6.4.1",
+            "last_updated": "2025-02-13T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "JetEngine < 3.1.3.1 - Author+ Remote Code Execution",
+                    "fixed_in": "3.1.3.1",
+                    "references": {
+                        "cve": [
+                            "2023-1406"
+                        ],
+                        "wpvulndb": [
+                            "2a81b6b1-2339-4889-9c28-1af133df8b65"
+                        ]
+                    }
+                },
+                {
+                    "title": "JetEngine < 3.2.5 - Missing Authorization",
+                    "fixed_in": "3.2.5",
+                    "references": {
+                        "cve": [
+                            "2023-48758"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/3f2c97f4-0a6e-4693-a6c8-bd81ca76988c"
+                        ],
+                        "wpvulndb": [
+                            "e39b5074-8b68-466a-9663-ef492f55765a"
+                        ]
+                    }
+                },
+                {
+                    "title": "JetEngine < 3.2.5 - Authenticated (Contributor+) Privilege Escalation",
+                    "fixed_in": "3.2.5",
+                    "references": {
+                        "cve": [
+                            "2023-48757"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ad66015d-7831-4590-9583-3abf7ca43c3b"
+                        ],
+                        "wpvulndb": [
+                            "a3b91164-6e0a-423f-8db5-4a0f250bbc53"
+                        ]
+                    }
+                },
+                {
+                    "title": "Jet Engine < 3.6.3 - Authenticated (Contributor+) Stored Cross-Site Scripting via list_tag Parameter",
+                    "fixed_in": "3.6.3",
+                    "references": {
+                        "cve": [
+                            "2025-0369"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f27979a8-0e68-4a45-9e3e-3667d88361d8"
+                        ],
+                        "wpvulndb": [
+                            "5ddc0216-6bda-431c-8dc7-535697509074"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "powerpack-elements": {
+            "slug": "powerpack-elements",
+            "location": "https://starcomnetwork.net/wp-content/plugins/powerpack-elements/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "PowerPack Pro for Elementor < 2.9.24 - Reflected Cross-Site Scripting",
+                    "fixed_in": "2.9.24",
+                    "references": {
+                        "cve": [
+                            "2023-49739"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/2feabc97-0463-4e50-91a8-234445ca2504"
+                        ],
+                        "wpvulndb": [
+                            "77c9a418-6608-4272-9337-dabcca5439a8"
+                        ]
+                    }
+                },
+                {
+                    "title": "PowerPack Pro for Elementor < 2.10.8 - Missing Authorization to Settings Reset",
+                    "fixed_in": "2.10.8",
+                    "references": {
+                        "cve": [
+                            "2024-24844"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/883e1f3c-7e47-4522-ae8c-a9a6b4160be2"
+                        ],
+                        "wpvulndb": [
+                            "35570703-9db4-486d-8b56-7dabfc89275f"
+                        ]
+                    }
+                },
+                {
+                    "title": "PowerPack Pro for Elementor < 2.10.8 - Cross-Site Request Forgery to Plugin Settings Modification and Cross-Site Scripting",
+                    "fixed_in": "2.10.8",
+                    "references": {
+                        "cve": [
+                            "2024-24843"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e68bbee2-1c1a-4751-988e-dde423f8aab3"
+                        ],
+                        "wpvulndb": [
+                            "436258ef-5505-45bd-a705-7c435d52af2f"
+                        ]
+                    }
+                },
+                {
+                    "title": "PowerPack Pro for Elementor < 2.10.18 - Authenticated (Contributor+) Privilege Escalation",
+                    "fixed_in": "2.10.18",
+                    "references": {
+                        "cve": [
+                            "2024-3668"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/249ccc77-0daf-41bc-b5c5-991bf17d645d"
+                        ],
+                        "wpvulndb": [
+                            "b530ce8c-fa91-44e0-a15e-cdfc78247a7e"
+                        ]
+                    }
+                },
+                {
+                    "title": "PowerPack Pro for Elementor < 2.10.15 - Contributor+ Privilege Escalation",
+                    "fixed_in": "2.10.15",
+                    "references": {
+                        "cve": [
+                            "2024-39634"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d35e2d84-12c7-4c01-bde9-2fb05583a212"
+                        ],
+                        "wpvulndb": [
+                            "48b228a9-36c5-4355-b5db-d93537e86f2d"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "seriously-simple-podcasting": {
+            "slug": "seriously-simple-podcasting",
+            "location": "https://starcomnetwork.net/wp-content/plugins/seriously-simple-podcasting/",
+            "latest_version": "3.9.0",
+            "last_updated": "2025-02-27T12:08:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.8.1",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://starcomnetwork.net/wp-content/plugins/seriously-simple-podcasting/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "woocommerce": {
+            "slug": "woocommerce",
+            "location": "https://starcomnetwork.net/wp-content/plugins/woocommerce/",
+            "latest_version": "9.7.1",
+            "last_updated": "2025-03-04T15:28:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Woocommerce < 9.7.1 - Shop Manager+ Stored XSS via New Product Form",
+                    "fixed_in": "9.7.1",
+                    "references": {
+                        "cve": [
+                            "2025-26762"
+                        ],
+                        "url": [
+                            "https://developer.woocommerce.com/2025/03/04/woocommerce-9-7-1-dot-release/"
+                        ],
+                        "wpvulndb": [
+                            "94cbfc1b-9a55-44fa-b1d9-0c47980ace3c"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "9.6.0",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://starcomnetwork.net/wp-content/plugins/woocommerce/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "yith-woocommerce-subscription": {
+            "slug": "yith-woocommerce-subscription",
+            "location": "https://starcomnetwork.net/wp-content/plugins/yith-woocommerce-subscription/",
+            "latest_version": "4.5.0",
+            "last_updated": "2025-03-03T10:47:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.5.0",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://starcomnetwork.net/wp-content/plugins/yith-woocommerce-subscription/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://starcomnetwork.net/wp-content/plugins/yith-woocommerce-subscription/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 15,
+        "requests_remaining": 10
+    },
+    "stop_time": 1741516733,
+    "elapsed": 16,
+    "requests_done": 230,
+    "cached_requests": 7,
+    "data_sent": 52501,
+    "data_sent_humanised": "51.271 KB",
+    "data_received": 1699884,
+    "data_received_humanised": "1.621 MB",
+    "used_memory": 274296832,
+    "used_memory_humanised": "261.59 MB"
+}

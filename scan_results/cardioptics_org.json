@@ -1,0 +1,330 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741516654,
+    "start_memory": 49025024,
+    "target_url": "https://cardioptics.org/",
+    "target_ip": "192.145.237.209",
+    "effective_url": "https://cardioptics.org/",
+    "interesting_findings": [
+        {
+            "url": "https://cardioptics.org/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server: Apache"
+            ]
+        },
+        {
+            "url": "https://cardioptics.org/robots.txt",
+            "to_s": "robots.txt found: https://cardioptics.org/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://cardioptics.org/readme.html",
+            "to_s": "WordPress readme found: https://cardioptics.org/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://cardioptics.org/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://cardioptics.org/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://cardioptics.org/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://cardioptics.org/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "4.9.26",
+        "release_date": "2024-06-24",
+        "status": "outdated",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://cardioptics.org/feed/, <generator>https://wordpress.org/?v=4.9.26</generator>",
+            "https://cardioptics.org/comments/feed/, <generator>https://wordpress.org/?v=4.9.26</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "yootheme",
+        "location": "https://cardioptics.org/wp-content/themes/yootheme/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://cardioptics.org/wp-content/themes/yootheme/style.css",
+        "style_name": "YOOtheme",
+        "style_uri": "https://yootheme.com",
+        "description": "A powerful, flexible and elegant website builder that allows you to create complex pages within minutes and customize every aspect of the theme.",
+        "author": "YOOtheme",
+        "author_uri": "https://yootheme.com",
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 54,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 16,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.12.6",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://cardioptics.org/wp-content/themes/yootheme/style.css, Match: 'Version: 1.12.6'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "jetpack": {
+            "slug": "jetpack",
+            "location": "https://cardioptics.org/wp-content/plugins/jetpack/",
+            "latest_version": "14.4",
+            "last_updated": "2025-03-04T13:58:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Jetpack 5.1-7.9 - Vulnerability in Shortcode Embed Code ",
+                    "fixed_in": "7.9.1",
+                    "references": {
+                        "url": [
+                            "https://jetpack.com/2019/11/19/jetpack-7-9-1-maintenance-security/",
+                            "https://plugins.trac.wordpress.org/changeset/2196895/jetpack",
+                            "https://github.com/Automattic/jetpack/commit/5e38904da8eda0bc86b29fd5298c222e362583df"
+                        ],
+                        "wpvulndb": [
+                            "7105cb30-e393-4c79-aeb7-7439bd560738"
+                        ]
+                    }
+                },
+                {
+                    "title": "Jetpack < 9.8 - Carousel Module Non-Published Page/Post Attachment Comment Leak",
+                    "fixed_in": "9.8",
+                    "references": {
+                        "cve": [
+                            "2021-24374"
+                        ],
+                        "url": [
+                            "https://jetpack.com/2021/06/01/jetpack-9-8-engage-your-audience-with-wordpress-stories/",
+                            "https://plugins.trac.wordpress.org/changeset/2541817/jetpack"
+                        ],
+                        "wpvulndb": [
+                            "08a8a51c-49d3-4bce-b7e0-e365af1d8f33"
+                        ]
+                    }
+                },
+                {
+                    "title": "Jetpack < 12.1.1 - Author+ Arbitrary File Manipulation via API",
+                    "fixed_in": "12.1.1",
+                    "references": {
+                        "cve": [
+                            "2023-2996"
+                        ],
+                        "url": [
+                            "https://jetpack.com/blog/jetpack-12-1-1-critical-security-update/"
+                        ],
+                        "wpvulndb": [
+                            "52d221bd-ae42-435d-a90a-60a5ae530663"
+                        ]
+                    }
+                },
+                {
+                    "title": "Jetpack < 12.8-a.3 - Contributor+ Stored XSS via block attribute",
+                    "fixed_in": "12.8-a.3",
+                    "references": {
+                        "cve": [
+                            "2023-45050"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/824360ab-c797-465a-8480-baeae941af29"
+                        ],
+                        "wpvulndb": [
+                            "4478c8d3-0c7f-43a0-9354-46795e0e6fbc"
+                        ]
+                    }
+                },
+                {
+                    "title": "Jetpack < 12.7 - Improper Authorization via WPCom External Media REST endpoints",
+                    "fixed_in": "12.7",
+                    "references": {
+                        "cve": [
+                            "2023-47788"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e62fa16f-a4a1-44a7-9a66-abafd8dddf67"
+                        ],
+                        "wpvulndb": [
+                            "cce4ac0a-777f-4dde-b86e-614a224dbf6e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Jetpack < 12.7 - Authenticated(Contributor+) Clickjacking via Iframe Injection",
+                    "fixed_in": "12.7",
+                    "references": {
+                        "cve": [
+                            "2023-47774"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/92a3e622-b3b2-450e-82a7-0a942711e8c0"
+                        ],
+                        "wpvulndb": [
+                            "01a0ffcd-3bf6-434c-9fd0-d5570ed4f336"
+                        ]
+                    }
+                },
+                {
+                    "title": "Jetpack < 13.2.1 - Contributor+ Stored XSS",
+                    "fixed_in": "13.2.1",
+                    "references": {
+                        "wpvulndb": [
+                            "bfed3099-bd41-4988-a76b-2b9349051879"
+                        ]
+                    }
+                },
+                {
+                    "title": "Jetpack < 13.4 - Contributor+ Stored Cross-Site Scripting via wpvideo Shortcode",
+                    "fixed_in": "13.4",
+                    "references": {
+                        "cve": [
+                            "2024-4392"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/11dceac7-7ff8-4384-9046-919c38947c32"
+                        ],
+                        "wpvulndb": [
+                            "5649d116-5263-41e9-87b4-1cb71f12d419"
+                        ]
+                    }
+                },
+                {
+                    "title": "Jetpack < 13.8 - Unauthenticated Arbitrary Block & Shortcode Execution",
+                    "fixed_in": "13.8",
+                    "references": {
+                        "cve": [
+                            "2024-10075"
+                        ],
+                        "wpvulndb": [
+                            "a984976c-291a-4f68-90d4-e452605ea7d1"
+                        ]
+                    }
+                },
+                {
+                    "title": "Jetpack < 13.8, Boost < 3.4.8 - Contributor+ Stored XSS",
+                    "fixed_in": "13.8",
+                    "references": {
+                        "cve": [
+                            "2024-10076"
+                        ],
+                        "wpvulndb": [
+                            "15f278f6-0418-4c83-b925-b1a2d8c53e2f"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "7.1.5",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://cardioptics.org/wp-content/plugins/jetpack/css/jetpack.css?ver=7.1.5"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://cardioptics.org/wp-content/plugins/jetpack/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://cardioptics.org/wp-content/plugins/jetpack/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 3,
+        "requests_remaining": 22
+    },
+    "stop_time": 1741516687,
+    "elapsed": 33,
+    "requests_done": 181,
+    "cached_requests": 7,
+    "data_sent": 62632,
+    "data_sent_humanised": "61.164 KB",
+    "data_received": 221912,
+    "data_received_humanised": "216.711 KB",
+    "used_memory": 250929152,
+    "used_memory_humanised": "239.305 MB"
+}

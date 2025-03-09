@@ -1,0 +1,227 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741516750,
+    "start_memory": 49004544,
+    "target_url": "https://www.cafehistoria.com.br/",
+    "target_ip": "172.67.186.219",
+    "effective_url": "https://www.cafehistoria.com.br/",
+    "interesting_findings": [
+        {
+            "url": "https://www.cafehistoria.com.br/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "cf-cache-status: DYNAMIC",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=ffEDa9dfSKLCWS%2BO%2FvBYvouBDuu6BgPdeitiFyFkjC8wG74uvCny0B%2FyD5mMaf3MseUGEaAvF0ezXC5BFuAy5Zywr3j49p7G%2FIfBhxdQJqz%2Fd9H5sYKIAVl8pwfA8zlN9MfrCOFPZOSzEg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "cf-ray: 91d9f2072978dadf-ORD",
+                "alt-svc: h3=\":443\"; ma=86400",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=2795&min_rtt=2712&rtt_var=824&sent=6&recv=8&lost=0&retrans=0&sent_bytes=3418&recv_bytes=823&delivery_rate=1053097&cwnd=253&unsent_bytes=0&cid=6477aef7319b3f24&ts=11918&x=0\""
+            ]
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Meta Generator (Passive Detection)",
+        "confidence": 60,
+        "interesting_entries": [
+            "https://www.cafehistoria.com.br/, Match: 'WordPress 6.7.2'"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "fox",
+        "location": "https://www.cafehistoria.com.br/wp-content/themes/fox/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.cafehistoria.com.br/wp-content/themes/fox/style.css",
+        "style_name": "Fox",
+        "style_uri": "https://themeforest.net/item/the-fox-contemporary-magazine-theme-for-creators/11103012/",
+        "description": "A Modern & Contemporary Blog / News / Magazine WordPress Theme for Creators",
+        "author": "WiThemes",
+        "author_uri": "https://themeforest.net/user/withemes/",
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": "blog, news, photography, grid-layout, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-colors, custom-logo, custom-menu",
+        "text_domain": "wi",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 80,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 40,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "6.8.1",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.cafehistoria.com.br/wp-content/themes/fox/style.css, Match: 'Version: 6.8.1'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://www.cafehistoria.com.br/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.4",
+            "last_updated": "2025-02-18T06:51:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.0.4",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.cafehistoria.com.br/wp-content/plugins/contact-form-7/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wp-rocket": {
+            "slug": "wp-rocket",
+            "location": "https://www.cafehistoria.com.br/wp-content/plugins/wp-rocket/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.4",
+                "confidence": 60,
+                "found_by": "Translation File (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.cafehistoria.com.br/wp-content/plugins/wp-rocket/languages/rocket.pot, Match: 'Project-Id-Version: WP Rocket 3.4'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wp-smushit": {
+            "slug": "wp-smushit",
+            "location": "https://www.cafehistoria.com.br/wp-content/plugins/wp-smushit/",
+            "latest_version": "3.17.1",
+            "last_updated": "2025-02-10T13:05:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.17.1",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.cafehistoria.com.br/wp-content/plugins/wp-smushit/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.cafehistoria.com.br/wp-content/plugins/wp-smushit/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wp-user-avatar": {
+            "slug": "wp-user-avatar",
+            "location": "https://www.cafehistoria.com.br/wp-content/plugins/wp-user-avatar/",
+            "latest_version": "4.15.22",
+            "last_updated": "2025-03-07T14:36:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.15.22",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.cafehistoria.com.br/wp-content/plugins/wp-user-avatar/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 6,
+        "requests_remaining": 19
+    },
+    "stop_time": 1741517261,
+    "elapsed": 511,
+    "requests_done": 913,
+    "cached_requests": 6,
+    "data_sent": 250992,
+    "data_sent_humanised": "245.109 KB",
+    "data_received": 5097379,
+    "data_received_humanised": "4.861 MB",
+    "used_memory": 282284032,
+    "used_memory_humanised": "269.207 MB"
+}
