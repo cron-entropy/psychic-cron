@@ -1,0 +1,1707 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741603015,
+    "start_memory": 48852992,
+    "target_url": "https://www.wockhardt.com/",
+    "target_ip": "162.241.127.48",
+    "effective_url": "https://www.wockhardt.com/",
+    "interesting_findings": [
+        {
+            "url": "https://www.wockhardt.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server: Apache"
+            ]
+        },
+        {
+            "url": "https://www.wockhardt.com/robots.txt",
+            "to_s": "robots.txt found: https://www.wockhardt.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.wockhardt.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.wockhardt.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.wockhardt.com/readme.html",
+            "to_s": "WordPress readme found: https://www.wockhardt.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.wockhardt.com/wp-signup.php",
+            "to_s": "This site seems to be a multisite",
+            "type": "multisite",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Glossary#Multisite"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.wockhardt.com/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.wockhardt.com/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.wockhardt.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.wockhardt.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.2.6",
+        "release_date": "2024-06-24",
+        "status": "outdated",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.wockhardt.com/feed/, <generator>https://wordpress.org/?v=6.2.6</generator>",
+            "https://www.wockhardt.com/comments/feed/, <generator>https://wordpress.org/?v=6.2.6</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "wockhardt",
+        "location": "https://www.wockhardt.com/wp-content/themes/wockhardt/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://www.wockhardt.com/wp-content/themes/wockhardt/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.wockhardt.com/wp-content/themes/wockhardt/style.css?ver=6.2.6",
+        "style_name": "Wockhardt",
+        "style_uri": "https://wisdmlabs.com/",
+        "description": null,
+        "author": "Wisdmlabs",
+        "author_uri": "https://wisdmlabs.com/",
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": "wockhardt",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.0.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.wockhardt.com/wp-content/themes/wockhardt/style.css?ver=6.2.6, Match: 'Version: 1.0.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "chatbot": {
+            "slug": "chatbot",
+            "location": "https://www.wockhardt.com/wp-content/plugins/chatbot/",
+            "latest_version": "6.4.1",
+            "last_updated": "2025-03-06T08:40:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "ChatBot < 4.2.9 - Unauthenticated Settings Reset",
+                    "fixed_in": "4.2.9",
+                    "references": {
+                        "wpvulndb": [
+                            "f9cd4bfb-6c80-40a3-b973-077142e41aef"
+                        ]
+                    }
+                },
+                {
+                    "title": "ChatBot < 4.3.0 - Settings Reset via CSRF",
+                    "fixed_in": "4.3.0",
+                    "references": {
+                        "cve": [
+                            "2023-24415"
+                        ],
+                        "wpvulndb": [
+                            "70f7e26b-32e3-4a27-8867-cc78d434c877"
+                        ]
+                    }
+                },
+                {
+                    "title": "AI ChatBot < 4.3.1 - Admin+ Stored XSS",
+                    "fixed_in": "4.3.1",
+                    "references": {
+                        "cve": [
+                            "2022-47613"
+                        ],
+                        "wpvulndb": [
+                            "deb95e87-8b47-48a3-a2e1-c8ebcd8d094d"
+                        ]
+                    }
+                },
+                {
+                    "title": "ChatBot < 4.5.1 - Admin+ Stored XSS",
+                    "fixed_in": "4.5.1",
+                    "references": {
+                        "cve": [
+                            "2023-1649"
+                        ],
+                        "wpvulndb": [
+                            "ea806115-14ab-4bc4-a272-2141cb14454a"
+                        ]
+                    }
+                },
+                {
+                    "title": "ChatBot < 4.4.9 - Subscriber+ OpenAI Settings Update to Stored XSS",
+                    "fixed_in": "4.4.9",
+                    "references": {
+                        "cve": [
+                            "2023-1651"
+                        ],
+                        "wpvulndb": [
+                            "c88b22ba-4fc2-49ad-a457-224157521bad"
+                        ]
+                    }
+                },
+                {
+                    "title": "ChatBot < 4.4.9 - Unauthenticated Stored XSS",
+                    "fixed_in": "4.4.9",
+                    "references": {
+                        "cve": [
+                            "2023-1660"
+                        ],
+                        "wpvulndb": [
+                            "1a5cbcfc-fa55-433a-a76b-3881b6c4bea2"
+                        ]
+                    }
+                },
+                {
+                    "title": "ChatBot < 4.4.7 - Unauthenticated PHP Object Injection",
+                    "fixed_in": "4.4.7",
+                    "references": {
+                        "cve": [
+                            "2023-1650"
+                        ],
+                        "wpvulndb": [
+                            "7d7fe498-0aa3-4fa7-b560-610b42b2abed"
+                        ]
+                    }
+                },
+                {
+                    "title": "ChatBot < 4.4.5 - Stored XSS via CSRF",
+                    "fixed_in": "4.4.5",
+                    "references": {
+                        "cve": [
+                            "2023-1011"
+                        ],
+                        "wpvulndb": [
+                            "d1784446-b3da-4175-9dac-20b030f19984"
+                        ]
+                    }
+                },
+                {
+                    "title": "AI ChatBot < 4.5.5 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "4.5.5",
+                    "references": {
+                        "cve": [
+                            "2023-2742"
+                        ],
+                        "wpvulndb": [
+                            "f689442a-a851-4140-a10c-ac579f9da142"
+                        ]
+                    }
+                },
+                {
+                    "title": "AI ChatBot < 4.5.6 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "4.5.6",
+                    "references": {
+                        "cve": [
+                            "2023-2811"
+                        ],
+                        "wpvulndb": [
+                            "82a81721-0435-45a6-bd5b-dc90186cf803"
+                        ]
+                    }
+                },
+                {
+                    "title": "AI ChatBot < 4.6.1 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "4.6.1",
+                    "references": {
+                        "cve": [
+                            "2023-3175"
+                        ],
+                        "wpvulndb": [
+                            "7643980b-eaa2-45d1-bd9d-9afae0943f43"
+                        ]
+                    }
+                },
+                {
+                    "title": "Chatbot < 4.7.8 - Admin+ Stored XSS in FAQ Builder",
+                    "fixed_in": "4.7.8",
+                    "references": {
+                        "cve": [
+                            "2023-4253"
+                        ],
+                        "wpvulndb": [
+                            "1cbbab9e-be3d-4081-bc0e-c52d500d9871"
+                        ]
+                    }
+                },
+                {
+                    "title": "Chatbot < 4.7.8 - Admin+ Stored XSS in Language Settings",
+                    "fixed_in": "4.7.8",
+                    "references": {
+                        "cve": [
+                            "2023-4254"
+                        ],
+                        "wpvulndb": [
+                            "0dfffe48-e60d-4bab-b194-8a63554246c3"
+                        ]
+                    }
+                },
+                {
+                    "title": "ChatBot < 4.7.9 - CSRF",
+                    "fixed_in": "4.7.9",
+                    "references": {
+                        "cve": [
+                            "2023-44993"
+                        ],
+                        "wpvulndb": [
+                            "4f5eb427-08be-464f-9f1c-1671b42decc6"
+                        ]
+                    }
+                },
+                {
+                    "title": "ChatBot < 4.9.1 - Unauthenticated Sensitive Data Disclosure",
+                    "fixed_in": "4.9.1",
+                    "references": {
+                        "cve": [
+                            "2023-5254"
+                        ],
+                        "wpvulndb": [
+                            "20dcd49e-cc79-4ceb-a7cf-52c57ebfbb15"
+                        ]
+                    }
+                },
+                {
+                    "title": "ChatBot < 4.9.1 - Unauthenticated Blind SQL Injection",
+                    "fixed_in": "4.9.1",
+                    "references": {
+                        "cve": [
+                            "2023-5204"
+                        ],
+                        "wpvulndb": [
+                            "67e04e08-6a07-477c-a0f8-5189f87fffc0"
+                        ]
+                    }
+                },
+                {
+                    "title": "AI ChatBot < 4.9.1 - Cross-Site Request Forgery (CSRF)",
+                    "fixed_in": "4.9.1",
+                    "references": {
+                        "cve": [
+                            "2023-5534"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/chatbot/ai-chatbot-489-cross-site-request-forgery-on-ajax-actions"
+                        ],
+                        "wpvulndb": [
+                            "fe4d1bf5-bd3d-4c3c-92a9-5a584ccada33"
+                        ]
+                    }
+                },
+                {
+                    "title": "AI ChatBot < 4.9.1 - Subscriber+ Arbitrary File Deletion",
+                    "fixed_in": "4.9.1",
+                    "references": {
+                        "cve": [
+                            "2023-5212"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/chatbot/ai-chatbot-489-authenticated-subscriber-arbitrary-file-deletion-via-qcld-openai-delete-training-file"
+                        ],
+                        "wpvulndb": [
+                            "0443d08f-4297-498a-b063-760081148e8a"
+                        ]
+                    }
+                },
+                {
+                    "title": "AI ChatBot < 4.9.1 - Missing authorization in AJAX calls",
+                    "fixed_in": "4.9.1",
+                    "references": {
+                        "cve": [
+                            "2023-5533"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/chatbot/ai-chatbot-489-missing-authorization-on-ajax-actions"
+                        ],
+                        "wpvulndb": [
+                            "8fa2ecd1-31ac-47f8-a9d4-08f30710eb75"
+                        ]
+                    }
+                },
+                {
+                    "title": "AI ChatBot < 4.9.1 and 4.9.2 - Authenticated (Subscriber+) Directory Traversal to Arbitrary File Write via qcld_openai_upload_pagetraining_file",
+                    "fixed_in": "4.9.1",
+                    "references": {
+                        "cve": [
+                            "2023-5241"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/25199281-5286-4d75-8d27-26ce215e0993"
+                        ],
+                        "wpvulndb": [
+                            "b8341a4d-4473-41f6-9819-d06e0f78da41"
+                        ]
+                    }
+                },
+                {
+                    "title": "ChatBot 4.8.6 - 4.9.6 - Authenticated (Administrator+) Stored Cross-Site Scripting in FAQ Builder",
+                    "fixed_in": "4.9.7",
+                    "references": {
+                        "cve": [
+                            "2023-5606"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/fc305c48-8337-42b7-ad61-61aea8018def"
+                        ],
+                        "wpvulndb": [
+                            "2ea59637-e788-4d18-9d05-b8ad812ca236"
+                        ]
+                    }
+                },
+                {
+                    "title": "ChatBot < 4.7.9 - Authenticated (Administrator+) SQL Injection",
+                    "fixed_in": "4.7.9",
+                    "references": {
+                        "cve": [
+                            "2023-48741"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/db1bb11d-4752-42d0-b538-2d2a4c827226"
+                        ],
+                        "wpvulndb": [
+                            "f63d088d-50b0-48c9-893a-fbd3326fb4d2"
+                        ]
+                    }
+                },
+                {
+                    "title": "ChatBot < 5.1.1 - Unauthenticated PHP Object Injection",
+                    "fixed_in": "5.1.1",
+                    "references": {
+                        "cve": [
+                            "2024-22309"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/75432cfd-7c0d-4d93-9b62-cac0fd9b49d5"
+                        ],
+                        "wpvulndb": [
+                            "e33963ac-b775-42d0-a7bd-0e164f1868f8"
+                        ]
+                    }
+                },
+                {
+                    "title": "AI ChatBot < 5.3.6 - Missing Authorization via openai_file_list_callback",
+                    "fixed_in": "5.3.6",
+                    "references": {
+                        "cve": [
+                            "2024-0451"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/1c0572a5-6cc9-43ab-a4a3-c8d3b93c8fcf"
+                        ],
+                        "wpvulndb": [
+                            "43d6e1ed-46f2-46c8-9526-cd1eb49c3cce"
+                        ]
+                    }
+                },
+                {
+                    "title": "AI ChatBot < 5.3.6 - Missing Authorization via openai_file_upload_callback",
+                    "fixed_in": "5.3.6",
+                    "references": {
+                        "cve": [
+                            "2024-0452"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/34b6475c-b5dd-42a1-98d1-9b5ae9ff4ad5"
+                        ],
+                        "wpvulndb": [
+                            "96ac2b5a-727d-41e5-975b-29f441476697"
+                        ]
+                    }
+                },
+                {
+                    "title": "AI ChatBot < 5.3.6 - Missing Authorization via openai_file_delete_callback",
+                    "fixed_in": "5.3.6",
+                    "references": {
+                        "cve": [
+                            "2024-0453"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7e0ef4a5-42d7-4cea-b19f-51917e3ee55f"
+                        ],
+                        "wpvulndb": [
+                            "98e426b9-2840-410d-98c4-ea1f540dac62"
+                        ]
+                    }
+                },
+                {
+                    "title": "AI ChatBot for WordPress \u2013 WPBot < 5.5.8 - Authenticated (Administrator+) Stored Cross-Site Scripting",
+                    "fixed_in": "5.5.8",
+                    "references": {
+                        "cve": [
+                            "2024-6669"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ce23efed-fe21-486a-ab3b-9ed0dd26a971"
+                        ],
+                        "wpvulndb": [
+                            "6d87739d-f508-4e30-a856-7d00b74c9270"
+                        ]
+                    }
+                },
+                {
+                    "title": "AI ChatBot for WordPress \u2013 WPBot < 6.2.4 - Admin+ Stored XSS",
+                    "fixed_in": "6.2.4",
+                    "references": {
+                        "cve": [
+                            "2025-0329"
+                        ],
+                        "wpvulndb": [
+                            "db101819-4404-46c9-a02e-b1b1b7ace11e"
+                        ]
+                    }
+                },
+                {
+                    "title": "ChatBot < 6.3.6 - Authenticated (Contributor+) Local File Inclusion",
+                    "fixed_in": "6.3.6",
+                    "references": {
+                        "cve": [
+                            "2025-26932"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5c8409c8-8917-4343-a6e6-c6b6be04a236"
+                        ],
+                        "wpvulndb": [
+                            "5103e200-9fb2-48b1-9275-ec68e8aa4ab9"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.3.9",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.wockhardt.com/wp-content/plugins/chatbot/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.wockhardt.com/wp-content/plugins/chatbot/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://www.wockhardt.com/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.4",
+            "last_updated": "2025-02-18T06:51:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Contact Form 7 < 5.3.2 - Unrestricted File Upload",
+                    "fixed_in": "5.3.2",
+                    "references": {
+                        "cve": [
+                            "2020-35489"
+                        ],
+                        "url": [
+                            "https://www.getastra.com/blog/911/plugin-exploit/contact-form-7-unrestricted-file-upload-vulnerability/",
+                            "https://www.jinsonvarghese.com/unrestricted-file-upload-in-contact-form-7/",
+                            "https://contactform7.com/2020/12/17/contact-form-7-532/#more-38314"
+                        ],
+                        "wpvulndb": [
+                            "7391118e-eef5-4ff8-a8ea-f6b65f442c63"
+                        ]
+                    }
+                },
+                {
+                    "title": "Contact Form 7 < 5.8.4 - Authenticated (Editor+) Arbitrary File Upload",
+                    "fixed_in": "5.8.4",
+                    "references": {
+                        "cve": [
+                            "2023-6449"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5d7fb020-6acb-445e-a46b-bdb5aaf8f2b6"
+                        ],
+                        "wpvulndb": [
+                            "70e21d9a-b1e6-4083-bcd3-7c1c13fd5382"
+                        ]
+                    }
+                },
+                {
+                    "title": "Contact Form 7 < 5.9.2 - Reflected Cross-Site Scripting",
+                    "fixed_in": "5.9.2",
+                    "references": {
+                        "cve": [
+                            "2024-2242"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d5bf4972-424a-4470-a0bc-7dcc95378e0e"
+                        ],
+                        "wpvulndb": [
+                            "1c070a2c-2ab0-43bf-b10b-6575709918bc"
+                        ]
+                    }
+                },
+                {
+                    "title": " Contact Form 7 < 5.9.5 - Unauthenticated Open Redirect",
+                    "fixed_in": "5.9.5",
+                    "references": {
+                        "cve": [
+                            "2024-4704"
+                        ],
+                        "wpvulndb": [
+                            "8bdcdb5a-9026-4157-8592-345df8fb1a17"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "5.1.1",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.wockhardt.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.1",
+                    "https://www.wockhardt.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.1"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.wockhardt.com/wp-content/plugins/contact-form-7/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.wockhardt.com/wp-content/plugins/contact-form-7/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "dropdown-content": {
+            "slug": "dropdown-content",
+            "location": "https://www.wockhardt.com/wp-content/plugins/dropdown-content/",
+            "latest_version": "1.0.2",
+            "last_updated": "2016-09-23T06:15:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.0.2",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.wockhardt.com/wp-content/plugins/dropdown-content/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.wockhardt.com/wp-content/plugins/dropdown-content/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://www.wockhardt.com/wp-content/plugins/elementor/",
+            "latest_version": "3.27.6",
+            "last_updated": "2025-02-18T15:16:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Elementor Page Builder < 2.8.5 - Authenticated Reflected XSS",
+                    "fixed_in": "2.8.5",
+                    "references": {
+                        "cve": [
+                            "2020-8426"
+                        ],
+                        "url": [
+                            "https://blog.impenetrable.tech/xss-in-wordpress-elementor-plugin"
+                        ],
+                        "wpvulndb": [
+                            "e1422824-adba-4d7c-a7f3-c0a6b3ab0232"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Page Builder < 2.7.7 - Authenticated Stored XSS",
+                    "fixed_in": "2.7.7",
+                    "references": {
+                        "url": [
+                            "https://labs.sucuri.net/stored-xss-in-elementor/"
+                        ],
+                        "wpvulndb": [
+                            "2bcf7eb7-cddb-4d6a-8789-43dd3dff4dcf"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Page Builder < 2.9.6 - Authenticated Safe Mode Privilege Escalation",
+                    "fixed_in": "2.9.6",
+                    "references": {
+                        "cve": [
+                            "2020-20634"
+                        ],
+                        "url": [
+                            "https://blog.nintechnet.com/wordpress-elementor-plugin-fixed-safe-mode-privilege-escalation-vulnerability/",
+                            "https://github.com/elementor/elementor/commit/2204e9ecb02a764e4e4fed49f28d8af7534b9392"
+                        ],
+                        "wpvulndb": [
+                            "7120f212-0c04-4c41-b6a8-32a380c0c25d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 2.9.8 - SVG Sanitizer Bypass leading to Authenticated Stored XSS",
+                    "fixed_in": "2.9.8",
+                    "references": {
+                        "cve": [
+                            "2020-36703"
+                        ],
+                        "url": [
+                            "https://blog.nintechnet.com/wordpress-elementor-plugin-fixed-svg-xss-protection-bypass-vulnerability/"
+                        ],
+                        "wpvulndb": [
+                            "e601fc58-97a0-4a67-8955-abf0e37e74ae"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 2.7.5 - Authenticated Arbitrary File Upload",
+                    "fixed_in": "2.7.5",
+                    "references": {
+                        "cve": [
+                            "2020-7055"
+                        ],
+                        "url": [
+                            "https://pentest.co.uk/labs/advisory/cve-2020-7055/",
+                            "https://pentest.co.uk/labs/vulnerability-disclosure-cve-2020-7055/"
+                        ],
+                        "youtube": [
+                            "https://www.youtube.com/watch?v=3MYygBMisQs"
+                        ],
+                        "wpvulndb": [
+                            "3b7e04de-e23f-4cf9-a9bf-2cf4cbc8c538"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Page Builder < 2.9.10 - Authenticated Stored XSS",
+                    "fixed_in": "2.9.10",
+                    "references": {
+                        "cve": [
+                            "2020-13864",
+                            "2020-13865"
+                        ],
+                        "url": [
+                            "https://www.softwaresecured.com/elementor-page-builder-stored-xss/"
+                        ],
+                        "wpvulndb": [
+                            "31659b56-2046-4be8-887f-a016da138595"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 2.9.14 - Authenticated Stored Cross-Site Scripting",
+                    "fixed_in": "2.9.14",
+                    "references": {
+                        "cve": [
+                            "2020-15020"
+                        ],
+                        "url": [
+                            "http://hidden-one.co.in/2020/07/07/cve-2020-1020-stored-xss-on-elementor-wordpress-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "7dfde62f-f167-403b-8b23-f4ac845ac04d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.0.14 - SVG Upload Allowed by Default",
+                    "fixed_in": "3.0.14",
+                    "references": {
+                        "cve": [
+                            "2020-36171"
+                        ],
+                        "wpvulndb": [
+                            "5c5f44e1-c00b-4a90-a581-ef06765b7f66"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Page Builder < 2.8.4 - Cross-Site Scripting (XSS)",
+                    "fixed_in": "2.8.4",
+                    "references": {
+                        "cve": [
+                            "2020-7109"
+                        ],
+                        "url": [
+                            "https://github.com/elementor/elementor/commit/a31dcf4ee1d18b58feef3e59fabb79976c11d0b8"
+                        ],
+                        "wpvulndb": [
+                            "6503bdfa-013a-4172-8e3f-ea99444f1eca"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.1.4 - Authenticated Stored Cross-Site Scripting (XSS) in Column Element",
+                    "fixed_in": "3.1.4",
+                    "references": {
+                        "cve": [
+                            "2021-24201"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/03/cross-site-scripting-vulnerabilities-in-elementor-impact-over-7-million-sites/"
+                        ],
+                        "wpvulndb": [
+                            "9647f516-b130-4cc8-85fb-2e69b034ced0"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.1.4 - Authenticated Stored Cross-Site Scripting (XSS) in Heading Widget",
+                    "fixed_in": "3.1.4",
+                    "references": {
+                        "cve": [
+                            "2021-24202"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/03/cross-site-scripting-vulnerabilities-in-elementor-impact-over-7-million-sites/"
+                        ],
+                        "wpvulndb": [
+                            "b72bd13d-c8e2-4347-b009-542fc0fe21bb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.1.4 - Authenticated Stored Cross-Site Scripting (XSS) in Divider Widget",
+                    "fixed_in": "3.1.4",
+                    "references": {
+                        "cve": [
+                            "2021-24203"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/03/cross-site-scripting-vulnerabilities-in-elementor-impact-over-7-million-sites/"
+                        ],
+                        "wpvulndb": [
+                            "aa152ad0-5b3d-4d1f-88f4-6899a546e72e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.1.4 - Authenticated Stored Cross-Site Scripting (XSS) in Accordion Widget",
+                    "fixed_in": "3.1.4",
+                    "references": {
+                        "cve": [
+                            "2021-24204"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/03/cross-site-scripting-vulnerabilities-in-elementor-impact-over-7-million-sites/"
+                        ],
+                        "wpvulndb": [
+                            "772e172f-c8b4-4a6a-9eb9-9663295cfedf"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.1.4 - Authenticated Stored Cross-Site Scripting (XSS) in Icon Box Widget",
+                    "fixed_in": "3.1.4",
+                    "references": {
+                        "cve": [
+                            "2021-24205"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/03/cross-site-scripting-vulnerabilities-in-elementor-impact-over-7-million-sites/"
+                        ],
+                        "wpvulndb": [
+                            "ef23df6d-e265-44f6-bb94-1005b16d34d9"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.1.4 - Authenticated Stored Cross-Site Scripting (XSS) in Image Box Widget",
+                    "fixed_in": "3.1.4",
+                    "references": {
+                        "cve": [
+                            "2021-24206"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/03/cross-site-scripting-vulnerabilities-in-elementor-impact-over-7-million-sites/"
+                        ],
+                        "wpvulndb": [
+                            "2f66efd9-7d55-4f33-9109-3cb583a0c309"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.4.8 - DOM Cross-Site-Scripting",
+                    "fixed_in": "3.4.8",
+                    "references": {
+                        "cve": [
+                            "2021-24891"
+                        ],
+                        "url": [
+                            "https://www.jbelamor.com/xss-elementor-lightox.html"
+                        ],
+                        "wpvulndb": [
+                            "fbed0daa-007d-4f91-8d87-4bca7781de2d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.5.6 - DOM Reflected Cross-Site Scripting",
+                    "fixed_in": "3.5.6",
+                    "references": {
+                        "cve": [
+                            "2022-29455"
+                        ],
+                        "url": [
+                            "https://rotem-bar.com/hacking-65-million-websites-greater-cve-2022-29455-elementor"
+                        ],
+                        "wpvulndb": [
+                            "9758570b-4729-4eef-ad52-b6e922f536d6"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.12.2 - Admin+ SQLi",
+                    "fixed_in": "3.12.2",
+                    "references": {
+                        "cve": [
+                            "2023-0329"
+                        ],
+                        "wpvulndb": [
+                            "a875836d-77f4-4306-b275-2b60efff1493"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.13.2 - Missing Authorization",
+                    "fixed_in": "3.13.2",
+                    "references": {
+                        "wpvulndb": [
+                            "0b68091c-6a05-4f81-a718-6ec139df2e96"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.5.5 - Iframe Injection",
+                    "fixed_in": "3.5.5",
+                    "references": {
+                        "cve": [
+                            "2022-4953"
+                        ],
+                        "url": [
+                            "https://github.com/elementor/elementor/commit/292fc49e0f979bd52d838f0326d1faaebfa59f5e"
+                        ],
+                        "wpvulndb": [
+                            "8273357e-f9e1-44bc-8082-8faab838eda7"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.16.5 - Authenticated (Contributor+) Stored Cross-Site Scripting via get_inline_svg()",
+                    "fixed_in": "3.16.5",
+                    "references": {
+                        "cve": [
+                            "2023-47505"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b44ef21f-464e-487a-ba5a-fe889e4c488c"
+                        ],
+                        "wpvulndb": [
+                            "62b53acf-6551-4ea7-8727-039a3c9ba7ce"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.16.5 - Missing Authorization to Arbitrary Attachment Read",
+                    "fixed_in": "3.16.5",
+                    "references": {
+                        "cve": [
+                            "2023-47504"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c873c76a-144e-4945-8fa2-c9ffe0e3c061"
+                        ],
+                        "wpvulndb": [
+                            "e60f0f7e-4c3b-4107-803a-8e03526859ed"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.18.2 - Contributor+ Arbitrary File Upload to RCE via Template Import",
+                    "fixed_in": "3.18.2",
+                    "references": {
+                        "cve": [
+                            "2023-48777"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5b6d0a38-ac28-41c9-9da1-b30b3657b463"
+                        ],
+                        "wpvulndb": [
+                            "a6b3b14c-f06b-4506-9b88-854f155ebca9"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.19.1 - Authenticated(Contributor+) Arbitrary File Deletion and PHAR Deserialization",
+                    "fixed_in": "3.19.1",
+                    "references": {
+                        "cve": [
+                            "2024-24934"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4915b769-9499-40ac-835e-279e3a910558"
+                        ],
+                        "wpvulndb": [
+                            "4d7dfcc6-8c32-4e0d-b3bb-7e2685916e2b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder \u2013 More than Just a Page Builder < 3.19.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via get_image_alt",
+                    "fixed_in": "3.19.0",
+                    "references": {
+                        "cve": [
+                            "2024-0506"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4473d3f6-e324-40f5-b92b-167f76b17332"
+                        ],
+                        "wpvulndb": [
+                            "57af46d9-9a26-4085-9829-e0add7893332"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.20.3 - Contributor+ DOM Stored XSS",
+                    "fixed_in": "3.20.3",
+                    "references": {
+                        "cve": [
+                            "2024-2117"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c8d7448a-b8a6-4b0b-92df-a15272fc56bf"
+                        ],
+                        "wpvulndb": [
+                            "22e8d017-79f5-40c8-8a2c-e0ee42ba80c8"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.21.6 - Contributor+ DOM Stored XSS",
+                    "fixed_in": "3.21.6",
+                    "references": {
+                        "cve": [
+                            "2024-4619"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c7e1028e-e04b-46c4-b574-889d9fc1069d"
+                        ],
+                        "wpvulndb": [
+                            "8b8f30d6-bd11-4155-bfd2-3ac15248382b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.22.2 - Contributor+ Arbitrary SVG Download",
+                    "fixed_in": "3.22.2",
+                    "references": {
+                        "cve": [
+                            "2024-37437"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f11bc707-2465-4b64-945a-c0db6e9043dd"
+                        ],
+                        "wpvulndb": [
+                            "e6d56be1-9a2a-426f-88ca-1ffa773622c1"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder \u2013 More than Just a Page Builder < 3.24.0 - Authenticated (Contributor+) Stored Cross-Site Scripting in the URL Parameter in Multiple Widgets",
+                    "fixed_in": "3.24.0",
+                    "references": {
+                        "cve": [
+                            "2024-5416"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a99a64f7-1ea8-4de6-b24f-1f69bf25c1f5"
+                        ],
+                        "wpvulndb": [
+                            "5200943b-5e07-4342-a090-f78435e30d30"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.24.6 - Contributor+ Information Exposure via get_image_alt",
+                    "fixed_in": "3.24.6",
+                    "references": {
+                        "cve": [
+                            "2024-6757"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/96fa9ed7-6c13-4356-8a25-8a309be2b0e9"
+                        ],
+                        "wpvulndb": [
+                            "dce5ad0c-3ce9-498f-b0f7-8dfd6ee82e40"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.25.8 - Contributor+ Stored XSS",
+                    "fixed_in": "3.25.8",
+                    "references": {
+                        "cve": [
+                            "2024-8236"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b1305be5-8267-475f-b962-62e3930116e1"
+                        ],
+                        "wpvulndb": [
+                            "78f0847b-3f59-43cf-87db-2cadda862aa3"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.25.10 - Contributor+ Stored XSS via Typography Settings",
+                    "fixed_in": "3.25.10",
+                    "references": {
+                        "cve": [
+                            "2024-10453"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f23604b7-5a7f-4be7-bc73-cb4facdd1e73"
+                        ],
+                        "wpvulndb": [
+                            "2e05843d-1797-4da9-99ec-06376484fb32"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.27.5 - Contributor+ Stored XSS",
+                    "fixed_in": "3.27.5",
+                    "references": {
+                        "cve": [
+                            "2024-13445"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a11e702-34d2-49ee-8762-cc3614a7950a"
+                        ],
+                        "wpvulndb": [
+                            "25374232-2f9c-453d-bc47-124f80e67a92"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.25.11 - Contributor+ Stored XSS",
+                    "fixed_in": "3.25.11",
+                    "references": {
+                        "cve": [
+                            "2024-54444"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/wordpress/plugin/elementor/vulnerability/wordpress-elementor-plugin-3-25-10-cross-site-scripting-xss-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "61e1476a-cb14-46f9-b68c-4fd5b5c39597"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "2.5.10",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.wockhardt.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=2.5.10",
+                    "https://www.wockhardt.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=2.5.10"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.wockhardt.com/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor-pro": {
+            "slug": "elementor-pro",
+            "location": "https://www.wockhardt.com/wp-content/plugins/elementor-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Elementor Pro < 2.9.4 - Authenticated Arbitrary File Upload",
+                    "fixed_in": "2.9.4",
+                    "references": {
+                        "cve": [
+                            "2020-13126"
+                        ],
+                        "url": [
+                            "https://blog.nintechnet.com/zero-day-vulnerability-exploited-in-elementor-pro/",
+                            "https://www.wordfence.com/blog/2020/05/combined-attack-on-elementor-pro-and-ultimate-addons-for-elementor-puts-1-million-sites-at-risk/"
+                        ],
+                        "wpvulndb": [
+                            "c2a7ac08-460e-4485-a1c6-d2066ee94920"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Pro < 3.11.7 - Subscriber+ Arbitrary Options Update",
+                    "fixed_in": "3.11.7",
+                    "references": {
+                        "cve": [
+                            "2023-3124"
+                        ],
+                        "url": [
+                            "https://blog.nintechnet.com/high-severity-vulnerability-fixed-in-wordpress-elementor-pro-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "73e8e030-8e8b-43de-a602-c699ab2eafaf"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Pro < 3.19.3 - Authenticated (Contributor+) Information Exposure",
+                    "fixed_in": "3.19.3",
+                    "references": {
+                        "cve": [
+                            "2024-23523"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ecc8996a-d95c-4711-ac7d-523f5100c7fc"
+                        ],
+                        "wpvulndb": [
+                            "52195b1a-31b9-46da-bed8-7fdd2c6c8c14"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder Pro < 3.20.2 - Authententicated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "3.20.2",
+                    "references": {
+                        "cve": [
+                            "2024-1364"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/531954dd-ed3f-4626-adab-c1bba8407c89"
+                        ],
+                        "wpvulndb": [
+                            "d332bb66-e69c-4d11-8ff2-2c35d7ce2808"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder Pro < 3.20.2 - Authenticated (Contributor+) DOM-Based Stored Cross-Site Scripting via video_html_tag",
+                    "fixed_in": "3.20.2",
+                    "references": {
+                        "cve": [
+                            "2024-2781"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/54970085-5206-45b6-adcf-11e6dd4cd633"
+                        ],
+                        "wpvulndb": [
+                            "964c149d-fb08-4f86-a9a8-34a4412b5fdd"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder Pro < 3.20.2 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "3.20.2",
+                    "references": {
+                        "cve": [
+                            "2024-2121"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8698d6dd-7376-4d29-8a5c-21c239a7aa03"
+                        ],
+                        "wpvulndb": [
+                            "a48b0031-02f6-4871-beb3-0f61e1cd3d28"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder \u2013 More than Just a Page Builder < 3.20.2 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Navigation",
+                    "fixed_in": "3.20.2",
+                    "references": {
+                        "cve": [
+                            "2024-2120"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/de1742d4-f498-4ad4-b6a1-88cb60e83afc"
+                        ],
+                        "wpvulndb": [
+                            "ed24ea21-967a-43e3-8219-daed594c6e11"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder Pro < 3.20.2 - Authenticated (Contributor+) Stored Cross-Site Scripting via Form Widget SVGZ File Upload",
+                    "fixed_in": "3.20.2",
+                    "references": {
+                        "cve": [
+                            "2024-1521"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ecd01ea6-9476-47e1-9959-3f8d9ce1c1f3"
+                        ],
+                        "wpvulndb": [
+                            "249f4270-610c-4422-b34f-e714358fb398"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder Pro < 3.21.2 - Authenticated (Contributor+) DOM-Based Stored Cross-Site Scripting",
+                    "fixed_in": "3.21.2",
+                    "references": {
+                        "cve": [
+                            "2024-4107"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/0d5d47bd-4f05-4dc7-84c1-f7bc1196ee16"
+                        ],
+                        "wpvulndb": [
+                            "f54baf17-050d-4972-9631-3026dfb04496"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Pro < 3.21.3 - Reflected Cross-Site Scripting",
+                    "fixed_in": "3.21.3",
+                    "references": {
+                        "cve": [
+                            "2024-35656"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/2001d14c-2738-4d34-b465-0a76c2f772e6"
+                        ],
+                        "wpvulndb": [
+                            "b69f5b22-654f-459f-875d-ea6ba984b699"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder Pro \u2013 More than Just a Page Builder < 3.25.11 - Authenticated (Contributor+) Sensitive Information Exposure via Shortcode",
+                    "fixed_in": "3.25.11",
+                    "references": {
+                        "cve": [
+                            "2024-8494"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/94ada60f-1e20-454e-a9d7-7849be764d81"
+                        ],
+                        "wpvulndb": [
+                            "771699f9-aa9b-4352-8382-5fbc17f364c2"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "2.0.10",
+                "confidence": 80,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.wockhardt.com/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=2.0.10",
+                    "https://www.wockhardt.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=2.0.10"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.wockhardt.com/wp-content/plugins/elementor-pro/changelog.txt, Match: '#### 2.0.10 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "search-filter": {
+            "slug": "search-filter",
+            "location": "https://www.wockhardt.com/wp-content/plugins/search-filter/",
+            "latest_version": "1.2.17",
+            "last_updated": "2024-11-20T12:33:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Search & Filter < 1.2.16 - Contributor+ Stored XSS",
+                    "fixed_in": "1.2.16",
+                    "references": {
+                        "cve": [
+                            "2022-4467"
+                        ],
+                        "wpvulndb": [
+                            "54168861-c0b8-4de6-a9af-0ad5c20b4a45"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "1.2.10",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.wockhardt.com/wp-content/plugins/search-filter/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.wockhardt.com/wp-content/plugins/search-filter/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wdm-wockhardt": {
+            "slug": "wdm-wockhardt",
+            "location": "https://www.wockhardt.com/wp-content/plugins/wdm-wockhardt/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://www.wockhardt.com/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T08:44:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Yoast SEO < 21.1 - Authenticated (Seo Manager+) Stored Cross-Site Scripting",
+                    "fixed_in": "21.1",
+                    "references": {
+                        "cve": [
+                            "2023-40680"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/385a82ff-50ad-4787-845b-fb5f639f6466"
+                        ],
+                        "wpvulndb": [
+                            "42b355cc-d7b6-474d-8578-9c1a99b1e3c7"
+                        ]
+                    }
+                },
+                {
+                    "title": "Yoast SEO < 22.6 - Reflected Cross-Site Scripting",
+                    "fixed_in": "22.6",
+                    "references": {
+                        "cve": [
+                            "2024-4041"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4e04b161-3cd0-454d-869c-56f42bd8afb0"
+                        ],
+                        "wpvulndb": [
+                            "6eb8e01b-0bc6-4ca9-b489-38f2a94c2909"
+                        ]
+                    }
+                },
+                {
+                    "title": "Yoast SEO < 22.7 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "22.7",
+                    "references": {
+                        "cve": [
+                            "2024-4984"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/59bcd246-ca2f-4336-9a6e-89afe873ed25"
+                        ],
+                        "wpvulndb": [
+                            "467936e2-fe82-4cdc-afec-6782afee3e4e"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "20.0",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.wockhardt.com/, Match: 'optimized with the Yoast SEO plugin v20.0 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.wockhardt.com/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.wockhardt.com/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wp-smushit": {
+            "slug": "wp-smushit",
+            "location": "https://www.wockhardt.com/wp-content/plugins/wp-smushit/",
+            "latest_version": "3.17.1",
+            "last_updated": "2025-02-10T13:05:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Smush < 3.9.9 - Admin+ Reflected Cross-Site Scripting",
+                    "fixed_in": "3.9.9",
+                    "references": {
+                        "cve": [
+                            "2022-1009"
+                        ],
+                        "wpvulndb": [
+                            "bb5af08f-bb19-46a1-a7ac-8381f428c11e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Smush < 3.16.5 - Subscriber+ Resmush List Deletion",
+                    "fixed_in": "3.16.5",
+                    "references": {
+                        "cve": [
+                            "2023-3352"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/dfbaa3e4-40c2-41d8-996c-232e27a04b73"
+                        ],
+                        "wpvulndb": [
+                            "2b653715-c524-4979-bfdb-7a8d09f132d2"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.4.2",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.wockhardt.com/wp-content/plugins/wp-smushit/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.wockhardt.com/wp-content/plugins/wp-smushit/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {
+        "https://www.wockhardt.com/wp-config.php": {
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {}
+        }
+    },
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 11,
+        "requests_remaining": 14
+    },
+    "stop_time": 1741603170,
+    "elapsed": 155,
+    "requests_done": 360,
+    "cached_requests": 7,
+    "data_sent": 79796,
+    "data_sent_humanised": "77.926 KB",
+    "data_received": 23830798,
+    "data_received_humanised": "22.727 MB",
+    "used_memory": 339853312,
+    "used_memory_humanised": "324.109 MB"
+}

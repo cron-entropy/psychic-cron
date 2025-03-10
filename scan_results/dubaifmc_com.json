@@ -1,0 +1,1310 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741603227,
+    "start_memory": 48910336,
+    "target_url": "https://dubaifmc.com/",
+    "target_ip": "173.254.31.175",
+    "effective_url": "https://dubaifmc.com/",
+    "interesting_findings": [
+        {
+            "url": "https://dubaifmc.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: nginx/1.25.5",
+                "x-server-cache: true",
+                "x-proxy-cache: HIT"
+            ]
+        },
+        {
+            "url": "https://dubaifmc.com/robots.txt",
+            "to_s": "robots.txt found: https://dubaifmc.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://dubaifmc.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://dubaifmc.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://dubaifmc.com/readme.html",
+            "to_s": "WordPress readme found: https://dubaifmc.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://dubaifmc.com/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://dubaifmc.com/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://dubaifmc.com/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://dubaifmc.com/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://dubaifmc.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://dubaifmc.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://dubaifmc.com/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://dubaifmc.com/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "hello-elementor",
+        "location": "https://dubaifmc.com/wp-content/themes/hello-elementor/",
+        "latest_version": "3.3.0",
+        "last_updated": "2025-01-21T00:00:00.000Z",
+        "outdated": false,
+        "readme_url": "https://dubaifmc.com/wp-content/themes/hello-elementor/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://dubaifmc.com/wp-content/themes/hello-elementor/style.css",
+        "style_name": "Hello Elementor",
+        "style_uri": "https://elementor.com/hello-theme/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash",
+        "description": "Hello Elementor is a lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor site builder plugin. The theme is free, open-source, and designed for users who want a flexible, easy-to-use, and customizable website. The theme, which is optimized for performance, provides a solid foundation for users to build their own unique designs using the Elementor drag-and-drop site builder. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.",
+        "author": "Elementor Team",
+        "author_uri": "https://elementor.com/?utm_source=wp-themes&utm_campaign=author-uri&utm_medium=wp-dash",
+        "template": null,
+        "license": "GNU General Public License v3 or later.",
+        "license_uri": "https://www.gnu.org/licenses/gpl-3.0.html",
+        "tags": "accessibility-ready, flexible-header, custom-colors, custom-menu, custom-logo, featured-images, rtl-language-support, threaded-comments, translation-ready,",
+        "text_domain": "hello-elementor",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 16,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 8,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "3.3.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://dubaifmc.com/wp-content/themes/hello-elementor/style.css, Match: 'Version: 3.3.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "chaty": {
+            "slug": "chaty",
+            "location": "https://dubaifmc.com/wp-content/plugins/chaty/",
+            "latest_version": "3.3.6",
+            "last_updated": "2025-02-25T10:26:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Chaty Free < 2.8.3  & Pro < 2.8.2 - Reflected Cross-Site Scripting",
+                    "fixed_in": "2.8.3",
+                    "references": {
+                        "cve": [
+                            "2021-25016"
+                        ],
+                        "wpvulndb": [
+                            "b5035987-6227-4fc6-bc45-1e8016e5c4c0"
+                        ]
+                    }
+                },
+                {
+                    "title": "Floating Chat Widget < 2.8.4 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "2.8.4",
+                    "references": {
+                        "cve": [
+                            "2021-36846"
+                        ],
+                        "url": [
+                            "https://www.hackpertise.com/cve/34-cve-2021-36846/"
+                        ],
+                        "wpvulndb": [
+                            "e674e7a2-c216-48fa-8be7-02079c7ffdcb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Chaty < 3.0.3 - Admin+ SQLi",
+                    "fixed_in": "3.0.3",
+                    "references": {
+                        "cve": [
+                            "2022-3858"
+                        ],
+                        "wpvulndb": [
+                            "d251b6c1-602b-4d72-9d6a-bf5d5ec541ec"
+                        ]
+                    }
+                },
+                {
+                    "title": "Floating Chat Widget < 3.1.2 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "3.1.2",
+                    "references": {
+                        "cve": [
+                            "2023-3245"
+                        ],
+                        "wpvulndb": [
+                            "f9f8ae7e-6621-4e29-9257-b8306dbe8811"
+                        ]
+                    }
+                },
+                {
+                    "title": "Chaty < 3.1 - Reflected XSS",
+                    "fixed_in": "3.1",
+                    "references": {
+                        "cve": [
+                            "2023-25019"
+                        ],
+                        "wpvulndb": [
+                            "014019b0-4667-4044-b519-7bb6c8cdab01"
+                        ]
+                    }
+                },
+                {
+                    "title": "Chaty < 3.1 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "3.1",
+                    "references": {
+                        "wpvulndb": [
+                            "afcf75d8-4e72-41f1-8ae5-9262c3ecc5a3"
+                        ]
+                    }
+                },
+                {
+                    "title": "Chaty < 3.1.3 - Authenticated (Administrator+) Stored Cross-Site Scripting via settings",
+                    "fixed_in": "3.1.3",
+                    "references": {
+                        "cve": [
+                            "2023-47759"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/361deac0-f675-432c-b7d2-b99f168d476d"
+                        ],
+                        "wpvulndb": [
+                            "bdf5b9e9-0903-495d-aaad-dab1dba629a7"
+                        ]
+                    }
+                },
+                {
+                    "title": "Floating Chat Widget < 3.1.9 - Editor+ Stored XSS",
+                    "fixed_in": "3.1.9",
+                    "references": {
+                        "cve": [
+                            "2024-2972"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-2972/"
+                        ],
+                        "wpvulndb": [
+                            "27134a4f-a59b-40e9-8fc8-abe1f58672ad"
+                        ]
+                    }
+                },
+                {
+                    "title": "Floating Chat Widget < 3.2.3 - Admin+ Stored XSS",
+                    "fixed_in": "3.2.3",
+                    "references": {
+                        "cve": [
+                            "2024-4149"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/CVE-2024-4149/"
+                        ],
+                        "youtube": [
+                            "https://www.youtube.com/watch?v=https://drive.google.com/file/d/1gOd-nMAQ3_PXq2EBkH2OVXQctACKnJ4D/view"
+                        ],
+                        "wpvulndb": [
+                            "0256ec2a-f1a9-4110-9978-ee88f9e24237"
+                        ]
+                    }
+                },
+                {
+                    "title": "Floating Chat Widget: Contact Chat Icons, Telegram Chat, Line Messenger, WeChat, Email, SMS, Call Button, WhatsApp \u2013 Chaty < 3.3.6 - Authenticated (Contributor+) DOM-Based Stored Cross-Site Scripting",
+                    "fixed_in": "3.3.6",
+                    "references": {
+                        "cve": [
+                            "2025-1450"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a87d0966-3fd4-46f8-acd5-1cf0cb18af42"
+                        ],
+                        "wpvulndb": [
+                            "df1c66e8-e16c-4cfc-8474-b978bf6cce23"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://dubaifmc.com/wp-content/plugins/elementor/",
+            "latest_version": "3.27.6",
+            "last_updated": "2025-02-18T15:16:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Elementor Website Builder < 3.27.5 - Contributor+ Stored XSS",
+                    "fixed_in": "3.27.5",
+                    "references": {
+                        "cve": [
+                            "2024-13445"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a11e702-34d2-49ee-8762-cc3614a7950a"
+                        ],
+                        "wpvulndb": [
+                            "25374232-2f9c-453d-bc47-124f80e67a92"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.27.0",
+                "confidence": 100,
+                "found_by": "Javascript Comment (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://dubaifmc.com/wp-content/plugins/elementor/assets/js/admin-feedback.js, Match: 'elementor - v3.27.0'"
+                ],
+                "confirmed_by": {
+                    "Style Comment (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://dubaifmc.com/wp-content/plugins/elementor/assets/css/admin.min.css, Match: 'elementor - v3.27.0'"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementskit": {
+            "slug": "elementskit",
+            "location": "https://dubaifmc.com/wp-content/plugins/elementskit/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "ElementsKit and ElementsKit Pro < 2.2.0 - Contributor+ Stored XSS",
+                    "fixed_in": "2.2.0",
+                    "references": {
+                        "cve": [
+                            "2021-24258"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/04/recent-patches-rock-the-elementor-ecosystem/"
+                        ],
+                        "wpvulndb": [
+                            "47b47b86-899b-4de3-8a3c-2d5d1774298f"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via 'ekit_btn_id'",
+                    "fixed_in": "3.6.1",
+                    "references": {
+                        "cve": [
+                            "2024-3598"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a9e4b14f-0f55-47bc-8e40-19b262e50561"
+                        ],
+                        "wpvulndb": [
+                            "36f303a8-6482-4013-96dd-c93428adadc2"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.1 - Authenticated (Contributor+) Local File Inclusion via Price Menu, Hotspot, and Advanced Toggle Widgets",
+                    "fixed_in": "3.6.1",
+                    "references": {
+                        "cve": [
+                            "2024-3500"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c8ae0a47-cba5-468e-8d25-7b7176373b9c"
+                        ],
+                        "wpvulndb": [
+                            "7f210486-4350-450d-aebd-5851f24398b1"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.2 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "3.6.2",
+                    "references": {
+                        "cve": [
+                            "2024-4452"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/488ac848-786e-4100-a387-5a40e8fc4175"
+                        ],
+                        "wpvulndb": [
+                            "fc35b1b8-7cf9-4020-aa9b-491fc1ed54c6"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit PRO < 3.6.3 - Authenticated (Contributor+) Server-Side Request Forgery",
+                    "fixed_in": "3.6.3",
+                    "references": {
+                        "cve": [
+                            "2024-4404"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/6417269d-3d49-4f33-b92a-5aacb052bab0"
+                        ],
+                        "wpvulndb": [
+                            "7ba6054e-3412-46bd-8024-a268523ec9fb"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons and Templates Library < 3.6.3 - Authenticated (Contributor+) Stored Cross-Site Scripting via Motion Text and Table Widgets",
+                    "fixed_in": "3.6.3",
+                    "references": {
+                        "cve": [
+                            "2024-5263"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/2e718554-1096-4a16-968d-f00b65e1361d"
+                        ],
+                        "wpvulndb": [
+                            "64a3f488-b6f7-4466-82ef-5046b0f1dbff"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.6 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "3.6.6",
+                    "references": {
+                        "cve": [
+                            "2024-7064"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/181e6f3a-dbcf-44a6-b725-6325d9e56453"
+                        ],
+                        "wpvulndb": [
+                            "2a342f4c-e56e-438a-b0d2-4476dec30d6e"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.7 - Authenticated (Contributor+) Sensitive Information Exposure",
+                    "fixed_in": "3.6.7",
+                    "references": {
+                        "cve": [
+                            "2024-7063"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d35dd18b-0f05-482f-aef3-08977cbec8a0"
+                        ],
+                        "wpvulndb": [
+                            "91bd87df-45a2-4b56-b79e-f274e0677dc2"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.7.9 - Authenticated (Contributor+) DOM-Based Stored Cross-Site Scripting via url Parameter",
+                    "fixed_in": "3.7.9",
+                    "references": {
+                        "cve": [
+                            "2025-0321"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/204cfe20-9df1-4f6c-a38c-a21b43dde385"
+                        ],
+                        "wpvulndb": [
+                            "3f2442ef-123e-4efa-9b49-331405cce87f"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "elementskit-lite": {
+            "slug": "elementskit-lite",
+            "location": "https://dubaifmc.com/wp-content/plugins/elementskit-lite/",
+            "latest_version": "3.4.5",
+            "last_updated": "2025-03-09T07:39:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "ElementsKit and ElementsKit Pro < 2.2.0 - Contributor+ Stored XSS",
+                    "fixed_in": "2.2.0",
+                    "references": {
+                        "cve": [
+                            "2021-24258"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/04/recent-patches-rock-the-elementor-ecosystem/"
+                        ],
+                        "wpvulndb": [
+                            "47b47b86-899b-4de3-8a3c-2d5d1774298f"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elements kit Elementor addons < 2.9.2 - Missing Authorization",
+                    "fixed_in": "2.9.2",
+                    "references": {
+                        "cve": [
+                            "2023-39993"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5ff589ec-756d-4183-8bb8-61dae9be7c5d"
+                        ],
+                        "wpvulndb": [
+                            "e9dda50c-b2f6-4fbe-8e40-5aff175b8916"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Lite < 3.0.4 - Unauthenticated Sensitive Information Exposure",
+                    "fixed_in": "3.0.4",
+                    "references": {
+                        "cve": [
+                            "2023-6582"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ff4ae5c8-d164-4c2f-9bf3-83934c22cf4c"
+                        ],
+                        "wpvulndb": [
+                            "f42f0003-fc64-44b7-8461-73208ec1862d"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons < 3.0.5 - Contributor+ Stored XSS",
+                    "fixed_in": "3.0.5",
+                    "references": {
+                        "cve": [
+                            "2024-1239"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/1822fd58-0dba-4b15-9702-32e3aa4405b3"
+                        ],
+                        "wpvulndb": [
+                            "3841d9e2-075e-415f-aa6d-e45bd9769cd5"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons < 3.0.4 - Contributor+ Stored XSS",
+                    "fixed_in": "3.0.4",
+                    "references": {
+                        "cve": [
+                            "2023-6525"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e724394d-97aa-42e4-b36e-6e49bfefa2f6"
+                        ],
+                        "wpvulndb": [
+                            "42138348-d9a0-439f-8e65-3d3878e9fc65"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons < 3.0.7 - Contributor+ Local File Inclusion",
+                    "fixed_in": "3.0.7",
+                    "references": {
+                        "cve": [
+                            "2024-2047"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/413e6326-14c6-4734-8adc-114a7842c574"
+                        ],
+                        "wpvulndb": [
+                            "78b15554-090d-4092-bf7a-02fb61901215"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons < 3.0.7 - Contributor+ Stored XSS",
+                    "fixed_in": "3.0.7",
+                    "references": {
+                        "cve": [
+                            "2024-1238"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/cf195cca-4e07-41ff-bf26-9ad5fca3635d"
+                        ],
+                        "wpvulndb": [
+                            "65ffbfb5-491a-43d2-930b-e27a528a2f33"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons < 3.1.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via Countdown Widget",
+                    "fixed_in": "3.1.0",
+                    "references": {
+                        "cve": [
+                            "2024-2803"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b1c44ad9-e61e-4f29-9c0b-7c0a89b0c8da"
+                        ],
+                        "wpvulndb": [
+                            "d990d9c4-b753-4427-9029-6a9871e4793f"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons < 3.0.6 - Contributor+ Stored XSS",
+                    "fixed_in": "3.0.6",
+                    "references": {
+                        "cve": [
+                            "2024-2042"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/be4ce3e6-8baa-419f-a48e-4256c306fbc1"
+                        ],
+                        "wpvulndb": [
+                            "9e5e648b-ac9f-43ae-8239-6f3b85b0634a"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons < 3.1.1 - Contributor+ Local File Inclusion via Onepage Scroll Module",
+                    "fixed_in": "3.1.1",
+                    "references": {
+                        "cve": [
+                            "2024-3499"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/6158ec37-a6fb-42f9-bab6-bf547ea28ea0"
+                        ],
+                        "wpvulndb": [
+                            "fab6d995-d3c4-48b7-8761-35c3df679187"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons 3.0.7 - 3.1.2 - Contributor+ Stored XSS",
+                    "fixed_in": "3.1.3",
+                    "references": {
+                        "cve": [
+                            "2024-3650"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/93dcbab7-fdf5-4631-8605-77f8f190512d"
+                        ],
+                        "wpvulndb": [
+                            "f76cde41-5c51-47a3-90c7-0d2d74daadb5"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elements kit Elementor addons < 3.2.0 - Missing Authorization",
+                    "fixed_in": "3.2.0",
+                    "references": {
+                        "cve": [
+                            "2024-37255"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a1cf8b8f-bf74-444c-88cc-cc836ee45f26"
+                        ],
+                        "wpvulndb": [
+                            "b47ac535-9793-4ffb-85d7-1c801f5c06a4"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons < 3.2.1 - Unauthenticated Information Exposure via ekit_widgetarea_content Function",
+                    "fixed_in": "3.2.1",
+                    "references": {
+                        "cve": [
+                            "2024-6455"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7c336530-09b2-4ead-923f-f1a6266e3e8e"
+                        ],
+                        "wpvulndb": [
+                            "480bda54-4027-4a95-9085-49f04c3fc07c"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons < 3.2.8 - Authenticated (Contributor+) Stored Cross-Site Scripting via Video Widget",
+                    "fixed_in": "3.2.8",
+                    "references": {
+                        "cve": [
+                            "2024-8546"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d21aeeb6-2e7d-426e-82c5-ff65e33bc5cb"
+                        ],
+                        "wpvulndb": [
+                            "c311fc17-0c27-459c-b0d3-5f421ef193f6"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons < 3.3.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via Image Comparison Widget",
+                    "fixed_in": "3.3.0",
+                    "references": {
+                        "cve": [
+                            "2024-10091"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/00b278af-6ce6-4e70-a83a-a1b035542cd4"
+                        ],
+                        "wpvulndb": [
+                            "6e7f7cd9-96cd-4526-b144-4c53c0899625"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons < 3.4.1 - Contributor+ Stored XSS",
+                    "fixed_in": "3.4.1",
+                    "references": {
+                        "cve": [
+                            "2025-1005"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5b74d6aa-ad59-42be-b454-9c27428cab01"
+                        ],
+                        "wpvulndb": [
+                            "ff09d6cd-78b5-4d13-93bb-573725fa86b2"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons < 3.4.1 - Unauthenticated Information Exposure",
+                    "fixed_in": "3.4.1",
+                    "references": {
+                        "cve": [
+                            "2025-0968"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/432ac3b1-8f1d-442f-8e8d-62a1f26ba259"
+                        ],
+                        "wpvulndb": [
+                            "d21c9a9b-752d-4f61-82bb-84cfff59d46b"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "header-footer-elementor": {
+            "slug": "header-footer-elementor",
+            "location": "https://dubaifmc.com/wp-content/plugins/header-footer-elementor/",
+            "latest_version": "2.2.0",
+            "last_updated": "2025-02-04T07:51:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Elementor - Header, Footer & Blocks Template < 1.5.8 - Contributor+ Stored XSS",
+                    "fixed_in": "1.5.8",
+                    "references": {
+                        "cve": [
+                            "2021-24256"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/04/recent-patches-rock-the-elementor-ecosystem/"
+                        ],
+                        "wpvulndb": [
+                            "a9412fed-aed3-4931-a504-1a86f876892e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Header & Footer Builder < 1.6.25 - Contributor+ Stored Cross-Site Scripting",
+                    "fixed_in": "1.6.25",
+                    "references": {
+                        "cve": [
+                            "2024-1237"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/82644c46-205b-4005-bba8-6b3e45769639"
+                        ],
+                        "wpvulndb": [
+                            "684e290a-1ebe-41eb-8ff7-254162391ecd"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Header & Footer Builder < 1.6.29 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "1.6.29",
+                    "references": {
+                        "cve": [
+                            "2024-4634"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f44bb823-bbf3-413b-82b5-a351609270bf"
+                        ],
+                        "wpvulndb": [
+                            "2a0d3d1f-62f4-44e2-90a4-d3fa41f01650"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Header & Footer Builder < 1.6.27 - Authenticated (Author+) HTML Injection",
+                    "fixed_in": "1.6.27",
+                    "references": {
+                        "cve": [
+                            "2024-2619"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/689eb95b-2f72-4aa4-9f21-6ae186346061"
+                        ],
+                        "wpvulndb": [
+                            "a262227b-6c2b-4093-9af1-14fcb7569f24"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Header & Footer Builder < 1.6.26.1 - Contributor+ Stored XSS",
+                    "fixed_in": "1.6.26.1",
+                    "references": {
+                        "cve": [
+                            "2024-2618"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a780ce1b-0758-42ef-88e7-ff8d921eca6e"
+                        ],
+                        "wpvulndb": [
+                            "aa28669a-3c64-4e05-beb7-da41701050a5"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Header & Footer Builder < 1.6.36 - Authenticated (Contributor+) Stored Cross-Site Scripting via Site Title Widget",
+                    "fixed_in": "1.6.36",
+                    "references": {
+                        "cve": [
+                            "2024-5757"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b5ab022c-c16c-488b-b004-a7351f8fa3d3"
+                        ],
+                        "wpvulndb": [
+                            "a89bb975-5731-4a69-98fe-5888e6ffb4a5"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor \u2013 Header, Footer & Blocks Template < 1.6.36 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "1.6.36",
+                    "references": {
+                        "cve": [
+                            "2024-33933"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8c27fc2c-b515-4314-908d-435a4167ee99"
+                        ],
+                        "wpvulndb": [
+                            "c5a24410-a737-49bc-be58-a0403f5e8add"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Header & Footer Builder < 1.6.44 - Authenticated (Contributor+) Information Disclosure via Shortcode",
+                    "fixed_in": "1.6.44",
+                    "references": {
+                        "cve": [
+                            "2024-10050"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/662f6ae2-2047-4bbf-b4a6-2d536051e389"
+                        ],
+                        "wpvulndb": [
+                            "85f19e03-9939-4f9a-8064-36103ed6dd62"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Header & Footer Builder < 1.6.46 - Author+ Stored XSS via SVG File Upload",
+                    "fixed_in": "1.6.46",
+                    "references": {
+                        "cve": [
+                            "2024-10325"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7773fd3a-2417-415e-97b0-735e99e62097"
+                        ],
+                        "wpvulndb": [
+                            "7241192a-765e-40da-9e91-ca3bafaeba12"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Header & Footer Builder < 1.6.47 - Contributor+ Stored XSS via Page Title Widget",
+                    "fixed_in": "1.6.47",
+                    "references": {
+                        "cve": [
+                            "2024-11230"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/0d82c866-5b35-414e-bd72-30530930d5d8"
+                        ],
+                        "wpvulndb": [
+                            "00d77ab0-981c-4f30-85e1-1db21b070f91"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "metform": {
+            "slug": "metform",
+            "location": "https://dubaifmc.com/wp-content/plugins/metform/",
+            "latest_version": "3.9.5",
+            "last_updated": "2025-02-25T05:27:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Metform Elementor Contact Form Builder < 2.1.4 - Unauthenticated API keys and Secrets Disclosure",
+                    "fixed_in": "2.1.4",
+                    "references": {
+                        "cve": [
+                            "2022-1442"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/vulnerability-advisories/#CVE-2022-1442"
+                        ],
+                        "wpvulndb": [
+                            "9f3fcdd4-9ddc-45d5-a4af-e58634813c2b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Metform Elementor Contact Form Builder < 3.2.0 - Unauthenticated Stored XSS",
+                    "fixed_in": "3.2.0",
+                    "references": {
+                        "cve": [
+                            "2023-0084"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2023/02/high-severity-xss-vulnerability-in-metform-elementor-contact-form-builder/"
+                        ],
+                        "wpvulndb": [
+                            "d00f05cb-bddb-4b79-b2bc-73129ffd786b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Metform Elementor Contact Form Builder < 3.2.2 - reCaptcha Bypass",
+                    "fixed_in": "3.2.2",
+                    "references": {
+                        "cve": [
+                            "2023-0085"
+                        ],
+                        "wpvulndb": [
+                            "90685780-97f9-4e35-b12a-33817e3d12b2"
+                        ]
+                    }
+                },
+                {
+                    "title": "Metform Elementor Contact Form Builder < 3.3.2 - Multiple Subscriber+ Sensitive Information Disclosure Issues",
+                    "fixed_in": "3.3.2",
+                    "references": {
+                        "cve": [
+                            "2023-0688",
+                            "2023-0691",
+                            "2023-0692",
+                            "2023-0693",
+                            "2023-0694"
+                        ],
+                        "wpvulndb": [
+                            "514b1581-2880-44fe-91e1-5874eaffc901"
+                        ]
+                    }
+                },
+                {
+                    "title": "Metform Elementor Contact Form Builder < 3.3.1 - Unauthenticated CSV Injection",
+                    "fixed_in": "3.3.1",
+                    "references": {
+                        "cve": [
+                            "2023-0721"
+                        ],
+                        "wpvulndb": [
+                            "d7aad042-0b53-40c3-9f91-06fb32ad8ccb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Metform Elementor Contact Form Builder < 3.3.1 - Multiple Contributor+ Stored XSS via Shortcode",
+                    "fixed_in": "3.3.1",
+                    "references": {
+                        "cve": [
+                            "2023-0695",
+                            "2023-0708",
+                            "2023-0709",
+                            "2023-0710"
+                        ],
+                        "wpvulndb": [
+                            "6f8a9f36-8c2d-4356-a871-03d9be5987f3"
+                        ]
+                    }
+                },
+                {
+                    "title": "Metform Elementor Contact Form Builder < 3.3.2 - Unauthenticated Permalink Structure Update",
+                    "fixed_in": "3.3.2",
+                    "references": {
+                        "cve": [
+                            "2023-1843"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/metform/metform-elementor-contact-form-builder-330-missing-authorization"
+                        ],
+                        "wpvulndb": [
+                            "68515f7c-db2d-415f-ad53-aba5b4ebceb8"
+                        ]
+                    }
+                },
+                {
+                    "title": "Metform Elementor Contact Form Builder < 3.3.3 - Cross-Site Request Forgery",
+                    "fixed_in": "3.3.3",
+                    "references": {
+                        "cve": [
+                            "2023-2517"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ca66afc3-a749-4ddc-8e2f-959f65cebd45"
+                        ],
+                        "wpvulndb": [
+                            "67bac2d1-99e6-40a6-b627-b27aa6b42e24"
+                        ]
+                    }
+                },
+                {
+                    "title": "Metform Elementor Contact Form Builder < 3.3.2 - Authenticated (Subscriber+) Information Disclosure via 'mf_first_name' shortcode",
+                    "fixed_in": "3.3.2",
+                    "references": {
+                        "cve": [
+                            "2023-0689"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/356cf06e-16e7-438b-83b5-c8a52a21f903"
+                        ],
+                        "wpvulndb": [
+                            "64400760-5eda-403d-97bd-05f3c1840efb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Metform Elementor Contact Form Builder < 3.8.2 - Cross-Site Request Forgery",
+                    "fixed_in": "3.8.2",
+                    "references": {
+                        "cve": [
+                            "2023-6788"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/30fd2425-ee48-4777-91c1-03906d63793a"
+                        ],
+                        "wpvulndb": [
+                            "4cb3fd12-456e-4b77-9953-75957a99df8a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Metform Elementor Contact Form Builder < 3.8.4 - Authenticated(Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "3.8.4",
+                    "references": {
+                        "cve": [
+                            "2024-1585"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/342d6941-6987-4756-b554-1699128b9108"
+                        ],
+                        "wpvulndb": [
+                            "3bea1ac5-0b4e-421f-9788-d8166087f91c"
+                        ]
+                    }
+                },
+                {
+                    "title": "Metform Elementor Contact Form Builder < 3.8.6 - Contributor+ Stored XSS",
+                    "fixed_in": "3.8.6",
+                    "references": {
+                        "cve": [
+                            "2024-2791"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/0dad759d-9b44-47ca-8410-e39f65dc919c"
+                        ],
+                        "wpvulndb": [
+                            "35de8f2d-7b79-49de-ae03-a5e2dfad3251"
+                        ]
+                    }
+                },
+                {
+                    "title": "Metform Elementor Contact Form Builder < 3.8.4 - Missing Authorization to Notice Dismissal",
+                    "fixed_in": "3.8.4",
+                    "references": {
+                        "cve": [
+                            "2024-33570"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/996d1514-2c1f-4888-ac2f-bc58e926d3ef"
+                        ],
+                        "wpvulndb": [
+                            "6306d761-f39b-43d5-bc6a-157a6cd54883"
+                        ]
+                    }
+                },
+                {
+                    "title": "MetForm \u2013 Contact Form, Survey, Quiz, & Custom Form Builder for Elementor < 3.8.9 - Unauthenticated Sensitive Information Exposure",
+                    "fixed_in": "3.8.9",
+                    "references": {
+                        "cve": [
+                            "2024-4266"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8edb72f5-dda3-4c59-ba7a-7a460cb59c03"
+                        ],
+                        "wpvulndb": [
+                            "60351d14-c07f-487d-9b20-be228204ab30"
+                        ]
+                    }
+                },
+                {
+                    "title": "Metform Elementor Contact Form Builder < 3.3.0 - Unauthenticated Double-Extension Arbitrary File Upload",
+                    "fixed_in": "3.3.0",
+                    "references": {
+                        "cve": [
+                            "2023-0714"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/697ce433-f321-4977-a2ad-68369d9ce9c3"
+                        ],
+                        "wpvulndb": [
+                            "c38762dc-0423-49a3-a58d-3d52488fb888"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "widget-google-reviews": {
+            "slug": "widget-google-reviews",
+            "location": "https://dubaifmc.com/wp-content/plugins/widget-google-reviews/",
+            "latest_version": "5.5",
+            "last_updated": "2025-03-09T23:59:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Plugin for Google Reviews < 2.2.3 - Subscriber+ Widget Creation",
+                    "fixed_in": "2.2.3",
+                    "references": {
+                        "cve": [
+                            "2022-45369"
+                        ],
+                        "wpvulndb": [
+                            "1b417345-1345-4ca0-b6b0-98df0f1f3fa4"
+                        ]
+                    }
+                },
+                {
+                    "title": "Plugin for Google Reviews < 2.2.4 - Subscriber+ SQLi",
+                    "fixed_in": "2.2.4",
+                    "references": {
+                        "cve": [
+                            "2022-44580"
+                        ],
+                        "wpvulndb": [
+                            "0d2d5d9d-46c1-4710-b87c-930b3645fe98"
+                        ]
+                    }
+                },
+                {
+                    "title": "Plugin for Google Reviews < 3.2 - Contributor+ Stored Cross-Site Scripting via shortcode",
+                    "fixed_in": "3.2",
+                    "references": {
+                        "cve": [
+                            "2023-6884"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a8971d54-b54e-4e62-9db2-fa87d2564599"
+                        ],
+                        "wpvulndb": [
+                            "f4bb5717-5381-42bf-838b-0ec9dea1d23f"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 9,
+        "requests_remaining": 16
+    },
+    "stop_time": 1741603250,
+    "elapsed": 23,
+    "requests_done": 199,
+    "cached_requests": 7,
+    "data_sent": 51021,
+    "data_sent_humanised": "49.825 KB",
+    "data_received": 1269806,
+    "data_received_humanised": "1.211 MB",
+    "used_memory": 270172160,
+    "used_memory_humanised": "257.656 MB"
+}

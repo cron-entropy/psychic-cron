@@ -1,0 +1,1484 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741603302,
+    "start_memory": 48812032,
+    "target_url": "https://www.municipal-curepipe.org/",
+    "target_ip": "45.67.221.141",
+    "effective_url": "https://www.municipal-curepipe.org/",
+    "interesting_findings": [
+        {
+            "url": "https://www.municipal-curepipe.org/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-powered-by: PHP/7.4.33",
+                "x-litespeed-cache: hit",
+                "server: LiteSpeed",
+                "alt-svc: h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+            ]
+        },
+        {
+            "url": "https://www.municipal-curepipe.org/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.municipal-curepipe.org/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 30,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.3.5",
+        "release_date": "2024-06-24",
+        "status": "outdated",
+        "found_by": "Emoji Settings (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.municipal-curepipe.org/, Match: 'wp-includes\\/js\\/wp-emoji-release.min.js?ver=6.3.5'"
+        ],
+        "confirmed_by": {
+            "Meta Generator (Passive Detection)": {
+                "confidence": 60,
+                "interesting_entries": [
+                    "https://www.municipal-curepipe.org/, Match: 'WordPress 6.3.5'"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "zwordpress_theme",
+        "location": "https://www.municipal-curepipe.org/wp-content/themes/zwordpress_theme/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.municipal-curepipe.org/wp-content/themes/zwordpress_theme/style.css",
+        "style_name": null,
+        "style_uri": null,
+        "description": null,
+        "author": null,
+        "author_uri": null,
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 94,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In Homepage (Passive Detection)": {
+                "confidence": 24,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": null,
+        "parents": []
+    },
+    "plugins": {
+        "awesome-gallery": {
+            "slug": "awesome-gallery",
+            "location": "https://www.municipal-curepipe.org/wp-content/plugins/awesome-gallery/",
+            "latest_version": "1.0",
+            "last_updated": "2019-06-16T05:46:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "codespacing-progress-map": {
+            "slug": "codespacing-progress-map",
+            "location": "https://www.municipal-curepipe.org/wp-content/plugins/codespacing-progress-map/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "cyclone-slider-2": {
+            "slug": "cyclone-slider-2",
+            "location": "https://www.municipal-curepipe.org/wp-content/plugins/cyclone-slider-2/",
+            "latest_version": "3.2.0",
+            "last_updated": "2017-07-03T18:54:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.2.0",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.municipal-curepipe.org/wp-content/plugins/cyclone-slider-2/templates/dark/style.css?ver=3.2.0",
+                    "https://www.municipal-curepipe.org/wp-content/plugins/cyclone-slider-2/templates/default/style.css?ver=3.2.0",
+                    "https://www.municipal-curepipe.org/wp-content/plugins/cyclone-slider-2/templates/standard/style.css?ver=3.2.0",
+                    "https://www.municipal-curepipe.org/wp-content/plugins/cyclone-slider-2/templates/thumbnails/style.css?ver=3.2.0",
+                    "https://www.municipal-curepipe.org/wp-content/plugins/cyclone-slider-2/libs/cycle2/jquery.cycle2.min.js?ver=3.2.0",
+                    "https://www.municipal-curepipe.org/wp-content/plugins/cyclone-slider-2/libs/cycle2/jquery.cycle2.carousel.min.js?ver=3.2.0",
+                    "https://www.municipal-curepipe.org/wp-content/plugins/cyclone-slider-2/libs/cycle2/jquery.cycle2.swipe.min.js?ver=3.2.0",
+                    "https://www.municipal-curepipe.org/wp-content/plugins/cyclone-slider-2/libs/cycle2/jquery.cycle2.tile.min.js?ver=3.2.0",
+                    "https://www.municipal-curepipe.org/wp-content/plugins/cyclone-slider-2/libs/cycle2/jquery.cycle2.video.min.js?ver=3.2.0",
+                    "https://www.municipal-curepipe.org/wp-content/plugins/cyclone-slider-2/templates/dark/script.js?ver=3.2.0",
+                    "https://www.municipal-curepipe.org/wp-content/plugins/cyclone-slider-2/templates/thumbnails/script.js?ver=3.2.0",
+                    "https://www.municipal-curepipe.org/wp-content/plugins/cyclone-slider-2/libs/vimeo-player-js/player.js?ver=3.2.0",
+                    "https://www.municipal-curepipe.org/wp-content/plugins/cyclone-slider-2/js/client.js?ver=3.2.0"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "embed-any-document": {
+            "slug": "embed-any-document",
+            "location": "https://www.municipal-curepipe.org/wp-content/plugins/embed-any-document/",
+            "latest_version": "2.7.6",
+            "last_updated": "2025-02-18T06:04:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Embed Any Document < 2.7.2 - Author+ Stored XSS",
+                    "fixed_in": "2.7.2",
+                    "references": {
+                        "cve": [
+                            "2023-23707"
+                        ],
+                        "wpvulndb": [
+                            "baa069c8-b830-49be-9662-41222ff8b6a6"
+                        ]
+                    }
+                },
+                {
+                    "title": "Embed Any Document \u2013 Embed PDF, Word, PowerPoint and Excel Files < 2.7.6 - Authenticated (Contributor+) Blind Server-Side Request Forgery via embeddoc Shortcode",
+                    "fixed_in": "2.7.6",
+                    "references": {
+                        "cve": [
+                            "2025-1043"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b9f8c600-d62d-4f27-ba73-1a77a63859bc"
+                        ],
+                        "wpvulndb": [
+                            "622bb145-1183-4a9c-b0e9-d8211a867480"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "kodex-posts-likes": {
+            "slug": "kodex-posts-likes",
+            "location": "https://www.municipal-curepipe.org/wp-content/plugins/kodex-posts-likes/",
+            "latest_version": "2.5.0",
+            "last_updated": "2023-12-07T15:25:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Kodex Posts likes < 2.5.0 - Settings Update via CSRF",
+                    "fixed_in": "2.5.0",
+                    "references": {
+                        "cve": [
+                            "2022-46814"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/kodex-posts-likes/wordpress-kodex-posts-likes-plugin-2-4-3-cross-site-request-forgery-csrf"
+                        ],
+                        "wpvulndb": [
+                            "01df7bad-2a3d-48db-8169-a67ab5b5241e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Kodex Posts likes <= 2.5.0 - Reflected Cross-Site Scripting",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2024-43217"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b8520d91-9c31-413e-a7ac-f03cb48cb992"
+                        ],
+                        "wpvulndb": [
+                            "f76bb67b-5619-459d-ab3a-e6e927e3139b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Kodex Posts likes <= 2.5.0 - Reflected Cross-Site Scripting",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2024-8713"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/44780988-cadf-4ff2-9ba9-148b7b6650df"
+                        ],
+                        "wpvulndb": [
+                            "92b43de2-5d2e-458d-a927-1523f08f8edb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Kodex Posts likes <= 2.5.0 - Authenticated (Administrator+) Stored Cross-Site Scripting",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2024-44036"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/076d1b28-bc43-4e70-995c-71b236e7f698"
+                        ],
+                        "wpvulndb": [
+                            "f1571b98-a4ba-4202-89f4-e96e832c5216"
+                        ]
+                    }
+                },
+                {
+                    "title": "Kodex Posts likes <= 2.5.0 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2024-50464"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/47db93d6-3181-4b83-afa3-1d3a45df24c7"
+                        ],
+                        "wpvulndb": [
+                            "6624d8b3-f1b1-40f8-93b9-87351c8214c9"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "nearby-map": {
+            "slug": "nearby-map",
+            "location": "https://www.municipal-curepipe.org/wp-content/plugins/nearby-map/",
+            "latest_version": "0.9.3",
+            "last_updated": "2013-05-16T19:09:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "photo-gallery": {
+            "slug": "photo-gallery",
+            "location": "https://www.municipal-curepipe.org/wp-content/plugins/photo-gallery/",
+            "latest_version": "1.8.34",
+            "last_updated": "2025-02-26T17:51:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Photo-Gallery <= 1.2.41 - UploadHandler.php File Upload CSRF",
+                    "fixed_in": "1.2.42",
+                    "references": {
+                        "cve": [
+                            "2015-9380"
+                        ],
+                        "url": [
+                            "https://packetstormsecurity.com/files/126521/",
+                            "https://wordpress.org/support/topic/this-plugin-is-reported-as-vulnerable"
+                        ],
+                        "wpvulndb": [
+                            "c78396fc-aeab-47a9-b7f5-a83f7931a9c5"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery <= 1.2.7 - Unauthenticated SQL injection",
+                    "fixed_in": "1.2.8",
+                    "references": {
+                        "cve": [
+                            "2015-1055"
+                        ],
+                        "url": [
+                            "https://seclists.org/fulldisclosure/2015/Jan/36",
+                            "https://packetstormsecurity.com/files/129927/"
+                        ],
+                        "wpvulndb": [
+                            "5ba13c96-6b88-46c7-b366-d705cdf85551"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery <= 1.2.5 - Unrestricted File Upload",
+                    "fixed_in": "1.2.6",
+                    "references": {
+                        "cve": [
+                            "2014-9312"
+                        ],
+                        "url": [
+                            "https://security.szurek.pl/photo-gallery-125-unrestricted-file-upload.html"
+                        ],
+                        "wpvulndb": [
+                            "c2b4aec5-1f23-443e-a0fc-1237778893e1"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery < 1.2.11 - Blind SQL Injection",
+                    "fixed_in": "1.2.11",
+                    "references": {
+                        "cve": [
+                            "2015-1393"
+                        ],
+                        "url": [
+                            "https://seclists.org/bugtraq/2015/Jan/141",
+                            "https://packetstormsecurity.com/files/130148/"
+                        ],
+                        "wpvulndb": [
+                            "aceaf39c-9e02-4042-92a6-9fd6ddaea094"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery 1.1.30 - Cross Site Scripting",
+                    "fixed_in": "1.1.31",
+                    "references": {
+                        "cve": [
+                            "2014-6315"
+                        ],
+                        "url": [
+                            "https://packetstormsecurity.com/files/128518/",
+                            "https://www.immuniweb.com/advisory/HTB23232"
+                        ],
+                        "wpvulndb": [
+                            "9285f0b4-1e9f-49d6-a831-4b9f0f0c40a2"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery < 1.2.13 - Cross-Site Scripting (XSS)",
+                    "fixed_in": "1.2.13",
+                    "references": {
+                        "cve": [
+                            "2015-2324"
+                        ],
+                        "url": [
+                            "https://www.fortiguard.com/encyclopedia/ips/40268"
+                        ],
+                        "wpvulndb": [
+                            "a2e42c9f-f445-4b71-a315-bbc91f39a08d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by WD <= 1.3.35 - Authenticated SQL Injection",
+                    "fixed_in": "1.3.36",
+                    "references": {
+                        "url": [
+                            "https://www.defensecode.com/advisories/DC-2017-02-011_WordPress_WebDorado_Gallery_Plugin_Advisory.pdf"
+                        ],
+                        "wpvulndb": [
+                            "7ee790bd-84fb-4625-a308-da5d50677589"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by WD <= 1.3.42 - Authenticated Path Traversal",
+                    "fixed_in": "1.3.43",
+                    "references": {
+                        "url": [
+                            "https://advisories.dxw.com/advisories/path-traversal-in-photo-gallery-may-allow-admins-to-read-most-files-on-the-filesystem/",
+                            "https://plugins.trac.wordpress.org/changeset/1667128/photo-gallery"
+                        ],
+                        "wpvulndb": [
+                            "77790dc5-1cd1-461a-b14a-20c67b3ffb5f"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by WD <= 1.3.50 - Authenticated SQL Injection",
+                    "fixed_in": "1.3.51",
+                    "references": {
+                        "cve": [
+                            "2017-12977"
+                        ],
+                        "url": [
+                            "https://github.com/jgj212/Advisories/blob/master/photo-gallery.1.3.50-SQL",
+                            "https://plugins.trac.wordpress.org/changeset/1712095/photo-gallery"
+                        ],
+                        "wpvulndb": [
+                            "f0a9861c-e9f8-4e8d-aee7-e1cf72f51077"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by WD <= 1.3.66 - Cross-Site Scripting (XSS)",
+                    "fixed_in": "1.3.67",
+                    "references": {
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/1787251/photo-gallery"
+                        ],
+                        "wpvulndb": [
+                            "a320f45c-e25b-48d4-8f86-febf7b789b3b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web <= 1.5.24 - Authenticated LFI",
+                    "fixed_in": "1.5.25",
+                    "references": {
+                        "cve": [
+                            "2019-14798"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset?reponame=&new=2088371%40photo-gallery&old=2087556%40photo-gallery"
+                        ],
+                        "wpvulndb": [
+                            "bb01dd50-72fe-4e43-9d79-122937a9b39c"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web <= 1.5.22 - Authenticated XSS",
+                    "fixed_in": "1.5.23",
+                    "references": {
+                        "cve": [
+                            "2019-14797"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset?reponame=&new=2087021%40photo-gallery&old=2085993%40photo-gallery"
+                        ],
+                        "wpvulndb": [
+                            "0abaa335-6847-4d56-ac39-69a05157bb70"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web <= 1.5.30 - SQL Injection",
+                    "fixed_in": "1.5.31",
+                    "references": {
+                        "cve": [
+                            "2019-14313"
+                        ],
+                        "url": [
+                            "https://fortiguard.com/zeroday/FG-VD-19-101",
+                            "https://www.fortinet.com/blog/threat-research/wordpress-plugin-sql-injection-vulnerability.html"
+                        ],
+                        "wpvulndb": [
+                            "9d64f953-76a7-4aca-ab7b-2e2704b96642"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web < 1.5.35 - SQL Injection & XSS",
+                    "fixed_in": "1.5.35",
+                    "references": {
+                        "cve": [
+                            "2019-16117",
+                            "2019-16118",
+                            "2019-16119"
+                        ],
+                        "wpvulndb": [
+                            "9875076d-e84e-4deb-a3d3-06d877b41085"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery < 1.2.11 - Multiple Authenticated Reflected XSS",
+                    "fixed_in": "1.2.11",
+                    "references": {
+                        "cve": [
+                            "2015-1394"
+                        ],
+                        "url": [
+                            "https://seclists.org/bugtraq/2015/Jan/140"
+                        ],
+                        "wpvulndb": [
+                            "f58ee705-afea-467e-8284-158e0638bb49"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery < 1.5.46 - Multiple Cross-Site Scripting (XSS) Issues",
+                    "fixed_in": "1.5.46",
+                    "references": {
+                        "cve": [
+                            "2020-9335"
+                        ],
+                        "url": [
+                            "https://fortiguard.com/zeroday/FG-VD-20-033"
+                        ],
+                        "wpvulndb": [
+                            "f626f6f7-6b90-403c-a135-37ca4d9c53e6"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web < 1.5.55 - Unauthenticated SQL Injection",
+                    "fixed_in": "1.5.55",
+                    "references": {
+                        "cve": [
+                            "2021-24139"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2304193"
+                        ],
+                        "wpvulndb": [
+                            "2e33088e-7b93-44af-aa6a-e5d924f86e28"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web < 1.5.68 - Reflected Cross-Site Scripting (XSS)",
+                    "fixed_in": "1.5.68",
+                    "references": {
+                        "cve": [
+                            "2021-25041"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2467205",
+                            "https://packetstormsecurity.com/files/162227/"
+                        ],
+                        "wpvulndb": [
+                            "32aee3ea-e0af-44da-a16c-102c83eaed8f"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10web < 1.5.69 - Reflected Cross-Site Scripting (XSS)",
+                    "fixed_in": "1.5.69",
+                    "references": {
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2476338"
+                        ],
+                        "wpvulndb": [
+                            "6e5f0e04-36c0-4fb6-8194-fe32c15cb3b5"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery < 1.5.69 - Multiple Reflected Cross-Site Scripting (XSS)",
+                    "fixed_in": "1.5.69",
+                    "references": {
+                        "cve": [
+                            "2021-24291"
+                        ],
+                        "url": [
+                            "https://packetstormsecurity.com/files/162227/"
+                        ],
+                        "wpvulndb": [
+                            "cfb982b2-8b6d-4345-b3ab-3d2b130b873a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery < 1.5.67 - Authenticated Stored Cross-Site Scripting via Gallery Title",
+                    "fixed_in": "1.5.67",
+                    "references": {
+                        "cve": [
+                            "2021-24310"
+                        ],
+                        "wpvulndb": [
+                            "f34096ec-b1b0-471d-88a4-4699178a3165"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery < 1.5.79 - Stored XSS via Uploaded SVG in Zip",
+                    "fixed_in": "1.5.79",
+                    "references": {
+                        "wpvulndb": [
+                            "a20a2ece-6c82-41c6-a21e-95e720f45584"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery < 1.5.75 - Stored Cross-Site Scripting via Uploaded SVG",
+                    "fixed_in": "1.5.75",
+                    "references": {
+                        "cve": [
+                            "2021-24362"
+                        ],
+                        "wpvulndb": [
+                            "57823dcb-2149-47f7-aae2-d9f04dce851a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery < 1.5.75 - File Upload Path Traversal",
+                    "fixed_in": "1.5.75",
+                    "references": {
+                        "cve": [
+                            "2021-24363"
+                        ],
+                        "wpvulndb": [
+                            "1628935f-1d7d-4609-b7a9-e5526499c974"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web < 1.6.0 - Unauthenticated SQL Injection",
+                    "fixed_in": "1.6.0",
+                    "references": {
+                        "cve": [
+                            "2022-0169"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2672822/photo-gallery#file9"
+                        ],
+                        "wpvulndb": [
+                            "0b4d870f-eab8-4544-91f8-9c5f0538709c"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery < 1.6.3 - Unauthenticated SQL Injection",
+                    "fixed_in": "1.6.3",
+                    "references": {
+                        "cve": [
+                            "2022-1281"
+                        ],
+                        "wpvulndb": [
+                            "2b4866f2-f511-41c6-8135-cf1e0263d8de"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery < 1.6.3 - Reflected Cross-Site Scripting",
+                    "fixed_in": "1.6.3",
+                    "references": {
+                        "cve": [
+                            "2022-1282"
+                        ],
+                        "wpvulndb": [
+                            "37a58f4e-d2bc-4825-8e1b-4aaf0a1cf1b6"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery < 1.6.4 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "1.6.4",
+                    "references": {
+                        "cve": [
+                            "2022-1394"
+                        ],
+                        "wpvulndb": [
+                            "f7a0df37-3204-4926-84ec-2204a2f22de3"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery < 1.7.1 - Reflected Cross-Site Scripting",
+                    "fixed_in": "1.7.1",
+                    "references": {
+                        "wpvulndb": [
+                            "e9f9bfb0-7cb8-4f92-b436-f08442a6c60a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery < 1.8.3 - Stored XSS via CSRF",
+                    "fixed_in": "1.8.3",
+                    "references": {
+                        "cve": [
+                            "2022-4058"
+                        ],
+                        "wpvulndb": [
+                            "89656cb3-4611-4ae7-b7f8-1b22eb75cfc4"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web < 1.8.15 - Admin+ Path Traversal",
+                    "fixed_in": "1.8.15",
+                    "references": {
+                        "cve": [
+                            "2023-1427"
+                        ],
+                        "wpvulndb": [
+                            "c8917ba2-4cb3-4b09-8a49-b7c612254946"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web < 1.8.19 - Authenticated (Administrator+) Stored Cross-Site Scripting via Widget",
+                    "fixed_in": "1.8.19",
+                    "references": {
+                        "cve": [
+                            "2023-6924"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/21b4d1a1-55fe-4241-820c-203991d724c4"
+                        ],
+                        "wpvulndb": [
+                            "e5c066bd-c192-4d0a-968d-0b9ce8565530"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web - Mobile-Friendly Image Gallery < 1.8.20 - Directory Traversal to Arbitrary File Rename",
+                    "fixed_in": "1.8.20",
+                    "references": {
+                        "cve": [
+                            "2024-0221"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/3a3b8f32-f29d-4e67-8fad-202bfc8a9918"
+                        ],
+                        "wpvulndb": [
+                            "3cbf5904-074f-4d48-99b8-93fb98c08f7c"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web < 1.8.22 - Admin+ Stored XSS via SVG",
+                    "fixed_in": "1.8.22",
+                    "references": {
+                        "cve": [
+                            "2024-2296"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/994a044d-db69-4f2d-9027-cf3665446ed3"
+                        ],
+                        "wpvulndb": [
+                            "541edd47-fca4-4628-9509-c32fffe7712f"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web < 1.8.21 - Missing Authorization",
+                    "fixed_in": "1.8.21",
+                    "references": {
+                        "cve": [
+                            "2024-33586"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7897ebc7-3ede-465e-b037-86096eb4435a"
+                        ],
+                        "wpvulndb": [
+                            "e3ebdf36-dd4c-4c4b-9a02-35327c45554c"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web \u2013 Mobile-Friendly Image Gallery < 1.8.24 - Authenticated (Contributor+) Stored Cross-Site Scripting via Zipped SVG",
+                    "fixed_in": "1.8.24",
+                    "references": {
+                        "cve": [
+                            "2024-5426"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/13436238-f14a-445b-9a9b-fbcf23b7b498"
+                        ],
+                        "wpvulndb": [
+                            "067cff7f-6ff6-40b6-9025-8ba8064c19a7"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web \u2013 Mobile-Friendly Image Gallery < 1.8.24 - Authenticated (Contributor+) Path Traversal via esc_dir Function",
+                    "fixed_in": "1.8.24",
+                    "references": {
+                        "cve": [
+                            "2024-5481"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/76c38826-4d49-4204-b6b6-b01d01373fa9"
+                        ],
+                        "wpvulndb": [
+                            "b5398d69-02c9-4e8f-81ff-9feb0e93dee8"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web < 1.8.22 - Multiple Reflected XSS",
+                    "fixed_in": "1.8.22",
+                    "references": {
+                        "cve": [
+                            "2024-29808"
+                        ],
+                        "url": [
+                            "https://appcheck-ng.com/xss-vulnerabilities-discovered-10web-photogallery-wordpress-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "6850fe6c-ad8c-474a-9299-66a9145ec091"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web < 1.8.26 - Subscriber+ Notice Dismiss",
+                    "fixed_in": "1.8.26",
+                    "references": {
+                        "cve": [
+                            "2024-35628"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/photo-gallery/wordpress-photo-gallery-by-10web-plugin-1-8-23-broken-access-control-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "5461999b-d9cc-488c-ba40-bc0161c08a6a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web <= 1.8.27 - Admin+ Stored XSS",
+                    "fixed_in": "1.8.28",
+                    "references": {
+                        "cve": [
+                            "2024-5968"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-5968/"
+                        ],
+                        "wpvulndb": [
+                            "db73e8d8-feb1-4daa-937e-a73969a93bcc"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web < 1.8.28 - Authenticated (Administrator+) Stored Cross-Site Scripting",
+                    "fixed_in": "1.8.28",
+                    "references": {
+                        "cve": [
+                            "2024-44043"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/684e199b-c3c9-47d5-a67e-8f4735eaed84"
+                        ],
+                        "wpvulndb": [
+                            "85468875-65d1-47b4-9aef-9a46247899b0"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web < 1.8.29 - Admin+ Stored XSS",
+                    "fixed_in": "1.8.29",
+                    "references": {
+                        "cve": [
+                            "2024-8670"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-8670/"
+                        ],
+                        "youtube": [
+                            "https://www.youtube.com/watch?v=https://drive.google.com/file/d/1Msm5DKyn2WMwFM9CQRdQhKFFmc7xG6jA/view?usp=sharing"
+                        ],
+                        "wpvulndb": [
+                            "50665594-778b-42f5-bfba-2a249a5e0260"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web < 1.8.31 - Authenticated (Administrator+) Stored Cross-Site Scripting",
+                    "fixed_in": "1.8.31",
+                    "references": {
+                        "cve": [
+                            "2024-9878"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/bfa1192b-34f5-4b71-8fff-14f2d4ac4aca"
+                        ],
+                        "wpvulndb": [
+                            "9c253541-b0ad-4c18-b7cc-c15feb927993"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web < 1.8.31 - Admin+ Stored XSS",
+                    "fixed_in": "1.8.31",
+                    "references": {
+                        "cve": [
+                            "2024-10704"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-10704/"
+                        ],
+                        "wpvulndb": [
+                            "6c115117-11c0-4c9e-9988-8547c9364c01"
+                        ]
+                    }
+                },
+                {
+                    "title": "Photo Gallery by 10Web < 1.8.33 - Admin+ Stored XSS",
+                    "fixed_in": "1.8.33",
+                    "references": {
+                        "cve": [
+                            "2024-13124"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-13124"
+                        ],
+                        "wpvulndb": [
+                            "5b3bf87b-73a1-47e8-bb00-0dfded07b191"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "post-grid": {
+            "slug": "post-grid",
+            "location": "https://www.municipal-curepipe.org/wp-content/plugins/post-grid/",
+            "latest_version": "2.3.7",
+            "last_updated": "2025-02-23T11:50:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Post Grid <= 2.0.12 - Unauthenticated Arbitrary File Deletion",
+                    "fixed_in": "2.0.13",
+                    "references": {
+                        "url": [
+                            "https://www.pluginvulnerabilities.com/2016/11/08/file-deletion-vulnerability-in-post-grid/"
+                        ],
+                        "wpvulndb": [
+                            "68ff8dcd-1486-4e7c-9ba7-3de27d5e40b7"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid < 2.0.73 & Team Showcase < 1.22.16 - Authenticated Stored Cross-Site Scripting (XSS)",
+                    "fixed_in": "2.0.73",
+                    "references": {
+                        "cve": [
+                            "2020-35936",
+                            "2020-35937"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2020/10/high-severity-vulnerabilities-in-post-grid-and-team-showcase-plugins/",
+                            "https://plugins.trac.wordpress.org/changeset/2383813/post-grid",
+                            "https://plugins.trac.wordpress.org/changeset/2383826/team"
+                        ],
+                        "wpvulndb": [
+                            "2fa410a8-2b2a-421c-bcab-d5d9dec8b542"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid < 2.0.73 & Team Showcase < 1.22.16 - PHP Object Injection",
+                    "fixed_in": "2.0.73",
+                    "references": {
+                        "cve": [
+                            "2020-35938",
+                            "2020-35939"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2020/10/high-severity-vulnerabilities-in-post-grid-and-team-showcase-plugins/",
+                            "https://plugins.trac.wordpress.org/changeset/2383813/post-grid",
+                            "https://plugins.trac.wordpress.org/changeset/2383826/team"
+                        ],
+                        "wpvulndb": [
+                            "dd44c3f3-fe47-414c-976a-2ba73c47dec8"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid < 2.1.8 - Reflected Cross-Site Scripting (XSS)",
+                    "fixed_in": "2.1.8",
+                    "references": {
+                        "cve": [
+                            "2021-24488"
+                        ],
+                        "wpvulndb": [
+                            "1fc0aace-ba85-4939-9007-d150960add4a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid < 2.1.13 - Contributor+ SQL Injection",
+                    "fixed_in": "2.1.13",
+                    "references": {
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2644269"
+                        ],
+                        "wpvulndb": [
+                            "ecf04da1-09a8-456d-a0cb-6db0a02cb704"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid < 2.1.16 - Reflected Cross-Site Scripting via keyword",
+                    "fixed_in": "2.1.16",
+                    "references": {
+                        "cve": [
+                            "2021-24986"
+                        ],
+                        "wpvulndb": [
+                            "51e57f25-b8b2-44ca-9162-d7328eac64eb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid < 2.1.16 - Reflected Cross-Site Scripting via post_types",
+                    "fixed_in": "2.1.16",
+                    "references": {
+                        "cve": [
+                            "2022-0447"
+                        ],
+                        "wpvulndb": [
+                            "91ca2cc9-951e-4e96-96ff-3bf131209dbe"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid Combo \u2013 36+ Gutenberg Blocks < 2.2.65 - Authenticated (Contributor+) Cross-Site Scripting",
+                    "fixed_in": "2.2.65",
+                    "references": {
+                        "cve": [
+                            "2023-6645"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ab777672-6eef-4078-932d-24bb784107fa"
+                        ],
+                        "wpvulndb": [
+                            "33894b73-1c45-400f-bbc7-f9af818a8b22"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid Combo \u2013 36+ Gutenberg Blocks < 2.2.69 - Information Exposure via get_posts API Endpoint",
+                    "fixed_in": "2.2.69",
+                    "references": {
+                        "cve": [
+                            "2023-7072"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/feee3268-b384-400c-a76d-e5d7972c05b7"
+                        ],
+                        "wpvulndb": [
+                            "ebd4170d-a677-4c40-954c-f56a3a62a7ea"
+                        ]
+                    }
+                },
+                {
+                    "title": "Combo Blocks < 2.2.76 - Unauthenticated Password Protected Posts Access",
+                    "fixed_in": "2.2.76",
+                    "references": {
+                        "cve": [
+                            "2024-0881"
+                        ],
+                        "wpvulndb": [
+                            "e460e926-6e9b-4e9f-b908-ba5c9c7fb290"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid < 2.2.76 - Reflected Cross-Site Scripting",
+                    "fixed_in": "2.2.76",
+                    "references": {
+                        "cve": [
+                            "2024-30441"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/19d394d8-bdc5-4cb5-b210-269197294020"
+                        ],
+                        "wpvulndb": [
+                            "cad2e7de-aa7e-45ec-a538-cbb1f6b4577b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid, Form Maker, Popup Maker, WooCommerce Blocks, Post Blocks, Post Carousel \u2013 Combo Blocks < 2.2.79 - Unauthenticated Sensitive Information Exposure",
+                    "fixed_in": "2.2.79",
+                    "references": {
+                        "cve": [
+                            "2024-32816"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/fb057a32-0027-4ca6-b65e-8634509c9a81"
+                        ],
+                        "wpvulndb": [
+                            "6faa229b-78b7-40d0-95c6-fc1937407254"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid, Form Maker, Popup Maker, WooCommerce Blocks, Post Blocks, Post Carousel \u2013 Combo Blocks < 2.2.81 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "2.2.81",
+                    "references": {
+                        "cve": [
+                            "2024-3155"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/84bc611c-c38a-4282-9a9b-5bb9157fb1de"
+                        ],
+                        "wpvulndb": [
+                            "7fbf7ff5-357c-4131-99c8-e098d3ea7730"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid, Form Maker, Popup Maker, WooCommerce Blocks, Post Blocks, Post Carousel \u2013 Combo Blocks < 2.2.81 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "2.2.81",
+                    "references": {
+                        "cve": [
+                            "2024-1988"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e49da9e7-26a1-442b-b5d0-1da3bcf0e8c9"
+                        ],
+                        "wpvulndb": [
+                            "d3fc0bb4-30b1-4f9a-afe9-b8570d5a8b32"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid, Form Maker, Popup Maker, WooCommerce Blocks, Post Blocks, Post Carousel - Combo Blocks < 2.2.81 - Authenticated (Contributor+) Stored Cross-Site Scripting via Block Attribute",
+                    "fixed_in": "2.2.81",
+                    "references": {
+                        "cve": [
+                            "2024-4042"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/55e6eb58-79e2-4404-887a-0392ce7914aa"
+                        ],
+                        "wpvulndb": [
+                            "1c69d7b3-6411-4658-951f-d6825f89492c"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid, Form Maker, Popup Maker, WooCommerce Blocks, Post Blocks, Post Carousel \u2013 Combo Blocks < 2.2.86 - Authenticated (Contributor+) Stored Cross-Site Scripting via redirectURL Parameter of Date Countdown Widget",
+                    "fixed_in": "2.2.86",
+                    "references": {
+                        "cve": [
+                            "2024-6346"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/1512d911-167f-4653-ab20-cb057b83dab1"
+                        ],
+                        "wpvulndb": [
+                            "1b68656e-9cfc-4fdd-a1d6-8148e6d00fce"
+                        ]
+                    }
+                },
+                {
+                    "title": "Gutenberg Blocks, Page Builder \u2013 ComboBlocks < 2.2.88 - Authenticated (Contributor+) Stored Cross-Site Scripting via Accordion Block",
+                    "fixed_in": "2.2.88",
+                    "references": {
+                        "cve": [
+                            "2024-7588"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/248a9cb2-24e8-46b2-9ef8-23a8444a922d"
+                        ],
+                        "wpvulndb": [
+                            "7143ee96-d9eb-41d1-ad85-829d7c01cc48"
+                        ]
+                    }
+                },
+                {
+                    "title": "ComboBlocks < 2.2.87 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "2.2.87",
+                    "references": {
+                        "cve": [
+                            "2024-43155"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d070f07a-c4e4-48ea-942d-7bb0bb834a52"
+                        ],
+                        "wpvulndb": [
+                            "d039c3fd-5af9-4707-b9b9-20cc883a8be2"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid and Gutenberg Blocks 2.2.87 - 2.2.90 - Subscriber+ Privilege Escalation",
+                    "fixed_in": "2.2.91",
+                    "references": {
+                        "cve": [
+                            "2024-8253"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f5f18cae-b7f8-4afd-adfa-c616c63f9419"
+                        ],
+                        "wpvulndb": [
+                            "b1ad7d07-240f-4be2-9962-d24e23c9ab6c"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid and Gutenberg Blocks < 2.2.90 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "2.2.90",
+                    "references": {
+                        "cve": [
+                            "2024-47340"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c619e758-c71d-41cf-bff9-119ad9e3d9c4"
+                        ],
+                        "wpvulndb": [
+                            "498663ac-9d4c-4ff6-8394-3ffc5a3f3cfa"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid and Gutenberg Blocks < 2.2.94 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "2.2.94",
+                    "references": {
+                        "cve": [
+                            "2024-50432"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/6ddab986-c017-475a-ad92-fa4221d6068c"
+                        ],
+                        "wpvulndb": [
+                            "36333d7d-5da7-40ca-9476-68cd538a4577"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid and Gutenberg Blocks < 2.2.93 - Contributor+ Stored XSS",
+                    "fixed_in": "2.2.93",
+                    "references": {
+                        "cve": [
+                            "2024-9645"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-9645/"
+                        ],
+                        "wpvulndb": [
+                            "cfd6db83-5e7f-4631-87c3-fdcd4c64c4fe"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid and Gutenberg Blocks 2.2.85 - 2.3.3 - Unauthenticated Privilege Escalation",
+                    "fixed_in": "2.3.4",
+                    "references": {
+                        "cve": [
+                            "2024-9636"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/1bbe01b8-24ed-4e1e-bafc-0f4dea96c1f3"
+                        ],
+                        "wpvulndb": [
+                            "1d1e059e-e3ee-4c87-afc6-9e0cc34d6622"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid and Gutenberg Blocks < 2.3.6 - Unauthenticated Paid Order Creation",
+                    "fixed_in": "2.3.6",
+                    "references": {
+                        "cve": [
+                            "2024-13798"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/705823ff-e9c3-4b8b-b71c-3b60d0d15b01"
+                        ],
+                        "wpvulndb": [
+                            "26e7a1ad-820e-45bc-9559-901d6a807d93"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid and Gutenberg Blocks \u2013 ComboBlocks < 2.3.7 - Unauthenticated User Information Exposure",
+                    "fixed_in": "2.3.7",
+                    "references": {
+                        "cve": [
+                            "2024-13796"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/0407223a-cd41-43d1-87b0-d6b83b57d4b3"
+                        ],
+                        "wpvulndb": [
+                            "183a3dad-f5cf-40ae-96d6-0bfca467e086"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "redux-framework": {
+            "slug": "redux-framework",
+            "location": "https://www.municipal-curepipe.org/wp-content/plugins/redux-framework/",
+            "latest_version": "4.5.6",
+            "last_updated": "2025-01-20T17:58:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Redux Framework < 4.1.21 - CSRF Nonce Validation Bypass",
+                    "fixed_in": "4.1.21",
+                    "references": {
+                        "url": [
+                            "https://security.devsoftin.com/blog/2020/11/23/exploiting-vulnerability-in-logical-operators-isset-anything/",
+                            "https://plugins.trac.wordpress.org/changeset/2395813/redux-framework/trunk/redux-core/inc/classes/class-redux-admin-notices.php",
+                            "https://plugins.trac.wordpress.org/changeset/2395813/redux-framework/trunk/redux-core/inc/classes/class-redux-ajax-save.php",
+                            "https://github.com/reduxframework/redux-framework-4/pull/160/files"
+                        ],
+                        "wpvulndb": [
+                            "5d52b68f-faca-4572-bb84-ecb733eecbe7"
+                        ]
+                    }
+                },
+                {
+                    "title": "Redux Framework 4.1.22 - 4.1.23 - CSRF Nonce Validation Bypass",
+                    "fixed_in": "4.1.24",
+                    "references": {
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2437953/redux-framework/trunk/redux-core/inc/classes/class-redux-ajax-save.php?old=2405408"
+                        ],
+                        "wpvulndb": [
+                            "ad9a190b-3bb6-4589-84e7-43372615588f"
+                        ]
+                    }
+                },
+                {
+                    "title": "Gutenberg Template Library & Redux Framework < 4.2.13 - Contributor+ Arbitrary Plugin Installation and Post Deletion",
+                    "fixed_in": "4.2.13",
+                    "references": {
+                        "cve": [
+                            "2021-38312"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/09/over-1-million-sites-affected-by-redux-framework-vulnerabilities/"
+                        ],
+                        "wpvulndb": [
+                            "e690b887-de5f-4950-bedf-4a9f5fe9b773"
+                        ]
+                    }
+                },
+                {
+                    "title": "Gutenberg Template Library & Redux Framework < 4.2.13 - Unauthenticated Sensitive Information Disclosure",
+                    "fixed_in": "4.2.13",
+                    "references": {
+                        "cve": [
+                            "2021-38314"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/09/over-1-million-sites-affected-by-redux-framework-vulnerabilities/"
+                        ],
+                        "wpvulndb": [
+                            "b6e6fa18-a292-49e1-a23b-d30606307455"
+                        ]
+                    }
+                },
+                {
+                    "title": "Redux Framework 4.4.12 -  4.4.17 - Unauthenticated JSON File Upload to Stored Cross-Site Scripting",
+                    "fixed_in": "4.4.18",
+                    "references": {
+                        "cve": [
+                            "2024-6828"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/18a37063-31aa-4b1f-b1a5-1ea921a20686"
+                        ],
+                        "wpvulndb": [
+                            "172fbef8-392d-426d-a3d8-3733fafb3379"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "ultimate-layouts-vc": {
+            "slug": "ultimate-layouts-vc",
+            "location": "https://www.municipal-curepipe.org/wp-content/plugins/ultimate-layouts-vc/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 12,
+        "requests_remaining": 13
+    },
+    "stop_time": 1741604216,
+    "elapsed": 913,
+    "requests_done": 218,
+    "cached_requests": 6,
+    "data_sent": 25531,
+    "data_sent_humanised": "24.933 KB",
+    "data_received": 313982,
+    "data_received_humanised": "306.623 KB",
+    "used_memory": 279719936,
+    "used_memory_humanised": "266.762 MB"
+}

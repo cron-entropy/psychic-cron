@@ -1,0 +1,543 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741603253,
+    "start_memory": 48877568,
+    "target_url": "https://www.skinillustrator.com/",
+    "target_ip": "104.21.48.1",
+    "effective_url": "https://www.skinillustrator.com/",
+    "interesting_findings": [
+        {
+            "url": "https://www.skinillustrator.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-wp-spc-disk-cache: HIT",
+                "x-wp-cf-super-cache-active: 1",
+                "x-wp-cf-super-cache-cache-control: s-maxage=31536000, max-age=60",
+                "x-wp-cf-super-cache-cookies-bypass: swfpc-feature-not-enabled",
+                "cf-cache-status: HIT",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=iVgHawLmBWn%2Fl5x2CdyaRR1N3AjfhZM7CeuR2qIGfuDM18UNelLl4XbnoHKjruMnW0%2FgmNU2BhamGwBz6P8b08Jrp5Cnap%2FBjPT8MnsDczVKgIPo1RSnMLJqNH3eeQG3LViJbeDUzHbhUg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "cf-ray: 91e232446c387cdd-LAX",
+                "alt-svc: h3=\":443\"; ma=86400",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=8428&min_rtt=8405&rtt_var=2378&sent=6&recv=7&lost=0&retrans=0&sent_bytes=3413&recv_bytes=824&delivery_rate=508185&cwnd=239&unsent_bytes=0&cid=77e089a277517b1d&ts=34&x=0\""
+            ]
+        },
+        {
+            "url": "https://www.skinillustrator.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.skinillustrator.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 30,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.skinillustrator.com/wp-content/debug.log",
+            "to_s": "Debug Log found: https://www.skinillustrator.com/wp-content/debug.log",
+            "type": "debug_log",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://codex.wordpress.org/Debugging_in_WordPress"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.skinillustrator.com/wp-content/backup-db/",
+            "to_s": "A backup directory has been found: https://www.skinillustrator.com/wp-content/backup-db/",
+            "type": "backup_db",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 70,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://github.com/wpscanteam/wpscan/issues/422"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.skinillustrator.com/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://www.skinillustrator.com/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.skinillustrator.com/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.skinillustrator.com/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        }
+    ],
+    "version": null,
+    "main_theme": {
+        "slug": "shopkeeper",
+        "location": "https://www.skinillustrator.com/wp-content/themes/shopkeeper/",
+        "latest_version": "5.9",
+        "last_updated": "2025-03-03T09:09:14.000Z",
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.skinillustrator.com/wp-content/themes/shopkeeper/style.css?ver=5.9",
+        "style_name": "Shopkeeper",
+        "style_uri": "https://shopkeeper.getbowtied.com/",
+        "description": "Shopkeeper - a Hassle-free Worpress Theme with great design and extensive functionality.",
+        "author": "Get Bowtied",
+        "author_uri": "https://getbowtied.com/",
+        "template": null,
+        "license": "GNU General Public License version 3.0",
+        "license_uri": "http://www.gnu.org/licenses/gpl-3.0.html",
+        "tags": "wordpress, woocommerce, elementor, visual website builder",
+        "text_domain": "shopkeeper",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 70,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": {
+            "number": "5.9",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.skinillustrator.com/wp-content/themes/shopkeeper/style.css?ver=5.9, Match: 'Version: 5.9'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://www.skinillustrator.com/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.4",
+            "last_updated": "2025-02-18T06:51:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.0.4",
+                "confidence": 90,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.skinillustrator.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.0.4"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.skinillustrator.com/wp-content/plugins/contact-form-7/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "google-site-kit": {
+            "slug": "google-site-kit",
+            "location": "https://www.skinillustrator.com/wp-content/plugins/google-site-kit/",
+            "latest_version": "1.147.0",
+            "last_updated": "2025-02-25T15:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Meta Tag (Passive Detection)",
+            "confidence": 40,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.147.0",
+                "confidence": 100,
+                "found_by": "Meta Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.skinillustrator.com/, Match: 'Site Kit by Google 1.147.0'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.skinillustrator.com/wp-content/plugins/google-site-kit/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.skinillustrator.com/wp-content/plugins/google-site-kit/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "hookmeup": {
+            "slug": "hookmeup",
+            "location": "https://www.skinillustrator.com/wp-content/plugins/hookmeup/",
+            "latest_version": "2.8",
+            "last_updated": "2025-03-02T22:37:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.8",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.skinillustrator.com/wp-content/plugins/hookmeup/README.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.skinillustrator.com/wp-content/plugins/hookmeup/README.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "instagram-feed": {
+            "slug": "instagram-feed",
+            "location": "https://www.skinillustrator.com/wp-content/plugins/instagram-feed/",
+            "latest_version": "6.7.1",
+            "last_updated": "2025-02-21T16:58:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.7.1",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.skinillustrator.com/wp-content/plugins/instagram-feed/README.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "js_composer": {
+            "slug": "js_composer",
+            "location": "https://www.skinillustrator.com/wp-content/plugins/js_composer/",
+            "latest_version": "8.2",
+            "last_updated": "2025-02-04T20:20:30.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Body Tag (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "8.2",
+                "confidence": 80,
+                "found_by": "Body Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.skinillustrator.com/, Match: 'js-comp-ver-8.2'"
+                ],
+                "confirmed_by": {
+                    "Query Parameter (Passive Detection)": {
+                        "confidence": 20,
+                        "interesting_entries": [
+                            "https://www.skinillustrator.com/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=8.2",
+                            "https://www.skinillustrator.com/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=8.2"
+                        ]
+                    }
+                }
+            }
+        },
+        "revslider": {
+            "slug": "revslider",
+            "location": "https://www.skinillustrator.com/wp-content/plugins/revslider/",
+            "latest_version": "6.7.29",
+            "last_updated": "2025-02-19T04:05:08.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.7.29",
+                "confidence": 100,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.skinillustrator.com/, Match: 'Powered by Slider Revolution 6.7.29'"
+                ],
+                "confirmed_by": {
+                    "Release Log (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.skinillustrator.com/wp-content/plugins/revslider/release_log.html, Match: 'Version 6.7.29 (19th February 2025)'"
+                        ]
+                    }
+                }
+            }
+        },
+        "searchwp": {
+            "slug": "searchwp",
+            "location": "https://www.skinillustrator.com/wp-content/plugins/searchwp/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "SearchWP < 4.2.6 - Subscriber+ Settings Update",
+                    "fixed_in": "4.2.6",
+                    "references": {
+                        "cve": [
+                            "2022-40223"
+                        ],
+                        "wpvulndb": [
+                            "76213afe-8521-4751-8125-308daa136e24"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "shopkeeper-extender": {
+            "slug": "shopkeeper-extender",
+            "location": "https://www.skinillustrator.com/wp-content/plugins/shopkeeper-extender/",
+            "latest_version": "4.3",
+            "last_updated": "2025-03-02T21:51:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.3",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.skinillustrator.com/wp-content/plugins/shopkeeper-extender/README.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.skinillustrator.com/wp-content/plugins/shopkeeper-extender/README.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "shopkeeper-portfolio": {
+            "slug": "shopkeeper-portfolio",
+            "location": "https://www.skinillustrator.com/wp-content/plugins/shopkeeper-portfolio/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.0",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.skinillustrator.com/wp-content/plugins/shopkeeper-portfolio/README.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.skinillustrator.com/wp-content/plugins/shopkeeper-portfolio/README.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "woocommerce": {
+            "slug": "woocommerce",
+            "location": "https://www.skinillustrator.com/wp-content/plugins/woocommerce/",
+            "latest_version": "9.7.1",
+            "last_updated": "2025-03-04T15:28:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Woocommerce < 9.7.1 - Shop Manager+ Stored XSS via New Product Form",
+                    "fixed_in": "9.7.1",
+                    "references": {
+                        "cve": [
+                            "2025-26762"
+                        ],
+                        "url": [
+                            "https://developer.woocommerce.com/2025/03/04/woocommerce-9-7-1-dot-release/"
+                        ],
+                        "wpvulndb": [
+                            "94cbfc1b-9a55-44fa-b1d9-0c47980ace3c"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "9.7.0",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.skinillustrator.com/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=9.7.0",
+                    "https://www.skinillustrator.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=9.7.0",
+                    "https://www.skinillustrator.com/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=9.7.0",
+                    "https://www.skinillustrator.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=9.7.0"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.skinillustrator.com/wp-content/plugins/woocommerce/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://www.skinillustrator.com/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T08:44:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "24.6",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.skinillustrator.com/, Match: 'optimized with the Yoast SEO plugin v24.6 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.skinillustrator.com/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.skinillustrator.com/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 12,
+        "requests_remaining": 13
+    },
+    "stop_time": 1741603298,
+    "elapsed": 44,
+    "requests_done": 1496,
+    "cached_requests": 6,
+    "data_sent": 366445,
+    "data_sent_humanised": "357.856 KB",
+    "data_received": 30501214,
+    "data_received_humanised": "29.088 MB",
+    "used_memory": 282402816,
+    "used_memory_humanised": "269.32 MB"
+}

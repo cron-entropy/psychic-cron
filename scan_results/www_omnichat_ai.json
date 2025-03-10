@@ -1,0 +1,834 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741603176,
+    "start_memory": 48746496,
+    "target_url": "https://www.omnichat.ai/",
+    "target_ip": "52.221.18.2",
+    "effective_url": "https://www.omnichat.ai/",
+    "interesting_findings": [
+        {
+            "url": "https://www.omnichat.ai/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: Apache",
+                "cache-tag: www.omnichat.ai",
+                "cdn-cache-control: max-age=2592000",
+                "x-flying-press-cache: HIT",
+                "x-flying-press-source: Web Server"
+            ]
+        },
+        {
+            "url": "https://www.omnichat.ai/robots.txt",
+            "to_s": "robots.txt found: https://www.omnichat.ai/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.omnichat.ai/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.omnichat.ai/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.omnichat.ai/readme.html",
+            "to_s": "WordPress readme found: https://www.omnichat.ai/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.omnichat.ai/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://www.omnichat.ai/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.omnichat.ai/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.omnichat.ai/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.omnichat.ai/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.omnichat.ai/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.5.4",
+        "release_date": "2024-06-05",
+        "status": "insecure",
+        "found_by": "Most Common Wp Includes Query Parameter In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.omnichat.ai/wp-includes/css/dist/block-library/style.min.css?ver=6.5.4",
+            "https://www.omnichat.ai/wp-includes/css/dashicons.min.css?ver=6.5.4"
+        ],
+        "confirmed_by": {
+            "Style Etag (Aggressive Detection)": {
+                "confidence": 60,
+                "interesting_entries": [
+                    "https://www.omnichat.ai/wp-admin/load-styles.php, Match: '6.5.4'"
+                ]
+            }
+        },
+        "vulnerabilities": [
+            {
+                "title": "WordPress < 6.5.5 - Contributor+ Stored XSS in HTML API",
+                "fixed_in": "6.5.5",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2024/06/wordpress-6-5-5/"
+                    ],
+                    "wpvulndb": [
+                        "2c63f136-4c1f-4093-9a8c-5e51f19eae28"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 6.5.5 - Contributor+ Stored XSS in Template-Part Block",
+                "fixed_in": "6.5.5",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2024/06/wordpress-6-5-5/"
+                    ],
+                    "wpvulndb": [
+                        "7c448f6d-4531-4757-bff0-be9e3220bbbb"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 6.5.5 - Contributor+ Path Traversal in Template-Part Block",
+                "fixed_in": "6.5.5",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2024/06/wordpress-6-5-5/"
+                    ],
+                    "wpvulndb": [
+                        "36232787-754a-4234-83d6-6ded5e80251c"
+                    ]
+                }
+            }
+        ]
+    },
+    "main_theme": {
+        "slug": "hello-elementor",
+        "location": "https://www.omnichat.ai/wp-content/themes/hello-elementor/",
+        "latest_version": "3.3.0",
+        "last_updated": "2025-01-21T00:00:00.000Z",
+        "outdated": true,
+        "readme_url": "https://www.omnichat.ai/wp-content/themes/hello-elementor/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.omnichat.ai/wp-content/themes/hello-elementor/style.css",
+        "style_name": "Hello Elementor",
+        "style_uri": "https://elementor.com/hello-theme/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash",
+        "description": "Hello Elementor is a lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor site builder plugin. The theme is free, open-source, and designed for users who want a flexible, easy-to-use, and customizable website. The theme, which is optimized for performance, provides a solid foundation for users to build their own unique designs using the Elementor drag-and-drop site builder. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.",
+        "author": "Elementor Team",
+        "author_uri": "https://elementor.com/?utm_source=wp-themes&utm_campaign=author-uri&utm_medium=wp-dash",
+        "template": null,
+        "license": "GNU General Public License v3 or later.",
+        "license_uri": "https://www.gnu.org/licenses/gpl-3.0.html",
+        "tags": "accessibility-ready, flexible-header, custom-colors, custom-menu, custom-logo, featured-images, rtl-language-support, threaded-comments, translation-ready,",
+        "text_domain": "hello-elementor",
+        "found_by": "Urls In 404 Page (Passive Detection)",
+        "confidence": 6,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": {
+            "number": "3.0.2",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.omnichat.ai/wp-content/themes/hello-elementor/style.css, Match: 'Version: 3.0.2'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "dynamic-content-for-elementor": {
+            "slug": "dynamic-content-for-elementor",
+            "location": "https://www.omnichat.ai/wp-content/plugins/dynamic-content-for-elementor/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Dynamic Content for Elementor < 1.9.6 - Authenticated RCE",
+                    "fixed_in": "1.9.6",
+                    "references": {
+                        "cve": [
+                            "2020-26596"
+                        ],
+                        "url": [
+                            "https://ww2.compunet.cl/dia-cero-en-plugin-de-wordpres-detectada-compunet-redteam"
+                        ],
+                        "wpvulndb": [
+                            "05b0e3eb-82ea-4868-a037-d7ee3eace8aa"
+                        ]
+                    }
+                },
+                {
+                    "title": "Dynamic Content for Elementor < 2.12.5 - Cross-Site Request Forgery",
+                    "fixed_in": "2.12.5",
+                    "references": {
+                        "cve": [
+                            "2023-52150"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/77a85024-33ff-4056-89f6-991182d71b80"
+                        ],
+                        "wpvulndb": [
+                            "82c34874-5b6a-42b9-8188-5799a4872676"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://www.omnichat.ai/wp-content/plugins/elementor/",
+            "latest_version": "3.27.6",
+            "last_updated": "2025-02-18T15:16:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Elementor Website Builder < 3.21.6 - Contributor+ DOM Stored XSS",
+                    "fixed_in": "3.21.6",
+                    "references": {
+                        "cve": [
+                            "2024-4619"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c7e1028e-e04b-46c4-b574-889d9fc1069d"
+                        ],
+                        "wpvulndb": [
+                            "8b8f30d6-bd11-4155-bfd2-3ac15248382b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.22.2 - Contributor+ Arbitrary SVG Download",
+                    "fixed_in": "3.22.2",
+                    "references": {
+                        "cve": [
+                            "2024-37437"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f11bc707-2465-4b64-945a-c0db6e9043dd"
+                        ],
+                        "wpvulndb": [
+                            "e6d56be1-9a2a-426f-88ca-1ffa773622c1"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder \u2013 More than Just a Page Builder < 3.24.0 - Authenticated (Contributor+) Stored Cross-Site Scripting in the URL Parameter in Multiple Widgets",
+                    "fixed_in": "3.24.0",
+                    "references": {
+                        "cve": [
+                            "2024-5416"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a99a64f7-1ea8-4de6-b24f-1f69bf25c1f5"
+                        ],
+                        "wpvulndb": [
+                            "5200943b-5e07-4342-a090-f78435e30d30"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.24.6 - Contributor+ Information Exposure via get_image_alt",
+                    "fixed_in": "3.24.6",
+                    "references": {
+                        "cve": [
+                            "2024-6757"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/96fa9ed7-6c13-4356-8a25-8a309be2b0e9"
+                        ],
+                        "wpvulndb": [
+                            "dce5ad0c-3ce9-498f-b0f7-8dfd6ee82e40"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.25.8 - Contributor+ Stored XSS",
+                    "fixed_in": "3.25.8",
+                    "references": {
+                        "cve": [
+                            "2024-8236"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b1305be5-8267-475f-b962-62e3930116e1"
+                        ],
+                        "wpvulndb": [
+                            "78f0847b-3f59-43cf-87db-2cadda862aa3"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.25.10 - Contributor+ Stored XSS via Typography Settings",
+                    "fixed_in": "3.25.10",
+                    "references": {
+                        "cve": [
+                            "2024-10453"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f23604b7-5a7f-4be7-bc73-cb4facdd1e73"
+                        ],
+                        "wpvulndb": [
+                            "2e05843d-1797-4da9-99ec-06376484fb32"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.27.5 - Contributor+ Stored XSS",
+                    "fixed_in": "3.27.5",
+                    "references": {
+                        "cve": [
+                            "2024-13445"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a11e702-34d2-49ee-8762-cc3614a7950a"
+                        ],
+                        "wpvulndb": [
+                            "25374232-2f9c-453d-bc47-124f80e67a92"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.25.11 - Contributor+ Stored XSS",
+                    "fixed_in": "3.25.11",
+                    "references": {
+                        "cve": [
+                            "2024-54444"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/wordpress/plugin/elementor/vulnerability/wordpress-elementor-plugin-3-25-10-cross-site-scripting-xss-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "61e1476a-cb14-46f9-b68c-4fd5b5c39597"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.21.0",
+                "confidence": 100,
+                "found_by": "Javascript Comment (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.omnichat.ai/wp-content/plugins/elementor/assets/js/admin-feedback.js, Match: 'elementor - v3.21.0'"
+                ],
+                "confirmed_by": {
+                    "Style Comment (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.omnichat.ai/wp-content/plugins/elementor/assets/css/admin.min.css, Match: 'elementor - v3.21.0'"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor-pro": {
+            "slug": "elementor-pro",
+            "location": "https://www.omnichat.ai/wp-content/plugins/elementor-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Elementor Website Builder Pro \u2013 More than Just a Page Builder < 3.25.11 - Authenticated (Contributor+) Sensitive Information Exposure via Shortcode",
+                    "fixed_in": "3.25.11",
+                    "references": {
+                        "cve": [
+                            "2024-8494"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/94ada60f-1e20-454e-a9d7-7849be764d81"
+                        ],
+                        "wpvulndb": [
+                            "771699f9-aa9b-4352-8382-5fbc17f364c2"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.21.3",
+                "confidence": 90,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.omnichat.ai/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.21.3",
+                    "https://www.omnichat.ai/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.21.3",
+                    "https://www.omnichat.ai/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.21.3"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.omnichat.ai/wp-content/plugins/elementor-pro/changelog.txt, Match: '#### 3.21.3 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "leadin": {
+            "slug": "leadin",
+            "location": "https://www.omnichat.ai/wp-content/plugins/leadin/",
+            "latest_version": "11.2.0",
+            "last_updated": "2025-03-05T10:50:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "HubSpot \u2013 CRM, Email Marketing, Live Chat, Forms & Analytics < 11.1.34 - Authenticated (Contributor+) Stored Cross-Site Scripting via HubSpot Meeting Widget",
+                    "fixed_in": "11.1.34",
+                    "references": {
+                        "cve": [
+                            "2024-5879"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ac004fb0-e178-4e9b-9aa3-b14eab43f22d"
+                        ],
+                        "wpvulndb": [
+                            "f916be21-f28c-4705-a82f-eb6074fa22cd"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "11.1.21",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.omnichat.ai/, Match: 'HubSpot WordPress plugin v11.1.21'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.omnichat.ai/wp-content/plugins/leadin/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.omnichat.ai/wp-content/plugins/leadin/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "megamenu": {
+            "slug": "megamenu",
+            "location": "https://www.omnichat.ai/wp-content/plugins/megamenu/",
+            "latest_version": "3.4.1",
+            "last_updated": "2024-11-20T10:25:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Max Mega Menu < 3.3.1 - Missing Authorization",
+                    "fixed_in": "3.3.1",
+                    "references": {
+                        "cve": [
+                            "2024-28003"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/35a75451-f0ae-4630-b415-394c76868e93"
+                        ],
+                        "wpvulndb": [
+                            "b6220034-9b29-409c-b67e-25706ab8fedb"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.3",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.omnichat.ai/wp-content/plugins/megamenu/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "sitepress-multilingual-cms": {
+            "slug": "sitepress-multilingual-cms",
+            "location": "https://www.omnichat.ai/wp-content/plugins/sitepress-multilingual-cms/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.6.13",
+                "confidence": 100,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.omnichat.ai/, Match: 'WPML ver:4.6.13 stt'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.omnichat.ai/wp-content/plugins/sitepress-multilingual-cms/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "theplus_elementor_addon": {
+            "slug": "theplus_elementor_addon",
+            "location": "https://www.omnichat.ai/wp-content/plugins/theplus_elementor_addon/",
+            "latest_version": "5.2.9",
+            "last_updated": "2023-06-15T18:07:14.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "The Plus Addons for Elementor Page Builder < 4.1.7 - Authentication Bypass",
+                    "fixed_in": "4.1.7",
+                    "references": {
+                        "cve": [
+                            "2021-24175"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/03/critical-0-day-in-the-plus-addons-for-elementor-allows-site-takeover/",
+                            "https://posimyth.ticksy.com/ticket/2713734/"
+                        ],
+                        "wpvulndb": [
+                            "c311feef-7041-4c21-9525-132b9bd32f89"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor < 4.1.12 - Reflected Cross-Site Scripting (XSS)",
+                    "fixed_in": "4.1.12",
+                    "references": {
+                        "cve": [
+                            "2021-24351"
+                        ],
+                        "url": [
+                            "https://theplusaddons.com/changelog/"
+                        ],
+                        "wpvulndb": [
+                            "2ee62f85-7aea-4b7d-8b2d-5d86d9fb8016"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor Page Builder < 4.1.11 - Arbitrary Reset Pwd Email Sending",
+                    "fixed_in": "4.1.11",
+                    "references": {
+                        "cve": [
+                            "2021-24359"
+                        ],
+                        "url": [
+                            "https://theplusaddons.com/changelog/"
+                        ],
+                        "wpvulndb": [
+                            "486b82d1-30d4-44d2-9542-f33e3f149e92"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor Page Builder < 4.1.10 - Open Redirect",
+                    "fixed_in": "4.1.10",
+                    "references": {
+                        "cve": [
+                            "2021-24358"
+                        ],
+                        "url": [
+                            "https://theplusaddons.com/changelog/"
+                        ],
+                        "wpvulndb": [
+                            "fd4352ad-dae0-4404-94d1-11083cb1f44d"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor Pro < 5.0.7 - Sensitive Data Disclosure",
+                    "fixed_in": "5.0.7",
+                    "references": {
+                        "cve": [
+                            "2021-24948"
+                        ],
+                        "url": [
+                            "https://roadmap.theplusaddons.com/updates"
+                        ],
+                        "wpvulndb": [
+                            "2b67005a-476e-4772-b15c-3191911a50b0"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor Pro < 5.0.7 - Unauthenticated SQL Injection",
+                    "fixed_in": "5.0.7",
+                    "references": {
+                        "cve": [
+                            "2021-24949"
+                        ],
+                        "url": [
+                            "https://roadmap.theplusaddons.com/updates"
+                        ],
+                        "wpvulndb": [
+                            "9d7f8ba8-a5d5-4ec3-a48f-5cd4b115e8d5"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor Pro < 5.2.9 - Unauthenticated Local File Inclusion",
+                    "fixed_in": "5.2.9",
+                    "references": {
+                        "cve": [
+                            "2023-47178"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4d739821-569d-42d7-a4c5-70e32d5d41a1"
+                        ],
+                        "wpvulndb": [
+                            "1a89fdb0-72e6-4f0b-8db4-d021f13939e3"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor \u2013 Elementor Addons, Page Templates, Widgets, Mega Menu, WooCommerce < 5.5.5 - Authenticated (Contributor+) Stored Cross-Site Scripting via Heading Title Widget",
+                    "fixed_in": "5.5.5",
+                    "references": {
+                        "cve": [
+                            "2024-5341"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/39c8e951-8e8c-4a72-9ecf-1dd96392105d"
+                        ],
+                        "wpvulndb": [
+                            "387c4cb4-13cf-49f8-a357-37e9f1761af8"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor Page Builder < 5.6.0 - Reflected Cross-Site Scripting via WP Login and Register Widget",
+                    "fixed_in": "5.6.0",
+                    "references": {
+                        "cve": [
+                            "2024-5344"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/1ac8fb0b-21a9-4b94-bb24-b349a7fe3305"
+                        ],
+                        "wpvulndb": [
+                            "0600d70f-7c42-4abe-a61b-ecbdfc60b443"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor \u2013 Elementor Addons, Page Templates, Widgets, Mega Menu, WooCommerce < 5.6.0 - Authenticated (Contributor+) Local File Inclusion",
+                    "fixed_in": "5.6.0",
+                    "references": {
+                        "cve": [
+                            "2024-5455"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8699142d-4ddd-4ca1-9886-9b2d905a36cd"
+                        ],
+                        "wpvulndb": [
+                            "339a6e6a-fd1e-43e8-a280-cf5537378e34"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://www.omnichat.ai/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T08:44:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "23.5",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.omnichat.ai/, Match: 'optimized with the Yoast SEO plugin v23.5 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.omnichat.ai/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.omnichat.ai/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {
+        "https://www.omnichat.ai/wp-config.php-backup": {
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {}
+        }
+    },
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 10,
+        "requests_remaining": 15
+    },
+    "stop_time": 1741603223,
+    "elapsed": 47,
+    "requests_done": 219,
+    "cached_requests": 6,
+    "data_sent": 115445,
+    "data_sent_humanised": "112.739 KB",
+    "data_received": 5391537,
+    "data_received_humanised": "5.142 MB",
+    "used_memory": 270680064,
+    "used_memory_humanised": "258.141 MB"
+}
