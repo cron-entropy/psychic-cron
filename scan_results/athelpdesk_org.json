@@ -1,0 +1,1257 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741690363,
+    "start_memory": 49074176,
+    "target_url": "https://athelpdesk.org/",
+    "target_ip": "162.241.151.140",
+    "effective_url": "https://athelpdesk.org/",
+    "interesting_findings": [
+        {
+            "url": "https://athelpdesk.org/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: nginx/1.25.5",
+                "host-header: Y2xvdWQuYmx1ZWhvc3QuY29t",
+                "x-server-cache: true",
+                "x-proxy-cache: MISS"
+            ]
+        },
+        {
+            "url": "https://athelpdesk.org/robots.txt",
+            "to_s": "robots.txt found: https://athelpdesk.org/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/\r",
+                "/wp-admin/admin-ajax.php\r"
+            ]
+        },
+        {
+            "url": "https://athelpdesk.org/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://athelpdesk.org/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://athelpdesk.org/readme.html",
+            "to_s": "WordPress readme found: https://athelpdesk.org/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://athelpdesk.org/wp-signup.php",
+            "to_s": "This site seems to be a multisite",
+            "type": "multisite",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Glossary#Multisite"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://athelpdesk.org/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://athelpdesk.org/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://athelpdesk.org/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://athelpdesk.org/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://athelpdesk.org/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://athelpdesk.org/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://athelpdesk.org/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://athelpdesk.org/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "pe-school",
+        "location": "https://athelpdesk.org/wp-content/themes/pe-school/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://athelpdesk.org/wp-content/themes/pe-school/style.css",
+        "style_name": "PE School",
+        "style_uri": "https://www.pixelemu.com/themes/i/41-education/11-pe-school",
+        "description": "Universal education WordPress theme with handy solution to display school activities and teachers. The theme is addressed for university. language schools and kindergadten sites. The theme provides many handy and user friendly theme options to configure like colors, fonts, layout, settings for post and pages and many more. The theme is accessibility-ready which means it follows WCAG (Section508) recommendations to create the site for people with disabilities.",
+        "author": "PixelEmu",
+        "author_uri": "http://pixelemu.com",
+        "template": null,
+        "license": "GNU General Public License v2 or later",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "one-column, two-columns, three-columns, left-sidebar, right-sidebar, flexible-header, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready",
+        "text_domain": "pe-school",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 28,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 14,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.03",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://athelpdesk.org/wp-content/themes/pe-school/style.css, Match: 'Version: 1.03'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "cleantalk-spam-protect": {
+            "slug": "cleantalk-spam-protect",
+            "location": "https://athelpdesk.org/wp-content/plugins/cleantalk-spam-protect/",
+            "latest_version": "6.51",
+            "last_updated": "2025-03-03T12:28:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Anti-Spam by CleanTalk < 5.22 - Unauthenticated Reflected Cross-Site Scripting (XSS)",
+                    "fixed_in": "5.22",
+                    "references": {
+                        "url": [
+                            "http://cinu.pl/research/wp-plugins/mail_b33a49f2ed4053ac3838395f924d7a20.html",
+                            "http://blog.cinu.pl/2015/11/php-static-code-analysis-vs-top-1000-wordpress-plugins.html"
+                        ],
+                        "wpvulndb": [
+                            "982c7cef-eb17-49c4-9a92-87a5d0aca29b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Anti-Spam by CleanTalk < 5.127.4 - Cross-Site Scripting Issue",
+                    "fixed_in": "5.127.4",
+                    "references": {
+                        "cve": [
+                            "2019-17515"
+                        ],
+                        "wpvulndb": [
+                            "204e9fcd-6fd4-462d-a422-5e420ebca3a0"
+                        ]
+                    }
+                },
+                {
+                    "title": "Anti-Spam by CleanTalk < 5.149 - Multiple Authenticated SQL Injections",
+                    "fixed_in": "5.149",
+                    "references": {
+                        "cve": [
+                            "2021-24131"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2421575"
+                        ],
+                        "wpvulndb": [
+                            "1bc28021-28c0-43fa-b89e-6b93c345e5d8"
+                        ]
+                    }
+                },
+                {
+                    "title": "Spam protection, AntiSpam, FireWall by CleanTalk < 5.153.4 - Unauthenticated Blind SQL Injection",
+                    "fixed_in": "5.153.4",
+                    "references": {
+                        "cve": [
+                            "2021-24295"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/05/sql-injection-vulnerability-patched-in-cleantalk-antispam-plugin/",
+                            "https://blog.cleantalk.org/sql-injection-in-anti-spam-by-cleantalk-for-wordpress-prior-5-153-4/"
+                        ],
+                        "wpvulndb": [
+                            "152171fc-888c-4275-a118-5a1e664ef28b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Spam protection, AntiSpam, FireWall by CleanTalk < 5.174.1 - Reflected Cross-Site Scripting",
+                    "fixed_in": "5.174.1",
+                    "references": {
+                        "cve": [
+                            "2022-28221",
+                            "2022-28222"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2022/03/reflected-xss-in-spam-protection-antispam-firewall-by-cleantalk/"
+                        ],
+                        "wpvulndb": [
+                            "4f68d896-1cb7-430c-b187-918c9f92005d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Anti-Spam by CleanTalk < 5.185.1 - Admin+ SQLi",
+                    "fixed_in": "5.185.1",
+                    "references": {
+                        "cve": [
+                            "2022-3302"
+                        ],
+                        "wpvulndb": [
+                            "1b5a018d-f2d4-4373-be1e-5162cc5c928b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Spam protection, AntiSpam, FireWall by CleanTalk < 6.21 - Counters Reset/Creation via CSRF",
+                    "fixed_in": "6.21",
+                    "references": {
+                        "cve": [
+                            "2023-51535"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/cleantalk-spam-protect/wordpress-spam-protection-anti-spam-firewall-by-cleantalk-plugin-6-20-cross-site-request-forgery-csrf-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "d770c511-a5b2-4963-a4d1-9525c42cafff"
+                        ]
+                    }
+                },
+                {
+                    "title": "Spam protection, AntiSpam, FireWall by CleanTalk < 6.21 - Email Update via CSRF",
+                    "fixed_in": "6.21",
+                    "references": {
+                        "cve": [
+                            "2023-51696"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/19dd6670-2813-4944-abcd-c26fb9b82092"
+                        ],
+                        "wpvulndb": [
+                            "9ba44969-d6d0-4933-80fc-f954acf7ed4a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Spam protection, Anti-Spam, FireWall by CleanTalk < 6.44 - Unauthenticated Arbitrary Plugin Installation",
+                    "fixed_in": "6.44",
+                    "references": {
+                        "cve": [
+                            "2024-10542"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d7eb5fad-bb62-4f0b-ad52-b16c3e442b62"
+                        ],
+                        "wpvulndb": [
+                            "5fa8a9d9-80a4-477e-849f-1e929762ef73"
+                        ]
+                    }
+                },
+                {
+                    "title": "Spam protection, Anti-Spam, FireWall by CleanTalk < 6.45 - Unauthenticated Arbitrary Plugin Installation",
+                    "fixed_in": "6.45",
+                    "references": {
+                        "cve": [
+                            "2024-10781"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/79ae062c-b084-4045-9407-2d94919993af"
+                        ],
+                        "wpvulndb": [
+                            "9e4870eb-cbcb-4a2a-bf4f-d4610f2afeca"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "jch-optimize": {
+            "slug": "jch-optimize",
+            "location": "https://athelpdesk.org/wp-content/plugins/jch-optimize/",
+            "latest_version": "4.2.1",
+            "last_updated": "2024-05-15T20:01:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "JCH Optimize < 3.2.3 - Admin+ Stored XSS",
+                    "fixed_in": "3.2.3",
+                    "references": {
+                        "cve": [
+                            "2023-25491"
+                        ],
+                        "wpvulndb": [
+                            "23a631ac-4c94-4252-86bd-214cda27c137"
+                        ]
+                    }
+                },
+                {
+                    "title": "JCH Optimize < 4.2.1 - Authenticated (Subscriber+) Directory Traversal",
+                    "fixed_in": "4.2.1",
+                    "references": {
+                        "cve": [
+                            "2024-34808"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b08194e9-6e6e-484c-bc5b-87235379d3b1"
+                        ],
+                        "wpvulndb": [
+                            "f05ae683-252a-43da-982f-4c7f923be28a"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "meks-flexible-shortcodes": {
+            "slug": "meks-flexible-shortcodes",
+            "location": "https://athelpdesk.org/wp-content/plugins/meks-flexible-shortcodes/",
+            "latest_version": "1.3.6",
+            "last_updated": "2024-07-29T12:30:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Meks Flexible Shortcodes < 1.3.5 - Contributor+ Stored XSS",
+                    "fixed_in": "1.3.5",
+                    "references": {
+                        "cve": [
+                            "2022-4562"
+                        ],
+                        "wpvulndb": [
+                            "2013d79b-e9f6-4a5a-b421-e840a3bae063"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "1.3.4",
+                "confidence": 30,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://athelpdesk.org/wp-content/plugins/meks-flexible-shortcodes/css/font-awesome/css/font-awesome.min.css?ver=1.3.4",
+                    "https://athelpdesk.org/wp-content/plugins/meks-flexible-shortcodes/css/simple-line/simple-line-icons.css?ver=1.3.4",
+                    "https://athelpdesk.org/wp-content/plugins/meks-flexible-shortcodes/css/style.css?ver=1.3.4"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "pe-easy-slider": {
+            "slug": "pe-easy-slider",
+            "location": "https://athelpdesk.org/wp-content/plugins/pe-easy-slider/",
+            "latest_version": "1.1.0",
+            "last_updated": "2021-09-02T10:29:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "pe-panels": {
+            "slug": "pe-panels",
+            "location": "https://athelpdesk.org/wp-content/plugins/pe-panels/",
+            "latest_version": "1.09",
+            "last_updated": "2021-09-01T11:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "pe-recent-posts": {
+            "slug": "pe-recent-posts",
+            "location": "https://athelpdesk.org/wp-content/plugins/pe-recent-posts/",
+            "latest_version": "1.2",
+            "last_updated": "2021-09-02T10:28:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "wp-live-chat-support": {
+            "slug": "wp-live-chat-support",
+            "location": "https://athelpdesk.org/wp-content/plugins/wp-live-chat-support/",
+            "latest_version": "10.0.15",
+            "last_updated": "2025-02-27T11:13:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WP Live Chat Support < 4.4.0 - Unauthenticated Blind SQL Injection",
+                    "fixed_in": "4.4.0",
+                    "references": {
+                        "url": [
+                            "http://cinu.pl/research/wp-plugins/mail_f9d4050b7cadfab4c84acb4589fdd161.html",
+                            "http://blog.cinu.pl/2015/11/php-static-code-analysis-vs-top-1000-wordpress-plugins.html"
+                        ],
+                        "wpvulndb": [
+                            "6af4e134-0ceb-4876-b4fe-4a2d9c4b9e6d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Live Chat Support < 6.2.02 - Stored Cross-Site Scripting",
+                    "fixed_in": "6.2.02",
+                    "references": {
+                        "cve": [
+                            "2016-10879"
+                        ],
+                        "url": [
+                            "https://sumofpwn.nl/advisory/2016/persistent_cross_site_scripting_in_wp_live_chat_support_plugin.html",
+                            "https://seclists.org/fulldisclosure/2016/Jul/24"
+                        ],
+                        "wpvulndb": [
+                            "d6daabea-5e19-4c20-b13a-5d34f6f3a0eb"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Live Chat Support < 6.2.04 - Stored Cross-Site Scripting (XSS)",
+                    "fixed_in": "6.2.04",
+                    "references": {
+                        "url": [
+                            "https://seclists.org/fulldisclosure/2016/Aug/3",
+                            "https://sumofpwn.nl/advisory/2016/stored_cross_site_scripting_vulnerability_in_wp_live_chat_support_wordpress_plugin.html"
+                        ],
+                        "wpvulndb": [
+                            "5587dc18-d1f3-4c8b-820e-b9315165605f"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Live Chat Support < 7.0.07 - Cross-Site Scripting (XSS)",
+                    "fixed_in": "7.0.07",
+                    "references": {
+                        "cve": [
+                            "2017-2187"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/1658232/",
+                            "https://jvn.jp/en/jp/JVN70951878/index.html",
+                            "https://rastating.github.io/wp-live-chat-support-7-0-06-reflected-xss"
+                        ],
+                        "wpvulndb": [
+                            "1074194e-3b81-4d7b-8745-c93cdba3afaa"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Live Chat Support < 7.1.05 - Cross-Site Scripting (XSS) ",
+                    "fixed_in": "7.1.05",
+                    "references": {
+                        "cve": [
+                            "2017-18507"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/1706931/wp-live-chat-support"
+                        ],
+                        "wpvulndb": [
+                            "23043a51-ccf7-499c-90f9-44cee5812938"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Live Chat Support < 8.0.06 - Unauthenticated Stored XSS",
+                    "fixed_in": "8.0.06",
+                    "references": {
+                        "cve": [
+                            "2018-9864"
+                        ],
+                        "url": [
+                            "https://www.gubello.me/blog/wp-live-chat-support-8-0-05-stored-xss/",
+                            "https://plugins.trac.wordpress.org/changeset/1845436/wp-live-chat-support"
+                        ],
+                        "youtube": [
+                            "https://www.youtube.com/watch?v=eHG1pWaez9w"
+                        ],
+                        "wpvulndb": [
+                            "7d0b7476-7e11-434e-b1c7-85ea7a3b0f7e"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Live Chat Support < 8.0.08 - Cross-Site Scripting (XSS)",
+                    "fixed_in": "8.0.08",
+                    "references": {
+                        "cve": [
+                            "2018-10234"
+                        ],
+                        "url": [
+                            "https://github.com/RiieCco/write-ups/tree/master/CVE-2018-11105",
+                            "https://plugins.trac.wordpress.org/changeset/1874093/wp-live-chat-support"
+                        ],
+                        "wpvulndb": [
+                            "0df5c464-833e-4042-a9ec-ceeb72d49185"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Live Chat Support < 8.0.18 - Cross-Site Scripting (XSS)",
+                    "fixed_in": "8.0.18",
+                    "references": {
+                        "cve": [
+                            "2019-9913",
+                            "2018-18460"
+                        ],
+                        "url": [
+                            "https://security-consulting.icu/blog/2019/02/wordpress-wp-livechat-xss/",
+                            "https://lists.openwall.net/full-disclosure/2019/02/05/14"
+                        ],
+                        "wpvulndb": [
+                            "f41711fd-9ab0-4caa-82a6-8ec9e908af5e"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Live Chat Support < 8.0.27 - Unauthenticated Stored XSS",
+                    "fixed_in": "8.0.27",
+                    "references": {
+                        "cve": [
+                            "2019-14950"
+                        ],
+                        "url": [
+                            "https://blog.sucuri.net/2019/05/persistent-cross-site-scripting-in-wp-live-chat-support-plugin.html"
+                        ],
+                        "wpvulndb": [
+                            "bf214e77-1bc4-4ec2-8812-685cdcf98a77"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Live Chat Support < 4.1.0 - XSS",
+                    "fixed_in": "4.1.0",
+                    "references": {
+                        "cve": [
+                            "2014-10386"
+                        ],
+                        "wpvulndb": [
+                            "ae5d5fe1-ac99-40dc-bbed-923a902c6a07"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Live Chat Support < 1.7.03 - XSS",
+                    "fixed_in": "1.7.03",
+                    "references": {
+                        "cve": [
+                            "2017-18508"
+                        ],
+                        "wpvulndb": [
+                            "eaef7049-c487-47ce-986d-a05f052f0b9a"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Live Chat Support < 8.0.33 - Missing Permission Checks on some REST API Calls",
+                    "fixed_in": "8.0.33",
+                    "references": {
+                        "cve": [
+                            "2019-12498"
+                        ],
+                        "wpvulndb": [
+                            "447c8090-d37e-406d-826c-4e1322beb727"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP-Live Chat by 3CX < 8.2.0 - Authenticated Stored Cross-Site Scripting",
+                    "fixed_in": "8.2.0",
+                    "references": {
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2339079"
+                        ],
+                        "wpvulndb": [
+                            "07b184e9-ce38-4aed-8b7c-fc1ac2e8f3dd"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "wp-user-avatar": {
+            "slug": "wp-user-avatar",
+            "location": "https://athelpdesk.org/wp-content/plugins/wp-user-avatar/",
+            "latest_version": "4.15.22",
+            "last_updated": "2025-03-07T14:36:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "ProfilePress < 3.1.8 - Authenticated Stored XSS",
+                    "fixed_in": "3.1.8",
+                    "references": {
+                        "cve": [
+                            "2021-24450"
+                        ],
+                        "wpvulndb": [
+                            "a8625579-fe8f-4bc1-a641-0e26ad141c92"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress 3.0 - 3.1.3 - Unauthenticated Privilege Escalation",
+                    "fixed_in": "3.1.4",
+                    "references": {
+                        "cve": [
+                            "2021-34621"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/06/easily-exploitable-critical-vulnerabilities-patched-in-profilepress-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "af54762b-29c9-4529-8ebd-f4ba7fde2c95"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress 3.0 - 3.1.3 - Authenticated Privilege Escalation",
+                    "fixed_in": "3.1.4",
+                    "references": {
+                        "cve": [
+                            "2021-34622"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/06/easily-exploitable-critical-vulnerabilities-patched-in-profilepress-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "35f57001-830b-431b-b1c6-09481315949b"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress 3.0 - 3.1.3 - Arbitrary File Upload in Image Uploader Component",
+                    "fixed_in": "3.1.4",
+                    "references": {
+                        "cve": [
+                            "2021-34623"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/06/easily-exploitable-critical-vulnerabilities-patched-in-profilepress-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "afdcafc6-6353-46d4-9767-c1017cbe3487"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress 3.0 - 3.1.3 - Arbitrary File Upload in File Uploader Component",
+                    "fixed_in": "3.1.4",
+                    "references": {
+                        "cve": [
+                            "2021-34624"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/06/easily-exploitable-critical-vulnerabilities-patched-in-profilepress-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "e12448ec-84a0-46aa-b280-5d9a80ee1e41"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 3.1.11 - Multiple Vulnerabilities",
+                    "fixed_in": "3.1.11",
+                    "references": {
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2561271/wp-user-avatar"
+                        ],
+                        "wpvulndb": [
+                            "f5105e3a-75c8-4312-93da-cef04d665f2a"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 3.1.11 - Unauthenticated Cross-Site Scripting (XSS) in tabbed login/register widget",
+                    "fixed_in": "3.1.11",
+                    "references": {
+                        "cve": [
+                            "2021-24522"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2561271/wp-user-avatar"
+                        ],
+                        "wpvulndb": [
+                            "25b51add-197c-4aff-b1a8-b92fb11d8697"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 3.2.3 - Reflected Cross-Site Scripting",
+                    "fixed_in": "3.2.3",
+                    "references": {
+                        "cve": [
+                            "2021-24955"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2626573/"
+                        ],
+                        "wpvulndb": [
+                            "e8005d4d-41c3-451d-b85a-2626decaa080"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 3.2.3 - Reflected Cross-Site Scripting",
+                    "fixed_in": "3.2.3",
+                    "references": {
+                        "cve": [
+                            "2021-24954"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2626573/"
+                        ],
+                        "wpvulndb": [
+                            "54ff0db8-1d9e-4e67-b71a-142a9e5ed851"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.5.1 - Admin+ Stored Cross-Site Scripting via Form Settings",
+                    "fixed_in": "4.5.1",
+                    "references": {
+                        "cve": [
+                            "2022-4698"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/wp-user-avatar/profilepress-450-authenticated-administrator-stored-cross-site-scripting-via-form-settings"
+                        ],
+                        "wpvulndb": [
+                            "16d825fe-1f20-4c29-b73c-7806f81717a5"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.5.1 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "4.5.1",
+                    "references": {
+                        "cve": [
+                            "2022-4697"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/wp-user-avatar/profilepress-450-authenticated-administrator-stored-cross-site-scripting"
+                        ],
+                        "wpvulndb": [
+                            "ed61610a-d388-4b27-a3ec-c0a38ae6f378"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.5.5 - Reflected XSS",
+                    "fixed_in": "4.5.5",
+                    "references": {
+                        "cve": [
+                            "2022-47444"
+                        ],
+                        "wpvulndb": [
+                            "0dd6220e-33c5-4955-a319-0830f25c9c40"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.5.4 - Admin+ Stored XSS",
+                    "fixed_in": "4.5.4",
+                    "references": {
+                        "cve": [
+                            "2023-23996"
+                        ],
+                        "wpvulndb": [
+                            "59751b6e-ca62-47d3-ae0b-aefc5b5dea96"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.5.5 - Contributor+ Stored XSS",
+                    "fixed_in": "4.5.5",
+                    "references": {
+                        "cve": [
+                            "2023-23820"
+                        ],
+                        "wpvulndb": [
+                            "effe591a-8453-48f8-afec-421b4e610615"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.5.5 - Reflected XSS",
+                    "fixed_in": "4.5.5",
+                    "references": {
+                        "cve": [
+                            "2023-23830"
+                        ],
+                        "wpvulndb": [
+                            "198e1933-8721-4b07-95b2-edb41a15b9eb"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.13.2 - Limited Privilege Escalation via 'acceptable_defined_roles'",
+                    "fixed_in": "4.13.2",
+                    "references": {
+                        "cve": [
+                            "2023-41954"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5b2840ee-3b48-415e-9bed-d34d0b6e36d7"
+                        ],
+                        "wpvulndb": [
+                            "130d8d50-5b6d-4325-a008-dd44a7769395"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.13.3 - Information Disclosure via Debug Log",
+                    "fixed_in": "4.13.3",
+                    "references": {
+                        "cve": [
+                            "2023-44150"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8f5357e0-1e1b-4090-a6ae-9587c6a8d290"
+                        ],
+                        "wpvulndb": [
+                            "b1eeb5cc-53a6-44ef-95ef-7a944af6168d"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.13.2 Cross-Site Request Forgery via 'admin_notice'",
+                    "fixed_in": "4.13.2",
+                    "references": {
+                        "cve": [
+                            "2023-41953"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e103f59a-00fa-4d4c-b4fc-834754886d49"
+                        ],
+                        "wpvulndb": [
+                            "bb861fee-05fb-4512-88a3-93c791a24f43"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.14.4 - Contributor+ Stored XSS",
+                    "fixed_in": "4.14.4",
+                    "references": {
+                        "cve": [
+                            "2024-1046"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7911c774-3fb0-4d6c-a847-101e5ad8637a"
+                        ],
+                        "wpvulndb": [
+                            "88a11dd3-b343-44ef-bff1-185de3cb721c"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.15.0 - Unauthenticated Stored XSS",
+                    "fixed_in": "4.15.0",
+                    "references": {
+                        "cve": [
+                            "2024-1519"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4ffd74de-6629-4088-ba5c-ac9dd5c6322c"
+                        ],
+                        "wpvulndb": [
+                            "ca19ed80-968d-4881-bd4a-33562f3ecca4"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.15.0 - Contributor+ Stored XSS",
+                    "fixed_in": "4.15.0",
+                    "references": {
+                        "cve": [
+                            "2024-1570"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/46d4d573-3845-4d20-8a48-a2f28850383c"
+                        ],
+                        "wpvulndb": [
+                            "f2753004-12a9-4649-8254-50e8f198e587"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.15.0 - Contributor+ Stored XSS",
+                    "fixed_in": "4.15.0",
+                    "references": {
+                        "cve": [
+                            "2024-1408"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/6e50081f-6658-4cc7-bf0a-d04464820926"
+                        ],
+                        "wpvulndb": [
+                            "5a07c1ef-9547-44e6-bf88-d511569d36d6"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.15.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via profilepress-edit-profile Shortcode",
+                    "fixed_in": "4.15.1",
+                    "references": {
+                        "cve": [
+                            "2024-1806"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d3b9d0ab-d785-4e93-9ab8-f75673a27334"
+                        ],
+                        "wpvulndb": [
+                            "df483988-5b3b-4297-a802-548a6d97cc81"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.15.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via [reg-select-role] Shortcode",
+                    "fixed_in": "4.15.1",
+                    "references": {
+                        "cve": [
+                            "2024-1409"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/53e16bca-7c85-4d56-8233-b3b53f793b39"
+                        ],
+                        "wpvulndb": [
+                            "15405719-3d59-4ed2-8c61-10704e70b30b"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.15.3 - Contributor+ Stored Cross-Site Scripting",
+                    "fixed_in": "4.15.3",
+                    "references": {
+                        "cve": [
+                            "2024-1535"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/38ec1a6b-f5ee-446a-9e6c-3485dafb85ac"
+                        ],
+                        "wpvulndb": [
+                            "4bfb2aae-e7a3-4de9-842f-a6eed45ab173"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.15.6 - Contributor+ Stored Cross-Site Scripting via 'reg-single-checkbox'",
+                    "fixed_in": "4.15.6",
+                    "references": {
+                        "cve": [
+                            "2024-3210"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f4986bc3-ee34-43a6-bad2-9f6665adb35c"
+                        ],
+                        "wpvulndb": [
+                            "5cd3e945-2fc5-4948-92a2-18364eba5355"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.15.5 - Contributor+ Stored Cross-Site Scripting",
+                    "fixed_in": "4.15.5",
+                    "references": {
+                        "cve": [
+                            "2024-2867"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4eb296af-547a-44aa-b804-833204b75256"
+                        ],
+                        "wpvulndb": [
+                            "01ca6189-1821-453c-b5bb-9be6fcc9998e"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.15.9 - Contributor+ Stored XSS",
+                    "fixed_in": "4.15.9",
+                    "references": {
+                        "cve": [
+                            "2024-2861"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/487731cd-da5a-45b6-8f39-4ae6420dd252"
+                        ],
+                        "wpvulndb": [
+                            "f6d001d4-6a74-407a-8642-6288ec402efa"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.15.15 - Admin+ Stored XSS",
+                    "fixed_in": "4.15.15",
+                    "references": {
+                        "cve": [
+                            "2024-10518"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-10518/"
+                        ],
+                        "wpvulndb": [
+                            "a1e5ad16-6240-4920-888a-36fbac22cc71"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.15.15 - Admin+ Stored XSS",
+                    "fixed_in": "4.15.15",
+                    "references": {
+                        "cve": [
+                            "2024-10517"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-10517/"
+                        ],
+                        "wpvulndb": [
+                            "f7c3a990-458e-4e15-b427-0b37de120740"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.15.19 - Unauthenticated Content Restriction Bypass to Sensitive Information Exposure",
+                    "fixed_in": "4.15.19",
+                    "references": {
+                        "cve": [
+                            "2024-11083"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/60c8159f-0641-4b75-9d56-34bd13105caf"
+                        ],
+                        "wpvulndb": [
+                            "74150609-ca1c-499c-b83b-089423ad0674"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.15.20 - Admin+ Stored XSS",
+                    "fixed_in": "4.15.20",
+                    "references": {
+                        "cve": [
+                            "2024-13119"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-13119/"
+                        ],
+                        "wpvulndb": [
+                            "32600a45-a8cd-446c-9aa2-0621a02a9754"
+                        ]
+                    }
+                },
+                {
+                    "title": "ProfilePress < 4.15.20 - Admin+ Stored XSS",
+                    "fixed_in": "4.15.20",
+                    "references": {
+                        "cve": [
+                            "2024-13120"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-13120/"
+                        ],
+                        "youtube": [
+                            "https://www.youtube.com/watch?v=https://drive.google.com/file/d/1XH_C4Kwyi5rxxDmFbG14u1qVtTlaYeb4/view?usp=sharing"
+                        ],
+                        "wpvulndb": [
+                            "5b70798c-c30d-42e6-ac72-821c5568b9b5"
+                        ]
+                    }
+                },
+                {
+                    "title": "Paid Membership Plugin < 4.15.20 - Admin+ Stored XSS",
+                    "fixed_in": "4.15.20",
+                    "references": {
+                        "cve": [
+                            "2024-13121"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-13121/"
+                        ],
+                        "wpvulndb": [
+                            "59ee8fe5-4820-4d52-b17a-7044631c40c1"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 10,
+        "requests_remaining": 15
+    },
+    "stop_time": 1741690397,
+    "elapsed": 34,
+    "requests_done": 214,
+    "cached_requests": 7,
+    "data_sent": 73974,
+    "data_sent_humanised": "72.24 KB",
+    "data_received": 804637,
+    "data_received_humanised": "785.778 KB",
+    "used_memory": 273276928,
+    "used_memory_humanised": "260.617 MB"
+}

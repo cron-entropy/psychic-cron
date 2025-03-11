@@ -1,0 +1,360 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741690443,
+    "start_memory": 48816128,
+    "target_url": "https://unos.org/",
+    "target_ip": "104.18.19.149",
+    "effective_url": "https://unos.org/",
+    "interesting_findings": [
+        {
+            "url": "https://unos.org/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-powered-by: PHP/8.2.22",
+                "cf-cache-status: HIT",
+                "server: cloudflare",
+                "cf-ray: 91ea82e859207c56-LAX"
+            ]
+        },
+        {
+            "url": "https://unos.org/robots.txt",
+            "to_s": "robots.txt found: https://unos.org/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/\r",
+                "/wp-admin/admin-ajax.php\r",
+                "/tag/*\r",
+                "/archive/*\r",
+                "/events/*\r",
+                "/wp-login/\r",
+                "/events/$\r"
+            ]
+        },
+        {
+            "url": "https://unos.org/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://unos.org/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Link Tag (Passive Detection)": {
+                    "confidence": 30
+                },
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://unos.org/wp-signup.php",
+            "to_s": "This site seems to be a multisite",
+            "type": "multisite",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Glossary#Multisite"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://unos.org/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://unos.org/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Query Parameter In Install Page (Aggressive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://unos.org/wp-includes/css/dashicons.min.css?ver=6.7.2",
+            "https://unos.org/wp-includes/css/buttons.min.css?ver=6.7.2",
+            "https://unos.org/wp-admin/css/forms.min.css?ver=6.7.2",
+            "https://unos.org/wp-admin/css/l10n.min.css?ver=6.7.2",
+            "https://unos.org/wp-admin/css/install.min.css?ver=6.7.2"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "divi-child",
+        "location": "https://unos.org/wp-content/themes/divi-child/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://unos.org/wp-content/themes/divi-child/style.css?ver=4.27.4",
+        "style_name": "Divi Child",
+        "style_uri": null,
+        "description": "A Divi Child Theme for Unos.org.",
+        "author": "Unos",
+        "author_uri": "https://unos.org",
+        "template": "Divi",
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://unos.org/wp-content/themes/divi-child/style.css?ver=4.27.4, Match: 'Version:        1'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "dg-divi-carousel": {
+            "slug": "dg-divi-carousel",
+            "location": "https://unos.org/wp-content/plugins/dg-divi-carousel/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "monarch": {
+            "slug": "monarch",
+            "location": "https://unos.org/wp-content/plugins/monarch/",
+            "latest_version": "1.4.14",
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.4.14",
+                "confidence": 90,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://unos.org/wp-content/plugins/monarch/css/style.css?ver=1.4.14",
+                    "https://unos.org/wp-content/plugins/monarch/js/idle-timer.min.js?ver=1.4.14",
+                    "https://unos.org/wp-content/plugins/monarch/js/custom.js?ver=1.4.14"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://unos.org/wp-content/plugins/monarch/changelog.txt, Match: 'version 1.4.14 ('"
+                        ]
+                    }
+                }
+            }
+        },
+        "search-filter-pro": {
+            "slug": "search-filter-pro",
+            "location": "https://unos.org/wp-content/plugins/search-filter-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.5.19",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://unos.org/wp-content/plugins/search-filter-pro/README.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://unos.org/wp-content/plugins/search-filter-pro/README.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "unos-web-services": {
+            "slug": "unos-web-services",
+            "location": "https://unos.org/wp-content/plugins/unos-web-services/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.2",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://unos.org/wp-content/plugins/unos-web-services/README.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wordfence": {
+            "slug": "wordfence",
+            "location": "https://unos.org/wp-content/plugins/wordfence/",
+            "latest_version": "8.0.3",
+            "last_updated": "2025-01-15T17:14:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Javascript Var (Passive Detection)",
+            "confidence": 60,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "8.0.3",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://unos.org/wp-content/plugins/wordfence/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://unos.org/wp-content/plugins/wordfence/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wp-user-frontend-pro": {
+            "slug": "wp-user-frontend-pro",
+            "location": "https://unos.org/wp-content/plugins/wp-user-frontend-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 8,
+        "requests_remaining": 17
+    },
+    "stop_time": 1741690480,
+    "elapsed": 37,
+    "requests_done": 217,
+    "cached_requests": 7,
+    "data_sent": 84188,
+    "data_sent_humanised": "82.215 KB",
+    "data_received": 2324768,
+    "data_received_humanised": "2.217 MB",
+    "used_memory": 270442496,
+    "used_memory_humanised": "257.914 MB"
+}

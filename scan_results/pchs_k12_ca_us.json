@@ -1,0 +1,538 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741690080,
+    "start_memory": 48529408,
+    "target_url": "https://pchs.k12.ca.us/",
+    "target_ip": "173.236.240.204",
+    "effective_url": "https://pchs.k12.ca.us/",
+    "interesting_findings": [
+        {
+            "url": "https://pchs.k12.ca.us/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-tec-api-version: v1",
+                "x-tec-api-root: https://pchs.k12.ca.us/wp-json/tribe/events/v1/",
+                "x-tec-api-origin: https://pchs.k12.ca.us",
+                "server: Apache"
+            ]
+        },
+        {
+            "url": "https://pchs.k12.ca.us/robots.txt",
+            "to_s": "robots.txt found: https://pchs.k12.ca.us/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://pchs.k12.ca.us/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://pchs.k12.ca.us/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://pchs.k12.ca.us/readme.html",
+            "to_s": "WordPress readme found: https://pchs.k12.ca.us/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://pchs.k12.ca.us/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://pchs.k12.ca.us/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.6.2",
+        "release_date": "2024-09-10",
+        "status": "outdated",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://pchs.k12.ca.us/feed/, <generator>https://wordpress.org/?v=6.6.2</generator>",
+            "https://pchs.k12.ca.us/comments/feed/, <generator>https://wordpress.org/?v=6.6.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "Avada",
+        "location": "https://pchs.k12.ca.us/wp-content/themes/Avada/",
+        "latest_version": "7.11.14",
+        "last_updated": "2025-01-30T01:01:28.000Z",
+        "outdated": true,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://pchs.k12.ca.us/wp-content/themes/Avada/style.css",
+        "style_name": "Avada",
+        "style_uri": "https://avada.theme-fusion.com/",
+        "description": "The Avada Website Builder is the ultimate design and creation suite. Design Anything, Build Everything, Fast. The #1 selling product of all time on ThemeForest.",
+        "author": "ThemeFusion",
+        "author_uri": "https://themeforest.net/user/ThemeFusion",
+        "template": null,
+        "license": "Themeforest Split Licence",
+        "license_uri": "-",
+        "tags": null,
+        "text_domain": "Avada",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 90,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [
+            {
+                "title": "Avada < 7.11.2 - Subscriber+ Portfolio Permalinks Creation",
+                "fixed_in": "7.11.2",
+                "references": {
+                    "cve": [
+                        "2023-39307"
+                    ],
+                    "url": [
+                        "https://patchstack.com/database/vulnerability/avada/wordpress-avada-theme-7-11-1-authenticated-broken-access-control-vulnerability"
+                    ],
+                    "wpvulndb": [
+                        "81108b5a-d3e0-43f4-b2c6-9a2613e46052"
+                    ]
+                }
+            },
+            {
+                "title": "Avada < 7.11.2 - Contributor+ SSRF",
+                "fixed_in": "7.11.2",
+                "references": {
+                    "cve": [
+                        "2023-39313"
+                    ],
+                    "url": [
+                        "https://patchstack.com/database/vulnerability/avada/wordpress-avada-theme-7-11-1-authenticated-server-side-request-forgery-ssrf-vulnerability"
+                    ],
+                    "wpvulndb": [
+                        "c96207a7-d46a-447b-bace-d909cc7e204b"
+                    ]
+                }
+            },
+            {
+                "title": "Avada < 7.11.2 - Author+ Arbitrary File Upload via Zip Extraction",
+                "fixed_in": "7.11.2",
+                "references": {
+                    "cve": [
+                        "2023-39312"
+                    ],
+                    "url": [
+                        "https://patchstack.com/database/vulnerability/avada/wordpress-avada-theme-7-11-1-authenticated-author-unrestricted-zip-extraction-vulnerability"
+                    ],
+                    "wpvulndb": [
+                        "d90338e3-90fa-46be-8fa8-182d1249cc7c"
+                    ]
+                }
+            },
+            {
+                "title": "Avada < 7.11.2 - Contributor+ Arbitrary File Upload",
+                "fixed_in": "7.11.2",
+                "references": {
+                    "cve": [
+                        "2023-39307"
+                    ],
+                    "url": [
+                        "https://patchstack.com/database/vulnerability/avada/wordpress-avada-theme-7-11-1-authenticated-arbitrary-file-upload-vulnerability"
+                    ],
+                    "wpvulndb": [
+                        "6a819332-0b24-40f6-9cc5-06712dd1595b"
+                    ]
+                }
+            },
+            {
+                "title": "Avada | Website Builder For WordPress & WooCommerce < 7.11.5 - Authenticated (Contributor+) Arbitrary File Upload",
+                "fixed_in": "7.11.5",
+                "references": {
+                    "cve": [
+                        "2024-1468"
+                    ],
+                    "url": [
+                        "https://www.wordfence.com/threat-intel/vulnerabilities/id/cde6e758-9723-43f2-9972-32be8aeb2b91"
+                    ],
+                    "wpvulndb": [
+                        "df0d86aa-ddba-4d5f-8d8e-a0460c0cd079"
+                    ]
+                }
+            },
+            {
+                "title": "Avada < 7.11.7 - Authenticated (Contributor+) Server-Side Request Forgery via form_to_url_action",
+                "fixed_in": "7.11.7",
+                "references": {
+                    "cve": [
+                        "2024-2343"
+                    ],
+                    "url": [
+                        "https://www.wordfence.com/threat-intel/vulnerabilities/id/87ca07ac-6080-45d7-a8f5-74a918adec43"
+                    ],
+                    "wpvulndb": [
+                        "0bea7dba-886b-4363-9084-38608c49192c"
+                    ]
+                }
+            },
+            {
+                "title": "Avada < 7.11.7 - Authenticated (Admin+) SQL Injection via entry",
+                "fixed_in": "7.11.7",
+                "references": {
+                    "cve": [
+                        "2024-2344"
+                    ],
+                    "url": [
+                        "https://www.wordfence.com/threat-intel/vulnerabilities/id/ccf0d2ca-2891-45d1-8ea2-90dd435b359f"
+                    ],
+                    "wpvulndb": [
+                        "da6a4273-be9b-4381-b24e-4a4be2c96daa"
+                    ]
+                }
+            },
+            {
+                "title": "Avada < 7.11.7 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                "fixed_in": "7.11.7",
+                "references": {
+                    "cve": [
+                        "2024-2311"
+                    ],
+                    "url": [
+                        "https://www.wordfence.com/threat-intel/vulnerabilities/id/ff6ff104-44c8-49a9-bebd-abb82e8e1cd6"
+                    ],
+                    "wpvulndb": [
+                        "a543a7e4-16f2-4691-9f19-575604edad79"
+                    ]
+                }
+            },
+            {
+                "title": "Avada < 7.11.7 - Unauthenticated Sensitive Information Exposure via Form Uploads Directory Listing",
+                "fixed_in": "7.11.7",
+                "references": {
+                    "cve": [
+                        "2024-2340"
+                    ],
+                    "url": [
+                        "https://www.wordfence.com/threat-intel/vulnerabilities/id/8db8bbc3-43ca-4ef5-a44d-2987c8597961"
+                    ],
+                    "wpvulndb": [
+                        "507e1d07-4953-4a31-81e8-80f01f971e2a"
+                    ]
+                }
+            },
+            {
+                "title": "Avada < 7.11.11 - Cross-Site Request Forgery",
+                "fixed_in": "7.11.11",
+                "references": {
+                    "cve": [
+                        "2024-54357"
+                    ],
+                    "url": [
+                        "https://www.wordfence.com/threat-intel/vulnerabilities/id/5efd3125-8ba7-4d36-9e6c-cac101de7d5b"
+                    ],
+                    "wpvulndb": [
+                        "40ca62d6-6d60-4b83-9331-0afca5636b44"
+                    ]
+                }
+            },
+            {
+                "title": "Avada < 7.11.11 - Missing Authorization",
+                "fixed_in": "7.11.11",
+                "references": {
+                    "cve": [
+                        "2025-24748"
+                    ],
+                    "url": [
+                        "https://www.wordfence.com/threat-intel/vulnerabilities/id/f7b25126-9db4-488a-aa47-2f903b0b9fdf"
+                    ],
+                    "wpvulndb": [
+                        "5c3cbcfe-7167-49ed-83f0-afc15efb66cd"
+                    ]
+                }
+            },
+            {
+                "title": "Avada Theme < 7.11.14 - Unauthenticated Arbitrary Shortcode Execution",
+                "fixed_in": "7.11.14",
+                "references": {
+                    "cve": [
+                        "2024-13346"
+                    ],
+                    "url": [
+                        "https://www.wordfence.com/threat-intel/vulnerabilities/id/1f2f390b-332b-452c-9fe7-ccd1a45390dd"
+                    ],
+                    "wpvulndb": [
+                        "54e4f5f3-61fa-49e2-8c5b-f7c6a7a6d481"
+                    ]
+                }
+            }
+        ],
+        "version": {
+            "number": "7.8.2",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://pchs.k12.ca.us/wp-content/themes/Avada/style.css, Match: 'Version: 7.8.2'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://pchs.k12.ca.us/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.5",
+            "last_updated": "2025-03-11T08:37:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.0.4",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://pchs.k12.ca.us/wp-content/plugins/contact-form-7/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "fusion-builder": {
+            "slug": "fusion-builder",
+            "location": "https://pchs.k12.ca.us/wp-content/plugins/fusion-builder/",
+            "latest_version": "3.7",
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Fusion Builder < 3.11.2 - Cross Site Scripting (XSS) vulnerability in the User Register element",
+                    "fixed_in": "3.11.2",
+                    "references": {
+                        "cve": [
+                            "2023-39306"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/fusion-builder/wordpress-avada-builder-plugin-3-11-1-reflected-cross-site-scripting-xss-vulnerability",
+                            "https://avada.com/blog/version-7-11-2-security-update/"
+                        ],
+                        "wpvulndb": [
+                            "5e923c36-c87e-4f35-b27f-c686a9c8baaf"
+                        ]
+                    }
+                },
+                {
+                    "title": "Avada | Website Builder For WordPress & eCommerce < 3.11.10 - Authenticated (Contributor+) Stored Cross-Site Scripting via fusion_button Shortcode",
+                    "fixed_in": "3.11.10",
+                    "references": {
+                        "cve": [
+                            "2024-5628"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7c23bd29-ba02-4c90-a631-5ce6294d7760"
+                        ],
+                        "wpvulndb": [
+                            "2c3364dc-1603-41e7-9e77-4cf2b1f7d974"
+                        ]
+                    }
+                },
+                {
+                    "title": "Avada Builder < 3.11.13 - Authenticated (Contributor+) Protected Post Disclosure",
+                    "fixed_in": "3.11.13",
+                    "references": {
+                        "cve": [
+                            "2024-12335"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4181dcad-b5bd-46db-b47c-3cdee427123c"
+                        ],
+                        "wpvulndb": [
+                            "cca746b7-558e-4f89-b26e-977363bf6aad"
+                        ]
+                    }
+                },
+                {
+                    "title": "Avada Builder < 3.11.12 - Authenticated (Contributor+) Stored Cross-Site Scripting in Multiple Widgets",
+                    "fixed_in": "3.11.12",
+                    "references": {
+                        "cve": [
+                            "2024-12477"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7c54588f-6436-406f-93cb-b08965586d11"
+                        ],
+                        "wpvulndb": [
+                            "692b7322-1212-4d08-92cd-151d1e1d6338"
+                        ]
+                    }
+                },
+                {
+                    "title": "Avada Builder < 3.11.14 - Unauthenticated Arbitrary Shortcode Execution",
+                    "fixed_in": "3.11.14",
+                    "references": {
+                        "cve": [
+                            "2024-13345"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/94f6aab3-49a7-4837-a424-e40e483f3f68"
+                        ],
+                        "wpvulndb": [
+                            "7c550b0e-7884-4231-a26c-b59dee0437e6"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.8.2",
+                "confidence": 60,
+                "found_by": "Translation File (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://pchs.k12.ca.us/wp-content/plugins/fusion-builder/languages/fusion-builder.pot, Match: '\"Project-Id-Version: Avada Builder 3.8.2'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "fusion-core": {
+            "slug": "fusion-core",
+            "location": "https://pchs.k12.ca.us/wp-content/plugins/fusion-core/",
+            "latest_version": "5.7",
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "the-events-calendar": {
+            "slug": "the-events-calendar",
+            "location": "https://pchs.k12.ca.us/wp-content/plugins/the-events-calendar/",
+            "latest_version": "6.10.2",
+            "last_updated": "2025-03-04T13:54:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.10.2",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://pchs.k12.ca.us/wp-content/plugins/the-events-calendar/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Translation File (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://pchs.k12.ca.us/wp-content/plugins/the-events-calendar/lang/the-events-calendar.pot, Match: 'Project-Id-Version: The Events Calendar 6.10.2'"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 6,
+        "requests_remaining": 19
+    },
+    "stop_time": 1741690356,
+    "elapsed": 276,
+    "requests_done": 198,
+    "cached_requests": 7,
+    "data_sent": 43088,
+    "data_sent_humanised": "42.078 KB",
+    "data_received": 1867885,
+    "data_received_humanised": "1.781 MB",
+    "used_memory": 275005440,
+    "used_memory_humanised": "262.266 MB"
+}
