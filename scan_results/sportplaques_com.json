@@ -1,0 +1,1286 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741776325,
+    "start_memory": 48893952,
+    "target_url": "https://sportplaques.com/",
+    "target_ip": "50.28.8.18",
+    "effective_url": "https://sportplaques.com/",
+    "interesting_findings": [
+        {
+            "url": "https://sportplaques.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-powered-by: PHP/7.4.33",
+                "content-security-policy: upgrade-insecure-requests;",
+                "server: Apache"
+            ]
+        },
+        {
+            "url": "https://sportplaques.com/robots.txt",
+            "to_s": "robots.txt found: https://sportplaques.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://sportplaques.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://sportplaques.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 30,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://sportplaques.com/readme.html",
+            "to_s": "WordPress readme found: https://sportplaques.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://sportplaques.com/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://sportplaques.com/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://sportplaques.com/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://sportplaques.com/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://sportplaques.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://sportplaques.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.6.2",
+        "release_date": "2024-09-10",
+        "status": "outdated",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://sportplaques.com/feed/, <generator>https://wordpress.org/?v=6.6.2</generator>",
+            "https://sportplaques.com/comments/feed/, <generator>https://wordpress.org/?v=6.6.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "umbala",
+        "location": "https://sportplaques.com/wp-content/themes/umbala/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://sportplaques.com/wp-content/themes/umbala/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://sportplaques.com/wp-content/themes/umbala/style.css",
+        "style_name": "Umbala",
+        "style_uri": "https://demo.alura-studio.com/umbala/",
+        "description": "Responsive WooCommerce WordPress Theme.",
+        "author": "the Alura Studio team",
+        "author_uri": "https://alura-studio.com/",
+        "template": null,
+        "license": "GNU General Public License v2 or later",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready",
+        "text_domain": "umbala",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 64,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 32,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.2.1",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://sportplaques.com/wp-content/themes/umbala/style.css, Match: 'Version: 1.2.1'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "add-expires-headers": {
+            "slug": "add-expires-headers",
+            "location": "https://sportplaques.com/wp-content/plugins/add-expires-headers/",
+            "latest_version": "2.10.0",
+            "last_updated": "2025-01-27T07:42:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.9.1",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://sportplaques.com/wp-content/plugins/add-expires-headers/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "advanced-woo-search": {
+            "slug": "advanced-woo-search",
+            "location": "https://sportplaques.com/wp-content/plugins/advanced-woo-search/",
+            "latest_version": "3.28",
+            "last_updated": "2025-03-03T12:28:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.16",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://sportplaques.com/wp-content/plugins/advanced-woo-search/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://sportplaques.com/wp-content/plugins/advanced-woo-search/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "appleawards-product-custom-editor": {
+            "slug": "appleawards-product-custom-editor",
+            "location": "https://sportplaques.com/wp-content/plugins/appleawards-product-custom-editor/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://sportplaques.com/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.5",
+            "last_updated": "2025-03-11T08:37:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "5.9.8",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://sportplaques.com/wp-content/plugins/contact-form-7/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "cookie-law-info": {
+            "slug": "cookie-law-info",
+            "location": "https://sportplaques.com/wp-content/plugins/cookie-law-info/",
+            "latest_version": "3.2.8",
+            "last_updated": "2024-11-27T05:03:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.2.6",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://sportplaques.com/wp-content/plugins/cookie-law-info/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://sportplaques.com/wp-content/plugins/cookie-law-info/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "js_composer": {
+            "slug": "js_composer",
+            "location": "https://sportplaques.com/wp-content/plugins/js_composer/",
+            "latest_version": "8.2",
+            "last_updated": "2025-02-04T20:20:30.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Body Tag (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WPBakery Page Builder < 6.13.0 - Contributor+ Stored XSS",
+                    "fixed_in": "6.13.0",
+                    "references": {
+                        "cve": [
+                            "2023-31213"
+                        ],
+                        "wpvulndb": [
+                            "ee99521d-be25-41ef-8988-5cfd66e9c5ca"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Title tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1841"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/34d21418-4faf-40bf-a960-79482a592722"
+                        ],
+                        "wpvulndb": [
+                            "787a71f8-1179-4442-9441-87fbe83a7e67"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Custom Heading tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1842"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/674e6722-d293-4572-80bf-984e74c3e33f"
+                        ],
+                        "wpvulndb": [
+                            "8ebfad34-7b46-4783-9fad-c96ab4f4c737"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Button onclick attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1805"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7a571386-fae1-4a56-8567-9d3e23249de1"
+                        ],
+                        "wpvulndb": [
+                            "b87926cd-0fe0-49df-8c61-9df1363a67a8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Author",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1840"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/cb8ecbbc-ada9-4887-92e6-25a587ecfb84"
+                        ],
+                        "wpvulndb": [
+                            "b41c2343-3be4-4bd9-ae5d-69ae96ba23ae"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Page Builder < 7.7 - Authenticated (Contributor+) Stored Cross-Site Scripting via VC Single Image link attribute",
+                    "fixed_in": "7.7",
+                    "references": {
+                        "cve": [
+                            "2024-5265"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/35a5114e-5c5f-4003-8bb3-77243ffbac1a"
+                        ],
+                        "wpvulndb": [
+                            "3b067a13-ee58-44c9-80af-ae04af6256c8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5708"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/23ff12f0-eb9d-4bb3-8db0-0e794c0f0594"
+                        ],
+                        "wpvulndb": [
+                            "992e5d47-e290-420a-adf8-f552a929e51d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Local File Inclusion",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5709"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7fad30c8-fd8a-4cf2-a3aa-16a374231b87"
+                        ],
+                        "wpvulndb": [
+                            "6e3e1944-67f7-405e-ae4f-f0ab8c6c9acd"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "6.9.0",
+                "confidence": 80,
+                "found_by": "Body Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://sportplaques.com/, Match: 'js-comp-ver-6.9.0'"
+                ],
+                "confirmed_by": {
+                    "Query Parameter (Passive Detection)": {
+                        "confidence": 20,
+                        "interesting_entries": [
+                            "https://sportplaques.com/wp-content/plugins/js_composer/assets/lib/bower/isotope/dist/isotope.pkgd.min.js?ver=6.9.0",
+                            "https://sportplaques.com/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=6.9.0"
+                        ]
+                    }
+                }
+            }
+        },
+        "mailchimp-for-wp": {
+            "slug": "mailchimp-for-wp",
+            "location": "https://sportplaques.com/wp-content/plugins/mailchimp-for-wp/",
+            "latest_version": "4.10.2",
+            "last_updated": "2025-02-28T07:20:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.9.17",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://sportplaques.com/wp-content/plugins/mailchimp-for-wp/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://sportplaques.com/wp-content/plugins/mailchimp-for-wp/CHANGELOG.md, Match: '#### 4.9.17 - Sep 17, 2024'"
+                        ]
+                    }
+                }
+            }
+        },
+        "master-slider": {
+            "slug": "master-slider",
+            "location": "https://sportplaques.com/wp-content/plugins/master-slider/",
+            "latest_version": "3.10.7",
+            "last_updated": "2025-03-07T23:21:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Tag (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Master Slider < 3.10.5 - Reflected Cross-Site Scripting",
+                    "fixed_in": "3.10.5",
+                    "references": {
+                        "cve": [
+                            "2024-37222"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/wordpress/plugin/master-slider/vulnerability/wordpress-master-slider-plugin-3-9-10-reflected-cross-site-scripting-xss-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "00bac706-5bb2-4db1-b2a0-e6f4c08e7d34"
+                        ]
+                    }
+                },
+                {
+                    "title": "Master Slider < 3.10.5 - Editor+ Stored XSS",
+                    "fixed_in": "3.10.5",
+                    "references": {
+                        "cve": [
+                            "2024-12173"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-12173"
+                        ],
+                        "wpvulndb": [
+                            "0f35be0e-0f63-4e33-aa4d-c47b1f1e0595"
+                        ]
+                    }
+                },
+                {
+                    "title": "Master Slider \u2013 Responsive Touch Slider <= 3.10.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via ms_layer Shortcode",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2024-13757"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/26a7fb51-f40d-46b8-9f52-495716032a1b"
+                        ],
+                        "wpvulndb": [
+                            "f8ca25e2-1a72-44fb-981d-1385858f1b5f"
+                        ]
+                    }
+                },
+                {
+                    "title": "Master Slider \u2013 Responsive Touch Slider <= 3.10.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via ms_slider Shortcode",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2024-11731"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f1dcafe1-bdba-4476-bcc7-ad844da38a01"
+                        ],
+                        "wpvulndb": [
+                            "bf7c24a9-ee50-4213-bb37-f9e9588e6f41"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.10.0",
+                "confidence": 100,
+                "found_by": "Meta Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://sportplaques.com/, Match: 'MasterSlider 3.10.0 - Responsive Touch Image Slider | avt.li/msf'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://sportplaques.com/wp-content/plugins/master-slider/README.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://sportplaques.com/wp-content/plugins/master-slider/README.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "pinterest-pin-it-button-on-image-hover-and-post": {
+            "slug": "pinterest-pin-it-button-on-image-hover-and-post",
+            "location": "https://sportplaques.com/wp-content/plugins/pinterest-pin-it-button-on-image-hover-and-post/",
+            "latest_version": "4.4",
+            "last_updated": "2025-03-04T12:42:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.2",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://sportplaques.com/wp-content/plugins/pinterest-pin-it-button-on-image-hover-and-post/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "recaptcha-woo": {
+            "slug": "recaptcha-woo",
+            "location": "https://sportplaques.com/wp-content/plugins/recaptcha-woo/",
+            "latest_version": "1.4.1",
+            "last_updated": "2025-01-15T14:24:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.3.6",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://sportplaques.com/wp-content/plugins/recaptcha-woo/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://sportplaques.com/wp-content/plugins/recaptcha-woo/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "revslider": {
+            "slug": "revslider",
+            "location": "https://sportplaques.com/wp-content/plugins/revslider/",
+            "latest_version": "6.7.29",
+            "last_updated": "2025-02-19T04:05:08.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Revolution Slider <= 6.6.12 - Author+ Remote Code Execution",
+                    "fixed_in": "6.6.13",
+                    "references": {
+                        "cve": [
+                            "2023-2359"
+                        ],
+                        "wpvulndb": [
+                            "a8350890-e6d4-4b04-a158-2b0ee3748e65"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.15 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.6.15",
+                    "references": {
+                        "cve": [
+                            "2023-47772"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/772e843b-00ea-45f5-b730-c9a793d4c2db"
+                        ],
+                        "wpvulndb": [
+                            "3cde24f3-aaad-4eb3-b6ba-a518afe66fbe"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.16 - Authenticated (Author+) Arbitrary File Upload",
+                    "fixed_in": "6.6.16",
+                    "references": {
+                        "cve": [
+                            "2023-47784"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e2d29afd-06e8-461a-918f-38228441a51a"
+                        ],
+                        "wpvulndb": [
+                            "1b841a64-fb0a-434f-b7b4-0777f0480c87"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.19 - Author+ Insecure Deserialization leading to RCE",
+                    "fixed_in": "6.6.19",
+                    "references": {
+                        "cve": [
+                            "2023-6528"
+                        ],
+                        "wpvulndb": [
+                            "36ced447-84ea-4162-80d2-6df226cb53cb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Revslider < 6.7.0 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.0",
+                    "references": {
+                        "cve": [
+                            "2024-2306"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f6af1e90-9bad-470b-9e00-137000c0450c"
+                        ],
+                        "wpvulndb": [
+                            "8238962e-feca-4a45-b335-3c92e668c889"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.8 - Authenticated (Author+) Stored Cross-Site Scripting via htmltag Parameter",
+                    "fixed_in": "6.7.8",
+                    "references": {
+                        "cve": [
+                            "2024-4092"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8437abcc-3e34-4a8a-bfe2-2ff7c9f41164"
+                        ],
+                        "wpvulndb": [
+                            "50dd9668-c263-4bfd-8a94-00a3ad9f656d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting via Add Layer class, id, and title Attributes",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-4581"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a99b8eb9-1511-4ec0-98f4-c0e0c989fa28"
+                        ],
+                        "wpvulndb": [
+                            "4a436977-1295-40e8-9957-bda1b0a3e6d6"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Contributor+) Stored Cross-Site Scripting via Elementor wrapperid and zindex",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-4637"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/457b5066-da37-4877-9abe-c912bc201f29"
+                        ],
+                        "wpvulndb": [
+                            "32b1ee26-525a-4b1e-bdf0-881f0d161788"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.0 - Missing Authorization",
+                    "fixed_in": "6.7.0",
+                    "references": {
+                        "cve": [
+                            "2024-34444"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/14feb451-2ece-467b-abf0-7abac26e40c1"
+                        ],
+                        "wpvulndb": [
+                            "f893fd2d-d040-408a-a800-99bf02e32230"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-34443"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/64852bc8-aeba-458d-9235-94bd4c4ec429"
+                        ],
+                        "wpvulndb": [
+                            "f79b835f-a3a2-40e1-91cc-987604b0a593"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.14 - Authenticated (Administrator+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.14",
+                    "references": {
+                        "cve": [
+                            "2024-37449"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a8fc6a5-a28a-4d6b-8d63-c5e2f4d26422"
+                        ],
+                        "wpvulndb": [
+                            "6d7c04cb-b3c1-4003-866b-a3301929e2aa"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.19 - Authenticated (Author+) Stored Cross-Site Scripting via SVG File Upload",
+                    "fixed_in": "6.7.19",
+                    "references": {
+                        "cve": [
+                            "2024-8107"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/22b59b36-ba47-4c10-8f43-a29ae3b9d446"
+                        ],
+                        "wpvulndb": [
+                            "278e6259-cb64-4cc1-91c6-2cf2178dd1d0"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "6.6.12",
+                "confidence": 100,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://sportplaques.com/, Match: 'Powered by Slider Revolution 6.6.12'"
+                ],
+                "confirmed_by": {
+                    "Release Log (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://sportplaques.com/wp-content/plugins/revslider/release_log.html, Match: 'Version 6.6.12 (29th March 2023)'"
+                        ]
+                    }
+                }
+            }
+        },
+        "woo-product-country-base-restrictions": {
+            "slug": "woo-product-country-base-restrictions",
+            "location": "https://sportplaques.com/wp-content/plugins/woo-product-country-base-restrictions/",
+            "latest_version": "3.6.8",
+            "last_updated": "2024-11-20T12:18:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.6.8",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://sportplaques.com/wp-content/plugins/woo-product-country-base-restrictions/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://sportplaques.com/wp-content/plugins/woo-product-country-base-restrictions/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "woocommerce": {
+            "slug": "woocommerce",
+            "location": "https://sportplaques.com/wp-content/plugins/woocommerce/",
+            "latest_version": "9.7.1",
+            "last_updated": "2025-03-04T15:28:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WooCommerce < 9.4.3 - Reflected XSS",
+                    "fixed_in": "9.4.3",
+                    "references": {
+                        "wpvulndb": [
+                            "505aa04b-3969-4fea-a296-a6af7ef71409"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooCommerce < 9.4.3 - Unauthenticated Order Creation",
+                    "fixed_in": "9.4.3",
+                    "references": {
+                        "wpvulndb": [
+                            "d51f5bb7-ba87-4ce8-adcf-6bef4217b5db"
+                        ]
+                    }
+                },
+                {
+                    "title": "Woocommerce < 9.7.1 - Shop Manager+ Stored XSS via New Product Form",
+                    "fixed_in": "9.7.1",
+                    "references": {
+                        "cve": [
+                            "2025-26762"
+                        ],
+                        "url": [
+                            "https://developer.woocommerce.com/2025/03/04/woocommerce-9-7-1-dot-release/"
+                        ],
+                        "wpvulndb": [
+                            "94cbfc1b-9a55-44fa-b1d9-0c47980ace3c"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "9.3.2",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://sportplaques.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=9.3.2",
+                    "https://sportplaques.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=9.3.2"
+                ],
+                "confirmed_by": {
+                    "Meta Generator (Passive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://sportplaques.com/, Match: 'WooCommerce 9.3.2'"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://sportplaques.com/wp-content/plugins/woocommerce/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "woocommerce-anti-fraud": {
+            "slug": "woocommerce-anti-fraud",
+            "location": "https://sportplaques.com/wp-content/plugins/woocommerce-anti-fraud/",
+            "latest_version": "6.0.7",
+            "last_updated": "2025-03-11T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WooCommerce Anti-Fraud < 3.9 - Unauthenticated Order Status Manipulation",
+                    "fixed_in": "3.9",
+                    "references": {
+                        "url": [
+                            "https://woocommerce.com/products/woocommerce-anti-fraud/",
+                            "https://dzv365zjfbd8v.cloudfront.net/changelogs/woocommerce-anti-fraud/changelog.txt"
+                        ],
+                        "wpvulndb": [
+                            "482ea84d-fc03-41dc-b698-327ffd9251b1"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "woocommerce-gateway-intuit-qbms": {
+            "slug": "woocommerce-gateway-intuit-qbms",
+            "location": "https://sportplaques.com/wp-content/plugins/woocommerce-gateway-intuit-qbms/",
+            "latest_version": "3.3.0",
+            "last_updated": "2024-02-14T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://sportplaques.com/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T08:44:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "23.1",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://sportplaques.com/, Match: 'optimized with the Yoast SEO plugin v23.1 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://sportplaques.com/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://sportplaques.com/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "yith-woocommerce-compare": {
+            "slug": "yith-woocommerce-compare",
+            "location": "https://sportplaques.com/wp-content/plugins/yith-woocommerce-compare/",
+            "latest_version": "2.47.0",
+            "last_updated": "2025-02-13T16:39:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "YITH WooCommerce Compare < 2.1.0 - Unauthenticated PHP Object injection",
+                    "fixed_in": "2.1.0",
+                    "references": {
+                        "url": [
+                            "https://sumofpwn.nl/advisory/2016/yith_woocommerce_compare_wordpress_plugin_unauthenticated_php_object_injection_vulnerability.html"
+                        ],
+                        "wpvulndb": [
+                            "9d2d71ca-aea4-4b37-8e0a-3802f270d0cc"
+                        ]
+                    }
+                },
+                {
+                    "title": "YIT Plugin Framework < 3.3.13 - Subscriber+ Settings Update",
+                    "fixed_in": "2.3.15",
+                    "references": {
+                        "cve": [
+                            "2019-16251"
+                        ],
+                        "url": [
+                            "https://blog.nintechnet.com/authenticated-settings-change-vulnerability-in-yit-plugin-framework/"
+                        ],
+                        "wpvulndb": [
+                            "ec852b37-5bc7-4c42-a0fd-e35658d1d137"
+                        ]
+                    }
+                },
+                {
+                    "title": "Multiple YITH WooCommerce plugins - Cross-Site Scripting via shortcode ajax",
+                    "fixed_in": "2.20.1",
+                    "references": {
+                        "cve": [
+                            "2022-44630"
+                        ],
+                        "url": [
+                            "https://blog.sucuri.net/2022/12/wordpress-vulnerability-patch-roundup-december-2022.html"
+                        ],
+                        "wpvulndb": [
+                            "80974444-d531-4eda-8955-6d66d3d7f840"
+                        ]
+                    }
+                },
+                {
+                    "title": "YITH WooCommerce Compare < 2.38.0 - Cross-Site Request Forgery",
+                    "fixed_in": "2.38.0",
+                    "references": {
+                        "cve": [
+                            "2024-32699"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f822d5b9-46fb-4910-8d92-8c73e01d7e50"
+                        ],
+                        "wpvulndb": [
+                            "de20305e-bda6-45f6-a8e3-8c67e7fc4605"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "yith-woocommerce-wishlist": {
+            "slug": "yith-woocommerce-wishlist",
+            "location": "https://sportplaques.com/wp-content/plugins/yith-woocommerce-wishlist/",
+            "latest_version": "4.3.0",
+            "last_updated": "2025-02-20T13:42:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "YITH WooCommerce Wishlist < 2.2.0 - Authenticated SQL Injection",
+                    "fixed_in": "2.2.0",
+                    "references": {
+                        "url": [
+                            "https://blog.sucuri.net/2018/01/sqli-vulnerability-in-yith-woocommerce-wishlist.html"
+                        ],
+                        "wpvulndb": [
+                            "642a8338-698a-4e6e-8253-1d426b03daac"
+                        ]
+                    }
+                },
+                {
+                    "title": "YIT Plugin Framework < 3.3.13 - Subscriber+ Settings Update",
+                    "fixed_in": "2.2.14",
+                    "references": {
+                        "cve": [
+                            "2019-16251"
+                        ],
+                        "url": [
+                            "https://blog.nintechnet.com/authenticated-settings-change-vulnerability-in-yit-plugin-framework/"
+                        ],
+                        "wpvulndb": [
+                            "ec852b37-5bc7-4c42-a0fd-e35658d1d137"
+                        ]
+                    }
+                },
+                {
+                    "title": "Multiple YITH WooCommerce plugins - Cross-Site Scripting via shortcode ajax",
+                    "fixed_in": "3.15.0",
+                    "references": {
+                        "cve": [
+                            "2022-44630"
+                        ],
+                        "url": [
+                            "https://blog.sucuri.net/2022/12/wordpress-vulnerability-patch-roundup-december-2022.html"
+                        ],
+                        "wpvulndb": [
+                            "80974444-d531-4eda-8955-6d66d3d7f840"
+                        ]
+                    }
+                },
+                {
+                    "title": "YITH WooCommerce Wishlist < 3.33.0 - Authenticated (Admin+) Stored Cross-Site Scripting",
+                    "fixed_in": "3.33.0",
+                    "references": {
+                        "cve": [
+                            "2024-34385"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/603813a4-73e1-47fd-8a6c-9416d21b6c88"
+                        ],
+                        "wpvulndb": [
+                            "d528768f-5c72-4ee6-8412-0606f1293d14"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 20,
+        "requests_remaining": 5
+    },
+    "stop_time": 1741776389,
+    "elapsed": 63,
+    "requests_done": 245,
+    "cached_requests": 8,
+    "data_sent": 102424,
+    "data_sent_humanised": "100.023 KB",
+    "data_received": 1781649,
+    "data_received_humanised": "1.699 MB",
+    "used_memory": 303525888,
+    "used_memory_humanised": "289.465 MB"
+}

@@ -1,0 +1,326 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741776268,
+    "start_memory": 48713728,
+    "target_url": "https://www.nachc.org/",
+    "target_ip": "190.92.152.180",
+    "effective_url": "https://www.nachc.org/",
+    "interesting_findings": [
+        {
+            "url": "https://www.nachc.org/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-litespeed-cache: hit",
+                "content-security-policy: frame-ancestors 'self' nachc.docebosaas.com;",
+                "alt-svc: h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+            ]
+        },
+        {
+            "url": "https://www.nachc.org/robots.txt",
+            "to_s": "robots.txt found: https://www.nachc.org/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-content/uploads/wpforms/"
+            ]
+        },
+        {
+            "url": "https://www.nachc.org/wp-content/backup-db/",
+            "to_s": "A backup directory has been found: https://www.nachc.org/wp-content/backup-db/",
+            "type": "backup_db",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 70,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://github.com/wpscanteam/wpscan/issues/422"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.nachc.org/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://www.nachc.org/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.nachc.org/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.nachc.org/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.nachc.org/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.nachc.org/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "genesis-nachc",
+        "location": "https://www.nachc.org/wp-content/themes/genesis-nachc/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://www.nachc.org/wp-content/themes/genesis-nachc/README.md",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.nachc.org/wp-content/themes/genesis-nachc/style.css?ver=1.0.0",
+        "style_name": "NACHC Genesis",
+        "style_uri": null,
+        "description": "NACHC theme based on sample theme created for the Genesis Framework.",
+        "author": "Astriata",
+        "author_uri": null,
+        "template": "genesis",
+        "license": "GPL-2.0-or-later",
+        "license_uri": "https://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "accessibility-ready, block-styles, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, left-sidebar, one-column, right-sidebar, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, two-columns, wide-blocks",
+        "text_domain": "nachc-genesis",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 70,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.0.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.nachc.org/wp-content/themes/genesis-nachc/style.css?ver=1.0.0, Match: 'Version: 1.0.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "add-to-any": {
+            "slug": "add-to-any",
+            "location": "https://www.nachc.org/wp-content/plugins/add-to-any/",
+            "latest_version": "1.8.13",
+            "last_updated": "2024-11-21T23:44:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.8.13",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.nachc.org/wp-content/plugins/add-to-any/README.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.nachc.org/wp-content/plugins/add-to-any/README.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "custom-twitter-feeds": {
+            "slug": "custom-twitter-feeds",
+            "location": "https://www.nachc.org/wp-content/plugins/custom-twitter-feeds/",
+            "latest_version": "2.2.5",
+            "last_updated": "2024-11-19T18:06:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.2.5",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.nachc.org/wp-content/plugins/custom-twitter-feeds/README.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.nachc.org/wp-content/plugins/custom-twitter-feeds/README.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "genesis-blocks": {
+            "slug": "genesis-blocks",
+            "location": "https://www.nachc.org/wp-content/plugins/genesis-blocks/",
+            "latest_version": "3.1.5",
+            "last_updated": "2024-07-11T15:21:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.1.5",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.nachc.org/wp-content/plugins/genesis-blocks/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.nachc.org/wp-content/plugins/genesis-blocks/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "mec-gutenberg-single-builder": {
+            "slug": "mec-gutenberg-single-builder",
+            "location": "https://www.nachc.org/wp-content/plugins/mec-gutenberg-single-builder/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "popup-anything-on-click": {
+            "slug": "popup-anything-on-click",
+            "location": "https://www.nachc.org/wp-content/plugins/popup-anything-on-click/",
+            "latest_version": "2.8.6",
+            "last_updated": "2025-01-11T15:24:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.8.6",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.nachc.org/wp-content/plugins/popup-anything-on-click/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://www.nachc.org/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T08:44:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "24.6",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.nachc.org/, Match: 'optimized with the Yoast SEO plugin v24.6 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.nachc.org/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.nachc.org/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 8,
+        "requests_remaining": 17
+    },
+    "stop_time": 1741776292,
+    "elapsed": 24,
+    "requests_done": 203,
+    "cached_requests": 7,
+    "data_sent": 43490,
+    "data_sent_humanised": "42.471 KB",
+    "data_received": 898789,
+    "data_received_humanised": "877.724 KB",
+    "used_memory": 302972928,
+    "used_memory_humanised": "288.938 MB"
+}

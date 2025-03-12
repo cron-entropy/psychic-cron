@@ -1,0 +1,727 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741776445,
+    "start_memory": 48840704,
+    "target_url": "https://facefrontblog.com/",
+    "target_ip": "68.65.120.220",
+    "effective_url": "https://facefrontblog.com/",
+    "interesting_findings": [
+        {
+            "url": "https://facefrontblog.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-powered-by: PHP/7.4.33",
+                "x-tec-api-version: v1",
+                "x-tec-api-root: https://facefrontblog.com/wp-json/tribe/events/v1/",
+                "x-tec-api-origin: https://facefrontblog.com",
+                "x-litespeed-cache: hit",
+                "server: LiteSpeed",
+                "x-turbo-charged-by: LiteSpeed"
+            ]
+        },
+        {
+            "url": "https://facefrontblog.com/robots.txt",
+            "to_s": "robots.txt found: https://facefrontblog.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-content/uploads/wc-logs/",
+                "/wp-content/uploads/woocommerce_transient_files/",
+                "/wp-content/uploads/woocommerce_uploads/",
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://facefrontblog.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://facefrontblog.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 30,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://facefrontblog.com/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://facefrontblog.com/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "florence-it",
+        "location": "https://facefrontblog.com/wp-content/themes/florence-it/",
+        "latest_version": "3.2",
+        "last_updated": "2024-05-03T00:00:00.000Z",
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://facefrontblog.com/wp-content/themes/florence-it/style.css?ver=6.7.2",
+        "style_name": null,
+        "style_uri": null,
+        "description": null,
+        "author": null,
+        "author_uri": null,
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 70,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": null,
+        "parents": []
+    },
+    "plugins": {
+        "google-site-kit": {
+            "slug": "google-site-kit",
+            "location": "https://facefrontblog.com/wp-content/plugins/google-site-kit/",
+            "latest_version": "1.148.0",
+            "last_updated": "2025-03-10T18:43:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Meta Tag (Passive Detection)",
+            "confidence": 40,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.147.0",
+                "confidence": 60,
+                "found_by": "Meta Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://facefrontblog.com/, Match: 'Site Kit by Google 1.147.0'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "gutenslider": {
+            "slug": "gutenslider",
+            "location": "https://facefrontblog.com/wp-content/plugins/gutenslider/",
+            "latest_version": "6.1.0",
+            "last_updated": "2023-11-13T11:30:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Gutenslider < 5.2.0 - Contributor+ Stored XSS",
+                    "fixed_in": "5.2.0",
+                    "references": {
+                        "cve": [
+                            "2021-24640"
+                        ],
+                        "wpvulndb": [
+                            "e61dd498-5d0e-45ce-b660-a36c576f8d78"
+                        ]
+                    }
+                },
+                {
+                    "title": "Unauthorised AJAX Calls via Freemius",
+                    "fixed_in": "5.7.0",
+                    "references": {
+                        "wpvulndb": [
+                            "6dae6dca-7474-4008-9fe5-4c62b9f12d0a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Freemius SDK < 2.5.10 - Reflected Cross-Site Scripting",
+                    "fixed_in": "5.10.2",
+                    "references": {
+                        "cve": [
+                            "2023-33999"
+                        ],
+                        "wpvulndb": [
+                            "35d2f1e7-a4f8-49fd-a8dd-bb2c26710f93"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "mycred": {
+            "slug": "mycred",
+            "location": "https://facefrontblog.com/wp-content/plugins/mycred/",
+            "latest_version": "2.9.1",
+            "last_updated": "2025-02-21T07:05:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "myCred < 2.3 - Subscriber+ SQL Injection",
+                    "fixed_in": "2.3",
+                    "references": {
+                        "cve": [
+                            "2021-24755"
+                        ],
+                        "wpvulndb": [
+                            "01419d03-54d6-413d-9a67-64c63c26d741"
+                        ]
+                    }
+                },
+                {
+                    "title": "myCRED < 1.7.8 - Reflected Cross-Site Scripting",
+                    "fixed_in": "1.7.8",
+                    "references": {
+                        "cve": [
+                            "2017-20008"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/1639363/mycred"
+                        ],
+                        "wpvulndb": [
+                            "3175c56d-27bb-4bf1-b6ba-737541483d40"
+                        ]
+                    }
+                },
+                {
+                    "title": "myCred < 2.4 - Reflected Cross-Site Scripting",
+                    "fixed_in": "2.4",
+                    "references": {
+                        "cve": [
+                            "2021-25015"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2648350/mycred"
+                        ],
+                        "wpvulndb": [
+                            "7608829d-2820-49e2-a10e-e93eb3005f68"
+                        ]
+                    }
+                },
+                {
+                    "title": "Unauthorised AJAX Calls via Freemius",
+                    "fixed_in": "2.4.3.1",
+                    "references": {
+                        "wpvulndb": [
+                            "6dae6dca-7474-4008-9fe5-4c62b9f12d0a"
+                        ]
+                    }
+                },
+                {
+                    "title": "myCred < 2.4.4 - Subscriber+ Import/Export to Email Address Disclosure",
+                    "fixed_in": "2.4.4",
+                    "references": {
+                        "cve": [
+                            "2022-1092"
+                        ],
+                        "wpvulndb": [
+                            "95759d5c-8802-4493-b7e5-7f2bc546af61"
+                        ]
+                    }
+                },
+                {
+                    "title": "myCred < 2.4.4 - Subscriber+ Arbitrary Post Creation",
+                    "fixed_in": "2.4.4",
+                    "references": {
+                        "cve": [
+                            "2022-0363"
+                        ],
+                        "wpvulndb": [
+                            "a438a951-497c-43cd-822f-1a48d4315191"
+                        ]
+                    }
+                },
+                {
+                    "title": "Mycred < 2.4.4.1 - Subscriber+ User E-mail Addresses Disclosure",
+                    "fixed_in": "2.4.4.1",
+                    "references": {
+                        "cve": [
+                            "2022-0287"
+                        ],
+                        "wpvulndb": [
+                            "6cd7cd6d-1cc1-472c-809b-b66389f149b0"
+                        ]
+                    }
+                },
+                {
+                    "title": "myCred < 2.4.4 - Reflected Cross-Site Scripting",
+                    "fixed_in": "2.4.4",
+                    "references": {
+                        "wpvulndb": [
+                            "9293961e-9678-4d25-ad20-59ae79dc5c43"
+                        ]
+                    }
+                },
+                {
+                    "title": "myCred \u2013 Points, Rewards, Gamification, Ranks, Badges & Loyalty Plugin < 2.5.1 - Cross-Site Request Forgery",
+                    "fixed_in": "2.5.1",
+                    "references": {
+                        "cve": [
+                            "2023-35096"
+                        ],
+                        "wpvulndb": [
+                            "60330867-d38e-4181-8cfb-57d8a2fe3560"
+                        ]
+                    }
+                },
+                {
+                    "title": "Freemius SDK < 2.5.10 - Reflected Cross-Site Scripting",
+                    "fixed_in": "2.5.3",
+                    "references": {
+                        "cve": [
+                            "2023-33999"
+                        ],
+                        "wpvulndb": [
+                            "58ab5352-d783-431a-b0a5-382381cc13fd"
+                        ]
+                    }
+                },
+                {
+                    "title": "myCred < 2.6.2 - Contributor+ Stored XSS",
+                    "fixed_in": "2.6.2",
+                    "references": {
+                        "cve": [
+                            "2023-47853"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/mycred/wordpress-mycred-plugin-2-6-1-cross-site-scripting-xss-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "9e51ff25-bd74-4356-964d-78303c686688"
+                        ]
+                    }
+                },
+                {
+                    "title": "myCred \u2013 Points, Rewards, Gamification, Ranks, Badges & Loyalty Plugin < 2.6.4 - Authenticated (Subscriber+) Stored Cross-Site Scripting",
+                    "fixed_in": "2.6.4",
+                    "references": {
+                        "cve": [
+                            "2024-32711"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f3d4283e-ea57-41e1-baeb-f8f70cad3020"
+                        ],
+                        "wpvulndb": [
+                            "9d378cac-1df8-41a9-a3e1-8c1ee8939866"
+                        ]
+                    }
+                },
+                {
+                    "title": "myCred < 2.7.3 - Unauthenticated Information Exposure",
+                    "fixed_in": "2.7.3",
+                    "references": {
+                        "cve": [
+                            "2024-43214"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/9b7a7780-0f61-4541-bcde-dbf64fd23320"
+                        ],
+                        "wpvulndb": [
+                            "5e949d63-2296-450d-8dfd-785e12239ad2"
+                        ]
+                    }
+                },
+                {
+                    "title": "myCred < 2.7.3 - Unauthenticated PHP Object Injection",
+                    "fixed_in": "2.7.3",
+                    "references": {
+                        "cve": [
+                            "2024-43354"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/44ea3322-10f6-4f52-8fa8-8cc2632b67ce"
+                        ],
+                        "wpvulndb": [
+                            "236584d0-dd86-4714-bd9a-dd1d9cc58de9"
+                        ]
+                    }
+                },
+                {
+                    "title": "myCred < 2.7.3 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "2.7.3",
+                    "references": {
+                        "cve": [
+                            "2024-43353"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/69695e2e-2086-4d50-8518-0b2f5ab9ea56"
+                        ],
+                        "wpvulndb": [
+                            "81357e9d-fedf-4a76-9a10-49a90dd60608"
+                        ]
+                    }
+                },
+                {
+                    "title": "myCred \u2013 Loyalty Points and Rewards plugin for WordPress and WooCommerce \u2013 Give Points, Ranks, Badges, Cashback, WooCommerce rewards, and WooCommerce credits for Gamification < 2.7.4 - Missing Authorization to Unauthenticated Database Upgrade",
+                    "fixed_in": "2.7.4",
+                    "references": {
+                        "cve": [
+                            "2024-8658"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/20be9a37-9e9f-4791-a27c-e0db007be787"
+                        ],
+                        "wpvulndb": [
+                            "2e043863-9db7-4a5e-a0a2-cbff623b2e42"
+                        ]
+                    }
+                },
+                {
+                    "title": "myCred < 2.7.5 - Authenticated (Contributor+) Stored Cross-Site Scripting via mycred_link Shortcode",
+                    "fixed_in": "2.7.5",
+                    "references": {
+                        "cve": [
+                            "2024-10187"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/23a081d4-443d-4b3b-8c89-9eb0e23c961e"
+                        ],
+                        "wpvulndb": [
+                            "ed28f3d2-ff0b-404c-a712-b842ccee025d"
+                        ]
+                    }
+                },
+                {
+                    "title": "myCred \u2013 Loyalty Points and Rewards plugin < 2.7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via mycred_send Shortcode",
+                    "fixed_in": "2.7.6",
+                    "references": {
+                        "cve": [
+                            "2024-11201"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/2d1d9bee-4afa-44cc-8e7a-8a73ad018c4a"
+                        ],
+                        "wpvulndb": [
+                            "a8df69dd-3d27-43fe-98c7-5977d61d6bd5"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "pinterest-for-woocommerce": {
+            "slug": "pinterest-for-woocommerce",
+            "location": "https://facefrontblog.com/wp-content/plugins/pinterest-for-woocommerce/",
+            "latest_version": "1.4.16",
+            "last_updated": "2025-02-11T11:39:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "profile-builder": {
+            "slug": "profile-builder",
+            "location": "https://facefrontblog.com/wp-content/plugins/profile-builder/",
+            "latest_version": "3.13.4",
+            "last_updated": "2025-02-24T08:52:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.13.4",
+                "confidence": 10,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://facefrontblog.com/wp-content/plugins/profile-builder/assets/css/style-front-end.css?ver=3.13.4"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "progress-bars": {
+            "slug": "progress-bars",
+            "location": "https://facefrontblog.com/wp-content/plugins/progress-bars/",
+            "latest_version": "1.2.7",
+            "last_updated": "2024-07-29T15:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "s2member": {
+            "slug": "s2member",
+            "location": "https://facefrontblog.com/wp-content/plugins/s2member/",
+            "latest_version": "250214",
+            "last_updated": "2025-02-14T19:47:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "250214",
+                "confidence": 20,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://facefrontblog.com/wp-content/plugins/s2member/s2member-o.php?ws_plugin__s2member_css=1&qcABC=1&ver=250214-3330438999",
+                    "https://facefrontblog.com/wp-content/plugins/s2member/s2member-o.php?ws_plugin__s2member_js_w_globals=1&qcABC=1&ver=250214-3330438999"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "sticky-menu-or-anything-on-scroll": {
+            "slug": "sticky-menu-or-anything-on-scroll",
+            "location": "https://facefrontblog.com/wp-content/plugins/sticky-menu-or-anything-on-scroll/",
+            "latest_version": "2.33",
+            "last_updated": "2024-11-13T07:39:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Sticky Menu, Sticky Header (or anything!) on Scroll < 2.21 - CSRF & XSS",
+                    "fixed_in": "2.21",
+                    "references": {
+                        "url": [
+                            "https://blog.sucuri.net/2020/09/reflected-xss-in-wordpress-plugin-admin-pages.html"
+                        ],
+                        "wpvulndb": [
+                            "cd104516-23cc-43e4-a9c6-11260baf36fb"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "2.1.1",
+                "confidence": 20,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://facefrontblog.com/wp-content/plugins/sticky-menu-or-anything-on-scroll/assets/js/jq-sticky-anything.min.js?ver=2.1.1",
+                    "https://facefrontblog.com/wp-content/plugins/sticky-menu-or-anything-on-scroll/assets/js/stickThis.js?ver=2.1.1"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "woocommerce": {
+            "slug": "woocommerce",
+            "location": "https://facefrontblog.com/wp-content/plugins/woocommerce/",
+            "latest_version": "9.7.1",
+            "last_updated": "2025-03-04T15:28:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Woocommerce < 9.7.1 - Shop Manager+ Stored XSS via New Product Form",
+                    "fixed_in": "9.7.1",
+                    "references": {
+                        "cve": [
+                            "2025-26762"
+                        ],
+                        "url": [
+                            "https://developer.woocommerce.com/2025/03/04/woocommerce-9-7-1-dot-release/"
+                        ],
+                        "wpvulndb": [
+                            "94cbfc1b-9a55-44fa-b1d9-0c47980ace3c"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "9.7.0",
+                "confidence": 60,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://facefrontblog.com/, Match: 'WooCommerce 9.7.0'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "woocommerce-payments": {
+            "slug": "woocommerce-payments",
+            "location": "https://facefrontblog.com/wp-content/plugins/woocommerce-payments/",
+            "latest_version": "9.0.0",
+            "last_updated": "2025-02-26T12:12:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "WooCommerce Payments < 5.6.2 - Unauthenticated Privilege Escalation",
+                    "fixed_in": "5.6.2",
+                    "references": {
+                        "cve": [
+                            "2023-28121"
+                        ],
+                        "url": [
+                            "https://developer.woocommerce.com/2023/03/23/critical-vulnerability-detected-in-woocommerce-payments-what-you-need-to-know/"
+                        ],
+                        "wpvulndb": [
+                            "0f78a245-866c-462e-bd23-43dfadb57072"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooCommerce Payments < 4.5.1 - Intent Parameter Tampering",
+                    "fixed_in": "4.5.1",
+                    "references": {
+                        "url": [
+                            "https://developer.woocommerce.com/2022/08/09/woocommerce-payments-3-9-4-4-5-1-security-releases/"
+                        ],
+                        "wpvulndb": [
+                            "8f72a636-52c0-4a63-b1b2-4af7e6825801"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooCommerce Payments < 4.9.0 - Subscription Suspension/Activation via CSRF",
+                    "fixed_in": "4.9.0",
+                    "references": {
+                        "url": [
+                            "https://hackerone.com/reports/1708140"
+                        ],
+                        "wpvulndb": [
+                            "7e4c0059-f8a7-4421-b906-1a6a801aef2a"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooCommerce Payments < 6.5.0 - Contributor+ Cross-Site Scripting",
+                    "fixed_in": "6.5.0",
+                    "references": {
+                        "cve": [
+                            "2023-49828"
+                        ],
+                        "url": [
+                            "https://hackerone.com/reports/2169909",
+                            "https://patchstack.com/database/vulnerability/woocommerce-payments/wordpress-woopayments-plugin-6-4-2-cross-site-scripting-xss-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "b5f64388-6148-4bc5-a126-476c5ed17bb8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooPayments < 6.7.0 - Unauthenticated Order Deletion via IDOR",
+                    "fixed_in": "6.7.0",
+                    "references": {
+                        "cve": [
+                            "2023-51503"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/woocommerce-payments/wordpress-woopayments-plugin-6-6-2-unauthenticated-insecure-direct-object-references-idor-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "5fad691c-32d9-46f8-ab69-b4405d2288bf"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooCommerce Payments < 5.9.1 - Shop Manager+ SQLi",
+                    "fixed_in": "5.9.1",
+                    "references": {
+                        "cve": [
+                            "2023-35915"
+                        ],
+                        "wpvulndb": [
+                            "923836d0-1a79-483d-9fe8-cf13af7468b3"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 12,
+        "requests_remaining": 13
+    },
+    "stop_time": 1741776841,
+    "elapsed": 396,
+    "requests_done": 208,
+    "cached_requests": 6,
+    "data_sent": 13936,
+    "data_sent_humanised": "13.609 KB",
+    "data_received": 465628,
+    "data_received_humanised": "454.715 KB",
+    "used_memory": 242700288,
+    "used_memory_humanised": "231.457 MB"
+}

@@ -1,0 +1,539 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741776394,
+    "start_memory": 48672768,
+    "target_url": "https://blog.dearsundays.com/",
+    "target_ip": "172.67.143.178",
+    "effective_url": "https://blog.dearsundays.com/",
+    "interesting_findings": [
+        {
+            "url": "https://blog.dearsundays.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "cf-cache-status: DYNAMIC",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=0rZXMpzgNY7NH5ZMgHrzcDv7gaAKNDaDer2mUJD0bgxhP6q9%2B26hrhrnKavJ8KQRG56%2BJDtPLoLpR4Dg1uNANM88%2FubR04ed9K4TJrj0E3wkpToou4Qv70dV%2Fccz%2BCXMMDXZ0y8akw%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "cf-ray: 91f2b548bfca69b2-LAX",
+                "alt-svc: h3=\":443\"; ma=86400",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=8661&min_rtt=8555&rtt_var=2614&sent=6&recv=8&lost=0&retrans=0&sent_bytes=3421&recv_bytes=819&delivery_rate=331130&cwnd=232&unsent_bytes=0&cid=d0296aee017707c3&ts=245&x=0\""
+            ]
+        },
+        {
+            "url": "https://blog.dearsundays.com/robots.txt",
+            "to_s": "robots.txt found: https://blog.dearsundays.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://blog.dearsundays.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://blog.dearsundays.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://blog.dearsundays.com/readme.html",
+            "to_s": "WordPress readme found: https://blog.dearsundays.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://blog.dearsundays.com/wp-content/debug.log",
+            "to_s": "Debug Log found: https://blog.dearsundays.com/wp-content/debug.log",
+            "type": "debug_log",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://codex.wordpress.org/Debugging_in_WordPress"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://blog.dearsundays.com/wp-login.php?action=register",
+            "to_s": "Registration is enabled: https://blog.dearsundays.com/wp-login.php?action=register",
+            "type": "registration",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://blog.dearsundays.com/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://blog.dearsundays.com/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://blog.dearsundays.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://blog.dearsundays.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.3.5",
+        "release_date": "2024-06-24",
+        "status": "outdated",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://blog.dearsundays.com/feed, <generator>https://wordpress.org/?v=6.3.5</generator>",
+            "https://blog.dearsundays.com/comments/feed, <generator>https://wordpress.org/?v=6.3.5</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "generatepress",
+        "location": "https://blog.dearsundays.com/wp-content/themes/generatepress/",
+        "latest_version": "3.5.1",
+        "last_updated": "2024-09-04T00:00:00.000Z",
+        "outdated": true,
+        "readme_url": "https://blog.dearsundays.com/wp-content/themes/generatepress/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://blog.dearsundays.com/wp-content/themes/generatepress/style.css",
+        "style_name": "GeneratePress",
+        "style_uri": "https://generatepress.com",
+        "description": "GeneratePress is a lightweight WordPress theme built with a focus on speed and usability. Performance is important to us, which is why a fresh GeneratePress install adds less than 10kb (gzipped) to your page size. We take full advantage of the block editor (Gutenberg), which gives you more control over creating your content. If you use page builders, GeneratePress is the right theme for you. It is completely compatible with all major page builders, including Beaver Builder and Elementor. Thanks to our emphasis on WordPress coding standards, we can boast full compatibility with all well-coded plugins, including WooCommerce. GeneratePress is fully responsive, uses valid HTML/CSS, and is translated into over 25 languages by our amazing community of users. A few of our many features include 60+ color controls, powerful dynamic typography, 5 navigation locations, 5 sidebar layouts, dropdown menus (click or hover), and 9 widget areas. Learn more and check out our powerful premium version at https://generatepress.com",
+        "author": "Tom Usborne",
+        "author_uri": "https://tomusborne.com",
+        "template": null,
+        "license": "GNU General Public License v2 or later",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "two-columns, three-columns, one-column, right-sidebar, left-sidebar, footer-widgets, blog, e-commerce, flexible-header, full-width-template, buddypress, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, rtl-language-support, featured-images, theme-options",
+        "text_domain": "generatepress",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 24,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 12,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "3.3.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://blog.dearsundays.com/wp-content/themes/generatepress/style.css, Match: 'Version: 3.3.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "contextual-related-posts": {
+            "slug": "contextual-related-posts",
+            "location": "https://blog.dearsundays.com/wp-content/plugins/contextual-related-posts/",
+            "latest_version": "3.6.2",
+            "last_updated": "2025-01-27T20:48:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.3.3",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://blog.dearsundays.com/wp-content/plugins/contextual-related-posts/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://blog.dearsundays.com/wp-content/plugins/contextual-related-posts/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "custom-twitter-feeds": {
+            "slug": "custom-twitter-feeds",
+            "location": "https://blog.dearsundays.com/wp-content/plugins/custom-twitter-feeds/",
+            "latest_version": "2.2.5",
+            "last_updated": "2024-11-19T18:06:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Custom Twitter Feeds (Tweets Widget) < 2.2 - Cross-Site Request Forgery",
+                    "fixed_in": "2.2",
+                    "references": {
+                        "cve": [
+                            "2023-52136"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/custom-twitter-feeds/wordpress-custom-twitter-feeds-tweets-widget-plugin-2-1-2-cross-site-request-forgery-csrf-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "a5a5ebc3-1c7d-4110-b7df-29c53fbf39c7"
+                        ]
+                    }
+                },
+                {
+                    "title": "Custom Twitter Feeds \u2013 A Tweets Widget or X Feed Widget < 2.2.2 - Cross-Site Request Forgery to Plugin Options Update",
+                    "fixed_in": "2.2.2",
+                    "references": {
+                        "cve": [
+                            "2024-0379"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/29e2ff11-053b-45cc-adf1-d276f1ee576e"
+                        ],
+                        "wpvulndb": [
+                            "c8cdcb75-dab9-4f00-9e5f-9075560411af"
+                        ]
+                    }
+                },
+                {
+                    "title": "Custom Twitter Feeds < 2.2.3 - Admin+ Stored XSS",
+                    "fixed_in": "2.2.3",
+                    "references": {
+                        "cve": [
+                            "2024-8983"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/CVE-2024-XXXX/"
+                        ],
+                        "youtube": [
+                            "https://www.youtube.com/watch?v=https://drive.google.com/file/d/1j7x3q6ta0wNF1GtVE8lWk63GhXBnsxIn/view"
+                        ],
+                        "wpvulndb": [
+                            "29194dde-8d11-4096-a5ae-1d69c2c5dc33"
+                        ]
+                    }
+                },
+                {
+                    "title": "Custom Twitter Feeds (Tweets Widget) < 2.2.4 - Cross-Site Request Forgery",
+                    "fixed_in": "2.2.4",
+                    "references": {
+                        "cve": [
+                            "2024-49685"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e5b4c494-1188-44e2-b07d-5f4d45b36b45"
+                        ],
+                        "wpvulndb": [
+                            "68a2e5c6-c280-40ef-bd85-9d0cd3d236ae"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "2.0.6",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://blog.dearsundays.com/wp-content/plugins/custom-twitter-feeds/README.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://blog.dearsundays.com/wp-content/plugins/custom-twitter-feeds/README.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "gp-premium": {
+            "slug": "gp-premium",
+            "location": "https://blog.dearsundays.com/wp-content/plugins/gp-premium/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "GP Premium < 2.4.1 - Reflected Cross-Site Scripting",
+                    "fixed_in": "2.4.1",
+                    "references": {
+                        "cve": [
+                            "2024-3469"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/1a697391-f30d-403f-9046-8fa219a49302"
+                        ],
+                        "wpvulndb": [
+                            "0628b80c-279d-4434-839c-fb9bd26d1ad7"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "2.3.1",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://blog.dearsundays.com/wp-content/plugins/gp-premium/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://blog.dearsundays.com/wp-content/plugins/gp-premium/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "instagram-feed": {
+            "slug": "instagram-feed",
+            "location": "https://blog.dearsundays.com/wp-content/plugins/instagram-feed/",
+            "latest_version": "6.7.1",
+            "last_updated": "2025-02-21T16:58:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.1.3",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://blog.dearsundays.com/wp-content/plugins/instagram-feed/README.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://blog.dearsundays.com/wp-content/plugins/instagram-feed/README.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://blog.dearsundays.com/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T08:44:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Yoast SEO < 21.1 - Authenticated (Seo Manager+) Stored Cross-Site Scripting",
+                    "fixed_in": "21.1",
+                    "references": {
+                        "cve": [
+                            "2023-40680"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/385a82ff-50ad-4787-845b-fb5f639f6466"
+                        ],
+                        "wpvulndb": [
+                            "42b355cc-d7b6-474d-8578-9c1a99b1e3c7"
+                        ]
+                    }
+                },
+                {
+                    "title": "Yoast SEO < 22.6 - Reflected Cross-Site Scripting",
+                    "fixed_in": "22.6",
+                    "references": {
+                        "cve": [
+                            "2024-4041"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4e04b161-3cd0-454d-869c-56f42bd8afb0"
+                        ],
+                        "wpvulndb": [
+                            "6eb8e01b-0bc6-4ca9-b489-38f2a94c2909"
+                        ]
+                    }
+                },
+                {
+                    "title": "Yoast SEO < 22.7 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "22.7",
+                    "references": {
+                        "cve": [
+                            "2024-4984"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/59bcd246-ca2f-4336-9a6e-89afe873ed25"
+                        ],
+                        "wpvulndb": [
+                            "467936e2-fe82-4cdc-afec-6782afee3e4e"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "20.4",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://blog.dearsundays.com/, Match: 'optimized with the Yoast SEO plugin v20.4 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://blog.dearsundays.com/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://blog.dearsundays.com/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wp-rocket": {
+            "slug": "wp-rocket",
+            "location": "https://blog.dearsundays.com/wp-content/plugins/wp-rocket/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Comment (Passive Detection)": {
+                    "confidence": 30,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.12",
+                "confidence": 60,
+                "found_by": "Translation File (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://blog.dearsundays.com/wp-content/plugins/wp-rocket/languages/rocket.pot, Match: 'Project-Id-Version: WP Rocket 3.12'"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 8,
+        "requests_remaining": 17
+    },
+    "stop_time": 1741776442,
+    "elapsed": 47,
+    "requests_done": 196,
+    "cached_requests": 7,
+    "data_sent": 52976,
+    "data_sent_humanised": "51.734 KB",
+    "data_received": 754686,
+    "data_received_humanised": "736.998 KB",
+    "used_memory": 271110144,
+    "used_memory_humanised": "258.551 MB"
+}

@@ -1,0 +1,1049 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741776848,
+    "start_memory": 49041408,
+    "target_url": "https://www.baharediba.com/",
+    "target_ip": "172.67.210.22",
+    "effective_url": "https://www.baharediba.com/",
+    "interesting_findings": [
+        {
+            "url": "https://www.baharediba.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "wpo-cache-status: cached",
+                "cf-cache-status: DYNAMIC",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=uDUh7KXifGzsQUZL2rQuAzzAkj%2FBfwzdvEc%2Ft%2FTFWIrza2VS%2F32Obon5b%2BFSjTYyXrvS5TmGq%2FMBLcVuCxduNABAVyAPOapULcGPOmkjRFBaophGZieGKdRhxJQYpBnZ0fGOz%2Fg%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "cf-ray: 91f2c051e9312ec7-LAX",
+                "alt-svc: h3=\":443\"; ma=86400",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=8670&min_rtt=8653&rtt_var=2462&sent=6&recv=7&lost=0&retrans=0&sent_bytes=3398&recv_bytes=816&delivery_rate=326549&cwnd=193&unsent_bytes=0&cid=747c751b60f07ce7&ts=387&x=0\""
+            ]
+        },
+        {
+            "url": "https://www.baharediba.com/robots.txt",
+            "to_s": "robots.txt found: https://www.baharediba.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-content/uploads/wc-logs/",
+                "/wp-content/uploads/woocommerce_transient_files/",
+                "/wp-content/uploads/woocommerce_uploads/",
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php",
+                "/wp-content/uploads/wpo-plugins-tables-list.json"
+            ]
+        },
+        {
+            "url": "https://www.baharediba.com/readme.html",
+            "to_s": "WordPress readme found: https://www.baharediba.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.baharediba.com/wp-login.php?action=register",
+            "to_s": "Registration is enabled: https://www.baharediba.com/wp-login.php?action=register",
+            "type": "registration",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.baharediba.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.baharediba.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.baharediba.com/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.baharediba.com/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "hello-elementor",
+        "location": "https://www.baharediba.com/wp-content/themes/hello-elementor/",
+        "latest_version": "3.3.0",
+        "last_updated": "2025-01-21T00:00:00.000Z",
+        "outdated": true,
+        "readme_url": "https://www.baharediba.com/wp-content/themes/hello-elementor/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.baharediba.com/wp-content/themes/hello-elementor/style.css",
+        "style_name": "Hello Elementor",
+        "style_uri": "https://elementor.com/hello-theme/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash",
+        "description": "Hello Elementor is a lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor site builder plugin. The theme is free, open-source, and designed for users who want a flexible, easy-to-use, and customizable website. The theme, which is optimized for performance, provides a solid foundation for users to build their own unique designs using the Elementor drag-and-drop site builder. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.",
+        "author": "Elementor Team",
+        "author_uri": "https://elementor.com/?utm_source=wp-themes&utm_campaign=author-uri&utm_medium=wp-dash",
+        "template": null,
+        "license": "GNU General Public License v3 or later.",
+        "license_uri": "https://www.gnu.org/licenses/gpl-3.0.html",
+        "tags": "accessibility-ready, flexible-header, custom-colors, custom-menu, custom-logo, featured-images, rtl-language-support, threaded-comments, translation-ready,",
+        "text_domain": "hello-elementor",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 8,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": {
+            "number": "3.0.1",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.baharediba.com/wp-content/themes/hello-elementor/style.css, Match: 'Version: 3.0.1'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://www.baharediba.com/wp-content/plugins/elementor/",
+            "latest_version": "3.27.6",
+            "last_updated": "2025-02-18T15:16:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Elementor Website Builder < 3.25.8 - Contributor+ Stored XSS",
+                    "fixed_in": "3.25.8",
+                    "references": {
+                        "cve": [
+                            "2024-8236"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b1305be5-8267-475f-b962-62e3930116e1"
+                        ],
+                        "wpvulndb": [
+                            "78f0847b-3f59-43cf-87db-2cadda862aa3"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.25.10 - Contributor+ Stored XSS via Typography Settings",
+                    "fixed_in": "3.25.10",
+                    "references": {
+                        "cve": [
+                            "2024-10453"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f23604b7-5a7f-4be7-bc73-cb4facdd1e73"
+                        ],
+                        "wpvulndb": [
+                            "2e05843d-1797-4da9-99ec-06376484fb32"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.27.5 - Contributor+ Stored XSS",
+                    "fixed_in": "3.27.5",
+                    "references": {
+                        "cve": [
+                            "2024-13445"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a11e702-34d2-49ee-8762-cc3614a7950a"
+                        ],
+                        "wpvulndb": [
+                            "25374232-2f9c-453d-bc47-124f80e67a92"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.25.11 - Contributor+ Stored XSS",
+                    "fixed_in": "3.25.11",
+                    "references": {
+                        "cve": [
+                            "2024-54444"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/wordpress/plugin/elementor/vulnerability/wordpress-elementor-plugin-3-25-10-cross-site-scripting-xss-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "61e1476a-cb14-46f9-b68c-4fd5b5c39597"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.25.0",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.baharediba.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.25.0"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.baharediba.com/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.baharediba.com/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor-pro": {
+            "slug": "elementor-pro",
+            "location": "https://www.baharediba.com/wp-content/plugins/elementor-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.27.5",
+                "confidence": 80,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.baharediba.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.27.5",
+                    "https://www.baharediba.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.27.5"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.baharediba.com/wp-content/plugins/elementor-pro/changelog.txt, Match: '#### 3.27.5 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "happy-elementor-addons": {
+            "slug": "happy-elementor-addons",
+            "location": "https://www.baharediba.com/wp-content/plugins/happy-elementor-addons/",
+            "latest_version": "3.16.2",
+            "last_updated": "2025-02-10T11:10:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.15.2",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.baharediba.com/wp-content/plugins/happy-elementor-addons/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.baharediba.com/wp-content/plugins/happy-elementor-addons/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "jet-reviews": {
+            "slug": "jet-reviews",
+            "location": "https://www.baharediba.com/wp-content/plugins/jet-reviews/",
+            "latest_version": "2.3.6",
+            "last_updated": "2024-12-05T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "questionar": {
+            "slug": "questionar",
+            "location": "https://www.baharediba.com/wp-content/plugins/questionar/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "whatsapp-for-wordpress": {
+            "slug": "whatsapp-for-wordpress",
+            "location": "https://www.baharediba.com/wp-content/plugins/whatsapp-for-wordpress/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "woocommerce": {
+            "slug": "woocommerce",
+            "location": "https://www.baharediba.com/wp-content/plugins/woocommerce/",
+            "latest_version": "9.7.1",
+            "last_updated": "2025-03-04T15:28:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WooCommerce < 9.4.3 - Reflected XSS",
+                    "fixed_in": "9.4.3",
+                    "references": {
+                        "wpvulndb": [
+                            "505aa04b-3969-4fea-a296-a6af7ef71409"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooCommerce < 9.4.3 - Unauthenticated Order Creation",
+                    "fixed_in": "9.4.3",
+                    "references": {
+                        "wpvulndb": [
+                            "d51f5bb7-ba87-4ce8-adcf-6bef4217b5db"
+                        ]
+                    }
+                },
+                {
+                    "title": "Woocommerce < 9.7.1 - Shop Manager+ Stored XSS via New Product Form",
+                    "fixed_in": "9.7.1",
+                    "references": {
+                        "cve": [
+                            "2025-26762"
+                        ],
+                        "url": [
+                            "https://developer.woocommerce.com/2025/03/04/woocommerce-9-7-1-dot-release/"
+                        ],
+                        "wpvulndb": [
+                            "94cbfc1b-9a55-44fa-b1d9-0c47980ace3c"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "9.3.3",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.baharediba.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=9.3.3",
+                    "https://www.baharediba.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=9.3.3",
+                    "https://www.baharediba.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=9.3.3"
+                ],
+                "confirmed_by": {
+                    "Meta Generator (Passive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.baharediba.com/, Match: 'WooCommerce 9.3.3'"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.baharediba.com/wp-content/plugins/woocommerce/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "woocommerce-products-filter": {
+            "slug": "woocommerce-products-filter",
+            "location": "https://www.baharediba.com/wp-content/plugins/woocommerce-products-filter/",
+            "latest_version": "1.3.6.6",
+            "last_updated": "2025-03-10T08:57:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "WOOF - Products Filter for WooCommerce < 1.2.6.3 - Reflected Cross-Site Scripting",
+                    "fixed_in": "1.2.6.3",
+                    "references": {
+                        "cve": [
+                            "2021-25085"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2648751"
+                        ],
+                        "wpvulndb": [
+                            "b7dd81c6-6af1-4976-b928-421ca69bfa90"
+                        ]
+                    }
+                },
+                {
+                    "title": "WOOF - Products Filter for WooCommerce < 1.3.2 - Admin+ PHP Object Injection",
+                    "fixed_in": "1.3.2",
+                    "references": {
+                        "cve": [
+                            "2022-4489"
+                        ],
+                        "wpvulndb": [
+                            "067573f2-b1e6-49a9-8c5b-f91e3b9d722f"
+                        ]
+                    }
+                },
+                {
+                    "title": "HUSKY \u2013 Products Filter for WooCommerce (formerly WOOF) < 1.3.4.3 - Missing Authorization via woof_meta_get_keys()",
+                    "fixed_in": "1.3.4.3",
+                    "references": {
+                        "cve": [
+                            "2023-40334"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d00edaf1-2a97-4000-afd9-432ca8fa3df4"
+                        ],
+                        "wpvulndb": [
+                            "4ee506a9-3414-4405-a0d3-70b2b8fa6b28"
+                        ]
+                    }
+                },
+                {
+                    "title": "HUSKY \u2013 Products Filter for WooCommerce (formerly WOOF) < 1.3.4.3 - Unauthenticated SQL Injection via search terms",
+                    "fixed_in": "1.3.4.3",
+                    "references": {
+                        "cve": [
+                            "2023-40010"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b905b8ec-d13d-4455-9c5f-61aaa09d75ba"
+                        ],
+                        "wpvulndb": [
+                            "14f7e49a-23fe-4e6d-9c6e-80d7ba82991c"
+                        ]
+                    }
+                },
+                {
+                    "title": "HUSKY < 1.3.4.4 - Multiple Connections/Stats CSRF",
+                    "fixed_in": "1.3.4.4",
+                    "references": {
+                        "cve": [
+                            "2023-50861"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/woocommerce-products-filter/wordpress-husky-plugin-1-3-4-3-cross-site-request-forgery-csrf-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "0601d2b1-4eb9-4563-a9e1-8909eaecbcac"
+                        ]
+                    }
+                },
+                {
+                    "title": "HUSKY \u2013 Products Filter for WooCommerce Professional < 1.3.5.2 - Contributor+ Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "1.3.5.2",
+                    "references": {
+                        "cve": [
+                            "2024-1796"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/748bc714-25ba-404e-ac3d-e588fd95b2f9"
+                        ],
+                        "wpvulndb": [
+                            "b9a4815c-985a-4efa-a934-fd0f3099011a"
+                        ]
+                    }
+                },
+                {
+                    "title": "HUSKY \u2013 Products Filter for WooCommerce Professional < 1.3.5.3 - Contributor+ SQL Injection",
+                    "fixed_in": "1.3.5.3",
+                    "references": {
+                        "cve": [
+                            "2024-1795"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/fff8dfbc-fd59-47db-85bb-de2a7c6a9a5f"
+                        ],
+                        "wpvulndb": [
+                            "aeb9b958-9ade-41a5-9881-efbff66e6870"
+                        ]
+                    }
+                },
+                {
+                    "title": "HUSKY < 1.3.5.3 - Admin+ Local File Inclusion",
+                    "fixed_in": "1.3.5.3",
+                    "references": {
+                        "cve": [
+                            "2024-3061"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/6a0a0395-c193-4686-ba97-73fdd40d3048"
+                        ],
+                        "wpvulndb": [
+                            "fec43a34-4cb6-4667-a5d3-94b7f5eadc29"
+                        ]
+                    }
+                },
+                {
+                    "title": "HUSKY \u2013 Products Filter for WooCommerce (formerly WOOF) < 1.3.5.2 - Cross-Site Request Forgery",
+                    "fixed_in": "1.3.5.2",
+                    "references": {
+                        "cve": [
+                            "2024-30462"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/86e3eae3-21bb-4695-8650-4c6ba6ababe3"
+                        ],
+                        "wpvulndb": [
+                            "06115147-43ee-42ea-9bd2-638ecd44be0d"
+                        ]
+                    }
+                },
+                {
+                    "title": "HUSKY \u2013 Products Filter for WooCommerce (formerly WOOF) < 1.3.5.3 - Subscriber+  Remote Code Execution",
+                    "fixed_in": "1.3.5.3",
+                    "references": {
+                        "cve": [
+                            "2024-32680"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/6fed4181-400b-4414-aa50-1e7bc92d542f"
+                        ],
+                        "wpvulndb": [
+                            "84530bbc-a9c1-4011-bda6-10f9bb1daaa8"
+                        ]
+                    }
+                },
+                {
+                    "title": "HUSKY \u2013 Products Filter Professional for WooCommerce < 1.3.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "1.3.6",
+                    "references": {
+                        "cve": [
+                            "2024-5039"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/0f6e7fcd-f5f5-47a0-9d8a-74e2f67d10b5"
+                        ],
+                        "wpvulndb": [
+                            "6d4e5774-78ae-46fd-a2f0-66791306bb61"
+                        ]
+                    }
+                },
+                {
+                    "title": "HUSKY - Products Filter Professional for WooCommerce < 1.3.6.1 - Unauthenticated Time-Based SQL Injection",
+                    "fixed_in": "1.3.6.1",
+                    "references": {
+                        "cve": [
+                            "2024-6457"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ecfdf7b1-9bb8-4c1d-a00a-ca1e44440cab"
+                        ],
+                        "wpvulndb": [
+                            "88a474d2-b124-4f9f-ad7a-265c4e3cd554"
+                        ]
+                    }
+                },
+                {
+                    "title": "HUSKY < 1.3.6.2 - Authenticated (Shop Manager+) Arbitrary Options Update",
+                    "fixed_in": "1.3.6.2",
+                    "references": {
+                        "cve": [
+                            "2024-43121"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/02af50bf-d0f3-4dd7-89bd-dd60c33b5097"
+                        ],
+                        "wpvulndb": [
+                            "3fc09e42-1fdc-432f-8dcb-2254b7d42ccc"
+                        ]
+                    }
+                },
+                {
+                    "title": "HUSKY \u2013 Products Filter Professional for WooCommerce < 1.3.6.2 - Insecure Direct Object Reference to Unsubscribe",
+                    "fixed_in": "1.3.6.2",
+                    "references": {
+                        "cve": [
+                            "2024-7491"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/daf6b0d5-79a6-4b8f-924e-9e78cb2b5742"
+                        ],
+                        "wpvulndb": [
+                            "fb9163d2-6e2d-47f2-86b2-57a04872c39e"
+                        ]
+                    }
+                },
+                {
+                    "title": "HUSKY \u2013 Products Filter for WooCommerce < 1.3.6.4 - Reflected Cross-Site Scripting via really_curr_tax Parameter",
+                    "fixed_in": "1.3.6.4",
+                    "references": {
+                        "cve": [
+                            "2024-11400"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f3158e77-39b3-4151-8f10-5824000a585a"
+                        ],
+                        "wpvulndb": [
+                            "d3b24020-ed7e-416d-a51a-d8c0f5a85ed8"
+                        ]
+                    }
+                },
+                {
+                    "title": "HUSKY < 1.3.6.6 - Unauthenticated Local File Inclusion",
+                    "fixed_in": "1.3.6.6",
+                    "references": {
+                        "cve": [
+                            "2025-1661"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/9ae7b6fc-2120-4573-8b1b-d5422d435fa5"
+                        ],
+                        "wpvulndb": [
+                            "7570bd32-f660-44e7-abc6-5d4ea369fe30"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "1.2.2.1",
+                "confidence": 60,
+                "found_by": "Translation File (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.baharediba.com/wp-content/plugins/woocommerce-products-filter/languages/woocommerce-products-filter-es_ES.po, Match: '#. Filter 1.2.2.1'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wordpress-seo-premium": {
+            "slug": "wordpress-seo-premium",
+            "location": "https://www.baharediba.com/wp-content/plugins/wordpress-seo-premium/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T09:49:22.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "15.8.2",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.baharediba.com/, Match: 'optimized with the Yoast SEO Premium plugin v15.8.2 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.baharediba.com/wp-content/plugins/wordpress-seo-premium/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wp-rocket": {
+            "slug": "wp-rocket",
+            "location": "https://www.baharediba.com/wp-content/plugins/wp-rocket/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.4",
+                "confidence": 60,
+                "found_by": "Translation File (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.baharediba.com/wp-content/plugins/wp-rocket/languages/rocket.pot, Match: 'Project-Id-Version: WP Rocket 3.4'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wpdatatables": {
+            "slug": "wpdatatables",
+            "location": "https://www.baharediba.com/wp-content/plugins/wpdatatables/",
+            "latest_version": "3.4.2.41",
+            "last_updated": "2025-03-03T05:27:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "wpDataTables < 1.5.4 - Unauthenticated Shell Upload",
+                    "fixed_in": "1.5.4",
+                    "references": {
+                        "url": [
+                            "https://www.homelab.it/index.php/2014/11/23/wordpress-wpdatatables-shell-upload-vulnerability/",
+                            "https://packetstormsecurity.com/files/129231/",
+                            "http://wpdatatables.com/wpdatatables-1-5-4/"
+                        ],
+                        "wpvulndb": [
+                            "3e836569-f58f-46ee-9b62-123fe01b40b7"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 1.5.4 - Unauthenticated SQL Injection",
+                    "fixed_in": "1.5.4",
+                    "references": {
+                        "cve": [
+                            "2014-9175"
+                        ],
+                        "exploitdb": [
+                            "35340"
+                        ],
+                        "url": [
+                            "https://www.homelab.it/index.php/2014/11/23/wordpress-wpdatatables-sql-injection-vulnerability/",
+                            "https://packetstormsecurity.com/files/129232/",
+                            "http://wpdatatables.com/wpdatatables-1-5-4/",
+                            "https://www.securityfocus.com/bid/71271/"
+                        ],
+                        "wpvulndb": [
+                            "d46b8b0d-abe5-4ec8-b975-27e8d53b9f27"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 2.0.12 - Cross-Site Scripting (XSS) & SQL Injection",
+                    "fixed_in": "2.0.12",
+                    "references": {
+                        "cve": [
+                            "2019-6011",
+                            "2019-6012"
+                        ],
+                        "url": [
+                            "https://jvn.jp/en/jp/JVN14776551/index.html"
+                        ],
+                        "wpvulndb": [
+                            "4e09006b-b3da-469a-91db-c19d2d18f792"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 3.4.1 - Unauthenticated SQL Injection",
+                    "fixed_in": "3.4.1",
+                    "references": {
+                        "cve": [
+                            "2021-26754"
+                        ],
+                        "url": [
+                            "https://n4nj0.github.io/advisories/wordpress-plugin-wpdatatables-i/",
+                            "https://wpdatatables.com/help/whats-new-changelog/"
+                        ],
+                        "wpvulndb": [
+                            "bfd0cfd9-0d6a-47bb-9d73-762ddc138129"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 3.4.2 - Improper Access Control leading to Table Permission Takeover",
+                    "fixed_in": "3.4.2",
+                    "references": {
+                        "cve": [
+                            "2021-24197"
+                        ],
+                        "url": [
+                            "https://n4nj0.github.io/advisories/wordpress-plugin-wpdatatables-ii/",
+                            "https://wpdatatables.com/help/whats-new-changelog/"
+                        ],
+                        "wpvulndb": [
+                            "a56c04a4-dda0-4a7f-a525-d0349a1fda2b"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 3.4.2 - Improper Access Control leading to Table Data Deletion",
+                    "fixed_in": "3.4.2",
+                    "references": {
+                        "cve": [
+                            "2021-24198"
+                        ],
+                        "url": [
+                            "https://n4nj0.github.io/advisories/wordpress-plugin-wpdatatables-ii/",
+                            "https://wpdatatables.com/help/whats-new-changelog/"
+                        ],
+                        "wpvulndb": [
+                            "d953bc62-8a6f-445b-a556-bc25cdd200e3"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 3.4.2 - Blind SQL Injection via start Parameter",
+                    "fixed_in": "3.4.2",
+                    "references": {
+                        "cve": [
+                            "2021-24199"
+                        ],
+                        "url": [
+                            "https://n4nj0.github.io/advisories/wordpress-plugin-wpdatatables-ii/",
+                            "https://wpdatatables.com/help/whats-new-changelog/"
+                        ],
+                        "wpvulndb": [
+                            "5c98c2d6-d002-4cff-9d6f-633cb3ec6280"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 3.4.2 - Blind SQL Injection via length Parameter",
+                    "fixed_in": "3.4.2",
+                    "references": {
+                        "cve": [
+                            "2021-24200"
+                        ],
+                        "url": [
+                            "https://n4nj0.github.io/advisories/wordpress-plugin-wpdatatables-ii/",
+                            "https://wpdatatables.com/help/whats-new-changelog/"
+                        ],
+                        "wpvulndb": [
+                            "21aa7e18-0162-45bf-a5c6-ceee64ffa1f9"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 2.1.28 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "2.1.28",
+                    "references": {
+                        "cve": [
+                            "2022-25618"
+                        ],
+                        "wpvulndb": [
+                            "02a8b0bc-e434-4be5-8892-cba13d1b4329"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 2.1.28 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "2.1.28",
+                    "references": {
+                        "cve": [
+                            "2022-29432"
+                        ],
+                        "wpvulndb": [
+                            "aa843f91-583a-4ebf-8328-2f32d2b72b49"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 2.1.50 - Contributor+ Stored XSS",
+                    "fixed_in": "2.1.50",
+                    "references": {
+                        "cve": [
+                            "2023-23876"
+                        ],
+                        "wpvulndb": [
+                            "bbc95db2-e505-46c0-98f0-6913d09737f8"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 2.1.66 - Admin+ PHP Object Injection",
+                    "fixed_in": "2.1.66",
+                    "references": {
+                        "cve": [
+                            "2023-4314"
+                        ],
+                        "wpvulndb": [
+                            "1ab192d7-72ac-4f12-8a51-f28ee4db91bc"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables \u2013 WordPress Data Table, Dynamic Tables & Table Charts Plugin < 3.4.2.5 - Reflected Cross-Site Scripting.",
+                    "fixed_in": "3.4.2.5",
+                    "references": {
+                        "cve": [
+                            "2024-0591"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5a679863-3c22-4d34-9994-1f8ec121ad86"
+                        ],
+                        "wpvulndb": [
+                            "020ddcb5-99a1-424d-8a91-946257a8d0a7"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables \u2013 WordPress Data Table, Dynamic Tables & Table Charts Plugin < 3.4.2.14 - Unauthenticated Stored Cross-Site Scripting via CSV Import",
+                    "fixed_in": "3.4.2.14",
+                    "references": {
+                        "cve": [
+                            "2024-4895"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/0c944e08-1b70-4b56-80eb-f588c0fab5b6"
+                        ],
+                        "wpvulndb": [
+                            "3a01d3e8-ddf0-4f62-91f5-5ea3632137a1"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables - Tables & Table Charts (Premium) < 6.4 - Missing Authorization to DataTable Access & Modification",
+                    "fixed_in": "6.4",
+                    "references": {
+                        "cve": [
+                            "2024-3821"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d32215b5-9ecb-4feb-b76f-18821184dd8b"
+                        ],
+                        "wpvulndb": [
+                            "72060d33-e561-41a5-b2f6-f6cb6922f159"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables - Tables & Table Charts (Premium) < 6.3.2 - Unauthenticated SQL Injection",
+                    "fixed_in": "6.3.2",
+                    "references": {
+                        "cve": [
+                            "2024-3820"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/fbba822b-172f-4167-bccf-4697a298178e"
+                        ],
+                        "wpvulndb": [
+                            "ca8fdae7-b5c1-405e-a741-f94632ec81a9"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "wpforms-lite": {
+            "slug": "wpforms-lite",
+            "location": "https://www.baharediba.com/wp-content/plugins/wpforms-lite/",
+            "latest_version": "1.9.4.1",
+            "last_updated": "2025-02-27T13:02:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.9.3.2",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.baharediba.com/wp-content/plugins/wpforms-lite/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.baharediba.com/wp-content/plugins/wpforms-lite/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 14,
+        "requests_remaining": 11
+    },
+    "stop_time": 1741776913,
+    "elapsed": 65,
+    "requests_done": 229,
+    "cached_requests": 6,
+    "data_sent": 62199,
+    "data_sent_humanised": "60.741 KB",
+    "data_received": 1618710,
+    "data_received_humanised": "1.544 MB",
+    "used_memory": 284229632,
+    "used_memory_humanised": "271.062 MB"
+}
