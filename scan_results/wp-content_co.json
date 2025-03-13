@@ -1,0 +1,591 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741863611,
+    "start_memory": 48984064,
+    "target_url": "https://wp-content.co/",
+    "target_ip": "172.67.207.159",
+    "effective_url": "https://wp-content.co/",
+    "interesting_findings": [
+        {
+            "url": "https://wp-content.co/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-cache-handler: swis-cache-engine",
+                "cf-cache-status: DYNAMIC",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=V6UQCc2TBg7NJzNFaB6QgMz7izz7cwdXadqCFwgCYVmDCThDi5qIguflbL6FMcPLzYtLnScIftQnfx6%2F3Kqj%2FZpSdWfd%2BQJdnHppaxd754tr4UlkQjAXKom8YIGhuWzI\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "cf-ray: 91fb069a69ed81a5-IAD",
+                "alt-svc: h3=\":443\"; ma=86400",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=1036&min_rtt=988&rtt_var=305&sent=6&recv=8&lost=0&retrans=0&sent_bytes=3414&recv_bytes=808&delivery_rate=2762088&cwnd=253&unsent_bytes=0&cid=6e6ff6209876c1e4&ts=969&x=0\""
+            ]
+        },
+        {
+            "url": "https://wp-content.co/robots.txt",
+            "to_s": "robots.txt found: https://wp-content.co/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://wp-content.co/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://wp-content.co/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 30,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://wp-content.co/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://wp-content.co/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://wp-content.co/home/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "wpcio",
+        "location": "https://wp-content.co/wp-content/themes/wpcio/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://wp-content.co/wp-content/themes/wpcio/style.css",
+        "style_name": null,
+        "style_uri": null,
+        "description": null,
+        "author": null,
+        "author_uri": null,
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 12,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 6,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": null,
+        "parents": []
+    },
+    "plugins": {
+        "browser-shots": {
+            "slug": "browser-shots",
+            "location": "https://wp-content.co/wp-content/plugins/browser-shots/",
+            "latest_version": "1.7.7",
+            "last_updated": "2024-01-30T10:27:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Browser Screenshots < 1.7.6 - Contributor+ Stored XSS",
+                    "fixed_in": "1.7.6",
+                    "references": {
+                        "cve": [
+                            "2021-24439"
+                        ],
+                        "wpvulndb": [
+                            "9c538c51-ae58-461d-b93b-cc9dfebf2bc0"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "easy-affiliate-links": {
+            "slug": "easy-affiliate-links",
+            "location": "https://wp-content.co/wp-content/plugins/easy-affiliate-links/",
+            "latest_version": "3.7.4",
+            "last_updated": "2024-11-05T14:09:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Easy Affiliate Links < 3.7.1 - Contributor+ Stored XSS",
+                    "fixed_in": "3.7.1",
+                    "references": {
+                        "cve": [
+                            "2023-0375"
+                        ],
+                        "wpvulndb": [
+                            "915d6add-d3e2-4ced-969e-9523981ac886"
+                        ]
+                    }
+                },
+                {
+                    "title": "Easy Affiliate Links < 3.7.3 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "3.7.3",
+                    "references": {
+                        "cve": [
+                            "2024-34441"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/94b89921-96a3-449a-998f-74cde4570468"
+                        ],
+                        "wpvulndb": [
+                            "e750a58a-db29-4fcd-8faa-3fb52cc59a41"
+                        ]
+                    }
+                },
+                {
+                    "title": "Easy Affiliate Links < 3.7.4 - Missing Authorization to Authenticated (Subscriber+) Settings Reset",
+                    "fixed_in": "3.7.4",
+                    "references": {
+                        "cve": [
+                            "2024-5864"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e8a4c656-8df8-44ce-884f-dd502d17f594"
+                        ],
+                        "wpvulndb": [
+                            "36292c7e-11fe-476a-98fb-b68cbeb97228"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "ewww-image-optimizer": {
+            "slug": "ewww-image-optimizer",
+            "location": "https://wp-content.co/wp-content/plugins/ewww-image-optimizer/",
+            "latest_version": "8.1.2",
+            "last_updated": "2025-03-06T19:01:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "EWWW Image Optimizer 2.0.1 - Cross-Site Scripting (XSS)",
+                    "fixed_in": "2.0.2",
+                    "references": {
+                        "cve": [
+                            "2014-6243"
+                        ],
+                        "url": [
+                            "https://seclists.org/bugtraq/2014/Oct/45",
+                            "https://www.immuniweb.com/advisory/HTB23234"
+                        ],
+                        "wpvulndb": [
+                            "17401705-5f44-47d6-920e-ec058d426114"
+                        ]
+                    }
+                },
+                {
+                    "title": "EWWW Image Optimizer <= 2.8.3 - Remote Code Execution",
+                    "fixed_in": "2.8.4",
+                    "references": {
+                        "cve": [
+                            "2016-20010"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2016/06/vulnerability-ewww-image-optimizer/",
+                            "https://plugins.trac.wordpress.org/changeset/1433803/ewww-image-optimizer"
+                        ],
+                        "wpvulndb": [
+                            "a7a49793-f1ba-483c-9b10-45e0a7ca42e6"
+                        ]
+                    }
+                },
+                {
+                    "title": "EWWW Image Optimizer < 5.9 - Cross-Site Request Forgery",
+                    "fixed_in": "5.9",
+                    "references": {
+                        "cve": [
+                            "2020-36750"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8ef33e3c-187a-45d9-9dac-0895dce34216"
+                        ],
+                        "wpvulndb": [
+                            "9fe6e899-17da-46fb-a0ff-cb6579b3dfa6"
+                        ]
+                    }
+                },
+                {
+                    "title": "EWWW Image Optimizer < 7.2.1 - Unauthenticated Sensitive Information Exposure via Debug Log",
+                    "fixed_in": "7.2.1",
+                    "references": {
+                        "cve": [
+                            "2023-40600"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d20ff1a8-8794-41e1-9e66-1cda90f9ff77"
+                        ],
+                        "wpvulndb": [
+                            "386b261c-5366-43e5-9f0c-e418dc5b6b14"
+                        ]
+                    }
+                },
+                {
+                    "title": "EWWW Image Optimizer < 7.2.1 - Sensitive Information Exposure",
+                    "fixed_in": "7.2.1",
+                    "references": {
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d7d08bfd-9861-4e21-a696-25b00233ad94"
+                        ],
+                        "wpvulndb": [
+                            "20d5a6c2-d3af-4a17-8de1-4a6ee9ee055f"
+                        ]
+                    }
+                },
+                {
+                    "title": "EWWW Image Optimizer < 7.3.0 - Cross-Site Request Forgery",
+                    "fixed_in": "7.3.0",
+                    "references": {
+                        "cve": [
+                            "2024-31924"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/074d7b46-60e0-4d4a-904a-696ac7948a35"
+                        ],
+                        "wpvulndb": [
+                            "71dc6e4d-85de-4743-8312-507032076aa3"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "google-site-kit": {
+            "slug": "google-site-kit",
+            "location": "https://wp-content.co/wp-content/plugins/google-site-kit/",
+            "latest_version": "1.148.0",
+            "last_updated": "2025-03-10T18:43:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Meta Tag (Passive Detection)",
+            "confidence": 40,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.148.0",
+                "confidence": 60,
+                "found_by": "Meta Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://wp-content.co/, Match: 'Site Kit by Google 1.148.0'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "podcast-subscribe-buttons": {
+            "slug": "podcast-subscribe-buttons",
+            "location": "https://wp-content.co/wp-content/plugins/podcast-subscribe-buttons/",
+            "latest_version": "1.5.2",
+            "last_updated": "2024-10-04T10:46:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Podcast Subscribe Buttons < 1.4.2 - Contributor+ Stored XSS",
+                    "fixed_in": "1.4.2",
+                    "references": {
+                        "cve": [
+                            "2021-24743"
+                        ],
+                        "wpvulndb": [
+                            "998395f0-f176-45b9-baf7-b50d30538c7d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Podcast Subscribe Buttons < 1.4.9 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "1.4.9",
+                    "references": {
+                        "cve": [
+                            "2023-5308"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/17dbfb82-e380-464a-bfaf-2d0f6bf07f25"
+                        ],
+                        "wpvulndb": [
+                            "6a1d58a4-468f-4800-8750-05b530fe175e"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "snow-monkey-editor": {
+            "slug": "snow-monkey-editor",
+            "location": "https://wp-content.co/wp-content/plugins/snow-monkey-editor/",
+            "latest_version": "10.2.0",
+            "last_updated": "2025-03-12T07:33:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "wordpress-popular-posts": {
+            "slug": "wordpress-popular-posts",
+            "location": "https://wp-content.co/wp-content/plugins/wordpress-popular-posts/",
+            "latest_version": "7.2.0",
+            "last_updated": "2024-12-09T13:16:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WordPress Popular Posts < 5.3.3 - Authenticated Code Injection",
+                    "fixed_in": "5.3.3",
+                    "references": {
+                        "cve": [
+                            "2021-42362"
+                        ],
+                        "exploitdb": [
+                            "50129"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2542638",
+                            "https://blog.nintechnet.com/improper-input-validation-fixed-in-wordpress-popular-posts-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "bd4f157c-a3d7-4535-a587-0102ba4e3009"
+                        ]
+                    }
+                },
+                {
+                    "title": "WordPress Popular Posts < 5.3.3 - Authenticated Stored Cross-Site Scripting (XSS)",
+                    "fixed_in": "5.3.3",
+                    "references": {
+                        "cve": [
+                            "2021-20746"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2542638",
+                            "https://jvn.jp/en/jp/JVN63066062/"
+                        ],
+                        "wpvulndb": [
+                            "86cc93c1-daf5-43e7-8afb-66362d784ce9"
+                        ]
+                    }
+                },
+                {
+                    "title": "WordPress Popular Posts < 5.3.4 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "5.3.4",
+                    "references": {
+                        "cve": [
+                            "2021-36872"
+                        ],
+                        "wpvulndb": [
+                            "f1569584-e829-4d09-9535-bd5b11331339"
+                        ]
+                    }
+                },
+                {
+                    "title": "WordPress Popular Posts < 6.0.0 - Reflected Cross-Site Scripting",
+                    "fixed_in": "6.0.0",
+                    "references": {
+                        "wpvulndb": [
+                            "a1113cf4-29ab-4dbd-841d-4e00f24b0b01"
+                        ]
+                    }
+                },
+                {
+                    "title": "WordPress Popular Posts < 6.1.0 - Unauthenticated Views Manipulation",
+                    "fixed_in": "6.1.0",
+                    "references": {
+                        "cve": [
+                            "2022-43468"
+                        ],
+                        "url": [
+                            "https://jvn.jp/en/jp/JVN13927745/"
+                        ],
+                        "wpvulndb": [
+                            "9e497a16-67dc-47f7-b509-63bf11888f56"
+                        ]
+                    }
+                },
+                {
+                    "title": "WordPress Popular Posts < 6.3.3 - Contributor+ Stored XSS",
+                    "fixed_in": "6.3.3",
+                    "references": {
+                        "cve": [
+                            "2023-45607"
+                        ],
+                        "wpvulndb": [
+                            "6b312599-a7fc-474b-a425-931fd9dba182"
+                        ]
+                    }
+                },
+                {
+                    "title": "WordPress Popular Posts < 7.2.0 - Unauthenticated Arbitrary Shortcode Execution",
+                    "fixed_in": "7.2.0",
+                    "references": {
+                        "cve": [
+                            "2024-11733"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c38ac8d6-c6de-4be7-bf7b-198e085a0ad2"
+                        ],
+                        "wpvulndb": [
+                            "957a0dc2-56e1-4789-bc56-716fab1cbce4"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "wp-job-openings": {
+            "slug": "wp-job-openings",
+            "location": "https://wp-content.co/wp-content/plugins/wp-job-openings/",
+            "latest_version": "3.5.0",
+            "last_updated": "2024-11-13T18:48:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.5.0",
+                "confidence": 30,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://wp-content.co/wp-content/plugins/wp-job-openings/assets/css/general.min.css?ver=3.5.0",
+                    "https://wp-content.co/wp-content/plugins/wp-job-openings/assets/css/style.min.css?ver=3.5.0",
+                    "https://wp-content.co/wp-content/plugins/wp-job-openings/assets/js/script.min.js?ver=3.5.0"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 10,
+        "requests_remaining": 15
+    },
+    "stop_time": 1741863654,
+    "elapsed": 43,
+    "requests_done": 211,
+    "cached_requests": 7,
+    "data_sent": 45411,
+    "data_sent_humanised": "44.347 KB",
+    "data_received": 1542163,
+    "data_received_humanised": "1.471 MB",
+    "used_memory": 295759872,
+    "used_memory_humanised": "282.059 MB"
+}

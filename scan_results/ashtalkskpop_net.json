@@ -1,0 +1,399 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741863863,
+    "start_memory": 48570368,
+    "target_url": "https://ashtalkskpop.net/",
+    "target_ip": "104.225.208.27",
+    "effective_url": "https://ashtalkskpop.net/",
+    "interesting_findings": [
+        {
+            "url": "https://ashtalkskpop.net/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: LiteSpeed",
+                "cache-tag: ashtalkskpop.net",
+                "cdn-cache-control: max-age=2592000",
+                "x-flying-press-cache: HIT",
+                "x-flying-press-source: Web Server",
+                "alt-svc: h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+            ]
+        },
+        {
+            "url": "https://ashtalkskpop.net/robots.txt",
+            "to_s": "robots.txt found: https://ashtalkskpop.net/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://ashtalkskpop.net/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://ashtalkskpop.net/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://ashtalkskpop.net/readme.html",
+            "to_s": "WordPress readme found: https://ashtalkskpop.net/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://ashtalkskpop.net/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://ashtalkskpop.net/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://ashtalkskpop.net/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://ashtalkskpop.net/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "minimalpress-pro",
+        "location": "https://ashtalkskpop.net/wp-content/themes/minimalpress-pro/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://ashtalkskpop.net/wp-content/themes/minimalpress-pro/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://ashtalkskpop.net/wp-content/themes/minimalpress-pro/style.css?ver=6.7.2",
+        "style_name": "MinimalPress Pro",
+        "style_uri": "https://zthemes.net",
+        "description": "MinimalPress Pro is a fast, clean, modern-looking Best Responsive News Magazine WordPress theme. The theme is fully widgetized, so users can manage the content by using easy to use widgets. MinimalPress Pro is suitable for dynamic news, newspapers, magazine, publishers, blogs, editors, online and gaming magazines, newsportals,personal blogs, newspaper, publishing or review siteand any creative website. MinimalPress Pro is SEO friendly, WPML,Gutenberg, translation and RTL ready.",
+        "author": "ZThemes Studio",
+        "author_uri": "https://zthemes.net/themes/minimalpress-pro",
+        "template": null,
+        "license": "GNU General Public License v3 or later",
+        "license_uri": "http://www.gnu.org/licenses/gpl.html",
+        "tags": "two-columns, three-columns, left-sidebar, right-sidebar, translation-ready, custom-background, custom-logo, featured-images, footer-widgets, full-width-template, blog, e-commerce, entertainment",
+        "text_domain": "minimalpress-pro",
+        "found_by": "Css Style In 404 Page (Passive Detection)",
+        "confidence": 70,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.0.2",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://ashtalkskpop.net/wp-content/themes/minimalpress-pro/style.css?ver=6.7.2, Match: 'Version: 1.0.2'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "flying-press": {
+            "slug": "flying-press",
+            "location": "https://ashtalkskpop.net/wp-content/plugins/flying-press/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.16.4",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://ashtalkskpop.net/wp-content/plugins/flying-press/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "google-site-kit": {
+            "slug": "google-site-kit",
+            "location": "https://ashtalkskpop.net/wp-content/plugins/google-site-kit/",
+            "latest_version": "1.148.0",
+            "last_updated": "2025-03-10T18:43:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Tag (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.148.0",
+                "confidence": 100,
+                "found_by": "Meta Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://ashtalkskpop.net/, Match: 'Site Kit by Google 1.148.0'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://ashtalkskpop.net/wp-content/plugins/google-site-kit/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://ashtalkskpop.net/wp-content/plugins/google-site-kit/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "jetpack": {
+            "slug": "jetpack",
+            "location": "https://ashtalkskpop.net/wp-content/plugins/jetpack/",
+            "latest_version": "14.4.1",
+            "last_updated": "2025-03-12T17:44:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "14.4",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://ashtalkskpop.net/wp-content/plugins/jetpack/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://ashtalkskpop.net/wp-content/plugins/jetpack/CHANGELOG.md, Match: '## 14.4 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "ko-fi-button": {
+            "slug": "ko-fi-button",
+            "location": "https://ashtalkskpop.net/wp-content/plugins/ko-fi-button/",
+            "latest_version": "1.3.8",
+            "last_updated": "2025-03-08T02:33:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.3.8",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://ashtalkskpop.net/wp-content/plugins/ko-fi-button/Readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "mailchimp": {
+            "slug": "mailchimp",
+            "location": "https://ashtalkskpop.net/wp-content/plugins/mailchimp/",
+            "latest_version": "1.6.3",
+            "last_updated": "2025-01-30T19:15:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.6.3",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://ashtalkskpop.net/wp-content/plugins/mailchimp/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wp-consent-api": {
+            "slug": "wp-consent-api",
+            "location": "https://ashtalkskpop.net/wp-content/plugins/wp-consent-api/",
+            "latest_version": "1.0.8",
+            "last_updated": "2025-03-11T08:43:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.0.8",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://ashtalkskpop.net/wp-content/plugins/wp-consent-api/assets/js/wp-consent-api.min.js?ver=1.0.8"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://ashtalkskpop.net/wp-content/plugins/wp-consent-api/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://ashtalkskpop.net/wp-content/plugins/wp-consent-api/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wp-smushit": {
+            "slug": "wp-smushit",
+            "location": "https://ashtalkskpop.net/wp-content/plugins/wp-smushit/",
+            "latest_version": "3.17.1",
+            "last_updated": "2025-02-10T13:05:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.17.1",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://ashtalkskpop.net/wp-content/plugins/wp-smushit/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://ashtalkskpop.net/wp-content/plugins/wp-smushit/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 9,
+        "requests_remaining": 16
+    },
+    "stop_time": 1741863880,
+    "elapsed": 16,
+    "requests_done": 197,
+    "cached_requests": 7,
+    "data_sent": 51954,
+    "data_sent_humanised": "50.736 KB",
+    "data_received": 1701497,
+    "data_received_humanised": "1.623 MB",
+    "used_memory": 293216256,
+    "used_memory_humanised": "279.633 MB"
+}

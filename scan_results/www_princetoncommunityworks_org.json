@@ -1,0 +1,511 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741863452,
+    "start_memory": 48779264,
+    "target_url": "https://www.princetoncommunityworks.org/",
+    "target_ip": "66.39.61.90",
+    "effective_url": "https://www.princetoncommunityworks.org/",
+    "interesting_findings": [
+        {
+            "url": "https://www.princetoncommunityworks.org/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: Apache"
+            ]
+        },
+        {
+            "url": "https://www.princetoncommunityworks.org/robots.txt",
+            "to_s": "robots.txt found: https://www.princetoncommunityworks.org/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.princetoncommunityworks.org/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.princetoncommunityworks.org/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.princetoncommunityworks.org/readme.html",
+            "to_s": "WordPress readme found: https://www.princetoncommunityworks.org/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.princetoncommunityworks.org/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.princetoncommunityworks.org/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.princetoncommunityworks.org/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.princetoncommunityworks.org/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.princetoncommunityworks.org/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {
+            "Emoji Settings (Passive Detection)": {
+                "confidence": 60,
+                "interesting_entries": [
+                    "https://www.princetoncommunityworks.org/, Match: 'wp-includes\\/js\\/wp-emoji-release.min.js?ver=6.7.2'"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "outreach-pro",
+        "location": "https://www.princetoncommunityworks.org/wp-content/themes/outreach-pro/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://www.princetoncommunityworks.org/wp-content/themes/outreach-pro/README.txt",
+        "directory_listing": true,
+        "error_log_url": null,
+        "style_url": "https://www.princetoncommunityworks.org/wp-content/themes/outreach-pro/style.css?ver=3.1",
+        "style_name": "Outreach Pro",
+        "style_uri": "http://my.studiopress.com/themes/outreach/",
+        "description": "A mobile responsive and HTML5 theme built for the Genesis Framework.",
+        "author": "StudioPress",
+        "author_uri": "http://www.studiopress.com/",
+        "template": "genesis",
+        "license": "GPL-2.0+",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "black, green, white, one-column, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, custom-menu, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, premise-landing-page",
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "3.1",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.princetoncommunityworks.org/wp-content/themes/outreach-pro/style.css?ver=3.1, Match: 'Version: 3.1'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "asgaros-forum": {
+            "slug": "asgaros-forum",
+            "location": "https://www.princetoncommunityworks.org/wp-content/plugins/asgaros-forum/",
+            "latest_version": "3.0.0",
+            "last_updated": "2024-12-11T13:31:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.9.0",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.princetoncommunityworks.org/wp-content/plugins/asgaros-forum/skin/widgets.css?ver=2.9.0"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.princetoncommunityworks.org/wp-content/plugins/asgaros-forum/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.princetoncommunityworks.org/wp-content/plugins/asgaros-forum/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "booking": {
+            "slug": "booking",
+            "location": "https://www.princetoncommunityworks.org/wp-content/plugins/booking/",
+            "latest_version": "10.10.2",
+            "last_updated": "2025-02-10T23:16:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "10.10.2",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.princetoncommunityworks.org/wp-content/plugins/booking/css/client.css?ver=10.10.2",
+                    "https://www.princetoncommunityworks.org/wp-content/plugins/booking/css/calendar.css?ver=10.10.2",
+                    "https://www.princetoncommunityworks.org/wp-content/plugins/booking/js/client.js?ver=10.10.2",
+                    "https://www.princetoncommunityworks.org/wp-content/plugins/booking/js/wpbc_times.js?ver=10.10.2"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.princetoncommunityworks.org/wp-content/plugins/booking/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "compact-wp-audio-player": {
+            "slug": "compact-wp-audio-player",
+            "location": "https://www.princetoncommunityworks.org/wp-content/plugins/compact-wp-audio-player/",
+            "latest_version": "1.9.15",
+            "last_updated": "2024-12-14T02:58:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Comment (Passive Detection)": {
+                    "confidence": 30,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Compact WP Audio Player < 1.9.15 - Authenticated (Contributor+) Server-Side Request Forgery",
+                    "fixed_in": "1.9.15",
+                    "references": {
+                        "cve": [
+                            "2024-56279"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/700b9a34-bf9c-444d-80c7-87bf9412673f"
+                        ],
+                        "wpvulndb": [
+                            "2e8afe94-0b44-41d1-bccb-8515ff74bddc"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "1.9.14",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.princetoncommunityworks.org/, Match: 'WP Audio player plugin v1.9.14'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.princetoncommunityworks.org/wp-content/plugins/compact-wp-audio-player/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.princetoncommunityworks.org/wp-content/plugins/compact-wp-audio-player/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "genesis-blocks": {
+            "slug": "genesis-blocks",
+            "location": "https://www.princetoncommunityworks.org/wp-content/plugins/genesis-blocks/",
+            "latest_version": "3.1.5",
+            "last_updated": "2024-07-11T15:21:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.1.5",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.princetoncommunityworks.org/wp-content/plugins/genesis-blocks/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.princetoncommunityworks.org/wp-content/plugins/genesis-blocks/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "genesis-responsive-slider": {
+            "slug": "genesis-responsive-slider",
+            "location": "https://www.princetoncommunityworks.org/wp-content/plugins/genesis-responsive-slider/",
+            "latest_version": "1.0.1",
+            "last_updated": "2023-08-07T16:25:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.0.1",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.princetoncommunityworks.org/wp-content/plugins/genesis-responsive-slider/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.princetoncommunityworks.org/wp-content/plugins/genesis-responsive-slider/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "sassy-social-share": {
+            "slug": "sassy-social-share",
+            "location": "https://www.princetoncommunityworks.org/wp-content/plugins/sassy-social-share/",
+            "latest_version": "3.3.70",
+            "last_updated": "2024-11-25T12:49:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.3.70",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.princetoncommunityworks.org/wp-content/plugins/sassy-social-share/public/css/sassy-social-share-public.css?ver=3.3.70",
+                    "https://www.princetoncommunityworks.org/wp-content/plugins/sassy-social-share/public/js/sassy-social-share-public.js?ver=3.3.70"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.princetoncommunityworks.org/wp-content/plugins/sassy-social-share/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "simple-social-icons": {
+            "slug": "simple-social-icons",
+            "location": "https://www.princetoncommunityworks.org/wp-content/plugins/simple-social-icons/",
+            "latest_version": "3.2.5",
+            "last_updated": "2024-12-05T09:05:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.2.5",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.princetoncommunityworks.org/wp-content/plugins/simple-social-icons/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.princetoncommunityworks.org/wp-content/plugins/simple-social-icons/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wordpress-seo-premium": {
+            "slug": "wordpress-seo-premium",
+            "location": "https://www.princetoncommunityworks.org/wp-content/plugins/wordpress-seo-premium/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T09:49:22.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "22.8",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.princetoncommunityworks.org/wp-content/plugins/wordpress-seo-premium/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wp-super-cache": {
+            "slug": "wp-super-cache",
+            "location": "https://www.princetoncommunityworks.org/wp-content/plugins/wp-super-cache/",
+            "latest_version": "2.0.0",
+            "last_updated": "2025-01-31T13:09:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.12.4",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.princetoncommunityworks.org/wp-content/plugins/wp-super-cache/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 11,
+        "requests_remaining": 14
+    },
+    "stop_time": 1741863536,
+    "elapsed": 83,
+    "requests_done": 202,
+    "cached_requests": 7,
+    "data_sent": 59163,
+    "data_sent_humanised": "57.776 KB",
+    "data_received": 762171,
+    "data_received_humanised": "744.308 KB",
+    "used_memory": 301928448,
+    "used_memory_humanised": "287.941 MB"
+}

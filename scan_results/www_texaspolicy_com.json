@@ -1,0 +1,196 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741863845,
+    "start_memory": 48947200,
+    "target_url": "https://www.texaspolicy.com/",
+    "target_ip": "172.67.73.189",
+    "effective_url": "https://www.texaspolicy.com/",
+    "interesting_findings": [
+        {
+            "url": "https://www.texaspolicy.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-ksc-cache: Hit",
+                "cf-cache-status: DYNAMIC",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=lPiKdU6YqabtWDYckRK2vBlQaiIqgevTLuMYuuZ3OYHb0w%2BYJt11Fu2n%2BdQMyjWFnsCyAbKu%2Fu1xmTSpc3orscIn7kA%2FrDv04fShwAJ67HQEo2tMMaYzVbK9xnwMms%2FcvoXSB%2FY%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "cf-ray: 91fb0c5e0db1395b-IAD",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=1252&min_rtt=1153&rtt_var=379&sent=6&recv=8&lost=0&retrans=0&sent_bytes=3420&recv_bytes=818&delivery_rate=2477016&cwnd=253&unsent_bytes=0&cid=d8f33bbf9f542579&ts=86&x=0\""
+            ]
+        },
+        {
+            "url": "https://www.texaspolicy.com/robots.txt",
+            "to_s": "robots.txt found: https://www.texaspolicy.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/\r",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://www.texaspolicy.com/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://www.texaspolicy.com/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.texaspolicy.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.texaspolicy.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.6.1",
+        "release_date": "2024-07-23",
+        "status": "insecure",
+        "found_by": "Most Common Wp Includes Query Parameter In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.texaspolicy.com/wp-includes/css/dist/block-library/style.min.css?ver=6.6.1"
+        ],
+        "confirmed_by": {
+            "Rss Generator (Aggressive Detection)": {
+                "confidence": 100,
+                "interesting_entries": [
+                    "https://www.texaspolicy.com/feed/, <generator>https://wordpress.org/?v=6.6.1</generator>",
+                    "https://www.texaspolicy.com/comments/feed/, <generator>https://wordpress.org/?v=6.6.1</generator>"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "tppf",
+        "location": "https://www.texaspolicy.com/wp-content/themes/tppf/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.texaspolicy.com/wp-content/themes/tppf/style.css",
+        "style_name": "Texas Public Policy Foundation",
+        "style_uri": null,
+        "description": "Custom Theme for texaspolicy.com",
+        "author": "The Killswitch Collective LLC",
+        "author_uri": "https://killswitchcollective.com",
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 4,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 2,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.texaspolicy.com/wp-content/themes/tppf/style.css, Match: 'Version: 1.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "leadin": {
+            "slug": "leadin",
+            "location": "https://www.texaspolicy.com/wp-content/plugins/leadin/",
+            "latest_version": "11.2.0",
+            "last_updated": "2025-03-05T10:50:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "11.1.34",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.texaspolicy.com/, Match: 'HubSpot WordPress plugin v11.1.34'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.texaspolicy.com/wp-content/plugins/leadin/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.texaspolicy.com/wp-content/plugins/leadin/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 3,
+        "requests_remaining": 22
+    },
+    "stop_time": 1741863861,
+    "elapsed": 16,
+    "requests_done": 185,
+    "cached_requests": 7,
+    "data_sent": 54625,
+    "data_sent_humanised": "53.345 KB",
+    "data_received": 816960,
+    "data_received_humanised": "797.812 KB",
+    "used_memory": 286572544,
+    "used_memory_humanised": "273.297 MB"
+}
