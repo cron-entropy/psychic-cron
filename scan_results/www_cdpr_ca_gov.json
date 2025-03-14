@@ -1,0 +1,258 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741953543,
+    "start_memory": 48914432,
+    "target_url": "https://www.cdpr.ca.gov/",
+    "target_ip": "107.154.106.252",
+    "effective_url": "https://www.cdpr.ca.gov/",
+    "interesting_findings": [
+        {
+            "url": "https://www.cdpr.ca.gov/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: nginx",
+                "x-pantheon-styx-hostname: styx-fe4-b-76bc698897-tdbdn",
+                "x-styx-req-id: 4265d3e6-0067-11f0-a2bb-62614be99b35",
+                "via: 1.1 varnish, 1.1 varnish, 1.1 varnish, 1.1 varnish",
+                "x-served-by: cache-chi-klot8100128-CHI, cache-sjc1000140-SJC, cache-sjc10075-SJC, cache-sjc10075-SJC",
+                "x-cache-hits: 5, 237, 0, 0",
+                "x-timer: S1741953541.348626,VS0,VE7",
+                "x-cdn: Imperva",
+                "x-iinfo: 5-32817942-32817944 NNNN CT(1 3 0) RT(1741953540817 13) q(0 0 0 0) r(0 0) U24"
+            ]
+        },
+        {
+            "url": "https://www.cdpr.ca.gov/robots.txt",
+            "to_s": "robots.txt found: https://www.cdpr.ca.gov/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.cdpr.ca.gov/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.cdpr.ca.gov/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 60,
+            "confirmed_by": {
+                "Link Tag (Passive Detection)": {
+                    "confidence": 30
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.cdpr.ca.gov/readme.html",
+            "to_s": "WordPress readme found: https://www.cdpr.ca.gov/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.cdpr.ca.gov/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.cdpr.ca.gov/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.cdpr.ca.gov/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.cdpr.ca.gov/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.cdpr.ca.gov/sample-page/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "cdpr",
+        "location": "https://www.cdpr.ca.gov/wp-content/themes/cdpr/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://www.cdpr.ca.gov/wp-content/themes/cdpr/README.md",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.cdpr.ca.gov/wp-content/themes/cdpr/style.css?v=03142025115901&ver=6.7.2",
+        "style_name": "CDPR",
+        "style_uri": null,
+        "description": "Starter Theme to use with Timber",
+        "author": "CDPR",
+        "author_uri": null,
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": "cdpr",
+        "found_by": "Css Style In 404 Page (Passive Detection)",
+        "confidence": 70,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.0.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.cdpr.ca.gov/wp-content/themes/cdpr/style.css?v=03142025115901&ver=6.7.2, Match: 'Version: 1.0.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "tablepress": {
+            "slug": "tablepress",
+            "location": "https://www.cdpr.ca.gov/wp-content/plugins/tablepress/",
+            "latest_version": "3.0.4",
+            "last_updated": "2025-02-20T06:01:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "TablePress < 2.4.3 - Author+ Stored XSS",
+                    "fixed_in": "2.4.3",
+                    "references": {
+                        "cve": [
+                            "2024-9595"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ffa3b85c-7d08-4f6a-889e-b75620f72a1a"
+                        ],
+                        "wpvulndb": [
+                            "fdba1d77-a469-4ad5-bab2-8acfac83cf2c"
+                        ]
+                    }
+                },
+                {
+                    "title": "TablePress < 2.4.3 - XXE Injection",
+                    "fixed_in": "2.4.3",
+                    "references": {
+                        "cve": [
+                            "2024-45293"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/38f950b7-e3a0-4e05-a8b0-9cc6b6c66b0c"
+                        ],
+                        "wpvulndb": [
+                            "c9c13e5b-22ac-44c1-aca7-e2b34238e045"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "2.3.2",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.cdpr.ca.gov/wp-content/plugins/tablepress/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.cdpr.ca.gov/wp-content/plugins/tablepress/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wordpress-seo-premium": {
+            "slug": "wordpress-seo-premium",
+            "location": "https://www.cdpr.ca.gov/wp-content/plugins/wordpress-seo-premium/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T09:49:22.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "22.1",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.cdpr.ca.gov/wp-content/plugins/wordpress-seo-premium/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 4,
+        "requests_remaining": 21
+    },
+    "stop_time": 1741953564,
+    "elapsed": 20,
+    "requests_done": 184,
+    "cached_requests": 7,
+    "data_sent": 77282,
+    "data_sent_humanised": "75.471 KB",
+    "data_received": 925933,
+    "data_received_humanised": "904.231 KB",
+    "used_memory": 291942400,
+    "used_memory_humanised": "278.418 MB"
+}

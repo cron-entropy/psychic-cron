@@ -1,0 +1,591 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741953454,
+    "start_memory": 48939008,
+    "target_url": "https://www.medpac.gov/",
+    "target_ip": "35.202.139.31",
+    "effective_url": "https://www.medpac.gov/",
+    "interesting_findings": [
+        {
+            "url": "https://www.medpac.gov/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: nginx/1.21.5",
+                "x-sd-cache: HIT"
+            ]
+        },
+        {
+            "url": "https://www.medpac.gov/robots.txt",
+            "to_s": "robots.txt found: https://www.medpac.gov/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://www.medpac.gov/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.medpac.gov/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.medpac.gov/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://www.medpac.gov/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.medpac.gov/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.medpac.gov/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.medpac.gov/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.medpac.gov/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "mat-medpac",
+        "location": "https://www.medpac.gov/wp-content/themes/mat-medpac/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://www.medpac.gov/wp-content/themes/mat-medpac/README.md",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.medpac.gov/wp-content/themes/mat-medpac/style.css",
+        "style_name": "mat-medpac",
+        "style_uri": "http://www.jointswp.com",
+        "description": null,
+        "author": "Your Name Here",
+        "author_uri": "http://www.yoururlhere.com",
+        "template": null,
+        "license": "GNU General Public License & MIT",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "Sass",
+        "text_domain": null,
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 20,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 10,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "6.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.medpac.gov/wp-content/themes/mat-medpac/style.css, Match: 'Version: 6.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "elasticpress": {
+            "slug": "elasticpress",
+            "location": "https://www.medpac.gov/wp-content/plugins/elasticpress/",
+            "latest_version": "5.1.4",
+            "last_updated": "2024-12-12T15:06:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "ElasticPress < 3.5.4 - Cross-Site Request Forgery",
+                    "fixed_in": "3.5.4",
+                    "references": {
+                        "cve": [
+                            "2021-4405"
+                        ],
+                        "url": [
+                            "https://blog.nintechnet.com/multiple-wordpress-plugins-fixed-csrf-vulnerabilities-part-1/"
+                        ],
+                        "wpvulndb": [
+                            "7c3666b4-bd7e-44be-b0c9-af460be2b2a1"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElasticPress < 5.1.2 - Data Sync via CSRF",
+                    "fixed_in": "5.1.2",
+                    "references": {
+                        "cve": [
+                            "2024-35684"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/elasticpress/wordpress-elasticpress-plugin-5-1-0-cross-site-request-forgery-csrf-vulnerability?_s_id=cve"
+                        ],
+                        "wpvulndb": [
+                            "52d874b2-4d02-4395-85b4-911a5e837e70"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "gravityforms": {
+            "slug": "gravityforms",
+            "location": "https://www.medpac.gov/wp-content/plugins/gravityforms/",
+            "latest_version": "2.9.4.2",
+            "last_updated": "2025-03-08T00:00:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.9.4",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.medpac.gov/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.9.4",
+                    "https://www.medpac.gov/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.9.4",
+                    "https://www.medpac.gov/wp-content/plugins/gravityforms/js/conditional_logic.min.js?ver=2.9.4",
+                    "https://www.medpac.gov/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.9.4"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.medpac.gov/wp-content/plugins/gravityforms/change_log.txt, Match: '### 2.9.4'"
+                        ]
+                    }
+                }
+            }
+        },
+        "mat-blocks": {
+            "slug": "mat-blocks",
+            "location": "https://www.medpac.gov/wp-content/plugins/mat-blocks/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "publishpress-authors": {
+            "slug": "publishpress-authors",
+            "location": "https://www.medpac.gov/wp-content/plugins/publishpress-authors/",
+            "latest_version": "4.7.4",
+            "last_updated": "2025-02-20T15:50:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Co-Authors, Multiple Authors and Guest Authors in an Author Box with PublishPress Authors < 4.7.2 - Insecure Direct Object Reference to Authenticated (Author+) Arbitrary User Email Update and Account Takeover",
+                    "fixed_in": "4.7.2",
+                    "references": {
+                        "cve": [
+                            "2024-9215"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d0506137-82e3-4988-9b23-370465a866c0"
+                        ],
+                        "wpvulndb": [
+                            "248bd1c8-8973-4fc4-8776-992a21a05bcb"
+                        ]
+                    }
+                },
+                {
+                    "title": "PublishPress Authors < 4.7.4 - Authenticated (Administrator+) SQL Injection",
+                    "fixed_in": "4.7.4",
+                    "references": {
+                        "cve": [
+                            "2025-26886"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/604e81a2-62ba-49c6-81f4-bab2ad8419c2"
+                        ],
+                        "wpvulndb": [
+                            "a28e9eb8-769f-4769-b448-8b0c3c087870"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "wpdatatables": {
+            "slug": "wpdatatables",
+            "location": "https://www.medpac.gov/wp-content/plugins/wpdatatables/",
+            "latest_version": "3.4.2.41",
+            "last_updated": "2025-03-03T05:27:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "wpDataTables < 1.5.4 - Unauthenticated Shell Upload",
+                    "fixed_in": "1.5.4",
+                    "references": {
+                        "url": [
+                            "https://www.homelab.it/index.php/2014/11/23/wordpress-wpdatatables-shell-upload-vulnerability/",
+                            "https://packetstormsecurity.com/files/129231/",
+                            "http://wpdatatables.com/wpdatatables-1-5-4/"
+                        ],
+                        "wpvulndb": [
+                            "3e836569-f58f-46ee-9b62-123fe01b40b7"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 1.5.4 - Unauthenticated SQL Injection",
+                    "fixed_in": "1.5.4",
+                    "references": {
+                        "cve": [
+                            "2014-9175"
+                        ],
+                        "exploitdb": [
+                            "35340"
+                        ],
+                        "url": [
+                            "https://www.homelab.it/index.php/2014/11/23/wordpress-wpdatatables-sql-injection-vulnerability/",
+                            "https://packetstormsecurity.com/files/129232/",
+                            "http://wpdatatables.com/wpdatatables-1-5-4/",
+                            "https://www.securityfocus.com/bid/71271/"
+                        ],
+                        "wpvulndb": [
+                            "d46b8b0d-abe5-4ec8-b975-27e8d53b9f27"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 2.0.12 - Cross-Site Scripting (XSS) & SQL Injection",
+                    "fixed_in": "2.0.12",
+                    "references": {
+                        "cve": [
+                            "2019-6011",
+                            "2019-6012"
+                        ],
+                        "url": [
+                            "https://jvn.jp/en/jp/JVN14776551/index.html"
+                        ],
+                        "wpvulndb": [
+                            "4e09006b-b3da-469a-91db-c19d2d18f792"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 3.4.1 - Unauthenticated SQL Injection",
+                    "fixed_in": "3.4.1",
+                    "references": {
+                        "cve": [
+                            "2021-26754"
+                        ],
+                        "url": [
+                            "https://n4nj0.github.io/advisories/wordpress-plugin-wpdatatables-i/",
+                            "https://wpdatatables.com/help/whats-new-changelog/"
+                        ],
+                        "wpvulndb": [
+                            "bfd0cfd9-0d6a-47bb-9d73-762ddc138129"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 3.4.2 - Improper Access Control leading to Table Permission Takeover",
+                    "fixed_in": "3.4.2",
+                    "references": {
+                        "cve": [
+                            "2021-24197"
+                        ],
+                        "url": [
+                            "https://n4nj0.github.io/advisories/wordpress-plugin-wpdatatables-ii/",
+                            "https://wpdatatables.com/help/whats-new-changelog/"
+                        ],
+                        "wpvulndb": [
+                            "a56c04a4-dda0-4a7f-a525-d0349a1fda2b"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 3.4.2 - Improper Access Control leading to Table Data Deletion",
+                    "fixed_in": "3.4.2",
+                    "references": {
+                        "cve": [
+                            "2021-24198"
+                        ],
+                        "url": [
+                            "https://n4nj0.github.io/advisories/wordpress-plugin-wpdatatables-ii/",
+                            "https://wpdatatables.com/help/whats-new-changelog/"
+                        ],
+                        "wpvulndb": [
+                            "d953bc62-8a6f-445b-a556-bc25cdd200e3"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 3.4.2 - Blind SQL Injection via start Parameter",
+                    "fixed_in": "3.4.2",
+                    "references": {
+                        "cve": [
+                            "2021-24199"
+                        ],
+                        "url": [
+                            "https://n4nj0.github.io/advisories/wordpress-plugin-wpdatatables-ii/",
+                            "https://wpdatatables.com/help/whats-new-changelog/"
+                        ],
+                        "wpvulndb": [
+                            "5c98c2d6-d002-4cff-9d6f-633cb3ec6280"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 3.4.2 - Blind SQL Injection via length Parameter",
+                    "fixed_in": "3.4.2",
+                    "references": {
+                        "cve": [
+                            "2021-24200"
+                        ],
+                        "url": [
+                            "https://n4nj0.github.io/advisories/wordpress-plugin-wpdatatables-ii/",
+                            "https://wpdatatables.com/help/whats-new-changelog/"
+                        ],
+                        "wpvulndb": [
+                            "21aa7e18-0162-45bf-a5c6-ceee64ffa1f9"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 2.1.28 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "2.1.28",
+                    "references": {
+                        "cve": [
+                            "2022-25618"
+                        ],
+                        "wpvulndb": [
+                            "02a8b0bc-e434-4be5-8892-cba13d1b4329"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 2.1.28 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "2.1.28",
+                    "references": {
+                        "cve": [
+                            "2022-29432"
+                        ],
+                        "wpvulndb": [
+                            "aa843f91-583a-4ebf-8328-2f32d2b72b49"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 2.1.50 - Contributor+ Stored XSS",
+                    "fixed_in": "2.1.50",
+                    "references": {
+                        "cve": [
+                            "2023-23876"
+                        ],
+                        "wpvulndb": [
+                            "bbc95db2-e505-46c0-98f0-6913d09737f8"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables < 2.1.66 - Admin+ PHP Object Injection",
+                    "fixed_in": "2.1.66",
+                    "references": {
+                        "cve": [
+                            "2023-4314"
+                        ],
+                        "wpvulndb": [
+                            "1ab192d7-72ac-4f12-8a51-f28ee4db91bc"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables \u2013 WordPress Data Table, Dynamic Tables & Table Charts Plugin < 3.4.2.5 - Reflected Cross-Site Scripting.",
+                    "fixed_in": "3.4.2.5",
+                    "references": {
+                        "cve": [
+                            "2024-0591"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5a679863-3c22-4d34-9994-1f8ec121ad86"
+                        ],
+                        "wpvulndb": [
+                            "020ddcb5-99a1-424d-8a91-946257a8d0a7"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables \u2013 WordPress Data Table, Dynamic Tables & Table Charts Plugin < 3.4.2.14 - Unauthenticated Stored Cross-Site Scripting via CSV Import",
+                    "fixed_in": "3.4.2.14",
+                    "references": {
+                        "cve": [
+                            "2024-4895"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/0c944e08-1b70-4b56-80eb-f588c0fab5b6"
+                        ],
+                        "wpvulndb": [
+                            "3a01d3e8-ddf0-4f62-91f5-5ea3632137a1"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables - Tables & Table Charts (Premium) < 6.4 - Missing Authorization to DataTable Access & Modification",
+                    "fixed_in": "6.4",
+                    "references": {
+                        "cve": [
+                            "2024-3821"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d32215b5-9ecb-4feb-b76f-18821184dd8b"
+                        ],
+                        "wpvulndb": [
+                            "72060d33-e561-41a5-b2f6-f6cb6922f159"
+                        ]
+                    }
+                },
+                {
+                    "title": "wpDataTables - Tables & Table Charts (Premium) < 6.3.2 - Unauthenticated SQL Injection",
+                    "fixed_in": "6.3.2",
+                    "references": {
+                        "cve": [
+                            "2024-3820"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/fbba822b-172f-4167-bccf-4697a298178e"
+                        ],
+                        "wpvulndb": [
+                            "ca8fdae7-b5c1-405e-a741-f94632ec81a9"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 7,
+        "requests_remaining": 18
+    },
+    "stop_time": 1741953474,
+    "elapsed": 19,
+    "requests_done": 205,
+    "cached_requests": 7,
+    "data_sent": 59603,
+    "data_sent_humanised": "58.206 KB",
+    "data_received": 1009302,
+    "data_received_humanised": "985.646 KB",
+    "used_memory": 301199360,
+    "used_memory_humanised": "287.246 MB"
+}

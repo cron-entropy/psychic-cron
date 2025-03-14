@@ -1,0 +1,114 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741948985,
+    "start_memory": 49070080,
+    "target_url": "https://www.atascientific.com.au/",
+    "target_ip": "110.232.143.30",
+    "effective_url": "https://www.atascientific.com.au/",
+    "interesting_findings": [
+        {
+            "url": "https://www.atascientific.com.au/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-powered-by: PHP/7.4.33",
+                "x-nitro-cache: HIT",
+                "x-nitro-cache-from: drop-in",
+                "x-nitro-rev: 0054824",
+                "x-nitro-expires: 1743189873",
+                "x-cache-ctime: 1741940721",
+                "x-litespeed-cache: hit",
+                "server: LiteSpeed",
+                "alt-svc: h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+            ]
+        },
+        {
+            "url": "https://www.atascientific.com.au/robots.txt",
+            "to_s": "robots.txt found: https://www.atascientific.com.au/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.atascientific.com.au/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.atascientific.com.au/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 30,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": null,
+    "main_theme": null,
+    "plugins": {
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://www.atascientific.com.au/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.5",
+            "last_updated": "2025-03-11T08:37:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Hidden Input (Passive Detection)",
+            "confidence": 40,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.0.4",
+                "confidence": 60,
+                "found_by": "Hidden Input (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.atascientific.com.au/, Match: '6.0.4'"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 1,
+        "requests_remaining": 24
+    },
+    "stop_time": 1741953451,
+    "elapsed": 4465,
+    "requests_done": 887,
+    "cached_requests": 5,
+    "data_sent": 83915,
+    "data_sent_humanised": "81.948 KB",
+    "data_received": 1032305,
+    "data_received_humanised": "1008.11 KB",
+    "used_memory": 267780096,
+    "used_memory_humanised": "255.375 MB"
+}

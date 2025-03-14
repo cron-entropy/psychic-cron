@@ -1,0 +1,535 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741953791,
+    "start_memory": 49061888,
+    "target_url": "https://www.chhs.ca.gov/",
+    "target_ip": "52.126.52.120",
+    "effective_url": "https://www.chhs.ca.gov/",
+    "interesting_findings": [
+        {
+            "url": "https://www.chhs.ca.gov/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server: nginx",
+                "X-Powered-By: PHP/8.3.16",
+                "Referrer-Policy: strict-origin",
+                "Permissions-Policy: geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self)"
+            ]
+        },
+        {
+            "url": "https://www.chhs.ca.gov/robots.txt",
+            "to_s": "robots.txt found: https://www.chhs.ca.gov/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.chhs.ca.gov/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.chhs.ca.gov/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 30,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.chhs.ca.gov/readme.html",
+            "to_s": "WordPress readme found: https://www.chhs.ca.gov/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.chhs.ca.gov/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://www.chhs.ca.gov/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.chhs.ca.gov/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.chhs.ca.gov/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.chhs.ca.gov/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.chhs.ca.gov/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "astra-child",
+        "location": "https://www.chhs.ca.gov/wp-content/themes/astra-child/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://www.chhs.ca.gov/wp-content/themes/astra-child/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.chhs.ca.gov/wp-content/themes/astra-child/style.css",
+        "style_name": "Astra",
+        "style_uri": "https://wpastra.com/",
+        "description": "Astra is fast, fully customizable & beautiful WordPress theme suitable for blog, personal portfolio, business website and WooCommerce storefront. It is very lightweight (less than 50KB on frontend) and offers unparalleled speed. Built with SEO in mind, Astra comes with Schema.org code integrated and is Native AMP ready so search engines will love your site. It offers special features and templates so it works perfectly with all page builders like Elementor, Beaver Builder, Visual Composer, SiteOrigin, Divi, etc. Some of the other features: # WooCommerce Ready # Responsive # RTL & Translation Ready # Extendible with premium addons # Regularly updated # Designed, Developed, Maintained & Supported by Brainstorm Force. Looking for a perfect base theme? Look no further. Astra is fast, fully customizable and WooCommerce ready theme that you can use for building any kind of website!",
+        "author": "Brainstorm Force",
+        "author_uri": "https://wpastra.com/about/?utm_source=theme_preview&utm_medium=author_link&utm_campaign=astra_theme",
+        "template": null,
+        "license": "GNU General Public License v2 or later",
+        "license_uri": "https://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "custom-menu, custom-logo, entertainment, one-column, two-columns, left-sidebar, e-commerce, right-sidebar, custom-colors, editor-style, featured-images, full-width-template, microformats, post-formats, rtl-language-support, theme-options, threaded-comments, translation-ready, blog",
+        "text_domain": "astra",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 16,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 8,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "3.7.7",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.chhs.ca.gov/wp-content/themes/astra-child/style.css, Match: 'Version: 3.7.7'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "addons-for-elementor-premium": {
+            "slug": "addons-for-elementor-premium",
+            "location": "https://www.chhs.ca.gov/wp-content/plugins/addons-for-elementor-premium/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "8.7",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.chhs.ca.gov/wp-content/plugins/addons-for-elementor-premium/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.chhs.ca.gov/wp-content/plugins/addons-for-elementor-premium/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://www.chhs.ca.gov/wp-content/plugins/elementor/",
+            "latest_version": "3.27.7",
+            "last_updated": "2025-03-13T12:23:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Elementor Website Builder < 3.27.5 - Contributor+ Stored XSS",
+                    "fixed_in": "3.27.5",
+                    "references": {
+                        "cve": [
+                            "2024-13445"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a11e702-34d2-49ee-8762-cc3614a7950a"
+                        ],
+                        "wpvulndb": [
+                            "25374232-2f9c-453d-bc47-124f80e67a92"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.27.2",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.chhs.ca.gov/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.27.2",
+                    "https://www.chhs.ca.gov/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.27.2"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.chhs.ca.gov/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.chhs.ca.gov/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor-pro": {
+            "slug": "elementor-pro",
+            "location": "https://www.chhs.ca.gov/wp-content/plugins/elementor-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.27.1",
+                "confidence": 80,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.chhs.ca.gov/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.27.1",
+                    "https://www.chhs.ca.gov/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.27.1"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.chhs.ca.gov/wp-content/plugins/elementor-pro/changelog.txt, Match: '#### 3.27.1 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "essential-addons-for-elementor-lite": {
+            "slug": "essential-addons-for-elementor-lite",
+            "location": "https://www.chhs.ca.gov/wp-content/plugins/essential-addons-for-elementor-lite/",
+            "latest_version": "6.1.5",
+            "last_updated": "2025-03-13T06:28:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.1.1",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.chhs.ca.gov/wp-content/plugins/essential-addons-for-elementor-lite/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.chhs.ca.gov/wp-content/plugins/essential-addons-for-elementor-lite/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "google-analytics-for-wordpress": {
+            "slug": "google-analytics-for-wordpress",
+            "location": "https://www.chhs.ca.gov/wp-content/plugins/google-analytics-for-wordpress/",
+            "latest_version": "9.3.1",
+            "last_updated": "2025-03-11T15:20:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Monster Insights Comment (Passive Detection)": {
+                    "confidence": 30,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "9.3.1",
+                "confidence": 100,
+                "found_by": "Monster Insights Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.chhs.ca.gov/, Match: 'Google Analytics by MonsterInsights plugin v9.3.1 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.chhs.ca.gov/wp-content/plugins/google-analytics-for-wordpress/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.chhs.ca.gov/wp-content/plugins/google-analytics-for-wordpress/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "gtranslate": {
+            "slug": "gtranslate",
+            "location": "https://www.chhs.ca.gov/wp-content/plugins/gtranslate/",
+            "latest_version": "3.0.7",
+            "last_updated": "2024-11-26T20:21:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.0.7",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.chhs.ca.gov/wp-content/plugins/gtranslate/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.chhs.ca.gov/wp-content/plugins/gtranslate/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "header-footer-elementor": {
+            "slug": "header-footer-elementor",
+            "location": "https://www.chhs.ca.gov/wp-content/plugins/header-footer-elementor/",
+            "latest_version": "2.2.1",
+            "last_updated": "2025-03-12T11:13:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.1.0",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.chhs.ca.gov/wp-content/plugins/header-footer-elementor/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.chhs.ca.gov/wp-content/plugins/header-footer-elementor/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://www.chhs.ca.gov/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T08:44:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "24.3",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.chhs.ca.gov/, Match: 'optimized with the Yoast SEO plugin v24.3 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.chhs.ca.gov/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.chhs.ca.gov/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wpfront-scroll-top": {
+            "slug": "wpfront-scroll-top",
+            "location": "https://www.chhs.ca.gov/wp-content/plugins/wpfront-scroll-top/",
+            "latest_version": "2.2",
+            "last_updated": "2024-11-12T04:41:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.2",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.chhs.ca.gov/wp-content/plugins/wpfront-scroll-top/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.chhs.ca.gov/wp-content/plugins/wpfront-scroll-top/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 11,
+        "requests_remaining": 14
+    },
+    "stop_time": 1741953819,
+    "elapsed": 28,
+    "requests_done": 206,
+    "cached_requests": 7,
+    "data_sent": 45485,
+    "data_sent_humanised": "44.419 KB",
+    "data_received": 1615949,
+    "data_received_humanised": "1.541 MB",
+    "used_memory": 281149440,
+    "used_memory_humanised": "268.125 MB"
+}

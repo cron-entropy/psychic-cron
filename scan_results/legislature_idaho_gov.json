@@ -1,0 +1,558 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1741953568,
+    "start_memory": 49020928,
+    "target_url": "https://legislature.idaho.gov/",
+    "target_ip": "164.165.66.180",
+    "effective_url": "https://legislature.idaho.gov/",
+    "interesting_findings": [
+        {
+            "url": "https://legislature.idaho.gov/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server: Apache/2.4.52 (Ubuntu)"
+            ]
+        },
+        {
+            "url": "https://legislature.idaho.gov/robots.txt",
+            "to_s": "robots.txt found: https://legislature.idaho.gov/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php",
+                "/committee-calendar/action~posterboard/",
+                "/committee-calendar/action~agenda/",
+                "/committee-calendar/action~oneday/",
+                "/committee-calendar/action~month/",
+                "/committee-calendar/action~week/",
+                "/committee-calendar/action~stream/",
+                "/committee-calendar/action~undefined/",
+                "/committee-calendar/action~http:/",
+                "/committee-calendar/action~default/",
+                "/committee-calendar/action~poster/",
+                "/committee-calendar/action~*/",
+                "/*controller=ai1ec_exporter_controller*",
+                "/*/action~*/",
+                "/wp-content/uploads/wpo-plugins-tables-list.json"
+            ]
+        },
+        {
+            "url": "https://legislature.idaho.gov/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://legislature.idaho.gov/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 30,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://legislature.idaho.gov/readme.html",
+            "to_s": "WordPress readme found: https://legislature.idaho.gov/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://legislature.idaho.gov/wp-content/debug.log",
+            "to_s": "Debug Log found: https://legislature.idaho.gov/wp-content/debug.log",
+            "type": "debug_log",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://codex.wordpress.org/Debugging_in_WordPress"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://legislature.idaho.gov/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://legislature.idaho.gov/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7",
+        "release_date": "2024-11-12",
+        "status": "insecure",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://legislature.idaho.gov/feed/, <generator>https://wordpress.org/?v=6.7</generator>",
+            "https://legislature.idaho.gov/comments/feed/, <generator>https://wordpress.org/?v=6.7</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "h-code",
+        "location": "https://legislature.idaho.gov/wp-content/themes/h-code/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://legislature.idaho.gov/wp-content/themes/h-code/style.css?ver=1.4",
+        "style_name": "H-Code",
+        "style_uri": "http://www.themezaa.com",
+        "description": "H-Code is a creative, clean, fully responsive, powerful and multipurpose multi page and onepage WordPress and WooCommerce theme with latest web design trends.",
+        "author": "ThemeZaa",
+        "author_uri": "http://www.themezaa.com",
+        "template": null,
+        "license": "Themeforest Split Licence",
+        "license_uri": "-",
+        "tags": null,
+        "text_domain": "h-code",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.4",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://legislature.idaho.gov/wp-content/themes/h-code/style.css?ver=1.4, Match: 'Version: 1.4'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "all-in-one-event-calendar": {
+            "slug": "all-in-one-event-calendar",
+            "location": "https://legislature.idaho.gov/wp-content/plugins/all-in-one-event-calendar/",
+            "latest_version": "3.0.1",
+            "last_updated": "2025-01-20T18:00:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.0",
+                "confidence": 100,
+                "found_by": "Readme - ChangeLog Section (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://legislature.idaho.gov/wp-content/plugins/all-in-one-event-calendar/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Translation File (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://legislature.idaho.gov/wp-content/plugins/all-in-one-event-calendar/language/all-in-one-event-calendar.po, Match: 'n: All-in-One Event Calendar by Time.ly 3.0.0'"
+                        ]
+                    }
+                }
+            }
+        },
+        "email-subscribers-premium": {
+            "slug": "email-subscribers-premium",
+            "location": "https://legislature.idaho.gov/wp-content/plugins/email-subscribers-premium/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "5.7.43",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://legislature.idaho.gov/wp-content/plugins/email-subscribers-premium/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://legislature.idaho.gov/wp-content/plugins/email-subscribers-premium/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "events-manager": {
+            "slug": "events-manager",
+            "location": "https://legislature.idaho.gov/wp-content/plugins/events-manager/",
+            "latest_version": "6.6.4.4",
+            "last_updated": "2025-02-22T21:02:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Events Manager \u2013 Calendar, Bookings, Tickets, and more! < 6.6.4 - Unauthenticated SQL Injection via Event Status Parameter",
+                    "fixed_in": "6.6.4",
+                    "references": {
+                        "cve": [
+                            "2024-11260"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/925402a5-e203-4976-b0a9-88c974b540b9"
+                        ],
+                        "wpvulndb": [
+                            "8ea582e7-d556-4f37-8c4d-c5adec686eb9"
+                        ]
+                    }
+                },
+                {
+                    "title": "Events Manager \u2013 Calendar, Bookings, Tickets, and more! < 6.6.4.2 - Missing Authorization",
+                    "fixed_in": "6.6.4.2",
+                    "references": {
+                        "cve": [
+                            "2025-1249"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/1508ae48-099c-44a2-a1c8-000a5e5acbef"
+                        ],
+                        "wpvulndb": [
+                            "785c7ea1-2ceb-4b1b-af08-4737d7fcf4d4"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "6.6.3",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://legislature.idaho.gov/wp-content/plugins/events-manager/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://legislature.idaho.gov/wp-content/plugins/events-manager/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "events-manager-pro": {
+            "slug": "events-manager-pro",
+            "location": "https://legislature.idaho.gov/wp-content/plugins/events-manager-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.4.1",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://legislature.idaho.gov/wp-content/plugins/events-manager-pro/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "id-legislature": {
+            "slug": "id-legislature",
+            "location": "https://legislature.idaho.gov/wp-content/plugins/id-legislature/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "js_composer": {
+            "slug": "js_composer",
+            "location": "https://legislature.idaho.gov/wp-content/plugins/js_composer/",
+            "latest_version": "8.3",
+            "last_updated": "2025-03-12T18:36:52.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Body Tag (Passive Detection)",
+            "confidence": 40,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "7.9",
+                "confidence": 60,
+                "found_by": "Body Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://legislature.idaho.gov/, Match: 'js-comp-ver-7.9'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "my-calendar": {
+            "slug": "my-calendar",
+            "location": "https://legislature.idaho.gov/wp-content/plugins/my-calendar/",
+            "latest_version": "3.5.21",
+            "last_updated": "2024-12-12T23:13:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.5.20",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://legislature.idaho.gov/wp-content/plugins/my-calendar/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "my-calendar-pro": {
+            "slug": "my-calendar-pro",
+            "location": "https://legislature.idaho.gov/wp-content/plugins/my-calendar-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.1.9",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://legislature.idaho.gov/wp-content/plugins/my-calendar-pro/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "revslider": {
+            "slug": "revslider",
+            "location": "https://legislature.idaho.gov/wp-content/plugins/revslider/",
+            "latest_version": "6.7.30",
+            "last_updated": "2025-03-14T01:54:30.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Slider Revolution < 6.7.19 - Authenticated (Author+) Stored Cross-Site Scripting via SVG File Upload",
+                    "fixed_in": "6.7.19",
+                    "references": {
+                        "cve": [
+                            "2024-8107"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/22b59b36-ba47-4c10-8f43-a29ae3b9d446"
+                        ],
+                        "wpvulndb": [
+                            "278e6259-cb64-4cc1-91c6-2cf2178dd1d0"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "6.7.18",
+                "confidence": 100,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://legislature.idaho.gov/, Match: 'Powered by Slider Revolution 6.7.18'"
+                ],
+                "confirmed_by": {
+                    "Release Log (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://legislature.idaho.gov/wp-content/plugins/revslider/release_log.html, Match: 'Version 6.7.18 (20th August 2024)'"
+                        ]
+                    }
+                }
+            }
+        },
+        "simple-tooltips": {
+            "slug": "simple-tooltips",
+            "location": "https://legislature.idaho.gov/wp-content/plugins/simple-tooltips/",
+            "latest_version": "2.1.4",
+            "last_updated": "2023-01-14T01:37:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Simple Tooltips <= 2.1.4 - Admin+ Stored XSS",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2023-25958"
+                        ],
+                        "wpvulndb": [
+                            "dc7ccb6e-bb14-4a94-9cea-1877d88c29d1"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "2.1.4",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://legislature.idaho.gov/wp-content/plugins/simple-tooltips/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 12,
+        "requests_remaining": 13
+    },
+    "stop_time": 1741953785,
+    "elapsed": 217,
+    "requests_done": 219,
+    "cached_requests": 7,
+    "data_sent": 60354,
+    "data_sent_humanised": "58.939 KB",
+    "data_received": 1789816,
+    "data_received_humanised": "1.707 MB",
+    "used_memory": 294903808,
+    "used_memory_humanised": "281.242 MB"
+}
