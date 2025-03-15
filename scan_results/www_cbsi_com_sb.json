@@ -1,0 +1,339 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742035779,
+    "start_memory": 48934912,
+    "target_url": "https://www.cbsi.com.sb/",
+    "target_ip": "202.1.169.62",
+    "effective_url": "https://www.cbsi.com.sb/",
+    "interesting_findings": [
+        {
+            "url": "https://www.cbsi.com.sb/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server: Apache",
+                "Referrer-Policy: "
+            ]
+        },
+        {
+            "url": "https://www.cbsi.com.sb/robots.txt",
+            "to_s": "robots.txt found: https://www.cbsi.com.sb/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://www.cbsi.com.sb/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.cbsi.com.sb/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.cbsi.com.sb/readme.html",
+            "to_s": "WordPress readme found: https://www.cbsi.com.sb/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.cbsi.com.sb/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://www.cbsi.com.sb/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.cbsi.com.sb/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.cbsi.com.sb/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.cbsi.com.sb/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.cbsi.com.sb/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.5.5",
+        "release_date": "2024-06-24",
+        "status": "outdated",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.cbsi.com.sb/feed/, <generator>https://wordpress.org/?v=6.5.5</generator>",
+            "https://www.cbsi.com.sb/comments/feed/, <generator>https://wordpress.org/?v=6.5.5</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "Extra-child",
+        "location": "https://www.cbsi.com.sb/wp-content/themes/Extra-child/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": true,
+        "error_log_url": null,
+        "style_url": "https://www.cbsi.com.sb/wp-content/themes/Extra-child/style.css?ver=4.24.2",
+        "style_name": "Extra Child",
+        "style_uri": "http://www.elegantthemes.com/gallery/extra/",
+        "description": "Extra",
+        "author": "Elegant Themes",
+        "author_uri": "http://www.elegantthemes.com",
+        "template": "Extra",
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "4.5.3.1675085052",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.cbsi.com.sb/wp-content/themes/Extra-child/style.css?ver=4.24.2, Match: 'Version: 4.5.3.1675085052'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "bellows-accordion-menu": {
+            "slug": "bellows-accordion-menu",
+            "location": "https://www.cbsi.com.sb/wp-content/plugins/bellows-accordion-menu/",
+            "latest_version": "1.4.3",
+            "last_updated": "2025-02-26T18:02:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.4.3",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.cbsi.com.sb/wp-content/plugins/bellows-accordion-menu/assets/css/bellows.min.css?ver=1.4.3",
+                    "https://www.cbsi.com.sb/wp-content/plugins/bellows-accordion-menu/assets/css/fontawesome/css/font-awesome.min.css?ver=1.4.3",
+                    "https://www.cbsi.com.sb/wp-content/plugins/bellows-accordion-menu/assets/js/bellows.min.js?ver=1.4.3"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.cbsi.com.sb/wp-content/plugins/bellows-accordion-menu/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.cbsi.com.sb/wp-content/plugins/bellows-accordion-menu/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "google-site-kit": {
+            "slug": "google-site-kit",
+            "location": "https://www.cbsi.com.sb/wp-content/plugins/google-site-kit/",
+            "latest_version": "1.148.0",
+            "last_updated": "2025-03-10T18:43:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Meta Tag (Passive Detection)",
+            "confidence": 40,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.148.0",
+                "confidence": 100,
+                "found_by": "Meta Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.cbsi.com.sb/, Match: 'Site Kit by Google 1.148.0'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.cbsi.com.sb/wp-content/plugins/google-site-kit/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.cbsi.com.sb/wp-content/plugins/google-site-kit/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "w3-total-cache": {
+            "slug": "w3-total-cache",
+            "location": "https://www.cbsi.com.sb/wp-content/plugins/w3-total-cache/",
+            "latest_version": "2.8.6",
+            "last_updated": "2025-02-21T16:12:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment Debug Info (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.8.6",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.cbsi.com.sb/wp-content/plugins/w3-total-cache/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.cbsi.com.sb/wp-content/plugins/w3-total-cache/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wp-media-folder": {
+            "slug": "wp-media-folder",
+            "location": "https://www.cbsi.com.sb/wp-content/plugins/wp-media-folder/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.0.2",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.cbsi.com.sb/wp-content/plugins/wp-media-folder/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.cbsi.com.sb/wp-content/plugins/wp-media-folder/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 6,
+        "requests_remaining": 19
+    },
+    "stop_time": 1742035917,
+    "elapsed": 137,
+    "requests_done": 190,
+    "cached_requests": 7,
+    "data_sent": 50022,
+    "data_sent_humanised": "48.85 KB",
+    "data_received": 1022011,
+    "data_received_humanised": "998.058 KB",
+    "used_memory": 300453888,
+    "used_memory_humanised": "286.535 MB"
+}

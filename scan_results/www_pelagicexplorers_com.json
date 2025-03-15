@@ -1,0 +1,696 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742035954,
+    "start_memory": 49053696,
+    "target_url": "https://www.pelagicexplorers.com/",
+    "target_ip": "67.205.6.171",
+    "effective_url": "https://www.pelagicexplorers.com/",
+    "interesting_findings": [
+        {
+            "url": "https://www.pelagicexplorers.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: Apache"
+            ]
+        },
+        {
+            "url": "https://www.pelagicexplorers.com/robots.txt",
+            "to_s": "robots.txt found: https://www.pelagicexplorers.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://www.pelagicexplorers.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.pelagicexplorers.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.pelagicexplorers.com/readme.html",
+            "to_s": "WordPress readme found: https://www.pelagicexplorers.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.pelagicexplorers.com/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://www.pelagicexplorers.com/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.pelagicexplorers.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.pelagicexplorers.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.pelagicexplorers.com/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.pelagicexplorers.com/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "twentyseventeen",
+        "location": "https://www.pelagicexplorers.com/wp-content/themes/twentyseventeen/",
+        "latest_version": "3.8",
+        "last_updated": "2024-11-12T00:00:00.000Z",
+        "outdated": false,
+        "readme_url": "https://www.pelagicexplorers.com/wp-content/themes/twentyseventeen/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.pelagicexplorers.com/wp-content/themes/twentyseventeen/style.css?ver=20241112",
+        "style_name": "Twenty Seventeen",
+        "style_uri": "https://wordpress.org/themes/twentyseventeen/",
+        "description": "Twenty Seventeen brings your site to life with header video and immersive featured images. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device.",
+        "author": "the WordPress team",
+        "author_uri": "https://wordpress.org/",
+        "template": null,
+        "license": "GNU General Public License v2 or later",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-patterns",
+        "text_domain": "twentyseventeen",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "3.8",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.pelagicexplorers.com/wp-content/themes/twentyseventeen/style.css?ver=20241112, Match: 'Version: 3.8'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "jetpack": {
+            "slug": "jetpack",
+            "location": "https://www.pelagicexplorers.com/wp-content/plugins/jetpack/",
+            "latest_version": "14.4.1",
+            "last_updated": "2025-03-12T17:44:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "14.4.1",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.pelagicexplorers.com/wp-content/plugins/jetpack/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.pelagicexplorers.com/wp-content/plugins/jetpack/CHANGELOG.md, Match: '## 14.4.1 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "post-grid": {
+            "slug": "post-grid",
+            "location": "https://www.pelagicexplorers.com/wp-content/plugins/post-grid/",
+            "latest_version": "2.3.7",
+            "last_updated": "2025-03-14T23:46:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Post Grid <= 2.0.12 - Unauthenticated Arbitrary File Deletion",
+                    "fixed_in": "2.0.13",
+                    "references": {
+                        "url": [
+                            "https://www.pluginvulnerabilities.com/2016/11/08/file-deletion-vulnerability-in-post-grid/"
+                        ],
+                        "wpvulndb": [
+                            "68ff8dcd-1486-4e7c-9ba7-3de27d5e40b7"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid < 2.0.73 & Team Showcase < 1.22.16 - Authenticated Stored Cross-Site Scripting (XSS)",
+                    "fixed_in": "2.0.73",
+                    "references": {
+                        "cve": [
+                            "2020-35936",
+                            "2020-35937"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2020/10/high-severity-vulnerabilities-in-post-grid-and-team-showcase-plugins/",
+                            "https://plugins.trac.wordpress.org/changeset/2383813/post-grid",
+                            "https://plugins.trac.wordpress.org/changeset/2383826/team"
+                        ],
+                        "wpvulndb": [
+                            "2fa410a8-2b2a-421c-bcab-d5d9dec8b542"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid < 2.0.73 & Team Showcase < 1.22.16 - PHP Object Injection",
+                    "fixed_in": "2.0.73",
+                    "references": {
+                        "cve": [
+                            "2020-35938",
+                            "2020-35939"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2020/10/high-severity-vulnerabilities-in-post-grid-and-team-showcase-plugins/",
+                            "https://plugins.trac.wordpress.org/changeset/2383813/post-grid",
+                            "https://plugins.trac.wordpress.org/changeset/2383826/team"
+                        ],
+                        "wpvulndb": [
+                            "dd44c3f3-fe47-414c-976a-2ba73c47dec8"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid < 2.1.8 - Reflected Cross-Site Scripting (XSS)",
+                    "fixed_in": "2.1.8",
+                    "references": {
+                        "cve": [
+                            "2021-24488"
+                        ],
+                        "wpvulndb": [
+                            "1fc0aace-ba85-4939-9007-d150960add4a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid < 2.1.13 - Contributor+ SQL Injection",
+                    "fixed_in": "2.1.13",
+                    "references": {
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2644269"
+                        ],
+                        "wpvulndb": [
+                            "ecf04da1-09a8-456d-a0cb-6db0a02cb704"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid < 2.1.16 - Reflected Cross-Site Scripting via keyword",
+                    "fixed_in": "2.1.16",
+                    "references": {
+                        "cve": [
+                            "2021-24986"
+                        ],
+                        "wpvulndb": [
+                            "51e57f25-b8b2-44ca-9162-d7328eac64eb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid < 2.1.16 - Reflected Cross-Site Scripting via post_types",
+                    "fixed_in": "2.1.16",
+                    "references": {
+                        "cve": [
+                            "2022-0447"
+                        ],
+                        "wpvulndb": [
+                            "91ca2cc9-951e-4e96-96ff-3bf131209dbe"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid Combo \u2013 36+ Gutenberg Blocks < 2.2.65 - Authenticated (Contributor+) Cross-Site Scripting",
+                    "fixed_in": "2.2.65",
+                    "references": {
+                        "cve": [
+                            "2023-6645"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ab777672-6eef-4078-932d-24bb784107fa"
+                        ],
+                        "wpvulndb": [
+                            "33894b73-1c45-400f-bbc7-f9af818a8b22"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid Combo \u2013 36+ Gutenberg Blocks < 2.2.69 - Information Exposure via get_posts API Endpoint",
+                    "fixed_in": "2.2.69",
+                    "references": {
+                        "cve": [
+                            "2023-7072"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/feee3268-b384-400c-a76d-e5d7972c05b7"
+                        ],
+                        "wpvulndb": [
+                            "ebd4170d-a677-4c40-954c-f56a3a62a7ea"
+                        ]
+                    }
+                },
+                {
+                    "title": "Combo Blocks < 2.2.76 - Unauthenticated Password Protected Posts Access",
+                    "fixed_in": "2.2.76",
+                    "references": {
+                        "cve": [
+                            "2024-0881"
+                        ],
+                        "wpvulndb": [
+                            "e460e926-6e9b-4e9f-b908-ba5c9c7fb290"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid < 2.2.76 - Reflected Cross-Site Scripting",
+                    "fixed_in": "2.2.76",
+                    "references": {
+                        "cve": [
+                            "2024-30441"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/19d394d8-bdc5-4cb5-b210-269197294020"
+                        ],
+                        "wpvulndb": [
+                            "cad2e7de-aa7e-45ec-a538-cbb1f6b4577b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid, Form Maker, Popup Maker, WooCommerce Blocks, Post Blocks, Post Carousel \u2013 Combo Blocks < 2.2.79 - Unauthenticated Sensitive Information Exposure",
+                    "fixed_in": "2.2.79",
+                    "references": {
+                        "cve": [
+                            "2024-32816"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/fb057a32-0027-4ca6-b65e-8634509c9a81"
+                        ],
+                        "wpvulndb": [
+                            "6faa229b-78b7-40d0-95c6-fc1937407254"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid, Form Maker, Popup Maker, WooCommerce Blocks, Post Blocks, Post Carousel \u2013 Combo Blocks < 2.2.81 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "2.2.81",
+                    "references": {
+                        "cve": [
+                            "2024-3155"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/84bc611c-c38a-4282-9a9b-5bb9157fb1de"
+                        ],
+                        "wpvulndb": [
+                            "7fbf7ff5-357c-4131-99c8-e098d3ea7730"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid, Form Maker, Popup Maker, WooCommerce Blocks, Post Blocks, Post Carousel \u2013 Combo Blocks < 2.2.81 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "2.2.81",
+                    "references": {
+                        "cve": [
+                            "2024-1988"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e49da9e7-26a1-442b-b5d0-1da3bcf0e8c9"
+                        ],
+                        "wpvulndb": [
+                            "d3fc0bb4-30b1-4f9a-afe9-b8570d5a8b32"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid, Form Maker, Popup Maker, WooCommerce Blocks, Post Blocks, Post Carousel - Combo Blocks < 2.2.81 - Authenticated (Contributor+) Stored Cross-Site Scripting via Block Attribute",
+                    "fixed_in": "2.2.81",
+                    "references": {
+                        "cve": [
+                            "2024-4042"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/55e6eb58-79e2-4404-887a-0392ce7914aa"
+                        ],
+                        "wpvulndb": [
+                            "1c69d7b3-6411-4658-951f-d6825f89492c"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid, Form Maker, Popup Maker, WooCommerce Blocks, Post Blocks, Post Carousel \u2013 Combo Blocks < 2.2.86 - Authenticated (Contributor+) Stored Cross-Site Scripting via redirectURL Parameter of Date Countdown Widget",
+                    "fixed_in": "2.2.86",
+                    "references": {
+                        "cve": [
+                            "2024-6346"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/1512d911-167f-4653-ab20-cb057b83dab1"
+                        ],
+                        "wpvulndb": [
+                            "1b68656e-9cfc-4fdd-a1d6-8148e6d00fce"
+                        ]
+                    }
+                },
+                {
+                    "title": "Gutenberg Blocks, Page Builder \u2013 ComboBlocks < 2.2.88 - Authenticated (Contributor+) Stored Cross-Site Scripting via Accordion Block",
+                    "fixed_in": "2.2.88",
+                    "references": {
+                        "cve": [
+                            "2024-7588"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/248a9cb2-24e8-46b2-9ef8-23a8444a922d"
+                        ],
+                        "wpvulndb": [
+                            "7143ee96-d9eb-41d1-ad85-829d7c01cc48"
+                        ]
+                    }
+                },
+                {
+                    "title": "ComboBlocks < 2.2.87 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "2.2.87",
+                    "references": {
+                        "cve": [
+                            "2024-43155"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d070f07a-c4e4-48ea-942d-7bb0bb834a52"
+                        ],
+                        "wpvulndb": [
+                            "d039c3fd-5af9-4707-b9b9-20cc883a8be2"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid and Gutenberg Blocks 2.2.87 - 2.2.90 - Subscriber+ Privilege Escalation",
+                    "fixed_in": "2.2.91",
+                    "references": {
+                        "cve": [
+                            "2024-8253"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f5f18cae-b7f8-4afd-adfa-c616c63f9419"
+                        ],
+                        "wpvulndb": [
+                            "b1ad7d07-240f-4be2-9962-d24e23c9ab6c"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid and Gutenberg Blocks < 2.2.90 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "2.2.90",
+                    "references": {
+                        "cve": [
+                            "2024-47340"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c619e758-c71d-41cf-bff9-119ad9e3d9c4"
+                        ],
+                        "wpvulndb": [
+                            "498663ac-9d4c-4ff6-8394-3ffc5a3f3cfa"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid and Gutenberg Blocks < 2.2.94 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "2.2.94",
+                    "references": {
+                        "cve": [
+                            "2024-50432"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/6ddab986-c017-475a-ad92-fa4221d6068c"
+                        ],
+                        "wpvulndb": [
+                            "36333d7d-5da7-40ca-9476-68cd538a4577"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid and Gutenberg Blocks < 2.2.93 - Contributor+ Stored XSS",
+                    "fixed_in": "2.2.93",
+                    "references": {
+                        "cve": [
+                            "2024-9645"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-9645/"
+                        ],
+                        "wpvulndb": [
+                            "cfd6db83-5e7f-4631-87c3-fdcd4c64c4fe"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid and Gutenberg Blocks 2.2.85 - 2.3.3 - Unauthenticated Privilege Escalation",
+                    "fixed_in": "2.3.4",
+                    "references": {
+                        "cve": [
+                            "2024-9636"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/1bbe01b8-24ed-4e1e-bafc-0f4dea96c1f3"
+                        ],
+                        "wpvulndb": [
+                            "1d1e059e-e3ee-4c87-afc6-9e0cc34d6622"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid and Gutenberg Blocks < 2.3.6 - Unauthenticated Paid Order Creation",
+                    "fixed_in": "2.3.6",
+                    "references": {
+                        "cve": [
+                            "2024-13798"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/705823ff-e9c3-4b8b-b71c-3b60d0d15b01"
+                        ],
+                        "wpvulndb": [
+                            "26e7a1ad-820e-45bc-9559-901d6a807d93"
+                        ]
+                    }
+                },
+                {
+                    "title": "Post Grid and Gutenberg Blocks \u2013 ComboBlocks < 2.3.7 - Unauthenticated User Information Exposure",
+                    "fixed_in": "2.3.7",
+                    "references": {
+                        "cve": [
+                            "2024-13796"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/0407223a-cd41-43d1-87b0-d6b83b57d4b3"
+                        ],
+                        "wpvulndb": [
+                            "183a3dad-f5cf-40ae-96d6-0bfca467e086"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "wd-google-maps": {
+            "slug": "wd-google-maps",
+            "location": "https://www.pelagicexplorers.com/wp-content/plugins/wd-google-maps/",
+            "latest_version": "1.0.74",
+            "last_updated": "2023-09-13T15:42:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "10WebMapBuilder < 1.0.72 - Contributor+ Stored XSS via Shortcode",
+                    "fixed_in": "1.0.72",
+                    "references": {
+                        "cve": [
+                            "2022-4758"
+                        ],
+                        "wpvulndb": [
+                            "c2c89234-5e9c-47c8-9827-8ab0b10fb7d6"
+                        ]
+                    }
+                },
+                {
+                    "title": "10WebMapBuilder < 1.0.73 - Unauthenticated SQLi",
+                    "fixed_in": "1.0.73",
+                    "references": {
+                        "cve": [
+                            "2023-0037"
+                        ],
+                        "url": [
+                            "https://bulletin.iese.de/post/wd-google-maps_1-0-72_1"
+                        ],
+                        "wpvulndb": [
+                            "33ab1fe2-6611-4f43-91ba-52c56f02ed56"
+                        ]
+                    }
+                },
+                {
+                    "title": "10Web Map Builder for Google Maps < 1.0.74 - Missing Authorization to Notice Dismissal",
+                    "fixed_in": "1.0.74",
+                    "references": {
+                        "cve": [
+                            "2023-45272"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/63666c16-9f68-4a27-b163-4c25f0a7589e"
+                        ],
+                        "wpvulndb": [
+                            "54be12a0-28ac-479b-b522-1e00dd4b1aa4"
+                        ]
+                    }
+                },
+                {
+                    "title": "10Web Map Builder for Google Maps < 1.0.74 - Cross-Site Request Forgery to Notice Dismissal",
+                    "fixed_in": "1.0.74",
+                    "references": {
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4be81ba0-c678-4234-b63e-da9813817bef"
+                        ],
+                        "wpvulndb": [
+                            "ba7a3734-7aef-4545-8d51-ffacf8541c2b"
+                        ]
+                    }
+                },
+                {
+                    "title": "10Web Map Builder for Google Maps <= 1.0.74 - Authenticated (Administrator+) SQL Injection",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2024-31116"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/9e20afee-9336-458e-ab5c-b320c6887b83"
+                        ],
+                        "wpvulndb": [
+                            "16108c86-4388-4600-99cd-8bffdbb221ca"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "1.0.71",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.pelagicexplorers.com/wp-content/plugins/wd-google-maps/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 5,
+        "requests_remaining": 20
+    },
+    "stop_time": 1742036003,
+    "elapsed": 49,
+    "requests_done": 182,
+    "cached_requests": 7,
+    "data_sent": 50545,
+    "data_sent_humanised": "49.36 KB",
+    "data_received": 1389630,
+    "data_received_humanised": "1.325 MB",
+    "used_memory": 270983168,
+    "used_memory_humanised": "258.43 MB"
+}

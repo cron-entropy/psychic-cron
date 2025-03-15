@@ -1,0 +1,732 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742035591,
+    "start_memory": 48799744,
+    "target_url": "https://www.boffi.com/",
+    "target_ip": "3.171.61.116",
+    "effective_url": "https://www.boffi.com/en/",
+    "interesting_findings": [
+        {
+            "url": "https://www.boffi.com/en/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: Apache",
+                "via: 1.1 a4f1a1c9f87b459b8001bc77030a99b2.cloudfront.net (CloudFront)",
+                "x-amz-cf-pop: IAD61-P8",
+                "x-amz-cf-id: MwSv67fv7Megrxg7YtsujS7KtLXklys5WvGI8AHiz88QLNEQ38QeBA=="
+            ]
+        },
+        {
+            "url": "https://www.boffi.com/robots.txt",
+            "to_s": "robots.txt found: https://www.boffi.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.boffi.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.boffi.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.boffi.com/readme.html",
+            "to_s": "WordPress readme found: https://www.boffi.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.boffi.com/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://www.boffi.com/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "URLs In Homepage (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 80
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.boffi.com/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.boffi.com/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.boffi.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.boffi.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Emoji Settings (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.boffi.com/en/, Match: 'wp-includes\\/js\\/wp-emoji-release.min.js?ver=6.7.2'"
+        ],
+        "confirmed_by": {
+            "Most Common Wp Includes Query Parameter In Homepage (Passive Detection)": {
+                "confidence": 40,
+                "interesting_entries": [
+                    "https://www.boffi.com/wp-includes/css/dist/block-library/style.min.css?ver=6.7.2"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "hello-theme-child",
+        "location": "https://www.boffi.com/wp-content/themes/hello-theme-child/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://www.boffi.com/wp-content/themes/hello-theme-child/readme.txt",
+        "directory_listing": true,
+        "error_log_url": null,
+        "style_url": "https://www.boffi.com/wp-content/themes/hello-theme-child/style.css?ver=1.0.0",
+        "style_name": "Hello Elementor Child",
+        "style_uri": "https://github.com/elementor/hello-theme/",
+        "description": "Hello Elementor Child is a child theme of Hello Elementor, created by Elementor team",
+        "author": "Elementor Team",
+        "author_uri": "https://elementor.com/",
+        "template": "hello-elementor",
+        "license": "GNU General Public License v3 or later.",
+        "license_uri": "https://www.gnu.org/licenses/gpl-3.0.html",
+        "tags": "flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready",
+        "text_domain": "hello-elementor-child",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.0.1",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.boffi.com/wp-content/themes/hello-theme-child/style.css?ver=1.0.0, Match: 'Version: 1.0.1'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://www.boffi.com/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.5",
+            "last_updated": "2025-03-11T08:37:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Contact Form 7 < 5.8.4 - Authenticated (Editor+) Arbitrary File Upload",
+                    "fixed_in": "5.8.4",
+                    "references": {
+                        "cve": [
+                            "2023-6449"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5d7fb020-6acb-445e-a46b-bdb5aaf8f2b6"
+                        ],
+                        "wpvulndb": [
+                            "70e21d9a-b1e6-4083-bcd3-7c1c13fd5382"
+                        ]
+                    }
+                },
+                {
+                    "title": "Contact Form 7 < 5.9.2 - Reflected Cross-Site Scripting",
+                    "fixed_in": "5.9.2",
+                    "references": {
+                        "cve": [
+                            "2024-2242"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d5bf4972-424a-4470-a0bc-7dcc95378e0e"
+                        ],
+                        "wpvulndb": [
+                            "1c070a2c-2ab0-43bf-b10b-6575709918bc"
+                        ]
+                    }
+                },
+                {
+                    "title": " Contact Form 7 < 5.9.5 - Unauthenticated Open Redirect",
+                    "fixed_in": "5.9.5",
+                    "references": {
+                        "cve": [
+                            "2024-4704"
+                        ],
+                        "wpvulndb": [
+                            "8bdcdb5a-9026-4157-8592-345df8fb1a17"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "5.3.2",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.boffi.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.3.2",
+                    "https://www.boffi.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.3.2"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.boffi.com/wp-content/plugins/contact-form-7/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "devvn-image-hotspot": {
+            "slug": "devvn-image-hotspot",
+            "location": "https://www.boffi.com/wp-content/plugins/devvn-image-hotspot/",
+            "latest_version": "1.2.8",
+            "last_updated": "2024-09-25T18:43:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.2.8",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.boffi.com/wp-content/plugins/devvn-image-hotspot/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.boffi.com/wp-content/plugins/devvn-image-hotspot/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "duracelltomi-google-tag-manager": {
+            "slug": "duracelltomi-google-tag-manager",
+            "location": "https://www.boffi.com/wp-content/plugins/duracelltomi-google-tag-manager/",
+            "latest_version": "1.20.3",
+            "last_updated": "2024-12-09T13:30:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.20.3",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.boffi.com/wp-content/plugins/duracelltomi-google-tag-manager/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.boffi.com/wp-content/plugins/duracelltomi-google-tag-manager/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "dynamicconditions": {
+            "slug": "dynamicconditions",
+            "location": "https://www.boffi.com/wp-content/plugins/dynamicconditions/",
+            "latest_version": "1.7.5",
+            "last_updated": "2025-02-11T14:25:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Dynamic Conditions <= 1.7.4 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2025-22642"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f098e597-6938-48c8-948c-94cb475b8f6c"
+                        ],
+                        "wpvulndb": [
+                            "67cfe38d-ee2f-4268-855e-6cca429e549f"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "1.7.5",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.boffi.com/wp-content/plugins/dynamicconditions/README.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.boffi.com/wp-content/plugins/dynamicconditions/README.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://www.boffi.com/wp-content/plugins/elementor/",
+            "latest_version": "3.27.7",
+            "last_updated": "2025-03-13T12:23:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Elementor Website Builder < 3.27.5 - Contributor+ Stored XSS",
+                    "fixed_in": "3.27.5",
+                    "references": {
+                        "cve": [
+                            "2024-13445"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a11e702-34d2-49ee-8762-cc3614a7950a"
+                        ],
+                        "wpvulndb": [
+                            "25374232-2f9c-453d-bc47-124f80e67a92"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.27.2",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.boffi.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.27.2"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.boffi.com/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.boffi.com/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor-pro": {
+            "slug": "elementor-pro",
+            "location": "https://www.boffi.com/wp-content/plugins/elementor-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.27.1",
+                "confidence": 80,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.boffi.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.27.1",
+                    "https://www.boffi.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.27.1"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.boffi.com/wp-content/plugins/elementor-pro/changelog.txt, Match: '#### 3.27.1 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "iubenda-cookie-law-solution": {
+            "slug": "iubenda-cookie-law-solution",
+            "location": "https://www.boffi.com/wp-content/plugins/iubenda-cookie-law-solution/",
+            "latest_version": "3.12.1",
+            "last_updated": "2025-02-12T17:30:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.12.1",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.boffi.com/wp-content/plugins/iubenda-cookie-law-solution/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.boffi.com/wp-content/plugins/iubenda-cookie-law-solution/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "mailup-email-and-newsletter-subscription-form": {
+            "slug": "mailup-email-and-newsletter-subscription-form",
+            "location": "https://www.boffi.com/wp-content/plugins/mailup-email-and-newsletter-subscription-form/",
+            "latest_version": "1.2.7",
+            "last_updated": "2025-02-14T15:22:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.2.7",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.boffi.com/wp-content/plugins/mailup-email-and-newsletter-subscription-form/public/css/mailup-public.css?ver=1.2.7",
+                    "https://www.boffi.com/wp-content/plugins/mailup-email-and-newsletter-subscription-form/public/js/mailup-public.js?ver=1.2.7"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.boffi.com/wp-content/plugins/mailup-email-and-newsletter-subscription-form/README.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.boffi.com/wp-content/plugins/mailup-email-and-newsletter-subscription-form/README.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "sitepress-multilingual-cms": {
+            "slug": "sitepress-multilingual-cms",
+            "location": "https://www.boffi.com/wp-content/plugins/sitepress-multilingual-cms/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.6.15",
+                "confidence": 100,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.boffi.com/en/, Match: 'WPML ver:4.6.15 stt'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.boffi.com/wp-content/plugins/sitepress-multilingual-cms/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://www.boffi.com/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T08:44:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "24.5",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.boffi.com/en/, Match: 'optimized with the Yoast SEO plugin v24.5 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.boffi.com/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.boffi.com/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wordpress-store-locator": {
+            "slug": "wordpress-store-locator",
+            "location": "https://www.boffi.com/wp-content/plugins/wordpress-store-locator/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "wp-statistics": {
+            "slug": "wp-statistics",
+            "location": "https://www.boffi.com/wp-content/plugins/wp-statistics/",
+            "latest_version": "14.12.6",
+            "last_updated": "2025-03-12T12:26:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "14.12.5",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.boffi.com/wp-content/plugins/wp-statistics/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.boffi.com/wp-content/plugins/wp-statistics/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wpml-cms-nav": {
+            "slug": "wpml-cms-nav",
+            "location": "https://www.boffi.com/wp-content/plugins/wpml-cms-nav/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.5.5",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.boffi.com/wp-content/plugins/wpml-cms-nav/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 15,
+        "requests_remaining": 10
+    },
+    "stop_time": 1742035684,
+    "elapsed": 92,
+    "requests_done": 221,
+    "cached_requests": 5,
+    "data_sent": 48494,
+    "data_sent_humanised": "47.357 KB",
+    "data_received": 1685046,
+    "data_received_humanised": "1.607 MB",
+    "used_memory": 297521152,
+    "used_memory_humanised": "283.738 MB"
+}

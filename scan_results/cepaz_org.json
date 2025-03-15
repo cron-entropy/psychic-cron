@@ -1,0 +1,408 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742035688,
+    "start_memory": 48717824,
+    "target_url": "https://cepaz.org/",
+    "target_ip": "104.21.96.1",
+    "effective_url": "https://cepaz.org/",
+    "interesting_findings": [
+        {
+            "url": "https://cepaz.org/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "cf-cache-status: DYNAMIC",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=LbMqgCO%2FrZ%2FR2u%2Fi2MuKijBUc9UuQHeGK5VsVHFFfupeNB%2BdLZFlSMTXdydHgBqI5dujKVotXqKqe9oGlIXNxl%2F6DIq80XgS3BoSJb2tu2EKKwHcMXfscn59n6I%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "cf-ray: 920b6fb898690820-IAD",
+                "alt-svc: h3=\":443\"; ma=86400",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=5486&min_rtt=5474&rtt_var=1548&sent=6&recv=7&lost=0&retrans=0&sent_bytes=3383&recv_bytes=804&delivery_rate=521739&cwnd=252&unsent_bytes=0&cid=7931146443c0656c&ts=207&x=0\""
+            ]
+        },
+        {
+            "url": "https://cepaz.org/robots.txt",
+            "to_s": "robots.txt found: https://cepaz.org/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://cepaz.org/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://cepaz.org/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://cepaz.org/readme.html",
+            "to_s": "WordPress readme found: https://cepaz.org/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://cepaz.org/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://cepaz.org/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://cepaz.org/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://cepaz.org/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://cepaz.org/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://cepaz.org/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://cepaz.org/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://cepaz.org/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "hello-elementor",
+        "location": "https://cepaz.org/wp-content/themes/hello-elementor/",
+        "latest_version": "3.3.0",
+        "last_updated": "2025-01-21T00:00:00.000Z",
+        "outdated": false,
+        "readme_url": "https://cepaz.org/wp-content/themes/hello-elementor/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://cepaz.org/wp-content/themes/hello-elementor/style.css",
+        "style_name": "Hello Elementor",
+        "style_uri": "https://elementor.com/hello-theme/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash",
+        "description": "Hello Elementor is a lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor site builder plugin. The theme is free, open-source, and designed for users who want a flexible, easy-to-use, and customizable website. The theme, which is optimized for performance, provides a solid foundation for users to build their own unique designs using the Elementor drag-and-drop site builder. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.",
+        "author": "Elementor Team",
+        "author_uri": "https://elementor.com/?utm_source=wp-themes&utm_campaign=author-uri&utm_medium=wp-dash",
+        "template": null,
+        "license": "GNU General Public License v3 or later.",
+        "license_uri": "https://www.gnu.org/licenses/gpl-3.0.html",
+        "tags": "accessibility-ready, flexible-header, custom-colors, custom-menu, custom-logo, featured-images, rtl-language-support, threaded-comments, translation-ready,",
+        "text_domain": "hello-elementor",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 12,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 6,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "3.3.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://cepaz.org/wp-content/themes/hello-elementor/style.css, Match: 'Version: 3.3.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://cepaz.org/wp-content/plugins/elementor/",
+            "latest_version": "3.27.7",
+            "last_updated": "2025-03-13T12:23:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.27.6",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://cepaz.org/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.27.6",
+                    "https://cepaz.org/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.27.6"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://cepaz.org/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://cepaz.org/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor-pro": {
+            "slug": "elementor-pro",
+            "location": "https://cepaz.org/wp-content/plugins/elementor-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.27.5",
+                "confidence": 90,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://cepaz.org/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.27.5",
+                    "https://cepaz.org/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.27.5",
+                    "https://cepaz.org/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.27.5"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://cepaz.org/wp-content/plugins/elementor-pro/changelog.txt, Match: '#### 3.27.5 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "google-site-kit": {
+            "slug": "google-site-kit",
+            "location": "https://cepaz.org/wp-content/plugins/google-site-kit/",
+            "latest_version": "1.148.0",
+            "last_updated": "2025-03-10T18:43:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Meta Tag (Passive Detection)",
+            "confidence": 40,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.147.0",
+                "confidence": 100,
+                "found_by": "Meta Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://cepaz.org/, Match: 'Site Kit by Google 1.147.0'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://cepaz.org/wp-content/plugins/google-site-kit/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://cepaz.org/wp-content/plugins/google-site-kit/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "the-grid": {
+            "slug": "the-grid",
+            "location": "https://cepaz.org/wp-content/plugins/the-grid/",
+            "latest_version": "2.7.9.6",
+            "last_updated": "2025-01-11T04:16:02.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "wordpress-seo-premium": {
+            "slug": "wordpress-seo-premium",
+            "location": "https://cepaz.org/wp-content/plugins/wordpress-seo-premium/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T09:49:22.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "WordPress SEO by Yoast < 2.1 - Cross-Site Scripting (XSS)",
+                    "fixed_in": "2.1",
+                    "references": {
+                        "url": [
+                            "https://yoast.com/coordinated-security-release/",
+                            "https://blog.sucuri.net/2015/04/security-advisory-xss-vulnerability-affecting-multiple-wordpress-plugins.html"
+                        ],
+                        "wpvulndb": [
+                            "42d994ec-9da9-4dd6-9d44-347becaedb3a"
+                        ]
+                    }
+                },
+                {
+                    "title": " Yoast SEO 1.2.0-11.5 - Authenticated Stored XSS",
+                    "fixed_in": "11.6",
+                    "references": {
+                        "cve": [
+                            "2019-13478"
+                        ],
+                        "url": [
+                            "https://gist.github.com/sybrew/2f53625104ee013d2f599ac254f635ee",
+                            "https://github.com/Yoast/wordpress-seo/pull/13221",
+                            "https://yoast.com/yoast-seo-11.6/"
+                        ],
+                        "wpvulndb": [
+                            "8bc4cf95-79f7-4d92-b320-a841ab7e6a6f"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "wp-rocket": {
+            "slug": "wp-rocket",
+            "location": "https://cepaz.org/wp-content/plugins/wp-rocket/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Comment (Passive Detection)": {
+                    "confidence": 30,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.18.2",
+                "confidence": 60,
+                "found_by": "Translation File (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://cepaz.org/wp-content/plugins/wp-rocket/languages/rocket.pot, Match: 'Project-Id-Version: WP Rocket 3.18.2'"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 8,
+        "requests_remaining": 17
+    },
+    "stop_time": 1742035774,
+    "elapsed": 85,
+    "requests_done": 206,
+    "cached_requests": 7,
+    "data_sent": 42554,
+    "data_sent_humanised": "41.557 KB",
+    "data_received": 2235326,
+    "data_received_humanised": "2.132 MB",
+    "used_memory": 285958144,
+    "used_memory_humanised": "272.711 MB"
+}
