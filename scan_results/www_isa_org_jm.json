@@ -1,0 +1,861 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742121960,
+    "start_memory": 49033216,
+    "target_url": "https://www.isa.org.jm/",
+    "target_ip": "3.219.124.99",
+    "effective_url": "https://www.isa.org.jm/",
+    "interesting_findings": [
+        {
+            "url": "https://www.isa.org.jm/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-powered-by: PHP/7.4.33",
+                "server: LiteSpeed",
+                "alt-svc: h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\"",
+                "x-litespeed-cache: hit"
+            ]
+        },
+        {
+            "url": "https://www.isa.org.jm/robots.txt",
+            "to_s": "robots.txt found: https://www.isa.org.jm/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/\r",
+                "/wp-admin/admin-ajax.php\r"
+            ]
+        },
+        {
+            "url": "https://www.isa.org.jm/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.isa.org.jm/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.isa.org.jm/readme.html",
+            "to_s": "WordPress readme found: https://www.isa.org.jm/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.isa.org.jm/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.isa.org.jm/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.isa.org.jm/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.isa.org.jm/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "twentytwentyone",
+        "location": "https://www.isa.org.jm/wp-content/themes/twentytwentyone/",
+        "latest_version": "2.4",
+        "last_updated": "2024-11-13T00:00:00.000Z",
+        "outdated": true,
+        "readme_url": "https://www.isa.org.jm/wp-content/themes/twentytwentyone/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.isa.org.jm/wp-content/themes/twentytwentyone/style.css?ver=1.0.0",
+        "style_name": "Twenty Twenty-One",
+        "style_uri": "https://wordpress.org/themes/twentytwentyone/",
+        "description": "Twenty Twenty-One is a blank canvas for your ideas and it makes the block editor your best brush. With new block patterns, which allow you to create a beautiful layout in a matter of seconds, this theme\u2019s soft colors and eye-catching \u2014 yet timeless \u2014 design will let your work shine. Take it for a spin! See how Twenty Twenty-One elevates your portfolio, business website, or personal blog.",
+        "author": "the WordPress team",
+        "author_uri": "https://wordpress.org/",
+        "template": null,
+        "license": "GNU General Public License v2 or later",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready",
+        "text_domain": "twentytwentyone",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.7",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.isa.org.jm/wp-content/themes/twentytwentyone/style.css?ver=1.0.0, Match: 'Version: 1.7'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "add-search-to-menu": {
+            "slug": "add-search-to-menu",
+            "location": "https://www.isa.org.jm/wp-content/plugins/add-search-to-menu/",
+            "latest_version": "5.5.9",
+            "last_updated": "2025-01-29T11:01:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "5.5.9",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.isa.org.jm/wp-content/plugins/add-search-to-menu/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.isa.org.jm/wp-content/plugins/add-search-to-menu/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://www.isa.org.jm/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.5",
+            "last_updated": "2025-03-11T08:37:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.0.5",
+                "confidence": 90,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.isa.org.jm/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.0.5"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.isa.org.jm/wp-content/plugins/contact-form-7/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "email-subscribers": {
+            "slug": "email-subscribers",
+            "location": "https://www.isa.org.jm/wp-content/plugins/email-subscribers/",
+            "latest_version": "5.7.55",
+            "last_updated": "2025-03-12T07:19:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "5.7.55",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.isa.org.jm/wp-content/plugins/email-subscribers/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.isa.org.jm/wp-content/plugins/email-subscribers/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "google-analytics-for-wordpress": {
+            "slug": "google-analytics-for-wordpress",
+            "location": "https://www.isa.org.jm/wp-content/plugins/google-analytics-for-wordpress/",
+            "latest_version": "9.3.1",
+            "last_updated": "2025-03-11T15:20:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Monster Insights Comment (Passive Detection)": {
+                    "confidence": 30,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "9.3.1",
+                "confidence": 100,
+                "found_by": "Monster Insights Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.isa.org.jm/, Match: 'Google Analytics by MonsterInsights plugin v9.3.1 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.isa.org.jm/wp-content/plugins/google-analytics-for-wordpress/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.isa.org.jm/wp-content/plugins/google-analytics-for-wordpress/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "gtranslate": {
+            "slug": "gtranslate",
+            "location": "https://www.isa.org.jm/wp-content/plugins/gtranslate/",
+            "latest_version": "3.0.7",
+            "last_updated": "2024-11-26T20:21:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.0.7",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.isa.org.jm/wp-content/plugins/gtranslate/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.isa.org.jm/wp-content/plugins/gtranslate/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "html5-video-player": {
+            "slug": "html5-video-player",
+            "location": "https://www.isa.org.jm/wp-content/plugins/html5-video-player/",
+            "latest_version": "2.5.38",
+            "last_updated": "2025-02-17T06:25:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.5.38",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.isa.org.jm/wp-content/plugins/html5-video-player/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "js_composer": {
+            "slug": "js_composer",
+            "location": "https://www.isa.org.jm/wp-content/plugins/js_composer/",
+            "latest_version": "8.3",
+            "last_updated": "2025-03-12T18:36:52.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Body Tag (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WPBakery Page Builder < 6.13.0 - Contributor+ Stored XSS",
+                    "fixed_in": "6.13.0",
+                    "references": {
+                        "cve": [
+                            "2023-31213"
+                        ],
+                        "wpvulndb": [
+                            "ee99521d-be25-41ef-8988-5cfd66e9c5ca"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Title tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1841"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/34d21418-4faf-40bf-a960-79482a592722"
+                        ],
+                        "wpvulndb": [
+                            "787a71f8-1179-4442-9441-87fbe83a7e67"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Custom Heading tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1842"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/674e6722-d293-4572-80bf-984e74c3e33f"
+                        ],
+                        "wpvulndb": [
+                            "8ebfad34-7b46-4783-9fad-c96ab4f4c737"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Button onclick attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1805"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7a571386-fae1-4a56-8567-9d3e23249de1"
+                        ],
+                        "wpvulndb": [
+                            "b87926cd-0fe0-49df-8c61-9df1363a67a8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Author",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1840"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/cb8ecbbc-ada9-4887-92e6-25a587ecfb84"
+                        ],
+                        "wpvulndb": [
+                            "b41c2343-3be4-4bd9-ae5d-69ae96ba23ae"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Page Builder < 7.7 - Authenticated (Contributor+) Stored Cross-Site Scripting via VC Single Image link attribute",
+                    "fixed_in": "7.7",
+                    "references": {
+                        "cve": [
+                            "2024-5265"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/35a5114e-5c5f-4003-8bb3-77243ffbac1a"
+                        ],
+                        "wpvulndb": [
+                            "3b067a13-ee58-44c9-80af-ae04af6256c8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5708"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/23ff12f0-eb9d-4bb3-8db0-0e794c0f0594"
+                        ],
+                        "wpvulndb": [
+                            "992e5d47-e290-420a-adf8-f552a929e51d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Local File Inclusion",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5709"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7fad30c8-fd8a-4cf2-a3aa-16a374231b87"
+                        ],
+                        "wpvulndb": [
+                            "6e3e1944-67f7-405e-ae4f-f0ab8c6c9acd"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "6.8.0",
+                "confidence": 80,
+                "found_by": "Body Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.isa.org.jm/, Match: 'js-comp-ver-6.8.0'"
+                ],
+                "confirmed_by": {
+                    "Query Parameter (Passive Detection)": {
+                        "confidence": 20,
+                        "interesting_entries": [
+                            "https://www.isa.org.jm/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=6.8.0",
+                            "https://www.isa.org.jm/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=6.8.0"
+                        ]
+                    }
+                }
+            }
+        },
+        "loftloader": {
+            "slug": "loftloader",
+            "location": "https://www.isa.org.jm/wp-content/plugins/loftloader/",
+            "latest_version": "2.5.1",
+            "last_updated": "2024-12-05T01:09:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.5.1",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.isa.org.jm/wp-content/plugins/loftloader/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.isa.org.jm/wp-content/plugins/loftloader/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "miniorange-otp-verification": {
+            "slug": "miniorange-otp-verification",
+            "location": "https://www.isa.org.jm/wp-content/plugins/miniorange-otp-verification/",
+            "latest_version": "5.2.8",
+            "last_updated": "2025-02-28T06:44:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "5.2.8",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.isa.org.jm/wp-content/plugins/miniorange-otp-verification/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.isa.org.jm/wp-content/plugins/miniorange-otp-verification/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "revslider": {
+            "slug": "revslider",
+            "location": "https://www.isa.org.jm/wp-content/plugins/revslider/",
+            "latest_version": "6.7.30",
+            "last_updated": "2025-03-14T01:54:30.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Revolution Slider <= 6.6.12 - Author+ Remote Code Execution",
+                    "fixed_in": "6.6.13",
+                    "references": {
+                        "cve": [
+                            "2023-2359"
+                        ],
+                        "wpvulndb": [
+                            "a8350890-e6d4-4b04-a158-2b0ee3748e65"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.15 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.6.15",
+                    "references": {
+                        "cve": [
+                            "2023-47772"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/772e843b-00ea-45f5-b730-c9a793d4c2db"
+                        ],
+                        "wpvulndb": [
+                            "3cde24f3-aaad-4eb3-b6ba-a518afe66fbe"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.16 - Authenticated (Author+) Arbitrary File Upload",
+                    "fixed_in": "6.6.16",
+                    "references": {
+                        "cve": [
+                            "2023-47784"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e2d29afd-06e8-461a-918f-38228441a51a"
+                        ],
+                        "wpvulndb": [
+                            "1b841a64-fb0a-434f-b7b4-0777f0480c87"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.19 - Author+ Insecure Deserialization leading to RCE",
+                    "fixed_in": "6.6.19",
+                    "references": {
+                        "cve": [
+                            "2023-6528"
+                        ],
+                        "wpvulndb": [
+                            "36ced447-84ea-4162-80d2-6df226cb53cb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Revslider < 6.7.0 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.0",
+                    "references": {
+                        "cve": [
+                            "2024-2306"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f6af1e90-9bad-470b-9e00-137000c0450c"
+                        ],
+                        "wpvulndb": [
+                            "8238962e-feca-4a45-b335-3c92e668c889"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.8 - Authenticated (Author+) Stored Cross-Site Scripting via htmltag Parameter",
+                    "fixed_in": "6.7.8",
+                    "references": {
+                        "cve": [
+                            "2024-4092"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8437abcc-3e34-4a8a-bfe2-2ff7c9f41164"
+                        ],
+                        "wpvulndb": [
+                            "50dd9668-c263-4bfd-8a94-00a3ad9f656d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting via Add Layer class, id, and title Attributes",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-4581"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a99b8eb9-1511-4ec0-98f4-c0e0c989fa28"
+                        ],
+                        "wpvulndb": [
+                            "4a436977-1295-40e8-9957-bda1b0a3e6d6"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Contributor+) Stored Cross-Site Scripting via Elementor wrapperid and zindex",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-4637"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/457b5066-da37-4877-9abe-c912bc201f29"
+                        ],
+                        "wpvulndb": [
+                            "32b1ee26-525a-4b1e-bdf0-881f0d161788"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.0 - Missing Authorization",
+                    "fixed_in": "6.7.0",
+                    "references": {
+                        "cve": [
+                            "2024-34444"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/14feb451-2ece-467b-abf0-7abac26e40c1"
+                        ],
+                        "wpvulndb": [
+                            "f893fd2d-d040-408a-a800-99bf02e32230"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-34443"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/64852bc8-aeba-458d-9235-94bd4c4ec429"
+                        ],
+                        "wpvulndb": [
+                            "f79b835f-a3a2-40e1-91cc-987604b0a593"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.14 - Authenticated (Administrator+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.14",
+                    "references": {
+                        "cve": [
+                            "2024-37449"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a8fc6a5-a28a-4d6b-8d63-c5e2f4d26422"
+                        ],
+                        "wpvulndb": [
+                            "6d7c04cb-b3c1-4003-866b-a3301929e2aa"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.19 - Authenticated (Author+) Stored Cross-Site Scripting via SVG File Upload",
+                    "fixed_in": "6.7.19",
+                    "references": {
+                        "cve": [
+                            "2024-8107"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/22b59b36-ba47-4c10-8f43-a29ae3b9d446"
+                        ],
+                        "wpvulndb": [
+                            "278e6259-cb64-4cc1-91c6-2cf2178dd1d0"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "6.5.19",
+                "confidence": 100,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.isa.org.jm/, Match: 'Powered by Slider Revolution 6.5.19'"
+                ],
+                "confirmed_by": {
+                    "Release Log (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.isa.org.jm/wp-content/plugins/revslider/release_log.html, Match: 'Version 6.5.19 (14th March 2022)'"
+                        ]
+                    }
+                }
+            }
+        },
+        "wp-youtube-lyte": {
+            "slug": "wp-youtube-lyte",
+            "location": "https://www.isa.org.jm/wp-content/plugins/wp-youtube-lyte/",
+            "latest_version": "1.7.26",
+            "last_updated": "2024-11-09T11:43:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.7.26",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.isa.org.jm/wp-content/plugins/wp-youtube-lyte/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.isa.org.jm/wp-content/plugins/wp-youtube-lyte/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 13,
+        "requests_remaining": 12
+    },
+    "stop_time": 1742122047,
+    "elapsed": 86,
+    "requests_done": 213,
+    "cached_requests": 7,
+    "data_sent": 46405,
+    "data_sent_humanised": "45.317 KB",
+    "data_received": 1258231,
+    "data_received_humanised": "1.2 MB",
+    "used_memory": 280207360,
+    "used_memory_humanised": "267.227 MB"
+}

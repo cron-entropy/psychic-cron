@@ -1,0 +1,601 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742121570,
+    "start_memory": 48771072,
+    "target_url": "https://www.sweettheorybakingco.com/",
+    "target_ip": "69.163.180.56",
+    "effective_url": "https://www.sweettheorybakingco.com/",
+    "interesting_findings": [
+        {
+            "url": "https://www.sweettheorybakingco.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: Apache"
+            ]
+        },
+        {
+            "url": "https://www.sweettheorybakingco.com/robots.txt",
+            "to_s": "robots.txt found: https://www.sweettheorybakingco.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://www.sweettheorybakingco.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.sweettheorybakingco.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.sweettheorybakingco.com/readme.html",
+            "to_s": "WordPress readme found: https://www.sweettheorybakingco.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.sweettheorybakingco.com/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.sweettheorybakingco.com/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.sweettheorybakingco.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.sweettheorybakingco.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.1.7",
+        "release_date": "2024-06-24",
+        "status": "outdated",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.sweettheorybakingco.com/feed/, <generator>https://wordpress.org/?v=6.1.7</generator>",
+            "https://www.sweettheorybakingco.com/comments/feed/, <generator>https://wordpress.org/?v=6.1.7</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "pastry-love",
+        "location": "https://www.sweettheorybakingco.com/wp-content/themes/pastry-love/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.sweettheorybakingco.com/wp-content/themes/pastry-love/style.css",
+        "style_name": "Pastry Love",
+        "style_uri": "http://pastry.bold-themes.com",
+        "description": "Responsive theme.",
+        "author": "BoldThemes",
+        "author_uri": "http://bold-themes.com",
+        "template": null,
+        "license": "GNU General Public License version 3.0 & Envato Regular/Extended License",
+        "license_uri": "http://www.gnu.org/licenses/gpl-3.0.html & http://themeforest.net/licenses",
+        "tags": "one-column, right-sidebar, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready",
+        "text_domain": "pastry-love",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.0.6",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.sweettheorybakingco.com/wp-content/themes/pastry-love/style.css, Match: 'Version: 1.0.6'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "bold-page-builder": {
+            "slug": "bold-page-builder",
+            "location": "https://www.sweettheorybakingco.com/wp-content/plugins/bold-page-builder/",
+            "latest_version": "5.2.6",
+            "last_updated": "2025-02-10T14:12:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "100",
+                "confidence": 50,
+                "found_by": "Readme - ChangeLog Section (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sweettheorybakingco.com/wp-content/plugins/bold-page-builder/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "bt_cost_calculator": {
+            "slug": "bt_cost_calculator",
+            "location": "https://www.sweettheorybakingco.com/wp-content/plugins/bt_cost_calculator/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://www.sweettheorybakingco.com/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.5",
+            "last_updated": "2025-03-11T08:37:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Contact Form 7 < 5.8.4 - Authenticated (Editor+) Arbitrary File Upload",
+                    "fixed_in": "5.8.4",
+                    "references": {
+                        "cve": [
+                            "2023-6449"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5d7fb020-6acb-445e-a46b-bdb5aaf8f2b6"
+                        ],
+                        "wpvulndb": [
+                            "70e21d9a-b1e6-4083-bcd3-7c1c13fd5382"
+                        ]
+                    }
+                },
+                {
+                    "title": "Contact Form 7 < 5.9.2 - Reflected Cross-Site Scripting",
+                    "fixed_in": "5.9.2",
+                    "references": {
+                        "cve": [
+                            "2024-2242"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d5bf4972-424a-4470-a0bc-7dcc95378e0e"
+                        ],
+                        "wpvulndb": [
+                            "1c070a2c-2ab0-43bf-b10b-6575709918bc"
+                        ]
+                    }
+                },
+                {
+                    "title": " Contact Form 7 < 5.9.5 - Unauthenticated Open Redirect",
+                    "fixed_in": "5.9.5",
+                    "references": {
+                        "cve": [
+                            "2024-4704"
+                        ],
+                        "wpvulndb": [
+                            "8bdcdb5a-9026-4157-8592-345df8fb1a17"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "5.7.3",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sweettheorybakingco.com/wp-content/plugins/contact-form-7/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "instagram-feed": {
+            "slug": "instagram-feed",
+            "location": "https://www.sweettheorybakingco.com/wp-content/plugins/instagram-feed/",
+            "latest_version": "6.8.0",
+            "last_updated": "2025-03-12T15:59:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.1.1",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sweettheorybakingco.com/wp-content/plugins/instagram-feed/README.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.sweettheorybakingco.com/wp-content/plugins/instagram-feed/README.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "simple-banner": {
+            "slug": "simple-banner",
+            "location": "https://www.sweettheorybakingco.com/wp-content/plugins/simple-banner/",
+            "latest_version": "3.0.4",
+            "last_updated": "2024-12-19T04:33:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Simple Banner < 3.0.4 - Admin+ Stored XSS",
+                    "fixed_in": "3.0.4",
+                    "references": {
+                        "cve": [
+                            "2024-12769"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-12769/"
+                        ],
+                        "wpvulndb": [
+                            "02b5c1a8-cf2a-4378-bfda-84d841d88a18"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "2.15.4",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sweettheorybakingco.com/wp-content/plugins/simple-banner/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.sweettheorybakingco.com/wp-content/plugins/simple-banner/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "woocommerce": {
+            "slug": "woocommerce",
+            "location": "https://www.sweettheorybakingco.com/wp-content/plugins/woocommerce/",
+            "latest_version": "9.7.1",
+            "last_updated": "2025-03-04T15:28:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WooCommerce < 7.9 - Unauthenticated Sensitive Information Disclosure",
+                    "fixed_in": "7.9",
+                    "references": {
+                        "url": [
+                            "https://hackerone.com/reports/2057736"
+                        ],
+                        "wpvulndb": [
+                            "d1cec296-b5df-4cea-8c0d-d03a975cb6af"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooCommerce < 8.1.1 - Shop Manager+ User Metadata Disclosure",
+                    "fixed_in": "8.1.1",
+                    "references": {
+                        "url": [
+                            "https://hackerone.com/reports/1702658",
+                            "https://developer.woocommerce.com/2023/09/16/woocommerce-vulnerability-reintroduced-from-7-0-1/"
+                        ],
+                        "wpvulndb": [
+                            "bb9f355a-be33-41b1-af36-0a30c24bec8c"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooCommerce < 7.9.0 - Sensitive Information Exposure",
+                    "fixed_in": "7.9.0",
+                    "references": {
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7b2d1879-c337-41c9-9f47-f9c2fe8e5928"
+                        ],
+                        "wpvulndb": [
+                            "9c9498b0-d42e-4ce0-b299-ba5d08058a75"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooCommerce <= 8.1.1 & WooCommerce Blocks <= 11.1.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via Featured Image alt Attribute",
+                    "fixed_in": "8.2.0",
+                    "references": {
+                        "cve": [
+                            "2023-47777"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/525dec5b-b457-483c-ab2d-09dd320edcaa"
+                        ],
+                        "wpvulndb": [
+                            "b8e9b8cf-8d13-4fd8-8e1e-ee35a01baf05"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooCommerce < 8.3.0 - Cross-Site Request Forgery",
+                    "fixed_in": "8.3.0",
+                    "references": {
+                        "cve": [
+                            "2023-52222"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/woocommerce/wordpress-woocommerce-plugin-8-2-2-cross-site-request-forgery-csrf-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "d11e7996-3417-4b1b-a090-2f4d31cdd11d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooCommerce < 8.4.0 - Reflected Cross-Site Scripting",
+                    "fixed_in": "8.4.0",
+                    "references": {
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/43810a17-89b4-44f5-887e-1ad0989ea5b4"
+                        ],
+                        "wpvulndb": [
+                            "0b51f01a-24d9-4101-bdcf-728b21efc5ed"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooCommerce < 8.6 - Contributor+ Private/Draft Products Access",
+                    "fixed_in": "8.6",
+                    "references": {
+                        "cve": [
+                            "2024-1310"
+                        ],
+                        "wpvulndb": [
+                            "a7735feb-876e-461c-9a56-ea6067faf277"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooCommerce < 8.6.0 - Cross-Site Request Forgery",
+                    "fixed_in": "8.6.0",
+                    "references": {
+                        "cve": [
+                            "2024-22155"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/woocommerce/wordpress-woocommerce-plugin-8-5-2-cross-site-request-forgery-csrf-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "14d03287-6571-46d3-89af-0ad64dad6d33"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooCommerce < 9.0.0 - Shop Manager+ Content Injection",
+                    "fixed_in": "9.0.0",
+                    "references": {
+                        "cve": [
+                            "2024-35777"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ee8436c2-3dda-481c-92b3-cc2ba8fc1993"
+                        ],
+                        "wpvulndb": [
+                            "44887eb0-ee24-4368-ba5e-6ed189ba8e5d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooCommerce < 9.2 - Contributor+ Stored XSS",
+                    "fixed_in": "9.2",
+                    "references": {
+                        "url": [
+                            "https://developer.woocommerce.com/2024/08/21/woocommerce-9-2-a-better-experience-for-all-users/"
+                        ],
+                        "wpvulndb": [
+                            "c966c5ea-3cb4-4dc0-ac85-8d534c83804b"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooCommerce < 9.1.0 - Unauthenticated HTML Injection",
+                    "fixed_in": "9.1.0",
+                    "references": {
+                        "cve": [
+                            "2024-9944"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b5dfe2a5-612f-4e6c-a639-4afcff2ffa4c"
+                        ],
+                        "wpvulndb": [
+                            "ccef1e59-40df-4645-aacb-4bb9c4b96456"
+                        ]
+                    }
+                },
+                {
+                    "title": "WooCommerce < 9.4.3 - Unauthenticated Order Creation",
+                    "fixed_in": "9.4.3",
+                    "references": {
+                        "wpvulndb": [
+                            "d51f5bb7-ba87-4ce8-adcf-6bef4217b5db"
+                        ]
+                    }
+                },
+                {
+                    "title": "Woocommerce < 9.7.1 - Shop Manager+ Stored XSS via New Product Form",
+                    "fixed_in": "9.7.1",
+                    "references": {
+                        "cve": [
+                            "2025-26762"
+                        ],
+                        "url": [
+                            "https://developer.woocommerce.com/2025/03/04/woocommerce-9-7-1-dot-release/"
+                        ],
+                        "wpvulndb": [
+                            "94cbfc1b-9a55-44fa-b1d9-0c47980ace3c"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "7.3.0",
+                "confidence": 100,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.sweettheorybakingco.com/, Match: 'WooCommerce 7.3.0'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.sweettheorybakingco.com/wp-content/plugins/woocommerce/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.sweettheorybakingco.com/wp-content/plugins/woocommerce/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 8,
+        "requests_remaining": 17
+    },
+    "stop_time": 1742121930,
+    "elapsed": 359,
+    "requests_done": 197,
+    "cached_requests": 7,
+    "data_sent": 42764,
+    "data_sent_humanised": "41.762 KB",
+    "data_received": 1096096,
+    "data_received_humanised": "1.045 MB",
+    "used_memory": 320790528,
+    "used_memory_humanised": "305.93 MB"
+}

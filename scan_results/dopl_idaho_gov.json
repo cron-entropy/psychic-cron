@@ -1,0 +1,534 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742122125,
+    "start_memory": 48750592,
+    "target_url": "https://dopl.idaho.gov/",
+    "target_ip": "164.165.66.150",
+    "effective_url": "https://dopl.idaho.gov/",
+    "interesting_findings": [
+        {
+            "url": "https://dopl.idaho.gov/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server: Microsoft-IIS/10.0",
+                "X-Powered-By: PHP/8.2.26"
+            ]
+        },
+        {
+            "url": "https://dopl.idaho.gov/robots.txt",
+            "to_s": "robots.txt found: https://dopl.idaho.gov/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "\r"
+            ]
+        },
+        {
+            "url": "https://dopl.idaho.gov/readme.html",
+            "to_s": "WordPress readme found: https://dopl.idaho.gov/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://dopl.idaho.gov/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://dopl.idaho.gov/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://dopl.idaho.gov/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://dopl.idaho.gov/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "Webmaster-Alternate",
+        "location": "https://dopl.idaho.gov/wp-content/themes/Webmaster-Alternate/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://dopl.idaho.gov/wp-content/themes/Webmaster-Alternate/style.css?ver=6.7.2",
+        "style_name": "Idaho Webmaster Alternate 2024",
+        "style_uri": null,
+        "description": "Official modern WordPress theme for all Idaho state agency websites with alternate header and navigation design.",
+        "author": "Tyler Idaho",
+        "author_uri": "https://tyleridaho.com",
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": "idaho-v3-alt",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "3.5.2a",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://dopl.idaho.gov/wp-content/themes/Webmaster-Alternate/style.css?ver=6.7.2, Match: 'Version: 3.5.2a'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://dopl.idaho.gov/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.5",
+            "last_updated": "2025-03-11T08:37:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Hidden Input (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.0.3",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://dopl.idaho.gov/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.0.3"
+                ],
+                "confirmed_by": {
+                    "Hidden Input (Passive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://dopl.idaho.gov/, Match: '6.0.3'"
+                        ]
+                    },
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://dopl.idaho.gov/wp-content/plugins/contact-form-7/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://dopl.idaho.gov/wp-content/plugins/elementor/",
+            "latest_version": "3.27.7",
+            "last_updated": "2025-03-13T12:23:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Elementor Website Builder < 3.27.5 - Contributor+ Stored XSS",
+                    "fixed_in": "3.27.5",
+                    "references": {
+                        "cve": [
+                            "2024-13445"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a11e702-34d2-49ee-8762-cc3614a7950a"
+                        ],
+                        "wpvulndb": [
+                            "25374232-2f9c-453d-bc47-124f80e67a92"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.27.4",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://dopl.idaho.gov/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.27.4",
+                    "https://dopl.idaho.gov/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.27.4"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://dopl.idaho.gov/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://dopl.idaho.gov/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor-pro": {
+            "slug": "elementor-pro",
+            "location": "https://dopl.idaho.gov/wp-content/plugins/elementor-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Elementor Website Builder Pro \u2013 More than Just a Page Builder < 3.25.11 - Authenticated (Contributor+) Sensitive Information Exposure via Shortcode",
+                    "fixed_in": "3.25.11",
+                    "references": {
+                        "cve": [
+                            "2024-8494"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/94ada60f-1e20-454e-a9d7-7849be764d81"
+                        ],
+                        "wpvulndb": [
+                            "771699f9-aa9b-4352-8382-5fbc17f364c2"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.24.2",
+                "confidence": 90,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://dopl.idaho.gov/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.24.2",
+                    "https://dopl.idaho.gov/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.24.2",
+                    "https://dopl.idaho.gov/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.24.2"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://dopl.idaho.gov/wp-content/plugins/elementor-pro/changelog.txt, Match: '#### 3.24.2 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "google-analytics-for-wordpress": {
+            "slug": "google-analytics-for-wordpress",
+            "location": "https://dopl.idaho.gov/wp-content/plugins/google-analytics-for-wordpress/",
+            "latest_version": "9.3.1",
+            "last_updated": "2025-03-11T15:20:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Monster Insights Comment (Passive Detection)": {
+                    "confidence": 30,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "9.2.4",
+                "confidence": 100,
+                "found_by": "Monster Insights Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://dopl.idaho.gov/, Match: 'Google Analytics by MonsterInsights plugin v9.2.4 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://dopl.idaho.gov/wp-content/plugins/google-analytics-for-wordpress/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://dopl.idaho.gov/wp-content/plugins/google-analytics-for-wordpress/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "megamenu": {
+            "slug": "megamenu",
+            "location": "https://dopl.idaho.gov/wp-content/plugins/megamenu/",
+            "latest_version": "3.4.1",
+            "last_updated": "2024-11-20T10:25:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.3.2",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://dopl.idaho.gov/wp-content/plugins/megamenu/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "modern-events-calendar-lite": {
+            "slug": "modern-events-calendar-lite",
+            "location": "https://dopl.idaho.gov/wp-content/plugins/modern-events-calendar-lite/",
+            "latest_version": "6.5.6",
+            "last_updated": "2022-05-10T21:06:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "7.14.1",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://dopl.idaho.gov/wp-content/plugins/modern-events-calendar-lite/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://dopl.idaho.gov/wp-content/plugins/modern-events-calendar-lite/changelog.txt, Match: '7.14.1'"
+                        ]
+                    }
+                }
+            }
+        },
+        "search-filter-pro": {
+            "slug": "search-filter-pro",
+            "location": "https://dopl.idaho.gov/wp-content/plugins/search-filter-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Search Filter Pro < 2.5.18 - Admin+ Stored XSS",
+                    "fixed_in": "2.5.18",
+                    "references": {
+                        "cve": [
+                            "2024-6481"
+                        ],
+                        "url": [
+                            "https://searchandfilter.com/documentation/changelog/"
+                        ],
+                        "wpvulndb": [
+                            "53357868-2bcb-48eb-8abd-83186ff8d027"
+                        ]
+                    }
+                },
+                {
+                    "title": "Search and filter pro < 2.5.20 - Missing Authorization to Authenticated (Subscriber+) Post Meta Exposure",
+                    "fixed_in": "2.5.20",
+                    "references": {
+                        "cve": [
+                            "2025-1528"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/47adb5fe-534f-48a9-81a3-883e1d2cda7f"
+                        ],
+                        "wpvulndb": [
+                            "552df010-28e5-40d9-ba79-7673a42850fc"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "2.5.14",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://dopl.idaho.gov/wp-content/plugins/search-filter-pro/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "tablepress": {
+            "slug": "tablepress",
+            "location": "https://dopl.idaho.gov/wp-content/plugins/tablepress/",
+            "latest_version": "3.0.4",
+            "last_updated": "2025-02-20T06:01:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.0.3",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://dopl.idaho.gov/wp-content/plugins/tablepress/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://dopl.idaho.gov/wp-content/plugins/tablepress/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://dopl.idaho.gov/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T08:44:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "24.4",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://dopl.idaho.gov/, Match: 'optimized with the Yoast SEO plugin v24.4 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://dopl.idaho.gov/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://dopl.idaho.gov/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 11,
+        "requests_remaining": 14
+    },
+    "stop_time": 1742122346,
+    "elapsed": 220,
+    "requests_done": 213,
+    "cached_requests": 7,
+    "data_sent": 55489,
+    "data_sent_humanised": "54.188 KB",
+    "data_received": 1536312,
+    "data_received_humanised": "1.465 MB",
+    "used_memory": 292016128,
+    "used_memory_humanised": "278.488 MB"
+}

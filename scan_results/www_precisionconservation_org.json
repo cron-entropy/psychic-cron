@@ -1,0 +1,797 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742121934,
+    "start_memory": 48738304,
+    "target_url": "https://www.precisionconservation.org/",
+    "target_ip": "192.80.98.13",
+    "effective_url": "https://www.precisionconservation.org/",
+    "interesting_findings": [
+        {
+            "url": "https://www.precisionconservation.org/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: Apache/2.4.38 (Debian)",
+                "x-powered-by: PHP/7.4.10"
+            ]
+        },
+        {
+            "url": "https://www.precisionconservation.org/robots.txt",
+            "to_s": "robots.txt found: https://www.precisionconservation.org/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.precisionconservation.org/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.precisionconservation.org/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.precisionconservation.org/readme.html",
+            "to_s": "WordPress readme found: https://www.precisionconservation.org/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.precisionconservation.org/wp-content/debug.log",
+            "to_s": "Debug Log found: https://www.precisionconservation.org/wp-content/debug.log",
+            "type": "debug_log",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://codex.wordpress.org/Debugging_in_WordPress"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.precisionconservation.org/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.precisionconservation.org/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.3.5",
+        "release_date": "2024-06-24",
+        "status": "outdated",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.precisionconservation.org/feed/, <generator>https://wordpress.org/?v=6.3.5</generator>",
+            "https://www.precisionconservation.org/comments/feed/, <generator>https://wordpress.org/?v=6.3.5</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "empowerwp-pro",
+        "location": "https://www.precisionconservation.org/wp-content/themes/empowerwp-pro/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://www.precisionconservation.org/wp-content/themes/empowerwp-pro/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.precisionconservation.org/wp-content/themes/empowerwp-pro/style.css",
+        "style_name": "EmpowerWP PRO",
+        "style_uri": "https://extendthemes.com/go/mesmerize-home/",
+        "description": "Mesmerize is an incredibly flexible, multipurpose WordPress theme that can help you create an amazing website easier than ever, by drag and drop. It comes with a predesigned home page, 5 header designs and over 30 ready to use content sections that you can easily customize. It also has lots of customization options (video background, slideshow background, header content types, gradient overlays, etc) that will help you create a beautiful, unique website in no time. Mesmerize is responsive so it works on mobile devices out of the box and it is also WooCommerce ready. DEMO: https://extendthemes.com/go/mesmerize-demos/",
+        "author": "Horea Radu",
+        "author_uri": "https://extendthemes.com/",
+        "template": null,
+        "license": "GNU General Public License version 3",
+        "license_uri": "http://www.opensource.org/licenses/gpl-license.php GPL v3.0 (or later)",
+        "tags": "entertainment, food-and-drink, portfolio, one-column, two-columns, right-sidebar, grid-layout, custom-header, custom-menu, custom-logo, full-width-template, theme-options, translation-ready, featured-images, threaded-comments",
+        "text_domain": "mesmerize",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 18,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 8,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.1.16",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.precisionconservation.org/wp-content/themes/empowerwp-pro/style.css, Match: 'Version: 1.1.16'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "coblocks": {
+            "slug": "coblocks",
+            "location": "https://www.precisionconservation.org/wp-content/plugins/coblocks/",
+            "latest_version": "3.1.14",
+            "last_updated": "2024-12-20T22:31:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Page Builder Gutenberg Blocks < 3.1.7 - Contributor+ Stored XSS",
+                    "fixed_in": "3.1.7",
+                    "references": {
+                        "cve": [
+                            "2024-2369"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-2369/"
+                        ],
+                        "wpvulndb": [
+                            "252dfc35-4c8c-4304-aa09-73dfe986b10d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Page Builder Gutenberg Blocks \u2013 CoBlocks < 3.1.7 - Contributor+ Stored XSS",
+                    "fixed_in": "3.1.7",
+                    "references": {
+                        "cve": [
+                            "2024-1049"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/56d1d152-946f-47c9-b0d5-76513370677f"
+                        ],
+                        "wpvulndb": [
+                            "c0dc37d2-01b4-49ae-94c7-8dbd00c0f50e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Page Builder Gutenberg Blocks \u2013 CoBlocks < 3.1.10 - Authenticated (Contributor+) Stored Cross-Site Scripting via Social Profiles",
+                    "fixed_in": "3.1.10",
+                    "references": {
+                        "cve": [
+                            "2024-2933"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/020d14f8-e8e2-4da2-9a4b-4d15cb0994c8"
+                        ],
+                        "wpvulndb": [
+                            "fc0d6908-5556-4b9a-88ad-7b871203a662"
+                        ]
+                    }
+                },
+                {
+                    "title": "CoBlocks < 3.1.12 - Contributor+ SSRF",
+                    "fixed_in": "3.1.12",
+                    "references": {
+                        "cve": [
+                            "2024-4260"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-4260/"
+                        ],
+                        "wpvulndb": [
+                            "69f33e20-8ff4-491c-8f37-a4eadd4ea8cf"
+                        ]
+                    }
+                },
+                {
+                    "title": "CoBlocks < 3.1.13 - Editor+ Stored XSS",
+                    "fixed_in": "3.1.13",
+                    "references": {
+                        "cve": [
+                            "2024-7132"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-7132/"
+                        ],
+                        "wpvulndb": [
+                            "16deb743-6fe9-43a2-9586-d92cfe1daa17"
+                        ]
+                    }
+                },
+                {
+                    "title": "CoBlocks < 3.1.14 - Missing Authorization",
+                    "fixed_in": "3.1.14",
+                    "references": {
+                        "cve": [
+                            "2025-24751"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/9699970f-76a4-4f10-9836-4e46ac8d6914"
+                        ],
+                        "wpvulndb": [
+                            "f1cba904-189d-48a2-83d1-c1c2cf86edf5"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "2.22.1",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.precisionconservation.org/wp-content/plugins/coblocks/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.precisionconservation.org/wp-content/plugins/coblocks/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "google-analytics-dashboard-for-wp": {
+            "slug": "google-analytics-dashboard-for-wp",
+            "location": "https://www.precisionconservation.org/wp-content/plugins/google-analytics-dashboard-for-wp/",
+            "latest_version": "8.3.2",
+            "last_updated": "2025-03-11T15:09:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Comment (Passive Detection)": {
+                    "confidence": 30,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "ExactMetrics < 8.2.0 - Missing Authorization",
+                    "fixed_in": "8.2.0",
+                    "references": {
+                        "cve": [
+                            "2025-24750"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f7b239b1-c234-40d0-a4bc-f2db54937494"
+                        ],
+                        "wpvulndb": [
+                            "cfb66190-ef07-4228-a522-0844195c0da4"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "7.19",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.precisionconservation.org/, Match: 'Analytics by ExactMetrics plugin v7.19'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.precisionconservation.org/wp-content/plugins/google-analytics-dashboard-for-wp/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.precisionconservation.org/wp-content/plugins/google-analytics-dashboard-for-wp/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "grids": {
+            "slug": "grids",
+            "location": "https://www.precisionconservation.org/wp-content/plugins/grids/",
+            "latest_version": "1.3.10",
+            "last_updated": "2023-11-16T15:19:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.3.7",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.precisionconservation.org/wp-content/plugins/grids/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "mesmerize-companion": {
+            "slug": "mesmerize-companion",
+            "location": "https://www.precisionconservation.org/wp-content/plugins/mesmerize-companion/",
+            "latest_version": "1.6.157",
+            "last_updated": "2024-11-06T07:56:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Mesmerize Companion < 1.6.135 - Contributor+ Stored XSS",
+                    "fixed_in": "1.6.135",
+                    "references": {
+                        "cve": [
+                            "2022-4481"
+                        ],
+                        "wpvulndb": [
+                            "9dc9d377-635d-4d4f-9916-33bcedbba6f0"
+                        ]
+                    }
+                },
+                {
+                    "title": "Mesmerize Companion < 1.6.149 - Authenticated (Contributor+) Stored Cross-Site Scripting via mesmerize_contact_form Shortcode",
+                    "fixed_in": "1.6.149",
+                    "references": {
+                        "cve": [
+                            "2024-3494"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/521bb5a3-0a0c-4693-a87d-fabb64f1ad4f"
+                        ],
+                        "wpvulndb": [
+                            "ac267e10-ede1-46a2-8ec6-c872958e860a"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "otter-blocks": {
+            "slug": "otter-blocks",
+            "location": "https://www.precisionconservation.org/wp-content/plugins/otter-blocks/",
+            "latest_version": "3.0.10",
+            "last_updated": "2025-02-05T17:54:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Otter - Gutenberg Blocks < 2.2.6 - Author+ PHAR Deserialization",
+                    "fixed_in": "2.2.6",
+                    "references": {
+                        "cve": [
+                            "2023-2288"
+                        ],
+                        "wpvulndb": [
+                            "93acb4ee-1053-48e1-8b69-c09dc3b2f302"
+                        ]
+                    }
+                },
+                {
+                    "title": "Otter Blocks < 2.6.5 - Contributor+ Stored Cross-Site Scripting",
+                    "fixed_in": "2.6.5",
+                    "references": {
+                        "cve": [
+                            "2024-2226"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/217d3148-d411-4fff-a4f6-d5d02ef207af"
+                        ],
+                        "wpvulndb": [
+                            "eaa747d5-7009-4896-9659-cb3ef17d9e48"
+                        ]
+                    }
+                },
+                {
+                    "title": "Otter Blocks < 2.6.6 - Contributor+ Stored XSS",
+                    "fixed_in": "2.6.6",
+                    "references": {
+                        "cve": [
+                            "2024-2729"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-2729/"
+                        ],
+                        "wpvulndb": [
+                            "5014f886-020e-49d1-96a5-2159eed8ba14"
+                        ]
+                    }
+                },
+                {
+                    "title": "Otter Blocks < 2.6.6 - Contributor+ Stored XSS",
+                    "fixed_in": "2.6.6",
+                    "references": {
+                        "cve": [
+                            "2024-2841"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/99e24496-0e3b-4bff-ba14-dc535be10633"
+                        ],
+                        "wpvulndb": [
+                            "cbd0b738-32bc-4165-9403-17793156df1f"
+                        ]
+                    }
+                },
+                {
+                    "title": "Otter Blocks \u2013 Gutenberg Blocks, Page Builder for Gutenberg Editor & FSE < 2.6.9 - Contributor+ Stored Cross-Site Scripting via Block Attributes",
+                    "fixed_in": "2.6.9",
+                    "references": {
+                        "cve": [
+                            "2024-3343"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/67981160-6c91-48a4-ba1c-68204d538ed6"
+                        ],
+                        "wpvulndb": [
+                            "d6e2b156-98f2-4a1e-a61e-60e139cd5a51"
+                        ]
+                    }
+                },
+                {
+                    "title": "Otter Blocks \u2013 Gutenberg Blocks, Page Builder for Gutenberg Editor & FSE < 2.6.9 - Author+ Stored XSS via SVG Upload",
+                    "fixed_in": "2.6.9",
+                    "references": {
+                        "cve": [
+                            "2024-3344"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/db836f4b-d31f-4442-89a5-1a400525c598"
+                        ],
+                        "wpvulndb": [
+                            "48c5848d-9388-4068-8f04-17fdb5f1bb7a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Otter Blocks < 2.6.10 - Contributor+ Stored XSS via titleTag",
+                    "fixed_in": "2.6.10",
+                    "references": {
+                        "cve": [
+                            "2024-3725"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ceb041f6-b88a-495a-8f5f-7f39f640748d"
+                        ],
+                        "wpvulndb": [
+                            "11220291-bba7-4dee-87a4-9a809c852bdb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Otter Blocks \u2013 Gutenberg Blocks, Page Builder for Gutenberg Editor & FSE < 3.0.5 - Authenticated (Author+) Stored Cross-Site Scripting via SVG File Upload",
+                    "fixed_in": "3.0.5",
+                    "references": {
+                        "cve": [
+                            "2024-10367"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/9d83c085-b33a-4003-9e0a-8457669d6634"
+                        ],
+                        "wpvulndb": [
+                            "cfbbcd32-ed8a-4f70-a700-228137eace77"
+                        ]
+                    }
+                },
+                {
+                    "title": "Otter - Gutenberg Block < 3.0.4 - Missing Authorization",
+                    "fixed_in": "3.0.4",
+                    "references": {
+                        "cve": [
+                            "2024-51671"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/6d43be1d-a6e7-427f-9e13-bd2fe85b3a11"
+                        ],
+                        "wpvulndb": [
+                            "9215b14b-b30d-4001-9e0c-b60474f32af6"
+                        ]
+                    }
+                },
+                {
+                    "title": "Otter Blocks \u2013 Gutenberg Blocks, Page Builder for Gutenberg Editor & FSE < 3.0.7 - Unauthetnicated Path Traversal to Arbitrary Image View",
+                    "fixed_in": "3.0.7",
+                    "references": {
+                        "cve": [
+                            "2024-11219"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c5e9ab63-d61e-40f1-a5cb-432f33dfd2a6"
+                        ],
+                        "wpvulndb": [
+                            "79e20dbb-a3d7-4453-b0e8-d68793a74d44"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "1.3.1",
+                "confidence": 100,
+                "found_by": "Readme - ChangeLog Section (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.precisionconservation.org/wp-content/plugins/otter-blocks/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.precisionconservation.org/wp-content/plugins/otter-blocks/CHANGELOG.md, Match: '## v1.3.1'"
+                        ]
+                    }
+                }
+            }
+        },
+        "stackable-ultimate-gutenberg-blocks": {
+            "slug": "stackable-ultimate-gutenberg-blocks",
+            "location": "https://www.precisionconservation.org/wp-content/plugins/stackable-ultimate-gutenberg-blocks/",
+            "latest_version": "3.14.2",
+            "last_updated": "2025-02-17T12:32:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Freemius SDK < 2.5.10 - Reflected Cross-Site Scripting",
+                    "fixed_in": "3.9.1",
+                    "references": {
+                        "cve": [
+                            "2023-33999"
+                        ],
+                        "wpvulndb": [
+                            "7fd1ad0e-9db9-47b7-9966-d3f5a8771571"
+                        ]
+                    }
+                },
+                {
+                    "title": "Stackable < 3.12.12 - Contributor+ Stored XSS via Posts Block",
+                    "fixed_in": "3.12.12",
+                    "references": {
+                        "cve": [
+                            "2024-2039"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/daa30b1b-cb8f-43fd-8329-c64b4024408f"
+                        ],
+                        "wpvulndb": [
+                            "ab93ab20-73d1-4ea7-8d43-4f15953bb007"
+                        ]
+                    }
+                },
+                {
+                    "title": "Stackable \u2013 Page Builder Gutenberg Blocks < 3.13.2 - Authenticated (Contributor+) DOM-Based Stored Cross-Site Scripting",
+                    "fixed_in": "3.13.2",
+                    "references": {
+                        "cve": [
+                            "2024-6296"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e55742de-9eaf-48e4-8d5d-ea980dfa17cf"
+                        ],
+                        "wpvulndb": [
+                            "30f43f34-73f4-4914-9424-78c9fad17062"
+                        ]
+                    }
+                },
+                {
+                    "title": "Stackable \u2013 Page Builder Gutenberg Blocks < 3.13.7 - Unauthenticated CSS Injection",
+                    "fixed_in": "3.13.7",
+                    "references": {
+                        "cve": [
+                            "2024-8760"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/1fd0b13c-7447-45da-9608-80b7629d9bbf"
+                        ],
+                        "wpvulndb": [
+                            "48573c6a-a545-4906-8734-673fa44633cd"
+                        ]
+                    }
+                },
+                {
+                    "title": "Stackable \u2013 Page Builder Gutenberg Blocks < 3.13.12 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "3.13.12",
+                    "references": {
+                        "cve": [
+                            "2024-12117"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/bedc2254-29aa-46c5-8f85-47dd6affb42b"
+                        ],
+                        "wpvulndb": [
+                            "5fd777df-5b78-4d9f-a881-178924ee671e"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.1.5",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.precisionconservation.org/wp-content/plugins/stackable-ultimate-gutenberg-blocks/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.precisionconservation.org/wp-content/plugins/stackable-ultimate-gutenberg-blocks/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://www.precisionconservation.org/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T08:44:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Yoast SEO < 22.6 - Reflected Cross-Site Scripting",
+                    "fixed_in": "22.6",
+                    "references": {
+                        "cve": [
+                            "2024-4041"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4e04b161-3cd0-454d-869c-56f42bd8afb0"
+                        ],
+                        "wpvulndb": [
+                            "6eb8e01b-0bc6-4ca9-b489-38f2a94c2909"
+                        ]
+                    }
+                },
+                {
+                    "title": "Yoast SEO < 22.7 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "22.7",
+                    "references": {
+                        "cve": [
+                            "2024-4984"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/59bcd246-ca2f-4336-9a6e-89afe873ed25"
+                        ],
+                        "wpvulndb": [
+                            "467936e2-fe82-4cdc-afec-6782afee3e4e"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "21.2",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.precisionconservation.org/, Match: 'optimized with the Yoast SEO plugin v21.2 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.precisionconservation.org/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.precisionconservation.org/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 9,
+        "requests_remaining": 16
+    },
+    "stop_time": 1742121956,
+    "elapsed": 21,
+    "requests_done": 197,
+    "cached_requests": 7,
+    "data_sent": 48427,
+    "data_sent_humanised": "47.292 KB",
+    "data_received": 1059706,
+    "data_received_humanised": "1.011 MB",
+    "used_memory": 261570560,
+    "used_memory_humanised": "249.453 MB"
+}

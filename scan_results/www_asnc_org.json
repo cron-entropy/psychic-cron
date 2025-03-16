@@ -1,0 +1,668 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742122079,
+    "start_memory": 48816128,
+    "target_url": "https://www.asnc.org/",
+    "target_ip": "162.159.134.42",
+    "effective_url": "https://www.asnc.org/",
+    "interesting_findings": [
+        {
+            "url": "https://www.asnc.org/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "cf-ray: 9213acdfeab6cf1e-SJC",
+                "cf-cache-status: DYNAMIC",
+                "ki-cache-type: None",
+                "ki-cf-cache-status: BYPASS",
+                "ki-edge: v=20.3.3;mv=3.3.8",
+                "permissions-policy: interest-cohort=()",
+                "x-edge-location-klb: 1",
+                "x-kinsta-cache: HIT",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=AHvV91mOq4Gkhz%2FIBJyQt0JofcwR%2Fo4iFUHG1ydRXAC3bfMMjKqzU8IuvSwcmXwY2TQh%2BlB2VEj8bEuE6gyDPiUzVQWqFjlWa8tORoXBOFkhBHy00YClhRelwtjlQg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0.01,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "alt-svc: h3=\":443\"; ma=86400"
+            ]
+        },
+        {
+            "url": "https://www.asnc.org/robots.txt",
+            "to_s": "robots.txt found: https://www.asnc.org/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://www.asnc.org/readme.html",
+            "to_s": "WordPress readme found: https://www.asnc.org/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.asnc.org/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://www.asnc.org/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.asnc.org/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.asnc.org/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Most Common Wp Includes Query Parameter In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.asnc.org/wp-includes/css/dist/block-library/style.min.css?ver=6.7.2"
+        ],
+        "confirmed_by": {
+            "Query Parameter In Install Page (Aggressive Detection)": {
+                "confidence": 100,
+                "interesting_entries": [
+                    "https://www.asnc.org/wp-includes/css/dashicons.min.css?ver=6.7.2",
+                    "https://www.asnc.org/wp-includes/css/buttons.min.css?ver=6.7.2",
+                    "https://www.asnc.org/wp-admin/css/forms.min.css?ver=6.7.2",
+                    "https://www.asnc.org/wp-admin/css/l10n.min.css?ver=6.7.2",
+                    "https://www.asnc.org/wp-admin/css/install.min.css?ver=6.7.2"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "yoko-asnc-child",
+        "location": "https://www.asnc.org/wp-content/themes/yoko-asnc-child/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://www.asnc.org/wp-content/themes/yoko-asnc-child/README.md",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.asnc.org/wp-content/themes/yoko-asnc-child/style.css?ver=1734726263",
+        "style_name": "ASNC Website by Yoko Co",
+        "style_uri": "http://www.yokoco.com",
+        "description": "A custom child theme for ASNC by Yoko Co.",
+        "author": "Yoko Co",
+        "author_uri": "https://www.yokoco.com",
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.asnc.org/wp-content/themes/yoko-asnc-child/style.css?ver=1734726263, Match: 'Version: 1.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "adsanity": {
+            "slug": "adsanity",
+            "location": "https://www.asnc.org/wp-content/plugins/adsanity/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "AdSanity < 1.8.2 - Contributor Arbitrary File Upload",
+                    "fixed_in": "1.8.2",
+                    "references": {
+                        "cve": [
+                            "2022-4949"
+                        ],
+                        "url": [
+                            "https://blog.nintechnet.com/critical-vulnerability-in-wordpress-adsanity-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "aa2413ca-e66e-4906-851d-f31f96208b9d"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "adsanity-rotating-ad-widget": {
+            "slug": "adsanity-rotating-ad-widget",
+            "location": "https://www.asnc.org/wp-content/plugins/adsanity-rotating-ad-widget/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "bb-plugin": {
+            "slug": "bb-plugin",
+            "location": "https://www.asnc.org/wp-content/plugins/bb-plugin/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.8.6",
+                "confidence": 20,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.asnc.org/wp-content/plugins/bb-plugin/js/jquery.imagesloaded.min.js?ver=2.8.6",
+                    "https://www.asnc.org/wp-content/plugins/bb-plugin/js/jquery.waypoints.min.js?ver=2.8.6"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "perfmatters": {
+            "slug": "perfmatters",
+            "location": "https://www.asnc.org/wp-content/plugins/perfmatters/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Perfmatters < 2.1.7 - Reflected Cross-Site Scripting",
+                    "fixed_in": "2.1.7",
+                    "references": {
+                        "cve": [
+                            "2023-47876"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/612fb73f-e488-453f-a2a4-32969f91122b"
+                        ],
+                        "wpvulndb": [
+                            "51183e0d-d440-41b9-ba3a-c7b9a4eef5a7"
+                        ]
+                    }
+                },
+                {
+                    "title": "Perfmatters < 2.1.7 - Cross-Site Request Forgery",
+                    "fixed_in": "2.1.7",
+                    "references": {
+                        "cve": [
+                            "2023-47875"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/95f5b4df-5214-4f36-8dd5-a1a816fbc3db"
+                        ],
+                        "wpvulndb": [
+                            "2bf36300-ec71-48e1-8ba8-10a3d60a40c5"
+                        ]
+                    }
+                },
+                {
+                    "title": "Perfmatters < 2.1.7 - Missing Authorization",
+                    "fixed_in": "2.1.7",
+                    "references": {
+                        "cve": [
+                            "2023-47874"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b078e446-61e7-4ce1-b9a9-480ccc388c72"
+                        ],
+                        "wpvulndb": [
+                            "b198f9f4-8df5-4662-a56f-d6c341183ad8"
+                        ]
+                    }
+                },
+                {
+                    "title": "Perfmatters < 2.2.0 - Authenticated (Subscriber+) Stored Cross-Site Scripting",
+                    "fixed_in": "2.2.0",
+                    "references": {
+                        "cve": [
+                            "2023-47877"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/cc4a7efd-f4f4-44a7-bd55-a6ae3a1d3521"
+                        ],
+                        "wpvulndb": [
+                            "b928044f-28e2-46ba-b654-3202f1a8e95f"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "searchwp": {
+            "slug": "searchwp",
+            "location": "https://www.asnc.org/wp-content/plugins/searchwp/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "SearchWP < 4.2.6 - Subscriber+ Settings Update",
+                    "fixed_in": "4.2.6",
+                    "references": {
+                        "cve": [
+                            "2022-40223"
+                        ],
+                        "wpvulndb": [
+                            "76213afe-8521-4751-8125-308daa136e24"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "wp-seopress": {
+            "slug": "wp-seopress",
+            "location": "https://www.asnc.org/wp-content/plugins/wp-seopress/",
+            "latest_version": "8.6.1",
+            "last_updated": "2025-03-05T09:58:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "SEOPress 5.0.0 \u2013 5.0.3 - Authenticated Stored Cross-Site Scripting",
+                    "fixed_in": "5.0.4",
+                    "references": {
+                        "cve": [
+                            "2021-34641"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/08/xss-vulnerability-patched-in-seopress-affects-100000-sites/"
+                        ],
+                        "wpvulndb": [
+                            "b88613a6-7321-409f-bba3-36450fb17724"
+                        ]
+                    }
+                },
+                {
+                    "title": "SEOPress < 6.5.0.3 - Admin+ PHP Object Injection",
+                    "fixed_in": "6.5.0.3",
+                    "references": {
+                        "cve": [
+                            "2023-1669"
+                        ],
+                        "wpvulndb": [
+                            "fb8791f5-2879-431e-9afc-06d5839e4b9d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP SEO Press < 7.3 - Admin+ Stored XSS",
+                    "fixed_in": "7.3",
+                    "references": {
+                        "cve": [
+                            "2023-6290"
+                        ],
+                        "youtube": [
+                            "https://www.youtube.com/watch?v=https://drive.google.com/file/d/1ZtKk1MKpkmHPROffym33Gqmorpl1GCbC/view?usp=drivesdk"
+                        ],
+                        "wpvulndb": [
+                            "78a13958-cd12-4ea8-b326-1e3184da970b"
+                        ]
+                    }
+                },
+                {
+                    "title": "SEOPress \u2013 On-site SEO < 7.6 - Author+ Stored Cross-Site Scripting",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-2165"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/46e66230-06d6-452e-a7aa-862b2bb8c27d"
+                        ],
+                        "wpvulndb": [
+                            "21d89532-2f2c-4f2d-bb6f-dfcd7f4fc82b"
+                        ]
+                    }
+                },
+                {
+                    "title": "SEOPress < 7.7 - Information Exposure",
+                    "fixed_in": "7.7",
+                    "references": {
+                        "cve": [
+                            "2024-34383"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b3c6ba21-7631-4bbd-b08e-926d2f129cc3"
+                        ],
+                        "wpvulndb": [
+                            "7f448797-78eb-4a4f-8617-b79634588700"
+                        ]
+                    }
+                },
+                {
+                    "title": "SEOPress < 7.6 - Contributor+ Stored XSS",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1134"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/bc3910e4-649f-45ab-876a-a4b04afac8d2"
+                        ],
+                        "wpvulndb": [
+                            "73c144d6-1dbd-4ec4-80bc-afea939e804a"
+                        ]
+                    }
+                },
+                {
+                    "title": "SEOPress < 7.8 - Contributor+ Open Redirect",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-4900"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-4900/"
+                        ],
+                        "wpvulndb": [
+                            "a56ad272-e2ed-4064-9b5d-114a834dd8b3"
+                        ]
+                    }
+                },
+                {
+                    "title": "SEOPress < 7.8 - Contributor+ Stored XSS",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-4899"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-4899/"
+                        ],
+                        "wpvulndb": [
+                            "15346ae9-9a29-4968-a6a9-81d1116ac448"
+                        ]
+                    }
+                },
+                {
+                    "title": "SEOPress < 7.9 - Unauthenticated Object Injection",
+                    "fixed_in": "7.9",
+                    "references": {
+                        "cve": [
+                            "2024-5488"
+                        ],
+                        "url": [
+                            "https://wpscan.com/blog/object-injection-vulnerability-fixed-in-seopress-7-9/"
+                        ],
+                        "wpvulndb": [
+                            "28507376-ded0-4e1a-b2fc-2182895aa14c"
+                        ]
+                    }
+                },
+                {
+                    "title": "SEOPress \u2013 On-site SEO < 7.9.1 - Authenticated(Contributor+) Stored Cross-Site Scripting via Social Image URL",
+                    "fixed_in": "7.9.1",
+                    "references": {
+                        "cve": [
+                            "2024-1168"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c446f429-1981-4d6d-a5ec-a5837428d212"
+                        ],
+                        "wpvulndb": [
+                            "98d342ff-c7bc-4cb7-a633-4f5a7c5016a6"
+                        ]
+                    }
+                },
+                {
+                    "title": "SEOPress \u2013 On-site SEO < 8.2 - Reflected Cross-Site Scripting",
+                    "fixed_in": "8.2",
+                    "references": {
+                        "cve": [
+                            "2024-9225"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4e648f65-3eeb-405d-b243-26354f3843c8"
+                        ],
+                        "wpvulndb": [
+                            "f84ad88d-c01e-4a87-b095-2b2f9be564a0"
+                        ]
+                    }
+                },
+                {
+                    "title": "SEOPress < 8.2 - Missing Authorization",
+                    "fixed_in": "8.2",
+                    "references": {
+                        "cve": [
+                            "2024-50455"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/66e724a1-5d40-4ba0-a324-1b4f1e463f26"
+                        ],
+                        "wpvulndb": [
+                            "c6b4ef2e-102e-4aee-a719-16ab641eb7a8"
+                        ]
+                    }
+                },
+                {
+                    "title": "SEOPress < 8.2 - Missing Authorization",
+                    "fixed_in": "8.2",
+                    "references": {
+                        "cve": [
+                            "2024-50454"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ef7fcd15-a570-4a41-ab51-e803e55625a8"
+                        ],
+                        "wpvulndb": [
+                            "77cb2b8c-50fd-4af7-ab55-bd09dcfbfa1a"
+                        ]
+                    }
+                },
+                {
+                    "title": "SEOPress < 8.2 - Missing Authorization",
+                    "fixed_in": "8.2",
+                    "references": {
+                        "cve": [
+                            "2024-50456"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/fe8457ee-c408-40f9-aca4-97e76efa2847"
+                        ],
+                        "wpvulndb": [
+                            "8649b515-2c1e-4910-b810-3c52f6039502"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "yok0x-bb": {
+            "slug": "yok0x-bb",
+            "location": "https://www.asnc.org/wp-content/plugins/yok0x-bb/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "yok0x-sso": {
+            "slug": "yok0x-sso",
+            "location": "https://www.asnc.org/wp-content/plugins/yok0x-sso/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "yoko-core": {
+            "slug": "yoko-core",
+            "location": "https://www.asnc.org/wp-content/plugins/yoko-core/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 11,
+        "requests_remaining": 14
+    },
+    "stop_time": 1742122116,
+    "elapsed": 36,
+    "requests_done": 233,
+    "cached_requests": 7,
+    "data_sent": 102958,
+    "data_sent_humanised": "100.545 KB",
+    "data_received": 1957885,
+    "data_received_humanised": "1.867 MB",
+    "used_memory": 290832384,
+    "used_memory_humanised": "277.359 MB"
+}
