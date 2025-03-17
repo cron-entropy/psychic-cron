@@ -1,0 +1,1572 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742208817,
+    "start_memory": 48754688,
+    "target_url": "https://prestigemotorsport.com.au/",
+    "target_ip": "43.250.142.31",
+    "effective_url": "https://prestigemotorsport.com.au/",
+    "interesting_findings": [
+        {
+            "url": "https://prestigemotorsport.com.au/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-powered-by: PHP/7.4.33",
+                "server: LiteSpeed",
+                "alt-svc: h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+            ]
+        },
+        {
+            "url": "https://prestigemotorsport.com.au/robots.txt",
+            "to_s": "robots.txt found: https://prestigemotorsport.com.au/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://prestigemotorsport.com.au/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://prestigemotorsport.com.au/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://prestigemotorsport.com.au/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://prestigemotorsport.com.au/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://prestigemotorsport.com.au/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://prestigemotorsport.com.au/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "4.8.17",
+        "release_date": "2021-05-12",
+        "status": "insecure",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://prestigemotorsport.com.au/feed/, <generator>https://wordpress.org/?v=4.8.17</generator>",
+            "https://prestigemotorsport.com.au/comments/feed/, <generator>https://wordpress.org/?v=4.8.17</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": [
+            {
+                "title": "WordPress < 5.8 - Plugin Confusion",
+                "fixed_in": "5.8",
+                "references": {
+                    "cve": [
+                        "2021-44223"
+                    ],
+                    "url": [
+                        "https://vavkamil.cz/2021/11/25/wordpress-plugin-confusion-update-can-get-you-pwned/"
+                    ],
+                    "wpvulndb": [
+                        "95e01006-84e4-4e95-b5d7-68ea7b5aa1a8"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 5.8.3 - SQL Injection via WP_Query",
+                "fixed_in": "4.8.18",
+                "references": {
+                    "cve": [
+                        "2022-21661"
+                    ],
+                    "url": [
+                        "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-6676-cqfm-gw84",
+                        "https://hackerone.com/reports/1378209"
+                    ],
+                    "wpvulndb": [
+                        "7f768bcf-ed33-4b22-b432-d1e7f95c1317"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 5.8.3 - Author+ Stored XSS via Post Slugs",
+                "fixed_in": "4.8.18",
+                "references": {
+                    "cve": [
+                        "2022-21662"
+                    ],
+                    "url": [
+                        "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-699q-3hj9-889w",
+                        "https://hackerone.com/reports/425342",
+                        "https://blog.sonarsource.com/wordpress-stored-xss-vulnerability"
+                    ],
+                    "wpvulndb": [
+                        "dc6f04c2-7bf2-4a07-92b5-dd197e4d94c8"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress 4.1-5.8.2 - SQL Injection via WP_Meta_Query",
+                "fixed_in": "4.8.18",
+                "references": {
+                    "cve": [
+                        "2022-21664"
+                    ],
+                    "url": [
+                        "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-jp3p-gw8h-6x86"
+                    ],
+                    "wpvulndb": [
+                        "24462ac4-7959-4575-97aa-a6dcceeae722"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 5.8.3 - Super Admin Object Injection in Multisites",
+                "fixed_in": "4.8.18",
+                "references": {
+                    "cve": [
+                        "2022-21663"
+                    ],
+                    "url": [
+                        "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-jmmq-m8p8-332h",
+                        "https://hackerone.com/reports/541469"
+                    ],
+                    "wpvulndb": [
+                        "008c21ab-3d7e-4d97-b6c3-db9d83f390a7"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 5.9.2 - Prototype Pollution in jQuery",
+                "fixed_in": "4.8.19",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2022/03/wordpress-5-9-2-security-maintenance-release/"
+                    ],
+                    "wpvulndb": [
+                        "1ac912c1-5e29-41ac-8f76-a062de254c09"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.0.2 - Reflected Cross-Site Scripting",
+                "fixed_in": "4.8.20",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2022/08/wordpress-6-0-2-security-and-maintenance-release/"
+                    ],
+                    "wpvulndb": [
+                        "622893b0-c2c4-4ee7-9fa1-4cecef6e36be"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.0.2 - Authenticated Stored Cross-Site Scripting",
+                "fixed_in": "4.8.20",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2022/08/wordpress-6-0-2-security-and-maintenance-release/"
+                    ],
+                    "wpvulndb": [
+                        "3b1573d4-06b4-442b-bad5-872753118ee0"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.0.2 - SQLi via Link API",
+                "fixed_in": "4.8.20",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2022/08/wordpress-6-0-2-security-and-maintenance-release/"
+                    ],
+                    "wpvulndb": [
+                        "601b0bf9-fed2-4675-aec7-fed3156a022f"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.0.3 - Stored XSS via wp-mail.php",
+                "fixed_in": "4.8.21",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+                        "https://github.com/WordPress/wordpress-develop/commit/abf236fdaf94455e7bc6e30980cf70401003e283"
+                    ],
+                    "wpvulndb": [
+                        "713bdc8b-ab7c-46d7-9847-305344a579c4"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.0.3 - Open Redirect via wp_nonce_ays",
+                "fixed_in": "4.8.21",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+                        "https://github.com/WordPress/wordpress-develop/commit/506eee125953deb658307bb3005417cb83f32095"
+                    ],
+                    "wpvulndb": [
+                        "926cd097-b36f-4d26-9c51-0dfab11c301b"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.0.3 - Email Address Disclosure via wp-mail.php",
+                "fixed_in": "4.8.21",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+                        "https://github.com/WordPress/wordpress-develop/commit/5fcdee1b4d72f1150b7b762ef5fb39ab288c8d44"
+                    ],
+                    "wpvulndb": [
+                        "c5675b59-4b1d-4f64-9876-068e05145431"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.0.3 - Reflected XSS via SQLi in Media Library",
+                "fixed_in": "4.8.21",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+                        "https://github.com/WordPress/wordpress-develop/commit/8836d4682264e8030067e07f2f953a0f66cb76cc"
+                    ],
+                    "wpvulndb": [
+                        "cfd8b50d-16aa-4319-9c2d-b227365c2156"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.0.3 - CSRF in wp-trackback.php",
+                "fixed_in": "4.8.21",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+                        "https://github.com/WordPress/wordpress-develop/commit/a4f9ca17fae0b7d97ff807a3c234cf219810fae0"
+                    ],
+                    "wpvulndb": [
+                        "b60a6557-ae78-465c-95bc-a78cf74a6dd0"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.0.3 - Stored XSS via the Customizer",
+                "fixed_in": "4.8.21",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+                        "https://github.com/WordPress/wordpress-develop/commit/2ca28e49fc489a9bb3c9c9c0d8907a033fe056ef"
+                    ],
+                    "wpvulndb": [
+                        "2787684c-aaef-4171-95b4-ee5048c74218"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.0.3 - Stored XSS via Comment Editing",
+                "fixed_in": "4.8.21",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+                        "https://github.com/WordPress/wordpress-develop/commit/89c8f7919460c31c0f259453b4ffb63fde9fa955"
+                    ],
+                    "wpvulndb": [
+                        "02d76d8e-9558-41a5-bdb6-3957dc31563b"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.0.3 - Content from Multipart Emails Leaked",
+                "fixed_in": "4.8.21",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+                        "https://github.com/WordPress/wordpress-develop/commit/3765886b4903b319764490d4ad5905bc5c310ef8"
+                    ],
+                    "wpvulndb": [
+                        "3f707e05-25f0-4566-88ed-d8d0aff3a872"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.0.3 - SQLi in WP_Date_Query",
+                "fixed_in": "4.8.21",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+                        "https://github.com/WordPress/wordpress-develop/commit/d815d2e8b2a7c2be6694b49276ba3eee5166c21f"
+                    ],
+                    "wpvulndb": [
+                        "1da03338-557f-4cb6-9a65-3379df4cce47"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.0.3 - Stored XSS via RSS Widget",
+                "fixed_in": "4.8.21",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+                        "https://github.com/WordPress/wordpress-develop/commit/929cf3cb9580636f1ae3fe944b8faf8cca420492"
+                    ],
+                    "wpvulndb": [
+                        "58d131f5-f376-4679-b604-2b888de71c5b"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.0.3 - Data Exposure via REST Terms/Tags Endpoint",
+                "fixed_in": "4.8.21",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+                        "https://github.com/WordPress/wordpress-develop/commit/ebaac57a9ac0174485c65de3d32ea56de2330d8e"
+                    ],
+                    "wpvulndb": [
+                        "b27a8711-a0c0-4996-bd6a-01734702913e"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.0.3 - Multiple Stored XSS via Gutenberg",
+                "fixed_in": "4.8.21",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+                        "https://github.com/WordPress/gutenberg/pull/45045/files"
+                    ],
+                    "wpvulndb": [
+                        "f513c8f6-2e1c-45ae-8a58-36b6518e2aa9"
+                    ]
+                }
+            },
+            {
+                "title": "WP <= 6.2 - Unauthenticated Blind SSRF via DNS Rebinding",
+                "fixed_in": null,
+                "references": {
+                    "cve": [
+                        "2022-3590"
+                    ],
+                    "url": [
+                        "https://blog.sonarsource.com/wordpress-core-unauthenticated-blind-ssrf/"
+                    ],
+                    "wpvulndb": [
+                        "c8814e6e-78b3-4f63-a1d3-6906a84c1f11"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.2.1 - Directory Traversal via Translation Files",
+                "fixed_in": "4.8.22",
+                "references": {
+                    "cve": [
+                        "2023-2745"
+                    ],
+                    "url": [
+                        "https://wordpress.org/news/2023/05/wordpress-6-2-1-maintenance-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "2999613a-b8c8-4ec0-9164-5dfe63adf6e6"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.2.1 - Thumbnail Image Update via CSRF",
+                "fixed_in": "4.8.22",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2023/05/wordpress-6-2-1-maintenance-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "a03d744a-9839-4167-a356-3e7da0f1d532"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.2.1 - Contributor+ Stored XSS via Open Embed Auto Discovery",
+                "fixed_in": "4.8.22",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2023/05/wordpress-6-2-1-maintenance-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "3b574451-2852-4789-bc19-d5cc39948db5"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.2.2 - Shortcode Execution in User Generated Data",
+                "fixed_in": "4.8.22",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2023/05/wordpress-6-2-1-maintenance-security-release/",
+                        "https://wordpress.org/news/2023/05/wordpress-6-2-2-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "ef289d46-ea83-4fa5-b003-0352c690fd89"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.2.1 - Contributor+ Content Injection",
+                "fixed_in": "4.8.22",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2023/05/wordpress-6-2-1-maintenance-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "1527ebdb-18bc-4f9d-9c20-8d729a628670"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.3.2 - Denial of Service via Cache Poisoning",
+                "fixed_in": "4.8.23",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2023/10/wordpress-6-3-2-maintenance-and-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "6d80e09d-34d5-4fda-81cb-e703d0e56e4f"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.3.2 - Subscriber+ Arbitrary Shortcode Execution",
+                "fixed_in": "4.8.23",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2023/10/wordpress-6-3-2-maintenance-and-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "3615aea0-90aa-4f9a-9792-078a90af7f59"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.3.2 - Contributor+ Comment Disclosure",
+                "fixed_in": "4.8.23",
+                "references": {
+                    "cve": [
+                        "2023-39999"
+                    ],
+                    "url": [
+                        "https://wordpress.org/news/2023/10/wordpress-6-3-2-maintenance-and-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "d35b2a3d-9b41-4b4f-8e87-1b8ccb370b9f"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.3.2 - Unauthenticated Post Author Email Disclosure",
+                "fixed_in": "4.8.23",
+                "references": {
+                    "cve": [
+                        "2023-5561"
+                    ],
+                    "url": [
+                        "https://wpscan.com/blog/email-leak-oracle-vulnerability-addressed-in-wordpress-6-3-2/",
+                        "https://wordpress.org/news/2023/10/wordpress-6-3-2-maintenance-and-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "19380917-4c27-4095-abf1-eba6f913b441"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 6.4.3 - Deserialization of Untrusted Data",
+                "fixed_in": "4.8.24",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2024/01/wordpress-6-4-3-maintenance-and-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "5e9804e5-bbd4-4836-a5f0-b4388cc39225"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 6.4.3 - Admin+ PHP File Upload",
+                "fixed_in": "4.8.24",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2024/01/wordpress-6-4-3-maintenance-and-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "a8e12fbe-c70b-4078-9015-cf57a05bdd4a"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 6.5.5 - Contributor+ Stored XSS in HTML API",
+                "fixed_in": "4.8.25",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2024/06/wordpress-6-5-5/"
+                    ],
+                    "wpvulndb": [
+                        "2c63f136-4c1f-4093-9a8c-5e51f19eae28"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 6.5.5 - Contributor+ Stored XSS in Template-Part Block",
+                "fixed_in": "4.8.25",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2024/06/wordpress-6-5-5/"
+                    ],
+                    "wpvulndb": [
+                        "7c448f6d-4531-4757-bff0-be9e3220bbbb"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 6.5.5 - Contributor+ Path Traversal in Template-Part Block",
+                "fixed_in": "4.8.25",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2024/06/wordpress-6-5-5/"
+                    ],
+                    "wpvulndb": [
+                        "36232787-754a-4234-83d6-6ded5e80251c"
+                    ]
+                }
+            }
+        ]
+    },
+    "main_theme": {
+        "slug": "automotive-child",
+        "location": "https://prestigemotorsport.com.au/wp-content/themes/automotive-child/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://prestigemotorsport.com.au/wp-content/themes/automotive-child/style.css?ver=4.8.17",
+        "style_name": "Automotive Child Theme",
+        "style_uri": "http://demo.themesuite.com/automotive-wp/",
+        "description": "Finally a gorgeous website template for car dealerships that doesn\u2019t just look beautiful, but also includes complete easy-to-use functionality. Whether your business is a small car dealer or a large fully functional car dealership, you are sure to find what you need in this automotive template.",
+        "author": "Theme Suite",
+        "author_uri": "http://www.themesuite.com/",
+        "template": "automotive",
+        "license": "GNU GPL",
+        "license_uri": "http://demo.themesuite.com/automotive-wp/License/",
+        "tags": "white, light, one-column, two-columns, right-sidebar, fluid-layout, editor-style, featured-images, sticky-post, translation-ready",
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://prestigemotorsport.com.au/wp-content/themes/automotive-child/style.css?ver=4.8.17, Match: 'Version:         1.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": [
+            {
+                "slug": "automotive",
+                "location": "https://prestigemotorsport.com.au/wp-content/themes/automotive/",
+                "latest_version": "13.3.3",
+                "last_updated": "2025-01-14T03:05:16.000Z",
+                "outdated": false,
+                "readme_url": false,
+                "directory_listing": false,
+                "error_log_url": null,
+                "style_url": "https://fonts.googleapis.com/css?family=Francois+One",
+                "style_name": null,
+                "style_uri": null,
+                "description": null,
+                "author": null,
+                "author_uri": null,
+                "template": null,
+                "license": null,
+                "license_uri": null,
+                "tags": null,
+                "text_domain": null,
+                "found_by": "Parent Themes (Passive Detection)",
+                "confidence": 100,
+                "interesting_entries": [],
+                "confirmed_by": {},
+                "vulnerabilities": [],
+                "version": null,
+                "parents": []
+            }
+        ]
+    },
+    "plugins": {
+        "automotive": {
+            "slug": "automotive",
+            "location": "https://prestigemotorsport.com.au/wp-content/plugins/automotive/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://prestigemotorsport.com.au/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.5",
+            "last_updated": "2025-03-11T08:37:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Contact Form 7 <= 5.0.3 - register_post_type() Privilege Escalation",
+                    "fixed_in": "5.0.4",
+                    "references": {
+                        "cve": [
+                            "2018-20979"
+                        ],
+                        "url": [
+                            "https://contactform7.com/2018/09/04/contact-form-7-504/",
+                            "https://plugins.trac.wordpress.org/changeset/1935726/contact-form-7",
+                            "https://plugins.trac.wordpress.org/changeset/1934594/contact-form-7",
+                            "https://plugins.trac.wordpress.org/changeset/1934343/contact-form-7",
+                            "https://plugins.trac.wordpress.org/changeset/1934327/contact-form-7",
+                            "https://www.ripstech.com/php-security-calendar-2018/#day-18"
+                        ],
+                        "wpvulndb": [
+                            "af945f64-9ce2-485c-bf36-c2ff59dc10d5"
+                        ]
+                    }
+                },
+                {
+                    "title": "Contact Form 7 < 5.3.2 - Unrestricted File Upload",
+                    "fixed_in": "5.3.2",
+                    "references": {
+                        "cve": [
+                            "2020-35489"
+                        ],
+                        "url": [
+                            "https://www.getastra.com/blog/911/plugin-exploit/contact-form-7-unrestricted-file-upload-vulnerability/",
+                            "https://www.jinsonvarghese.com/unrestricted-file-upload-in-contact-form-7/",
+                            "https://contactform7.com/2020/12/17/contact-form-7-532/#more-38314"
+                        ],
+                        "wpvulndb": [
+                            "7391118e-eef5-4ff8-a8ea-f6b65f442c63"
+                        ]
+                    }
+                },
+                {
+                    "title": "Contact Form 7 < 5.8.4 - Authenticated (Editor+) Arbitrary File Upload",
+                    "fixed_in": "5.8.4",
+                    "references": {
+                        "cve": [
+                            "2023-6449"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5d7fb020-6acb-445e-a46b-bdb5aaf8f2b6"
+                        ],
+                        "wpvulndb": [
+                            "70e21d9a-b1e6-4083-bcd3-7c1c13fd5382"
+                        ]
+                    }
+                },
+                {
+                    "title": "Contact Form 7 < 5.9.2 - Reflected Cross-Site Scripting",
+                    "fixed_in": "5.9.2",
+                    "references": {
+                        "cve": [
+                            "2024-2242"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d5bf4972-424a-4470-a0bc-7dcc95378e0e"
+                        ],
+                        "wpvulndb": [
+                            "1c070a2c-2ab0-43bf-b10b-6575709918bc"
+                        ]
+                    }
+                },
+                {
+                    "title": " Contact Form 7 < 5.9.5 - Unauthenticated Open Redirect",
+                    "fixed_in": "5.9.5",
+                    "references": {
+                        "cve": [
+                            "2024-4704"
+                        ],
+                        "wpvulndb": [
+                            "8bdcdb5a-9026-4157-8592-345df8fb1a17"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "4.8.1",
+                "confidence": 20,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://prestigemotorsport.com.au/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.8.1",
+                    "https://prestigemotorsport.com.au/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.8.1"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "js_composer": {
+            "slug": "js_composer",
+            "location": "https://prestigemotorsport.com.au/wp-content/plugins/js_composer/",
+            "latest_version": "8.3",
+            "last_updated": "2025-03-12T18:36:52.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Body Tag (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WPBakery Page Builder < 6.4.1 - Authenticated Stored Cross-Site Scripting (XSS)",
+                    "fixed_in": "6.4.1",
+                    "references": {
+                        "cve": [
+                            "2020-28650"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2020/10/vulnerability-exposes-over-4-million-sites-using-wpbakery/"
+                        ],
+                        "wpvulndb": [
+                            "11285589-1b22-4ec0-adfc-f2add70db4d7"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Page Builder < 6.13.0 - Contributor+ Stored XSS",
+                    "fixed_in": "6.13.0",
+                    "references": {
+                        "cve": [
+                            "2023-31213"
+                        ],
+                        "wpvulndb": [
+                            "ee99521d-be25-41ef-8988-5cfd66e9c5ca"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Title tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1841"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/34d21418-4faf-40bf-a960-79482a592722"
+                        ],
+                        "wpvulndb": [
+                            "787a71f8-1179-4442-9441-87fbe83a7e67"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Custom Heading tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1842"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/674e6722-d293-4572-80bf-984e74c3e33f"
+                        ],
+                        "wpvulndb": [
+                            "8ebfad34-7b46-4783-9fad-c96ab4f4c737"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Button onclick attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1805"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7a571386-fae1-4a56-8567-9d3e23249de1"
+                        ],
+                        "wpvulndb": [
+                            "b87926cd-0fe0-49df-8c61-9df1363a67a8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Author",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1840"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/cb8ecbbc-ada9-4887-92e6-25a587ecfb84"
+                        ],
+                        "wpvulndb": [
+                            "b41c2343-3be4-4bd9-ae5d-69ae96ba23ae"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Page Builder < 7.7 - Authenticated (Contributor+) Stored Cross-Site Scripting via VC Single Image link attribute",
+                    "fixed_in": "7.7",
+                    "references": {
+                        "cve": [
+                            "2024-5265"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/35a5114e-5c5f-4003-8bb3-77243ffbac1a"
+                        ],
+                        "wpvulndb": [
+                            "3b067a13-ee58-44c9-80af-ae04af6256c8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5708"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/23ff12f0-eb9d-4bb3-8db0-0e794c0f0594"
+                        ],
+                        "wpvulndb": [
+                            "992e5d47-e290-420a-adf8-f552a929e51d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Local File Inclusion",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5709"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7fad30c8-fd8a-4cf2-a3aa-16a374231b87"
+                        ],
+                        "wpvulndb": [
+                            "6e3e1944-67f7-405e-ae4f-f0ab8c6c9acd"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "5.5.2",
+                "confidence": 80,
+                "found_by": "Body Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://prestigemotorsport.com.au/, Match: 'js-comp-ver-5.5.2'"
+                ],
+                "confirmed_by": {
+                    "Query Parameter (Passive Detection)": {
+                        "confidence": 20,
+                        "interesting_entries": [
+                            "https://prestigemotorsport.com.au/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=5.5.2",
+                            "https://prestigemotorsport.com.au/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=5.5.2"
+                        ]
+                    }
+                }
+            }
+        },
+        "mailchimp-for-wp": {
+            "slug": "mailchimp-for-wp",
+            "location": "https://prestigemotorsport.com.au/wp-content/plugins/mailchimp-for-wp/",
+            "latest_version": "4.10.2",
+            "last_updated": "2025-02-28T07:20:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "MailChimp for WordPress <= 4.1.6 - Authenticated Cross-Site Scripting (XSS)",
+                    "fixed_in": "4.1.7",
+                    "references": {
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/1726656/mailchimp-for-wp",
+                            "https://www.ripstech.com/php-security-calendar-2018/#day-12"
+                        ],
+                        "wpvulndb": [
+                            "9d9bb5a6-ac66-43b9-8811-4490f5eaaa78"
+                        ]
+                    }
+                },
+                {
+                    "title": "Mailchimp For WP < 4.1.8 - XSS",
+                    "fixed_in": "4.1.8",
+                    "references": {
+                        "cve": [
+                            "2017-18577"
+                        ],
+                        "wpvulndb": [
+                            "e0a6438d-d183-4e6c-845c-e88a9bb6f59b"
+                        ]
+                    }
+                },
+                {
+                    "title": "MC4WP: Mailchimp for WordPress < 4.8.5 - Authenticated Arbitrary Redirect",
+                    "fixed_in": "4.8.5",
+                    "references": {
+                        "wpvulndb": [
+                            "9bd6daba-6b58-4b69-b137-f064701f636c"
+                        ]
+                    }
+                },
+                {
+                    "title": "MC4WP: Mailchimp for WordPress < 4.8.5 - Unauthorised Actions via CSRF",
+                    "fixed_in": "4.8.5",
+                    "references": {
+                        "wpvulndb": [
+                            "e84e1fa5-a947-4b2c-a134-19e9b07385b4"
+                        ]
+                    }
+                },
+                {
+                    "title": "MC4WP < 4.8.7 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "4.8.7",
+                    "references": {
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2687297"
+                        ],
+                        "wpvulndb": [
+                            "13d92715-b195-4b75-9a39-6935fcafb832"
+                        ]
+                    }
+                },
+                {
+                    "title": "MC4WP < 4.8.7 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "4.8.7",
+                    "references": {
+                        "cve": [
+                            "2021-36833"
+                        ],
+                        "url": [
+                            "https://www.hackpertise.com/cve/30-cve-2021-36833/"
+                        ],
+                        "wpvulndb": [
+                            "da04b514-a561-4d25-95b8-1c7b5597f093"
+                        ]
+                    }
+                },
+                {
+                    "title": "MC4WP < 4.9.10 - Unauthenticated Unpublished Form Preview",
+                    "fixed_in": "4.9.10",
+                    "references": {
+                        "cve": [
+                            "2023-51682"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/mailchimp-for-wp/wordpress-mc4wp-plugin-4-9-9-broken-access-control-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "60cd93a4-7639-45a5-b2a8-a8930fb05cc8"
+                        ]
+                    }
+                },
+                {
+                    "title": "MailChimp for Wordpress < 4.9.17 - Authenticated (Administrator+) Stored Cross-Site Scripting",
+                    "fixed_in": "4.9.17",
+                    "references": {
+                        "cve": [
+                            "2024-8680"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/aa464547-0380-4b91-a5ea-0cd9a66da7a7"
+                        ],
+                        "wpvulndb": [
+                            "127b47ad-97da-46c5-a5c2-83be752de28c"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "4.1.2",
+                "confidence": 60,
+                "found_by": "Change Log (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://prestigemotorsport.com.au/wp-content/plugins/mailchimp-for-wp/CHANGELOG.md, Match: '#### 4.1.2 - May 8, 2017'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "responsive-menu-pro": {
+            "slug": "responsive-menu-pro",
+            "location": "https://prestigemotorsport.com.au/wp-content/plugins/responsive-menu-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Responsive Menu < 4.0.4 - CSRF to Settings Update",
+                    "fixed_in": "4.0.4",
+                    "references": {
+                        "cve": [
+                            "2021-24162"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/02/multiple-vulnerabilities-patched-in-responsive-menu-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "923fc3a3-4bcc-4b48-870a-6150e14509b5"
+                        ]
+                    }
+                },
+                {
+                    "title": "Responsive Menu < 4.0.4 - CSRF to Arbitrary File Upload ",
+                    "fixed_in": "4.0.4",
+                    "references": {
+                        "cve": [
+                            "2021-24161"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/02/multiple-vulnerabilities-patched-in-responsive-menu-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "efca27e0-bdb6-4497-8330-081f909d6933"
+                        ]
+                    }
+                },
+                {
+                    "title": "Responsive Menu 4.0.0 - 4.0.3 - Authenticated Arbitrary File Upload ",
+                    "fixed_in": "4.0.4",
+                    "references": {
+                        "cve": [
+                            "2021-24160"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/02/multiple-vulnerabilities-patched-in-responsive-menu-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "066ba5d4-4aaa-4462-b106-500c1f291c37"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "revslider": {
+            "slug": "revslider",
+            "location": "https://prestigemotorsport.com.au/wp-content/plugins/revslider/",
+            "latest_version": "6.7.30",
+            "last_updated": "2025-03-14T01:54:30.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Comment (Passive Detection)": {
+                    "confidence": 30,
+                    "interesting_entries": []
+                },
+                "Div Data Version (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Revolution Slider <= 6.6.12 - Author+ Remote Code Execution",
+                    "fixed_in": "6.6.13",
+                    "references": {
+                        "cve": [
+                            "2023-2359"
+                        ],
+                        "wpvulndb": [
+                            "a8350890-e6d4-4b04-a158-2b0ee3748e65"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.15 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.6.15",
+                    "references": {
+                        "cve": [
+                            "2023-47772"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/772e843b-00ea-45f5-b730-c9a793d4c2db"
+                        ],
+                        "wpvulndb": [
+                            "3cde24f3-aaad-4eb3-b6ba-a518afe66fbe"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.16 - Authenticated (Author+) Arbitrary File Upload",
+                    "fixed_in": "6.6.16",
+                    "references": {
+                        "cve": [
+                            "2023-47784"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e2d29afd-06e8-461a-918f-38228441a51a"
+                        ],
+                        "wpvulndb": [
+                            "1b841a64-fb0a-434f-b7b4-0777f0480c87"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.19 - Author+ Insecure Deserialization leading to RCE",
+                    "fixed_in": "6.6.19",
+                    "references": {
+                        "cve": [
+                            "2023-6528"
+                        ],
+                        "wpvulndb": [
+                            "36ced447-84ea-4162-80d2-6df226cb53cb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Revslider < 6.7.0 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.0",
+                    "references": {
+                        "cve": [
+                            "2024-2306"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f6af1e90-9bad-470b-9e00-137000c0450c"
+                        ],
+                        "wpvulndb": [
+                            "8238962e-feca-4a45-b335-3c92e668c889"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.8 - Authenticated (Author+) Stored Cross-Site Scripting via htmltag Parameter",
+                    "fixed_in": "6.7.8",
+                    "references": {
+                        "cve": [
+                            "2024-4092"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8437abcc-3e34-4a8a-bfe2-2ff7c9f41164"
+                        ],
+                        "wpvulndb": [
+                            "50dd9668-c263-4bfd-8a94-00a3ad9f656d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting via Add Layer class, id, and title Attributes",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-4581"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a99b8eb9-1511-4ec0-98f4-c0e0c989fa28"
+                        ],
+                        "wpvulndb": [
+                            "4a436977-1295-40e8-9957-bda1b0a3e6d6"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Contributor+) Stored Cross-Site Scripting via Elementor wrapperid and zindex",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-4637"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/457b5066-da37-4877-9abe-c912bc201f29"
+                        ],
+                        "wpvulndb": [
+                            "32b1ee26-525a-4b1e-bdf0-881f0d161788"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.0 - Missing Authorization",
+                    "fixed_in": "6.7.0",
+                    "references": {
+                        "cve": [
+                            "2024-34444"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/14feb451-2ece-467b-abf0-7abac26e40c1"
+                        ],
+                        "wpvulndb": [
+                            "f893fd2d-d040-408a-a800-99bf02e32230"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-34443"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/64852bc8-aeba-458d-9235-94bd4c4ec429"
+                        ],
+                        "wpvulndb": [
+                            "f79b835f-a3a2-40e1-91cc-987604b0a593"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.14 - Authenticated (Administrator+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.14",
+                    "references": {
+                        "cve": [
+                            "2024-37449"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a8fc6a5-a28a-4d6b-8d63-c5e2f4d26422"
+                        ],
+                        "wpvulndb": [
+                            "6d7c04cb-b3c1-4003-866b-a3301929e2aa"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.19 - Authenticated (Author+) Stored Cross-Site Scripting via SVG File Upload",
+                    "fixed_in": "6.7.19",
+                    "references": {
+                        "cve": [
+                            "2024-8107"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/22b59b36-ba47-4c10-8f43-a29ae3b9d446"
+                        ],
+                        "wpvulndb": [
+                            "278e6259-cb64-4cc1-91c6-2cf2178dd1d0"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "5.4.8",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://prestigemotorsport.com.au/, Match: 'START REVOLUTION SLIDER 5.4.8'"
+                ],
+                "confirmed_by": {
+                    "Div Data Version (Passive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://prestigemotorsport.com.au/, Match: '5.4.8'"
+                        ]
+                    }
+                }
+            }
+        },
+        "schema": {
+            "slug": "schema",
+            "location": "https://prestigemotorsport.com.au/wp-content/plugins/schema/",
+            "latest_version": "1.7.9.6",
+            "last_updated": "2023-11-21T18:16:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.7.6",
+                "confidence": 60,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://prestigemotorsport.com.au/, Match: 'te is optimized with the Schema plugin v1.7.6'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://prestigemotorsport.com.au/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T08:44:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Yoast SEO < 5.8 - Authenticated Cross-Site Scripting (XSS)",
+                    "fixed_in": "5.8",
+                    "references": {
+                        "cve": [
+                            "2017-16842"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/1766831/wordpress-seo/trunk/admin/google_search_console/class-gsc-table.php",
+                            "https://packetstormsecurity.com/files/145080/"
+                        ],
+                        "wpvulndb": [
+                            "41e0aa47-f2f6-4f64-a95e-ed5c884bfe9e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Yoast SEO <= 9.1 - Authenticated Race Condition",
+                    "fixed_in": "9.2",
+                    "references": {
+                        "cve": [
+                            "2018-19370"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/1977260/wordpress-seo",
+                            "https://packetstormsecurity.com/files/150497/",
+                            "https://github.com/Yoast/wordpress-seo/pull/11502/commits/3bfa70a143f5ea3ee1934f3a1703bb5caf139ffa"
+                        ],
+                        "youtube": [
+                            "https://www.youtube.com/watch?v=nL141dcDGCY"
+                        ],
+                        "wpvulndb": [
+                            "bd32be83-db19-4026-adc9-9da284849ee3"
+                        ]
+                    }
+                },
+                {
+                    "title": " Yoast SEO 1.2.0-11.5 - Authenticated Stored XSS",
+                    "fixed_in": "11.6",
+                    "references": {
+                        "cve": [
+                            "2019-13478"
+                        ],
+                        "url": [
+                            "https://gist.github.com/sybrew/2f53625104ee013d2f599ac254f635ee",
+                            "https://github.com/Yoast/wordpress-seo/pull/13221",
+                            "https://yoast.com/yoast-seo-11.6/"
+                        ],
+                        "wpvulndb": [
+                            "8bc4cf95-79f7-4d92-b320-a841ab7e6a6f"
+                        ]
+                    }
+                },
+                {
+                    "title": "Yoast SEO < 21.1 - Authenticated (Seo Manager+) Stored Cross-Site Scripting",
+                    "fixed_in": "21.1",
+                    "references": {
+                        "cve": [
+                            "2023-40680"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/385a82ff-50ad-4787-845b-fb5f639f6466"
+                        ],
+                        "wpvulndb": [
+                            "42b355cc-d7b6-474d-8578-9c1a99b1e3c7"
+                        ]
+                    }
+                },
+                {
+                    "title": "Yoast SEO < 22.6 - Reflected Cross-Site Scripting",
+                    "fixed_in": "22.6",
+                    "references": {
+                        "cve": [
+                            "2024-4041"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4e04b161-3cd0-454d-869c-56f42bd8afb0"
+                        ],
+                        "wpvulndb": [
+                            "6eb8e01b-0bc6-4ca9-b489-38f2a94c2909"
+                        ]
+                    }
+                },
+                {
+                    "title": "Yoast SEO < 22.7 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "22.7",
+                    "references": {
+                        "cve": [
+                            "2024-4984"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/59bcd246-ca2f-4336-9a6e-89afe873ed25"
+                        ],
+                        "wpvulndb": [
+                            "467936e2-fe82-4cdc-afec-6782afee3e4e"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "4.2.1",
+                "confidence": 60,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://prestigemotorsport.com.au/, Match: 'optimized with the Yoast SEO plugin v4.2.1 -'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wp-spamshield": {
+            "slug": "wp-spamshield",
+            "location": "https://prestigemotorsport.com.au/wp-content/plugins/wp-spamshield/",
+            "latest_version": "1.9.21",
+            "last_updated": "2017-10-28T01:08:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        }
+    },
+    "config_backups": {
+        "https://prestigemotorsport.com.au/wp-config.php-backup": {
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {}
+        }
+    },
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 12,
+        "requests_remaining": 13
+    },
+    "stop_time": 1742208855,
+    "elapsed": 38,
+    "requests_done": 223,
+    "cached_requests": 8,
+    "data_sent": 64142,
+    "data_sent_humanised": "62.639 KB",
+    "data_received": 1477593,
+    "data_received_humanised": "1.409 MB",
+    "used_memory": 305111040,
+    "used_memory_humanised": "290.977 MB"
+}

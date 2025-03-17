@@ -1,0 +1,546 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742208935,
+    "start_memory": 48943104,
+    "target_url": "https://www.mango.org/",
+    "target_ip": "172.67.185.43",
+    "effective_url": "https://www.mango.org/",
+    "interesting_findings": [
+        {
+            "url": "https://www.mango.org/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "cf-cache-status: DYNAMIC",
+                "ki-cache-tag: 6d215218-e55e-4456-920e-509884a5dc95,1851b4015516ffa5c89f9f8bbeeda8b6bf860f85fef88f01272bea59361358d7",
+                "ki-cache-type: Edge",
+                "ki-cf-cache-status: HIT",
+                "ki-edge: v=20.3.3;mv=3.3.8",
+                "ki-edge-o2o: yes",
+                "x-edge-location-klb: 1",
+                "x-kinsta-cache: HIT",
+                "x-tec-api-origin: https://www.mango.org",
+                "x-tec-api-root: https://www.mango.org/wp-json/tribe/events/v1/",
+                "x-tec-api-version: v1",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=5hDN4Lek%2FM18owLayzTAT%2BRvALj2kv96yXntQmhhucLYDRE0xBJksgPd7bF8e%2BzBbVpG8T9nsvOYd12E2iNngCuXi7KHxHc%2B2ua%2FZcSwdA5wAxKVqWZKsQ488sABMwY%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0.01,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "cf-ray: 921bf5640aadeb24-SJC",
+                "alt-svc: h3=\":443\"; ma=86400",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=1480&min_rtt=1428&rtt_var=462&sent=6&recv=8&lost=0&retrans=0&sent_bytes=3419&recv_bytes=810&delivery_rate=2000000&cwnd=253&unsent_bytes=0&cid=e678a369a6c299c7&ts=185&x=0\""
+            ]
+        },
+        {
+            "url": "https://www.mango.org/robots.txt",
+            "to_s": "robots.txt found: https://www.mango.org/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/\r",
+                "/category-press-release/\r",
+                "/category-imagelogo/\r",
+                "/imagelogo/\r",
+                "/events/\r",
+                "/es/eventos/\r",
+                "/es/events/\r",
+                "/?post_type=tribe_events\r",
+                "/es/?post_type=tribe_events"
+            ]
+        },
+        {
+            "url": "https://www.mango.org/readme.html",
+            "to_s": "WordPress readme found: https://www.mango.org/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.mango.org/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://www.mango.org/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.mango.org/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.mango.org/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.mango.org/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.mango.org/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "mango-child",
+        "location": "https://www.mango.org/wp-content/themes/mango-child/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.mango.org/wp-content/themes/mango-child/style.css",
+        "style_name": "Mango Child",
+        "style_uri": "https://understrap.com",
+        "description": "Understrap Child Theme",
+        "author": "the Understrap Contributors",
+        "author_uri": "https://github.com/understrap/understrap-child/graphs/contributors",
+        "template": "understrap",
+        "license": "GNU General Public License v2 or later",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "one-column, custom-menu, featured-images, theme-options, translation-ready",
+        "text_domain": "mango-child",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 40,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 8,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.2.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.mango.org/wp-content/themes/mango-child/style.css, Match: 'Version:      1.2.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "add-to-any": {
+            "slug": "add-to-any",
+            "location": "https://www.mango.org/wp-content/plugins/add-to-any/",
+            "latest_version": "1.8.13",
+            "last_updated": "2024-11-21T23:44:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "AddToAny Share Buttons <= 1.7.14 - Conditional Host Header Injection",
+                    "fixed_in": "1.7.15",
+                    "references": {
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/1713858/add-to-any"
+                        ],
+                        "wpvulndb": [
+                            "469e8aa7-b689-438c-8421-fba8ae5972fb"
+                        ]
+                    }
+                },
+                {
+                    "title": "AddToAny < 1.7.46 - Admin+ Stored XSS",
+                    "fixed_in": "1.7.46",
+                    "references": {
+                        "cve": [
+                            "2021-24568"
+                        ],
+                        "url": [
+                            "https://www.hackpertise.com/cve/10-cve-2021-24568/"
+                        ],
+                        "wpvulndb": [
+                            "cf7c0207-adb2-44c6-9469-2b24dbfec83a"
+                        ]
+                    }
+                },
+                {
+                    "title": "AddToAny Share Buttons < 1.7.48 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "1.7.48",
+                    "references": {
+                        "cve": [
+                            "2021-24616"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2609928/"
+                        ],
+                        "wpvulndb": [
+                            "04eaf380-c345-425f-8800-142e3f4745a9"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "events-calendar-pro": {
+            "slug": "events-calendar-pro",
+            "location": "https://www.mango.org/wp-content/plugins/events-calendar-pro/",
+            "latest_version": "1.0.1",
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "The Events Calendar (Free < 6.4.0.1, Pro < 6.4.0.1) - Contributor+ Arbitrary Events Access",
+                    "fixed_in": "6.4.0.1",
+                    "references": {
+                        "cve": [
+                            "2024-1295"
+                        ],
+                        "wpvulndb": [
+                            "3cffbeb0-545a-4002-b02c-0fa38cada1db"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Events Calendar Pro < 7.0.2.1 - Authenticated (Administrator+) PHP Object Injection to Remote Code Execution",
+                    "fixed_in": "7.0.2.1",
+                    "references": {
+                        "cve": [
+                            "2024-8016"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/34f0e5a6-0bd3-4734-b7e0-27dc825d193f"
+                        ],
+                        "wpvulndb": [
+                            "a8f6da50-662f-4074-9063-785f8f26b279"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "exit-notifier": {
+            "slug": "exit-notifier",
+            "location": "https://www.mango.org/wp-content/plugins/exit-notifier/",
+            "latest_version": "1.9.1",
+            "last_updated": "2021-03-10T06:38:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Exit Notifier < 1.10.6 - Reflected Cross-Site Scripting",
+                    "fixed_in": "1.10.6",
+                    "references": {
+                        "cve": [
+                            "2024-8730"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ddc1aedb-e64f-4b61-a247-c3cdc731f001"
+                        ],
+                        "wpvulndb": [
+                            "496491aa-8670-4f2b-982c-dd5a2fa4d6f2"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "1.9.1",
+                "confidence": 40,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.mango.org/wp-content/plugins/exit-notifier/assets/css/frontend.css?ver=1.9.1",
+                    "https://www.mango.org/wp-content/plugins/exit-notifier/assets/css/jAlert.min.css?ver=1.9.1",
+                    "https://www.mango.org/wp-content/plugins/exit-notifier/assets/js/frontend.js?ver=1.9.1",
+                    "https://www.mango.org/wp-content/plugins/exit-notifier/assets/js/jAlert.min.js?ver=1.9.1"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "instagram-feed": {
+            "slug": "instagram-feed",
+            "location": "https://www.mango.org/wp-content/plugins/instagram-feed/",
+            "latest_version": "6.8.0",
+            "last_updated": "2025-03-12T15:59:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Instagram Feed < 1.4.7 - Authenticated Cross-Site Scripting (XSS) & CSRF",
+                    "fixed_in": "1.4.7",
+                    "references": {
+                        "url": [
+                            "https://sumofpwn.nl/advisory/2016/persistent_cross_site_scripting_in_instagram_feed_plugin_via_csrf.html",
+                            "https://seclists.org/fulldisclosure/2016/Nov/115",
+                            "https://plugins.trac.wordpress.org/changeset/1464504/instagram-feed"
+                        ],
+                        "wpvulndb": [
+                            "d9a57a3a-251b-46cc-8f42-0c64657aaaa3"
+                        ]
+                    }
+                },
+                {
+                    "title": "Instagram Feed < 1.6 - Cross-Site Scripting (XSS)",
+                    "fixed_in": "1.6",
+                    "references": {
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/1805420/instagram-feed",
+                            "http://dumpco.re/blog/xss-instagram-feed"
+                        ],
+                        "wpvulndb": [
+                            "36d33de7-655e-40d9-9745-ed2e10836360"
+                        ]
+                    }
+                },
+                {
+                    "title": "Instagram Feed < 1.12 - Unspecified Issues",
+                    "fixed_in": "1.12",
+                    "references": {
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset?reponame=&new=2061834%40instagram-feed&old=2044806%40instagram-feed"
+                        ],
+                        "wpvulndb": [
+                            "ef357b6f-b37c-43e0-94fe-60ae6d8f68bc"
+                        ]
+                    }
+                },
+                {
+                    "title": "Multiple Plugins from Smash Balloon - Reflected Cross-Site Scripting",
+                    "fixed_in": "2.9.2",
+                    "references": {
+                        "wpvulndb": [
+                            "e766e165-1a05-4065-9e71-27b528641dd2"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "sitepress-multilingual-cms": {
+            "slug": "sitepress-multilingual-cms",
+            "location": "https://www.mango.org/wp-content/plugins/sitepress-multilingual-cms/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.6.15",
+                "confidence": 60,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.mango.org/, Match: 'WPML ver:4.6.15 stt'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wordpress-seo-premium": {
+            "slug": "wordpress-seo-premium",
+            "location": "https://www.mango.org/wp-content/plugins/wordpress-seo-premium/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T09:49:22.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "WordPress SEO by Yoast < 2.1 - Cross-Site Scripting (XSS)",
+                    "fixed_in": "2.1",
+                    "references": {
+                        "url": [
+                            "https://yoast.com/coordinated-security-release/",
+                            "https://blog.sucuri.net/2015/04/security-advisory-xss-vulnerability-affecting-multiple-wordpress-plugins.html"
+                        ],
+                        "wpvulndb": [
+                            "42d994ec-9da9-4dd6-9d44-347becaedb3a"
+                        ]
+                    }
+                },
+                {
+                    "title": " Yoast SEO 1.2.0-11.5 - Authenticated Stored XSS",
+                    "fixed_in": "11.6",
+                    "references": {
+                        "cve": [
+                            "2019-13478"
+                        ],
+                        "url": [
+                            "https://gist.github.com/sybrew/2f53625104ee013d2f599ac254f635ee",
+                            "https://github.com/Yoast/wordpress-seo/pull/13221",
+                            "https://yoast.com/yoast-seo-11.6/"
+                        ],
+                        "wpvulndb": [
+                            "8bc4cf95-79f7-4d92-b320-a841ab7e6a6f"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "ws-form-pro": {
+            "slug": "ws-form-pro",
+            "location": "https://www.mango.org/wp-content/plugins/ws-form-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WS Form < 1.8.176 - Unauthenticated Stored Cross-Site Scripting",
+                    "fixed_in": "1.8.176",
+                    "references": {
+                        "cve": [
+                            "2022-23988"
+                        ],
+                        "wpvulndb": [
+                            "9d5738f9-9a2e-4878-8a03-745894420bf6"
+                        ]
+                    }
+                },
+                {
+                    "title": "WS Form < 1.8.176 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "1.8.176",
+                    "references": {
+                        "cve": [
+                            "2022-23987"
+                        ],
+                        "wpvulndb": [
+                            "1697351b-c201-4e85-891e-94fdccbdfb55"
+                        ]
+                    }
+                },
+                {
+                    "title": "WS Form LITE <= 1.9.217 - Unauthenticated CSV Injection",
+                    "fixed_in": "1.9.218",
+                    "references": {
+                        "cve": [
+                            "2023-5424"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/38ccaa81-77ec-46f2-9bec-d74fa2e093f3"
+                        ],
+                        "wpvulndb": [
+                            "83a7c1d3-3e0e-4f18-8706-5545fdc08ca1"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 9,
+        "requests_remaining": 16
+    },
+    "stop_time": 1742208964,
+    "elapsed": 29,
+    "requests_done": 212,
+    "cached_requests": 7,
+    "data_sent": 91589,
+    "data_sent_humanised": "89.442 KB",
+    "data_received": 1448700,
+    "data_received_humanised": "1.382 MB",
+    "used_memory": 292605952,
+    "used_memory_humanised": "279.051 MB"
+}

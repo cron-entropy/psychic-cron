@@ -1,0 +1,317 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742208862,
+    "start_memory": 48881664,
+    "target_url": "https://iransaatt.com/",
+    "target_ip": "172.67.192.99",
+    "effective_url": "https://iransaatt.com/",
+    "interesting_findings": [
+        {
+            "url": "https://iransaatt.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-dns-prefetch-control: on",
+                "x-litespeed-cache: hit",
+                "cf-cache-status: DYNAMIC",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=b9gL15f4J4yM2KpQwuOwmxTykaBIyyGLIjaLJ33ns9Uk3opmkjelMSrcYn1paUvdXIkcBkhkIZeG46YVQYkzmUDwXCaNj%2F2Y0k7RqrJdmT5aKQTrj%2FNhYcz%2FSVVU8Dsm\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "cf-ray: 921bf38cfb11fac2-SJC",
+                "alt-svc: h3=\":443\"; ma=86400",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=1506&min_rtt=1465&rtt_var=450&sent=6&recv=8&lost=0&retrans=0&sent_bytes=3415&recv_bytes=808&delivery_rate=1944179&cwnd=253&unsent_bytes=0&cid=c4fa7b008a6e16a8&ts=433&x=0\""
+            ]
+        },
+        {
+            "url": "https://iransaatt.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://iransaatt.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://iransaatt.com/wp-content/debug.log",
+            "to_s": "Debug Log found: https://iransaatt.com/wp-content/debug.log",
+            "type": "debug_log",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://codex.wordpress.org/Debugging_in_WordPress"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://iransaatt.com/wp-login.php?action=register",
+            "to_s": "Registration is enabled: https://iransaatt.com/wp-login.php?action=register",
+            "type": "registration",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://iransaatt.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://iransaatt.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Meta Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://iransaatt.com/, Match: 'WordPress 6.7.2'"
+        ],
+        "confirmed_by": {
+            "Rss Generator (Aggressive Detection)": {
+                "confidence": 100,
+                "interesting_entries": [
+                    "https://iransaatt.com/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+                    "https://iransaatt.com/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "avina",
+        "location": "https://iransaatt.com/wp-content/themes/avina/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://iransaatt.com/wp-content/themes/avina/style.css",
+        "style_name": "Avina",
+        "style_uri": "https://avinasite.ir",
+        "description": "Avina Themes",
+        "author": "The Avina Team",
+        "author_uri": "https://avinasite.ir",
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": "avina",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 4,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 2,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.58",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://iransaatt.com/wp-content/themes/avina/style.css, Match: 'Version: 1.58'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://iransaatt.com/wp-content/plugins/elementor/",
+            "latest_version": "3.27.7",
+            "last_updated": "2025-03-13T12:23:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Elementor Website Builder < 3.27.5 - Contributor+ Stored XSS",
+                    "fixed_in": "3.27.5",
+                    "references": {
+                        "cve": [
+                            "2024-13445"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a11e702-34d2-49ee-8762-cc3614a7950a"
+                        ],
+                        "wpvulndb": [
+                            "25374232-2f9c-453d-bc47-124f80e67a92"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.27.3",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://iransaatt.com/wp-content/plugins/elementor/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://iransaatt.com/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "woocommerce": {
+            "slug": "woocommerce",
+            "location": "https://iransaatt.com/wp-content/plugins/woocommerce/",
+            "latest_version": "9.7.1",
+            "last_updated": "2025-03-04T15:28:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Woocommerce < 9.7.1 - Shop Manager+ Stored XSS via New Product Form",
+                    "fixed_in": "9.7.1",
+                    "references": {
+                        "cve": [
+                            "2025-26762"
+                        ],
+                        "url": [
+                            "https://developer.woocommerce.com/2025/03/04/woocommerce-9-7-1-dot-release/"
+                        ],
+                        "wpvulndb": [
+                            "94cbfc1b-9a55-44fa-b1d9-0c47980ace3c"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "9.7.0",
+                "confidence": 100,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://iransaatt.com/, Match: 'WooCommerce 9.7.0'"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://iransaatt.com/wp-content/plugins/woocommerce/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wpforms-lite": {
+            "slug": "wpforms-lite",
+            "location": "https://iransaatt.com/wp-content/plugins/wpforms-lite/",
+            "latest_version": "1.9.4.2",
+            "last_updated": "2025-03-12T12:17:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.9.3.2",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://iransaatt.com/wp-content/plugins/wpforms-lite/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://iransaatt.com/wp-content/plugins/wpforms-lite/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 5,
+        "requests_remaining": 20
+    },
+    "stop_time": 1742208931,
+    "elapsed": 69,
+    "requests_done": 190,
+    "cached_requests": 6,
+    "data_sent": 48887,
+    "data_sent_humanised": "47.741 KB",
+    "data_received": 1578718,
+    "data_received_humanised": "1.506 MB",
+    "used_memory": 292933632,
+    "used_memory_humanised": "279.363 MB"
+}

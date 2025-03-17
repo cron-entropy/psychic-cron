@@ -1,0 +1,583 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742208969,
+    "start_memory": 48996352,
+    "target_url": "https://www.sce.edu.bt/",
+    "target_ip": "103.133.218.15",
+    "effective_url": "https://www.sce.edu.bt/",
+    "interesting_findings": [
+        {
+            "url": "https://www.sce.edu.bt/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server: Apache/2.4.46 (Ubuntu)"
+            ]
+        },
+        {
+            "url": "https://www.sce.edu.bt/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.sce.edu.bt/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.sce.edu.bt/readme.html",
+            "to_s": "WordPress readme found: https://www.sce.edu.bt/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.sce.edu.bt/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.sce.edu.bt/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.sce.edu.bt/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.sce.edu.bt/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.1.3",
+        "release_date": "2023-05-20",
+        "status": "insecure",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.sce.edu.bt/?feed=rss2, <generator>https://wordpress.org/?v=6.1.3</generator>",
+            "https://www.sce.edu.bt/?feed=comments-rss2, <generator>https://wordpress.org/?v=6.1.3</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": [
+            {
+                "title": "WP 5.6-6.3.1 - Contributor+ Stored XSS via Navigation Block",
+                "fixed_in": "6.1.4",
+                "references": {
+                    "cve": [
+                        "2023-38000"
+                    ],
+                    "url": [
+                        "https://wordpress.org/news/2023/10/wordpress-6-3-2-maintenance-and-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "cd130bb3-8d04-4375-a89a-883af131ed3a"
+                    ]
+                }
+            },
+            {
+                "title": "WP 5.6-6.3.1 - Reflected XSS via Application Password Requests",
+                "fixed_in": "6.1.4",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2023/10/wordpress-6-3-2-maintenance-and-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "da1419cc-d821-42d6-b648-bdb3c70d91f2"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.3.2 - Denial of Service via Cache Poisoning",
+                "fixed_in": "6.1.4",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2023/10/wordpress-6-3-2-maintenance-and-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "6d80e09d-34d5-4fda-81cb-e703d0e56e4f"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.3.2 - Subscriber+ Arbitrary Shortcode Execution",
+                "fixed_in": "6.1.4",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2023/10/wordpress-6-3-2-maintenance-and-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "3615aea0-90aa-4f9a-9792-078a90af7f59"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.3.2 - Contributor+ Comment Disclosure",
+                "fixed_in": "6.1.4",
+                "references": {
+                    "cve": [
+                        "2023-39999"
+                    ],
+                    "url": [
+                        "https://wordpress.org/news/2023/10/wordpress-6-3-2-maintenance-and-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "d35b2a3d-9b41-4b4f-8e87-1b8ccb370b9f"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.3.2 - Unauthenticated Post Author Email Disclosure",
+                "fixed_in": "6.1.4",
+                "references": {
+                    "cve": [
+                        "2023-5561"
+                    ],
+                    "url": [
+                        "https://wpscan.com/blog/email-leak-oracle-vulnerability-addressed-in-wordpress-6-3-2/",
+                        "https://wordpress.org/news/2023/10/wordpress-6-3-2-maintenance-and-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "19380917-4c27-4095-abf1-eba6f913b441"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 6.4.3 - Deserialization of Untrusted Data",
+                "fixed_in": "6.1.5",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2024/01/wordpress-6-4-3-maintenance-and-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "5e9804e5-bbd4-4836-a5f0-b4388cc39225"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 6.4.3 - Admin+ PHP File Upload",
+                "fixed_in": "6.1.5",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2024/01/wordpress-6-4-3-maintenance-and-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "a8e12fbe-c70b-4078-9015-cf57a05bdd4a"
+                    ]
+                }
+            },
+            {
+                "title": "WP < 6.5.2 - Unauthenticated Stored XSS",
+                "fixed_in": "6.1.6",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2024/04/wordpress-6-5-2-maintenance-and-security-release/"
+                    ],
+                    "wpvulndb": [
+                        "1a5c5df1-57ee-4190-a336-b0266962078f"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 6.5.5 - Contributor+ Stored XSS in HTML API",
+                "fixed_in": "6.1.7",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2024/06/wordpress-6-5-5/"
+                    ],
+                    "wpvulndb": [
+                        "2c63f136-4c1f-4093-9a8c-5e51f19eae28"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 6.5.5 - Contributor+ Stored XSS in Template-Part Block",
+                "fixed_in": "6.1.7",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2024/06/wordpress-6-5-5/"
+                    ],
+                    "wpvulndb": [
+                        "7c448f6d-4531-4757-bff0-be9e3220bbbb"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 6.5.5 - Contributor+ Path Traversal in Template-Part Block",
+                "fixed_in": "6.1.7",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2024/06/wordpress-6-5-5/"
+                    ],
+                    "wpvulndb": [
+                        "36232787-754a-4234-83d6-6ded5e80251c"
+                    ]
+                }
+            }
+        ]
+    },
+    "main_theme": {
+        "slug": "eduma",
+        "location": "https://www.sce.edu.bt/wp-content/themes/eduma/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://www.sce.edu.bt/wp-content/themes/eduma/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.sce.edu.bt/wp-content/themes/eduma/style.css",
+        "style_name": "Eduma",
+        "style_uri": "http://educationwp.thimpress.com/",
+        "description": "Premium WordPress LMS theme.",
+        "author": "ThimPress",
+        "author_uri": "https://thimpress.com",
+        "template": null,
+        "license": "Split License",
+        "license_uri": "https://help.market.envato.com/hc/en-us/articles/202501064-What-is-Split-Licensing-and-the-GPL-",
+        "tags": "two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready",
+        "text_domain": "eduma",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 92,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In Homepage (Passive Detection)": {
+                "confidence": 22,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [
+            {
+                "title": "Eduma < 5.4.8 - Reflected Cross-Site Scripting",
+                "fixed_in": "5.4.8",
+                "references": {
+                    "cve": [
+                        "2024-35697"
+                    ],
+                    "url": [
+                        "https://www.wordfence.com/threat-intel/vulnerabilities/id/48b0d7ad-f4d6-45b5-8694-e41551728e83"
+                    ],
+                    "wpvulndb": [
+                        "d4604ad4-7ff3-45dc-b945-48498641764e"
+                    ]
+                }
+            }
+        ],
+        "version": {
+            "number": "4.3.2",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.sce.edu.bt/wp-content/themes/eduma/style.css, Match: 'Version: 4.3.2'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "siteorigin-panels": {
+            "slug": "siteorigin-panels",
+            "location": "https://www.sce.edu.bt/wp-content/plugins/siteorigin-panels/",
+            "latest_version": "2.31.5",
+            "last_updated": "2025-02-26T22:13:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Page Builder by SiteOrigin < 2.29.7 - Contributor+ Stored XSS",
+                    "fixed_in": "2.29.7",
+                    "references": {
+                        "cve": [
+                            "2024-2202"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/52116a6f-506f-4eeb-9bcc-19900ef38101"
+                        ],
+                        "wpvulndb": [
+                            "473d4c67-42cc-49de-bff5-5bff273b6c9d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Page Builder by SiteOrigin < 2.29.16 - Contributor+ Stored XSS via siteorigin_widget Shortcode",
+                    "fixed_in": "2.29.16",
+                    "references": {
+                        "cve": [
+                            "2024-4361"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a97f72f6-86f7-45dc-908a-292ba735071d"
+                        ],
+                        "wpvulndb": [
+                            "ad352589-878a-4200-bf09-b838bf3eb90d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Page Builder by SiteOrigin < 2.31.1 - Contributor+ Stored XSS via Row Label Parameter",
+                    "fixed_in": "2.31.1",
+                    "references": {
+                        "cve": [
+                            "2024-12240"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/abe8c6b0-b16b-4391-88b4-dca507c973fc"
+                        ],
+                        "wpvulndb": [
+                            "3d2d6b80-963b-4936-931d-14d13f87fc4f"
+                        ]
+                    }
+                },
+                {
+                    "title": "Page Builder by SiteOrigin < 2.31.5 - Contributor+ Stored XSS",
+                    "fixed_in": "2.31.5",
+                    "references": {
+                        "cve": [
+                            "2025-1459"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e14c12ef-0774-4459-9a2c-9a4b633a0efe"
+                        ],
+                        "wpvulndb": [
+                            "633bce7d-d77c-4544-b10a-246867332fb1"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "2.12.2",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sce.edu.bt/wp-content/plugins/siteorigin-panels/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "so-widgets-bundle": {
+            "slug": "so-widgets-bundle",
+            "location": "https://www.sce.edu.bt/wp-content/plugins/so-widgets-bundle/",
+            "latest_version": "1.66.0",
+            "last_updated": "2025-03-01T12:52:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "so-widgets-bundle < 1.51.0 - Admin+ Local File Inclusion",
+                    "fixed_in": "1.51.0",
+                    "references": {
+                        "cve": [
+                            "2023-6295"
+                        ],
+                        "wpvulndb": [
+                            "adc9ed9f-55b4-43a9-a79d-c7120764f47c"
+                        ]
+                    }
+                },
+                {
+                    "title": "SiteOrigin Widgets Bundle < 1.58.2 - Contributor+ Stored XSS",
+                    "fixed_in": "1.58.2",
+                    "references": {
+                        "cve": [
+                            "2024-0961"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/6f7c164f-2f78-4857-94b9-077c2dea13df"
+                        ],
+                        "wpvulndb": [
+                            "2c1b3942-5234-4523-99a7-2606e20349b5"
+                        ]
+                    }
+                },
+                {
+                    "title": "SiteOrigin Widgets Bundle < 1.58.4 - Contributor+ Stored Cross-Site Scripting",
+                    "fixed_in": "1.58.4",
+                    "references": {
+                        "cve": [
+                            "2024-1058"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ffeb766f-3684-4eec-bacb-bbf0d434aba0"
+                        ],
+                        "wpvulndb": [
+                            "1828c517-8c85-4737-8b75-c73d45a5fbdf"
+                        ]
+                    }
+                },
+                {
+                    "title": "SiteOrigin Widgets Bundle < 1.58.3 - Contributor+ Stored Cross-Site Scripting",
+                    "fixed_in": "1.58.3",
+                    "references": {
+                        "cve": [
+                            "2024-1070"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a8b6dafb-7b2f-4459-95bd-eb7e147a4466"
+                        ],
+                        "wpvulndb": [
+                            "50a13d41-3e1a-4957-81eb-ec5e95859bb2"
+                        ]
+                    }
+                },
+                {
+                    "title": "SiteOrigin Widgets Bundle < 1.58.8 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "1.58.8",
+                    "references": {
+                        "cve": [
+                            "2024-1723"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e63c566d-744b-42f5-9ba6-9007cc60313a"
+                        ],
+                        "wpvulndb": [
+                            "0fa35576-5f84-412a-91d4-40076202dc44"
+                        ]
+                    }
+                },
+                {
+                    "title": "SiteOrigin Widgets Bundle < 1.61.0 - Contributor+ Stored XSS via siteorigin_widget Shortcode",
+                    "fixed_in": "1.61.0",
+                    "references": {
+                        "cve": [
+                            "2024-4362"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b7926ec6-3441-4062-93b2-6c2120c9f406"
+                        ],
+                        "wpvulndb": [
+                            "a8d80f27-d438-4c30-99ac-b5e738091700"
+                        ]
+                    }
+                },
+                {
+                    "title": "SiteOrigin Widgets Bundle < 1.62.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via SiteOrigin Blog Widget",
+                    "fixed_in": "1.62.0",
+                    "references": {
+                        "cve": [
+                            "2024-5090"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/2878de45-0123-4e07-bfec-015b36b11d01"
+                        ],
+                        "wpvulndb": [
+                            "c1da7162-abfd-4b1e-8e6b-fe42ef7ac1c8"
+                        ]
+                    }
+                },
+                {
+                    "title": "SiteOrigin Widgets Bundle < 1.62.3 - Authenticated (Contributor+) Stored Cross-Site Scripting in Image Grid widget",
+                    "fixed_in": "1.62.3",
+                    "references": {
+                        "cve": [
+                            "2024-5901"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/0045c5a4-0807-4e89-8639-0802e54ce6ab"
+                        ],
+                        "wpvulndb": [
+                            "a4750a3c-a75f-43ef-a5c3-b8ee3b317d30"
+                        ]
+                    }
+                },
+                {
+                    "title": "SiteOrigin Widgets Bundle < 1.64.1 - Missing Authorization",
+                    "fixed_in": "1.64.1",
+                    "references": {
+                        "cve": [
+                            "2024-54268"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/6864382e-7a45-413c-a80e-a5dd827fe6c7"
+                        ],
+                        "wpvulndb": [
+                            "8cb275c4-7912-472e-92a0-97aefc049229"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "1.19.0",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.sce.edu.bt/wp-content/plugins/so-widgets-bundle/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {
+        "https://www.sce.edu.bt/.wp-config.php.swp": {
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {}
+        }
+    },
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 4,
+        "requests_remaining": 21
+    },
+    "stop_time": 1742208997,
+    "elapsed": 27,
+    "requests_done": 180,
+    "cached_requests": 6,
+    "data_sent": 47451,
+    "data_sent_humanised": "46.339 KB",
+    "data_received": 1539925,
+    "data_received_humanised": "1.469 MB",
+    "used_memory": 271118336,
+    "used_memory_humanised": "258.559 MB"
+}

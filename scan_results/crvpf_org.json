@@ -1,0 +1,941 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742208481,
+    "start_memory": 49049600,
+    "target_url": "https://crvpf.org/",
+    "target_ip": "188.245.191.34",
+    "effective_url": "https://crvpf.org/",
+    "interesting_findings": [
+        {
+            "url": "https://crvpf.org/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: LiteSpeed",
+                "alt-svc: h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+            ]
+        },
+        {
+            "url": "https://crvpf.org/robots.txt",
+            "to_s": "robots.txt found: https://crvpf.org/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://crvpf.org/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://crvpf.org/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://crvpf.org/readme.html",
+            "to_s": "WordPress readme found: https://crvpf.org/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://crvpf.org/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://crvpf.org/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://crvpf.org/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://crvpf.org/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "astra",
+        "location": "https://crvpf.org/wp-content/themes/astra/",
+        "latest_version": "4.9.0",
+        "last_updated": "2025-03-06T00:00:00.000Z",
+        "outdated": true,
+        "readme_url": "https://crvpf.org/wp-content/themes/astra/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://crvpf.org/wp-content/themes/astra/style.css",
+        "style_name": "Astra",
+        "style_uri": "https://wpastra.com/",
+        "description": "Astra is fast, fully customizable & beautiful WordPress theme suitable for blog, personal portfolio, business website and WooCommerce storefront. It is very lightweight (less than 50KB on frontend) and offers unparalleled speed. Built with SEO in mind, Astra comes with Schema.org code integrated and is Native AMP ready so search engines will love your site. It offers special features and templates so it works perfectly with all page builders like Elementor, Beaver Builder, Visual Composer, SiteOrigin, Divi, etc. Some of the other features: # WooCommerce Ready # Responsive # RTL & Translation Ready # Extendible with premium addons # Regularly updated # Designed, Developed, Maintained & Supported by Brainstorm Force. Looking for a perfect base theme? Look no further. Astra is fast, fully customizable and WooCommerce ready theme that you can use for building any kind of website!",
+        "author": "Brainstorm Force",
+        "author_uri": "https://wpastra.com/about/?utm_source=theme_preview&utm_medium=author_link&utm_campaign=astra_theme",
+        "template": null,
+        "license": "GNU General Public License v2 or later",
+        "license_uri": "https://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "custom-menu, custom-logo, entertainment, one-column, two-columns, left-sidebar, e-commerce, right-sidebar, custom-colors, editor-style, featured-images, full-width-template, microformats, post-formats, rtl-language-support, theme-options, threaded-comments, translation-ready, blog",
+        "text_domain": "astra",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 12,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 6,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "4.7.2",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://crvpf.org/wp-content/themes/astra/style.css, Match: 'Version: 4.7.2'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "astra-sites": {
+            "slug": "astra-sites",
+            "location": "https://crvpf.org/wp-content/plugins/astra-sites/",
+            "latest_version": "4.4.15",
+            "last_updated": "2025-03-11T10:26:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Starter Templates < 4.4.1 - Author+ Stored XSS",
+                    "fixed_in": "4.4.1",
+                    "references": {
+                        "cve": [
+                            "2024-47345"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/astra-sites/wordpress-starter-templates-elementor-wordpress-beaver-builder-templates-plugin-4-4-0-cross-site-scripting-xss-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "3a0761fd-f853-4842-b306-73bfdc94da1a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Starter Templates < 4.4.10 - Cross-Site Request Forgery",
+                    "fixed_in": "4.4.10",
+                    "references": {
+                        "cve": [
+                            "2025-24568"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/014392ee-4b24-4b81-954e-fc87727436ab"
+                        ],
+                        "wpvulndb": [
+                            "fb4cede3-576f-4d70-b486-cf072337bf44"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "4.3.6",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://crvpf.org/wp-content/plugins/astra-sites/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://crvpf.org/wp-content/plugins/elementor/",
+            "latest_version": "3.27.7",
+            "last_updated": "2025-03-13T12:23:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Elementor Website Builder < 3.22.2 - Contributor+ Arbitrary SVG Download",
+                    "fixed_in": "3.22.2",
+                    "references": {
+                        "cve": [
+                            "2024-37437"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f11bc707-2465-4b64-945a-c0db6e9043dd"
+                        ],
+                        "wpvulndb": [
+                            "e6d56be1-9a2a-426f-88ca-1ffa773622c1"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder \u2013 More than Just a Page Builder < 3.24.0 - Authenticated (Contributor+) Stored Cross-Site Scripting in the URL Parameter in Multiple Widgets",
+                    "fixed_in": "3.24.0",
+                    "references": {
+                        "cve": [
+                            "2024-5416"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a99a64f7-1ea8-4de6-b24f-1f69bf25c1f5"
+                        ],
+                        "wpvulndb": [
+                            "5200943b-5e07-4342-a090-f78435e30d30"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor < 3.24.6 - Contributor+ Information Exposure via get_image_alt",
+                    "fixed_in": "3.24.6",
+                    "references": {
+                        "cve": [
+                            "2024-6757"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/96fa9ed7-6c13-4356-8a25-8a309be2b0e9"
+                        ],
+                        "wpvulndb": [
+                            "dce5ad0c-3ce9-498f-b0f7-8dfd6ee82e40"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.25.8 - Contributor+ Stored XSS",
+                    "fixed_in": "3.25.8",
+                    "references": {
+                        "cve": [
+                            "2024-8236"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b1305be5-8267-475f-b962-62e3930116e1"
+                        ],
+                        "wpvulndb": [
+                            "78f0847b-3f59-43cf-87db-2cadda862aa3"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.25.10 - Contributor+ Stored XSS via Typography Settings",
+                    "fixed_in": "3.25.10",
+                    "references": {
+                        "cve": [
+                            "2024-10453"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f23604b7-5a7f-4be7-bc73-cb4facdd1e73"
+                        ],
+                        "wpvulndb": [
+                            "2e05843d-1797-4da9-99ec-06376484fb32"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.27.5 - Contributor+ Stored XSS",
+                    "fixed_in": "3.27.5",
+                    "references": {
+                        "cve": [
+                            "2024-13445"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a11e702-34d2-49ee-8762-cc3614a7950a"
+                        ],
+                        "wpvulndb": [
+                            "25374232-2f9c-453d-bc47-124f80e67a92"
+                        ]
+                    }
+                },
+                {
+                    "title": "Elementor Website Builder < 3.25.11 - Contributor+ Stored XSS",
+                    "fixed_in": "3.25.11",
+                    "references": {
+                        "cve": [
+                            "2024-54444"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/wordpress/plugin/elementor/vulnerability/wordpress-elementor-plugin-3-25-10-cross-site-scripting-xss-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "61e1476a-cb14-46f9-b68c-4fd5b5c39597"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.22.0",
+                "confidence": 100,
+                "found_by": "Javascript Comment (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://crvpf.org/wp-content/plugins/elementor/assets/js/admin-feedback.js, Match: 'elementor - v3.22.0'"
+                ],
+                "confirmed_by": {
+                    "Style Comment (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://crvpf.org/wp-content/plugins/elementor/assets/css/admin.min.css, Match: 'elementor - v3.22.0'"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor-pro": {
+            "slug": "elementor-pro",
+            "location": "https://crvpf.org/wp-content/plugins/elementor-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Elementor Website Builder Pro \u2013 More than Just a Page Builder < 3.25.11 - Authenticated (Contributor+) Sensitive Information Exposure via Shortcode",
+                    "fixed_in": "3.25.11",
+                    "references": {
+                        "cve": [
+                            "2024-8494"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/94ada60f-1e20-454e-a9d7-7849be764d81"
+                        ],
+                        "wpvulndb": [
+                            "771699f9-aa9b-4352-8382-5fbc17f364c2"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.22.1",
+                "confidence": 80,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://crvpf.org/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.22.1",
+                    "https://crvpf.org/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.22.1"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://crvpf.org/wp-content/plugins/elementor-pro/changelog.txt, Match: '#### 3.22.1 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementskit": {
+            "slug": "elementskit",
+            "location": "https://crvpf.org/wp-content/plugins/elementskit/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "ElementsKit and ElementsKit Pro < 2.2.0 - Contributor+ Stored XSS",
+                    "fixed_in": "2.2.0",
+                    "references": {
+                        "cve": [
+                            "2021-24258"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/04/recent-patches-rock-the-elementor-ecosystem/"
+                        ],
+                        "wpvulndb": [
+                            "47b47b86-899b-4de3-8a3c-2d5d1774298f"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via 'ekit_btn_id'",
+                    "fixed_in": "3.6.1",
+                    "references": {
+                        "cve": [
+                            "2024-3598"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a9e4b14f-0f55-47bc-8e40-19b262e50561"
+                        ],
+                        "wpvulndb": [
+                            "36f303a8-6482-4013-96dd-c93428adadc2"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.1 - Authenticated (Contributor+) Local File Inclusion via Price Menu, Hotspot, and Advanced Toggle Widgets",
+                    "fixed_in": "3.6.1",
+                    "references": {
+                        "cve": [
+                            "2024-3500"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c8ae0a47-cba5-468e-8d25-7b7176373b9c"
+                        ],
+                        "wpvulndb": [
+                            "7f210486-4350-450d-aebd-5851f24398b1"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.2 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "3.6.2",
+                    "references": {
+                        "cve": [
+                            "2024-4452"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/488ac848-786e-4100-a387-5a40e8fc4175"
+                        ],
+                        "wpvulndb": [
+                            "fc35b1b8-7cf9-4020-aa9b-491fc1ed54c6"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit PRO < 3.6.3 - Authenticated (Contributor+) Server-Side Request Forgery",
+                    "fixed_in": "3.6.3",
+                    "references": {
+                        "cve": [
+                            "2024-4404"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/6417269d-3d49-4f33-b92a-5aacb052bab0"
+                        ],
+                        "wpvulndb": [
+                            "7ba6054e-3412-46bd-8024-a268523ec9fb"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons and Templates Library < 3.6.3 - Authenticated (Contributor+) Stored Cross-Site Scripting via Motion Text and Table Widgets",
+                    "fixed_in": "3.6.3",
+                    "references": {
+                        "cve": [
+                            "2024-5263"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/2e718554-1096-4a16-968d-f00b65e1361d"
+                        ],
+                        "wpvulndb": [
+                            "64a3f488-b6f7-4466-82ef-5046b0f1dbff"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.6 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "3.6.6",
+                    "references": {
+                        "cve": [
+                            "2024-7064"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/181e6f3a-dbcf-44a6-b725-6325d9e56453"
+                        ],
+                        "wpvulndb": [
+                            "2a342f4c-e56e-438a-b0d2-4476dec30d6e"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.7 - Authenticated (Contributor+) Sensitive Information Exposure",
+                    "fixed_in": "3.6.7",
+                    "references": {
+                        "cve": [
+                            "2024-7063"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d35dd18b-0f05-482f-aef3-08977cbec8a0"
+                        ],
+                        "wpvulndb": [
+                            "91bd87df-45a2-4b56-b79e-f274e0677dc2"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.7.9 - Authenticated (Contributor+) DOM-Based Stored Cross-Site Scripting via url Parameter",
+                    "fixed_in": "3.7.9",
+                    "references": {
+                        "cve": [
+                            "2025-0321"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/204cfe20-9df1-4f6c-a38c-a21b43dde385"
+                        ],
+                        "wpvulndb": [
+                            "3f2442ef-123e-4efa-9b49-331405cce87f"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "elementskit-lite": {
+            "slug": "elementskit-lite",
+            "location": "https://crvpf.org/wp-content/plugins/elementskit-lite/",
+            "latest_version": "3.4.4",
+            "last_updated": "2025-03-04T04:06:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "ElementsKit Elementor addons < 3.2.1 - Unauthenticated Information Exposure via ekit_widgetarea_content Function",
+                    "fixed_in": "3.2.1",
+                    "references": {
+                        "cve": [
+                            "2024-6455"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7c336530-09b2-4ead-923f-f1a6266e3e8e"
+                        ],
+                        "wpvulndb": [
+                            "480bda54-4027-4a95-9085-49f04c3fc07c"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons < 3.2.8 - Authenticated (Contributor+) Stored Cross-Site Scripting via Video Widget",
+                    "fixed_in": "3.2.8",
+                    "references": {
+                        "cve": [
+                            "2024-8546"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d21aeeb6-2e7d-426e-82c5-ff65e33bc5cb"
+                        ],
+                        "wpvulndb": [
+                            "c311fc17-0c27-459c-b0d3-5f421ef193f6"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons < 3.3.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via Image Comparison Widget",
+                    "fixed_in": "3.3.0",
+                    "references": {
+                        "cve": [
+                            "2024-10091"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/00b278af-6ce6-4e70-a83a-a1b035542cd4"
+                        ],
+                        "wpvulndb": [
+                            "6e7f7cd9-96cd-4526-b144-4c53c0899625"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons < 3.4.1 - Contributor+ Stored XSS",
+                    "fixed_in": "3.4.1",
+                    "references": {
+                        "cve": [
+                            "2025-1005"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5b74d6aa-ad59-42be-b454-9c27428cab01"
+                        ],
+                        "wpvulndb": [
+                            "ff09d6cd-78b5-4d13-93bb-573725fa86b2"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons < 3.4.1 - Unauthenticated Information Exposure",
+                    "fixed_in": "3.4.1",
+                    "references": {
+                        "cve": [
+                            "2025-0968"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/432ac3b1-8f1d-442f-8e8d-62a1f26ba259"
+                        ],
+                        "wpvulndb": [
+                            "d21c9a9b-752d-4f61-82bb-84cfff59d46b"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.2.0",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://crvpf.org/wp-content/plugins/elementskit-lite/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "skyboot-custom-icons-for-elementor": {
+            "slug": "skyboot-custom-icons-for-elementor",
+            "location": "https://crvpf.org/wp-content/plugins/skyboot-custom-icons-for-elementor/",
+            "latest_version": "1.0.8",
+            "last_updated": "2024-03-09T09:20:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.0.7",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://crvpf.org/wp-content/plugins/skyboot-custom-icons-for-elementor/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "the-post-grid": {
+            "slug": "the-post-grid",
+            "location": "https://crvpf.org/wp-content/plugins/the-post-grid/",
+            "latest_version": "7.7.18",
+            "last_updated": "2025-03-05T05:50:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "The Post Grid < 7.7.12 - Authenticated (Contributor+) Information Disclosure",
+                    "fixed_in": "7.7.12",
+                    "references": {
+                        "cve": [
+                            "2024-7418"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/dddecb2e-9ad6-4e44-afce-5eba7da6322d"
+                        ],
+                        "wpvulndb": [
+                            "5dd682ca-b295-4fbf-8bfd-dc8aa9d6b6f5"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "7.7.5",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://crvpf.org/wp-content/plugins/the-post-grid/README.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://crvpf.org/wp-content/plugins/the-post-grid/README.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://crvpf.org/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T08:44:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "23.0",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://crvpf.org/, Match: 'optimized with the Yoast SEO plugin v23.0 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://crvpf.org/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://crvpf.org/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wp-rocket": {
+            "slug": "wp-rocket",
+            "location": "https://crvpf.org/wp-content/plugins/wp-rocket/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Comment (Passive Detection)": {
+                    "confidence": 30,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.16",
+                "confidence": 60,
+                "found_by": "Translation File (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://crvpf.org/wp-content/plugins/wp-rocket/languages/rocket.pot, Match: 'Project-Id-Version: WP Rocket 3.16'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wpforms-lite": {
+            "slug": "wpforms-lite",
+            "location": "https://crvpf.org/wp-content/plugins/wpforms-lite/",
+            "latest_version": "1.9.4.2",
+            "last_updated": "2025-03-12T12:17:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WPForms < 1.9.1.6 - Admin+ Stored XSS",
+                    "fixed_in": "1.9.1.6",
+                    "references": {
+                        "cve": [
+                            "2024-7056"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-7056/"
+                        ],
+                        "wpvulndb": [
+                            "467af13e-25bd-425c-929d-5dd06e28d595"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPForms \u2013 Easy Form Builder for WordPress < 1.9.2.1 - Cross-Site Request Forgery (CSRF) to Plugin's Log Deletion",
+                    "fixed_in": "1.9.2.1",
+                    "references": {
+                        "cve": [
+                            "2024-10593"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/6d1ea80a-a1ce-4964-8dde-f3ed2df5537c"
+                        ],
+                        "wpvulndb": [
+                            "d0877cf0-a940-4d1b-ae44-7601ac3132a0"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPForms < 1.9.2.3 - Admin+ Stored XSS",
+                    "fixed_in": "1.9.2.3",
+                    "references": {
+                        "cve": [
+                            "2024-11223"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-11223"
+                        ],
+                        "wpvulndb": [
+                            "82989909-9745-4c9a-abc7-c1adf8c2b047"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPForms 1.8.4 - 1.9.2.1 - Missing Authorization to Authenticated (Subscriber+) Payment Refund and Subscription Cancellation",
+                    "fixed_in": "1.9.2.2",
+                    "references": {
+                        "cve": [
+                            "2024-11205"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/66898509-a93c-4dc3-bf01-1743daaa0ff1"
+                        ],
+                        "wpvulndb": [
+                            "4e8abd1c-47ff-4f74-a9dd-d827b0fa57c8"
+                        ]
+                    }
+                },
+                {
+                    "title": "Contact Form by WPForms < 1.9.2.3 - Contributor+ Custom Form Theme Creation",
+                    "fixed_in": "1.9.2.3",
+                    "references": {
+                        "cve": [
+                            "2024-56276"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/95de9099-6071-46d8-a7c9-bb2c1caa6b38"
+                        ],
+                        "wpvulndb": [
+                            "ed5fd5ae-1c77-43e4-ab2c-99689f586938"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPForms Lite < 1.9.3.2 - Authenticated (Contributor+) Stored Cross-Site Scripting via fieldHTML Parameter",
+                    "fixed_in": "1.9.3.2",
+                    "references": {
+                        "cve": [
+                            "2024-13403"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/92ea6a89-b14f-4252-b886-e219c1bb658d"
+                        ],
+                        "wpvulndb": [
+                            "9a3659ed-f3e1-4360-b91f-08b34397e9cc"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "1.8.9.5",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://crvpf.org/wp-content/plugins/wpforms-lite/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://crvpf.org/wp-content/plugins/wpforms-lite/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 12,
+        "requests_remaining": 13
+    },
+    "stop_time": 1742208788,
+    "elapsed": 306,
+    "requests_done": 220,
+    "cached_requests": 7,
+    "data_sent": 55665,
+    "data_sent_humanised": "54.36 KB",
+    "data_received": 1896488,
+    "data_received_humanised": "1.809 MB",
+    "used_memory": 284803072,
+    "used_memory_humanised": "271.609 MB"
+}

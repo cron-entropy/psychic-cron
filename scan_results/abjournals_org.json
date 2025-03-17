@@ -1,0 +1,1008 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742208791,
+    "start_memory": 48754688,
+    "target_url": "https://abjournals.org/",
+    "target_ip": "172.67.199.40",
+    "effective_url": "https://abjournals.org/",
+    "interesting_findings": [
+        {
+            "url": "https://abjournals.org/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-powered-by: PHP/7.4.33",
+                "x-litespeed-cache: hit",
+                "x-turbo-charged-by: LiteSpeed",
+                "cf-cache-status: DYNAMIC",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=iWNmgFv%2Fqtw9YldMVE8ISbDzRTxj0bzCJ3dVs2mtqEsB16w63V5EdR5kU1vz2r9aSUIeQJNRz4Wj7jgkWYFupk7PL1K1qsf4TsWgy%2FKC9IxFy9neNMRn2njyM%2Fip3ZaKSw%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "cf-ray: 921bf1e6d8166804-SJC",
+                "alt-svc: h3=\":443\"; ma=86400",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=1430&min_rtt=1392&rtt_var=414&sent=6&recv=7&lost=0&retrans=0&sent_bytes=3397&recv_bytes=810&delivery_rate=2051724&cwnd=252&unsent_bytes=0&cid=162b8132d837908c&ts=161&x=0\""
+            ]
+        },
+        {
+            "url": "https://abjournals.org/robots.txt",
+            "to_s": "robots.txt found: https://abjournals.org/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://abjournals.org/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://abjournals.org/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 30,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.5.4",
+        "release_date": "2024-06-05",
+        "status": "insecure",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://abjournals.org/feed/, <generator>https://wordpress.org/?v=6.5.4</generator>",
+            "https://abjournals.org/comments/feed/, <generator>https://wordpress.org/?v=6.5.4</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": [
+            {
+                "title": "WordPress < 6.5.5 - Contributor+ Stored XSS in HTML API",
+                "fixed_in": "6.5.5",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2024/06/wordpress-6-5-5/"
+                    ],
+                    "wpvulndb": [
+                        "2c63f136-4c1f-4093-9a8c-5e51f19eae28"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 6.5.5 - Contributor+ Stored XSS in Template-Part Block",
+                "fixed_in": "6.5.5",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2024/06/wordpress-6-5-5/"
+                    ],
+                    "wpvulndb": [
+                        "7c448f6d-4531-4757-bff0-be9e3220bbbb"
+                    ]
+                }
+            },
+            {
+                "title": "WordPress < 6.5.5 - Contributor+ Path Traversal in Template-Part Block",
+                "fixed_in": "6.5.5",
+                "references": {
+                    "url": [
+                        "https://wordpress.org/news/2024/06/wordpress-6-5-5/"
+                    ],
+                    "wpvulndb": [
+                        "36232787-754a-4234-83d6-6ded5e80251c"
+                    ]
+                }
+            }
+        ]
+    },
+    "main_theme": null,
+    "plugins": {
+        "autoptimize": {
+            "slug": "autoptimize",
+            "location": "https://abjournals.org/wp-content/plugins/autoptimize/",
+            "latest_version": "3.1.13",
+            "last_updated": "2024-12-26T09:43:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Autoptimize < 2.7.7 - Authenticated Arbitrary File Upload",
+                    "fixed_in": "2.7.7",
+                    "references": {
+                        "cve": [
+                            "2020-24948"
+                        ],
+                        "exploitdb": [
+                            "48770"
+                        ],
+                        "wpvulndb": [
+                            "56dc9a8c-05ae-4881-a92e-e213eab866a0"
+                        ]
+                    }
+                },
+                {
+                    "title": "Autoptimize < 2.8.4 - Authenticated Stored Cross-Site Scripting (XSS)",
+                    "fixed_in": "2.8.4",
+                    "references": {
+                        "cve": [
+                            "2021-24332"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2525674/",
+                            "https://m0ze.ru/vulnerability/[2021-04-01]-[WordPress]-[CWE-79]-Autoptimize-WordPress-Plugin-v2.8.3.txt"
+                        ],
+                        "wpvulndb": [
+                            "6678e064-ce21-4bb2-8c50-061073fb22fb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Autoptimize < 2.7.8 - Arbitrary File Upload via \"Import Settings\"",
+                    "fixed_in": "2.7.8",
+                    "references": {
+                        "cve": [
+                            "2021-24376"
+                        ],
+                        "wpvulndb": [
+                            "93edcc23-894a-46c2-84d2-407dcb64ba1e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Autoptimize < 2.7.8 - Race Condition leading to RCE",
+                    "fixed_in": "2.7.8",
+                    "references": {
+                        "cve": [
+                            "2021-24377"
+                        ],
+                        "wpvulndb": [
+                            "85c0a564-2e56-413d-bc3a-1039343207e4"
+                        ]
+                    }
+                },
+                {
+                    "title": "Autoptimize < 2.7.8 - Authenticated Stored XSS via File Upload",
+                    "fixed_in": "2.7.8",
+                    "references": {
+                        "cve": [
+                            "2021-24378"
+                        ],
+                        "wpvulndb": [
+                            "375bd694-1a30-41af-bbd4-8a8ee54f0dbf"
+                        ]
+                    }
+                },
+                {
+                    "title": "Autoptimize < 3.1.1 - Admin+ Stored Cross Site Scripting",
+                    "fixed_in": "3.1.1",
+                    "references": {
+                        "cve": [
+                            "2022-2635"
+                        ],
+                        "wpvulndb": [
+                            "219767a8-2427-42d5-8734-bd197d9ab46b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Autoptimize < 3.1.0 - Sensitive Data Disclosure",
+                    "fixed_in": "3.1.0",
+                    "references": {
+                        "cve": [
+                            "2022-4057"
+                        ],
+                        "wpvulndb": [
+                            "95ee1b9c-1971-4c35-8527-5764e9ed64af"
+                        ]
+                    }
+                },
+                {
+                    "title": "Autoptimize < 3.1.7 - Admin+ Stored Cross-Site Scripting via Settings Import",
+                    "fixed_in": "3.1.7",
+                    "references": {
+                        "cve": [
+                            "2023-2113"
+                        ],
+                        "wpvulndb": [
+                            "ddb4c95d-bbee-4095-aed6-25f6b8e63011"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "js_composer": {
+            "slug": "js_composer",
+            "location": "https://abjournals.org/wp-content/plugins/js_composer/",
+            "latest_version": "8.3",
+            "last_updated": "2025-03-12T18:36:52.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Body Tag (Passive Detection)",
+            "confidence": 40,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "7.9",
+                "confidence": 60,
+                "found_by": "Body Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://abjournals.org/, Match: 'js-comp-ver-7.9'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "LayerSlider": {
+            "slug": "LayerSlider",
+            "location": "https://abjournals.org/wp-content/plugins/LayerSlider/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Meta Generator (Passive Detection)",
+            "confidence": 40,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "7.11.5",
+                "confidence": 60,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://abjournals.org/, Match: 'Powered by LayerSlider 7.11.5 -'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "native-lazyload": {
+            "slug": "native-lazyload",
+            "location": "https://abjournals.org/wp-content/plugins/native-lazyload/",
+            "latest_version": "1.0.2",
+            "last_updated": "2019-12-06T16:56:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "newsletters-lite": {
+            "slug": "newsletters-lite",
+            "location": "https://abjournals.org/wp-content/plugins/newsletters-lite/",
+            "latest_version": "4.9.9.7",
+            "last_updated": "2024-12-23T20:49:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Tribulant Newsletters < 4.6.5 \u2013 Multiple Vulnerabilities",
+                    "fixed_in": "4.6.5",
+                    "references": {
+                        "url": [
+                            "http://defensecode.com/advisories/DC-2017-01-012_WordPress_Tribulant_Newsletters_Plugin_Advisory.pdf"
+                        ],
+                        "wpvulndb": [
+                            "2a9cf348-ae81-4a08-92c4-634c2405abf3"
+                        ]
+                    }
+                },
+                {
+                    "title": "Newsletter Lite < 4.6.19 - Multiple Issues",
+                    "fixed_in": "4.6.19",
+                    "references": {
+                        "cve": [
+                            "2019-14787",
+                            "2019-14788"
+                        ],
+                        "wpvulndb": [
+                            "c1147745-9e0e-454d-8f7c-179d818b3596"
+                        ]
+                    }
+                },
+                {
+                    "title": "Newsletters Lite < 4.6.8.6 - PHP Object Injection",
+                    "fixed_in": "4.6.8.6",
+                    "references": {
+                        "cve": [
+                            "2018-20987"
+                        ],
+                        "wpvulndb": [
+                            "52037486-c1fb-4465-b397-94617aa35d56"
+                        ]
+                    }
+                },
+                {
+                    "title": "Newsletter Lite < 4.9.3 - Admin+ Command Injection",
+                    "fixed_in": "4.9.3",
+                    "references": {
+                        "cve": [
+                            "2023-4797"
+                        ],
+                        "wpvulndb": [
+                            "de169fc7-f388-4abb-ab94-12522fd1ac92"
+                        ]
+                    }
+                },
+                {
+                    "title": "Newsletters < 4.9.6 - Authenticated (Admin+) Arbitrary File Upload",
+                    "fixed_in": "4.9.6",
+                    "references": {
+                        "cve": [
+                            "2024-32954"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ead5b943-731d-484a-a6b0-ca4f27eccff0"
+                        ],
+                        "wpvulndb": [
+                            "4b8eee7f-ebad-4648-9ee8-9f96e8355c4e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Newsletters < 4.9.6 - Information Exposure via Log files",
+                    "fixed_in": "4.9.6",
+                    "references": {
+                        "cve": [
+                            "2024-32953"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/867f374c-633f-4384-aa2b-5bb8daa5b7a2"
+                        ],
+                        "wpvulndb": [
+                            "334e02e9-fcbd-47fe-b7ab-079dd525b396"
+                        ]
+                    }
+                },
+                {
+                    "title": "Newsletters < 4.9.6 - Reflected Cross-Site Scripting",
+                    "fixed_in": "4.9.6",
+                    "references": {
+                        "cve": [
+                            "2024-35718"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5204d111-3dd5-4dd0-bf1a-79ec2900b4d8"
+                        ],
+                        "wpvulndb": [
+                            "43f3cd1b-8936-4e65-98d6-2b030d09472f"
+                        ]
+                    }
+                },
+                {
+                    "title": "Newsletters < 4.9.8 - Cross-Site Request Forgery",
+                    "fixed_in": "4.9.8",
+                    "references": {
+                        "cve": [
+                            "2024-37227"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/49d54d19-632b-479f-80dd-d66d4285520e"
+                        ],
+                        "wpvulndb": [
+                            "28bb94ce-3fa4-47ad-a1e2-9028dae46654"
+                        ]
+                    }
+                },
+                {
+                    "title": "Newsletters < 4.9.9.1 - Unauthenticated Full Path Disclosure",
+                    "fixed_in": "4.9.9.1",
+                    "references": {
+                        "cve": [
+                            "2024-7411"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/3cbf52b0-4c7f-40fb-aedb-4c70f6510b1b"
+                        ],
+                        "wpvulndb": [
+                            "3c95d318-e322-4e87-8d48-dd917500897f"
+                        ]
+                    }
+                },
+                {
+                    "title": "Newsletters < 4.9.9 - Reflected Cross-Site Scripting",
+                    "fixed_in": "4.9.9",
+                    "references": {
+                        "cve": [
+                            "2024-43279"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/64de1220-52f5-46a9-b8ba-cf808d5d2e29"
+                        ],
+                        "wpvulndb": [
+                            "4e7febc7-f793-441a-b717-2d9985f017f6"
+                        ]
+                    }
+                },
+                {
+                    "title": "Newsletters < 4.9.9.3 - Authenticated Privilege Escalation",
+                    "fixed_in": "4.9.9.3",
+                    "references": {
+                        "cve": [
+                            "2024-8247"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/2577102f-6355-4483-bd3d-1948497cb843"
+                        ],
+                        "wpvulndb": [
+                            "ac89c610-c662-41f4-a89d-ed2c59ff435c"
+                        ]
+                    }
+                },
+                {
+                    "title": "Newsletters < 4.9.9.2 - Reflected Cross-Site Scripting",
+                    "fixed_in": "4.9.9.2",
+                    "references": {
+                        "cve": [
+                            "2024-47346"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/01d5f559-d784-4399-9009-6edc584f8f09"
+                        ],
+                        "wpvulndb": [
+                            "402b5843-5783-4db1-8362-38a2e9ff1e1a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Newsletters < 4.9.9.5 - Authenticated (Contributor+) Stored Cross-Site Scripting via newsletters_video Shortcode",
+                    "fixed_in": "4.9.9.5",
+                    "references": {
+                        "cve": [
+                            "2024-10181"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/915c46f9-a342-4cc6-a726-2f1581a5d481"
+                        ],
+                        "wpvulndb": [
+                            "b21eb39d-8217-45ec-8fc2-571ad6f813cd"
+                        ]
+                    }
+                },
+                {
+                    "title": "Newsletters < 4.9.9.7 - Reflected Cross-Site Scripting",
+                    "fixed_in": "4.9.9.7",
+                    "references": {
+                        "cve": [
+                            "2025-24599"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/dbe5def5-3413-4697-9f0f-3bd33c5897af"
+                        ],
+                        "wpvulndb": [
+                            "8c51d1a9-024e-4b0f-ae60-a82b35304de5"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "revslider": {
+            "slug": "revslider",
+            "location": "https://abjournals.org/wp-content/plugins/revslider/",
+            "latest_version": "6.7.30",
+            "last_updated": "2025-03-14T01:54:30.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Comment (Passive Detection)": {
+                    "confidence": 30,
+                    "interesting_entries": []
+                },
+                "Div Data Version (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Revolution Slider <= 6.6.12 - Author+ Remote Code Execution",
+                    "fixed_in": "6.6.13",
+                    "references": {
+                        "cve": [
+                            "2023-2359"
+                        ],
+                        "wpvulndb": [
+                            "a8350890-e6d4-4b04-a158-2b0ee3748e65"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.15 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.6.15",
+                    "references": {
+                        "cve": [
+                            "2023-47772"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/772e843b-00ea-45f5-b730-c9a793d4c2db"
+                        ],
+                        "wpvulndb": [
+                            "3cde24f3-aaad-4eb3-b6ba-a518afe66fbe"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.16 - Authenticated (Author+) Arbitrary File Upload",
+                    "fixed_in": "6.6.16",
+                    "references": {
+                        "cve": [
+                            "2023-47784"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e2d29afd-06e8-461a-918f-38228441a51a"
+                        ],
+                        "wpvulndb": [
+                            "1b841a64-fb0a-434f-b7b4-0777f0480c87"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.19 - Author+ Insecure Deserialization leading to RCE",
+                    "fixed_in": "6.6.19",
+                    "references": {
+                        "cve": [
+                            "2023-6528"
+                        ],
+                        "wpvulndb": [
+                            "36ced447-84ea-4162-80d2-6df226cb53cb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Revslider < 6.7.0 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.0",
+                    "references": {
+                        "cve": [
+                            "2024-2306"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f6af1e90-9bad-470b-9e00-137000c0450c"
+                        ],
+                        "wpvulndb": [
+                            "8238962e-feca-4a45-b335-3c92e668c889"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.8 - Authenticated (Author+) Stored Cross-Site Scripting via htmltag Parameter",
+                    "fixed_in": "6.7.8",
+                    "references": {
+                        "cve": [
+                            "2024-4092"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8437abcc-3e34-4a8a-bfe2-2ff7c9f41164"
+                        ],
+                        "wpvulndb": [
+                            "50dd9668-c263-4bfd-8a94-00a3ad9f656d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting via Add Layer class, id, and title Attributes",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-4581"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a99b8eb9-1511-4ec0-98f4-c0e0c989fa28"
+                        ],
+                        "wpvulndb": [
+                            "4a436977-1295-40e8-9957-bda1b0a3e6d6"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Contributor+) Stored Cross-Site Scripting via Elementor wrapperid and zindex",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-4637"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/457b5066-da37-4877-9abe-c912bc201f29"
+                        ],
+                        "wpvulndb": [
+                            "32b1ee26-525a-4b1e-bdf0-881f0d161788"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.0 - Missing Authorization",
+                    "fixed_in": "6.7.0",
+                    "references": {
+                        "cve": [
+                            "2024-34444"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/14feb451-2ece-467b-abf0-7abac26e40c1"
+                        ],
+                        "wpvulndb": [
+                            "f893fd2d-d040-408a-a800-99bf02e32230"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-34443"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/64852bc8-aeba-458d-9235-94bd4c4ec429"
+                        ],
+                        "wpvulndb": [
+                            "f79b835f-a3a2-40e1-91cc-987604b0a593"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.14 - Authenticated (Administrator+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.14",
+                    "references": {
+                        "cve": [
+                            "2024-37449"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a8fc6a5-a28a-4d6b-8d63-c5e2f4d26422"
+                        ],
+                        "wpvulndb": [
+                            "6d7c04cb-b3c1-4003-866b-a3301929e2aa"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.19 - Authenticated (Author+) Stored Cross-Site Scripting via SVG File Upload",
+                    "fixed_in": "6.7.19",
+                    "references": {
+                        "cve": [
+                            "2024-8107"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/22b59b36-ba47-4c10-8f43-a29ae3b9d446"
+                        ],
+                        "wpvulndb": [
+                            "278e6259-cb64-4cc1-91c6-2cf2178dd1d0"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "5.4.5.1",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://abjournals.org/, Match: 'START REVOLUTION SLIDER 5.4.5.1'"
+                ],
+                "confirmed_by": {
+                    "Div Data Version (Passive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://abjournals.org/, Match: '5.4.5.1'"
+                        ]
+                    }
+                }
+            }
+        },
+        "wordpress-seo-premium": {
+            "slug": "wordpress-seo-premium",
+            "location": "https://abjournals.org/wp-content/plugins/wordpress-seo-premium/",
+            "latest_version": "24.6",
+            "last_updated": "2025-03-04T09:49:22.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": " Yoast SEO 1.2.0-11.5 - Authenticated Stored XSS",
+                    "fixed_in": "11.6",
+                    "references": {
+                        "cve": [
+                            "2019-13478"
+                        ],
+                        "url": [
+                            "https://gist.github.com/sybrew/2f53625104ee013d2f599ac254f635ee",
+                            "https://github.com/Yoast/wordpress-seo/pull/13221",
+                            "https://yoast.com/yoast-seo-11.6/"
+                        ],
+                        "wpvulndb": [
+                            "8bc4cf95-79f7-4d92-b320-a841ab7e6a6f"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "4.9",
+                "confidence": 60,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://abjournals.org/, Match: 'optimized with the Yoast SEO Premium plugin v4.9 -'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wp-super-cache": {
+            "slug": "wp-super-cache",
+            "location": "https://abjournals.org/wp-content/plugins/wp-super-cache/",
+            "latest_version": "2.0.0",
+            "last_updated": "2025-01-31T13:09:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "WP-Super-Cache 1.3 - Remote Code Execution",
+                    "fixed_in": "1.3.2",
+                    "references": {
+                        "cve": [
+                            "2013-2011",
+                            "2013-2009"
+                        ],
+                        "url": [
+                            "http://www.acunetix.com/blog/web-security-zone/wp-plugins-remote-code-execution/",
+                            "https://wordpress.org/support/topic/pwn3d",
+                            "https://blog.sucuri.net/2013/04/update-wp-super-cache-and-w3tc-immediately-remote-code-execution-vulnerability-disclosed.html"
+                        ],
+                        "wpvulndb": [
+                            "eb7d1384-a508-4181-b88c-cbd574506713"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Super Cache 1.3 - trunk/wp-cache.php wp_nonce_url Function URI XSS",
+                    "fixed_in": "1.3.1",
+                    "references": {
+                        "cve": [
+                            "2013-2008"
+                        ],
+                        "wpvulndb": [
+                            "d98760cf-1b34-4bcc-9afe-ce56d8e11cda"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Super Cache 1.3 - trunk/plugins/wptouch.php URI XSS",
+                    "fixed_in": "1.3.1",
+                    "references": {
+                        "cve": [
+                            "2013-2008"
+                        ],
+                        "wpvulndb": [
+                            "66dcf125-6acb-44fb-b945-a545335f2dcf"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Super Cache 1.3 - trunk/plugins/searchengine.php URI XSS",
+                    "fixed_in": "1.3.1",
+                    "references": {
+                        "cve": [
+                            "2013-2008"
+                        ],
+                        "wpvulndb": [
+                            "08d7198d-3ec4-43ba-b5b0-8e6d9435fc81"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Super Cache 1.3 - trunk/plugins/domain-mapping.php URI XSS",
+                    "fixed_in": "1.3.1",
+                    "references": {
+                        "cve": [
+                            "2013-2008"
+                        ],
+                        "wpvulndb": [
+                            "2ea440ae-1e33-4149-9eba-fc142f1585f7"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Super Cache 1.3 - trunk/plugins/badbehaviour.php URI XSS",
+                    "fixed_in": "1.3.1",
+                    "references": {
+                        "cve": [
+                            "2013-2008"
+                        ],
+                        "wpvulndb": [
+                            "955bc84d-70ed-488c-8b96-ad94034649f0"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Super Cache 1.3 - trunk/plugins/awaitingmoderation.php URI XSS",
+                    "fixed_in": "1.3.1",
+                    "references": {
+                        "cve": [
+                            "2013-2008"
+                        ],
+                        "wpvulndb": [
+                            "b80aea2c-ef22-42af-8114-11483fbdd374"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Super Cache < 1.4.3 - Stored Cross-Site Scripting (XSS)",
+                    "fixed_in": "1.4.3",
+                    "references": {
+                        "url": [
+                            "https://blog.sucuri.net/2015/04/security-advisory-persistent-xss-in-wp-super-cache.html"
+                        ],
+                        "wpvulndb": [
+                            "b224d46b-37f1-41c1-b332-42d4a408d125"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Super Cache < 1.4.9 - Cross-Site Scripting (XSS)",
+                    "fixed_in": "1.4.9",
+                    "references": {
+                        "url": [
+                            "https://odd.blog/2017/02/03/wp-super-cache-1-4-9/"
+                        ],
+                        "wpvulndb": [
+                            "fcad24bc-876e-4452-bca4-a072f8e86a02"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Super Cache < 1.4.5 - PHP Object Injection",
+                    "fixed_in": "1.4.5",
+                    "references": {
+                        "url": [
+                            "http://z9.io/2015/09/25/wp-super-cache-1-4-5/"
+                        ],
+                        "wpvulndb": [
+                            "e3c7dc0a-fd8b-4057-a049-ac9100f590f9"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Super Cache < 1.7.2 - Authenticated Remote Code Execution (RCE)",
+                    "fixed_in": "1.7.2",
+                    "references": {
+                        "cve": [
+                            "2021-24209"
+                        ],
+                        "exploitdb": [
+                            "49718"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2496238/wp-super-cache",
+                            "https://m0ze.ru/vulnerability/[2021-03-13]-[WordPress]-[CWE-94]-WP-Super-Cache-WordPress-Plugin-v1.7.1.txt"
+                        ],
+                        "youtube": [
+                            "https://www.youtube.com/watch?v=Q1LGSpKc_c0"
+                        ],
+                        "wpvulndb": [
+                            "733d8a02-0d44-4b78-bbb2-37e447acd2f3"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Super Cache < 1.7.3 - Authenticated Remote Code Execution",
+                    "fixed_in": "1.7.3",
+                    "references": {
+                        "cve": [
+                            "2021-24312"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2522794/wp-super-cache"
+                        ],
+                        "wpvulndb": [
+                            "2142c3d3-9a7f-4e3c-8776-d469a355d62f"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Super Cache < 1.7.3 - Authenticated Stored Cross-Site Scripting (XSS)",
+                    "fixed_in": "1.7.3",
+                    "references": {
+                        "cve": [
+                            "2021-24329"
+                        ],
+                        "url": [
+                            "https://m0ze.ru/vulnerability/[2021-03-23]-[WordPress]-[CWE-79]-WP-Super-Cache-WordPress-Plugin-v1.7.2.txt"
+                        ],
+                        "youtube": [
+                            "https://www.youtube.com/watch?v=6QoedUuAGjI"
+                        ],
+                        "wpvulndb": [
+                            "9df86d05-1408-4c22-af55-5e3d44249fd0"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Super Cache < 1.9 - Unauthenticated Cache Poisoning",
+                    "fixed_in": "1.9",
+                    "references": {
+                        "wpvulndb": [
+                            "f9dddb51-60ff-4fed-8c89-749d92c4af94"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 9,
+        "requests_remaining": 16
+    },
+    "stop_time": 1742208812,
+    "elapsed": 20,
+    "requests_done": 201,
+    "cached_requests": 5,
+    "data_sent": 43450,
+    "data_sent_humanised": "42.432 KB",
+    "data_received": 3081378,
+    "data_received_humanised": "2.939 MB",
+    "used_memory": 249212928,
+    "used_memory_humanised": "237.668 MB"
+}
