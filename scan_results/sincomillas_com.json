@@ -1,0 +1,792 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742294848,
+    "start_memory": 48951296,
+    "target_url": "https://sincomillas.com/",
+    "target_ip": "108.167.155.142",
+    "effective_url": "https://sincomillas.com/",
+    "interesting_findings": [
+        {
+            "url": "https://sincomillas.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: nginx/1.25.5",
+                "x-jetpack-boost-cache: hit",
+                "host-header: Y2xvdWQuYmx1ZWhvc3QuY29t",
+                "x-server-cache: true",
+                "x-proxy-cache: HIT"
+            ]
+        },
+        {
+            "url": "https://sincomillas.com/robots.txt",
+            "to_s": "robots.txt found: https://sincomillas.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://sincomillas.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://sincomillas.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 30,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://sincomillas.com/wp-content/backup-db/",
+            "to_s": "A backup directory has been found: https://sincomillas.com/wp-content/backup-db/",
+            "type": "backup_db",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 70,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://github.com/wpscanteam/wpscan/issues/422"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://sincomillas.com/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://sincomillas.com/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://sincomillas.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://sincomillas.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": null,
+    "main_theme": {
+        "slug": "barcelona",
+        "location": "https://sincomillas.com/wp-content/themes/barcelona/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://sincomillas.com/wp-content/themes/barcelona/style.css",
+        "style_name": "Barcelona.",
+        "style_uri": "http://themeforest.net/item/barcelona-clean-news-magazine-wordpress-theme/13308848",
+        "description": "Clean, modern, and responsive wordpress news & magazine theme by Minduction.",
+        "author": "Minduction",
+        "author_uri": "http://www.minduction.co",
+        "template": null,
+        "license": "Themeforest Regular License",
+        "license_uri": "http://themeforest.net/licenses/standard",
+        "tags": "blog, two-columns",
+        "text_domain": "barcelona",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 2,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.5.1",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://sincomillas.com/wp-content/themes/barcelona/style.css, Match: 'Version:     1.5.1'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "google-analytics-for-wordpress": {
+            "slug": "google-analytics-for-wordpress",
+            "location": "https://sincomillas.com/wp-content/plugins/google-analytics-for-wordpress/",
+            "latest_version": "9.3.1",
+            "last_updated": "2025-03-11T15:20:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Monster Insights Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "9.3.1",
+                "confidence": 60,
+                "found_by": "Monster Insights Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://sincomillas.com/, Match: 'Google Analytics by MonsterInsights plugin v9.3.1 -'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "mailoptin": {
+            "slug": "mailoptin",
+            "location": "https://sincomillas.com/wp-content/plugins/mailoptin/",
+            "latest_version": "1.2.73.1",
+            "last_updated": "2025-03-15T08:57:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Popup, Optin Form & Email Newsletters for Mailchimp, HubSpot, AWeber \u2013 MailOptin < 1.2.70.4 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "1.2.70.4",
+                    "references": {
+                        "cve": [
+                            "2024-8628"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4d64253b-5803-470d-81ba-d5629406b019"
+                        ],
+                        "wpvulndb": [
+                            "dd06a156-6519-4001-a829-9401a06fe374"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "1.2.67.1",
+                "confidence": 100,
+                "found_by": "Translation File (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://sincomillas.com/wp-content/plugins/mailoptin/languages/mailoptin.pot, Match: '\"Project-Id-Version: MailOptin - Lite 1.2.67.1'"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://sincomillas.com/wp-content/plugins/mailoptin/changelog.txt, Match: '= 1.2.67.1'"
+                        ]
+                    }
+                }
+            }
+        },
+        "wordpress-popular-posts": {
+            "slug": "wordpress-popular-posts",
+            "location": "https://sincomillas.com/wp-content/plugins/wordpress-popular-posts/",
+            "latest_version": "7.2.0",
+            "last_updated": "2024-12-09T13:16:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "WordPress Popular Posts < 5.3.3 - Authenticated Code Injection",
+                    "fixed_in": "5.3.3",
+                    "references": {
+                        "cve": [
+                            "2021-42362"
+                        ],
+                        "exploitdb": [
+                            "50129"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2542638",
+                            "https://blog.nintechnet.com/improper-input-validation-fixed-in-wordpress-popular-posts-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "bd4f157c-a3d7-4535-a587-0102ba4e3009"
+                        ]
+                    }
+                },
+                {
+                    "title": "WordPress Popular Posts < 5.3.3 - Authenticated Stored Cross-Site Scripting (XSS)",
+                    "fixed_in": "5.3.3",
+                    "references": {
+                        "cve": [
+                            "2021-20746"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2542638",
+                            "https://jvn.jp/en/jp/JVN63066062/"
+                        ],
+                        "wpvulndb": [
+                            "86cc93c1-daf5-43e7-8afb-66362d784ce9"
+                        ]
+                    }
+                },
+                {
+                    "title": "WordPress Popular Posts < 5.3.4 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "5.3.4",
+                    "references": {
+                        "cve": [
+                            "2021-36872"
+                        ],
+                        "wpvulndb": [
+                            "f1569584-e829-4d09-9535-bd5b11331339"
+                        ]
+                    }
+                },
+                {
+                    "title": "WordPress Popular Posts < 6.0.0 - Reflected Cross-Site Scripting",
+                    "fixed_in": "6.0.0",
+                    "references": {
+                        "wpvulndb": [
+                            "a1113cf4-29ab-4dbd-841d-4e00f24b0b01"
+                        ]
+                    }
+                },
+                {
+                    "title": "WordPress Popular Posts < 6.1.0 - Unauthenticated Views Manipulation",
+                    "fixed_in": "6.1.0",
+                    "references": {
+                        "cve": [
+                            "2022-43468"
+                        ],
+                        "url": [
+                            "https://jvn.jp/en/jp/JVN13927745/"
+                        ],
+                        "wpvulndb": [
+                            "9e497a16-67dc-47f7-b509-63bf11888f56"
+                        ]
+                    }
+                },
+                {
+                    "title": "WordPress Popular Posts < 6.3.3 - Contributor+ Stored XSS",
+                    "fixed_in": "6.3.3",
+                    "references": {
+                        "cve": [
+                            "2023-45607"
+                        ],
+                        "wpvulndb": [
+                            "6b312599-a7fc-474b-a425-931fd9dba182"
+                        ]
+                    }
+                },
+                {
+                    "title": "WordPress Popular Posts < 7.2.0 - Unauthenticated Arbitrary Shortcode Execution",
+                    "fixed_in": "7.2.0",
+                    "references": {
+                        "cve": [
+                            "2024-11733"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c38ac8d6-c6de-4be7-bf7b-198e085a0ad2"
+                        ],
+                        "wpvulndb": [
+                            "957a0dc2-56e1-4789-bc56-716fab1cbce4"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://sincomillas.com/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.7",
+            "last_updated": "2025-03-18T08:56:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "22.7",
+                "confidence": 60,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://sincomillas.com/, Match: 'optimized with the Yoast SEO plugin v22.7 -'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wp-statistics": {
+            "slug": "wp-statistics",
+            "location": "https://sincomillas.com/wp-content/plugins/wp-statistics/",
+            "latest_version": "14.12.6",
+            "last_updated": "2025-03-12T12:26:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "WP Statistics <= 2.2.4 - Cross-Site Scripting (XSS)",
+                    "fixed_in": "2.2.5",
+                    "references": {
+                        "url": [
+                            "https://packetstormsecurity.com/files/112686/"
+                        ],
+                        "wpvulndb": [
+                            "5c5e870f-d3b9-47c5-a649-8fb26dc35ede"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics <= 8.3 - Stored & Reflected Cross-Site Scripting (XSS)",
+                    "fixed_in": "8.3.1",
+                    "references": {
+                        "url": [
+                            "https://blog.sucuri.net/2014/11/security-advisory-high-severity-wp-statistics-wordpress-plugin.html"
+                        ],
+                        "wpvulndb": [
+                            "83ec24dc-9e6b-4eea-968b-e159a5315a31"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics <= 8.4 - Unauthenticated Referer Header Stored XSS",
+                    "fixed_in": "8.5",
+                    "references": {
+                        "url": [
+                            "https://pastebin.com/Vsik5R1r",
+                            "https://wordpress.org/plugins/wp-statistics/changelog/"
+                        ],
+                        "wpvulndb": [
+                            "628a59c5-937f-4cd9-8415-b27b13c08a9d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics <= 9.1.2 - Authenticated Stored Cross-Site Scripting (XSS)",
+                    "fixed_in": "9.1.3",
+                    "references": {
+                        "url": [
+                            "https://seclists.org/bugtraq/2015/Apr/98",
+                            "https://packetstormsecurity.com/files/131458/"
+                        ],
+                        "wpvulndb": [
+                            "c2e65c02-973e-4998-b75a-c53cb9729d04"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics <= 9.4 - Authenticated SQL Injection",
+                    "fixed_in": "9.4.1",
+                    "references": {
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/1195467",
+                            "http://cinu.pl/research/wp-plugins/mail_5ba1c082d4ba9ccd1997e15b799ea1f3.html",
+                            "http://blog.cinu.pl/2015/11/php-static-code-analysis-vs-top-1000-wordpress-plugins.html"
+                        ],
+                        "wpvulndb": [
+                            "b086b130-d7dd-421e-aab9-e8a07e563690"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics <= 9.5.1 - Referer Cross-Site Scripting (XSS)",
+                    "fixed_in": "9.5.2",
+                    "references": {
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/1215995"
+                        ],
+                        "wpvulndb": [
+                            "88537332-f7af-4cc0-8ca9-e0345bec4959"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics <= 12.0.4 - Reflected Cross-Site Scripting (XSS)",
+                    "fixed_in": "12.0.5",
+                    "references": {
+                        "cve": [
+                            "2017-2136"
+                        ],
+                        "url": [
+                            "https://jvn.jp/en/jp/JVN17633442/index.html",
+                            "https://plugins.trac.wordpress.org/changeset/1629150/wp-statistics",
+                            "https://plugins.trac.wordpress.org/changeset/1627525/wp-statistics"
+                        ],
+                        "wpvulndb": [
+                            "d60afdce-b4d9-4faf-8db2-76a0a7f7a882"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics <= 12.0.7 - Authenticated SQL Injection",
+                    "fixed_in": "12.0.8",
+                    "references": {
+                        "cve": [
+                            "2017-18515"
+                        ],
+                        "url": [
+                            "https://blog.sucuri.net/2017/06/sql-injection-vulnerability-wp-statistics.html",
+                            "https://plugins.trac.wordpress.org/changeset/1687774/wp-statistics"
+                        ],
+                        "wpvulndb": [
+                            "706b9d83-5970-41ae-a70e-bba2bcb35678"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 12.0.9 - Authenticated Reflected Cross-Site Scripting (XSS)",
+                    "fixed_in": "12.0.9",
+                    "references": {
+                        "url": [
+                            "https://github.com/wp-statistics/wp-statistics/commit/82d06cd069fd9ce0a5d2fedaf1885423d67a1c25",
+                            "https://blog.dewhurstsecurity.com/2017/07/03/wp-statistics-authenticated-xss-vulnerability.html"
+                        ],
+                        "wpvulndb": [
+                            "588d0b7d-a769-4697-b76f-59f8930596a8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics <= 12.0.9 - Authenticated Cross-Site Scripting (XSS)",
+                    "fixed_in": "12.0.10",
+                    "references": {
+                        "cve": [
+                            "2017-10991"
+                        ],
+                        "url": [
+                            "https://lorexxar.cn/2017/07/07/WordPress%20WP%20Statistics%20authenticated%20xss%20Vulnerability(WP%20Statistics%20-=12.0.9)/",
+                            "https://plugins.trac.wordpress.org/changeset/1701803/wp-statistics"
+                        ],
+                        "wpvulndb": [
+                            "25e52b9f-cf00-4e73-b04a-03f6e3de6dbb"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics <= 12.6.3 - Referer Cross-Site Scripting (XSS)",
+                    "fixed_in": "12.6.4",
+                    "references": {
+                        "cve": [
+                            "2019-10864"
+                        ],
+                        "url": [
+                            "https://github.com/wp-statistics/wp-statistics/commit/5aec0a08680f0afea387267a8d1b9fbb3379247c",
+                            "https://medium.com/@aramburu/cve-2019-10864-wordpress-7aebc24751c4"
+                        ],
+                        "wpvulndb": [
+                            "d3aa7e5f-df84-47ef-901c-b9ad7bfa5995"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 12.6.6.1 - Authenticated Stored XSS",
+                    "fixed_in": "12.6.6.1",
+                    "references": {
+                        "cve": [
+                            "2019-12566"
+                        ],
+                        "url": [
+                            "https://github.com/wp-statistics/wp-statistics/issues/271",
+                            "https://github.com/wp-statistics/wp-statistics/commit/aec4359975344f75385ae1ec257575d8131d6ec2",
+                            "https://github.com/wp-statistics/wp-statistics/commit/cda6dcaf123f4df1e01fbc819f47a98ca5c8ac0a"
+                        ],
+                        "wpvulndb": [
+                            "a71fd22f-d2d7-4ac2-9519-87e0dcab0516"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 12.6.7 - Unauthenticated Blind SQL Injection",
+                    "fixed_in": "12.6.7",
+                    "references": {
+                        "cve": [
+                            "2019-13275"
+                        ],
+                        "url": [
+                            "https://github.com/wp-statistics/wp-statistics/commit/bd46721b97794a1b1520e24ff5023b6da738dd75"
+                        ],
+                        "wpvulndb": [
+                            "d3885cc1-a277-4402-a971-0fe7ccd87687"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 12.6.7 - Unauthenticated Stored XSS Under Certain Configurations",
+                    "fixed_in": "12.6.7",
+                    "references": {
+                        "url": [
+                            "https://blog.sucuri.net/2019/07/wordpress-plugin-wp-statistics-unauthenticated-stored-xss-under-certain-configurations.html"
+                        ],
+                        "wpvulndb": [
+                            "f20ab676-e848-4d4e-8b98-682daabced38"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.0.8 - Unauthenticated SQL Injection",
+                    "fixed_in": "13.0.8",
+                    "references": {
+                        "cve": [
+                            "2021-24340"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/05/over-600000-sites-impacted-by-wp-statistics-patch/",
+                            "https://plugins.trac.wordpress.org/changeset/2503579/wp-statistics/trunk/includes/admin/pages/class-wp-statistics-admin-page-pages.php"
+                        ],
+                        "wpvulndb": [
+                            "d2970cfb-0aa9-4516-9a4b-32971f41a19c"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistic < 13.1 - Reflected Cross-Site Scripting (XSS)",
+                    "fixed_in": "13.1",
+                    "references": {
+                        "wpvulndb": [
+                            "e868b6f3-22ce-42c5-bb29-d8005c6cb6fd"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.1.5 - Unauthenticated Blind SQL Injection",
+                    "fixed_in": "13.1.5",
+                    "references": {
+                        "cve": [
+                            "2022-0513"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2022/02/unauthenticated-sql-injection-vulnerability-patched-in-wordpress-statistics-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "ea624361-1df8-4b30-88ef-e97e9798490b"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.1.6 - Unauthenticated Blind SQL Injection via IP",
+                    "fixed_in": "13.1.6",
+                    "references": {
+                        "cve": [
+                            "2022-25149"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/vulnerability-advisories/#CVE-2022-25149"
+                        ],
+                        "wpvulndb": [
+                            "49b25b94-ea1b-4bad-aed5-9ed561524a3e"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.1.6 - Unauthenticated Blind SQL Injection via current_page_id",
+                    "fixed_in": "13.1.6",
+                    "references": {
+                        "cve": [
+                            "2022-25148"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/vulnerability-advisories/#CVE-2022-25148"
+                        ],
+                        "wpvulndb": [
+                            "a5a90dbc-64fd-4278-a098-8c278d0bf00e"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.1.6 - Unauthenticated Blind SQL Injection via current_page_type",
+                    "fixed_in": "13.1.6",
+                    "references": {
+                        "cve": [
+                            "2022-0651"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/vulnerability-advisories/#CVE-2022-0651"
+                        ],
+                        "wpvulndb": [
+                            "da5b5669-7476-47ae-9de0-d398ca408f2f"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.1.6 - Multiple Unauthenticated Stored Cross-Site Scripting",
+                    "fixed_in": "13.1.6",
+                    "references": {
+                        "cve": [
+                            "2022-25305",
+                            "2022-25306",
+                            "2022-25307"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/vulnerability-advisories/#CVE-2022-25305",
+                            "https://www.wordfence.com/vulnerability-advisories/#CVE-2022-25306",
+                            "https://www.wordfence.com/vulnerability-advisories/#CVE-2022-25307"
+                        ],
+                        "wpvulndb": [
+                            "fc822698-1f5a-4371-8c6e-2ca250c3c26d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.2.2 - Reflected Cross-Site Scripting",
+                    "fixed_in": "13.2.2",
+                    "references": {
+                        "cve": [
+                            "2022-1005"
+                        ],
+                        "wpvulndb": [
+                            "f37d1d55-10cc-4202-8d16-9ec2128f54f9"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistic < 13.2.2 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "13.2.2",
+                    "references": {
+                        "cve": [
+                            "2022-27231"
+                        ],
+                        "url": [
+                            "https://jvn.jp/en/jp/JVN15241647/"
+                        ],
+                        "wpvulndb": [
+                            "63ba9728-bc9f-4c2f-b19d-59c2769fb2a1"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistic < 13.1.6 - Reflected Cross-Site Scripting",
+                    "fixed_in": "13.1.6",
+                    "references": {
+                        "wpvulndb": [
+                            "d6fb5f9e-67cf-4d04-8a09-d585caf008fe"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.2.9 - Authenticated SQLi",
+                    "fixed_in": "13.2.9",
+                    "references": {
+                        "cve": [
+                            "2022-4230"
+                        ],
+                        "wpvulndb": [
+                            "a0e40cfd-b217-481c-8fc4-027a0a023312"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 14.0 - Authenticated SQLi",
+                    "fixed_in": "14.0",
+                    "references": {
+                        "cve": [
+                            "2023-0955"
+                        ],
+                        "wpvulndb": [
+                            "18b7e93f-b038-4f28-918b-4015d62f0eb8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.1.2 - Arbitrary Plugin Activation/Deactivation via CSRF",
+                    "fixed_in": "13.1.2",
+                    "references": {
+                        "cve": [
+                            "2021-4333"
+                        ],
+                        "wpvulndb": [
+                            "51f73a71-1613-468a-a8cf-1e0ddf1b8284"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.2.11 - Subscriber+ SQLi",
+                    "fixed_in": "13.2.11",
+                    "references": {
+                        "cve": [
+                            "2022-38074"
+                        ],
+                        "wpvulndb": [
+                            "0ec129a5-5290-447e-a0fe-c8a470b99343"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 14.5.1 - Unauthenticated Stored Cross-Site Scripting",
+                    "fixed_in": "14.5.1",
+                    "references": {
+                        "cve": [
+                            "2024-2194"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e44e4bdd-d84e-4315-9232-48a3b240242d"
+                        ],
+                        "wpvulndb": [
+                            "56779ee5-5bf4-47d2-bbaf-b398ea926fbe"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 6,
+        "requests_remaining": 19
+    },
+    "stop_time": 1742294878,
+    "elapsed": 29,
+    "requests_done": 1016,
+    "cached_requests": 7,
+    "data_sent": 231944,
+    "data_sent_humanised": "226.508 KB",
+    "data_received": 19286794,
+    "data_received_humanised": "18.393 MB",
+    "used_memory": 294592512,
+    "used_memory_humanised": "280.945 MB"
+}

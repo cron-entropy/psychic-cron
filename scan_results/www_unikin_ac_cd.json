@@ -1,0 +1,1146 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742294930,
+    "start_memory": 48701440,
+    "target_url": "https://www.unikin.ac.cd/",
+    "target_ip": "185.98.137.238",
+    "effective_url": "https://www.unikin.ac.cd/",
+    "interesting_findings": [
+        {
+            "url": "https://www.unikin.ac.cd/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server: Apache/2.4.37 (rocky) OpenSSL/1.1.1k",
+                "X-Powered-By: PHP/7.4.27",
+                "X-TEC-API-VERSION: v1",
+                "X-TEC-API-ROOT: https://www.unikin.ac.cd/index.php/wp-json/tribe/events/v1/",
+                "X-TEC-API-ORIGIN: https://www.unikin.ac.cd"
+            ]
+        },
+        {
+            "url": "https://www.unikin.ac.cd/robots.txt",
+            "to_s": "robots.txt found: https://www.unikin.ac.cd/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-content/uploads/wc-logs/",
+                "/wp-content/uploads/woocommerce_transient_files/",
+                "/wp-content/uploads/woocommerce_uploads/",
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php",
+                "/wp-content/uploads/wpforms/"
+            ]
+        },
+        {
+            "url": "https://www.unikin.ac.cd/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.unikin.ac.cd/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.unikin.ac.cd/readme.html",
+            "to_s": "WordPress readme found: https://www.unikin.ac.cd/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.unikin.ac.cd/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.unikin.ac.cd/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.unikin.ac.cd/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.unikin.ac.cd/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.unikin.ac.cd/index.php/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.unikin.ac.cd/index.php/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "dt-the7",
+        "location": "https://www.unikin.ac.cd/wp-content/themes/dt-the7/",
+        "latest_version": "12.4.0",
+        "last_updated": "2025-03-12T05:56:58.000Z",
+        "outdated": true,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.unikin.ac.cd/wp-content/themes/dt-the7/style.css?ver=10.1.0",
+        "style_name": "The7",
+        "style_uri": "http://the7.io/",
+        "description": "Any design, any layout. No coding required. The7 is the most customisable WordPress theme on the market up to date. Add the power of Visual Composer, The7 Post Types, Ultimate Addons, Slider Revolution, and WooCommerce to the mix, and you'll get the ultimate web-site building toolkit! Theme is translation ready, compatible with WPML, SEO and mobile friendly (certified by Google).",
+        "author": "Dream-Theme",
+        "author_uri": "http://dream-theme.com/",
+        "template": null,
+        "license": "This WordPress theme is comprised of two parts: (1) The PHP code and integrated HTML are licensed under the GPL license as is WordPress itself.  You will find a copy of the license text in the same directory as this text file. Or you can read it here: http://wordpress.org/about/gpl/ (2) All other parts of the theme including, but not limited to the CSS code, images, and design are licensed according to the license purchased. Read about licensing details here: http://themeforest.net/licenses/regular_extended",
+        "license_uri": "License.txt",
+        "tags": "multipurpose, responsive, retina ready, SEO ready, mobile friendly, iOS, material design, clean, minimal, business, corporate, portfolio, creative, photography, one page site, micro site",
+        "text_domain": "the7mk2",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [
+            {
+                "title": "The7 < 11.6.1 - Reflected XSS",
+                "fixed_in": "11.6.1",
+                "references": {
+                    "cve": [
+                        "2023-29100"
+                    ],
+                    "wpvulndb": [
+                        "ef0b0bd5-b2a7-423b-9c49-40bba4c200d3"
+                    ]
+                }
+            },
+            {
+                "title": "The7 \u2014 Website and eCommerce Builder for WordPress < 11.14.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via url Attribute",
+                "fixed_in": "11.14.0",
+                "references": {
+                    "cve": [
+                        "2024-5451"
+                    ],
+                    "url": [
+                        "https://www.wordfence.com/threat-intel/vulnerabilities/id/c4555cd1-5ae5-42b3-938f-ffce5ba4fe56"
+                    ],
+                    "wpvulndb": [
+                        "30e5968c-e569-4cc7-9e55-885c241af578"
+                    ]
+                }
+            }
+        ],
+        "version": {
+            "number": "10.1.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.unikin.ac.cd/wp-content/themes/dt-the7/style.css?ver=10.1.0, Match: 'Version: 10.1.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "bookly-responsive-appointment-booking-tool": {
+            "slug": "bookly-responsive-appointment-booking-tool",
+            "location": "https://www.unikin.ac.cd/wp-content/plugins/bookly-responsive-appointment-booking-tool/",
+            "latest_version": "24.8",
+            "last_updated": "2025-03-18T08:07:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "24.7",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.unikin.ac.cd/wp-content/plugins/bookly-responsive-appointment-booking-tool/frontend/resources/css/ladda.min.css?ver=24.7",
+                    "https://www.unikin.ac.cd/wp-content/plugins/bookly-responsive-appointment-booking-tool/frontend/resources/css/intlTelInput.css?ver=24.7",
+                    "https://www.unikin.ac.cd/wp-content/plugins/bookly-responsive-appointment-booking-tool/frontend/resources/css/bookly-main.css?ver=24.7",
+                    "https://www.unikin.ac.cd/wp-content/plugins/bookly-responsive-appointment-booking-tool/frontend/resources/js/spin.min.js?ver=24.7",
+                    "https://www.unikin.ac.cd/wp-content/plugins/bookly-responsive-appointment-booking-tool/frontend/resources/js/ladda.min.js?ver=24.7",
+                    "https://www.unikin.ac.cd/wp-content/plugins/bookly-responsive-appointment-booking-tool/frontend/resources/js/hammer.min.js?ver=24.7",
+                    "https://www.unikin.ac.cd/wp-content/plugins/bookly-responsive-appointment-booking-tool/frontend/resources/js/jquery.hammer.min.js?ver=24.7",
+                    "https://www.unikin.ac.cd/wp-content/plugins/bookly-responsive-appointment-booking-tool/frontend/resources/js/bookly.min.js?ver=24.7",
+                    "https://www.unikin.ac.cd/wp-content/plugins/bookly-responsive-appointment-booking-tool/frontend/resources/js/intlTelInput.min.js?ver=24.7"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.unikin.ac.cd/wp-content/plugins/bookly-responsive-appointment-booking-tool/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "dt-the7-core": {
+            "slug": "dt-the7-core",
+            "location": "https://www.unikin.ac.cd/wp-content/plugins/dt-the7-core/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "go_pricing": {
+            "slug": "go_pricing",
+            "location": "https://www.unikin.ac.cd/wp-content/plugins/go_pricing/",
+            "latest_version": "3.4",
+            "last_updated": "2023-05-23T14:10:57.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Go Pricing - WordPress Responsive Pricing Tables < 3.4 - Contributor+ Stored XSS",
+                    "fixed_in": "3.4",
+                    "references": {
+                        "cve": [
+                            "2023-2498"
+                        ],
+                        "wpvulndb": [
+                            "66f5463c-36ed-46a3-abe7-188dc3d6e8e4"
+                        ]
+                    }
+                },
+                {
+                    "title": "Go Pricing - WordPress Responsive Pricing Tables < 3.4 - Broken Access Control",
+                    "fixed_in": "3.4",
+                    "references": {
+                        "cve": [
+                            "2023-2494"
+                        ],
+                        "wpvulndb": [
+                            "7461f9d9-40fd-4fbe-b6e8-051a150f8b03"
+                        ]
+                    }
+                },
+                {
+                    "title": "Go Pricing - WordPress Responsive Pricing Tables < 3.4 - Incorrect Authorization leading to Arbitrary File Upload",
+                    "fixed_in": "3.4",
+                    "references": {
+                        "cve": [
+                            "2023-2496"
+                        ],
+                        "wpvulndb": [
+                            "b123bb35-ea43-4979-8177-359abe87d244"
+                        ]
+                    }
+                },
+                {
+                    "title": "Go Pricing - WordPress Responsive Pricing Tables < 3.4 - Contributor+ PHP Object Injection via shortcode",
+                    "fixed_in": "3.4",
+                    "references": {
+                        "cve": [
+                            "2023-2500"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/go_pricing/go-pricing-wordpress-responsive-pricing-tables-3319-authenticated-subscriber-php-object-injection"
+                        ],
+                        "wpvulndb": [
+                            "b5b60ce0-4cb6-4ca5-b0f2-26f97e71f012"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "google-site-kit": {
+            "slug": "google-site-kit",
+            "location": "https://www.unikin.ac.cd/wp-content/plugins/google-site-kit/",
+            "latest_version": "1.148.0",
+            "last_updated": "2025-03-10T18:43:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Meta Tag (Passive Detection)",
+            "confidence": 40,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.148.0",
+                "confidence": 100,
+                "found_by": "Meta Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.unikin.ac.cd/, Match: 'Site Kit by Google 1.148.0'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.unikin.ac.cd/wp-content/plugins/google-site-kit/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.unikin.ac.cd/wp-content/plugins/google-site-kit/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "js_composer": {
+            "slug": "js_composer",
+            "location": "https://www.unikin.ac.cd/wp-content/plugins/js_composer/",
+            "latest_version": "8.3",
+            "last_updated": "2025-03-12T18:36:52.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Body Tag (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WPBakery Page Builder < 6.13.0 - Contributor+ Stored XSS",
+                    "fixed_in": "6.13.0",
+                    "references": {
+                        "cve": [
+                            "2023-31213"
+                        ],
+                        "wpvulndb": [
+                            "ee99521d-be25-41ef-8988-5cfd66e9c5ca"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Title tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1841"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/34d21418-4faf-40bf-a960-79482a592722"
+                        ],
+                        "wpvulndb": [
+                            "787a71f8-1179-4442-9441-87fbe83a7e67"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Custom Heading tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1842"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/674e6722-d293-4572-80bf-984e74c3e33f"
+                        ],
+                        "wpvulndb": [
+                            "8ebfad34-7b46-4783-9fad-c96ab4f4c737"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Button onclick attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1805"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7a571386-fae1-4a56-8567-9d3e23249de1"
+                        ],
+                        "wpvulndb": [
+                            "b87926cd-0fe0-49df-8c61-9df1363a67a8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Author",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1840"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/cb8ecbbc-ada9-4887-92e6-25a587ecfb84"
+                        ],
+                        "wpvulndb": [
+                            "b41c2343-3be4-4bd9-ae5d-69ae96ba23ae"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Page Builder < 7.7 - Authenticated (Contributor+) Stored Cross-Site Scripting via VC Single Image link attribute",
+                    "fixed_in": "7.7",
+                    "references": {
+                        "cve": [
+                            "2024-5265"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/35a5114e-5c5f-4003-8bb3-77243ffbac1a"
+                        ],
+                        "wpvulndb": [
+                            "3b067a13-ee58-44c9-80af-ae04af6256c8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5708"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/23ff12f0-eb9d-4bb3-8db0-0e794c0f0594"
+                        ],
+                        "wpvulndb": [
+                            "992e5d47-e290-420a-adf8-f552a929e51d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Local File Inclusion",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5709"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7fad30c8-fd8a-4cf2-a3aa-16a374231b87"
+                        ],
+                        "wpvulndb": [
+                            "6e3e1944-67f7-405e-ae4f-f0ab8c6c9acd"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "6.8.0",
+                "confidence": 80,
+                "found_by": "Body Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.unikin.ac.cd/, Match: 'js-comp-ver-6.8.0'"
+                ],
+                "confirmed_by": {
+                    "Query Parameter (Passive Detection)": {
+                        "confidence": 20,
+                        "interesting_entries": [
+                            "https://www.unikin.ac.cd/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=6.8.0",
+                            "https://www.unikin.ac.cd/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=6.8.0"
+                        ]
+                    }
+                }
+            }
+        },
+        "revslider": {
+            "slug": "revslider",
+            "location": "https://www.unikin.ac.cd/wp-content/plugins/revslider/",
+            "latest_version": "6.7.30",
+            "last_updated": "2025-03-14T01:54:30.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Revolution Slider <= 6.6.12 - Author+ Remote Code Execution",
+                    "fixed_in": "6.6.13",
+                    "references": {
+                        "cve": [
+                            "2023-2359"
+                        ],
+                        "wpvulndb": [
+                            "a8350890-e6d4-4b04-a158-2b0ee3748e65"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.15 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.6.15",
+                    "references": {
+                        "cve": [
+                            "2023-47772"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/772e843b-00ea-45f5-b730-c9a793d4c2db"
+                        ],
+                        "wpvulndb": [
+                            "3cde24f3-aaad-4eb3-b6ba-a518afe66fbe"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.16 - Authenticated (Author+) Arbitrary File Upload",
+                    "fixed_in": "6.6.16",
+                    "references": {
+                        "cve": [
+                            "2023-47784"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e2d29afd-06e8-461a-918f-38228441a51a"
+                        ],
+                        "wpvulndb": [
+                            "1b841a64-fb0a-434f-b7b4-0777f0480c87"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.19 - Author+ Insecure Deserialization leading to RCE",
+                    "fixed_in": "6.6.19",
+                    "references": {
+                        "cve": [
+                            "2023-6528"
+                        ],
+                        "wpvulndb": [
+                            "36ced447-84ea-4162-80d2-6df226cb53cb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Revslider < 6.7.0 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.0",
+                    "references": {
+                        "cve": [
+                            "2024-2306"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f6af1e90-9bad-470b-9e00-137000c0450c"
+                        ],
+                        "wpvulndb": [
+                            "8238962e-feca-4a45-b335-3c92e668c889"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.8 - Authenticated (Author+) Stored Cross-Site Scripting via htmltag Parameter",
+                    "fixed_in": "6.7.8",
+                    "references": {
+                        "cve": [
+                            "2024-4092"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8437abcc-3e34-4a8a-bfe2-2ff7c9f41164"
+                        ],
+                        "wpvulndb": [
+                            "50dd9668-c263-4bfd-8a94-00a3ad9f656d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting via Add Layer class, id, and title Attributes",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-4581"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a99b8eb9-1511-4ec0-98f4-c0e0c989fa28"
+                        ],
+                        "wpvulndb": [
+                            "4a436977-1295-40e8-9957-bda1b0a3e6d6"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Contributor+) Stored Cross-Site Scripting via Elementor wrapperid and zindex",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-4637"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/457b5066-da37-4877-9abe-c912bc201f29"
+                        ],
+                        "wpvulndb": [
+                            "32b1ee26-525a-4b1e-bdf0-881f0d161788"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.0 - Missing Authorization",
+                    "fixed_in": "6.7.0",
+                    "references": {
+                        "cve": [
+                            "2024-34444"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/14feb451-2ece-467b-abf0-7abac26e40c1"
+                        ],
+                        "wpvulndb": [
+                            "f893fd2d-d040-408a-a800-99bf02e32230"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-34443"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/64852bc8-aeba-458d-9235-94bd4c4ec429"
+                        ],
+                        "wpvulndb": [
+                            "f79b835f-a3a2-40e1-91cc-987604b0a593"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.14 - Authenticated (Administrator+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.14",
+                    "references": {
+                        "cve": [
+                            "2024-37449"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a8fc6a5-a28a-4d6b-8d63-c5e2f4d26422"
+                        ],
+                        "wpvulndb": [
+                            "6d7c04cb-b3c1-4003-866b-a3301929e2aa"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.19 - Authenticated (Author+) Stored Cross-Site Scripting via SVG File Upload",
+                    "fixed_in": "6.7.19",
+                    "references": {
+                        "cve": [
+                            "2024-8107"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/22b59b36-ba47-4c10-8f43-a29ae3b9d446"
+                        ],
+                        "wpvulndb": [
+                            "278e6259-cb64-4cc1-91c6-2cf2178dd1d0"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "6.5.12",
+                "confidence": 100,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.unikin.ac.cd/, Match: 'Powered by Slider Revolution 6.5.12'"
+                ],
+                "confirmed_by": {
+                    "Release Log (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.unikin.ac.cd/wp-content/plugins/revslider/release_log.html, Match: 'Version 6.5.12 (21st December 2021)'"
+                        ]
+                    }
+                }
+            }
+        },
+        "shortcodes-ultimate": {
+            "slug": "shortcodes-ultimate",
+            "location": "https://www.unikin.ac.cd/wp-content/plugins/shortcodes-ultimate/",
+            "latest_version": "7.3.4",
+            "last_updated": "2025-01-27T04:18:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "7.3.4",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.unikin.ac.cd/wp-content/plugins/shortcodes-ultimate/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "smart-slider-3": {
+            "slug": "smart-slider-3",
+            "location": "https://www.unikin.ac.cd/wp-content/plugins/smart-slider-3/",
+            "latest_version": "3.5.1.27",
+            "last_updated": "2025-03-11T11:49:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.5.1.27",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.unikin.ac.cd/wp-content/plugins/smart-slider-3/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "tablepress": {
+            "slug": "tablepress",
+            "location": "https://www.unikin.ac.cd/wp-content/plugins/tablepress/",
+            "latest_version": "3.0.4",
+            "last_updated": "2025-02-20T06:01:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.0.4",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.unikin.ac.cd/wp-content/plugins/tablepress/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.unikin.ac.cd/wp-content/plugins/tablepress/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "the-events-calendar": {
+            "slug": "the-events-calendar",
+            "location": "https://www.unikin.ac.cd/wp-content/plugins/the-events-calendar/",
+            "latest_version": "6.10.2",
+            "last_updated": "2025-03-04T13:54:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.10.2",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.unikin.ac.cd/wp-content/plugins/the-events-calendar/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Translation File (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.unikin.ac.cd/wp-content/plugins/the-events-calendar/lang/the-events-calendar.pot, Match: 'Project-Id-Version: The Events Calendar 6.10.2'"
+                        ]
+                    }
+                }
+            }
+        },
+        "ultimate-form-builder": {
+            "slug": "ultimate-form-builder",
+            "location": "https://www.unikin.ac.cd/wp-content/plugins/ultimate-form-builder/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "Ultimate_VC_Addons": {
+            "slug": "Ultimate_VC_Addons",
+            "location": "https://www.unikin.ac.cd/wp-content/plugins/Ultimate_VC_Addons/",
+            "latest_version": "3.20.0",
+            "last_updated": "2025-02-18T21:48:39.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Ultimate Addons for WPBakery Page Builder < 3.19.15 - Contributor+ Stored XSS",
+                    "fixed_in": "3.19.15",
+                    "references": {
+                        "cve": [
+                            "2023-46211"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/ultimate_vc_addons/wordpress-ultimate-addons-for-wpbakery-page-builder-plugin-3-19-14-cross-site-scripting-xss-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "5337d43b-27dd-41fa-a850-c66cdc5fa77c"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ultimate Addons for WPBakery Page Builder < 3.19.15 - Authenticated(Contributor+) Local File Inclusion",
+                    "fixed_in": "3.19.15",
+                    "references": {
+                        "cve": [
+                            "2023-46205"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5222ce69-ac9f-4bb0-9832-8cdff1f8b078"
+                        ],
+                        "wpvulndb": [
+                            "564fc1aa-ed32-4748-b024-7523e3f3bd3a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ultimate Addons for WPBakery < 3.19.18 - Cross-Site Request Forgery",
+                    "fixed_in": "3.19.18",
+                    "references": {
+                        "cve": [
+                            "2023-51402"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ece4eca1-9dc1-4f17-92e4-8b2e3e1a7306"
+                        ],
+                        "wpvulndb": [
+                            "6eaf0bae-926d-455a-ba04-b5283c4007b3"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ultimate Addons for WPBakery Page Builder < 3.19.20.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "3.19.20.1",
+                    "references": {
+                        "cve": [
+                            "2024-5254"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4c8971e0-befd-47ac-8cb5-064f9cd757d7"
+                        ],
+                        "wpvulndb": [
+                            "b12c6462-1a79-47fb-b87d-818e4ddeb87f"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ultimate Addons for WPBakery Page Builder < 3.19.20.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "3.19.20.1",
+                    "references": {
+                        "cve": [
+                            "2024-5255"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/66d77518-a258-4e79-b483-275855c0a416"
+                        ],
+                        "wpvulndb": [
+                            "fa1f3142-c260-4b76-9b81-bf4f2b869b74"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ultimate Addons for WPBakery Page Builder < 3.19.20.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "3.19.20.1",
+                    "references": {
+                        "cve": [
+                            "2024-5252"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/675937dc-a032-4bc4-a449-c815fcb12db6"
+                        ],
+                        "wpvulndb": [
+                            "bb609360-0436-4dc2-abaa-995ad7004544"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ultimate Addons for WPBakery Page Builder < 3.19.20.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "3.19.20.1",
+                    "references": {
+                        "cve": [
+                            "2024-5253"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/97666e54-8e86-4f18-ae32-ad8ca607aeff"
+                        ],
+                        "wpvulndb": [
+                            "8263a3be-2147-4f6f-bdd7-23a6fdc71724"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ultimate Addons for WPBakery Page Builder < 3.19.20.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "3.19.20.1",
+                    "references": {
+                        "cve": [
+                            "2024-5251"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e637044d-9b49-4de5-b8b8-d48a0e5e1afc"
+                        ],
+                        "wpvulndb": [
+                            "a7b9a4e6-ae2c-4b0d-a9ae-ecda6c14b1ea"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.19.11",
+                "confidence": 60,
+                "found_by": "Change Log (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.unikin.ac.cd/wp-content/plugins/Ultimate_VC_Addons/changelog.txt, Match: '3.19.11 -'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "woocommerce": {
+            "slug": "woocommerce",
+            "location": "https://www.unikin.ac.cd/wp-content/plugins/woocommerce/",
+            "latest_version": "9.7.1",
+            "last_updated": "2025-03-04T15:28:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "9.7.1",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.unikin.ac.cd/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=9.7.1",
+                    "https://www.unikin.ac.cd/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=9.7.1"
+                ],
+                "confirmed_by": {
+                    "Meta Generator (Passive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.unikin.ac.cd/, Match: 'WooCommerce 9.7.1'"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.unikin.ac.cd/wp-content/plugins/woocommerce/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://www.unikin.ac.cd/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.7",
+            "last_updated": "2025-03-18T08:56:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "24.6",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.unikin.ac.cd/, Match: 'optimized with the Yoast SEO plugin v24.6 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.unikin.ac.cd/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.unikin.ac.cd/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "yourchannel": {
+            "slug": "yourchannel",
+            "location": "https://www.unikin.ac.cd/wp-content/plugins/yourchannel/",
+            "latest_version": "1.2.9",
+            "last_updated": "2024-08-23T14:05:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.2.9",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.unikin.ac.cd/wp-content/plugins/yourchannel/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 17,
+        "requests_remaining": 8
+    },
+    "stop_time": 1742295033,
+    "elapsed": 103,
+    "requests_done": 244,
+    "cached_requests": 7,
+    "data_sent": 74614,
+    "data_sent_humanised": "72.865 KB",
+    "data_received": 2755868,
+    "data_received_humanised": "2.628 MB",
+    "used_memory": 284332032,
+    "used_memory_humanised": "271.16 MB"
+}
