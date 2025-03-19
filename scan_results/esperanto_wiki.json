@@ -1,0 +1,535 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742382451,
+    "start_memory": 48914432,
+    "target_url": "https://esperanto.wiki/",
+    "target_ip": "104.21.32.1",
+    "effective_url": "https://esperanto.wiki/",
+    "interesting_findings": [
+        {
+            "url": "https://esperanto.wiki/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "cf-edge-cache: cache,platform=wordpress",
+                "x-tec-api-version: v1",
+                "x-tec-api-root: https://esperanto.wiki/wp-json/tribe/events/v1/",
+                "x-tec-api-origin: https://esperanto.wiki",
+                "cf-cache-status: DYNAMIC",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=TeeTF3YP6OZZVMrYuMBv2C7Ha7EZ%2FDN10m2jNvw9p%2BaIsQm0wrIu19ePT7zb5pnKXl0onMLpddKIexFvI2A1sHY8rVjahBDB2IJChFTIpTUg8y%2FPI9Vgo9PA2yxnWsPpqA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "cf-ray: 922c819bce15c98d-IAD",
+                "alt-svc: h3=\":443\"; ma=86400",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=731&min_rtt=679&rtt_var=237&sent=6&recv=8&lost=0&retrans=0&sent_bytes=3419&recv_bytes=810&delivery_rate=4175438&cwnd=253&unsent_bytes=0&cid=2e0b6eabbb47a51d&ts=697&x=0\""
+            ]
+        },
+        {
+            "url": "https://esperanto.wiki/robots.txt",
+            "to_s": "robots.txt found: https://esperanto.wiki/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://esperanto.wiki/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://esperanto.wiki/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://esperanto.wiki/readme.html",
+            "to_s": "WordPress readme found: https://esperanto.wiki/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://esperanto.wiki/wp-signup.php",
+            "to_s": "This site seems to be a multisite",
+            "type": "multisite",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Glossary#Multisite"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://esperanto.wiki/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://esperanto.wiki/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://esperanto.wiki/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://esperanto.wiki/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://esperanto.wiki/feed, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://esperanto.wiki/comments/feed, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "siteorigin-corp",
+        "location": "https://esperanto.wiki/wp-content/themes/siteorigin-corp/",
+        "latest_version": "1.20.9",
+        "last_updated": "2025-01-28T00:00:00.000Z",
+        "outdated": false,
+        "readme_url": "https://esperanto.wiki/wp-content/themes/siteorigin-corp/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://esperanto.wiki/wp-content/themes/siteorigin-corp/style.css",
+        "style_name": "SiteOrigin Corp",
+        "style_uri": "https://siteorigin.com/theme/corp/",
+        "description": "A modern business theme from SiteOrigin. Corp is versatile and quick to customize. Fast loading and fully stocked with all the modern theme features you've come to expect and enjoy. Convert visitors to customers with effective layouts and beautifuly presented landing pages. Corp offers seamless integration with Page Builder by SiteOrigin, a custom WooCommerce design, five unique blog layouts and a stunning Jetpack Portfolio layout.",
+        "author": "SiteOrigin",
+        "author_uri": "https://siteorigin.com/",
+        "template": null,
+        "license": "GNU General Public License v2 or later",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce",
+        "text_domain": "siteorigin-corp",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 16,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 8,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.20.9",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://esperanto.wiki/wp-content/themes/siteorigin-corp/style.css, Match: 'Version: 1.20.9'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "anti-spam": {
+            "slug": "anti-spam",
+            "location": "https://esperanto.wiki/wp-content/plugins/anti-spam/",
+            "latest_version": "7.3.8",
+            "last_updated": "2024-08-14T12:46:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Titan Anti-spam & Security < 7.3.8 - Missing Authorization",
+                    "fixed_in": "7.3.8",
+                    "references": {
+                        "cve": [
+                            "2024-38777"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/anti-spam/wordpress-titan-anti-spam-security-plugin-7-3-5-broken-access-control-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "bfd1362a-6536-45ca-9a4c-ae7930021087"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "7.3.5",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://esperanto.wiki/wp-content/plugins/anti-spam/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://esperanto.wiki/wp-content/plugins/anti-spam/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "civicrm": {
+            "slug": "civicrm",
+            "location": "https://esperanto.wiki/wp-content/plugins/civicrm/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "5.72",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://esperanto.wiki/wp-content/plugins/civicrm/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "cookie-notice": {
+            "slug": "cookie-notice",
+            "location": "https://esperanto.wiki/wp-content/plugins/cookie-notice/",
+            "latest_version": "2.5.5",
+            "last_updated": "2025-01-03T13:53:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.5.5",
+                "confidence": 90,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://esperanto.wiki/wp-content/plugins/cookie-notice/js/front.min.js?ver=2.5.5"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://esperanto.wiki/wp-content/plugins/cookie-notice/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "credit-tracker": {
+            "slug": "credit-tracker",
+            "location": "https://esperanto.wiki/wp-content/plugins/credit-tracker/",
+            "latest_version": "1.1.17",
+            "last_updated": "2020-10-01T06:24:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Credit Tracker <= 1.1.17 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2023-49152"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b611f3ba-ac36-49fc-a75f-10003c5ca955"
+                        ],
+                        "wpvulndb": [
+                            "1ed90937-6eb8-4269-a7de-958106741a2c"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "1.1.17",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://esperanto.wiki/wp-content/plugins/credit-tracker/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://esperanto.wiki/wp-content/plugins/credit-tracker/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "media-credit": {
+            "slug": "media-credit",
+            "location": "https://esperanto.wiki/wp-content/plugins/media-credit/",
+            "latest_version": "4.3.0",
+            "last_updated": "2023-04-01T15:34:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.3.0",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://esperanto.wiki/wp-content/plugins/media-credit/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://esperanto.wiki/wp-content/plugins/media-credit/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "so-widgets-bundle": {
+            "slug": "so-widgets-bundle",
+            "location": "https://esperanto.wiki/wp-content/plugins/so-widgets-bundle/",
+            "latest_version": "1.67.1",
+            "last_updated": "2025-03-18T21:14:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.66.0",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://esperanto.wiki/wp-content/plugins/so-widgets-bundle/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "team-builder": {
+            "slug": "team-builder",
+            "location": "https://esperanto.wiki/wp-content/plugins/team-builder/",
+            "latest_version": "1.7.5",
+            "last_updated": "2024-12-22T16:59:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.7.5",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://esperanto.wiki/wp-content/plugins/team-builder/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "the-events-calendar": {
+            "slug": "the-events-calendar",
+            "location": "https://esperanto.wiki/wp-content/plugins/the-events-calendar/",
+            "latest_version": "6.10.2",
+            "last_updated": "2025-03-04T13:54:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.10.2",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://esperanto.wiki/wp-content/plugins/the-events-calendar/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Translation File (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://esperanto.wiki/wp-content/plugins/the-events-calendar/lang/the-events-calendar.pot, Match: 'Project-Id-Version: The Events Calendar 6.10.2'"
+                        ]
+                    }
+                }
+            }
+        },
+        "wp-font-awesome": {
+            "slug": "wp-font-awesome",
+            "location": "https://esperanto.wiki/wp-content/plugins/wp-font-awesome/",
+            "latest_version": "1.8.0",
+            "last_updated": "2024-07-09T06:56:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WP Font Awesome <= 1.7.9 - Contributor+ Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2023-5127"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/wp-font-awesome/wp-font-awesome-179-authenticated-contributor-stored-cross-site-scripting-via-shortcode"
+                        ],
+                        "wpvulndb": [
+                            "fdfa7172-643c-4dcb-bdf5-37ee034f8367"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "1.8.0",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://esperanto.wiki/wp-content/plugins/wp-font-awesome/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 11,
+        "requests_remaining": 14
+    },
+    "stop_time": 1742382469,
+    "elapsed": 18,
+    "requests_done": 200,
+    "cached_requests": 7,
+    "data_sent": 51771,
+    "data_sent_humanised": "50.558 KB",
+    "data_received": 1196506,
+    "data_received_humanised": "1.141 MB",
+    "used_memory": 273850368,
+    "used_memory_humanised": "261.164 MB"
+}

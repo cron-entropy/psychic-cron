@@ -1,0 +1,633 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742381755,
+    "start_memory": 48726016,
+    "target_url": "https://www.hatchwise.com/",
+    "target_ip": "144.217.72.151",
+    "effective_url": "https://www.hatchwise.com/",
+    "interesting_findings": [
+        {
+            "url": "https://www.hatchwise.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server: Apache"
+            ]
+        },
+        {
+            "url": "https://www.hatchwise.com/readme.html",
+            "to_s": "WordPress readme found: https://www.hatchwise.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.hatchwise.com/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://www.hatchwise.com/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.hatchwise.com/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.hatchwise.com/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.hatchwise.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.hatchwise.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Meta Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.hatchwise.com/, Match: 'WordPress 6.7.2'"
+        ],
+        "confirmed_by": {
+            "Query Parameter In Install Page (Aggressive Detection)": {
+                "confidence": 100,
+                "interesting_entries": [
+                    "https://www.hatchwise.com/wp-includes/css/dashicons.min.css?ver=6.7.2",
+                    "https://www.hatchwise.com/wp-includes/css/buttons.min.css?ver=6.7.2",
+                    "https://www.hatchwise.com/wp-admin/css/forms.min.css?ver=6.7.2",
+                    "https://www.hatchwise.com/wp-admin/css/l10n.min.css?ver=6.7.2",
+                    "https://www.hatchwise.com/wp-admin/css/install.min.css?ver=6.7.2"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "hello-elementor",
+        "location": "https://www.hatchwise.com/wp-content/themes/hello-elementor/",
+        "latest_version": "3.3.0",
+        "last_updated": "2025-01-21T00:00:00.000Z",
+        "outdated": false,
+        "readme_url": "https://www.hatchwise.com/wp-content/themes/hello-elementor/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.hatchwise.com/wp-content/themes/hello-elementor/style.css",
+        "style_name": "Hello Elementor",
+        "style_uri": "https://elementor.com/hello-theme/?utm_source=wp-themes&utm_campaign=theme-uri&utm_medium=wp-dash",
+        "description": "Hello Elementor is a lightweight and minimalist WordPress theme that was built specifically to work seamlessly with the Elementor site builder plugin. The theme is free, open-source, and designed for users who want a flexible, easy-to-use, and customizable website. The theme, which is optimized for performance, provides a solid foundation for users to build their own unique designs using the Elementor drag-and-drop site builder. Its simplicity and flexibility make it a great choice for both beginners and experienced Web Creators.",
+        "author": "Elementor Team",
+        "author_uri": "https://elementor.com/?utm_source=wp-themes&utm_campaign=author-uri&utm_medium=wp-dash",
+        "template": null,
+        "license": "GNU General Public License v3 or later.",
+        "license_uri": "https://www.gnu.org/licenses/gpl-3.0.html",
+        "tags": "accessibility-ready, flexible-header, custom-colors, custom-menu, custom-logo, featured-images, rtl-language-support, threaded-comments, translation-ready,",
+        "text_domain": "hello-elementor",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 2,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": {
+            "number": "3.3.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.hatchwise.com/wp-content/themes/hello-elementor/style.css, Match: 'Version: 3.3.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "complianz-gdpr": {
+            "slug": "complianz-gdpr",
+            "location": "https://www.hatchwise.com/wp-content/plugins/complianz-gdpr/",
+            "latest_version": "7.3.0",
+            "last_updated": "2025-02-12T15:28:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "7.3.0",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.hatchwise.com/wp-content/plugins/complianz-gdpr/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.hatchwise.com/wp-content/plugins/complianz-gdpr/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://www.hatchwise.com/wp-content/plugins/elementor/",
+            "latest_version": "3.28.0",
+            "last_updated": "2025-03-17T14:28:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.27.6",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.hatchwise.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.27.6"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.hatchwise.com/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.hatchwise.com/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor-pro": {
+            "slug": "elementor-pro",
+            "location": "https://www.hatchwise.com/wp-content/plugins/elementor-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.27.6",
+                "confidence": 80,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.hatchwise.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.27.6",
+                    "https://www.hatchwise.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.27.6"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.hatchwise.com/wp-content/plugins/elementor-pro/changelog.txt, Match: '#### 3.27.6 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "google-analytics-for-wordpress": {
+            "slug": "google-analytics-for-wordpress",
+            "location": "https://www.hatchwise.com/wp-content/plugins/google-analytics-for-wordpress/",
+            "latest_version": "9.3.1",
+            "last_updated": "2025-03-11T15:20:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Monster Insights Comment (Passive Detection)": {
+                    "confidence": 30,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "9.3.0",
+                "confidence": 100,
+                "found_by": "Monster Insights Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.hatchwise.com/, Match: 'Google Analytics by MonsterInsights plugin v9.3.0 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.hatchwise.com/wp-content/plugins/google-analytics-for-wordpress/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.hatchwise.com/wp-content/plugins/google-analytics-for-wordpress/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "google-site-kit": {
+            "slug": "google-site-kit",
+            "location": "https://www.hatchwise.com/wp-content/plugins/google-site-kit/",
+            "latest_version": "1.148.0",
+            "last_updated": "2025-03-10T18:43:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Meta Tag (Passive Detection)",
+            "confidence": 40,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.148.0",
+                "confidence": 100,
+                "found_by": "Meta Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.hatchwise.com/, Match: 'Site Kit by Google 1.148.0'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.hatchwise.com/wp-content/plugins/google-site-kit/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.hatchwise.com/wp-content/plugins/google-site-kit/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "jet-blocks": {
+            "slug": "jet-blocks",
+            "location": "https://www.hatchwise.com/wp-content/plugins/jet-blocks/",
+            "latest_version": "1.3.16.1",
+            "last_updated": "2025-03-18T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "JetBlocks For Elementor < 1.3.8.1 - Reflected Cross Site Scripting",
+                    "fixed_in": "1.3.8.1",
+                    "references": {
+                        "cve": [
+                            "2023-48756"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/2614ca26-6efc-49f5-8cee-5b078721acc1"
+                        ],
+                        "wpvulndb": [
+                            "6b4e3efe-27b9-4fd3-879c-f6407ecc268b"
+                        ]
+                    }
+                },
+                {
+                    "title": "JetBlocks < 1.3.12.1 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "1.3.12.1",
+                    "references": {
+                        "cve": [
+                            "2024-7147"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/21f8908c-bcfc-4ca1-bc8b-80a80c4a5a4f"
+                        ],
+                        "wpvulndb": [
+                            "5fceb00e-4d0e-4d6f-9893-02313ffd64ac"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "jet-blog": {
+            "slug": "jet-blog",
+            "location": "https://www.hatchwise.com/wp-content/plugins/jet-blog/",
+            "latest_version": "2.4.3.1",
+            "last_updated": "2025-03-19T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "jet-elements": {
+            "slug": "jet-elements",
+            "location": "https://www.hatchwise.com/wp-content/plugins/jet-elements/",
+            "latest_version": "2.7.4.2",
+            "last_updated": "2025-03-19T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "JetElements For Elementor < 2.6.13.1 - Missing Authorization to Unauthenticated Arbitrary Attachment Download",
+                    "fixed_in": "2.6.13.1",
+                    "references": {
+                        "cve": [
+                            "2023-48759"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d199e597-64ed-4dcc-a153-b5c8e4e9e93d"
+                        ],
+                        "wpvulndb": [
+                            "cf9c4f4f-d7ba-41c5-b817-61f5879119f8"
+                        ]
+                    }
+                },
+                {
+                    "title": "JetElements < 2.6.20.1 - Authenticated (Contributor+) Arbitrary Local File Inclusion",
+                    "fixed_in": "2.6.20.1",
+                    "references": {
+                        "cve": [
+                            "2024-7145"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/793f27ec-a3bb-4273-a41c-cc5b04c8e8fc"
+                        ],
+                        "wpvulndb": [
+                            "b662edc4-80d7-4a4e-a4d3-31bc94257cf2"
+                        ]
+                    }
+                },
+                {
+                    "title": "JetElements < 2.6.20.1 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "2.6.20.1",
+                    "references": {
+                        "cve": [
+                            "2024-7144"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c5e64adf-49b3-4e85-8dc1-918f7e92965b"
+                        ],
+                        "wpvulndb": [
+                            "c8adfc30-3ad4-4514-b50a-1c3f04a9299a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Jet Elements < 2.7.3 - Authenticated (Contributor+) Stored Cross-Site Scripting via Multiple Widgets",
+                    "fixed_in": "2.7.3",
+                    "references": {
+                        "cve": [
+                            "2025-0371"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ded2f366-375c-4cf6-9cbd-c969a3b3d6d5"
+                        ],
+                        "wpvulndb": [
+                            "3e40c945-5ff3-4d3a-b690-3b2dc1a77c74"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "jet-menu": {
+            "slug": "jet-menu",
+            "location": "https://www.hatchwise.com/wp-content/plugins/jet-menu/",
+            "latest_version": "2.4.9.1",
+            "last_updated": "2025-03-19T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "mailchimp": {
+            "slug": "mailchimp",
+            "location": "https://www.hatchwise.com/wp-content/plugins/mailchimp/",
+            "latest_version": "1.6.3",
+            "last_updated": "2025-01-30T19:15:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.6.3",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.hatchwise.com/wp-content/plugins/mailchimp/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "stream": {
+            "slug": "stream",
+            "location": "https://www.hatchwise.com/wp-content/plugins/stream/",
+            "latest_version": "4.1.1",
+            "last_updated": "2025-02-03T12:27:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.1.1",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.hatchwise.com/, Match: 'Stream WordPress user activity plugin v4.1.1'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.hatchwise.com/wp-content/plugins/stream/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://www.hatchwise.com/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.7",
+            "last_updated": "2025-03-18T08:56:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "24.6",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.hatchwise.com/, Match: 'optimized with the Yoast SEO plugin v24.6 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.hatchwise.com/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.hatchwise.com/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wp-rocket": {
+            "slug": "wp-rocket",
+            "location": "https://www.hatchwise.com/wp-content/plugins/wp-rocket/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.4",
+                "confidence": 60,
+                "found_by": "Translation File (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.hatchwise.com/wp-content/plugins/wp-rocket/languages/rocket.pot, Match: 'Project-Id-Version: WP Rocket 3.4'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wp-user-avatar": {
+            "slug": "wp-user-avatar",
+            "location": "https://www.hatchwise.com/wp-content/plugins/wp-user-avatar/",
+            "latest_version": "4.15.22",
+            "last_updated": "2025-03-07T14:36:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.15.22",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.hatchwise.com/wp-content/plugins/wp-user-avatar/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 16,
+        "requests_remaining": 9
+    },
+    "stop_time": 1742382446,
+    "elapsed": 691,
+    "requests_done": 249,
+    "cached_requests": 5,
+    "data_sent": 36565,
+    "data_sent_humanised": "35.708 KB",
+    "data_received": 3457286,
+    "data_received_humanised": "3.297 MB",
+    "used_memory": 282497024,
+    "used_memory_humanised": "269.41 MB"
+}

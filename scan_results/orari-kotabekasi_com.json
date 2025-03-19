@@ -1,0 +1,1017 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742381537,
+    "start_memory": 48685056,
+    "target_url": "https://orari-kotabekasi.com/",
+    "target_ip": "103.16.198.22",
+    "effective_url": "https://orari-kotabekasi.com/",
+    "interesting_findings": [
+        {
+            "url": "https://orari-kotabekasi.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: LiteSpeed",
+                "alt-svc: h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+            ]
+        },
+        {
+            "url": "https://orari-kotabekasi.com/robots.txt",
+            "to_s": "robots.txt found: https://orari-kotabekasi.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://orari-kotabekasi.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://orari-kotabekasi.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://orari-kotabekasi.com/readme.html",
+            "to_s": "WordPress readme found: https://orari-kotabekasi.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://orari-kotabekasi.com/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://orari-kotabekasi.com/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://orari-kotabekasi.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://orari-kotabekasi.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://orari-kotabekasi.com/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://orari-kotabekasi.com/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "sahifa",
+        "location": "https://orari-kotabekasi.com/wp-content/themes/sahifa/",
+        "latest_version": "5.8.5",
+        "last_updated": "2024-12-04T19:21:49.000Z",
+        "outdated": true,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://orari-kotabekasi.com/wp-content/themes/sahifa/style.css",
+        "style_name": "Sahifa",
+        "style_uri": "http://themes.tielabs.com/sahifa/",
+        "description": "The Ultimate WordPress News Theme you have been waiting for!",
+        "author": "TieLabs",
+        "author_uri": "http://tielabs.com/",
+        "template": null,
+        "license": "license purchased",
+        "license_uri": "http://themeforest.net/licenses/regular_extended",
+        "tags": "two-columns, fluid-layout, fixed-layout, custom-background, threaded-comments, translation-ready, custom-menu",
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "5.6.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://orari-kotabekasi.com/wp-content/themes/sahifa/style.css, Match: 'Version: 5.6.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "click-to-chat-for-whatsapp": {
+            "slug": "click-to-chat-for-whatsapp",
+            "location": "https://orari-kotabekasi.com/wp-content/plugins/click-to-chat-for-whatsapp/",
+            "latest_version": "4.19",
+            "last_updated": "2025-03-11T11:41:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Click to Chat < 3.18.1 - Contributor+ Stored XSS",
+                    "fixed_in": "3.18.1",
+                    "references": {
+                        "cve": [
+                            "2022-4480"
+                        ],
+                        "wpvulndb": [
+                            "1666f91d-3aa2-487d-a31b-44d051ab0124"
+                        ]
+                    }
+                },
+                {
+                    "title": "Click to Chat \u2013 HoliThemes < 4.0 - Contributor+ LFI",
+                    "fixed_in": "4.0",
+                    "references": {
+                        "cve": [
+                            "2024-3849"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/fe25bfef-34f0-4d57-9cba-9dcbf58281c6"
+                        ],
+                        "wpvulndb": [
+                            "d9e26ee6-3a26-440b-abef-e63c9e9e58a3"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.12.1",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://orari-kotabekasi.com/wp-content/plugins/click-to-chat-for-whatsapp/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "embedpress": {
+            "slug": "embedpress",
+            "location": "https://orari-kotabekasi.com/wp-content/plugins/embedpress/",
+            "latest_version": "4.2.0",
+            "last_updated": "2025-03-04T07:54:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "EmbedPress \u2013 Embed PDF, YouTube, Google Docs, Vimeo, Wistia Videos, Audios, Maps & Any Documents in Gutenberg & Elementor < 3.8.0 - Sensitive Data Disclosure",
+                    "fixed_in": "3.8.0",
+                    "references": {
+                        "cve": [
+                            "2023-3371"
+                        ],
+                        "wpvulndb": [
+                            "082ae437-0f1c-4e63-9e23-4bf0ec732985"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 3.8.3 - Contributor+ Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "3.8.3",
+                    "references": {
+                        "cve": [
+                            "2023-4283"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/embedpress/embedpress-382-authenticated-contributor-stored-cross-site-scripting-via-shortcode"
+                        ],
+                        "wpvulndb": [
+                            "25d0d190-0748-4518-ad83-ba6a0f9d1319"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 3.8.3 - Subscriber+ Plugin Settings Delete",
+                    "fixed_in": "3.8.3",
+                    "references": {
+                        "cve": [
+                            "2023-4282"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/embedpress/embedpress-382-missing-authorization-to-authenticated-subscriber-plugin-settings-delete-via-admin-post-remove-and-remove-private-data"
+                        ],
+                        "wpvulndb": [
+                            "8e5b3e67-7640-48a0-b1e0-c118eb9de8d8"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 3.9.2 - Reflected XSS",
+                    "fixed_in": "3.9.2",
+                    "references": {
+                        "cve": [
+                            "2023-5750"
+                        ],
+                        "wpvulndb": [
+                            "cf323f72-8374-40fe-9e2e-810e46de1ec8"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 3.9.2 - Reflected XSS",
+                    "fixed_in": "3.9.2",
+                    "references": {
+                        "cve": [
+                            "2023-5749"
+                        ],
+                        "wpvulndb": [
+                            "3931daac-3899-4169-8625-4c95fd2adafc"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 3.8.4 - Cross-Site Request Forgery",
+                    "fixed_in": "3.8.4",
+                    "references": {
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/36ba23ea-7e79-4048-8030-7ed6b2ff45a6"
+                        ],
+                        "wpvulndb": [
+                            "7c269cdb-98f4-4207-a6ca-3f4e09c96630"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 3.9.6 - Contributor+ Stored XSS",
+                    "fixed_in": "3.9.6",
+                    "references": {
+                        "cve": [
+                            "2023-6986"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ceae0115-268c-401b-876b-3477d10c10e6"
+                        ],
+                        "wpvulndb": [
+                            "643d3453-e3a4-40ee-953f-c8149373ac59"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 3.9.5 - Missing Authorization",
+                    "fixed_in": "3.9.5",
+                    "references": {
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a7cf1c70-9778-4b50-b494-d0b1d0277b35"
+                        ],
+                        "wpvulndb": [
+                            "3436bbc5-c7b6-4b3b-97fc-786ba66748e1"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 3.9.9 - Authenticated(Contributor+) Stored Cross-Site Scripting via Google Calendar Widget Link",
+                    "fixed_in": "3.9.9",
+                    "references": {
+                        "cve": [
+                            "2024-1425"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4d4568c8-f58c-4c37-94b9-6154e5c46928"
+                        ],
+                        "wpvulndb": [
+                            "909d265a-78a8-4222-b244-7b49d2da24e8"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 3.9.9 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "3.9.9",
+                    "references": {
+                        "cve": [
+                            "2024-1349"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/631d200f-7b0b-4105-b91e-030af459ba99"
+                        ],
+                        "wpvulndb": [
+                            "bebfee16-eb15-41ba-826d-d37f7ced135d"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress \u2013 Embed PDF, Google Docs, Vimeo, Wistia, Embed YouTube Videos, Audios, Maps & Embed Any Documents in Gutenberg & Elementor < 3.9.11 - Authenticated (Contributor+) Stored Cross-Site Scripting via EmbedPress PDF Widget",
+                    "fixed_in": "3.9.11",
+                    "references": {
+                        "cve": [
+                            "2024-2128"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/6189368d-5925-4c84-9f0f-694b9ebcd45e"
+                        ],
+                        "wpvulndb": [
+                            "a4a2eae0-473c-4d48-97f8-dbd54b153341"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress \u2013 Embed PDF, Google Docs, Vimeo, Wistia, Embed YouTube Videos, Audios, Maps & Embed Any Documents in Gutenberg & Elementor < 3.9.11 - Authenticated (Contributor+) Stored Cross-Site Scripting via Wistia Block",
+                    "fixed_in": "3.9.11",
+                    "references": {
+                        "cve": [
+                            "2024-1802"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/48511d1a-2fd5-4be4-8409-e99d4aadcdfe"
+                        ],
+                        "wpvulndb": [
+                            "8896625b-ec99-461f-86c6-c48798287177"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress \u2013 Embed PDF, Google Docs, Vimeo, Wistia, Embed YouTube Videos, Audios, Maps & Embed Any Documents in Gutenberg & Elementor < 3.9.13 - Authenticated (Contributor+) Stored Cross-site Scripting via 'embedpress_doc_custom_color'",
+                    "fixed_in": "3.9.13",
+                    "references": {
+                        "cve": [
+                            "2024-2688"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c5b67927-5993-4e21-af52-8ebe7fee48ab"
+                        ],
+                        "wpvulndb": [
+                            "1979b942-3a63-4dde-abbb-1b9e01f93720"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 3.9.13 - Authenticated(Contributor+) Stored Cross-Site Scripting via Widget Attribute",
+                    "fixed_in": "3.9.13",
+                    "references": {
+                        "cve": [
+                            "2024-2468"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ce3f1310-4d2e-45aa-a3ee-3972a6a31c2e"
+                        ],
+                        "wpvulndb": [
+                            "4a2e6bca-2108-465f-ac4d-9376e2834cf8"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress \u2013 Embed PDF, Google Docs, Vimeo, Wistia, Embed YouTube Videos, Audios, Maps & Embed Any Documents in Gutenberg & Elementor < 3.9.15 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "3.9.15",
+                    "references": {
+                        "cve": [
+                            "2024-3244"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/778d8443-fc0f-4e97-8460-e5ceee8b62a1"
+                        ],
+                        "wpvulndb": [
+                            "b937c331-3856-4ad2-bebe-cb59fcc06a34"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress \u2013 Embed PDF, Google Docs, Vimeo, Wistia, Embed YouTube Videos, Audios, Maps & Embed Any Documents in Gutenberg & Elementor < 3.9.15 - Authenticated (Contributor+) Stored Cross-Site Scripting via Youtube Block",
+                    "fixed_in": "3.9.15",
+                    "references": {
+                        "cve": [
+                            "2024-3245"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a427c798-f546-4ca1-98ab-32b433ee5b59"
+                        ],
+                        "wpvulndb": [
+                            "136076e8-457e-457b-be41-45e61e7439f7"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 3.9.12 - Missing Authorization",
+                    "fixed_in": "3.9.12",
+                    "references": {
+                        "cve": [
+                            "2024-31274"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/0ce738ee-bbb6-462a-aeae-0523200e320f"
+                        ],
+                        "wpvulndb": [
+                            "640d7183-9e89-40bc-ab7e-14271ec78475"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 3.9.9 - Missing Authorization via handle_calendly_data",
+                    "fixed_in": "3.9.9",
+                    "references": {
+                        "cve": [
+                            "2024-31284"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/be33065e-dae8-44cf-9f8a-f9971f2743ff"
+                        ],
+                        "wpvulndb": [
+                            "bce8f1ef-f794-4857-a284-0aa864a36946"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress Embed PDF, Google Docs, Vimeo, Wistia, Embed YouTube Videos, Audios, Maps & Embed Any Documents in Gutenberg & Elementor < 3.9.17 - Authenticated (Contributor+) Stored Cross-Site Scripting via id Parameter",
+                    "fixed_in": "3.9.17",
+                    "references": {
+                        "cve": [
+                            "2024-4316"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/2af03168-9344-4db0-9b69-2ad1fdb6d472"
+                        ],
+                        "wpvulndb": [
+                            "d621d992-84c5-48a6-9a86-a6abf57c332e"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 3.9.13 - Contributor+ PDF Block Embedding",
+                    "fixed_in": "3.9.13",
+                    "references": {
+                        "cve": [
+                            "2024-1803"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/175e08ce-aec2-427a-90e0-f955711d58b2"
+                        ],
+                        "wpvulndb": [
+                            "ce23ec26-9c61-4546-a179-9fe87019cee4"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress \u2013 Embed PDF, Google Docs, Vimeo, Wistia, Embed YouTube Videos, Audios, Maps & Embed Any Documents in Gutenberg & Elementor < 4.0.2 -  Authenticated (Contributor+) Stored Cross-Site Scripting via EmbedPress PDF Widget",
+                    "fixed_in": "4.0.2",
+                    "references": {
+                        "cve": [
+                            "2024-5571"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7becdab6-f952-4649-8cea-4efadf841619"
+                        ],
+                        "wpvulndb": [
+                            "31dbe99a-cbea-4d47-8e4c-34c26603e87c"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 3.9.11 - Authenticated(Contributor+) Stored Cross-Site Scripting via PDF Widget URL",
+                    "fixed_in": "3.9.11",
+                    "references": {
+                        "cve": [
+                            "2024-1565"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/caa97ae8-40a8-4ca1-820b-83675c053bfc"
+                        ],
+                        "wpvulndb": [
+                            "d5a25afe-f6d4-4ee0-bfbc-1396088aba22"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 4.0.5 - Missing Authorization",
+                    "fixed_in": "4.0.5",
+                    "references": {
+                        "cve": [
+                            "2024-38707"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f507cec5-d66c-4cb0-8c35-a985aaee1283"
+                        ],
+                        "wpvulndb": [
+                            "3300fd33-de42-4ab3-8674-81594b1f6444"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 4.0.10 - Unauthenticated Local File Inclusion",
+                    "fixed_in": "4.0.10",
+                    "references": {
+                        "cve": [
+                            "2024-43328"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/21a1b117-945f-49bc-9ea1-313afa93bf32"
+                        ],
+                        "wpvulndb": [
+                            "f35019b8-eeec-46af-a65b-829f663401a4"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 4.0.9 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "4.0.9",
+                    "references": {
+                        "cve": [
+                            "2024-43936"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/31f8bd62-32de-468c-9bed-e03374cb595c"
+                        ],
+                        "wpvulndb": [
+                            "faeab079-6002-426c-94f9-f1cc4b761cc9"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress < 4.1.0 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "4.1.0",
+                    "references": {
+                        "cve": [
+                            "2024-50461"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b6851bb9-f15a-4d37-8a15-f4677bd5d62e"
+                        ],
+                        "wpvulndb": [
+                            "d758bc36-654f-416d-8938-00f091e81501"
+                        ]
+                    }
+                },
+                {
+                    "title": "EmbedPress \u2013 Embed PDF, 3D Flipbook, Social Feeds, Google Docs, Vimeo, Wistia, YouTube Videos, Audios, Google Maps in Gutenberg Block & Elementor < 4.1.4 - Authenticated (Contributor+) Stored Cross-Site Scripting via 'provider_name'",
+                    "fixed_in": "4.1.4",
+                    "references": {
+                        "cve": [
+                            "2024-11203"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/167dedfa-36cc-4b01-8ea4-8eda8742953c"
+                        ],
+                        "wpvulndb": [
+                            "91529f39-5792-4fcf-8eac-09437299ea06"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.5.0",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://orari-kotabekasi.com/wp-content/plugins/embedpress/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "mechanic-visitor-counter": {
+            "slug": "mechanic-visitor-counter",
+            "location": "https://orari-kotabekasi.com/wp-content/plugins/mechanic-visitor-counter/",
+            "latest_version": "3.3.3",
+            "last_updated": "2021-01-02T07:20:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.3.2",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://orari-kotabekasi.com/wp-content/plugins/mechanic-visitor-counter/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "pdf-embedder": {
+            "slug": "pdf-embedder",
+            "location": "https://orari-kotabekasi.com/wp-content/plugins/pdf-embedder/",
+            "latest_version": "4.9.0",
+            "last_updated": "2025-01-22T17:23:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "PDF Embedder < 4.7.1 - Contributor+ Stored XSS",
+                    "fixed_in": "4.7.1",
+                    "references": {
+                        "cve": [
+                            "2024-29141"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/b63f0862-d817-49c6-8ac2-6143d21abc32"
+                        ],
+                        "wpvulndb": [
+                            "32178f26-4fb5-41c5-921a-a4b584ff76ff"
+                        ]
+                    }
+                },
+                {
+                    "title": "PDF.js < 4.2.67 - Arbitrary JavaScript Execution",
+                    "fixed_in": "4.8.0",
+                    "references": {
+                        "cve": [
+                            "2024-4367"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8ce7aa01-7e79-4048-a84d-fcb9541d5f8b"
+                        ],
+                        "wpvulndb": [
+                            "6d8281fa-1240-4d71-97e4-bdc59511c6b3"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "4.6.4",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://orari-kotabekasi.com/wp-content/plugins/pdf-embedder/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://orari-kotabekasi.com/wp-content/plugins/pdf-embedder/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "presto-player": {
+            "slug": "presto-player",
+            "location": "https://orari-kotabekasi.com/wp-content/plugins/presto-player/",
+            "latest_version": "3.0.8",
+            "last_updated": "2025-01-21T20:12:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.0.6",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://orari-kotabekasi.com/wp-content/plugins/presto-player/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://orari-kotabekasi.com/wp-content/plugins/presto-player/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "tablepress": {
+            "slug": "tablepress",
+            "location": "https://orari-kotabekasi.com/wp-content/plugins/tablepress/",
+            "latest_version": "3.0.4",
+            "last_updated": "2025-02-20T06:01:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Freemius SDK < 2.5.10 - Reflected Cross-Site Scripting",
+                    "fixed_in": "2.1.5",
+                    "references": {
+                        "cve": [
+                            "2023-33999"
+                        ],
+                        "wpvulndb": [
+                            "7fd1ad0e-9db9-47b7-9966-d3f5a8771571"
+                        ]
+                    }
+                },
+                {
+                    "title": "TablePress < 2.2.5 - Authenticated(Author+) Server Side Request Forgery(SSRF) via _get_import_files",
+                    "fixed_in": "2.2.5",
+                    "references": {
+                        "cve": [
+                            "2024-23825"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8de52b68-c273-4561-98b0-e51afd6cd47b"
+                        ],
+                        "wpvulndb": [
+                            "d444a693-7f2b-451e-8004-b40b8c1c64b0"
+                        ]
+                    }
+                },
+                {
+                    "title": "TablePress \u2013 Tables in WordPress made easy < 2.3.2 - Authenticated (Author+) Server-Side Request Forgery via DNS Rebind",
+                    "fixed_in": "2.3.2",
+                    "references": {
+                        "cve": [
+                            "2024-4354"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/879384eb-bfea-4667-a7de-9f723dbea74b"
+                        ],
+                        "wpvulndb": [
+                            "952a6a13-0bcc-4f11-a58a-07d11d1a2ed9"
+                        ]
+                    }
+                },
+                {
+                    "title": "TablePress < 2.4.3 - Author+ Stored XSS",
+                    "fixed_in": "2.4.3",
+                    "references": {
+                        "cve": [
+                            "2024-9595"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ffa3b85c-7d08-4f6a-889e-b75620f72a1a"
+                        ],
+                        "wpvulndb": [
+                            "fdba1d77-a469-4ad5-bab2-8acfac83cf2c"
+                        ]
+                    }
+                },
+                {
+                    "title": "TablePress < 2.4.3 - XXE Injection",
+                    "fixed_in": "2.4.3",
+                    "references": {
+                        "cve": [
+                            "2024-45293"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/38f950b7-e3a0-4e05-a8b0-9cc6b6c66b0c"
+                        ],
+                        "wpvulndb": [
+                            "c9c13e5b-22ac-44c1-aca7-e2b34238e045"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "1.14",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://orari-kotabekasi.com/wp-content/plugins/tablepress/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wp-stats-manager": {
+            "slug": "wp-stats-manager",
+            "location": "https://orari-kotabekasi.com/wp-content/plugins/wp-stats-manager/",
+            "latest_version": "7.8",
+            "last_updated": "2025-03-05T11:09:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "7.8",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://orari-kotabekasi.com/wp-content/plugins/wp-stats-manager/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wp-user-frontend": {
+            "slug": "wp-user-frontend",
+            "location": "https://orari-kotabekasi.com/wp-content/plugins/wp-user-frontend/",
+            "latest_version": "4.0.15",
+            "last_updated": "2025-03-19T10:25:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WP User Frontend < 3.5.29 - Obscure Registration as Admin",
+                    "fixed_in": "3.5.29",
+                    "references": {
+                        "cve": [
+                            "2021-24649"
+                        ],
+                        "wpvulndb": [
+                            "9486744e-ab24-44e4-b06e-9e0b4be132e2"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP User Frontend < 3.6.6 - Authenticated (Author+) Privilege Escalation",
+                    "fixed_in": "3.6.6",
+                    "references": {
+                        "cve": [
+                            "2023-47682"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/31de3c9b-068d-47d8-9811-feae07f2e9d0"
+                        ],
+                        "wpvulndb": [
+                            "a3984fb8-2fe5-42bb-a280-ce1f5df7819d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP User Frontend < 3.6.9 - Missing Authorization via AJAX actions",
+                    "fixed_in": "3.6.9",
+                    "references": {
+                        "cve": [
+                            "2023-45002"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8e8e967f-f627-4c0c-ac0f-0a66ae25c602"
+                        ],
+                        "wpvulndb": [
+                            "525c6d15-569c-451d-a8c4-a60627c8e10a"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP User Frontend < 4.0.8 - Authenticated (Administrator+) SQL Injection",
+                    "fixed_in": "4.0.8",
+                    "references": {
+                        "cve": [
+                            "2024-38693"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d2fdd6eb-c848-446c-abad-7d2ea93f5512"
+                        ],
+                        "wpvulndb": [
+                            "3bad655d-d986-4a7a-b68f-63c41b8c17cd"
+                        ]
+                    }
+                },
+                {
+                    "title": "Various Plugins <= Various Version - Use of Polyfill.io",
+                    "fixed_in": "4.0.8",
+                    "references": {
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/379a5016-3968-4b28-8d6e-0f517e419016"
+                        ],
+                        "wpvulndb": [
+                            "7061361b-4d7b-4f30-b36d-18951cb5330f"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.5.28",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://orari-kotabekasi.com/wp-content/plugins/wp-user-frontend/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://orari-kotabekasi.com/wp-content/plugins/wp-user-frontend/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 10,
+        "requests_remaining": 15
+    },
+    "stop_time": 1742381733,
+    "elapsed": 196,
+    "requests_done": 202,
+    "cached_requests": 7,
+    "data_sent": 54865,
+    "data_sent_humanised": "53.579 KB",
+    "data_received": 1155001,
+    "data_received_humanised": "1.101 MB",
+    "used_memory": 276389888,
+    "used_memory_humanised": "263.586 MB"
+}

@@ -1,0 +1,355 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742382566,
+    "start_memory": 48939008,
+    "target_url": "https://jamaicadevelopersassociation.org/",
+    "target_ip": "70.39.248.221",
+    "effective_url": "https://jamaicadevelopersassociation.org/",
+    "interesting_findings": [
+        {
+            "url": "https://jamaicadevelopersassociation.org/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-speedycache-source: Server",
+                "cache-tag: jamaicadevelopersassociation.org",
+                "cdn-cache-control: max-age=1296000",
+                "server: Apache"
+            ]
+        },
+        {
+            "url": "https://jamaicadevelopersassociation.org/robots.txt",
+            "to_s": "robots.txt found: https://jamaicadevelopersassociation.org/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://jamaicadevelopersassociation.org/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://jamaicadevelopersassociation.org/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://jamaicadevelopersassociation.org/readme.html",
+            "to_s": "WordPress readme found: https://jamaicadevelopersassociation.org/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://jamaicadevelopersassociation.org/wp-content/debug.log",
+            "to_s": "Debug Log found: https://jamaicadevelopersassociation.org/wp-content/debug.log",
+            "type": "debug_log",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://codex.wordpress.org/Debugging_in_WordPress"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://jamaicadevelopersassociation.org/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://jamaicadevelopersassociation.org/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://jamaicadevelopersassociation.org/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://jamaicadevelopersassociation.org/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://jamaicadevelopersassociation.org/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://jamaicadevelopersassociation.org/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "customizr-child",
+        "location": "https://jamaicadevelopersassociation.org/wp-content/themes/customizr-child/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": true,
+        "error_log_url": null,
+        "style_url": "https://jamaicadevelopersassociation.org/wp-content/themes/customizr-child/style.css?ver=4.4.9.1626052432",
+        "style_name": "JDA Customizr Child",
+        "style_uri": "https://presscustomizr.com/customizr",
+        "description": "Customizr is a simple and fast WordPress theme designed to help you attract and engage more visitors. Provides a perfect user experience on smartphones. Powers more than 100K active sites around the world. Hundreds of 5-stars reviews received on WordPress.org.",
+        "author": "nikeo",
+        "author_uri": "https://presscustomizr.com/",
+        "template": "customizr",
+        "license": null,
+        "license_uri": null,
+        "tags": "one-column,two-columns,three-columns,left-sidebar,right-sidebar,buddypress,custom-menu,custom-colors,featured-images,full-width-template,theme-options,threaded-comments,translation-ready,sticky-post,post-formats,rtl-language-support,editor-style",
+        "text_domain": null,
+        "found_by": "Css Style In 404 Page (Passive Detection)",
+        "confidence": 70,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": {
+            "number": "4.4.9.1626052432",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://jamaicadevelopersassociation.org/wp-content/themes/customizr-child/style.css?ver=4.4.9.1626052432, Match: 'Version: 4.4.9.1626052432'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "cc-child-pages": {
+            "slug": "cc-child-pages",
+            "location": "https://jamaicadevelopersassociation.org/wp-content/plugins/cc-child-pages/",
+            "latest_version": "1.45",
+            "last_updated": "2025-01-20T20:14:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Comment (Passive Detection)": {
+                    "confidence": 30,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "CC Child Pages < 1.43 - Contributor+ Stored XSS via Shortcode",
+                    "fixed_in": "1.43",
+                    "references": {
+                        "cve": [
+                            "2022-4776"
+                        ],
+                        "wpvulndb": [
+                            "d5ea8f7f-7d5a-4b2e-a070-a9aef7cac58a"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "megamenu": {
+            "slug": "megamenu",
+            "location": "https://jamaicadevelopersassociation.org/wp-content/plugins/megamenu/",
+            "latest_version": "3.4.1",
+            "last_updated": "2024-11-20T10:25:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.3.2",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://jamaicadevelopersassociation.org/wp-content/plugins/megamenu/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "responsive-lightbox": {
+            "slug": "responsive-lightbox",
+            "location": "https://jamaicadevelopersassociation.org/wp-content/plugins/responsive-lightbox/",
+            "latest_version": "2.5.0",
+            "last_updated": "2025-02-18T11:46:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.5.0",
+                "confidence": 90,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://jamaicadevelopersassociation.org/wp-content/plugins/responsive-lightbox/js/front.js?ver=2.5.0"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://jamaicadevelopersassociation.org/wp-content/plugins/responsive-lightbox/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "simple-banner": {
+            "slug": "simple-banner",
+            "location": "https://jamaicadevelopersassociation.org/wp-content/plugins/simple-banner/",
+            "latest_version": "3.0.4",
+            "last_updated": "2024-12-19T04:33:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.0.4",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://jamaicadevelopersassociation.org/wp-content/plugins/simple-banner/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://jamaicadevelopersassociation.org/wp-content/plugins/simple-banner/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "simple-lightbox": {
+            "slug": "simple-lightbox",
+            "location": "https://jamaicadevelopersassociation.org/wp-content/plugins/simple-lightbox/",
+            "latest_version": "2.9.3",
+            "last_updated": "2024-07-15T21:56:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.9.3",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://jamaicadevelopersassociation.org/wp-content/plugins/simple-lightbox/client/css/app.css?ver=2.9.3"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://jamaicadevelopersassociation.org/wp-content/plugins/simple-lightbox/readme.txt"
+                        ]
+                    },
+                    "Composer File (Aggressive Detection)": {
+                        "confidence": 70,
+                        "interesting_entries": [
+                            "https://jamaicadevelopersassociation.org/wp-content/plugins/simple-lightbox/package.json, Match: '2.9.3'"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 7,
+        "requests_remaining": 18
+    },
+    "stop_time": 1742382684,
+    "elapsed": 117,
+    "requests_done": 197,
+    "cached_requests": 7,
+    "data_sent": 58374,
+    "data_sent_humanised": "57.006 KB",
+    "data_received": 70476949,
+    "data_received_humanised": "67.212 MB",
+    "used_memory": 297852928,
+    "used_memory_humanised": "284.055 MB"
+}

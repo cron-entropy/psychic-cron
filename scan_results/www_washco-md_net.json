@@ -1,0 +1,1023 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742382512,
+    "start_memory": 49070080,
+    "target_url": "https://www.washco-md.net/",
+    "target_ip": "172.67.69.235",
+    "effective_url": "https://www.washco-md.net/",
+    "interesting_findings": [
+        {
+            "url": "https://www.washco-md.net/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "cf-cache-status: DYNAMIC",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=eh8ABHD9mfIvp4CD%2BvPsxZPKjzAAvk%2BrIIdy1tV%2B5%2BWecuMNBTQ1REYbdwS7Tbz5dPevHDPvPvtyy%2BltqqfGEGJHtJTorG9eNuHx3pRDXqTqSldMH31sochIWm0VsqDLycHC\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "referrer-policy: no-referrer, strict-origin-when-cross-origin",
+                "permissions-policy: geolocation=(self \"https://www.washco-md.net\")",
+                "server: cloudflare",
+                "cf-ray: 922c831bbbb7c948-IAD",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=833&min_rtt=747&rtt_var=285&sent=6&recv=8&lost=0&retrans=0&sent_bytes=3416&recv_bytes=816&delivery_rate=3823293&cwnd=253&unsent_bytes=0&cid=414197f3b17fe88e&ts=62&x=0\""
+            ]
+        },
+        {
+            "url": "https://www.washco-md.net/robots.txt",
+            "to_s": "robots.txt found: https://www.washco-md.net/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.washco-md.net/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.washco-md.net/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.washco-md.net/readme.html",
+            "to_s": "WordPress readme found: https://www.washco-md.net/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.washco-md.net/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://www.washco-md.net/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.washco-md.net/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.washco-md.net/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.washco-md.net/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.washco-md.net/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "jupiterx",
+        "location": "https://www.washco-md.net/wp-content/themes/jupiterx/",
+        "latest_version": "4.8.10",
+        "last_updated": "2025-03-17T21:02:31.000Z",
+        "outdated": true,
+        "readme_url": "https://www.washco-md.net/wp-content/themes/jupiterx/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.washco-md.net/wp-content/themes/jupiterx/style.css?ver=6.7.2",
+        "style_name": "JupiterX",
+        "style_uri": "https://jupiterx.artbees.net/",
+        "description": "Jupiter X is a fast, light, and powerful WordPress theme for building all kinds of websites. Jupiter X allows you to customize literally every inch of your website using a powerful visual editor. With the help of WordPress Customizer technology and Elementor page builder, it offers a seamless and limitless control, of both global and in-page elements. With the header and footer builder, you can design your own header and footers from scratch. And for the first time ever, you can customize the most untouchable parts of your WooCommerce shop including product list, product single, shopping cart, and checkout pages with Shop Customizer. Jupiter X is also the first theme to enable its users to completely reinvent the look of their blog list, portfolio list, and blog single page. You can fully customize your single post and turn off blog elements such as social media, comment section, and meta info. Jupiter X comes with captivatingly beautiful ready-made website templates to help you get started real quick. It\u2019s extremely developer-friendly and absolutely scalable. With the help of Beans, Bootstrap, and ACF you can easily extend Jupiter X in the most enjoyable and accurate way possible. Jupiter X is a makeover of Jupiter X WP theme with 100000 users in the Envato market as of October 2018. Jupiter X builds websites you cannot create with any other tool. Build yours now! jupiterx.com",
+        "author": "Artbees",
+        "author_uri": "https://artbees.net/",
+        "template": null,
+        "license": "GNU General Public License v2 or later",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "one-column,two-columns, three-columns, four-columns, left-sidebar, right-sidebar, e-commerce, featured-images, full-width-template, threaded-comments, blog, custom-colors, grid-layout, rtl-language-support, footer-widgets, theme-options, translation-ready, custom-menu",
+        "text_domain": "jupiterx",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "4.8.5",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.washco-md.net/wp-content/themes/jupiterx/style.css?ver=6.7.2, Match: 'Version: 4.8.5'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "constant-contact-forms": {
+            "slug": "constant-contact-forms",
+            "location": "https://www.washco-md.net/wp-content/plugins/constant-contact-forms/",
+            "latest_version": "2.8.0",
+            "last_updated": "2025-02-04T18:38:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.8.0",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.washco-md.net/wp-content/plugins/constant-contact-forms/assets/css/style.css?ver=2.8.0",
+                    "https://www.washco-md.net/wp-content/plugins/constant-contact-forms/assets/js/ctct-plugin-frontend.min.js?ver=2.8.0"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.washco-md.net/wp-content/plugins/constant-contact-forms/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.washco-md.net/wp-content/plugins/constant-contact-forms/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "duracelltomi-google-tag-manager": {
+            "slug": "duracelltomi-google-tag-manager",
+            "location": "https://www.washco-md.net/wp-content/plugins/duracelltomi-google-tag-manager/",
+            "latest_version": "1.20.3",
+            "last_updated": "2024-12-09T13:30:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.20.3",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.washco-md.net/wp-content/plugins/duracelltomi-google-tag-manager/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.washco-md.net/wp-content/plugins/duracelltomi-google-tag-manager/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "dynamic-content-for-elementor": {
+            "slug": "dynamic-content-for-elementor",
+            "location": "https://www.washco-md.net/wp-content/plugins/dynamic-content-for-elementor/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Dynamic Content for Elementor < 1.9.6 - Authenticated RCE",
+                    "fixed_in": "1.9.6",
+                    "references": {
+                        "cve": [
+                            "2020-26596"
+                        ],
+                        "url": [
+                            "https://ww2.compunet.cl/dia-cero-en-plugin-de-wordpres-detectada-compunet-redteam"
+                        ],
+                        "wpvulndb": [
+                            "05b0e3eb-82ea-4868-a037-d7ee3eace8aa"
+                        ]
+                    }
+                },
+                {
+                    "title": "Dynamic Content for Elementor < 2.12.5 - Cross-Site Request Forgery",
+                    "fixed_in": "2.12.5",
+                    "references": {
+                        "cve": [
+                            "2023-52150"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/77a85024-33ff-4056-89f6-991182d71b80"
+                        ],
+                        "wpvulndb": [
+                            "82c34874-5b6a-42b9-8188-5799a4872676"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://www.washco-md.net/wp-content/plugins/elementor/",
+            "latest_version": "3.28.0",
+            "last_updated": "2025-03-17T14:28:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.28.0",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.washco-md.net/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.28.0",
+                    "https://www.washco-md.net/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.28.0"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.washco-md.net/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.washco-md.net/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor-pro": {
+            "slug": "elementor-pro",
+            "location": "https://www.washco-md.net/wp-content/plugins/elementor-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.27.7",
+                "confidence": 80,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.washco-md.net/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.27.7",
+                    "https://www.washco-md.net/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.27.7"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://www.washco-md.net/wp-content/plugins/elementor-pro/changelog.txt, Match: '#### 3.27.7 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "gtranslate": {
+            "slug": "gtranslate",
+            "location": "https://www.washco-md.net/wp-content/plugins/gtranslate/",
+            "latest_version": "3.0.7",
+            "last_updated": "2024-11-26T20:21:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.0.7",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.washco-md.net/wp-content/plugins/gtranslate/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.washco-md.net/wp-content/plugins/gtranslate/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "insert-or-embed-articulate-content-into-wordpress-premium": {
+            "slug": "insert-or-embed-articulate-content-into-wordpress-premium",
+            "location": "https://www.washco-md.net/wp-content/plugins/insert-or-embed-articulate-content-into-wordpress-premium/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "5.94",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.washco-md.net/wp-content/plugins/insert-or-embed-articulate-content-into-wordpress-premium/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.washco-md.net/wp-content/plugins/insert-or-embed-articulate-content-into-wordpress-premium/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "instagram-feed": {
+            "slug": "instagram-feed",
+            "location": "https://www.washco-md.net/wp-content/plugins/instagram-feed/",
+            "latest_version": "6.8.0",
+            "last_updated": "2025-03-12T15:59:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.8.0",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.washco-md.net/wp-content/plugins/instagram-feed/README.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "jet-blog": {
+            "slug": "jet-blog",
+            "location": "https://www.washco-md.net/wp-content/plugins/jet-blog/",
+            "latest_version": "2.4.3.1",
+            "last_updated": "2025-03-19T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "jet-elements": {
+            "slug": "jet-elements",
+            "location": "https://www.washco-md.net/wp-content/plugins/jet-elements/",
+            "latest_version": "2.7.4.2",
+            "last_updated": "2025-03-19T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "JetElements For Elementor < 2.6.13.1 - Missing Authorization to Unauthenticated Arbitrary Attachment Download",
+                    "fixed_in": "2.6.13.1",
+                    "references": {
+                        "cve": [
+                            "2023-48759"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d199e597-64ed-4dcc-a153-b5c8e4e9e93d"
+                        ],
+                        "wpvulndb": [
+                            "cf9c4f4f-d7ba-41c5-b817-61f5879119f8"
+                        ]
+                    }
+                },
+                {
+                    "title": "JetElements < 2.6.20.1 - Authenticated (Contributor+) Arbitrary Local File Inclusion",
+                    "fixed_in": "2.6.20.1",
+                    "references": {
+                        "cve": [
+                            "2024-7145"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/793f27ec-a3bb-4273-a41c-cc5b04c8e8fc"
+                        ],
+                        "wpvulndb": [
+                            "b662edc4-80d7-4a4e-a4d3-31bc94257cf2"
+                        ]
+                    }
+                },
+                {
+                    "title": "JetElements < 2.6.20.1 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "2.6.20.1",
+                    "references": {
+                        "cve": [
+                            "2024-7144"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c5e64adf-49b3-4e85-8dc1-918f7e92965b"
+                        ],
+                        "wpvulndb": [
+                            "c8adfc30-3ad4-4514-b50a-1c3f04a9299a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Jet Elements < 2.7.3 - Authenticated (Contributor+) Stored Cross-Site Scripting via Multiple Widgets",
+                    "fixed_in": "2.7.3",
+                    "references": {
+                        "cve": [
+                            "2025-0371"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ded2f366-375c-4cf6-9cbd-c969a3b3d6d5"
+                        ],
+                        "wpvulndb": [
+                            "3e40c945-5ff3-4d3a-b690-3b2dc1a77c74"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "jet-engine": {
+            "slug": "jet-engine",
+            "location": "https://www.washco-md.net/wp-content/plugins/jet-engine/",
+            "latest_version": "3.6.5",
+            "last_updated": "2025-03-12T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "JetEngine < 3.1.3.1 - Author+ Remote Code Execution",
+                    "fixed_in": "3.1.3.1",
+                    "references": {
+                        "cve": [
+                            "2023-1406"
+                        ],
+                        "wpvulndb": [
+                            "2a81b6b1-2339-4889-9c28-1af133df8b65"
+                        ]
+                    }
+                },
+                {
+                    "title": "JetEngine < 3.2.5 - Missing Authorization",
+                    "fixed_in": "3.2.5",
+                    "references": {
+                        "cve": [
+                            "2023-48758"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/3f2c97f4-0a6e-4693-a6c8-bd81ca76988c"
+                        ],
+                        "wpvulndb": [
+                            "e39b5074-8b68-466a-9663-ef492f55765a"
+                        ]
+                    }
+                },
+                {
+                    "title": "JetEngine < 3.2.5 - Authenticated (Contributor+) Privilege Escalation",
+                    "fixed_in": "3.2.5",
+                    "references": {
+                        "cve": [
+                            "2023-48757"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ad66015d-7831-4590-9583-3abf7ca43c3b"
+                        ],
+                        "wpvulndb": [
+                            "a3b91164-6e0a-423f-8db5-4a0f250bbc53"
+                        ]
+                    }
+                },
+                {
+                    "title": "Jet Engine < 3.6.3 - Authenticated (Contributor+) Stored Cross-Site Scripting via list_tag Parameter",
+                    "fixed_in": "3.6.3",
+                    "references": {
+                        "cve": [
+                            "2025-0369"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f27979a8-0e68-4a45-9e3e-3667d88361d8"
+                        ],
+                        "wpvulndb": [
+                            "5ddc0216-6bda-431c-8dc7-535697509074"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "jet-menu": {
+            "slug": "jet-menu",
+            "location": "https://www.washco-md.net/wp-content/plugins/jet-menu/",
+            "latest_version": "2.4.9.1",
+            "last_updated": "2025-03-19T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "jet-popup": {
+            "slug": "jet-popup",
+            "location": "https://www.washco-md.net/wp-content/plugins/jet-popup/",
+            "latest_version": "2.0.12",
+            "last_updated": "2025-03-18T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "jet-tabs": {
+            "slug": "jet-tabs",
+            "location": "https://www.washco-md.net/wp-content/plugins/jet-tabs/",
+            "latest_version": "2.2.8",
+            "last_updated": "2025-03-13T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "JetTabs < 2.2.3.1 - Authenticated (Contributor+) Arbitrary Local File Inclusion",
+                    "fixed_in": "2.2.3.1",
+                    "references": {
+                        "cve": [
+                            "2024-7146"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a401a2dd-9b31-47d9-b841-f2e7042b8333"
+                        ],
+                        "wpvulndb": [
+                            "51a0fdbd-9e83-4de6-b2d2-c3a1626cb7a9"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "jet-tricks": {
+            "slug": "jet-tricks",
+            "location": "https://www.washco-md.net/wp-content/plugins/jet-tricks/",
+            "latest_version": "1.5.1.1",
+            "last_updated": "2025-03-18T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "jupiterx-core": {
+            "slug": "jupiterx-core",
+            "location": "https://www.washco-md.net/wp-content/plugins/jupiterx-core/",
+            "latest_version": "4.8.10",
+            "last_updated": "2025-03-10T06:46:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.8.10",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.washco-md.net/wp-content/plugins/jupiterx-core/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "w3-total-cache": {
+            "slug": "w3-total-cache",
+            "location": "https://www.washco-md.net/wp-content/plugins/w3-total-cache/",
+            "latest_version": "2.8.6",
+            "last_updated": "2025-02-21T16:12:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Comment Debug Info (Passive Detection)": {
+                    "confidence": 30,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.8.6",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.washco-md.net/wp-content/plugins/w3-total-cache/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.washco-md.net/wp-content/plugins/w3-total-cache/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wd-facebook-feed": {
+            "slug": "wd-facebook-feed",
+            "location": "https://www.washco-md.net/wp-content/plugins/wd-facebook-feed/",
+            "latest_version": "1.2.9",
+            "last_updated": "2023-05-10T18:04:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "10Web Social Post Feed <= 1.2.9 - Reflected Cross-Site Scripting",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2024-9607"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/be151552-827c-43a6-a0e0-da19884448fd"
+                        ],
+                        "wpvulndb": [
+                            "dea0e0c1-a6df-44fc-8a73-6b0567fda498"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "1.2.9",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.washco-md.net/wp-content/plugins/wd-facebook-feed/css/ffwd_frontend.css?ver=1.2.9",
+                    "https://www.washco-md.net/wp-content/plugins/wd-facebook-feed/css/jquery.mCustomScrollbar.css?ver=1.2.9",
+                    "https://www.washco-md.net/wp-content/plugins/wd-facebook-feed/js/ffwd_frontend.js?ver=1.2.9",
+                    "https://www.washco-md.net/wp-content/plugins/wd-facebook-feed/js/jquery.mobile.js?ver=1.2.9",
+                    "https://www.washco-md.net/wp-content/plugins/wd-facebook-feed/js/jquery.mCustomScrollbar.concat.min.js?ver=1.2.9",
+                    "https://www.washco-md.net/wp-content/plugins/wd-facebook-feed/js/ffwd_gallery_box.js?ver=1.2.9"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.washco-md.net/wp-content/plugins/wd-facebook-feed/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://www.washco-md.net/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.7",
+            "last_updated": "2025-03-18T08:56:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "24.7",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.washco-md.net/, Match: 'optimized with the Yoast SEO plugin v24.7 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.washco-md.net/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.washco-md.net/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wpforms": {
+            "slug": "wpforms",
+            "location": "https://www.washco-md.net/wp-content/plugins/wpforms/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "WPForms Pro < 1.7.7 - CSV Injection",
+                    "fixed_in": "1.7.7",
+                    "references": {
+                        "cve": [
+                            "2022-3574"
+                        ],
+                        "wpvulndb": [
+                            "0eae5189-81af-4344-9e96-dd1f4e223d41"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPForms Pro < 1.8.5.4 - Unauthenticated Stored Cross-Site Scripting via Form Submission",
+                    "fixed_in": "1.8.5.4",
+                    "references": {
+                        "cve": [
+                            "2023-7063"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/31c080b8-ba00-4e96-8961-2a1c3a017004"
+                        ],
+                        "wpvulndb": [
+                            "6d642d46-a2fe-4b07-a53d-1935126b7e6b"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "wpforms-form-locker": {
+            "slug": "wpforms-form-locker",
+            "location": "https://www.washco-md.net/wp-content/plugins/wpforms-form-locker/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "wpforms-user-journey": {
+            "slug": "wpforms-user-journey",
+            "location": "https://www.washco-md.net/wp-content/plugins/wpforms-user-journey/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 24,
+        "requests_remaining": 1
+    },
+    "stop_time": 1742382561,
+    "elapsed": 48,
+    "requests_done": 284,
+    "cached_requests": 7,
+    "data_sent": 87209,
+    "data_sent_humanised": "85.165 KB",
+    "data_received": 3394828,
+    "data_received_humanised": "3.238 MB",
+    "used_memory": 271015936,
+    "used_memory_humanised": "258.461 MB"
+}

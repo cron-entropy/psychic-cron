@@ -1,0 +1,409 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742381738,
+    "start_memory": 48979968,
+    "target_url": "https://grupodigitalnet.com.br/",
+    "target_ip": "162.240.105.177",
+    "effective_url": "https://grupodigitalnet.com.br/",
+    "interesting_findings": [
+        {
+            "url": "https://grupodigitalnet.com.br/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server: Apache",
+                "X-Powered-By: PHP/7.4.33"
+            ]
+        },
+        {
+            "url": "https://grupodigitalnet.com.br/robots.txt",
+            "to_s": "robots.txt found: https://grupodigitalnet.com.br/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://grupodigitalnet.com.br/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://grupodigitalnet.com.br/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://grupodigitalnet.com.br/readme.html",
+            "to_s": "WordPress readme found: https://grupodigitalnet.com.br/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://grupodigitalnet.com.br/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://grupodigitalnet.com.br/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://grupodigitalnet.com.br/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://grupodigitalnet.com.br/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://grupodigitalnet.com.br/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://grupodigitalnet.com.br/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "themify-ultra",
+        "location": "https://grupodigitalnet.com.br/wp-content/themes/themify-ultra/",
+        "latest_version": "7.9.2",
+        "last_updated": "2025-03-11T00:00:00.000Z",
+        "outdated": true,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://grupodigitalnet.com.br/wp-content/themes/themify-ultra/style.css",
+        "style_name": "Themify Ultra",
+        "style_uri": "https://themify.me/themes/ultra/",
+        "description": "Use Ultra theme to create professional sites quickly and easily (landing pages, portfolio, blog, corporate, ecommerce, and more). It includes a bunch of header/footer layout options and pre-built demos that you can import to your site. Read <a href=\"https://themify.me/docs/ultra-documentation\">Ultra documentation</a> for more information.",
+        "author": "Themify",
+        "author_uri": "https://www.themify.me",
+        "template": null,
+        "license": "GNU General Public License v2.0",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "themify,featured-images,translation-ready,custom-menu,sidebar",
+        "text_domain": "themify",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 24,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 6,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "7.8.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://grupodigitalnet.com.br/wp-content/themes/themify-ultra/style.css, Match: 'Version:7.8.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "builder-slider-pro": {
+            "slug": "builder-slider-pro",
+            "location": "https://grupodigitalnet.com.br/wp-content/plugins/builder-slider-pro/",
+            "latest_version": "3.5.3",
+            "last_updated": "2024-05-11T05:00:02.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "download-manager": {
+            "slug": "download-manager",
+            "location": "https://grupodigitalnet.com.br/wp-content/plugins/download-manager/",
+            "latest_version": "3.3.09",
+            "last_updated": "2025-03-10T00:16:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Download Manager < 3.3.09 - Authenticated (Author+) Path Traversal to Limited File Overwrite",
+                    "fixed_in": "3.3.09",
+                    "references": {
+                        "cve": [
+                            "2025-1785"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/bc5c7974-4c10-4880-8823-2accee3c0da4"
+                        ],
+                        "wpvulndb": [
+                            "9f0c9d8e-5148-4bb6-9ac8-f42595ec7c6a"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.3.08",
+                "confidence": 100,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://grupodigitalnet.com.br/, Match: 'WordPress Download Manager 3.3.08'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://grupodigitalnet.com.br/wp-content/plugins/download-manager/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://grupodigitalnet.com.br/wp-content/plugins/download-manager/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "facebook-pagelike-widget": {
+            "slug": "facebook-pagelike-widget",
+            "location": "https://grupodigitalnet.com.br/wp-content/plugins/facebook-pagelike-widget/",
+            "latest_version": "6.4.2",
+            "last_updated": "2025-03-16T07:07:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.4.1",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://grupodigitalnet.com.br/wp-content/plugins/facebook-pagelike-widget/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "google-site-kit": {
+            "slug": "google-site-kit",
+            "location": "https://grupodigitalnet.com.br/wp-content/plugins/google-site-kit/",
+            "latest_version": "1.148.0",
+            "last_updated": "2025-03-10T18:43:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Meta Tag (Passive Detection)",
+            "confidence": 40,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.148.0",
+                "confidence": 100,
+                "found_by": "Meta Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://grupodigitalnet.com.br/, Match: 'Site Kit by Google 1.148.0'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://grupodigitalnet.com.br/wp-content/plugins/google-site-kit/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://grupodigitalnet.com.br/wp-content/plugins/google-site-kit/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "instagram-feed": {
+            "slug": "instagram-feed",
+            "location": "https://grupodigitalnet.com.br/wp-content/plugins/instagram-feed/",
+            "latest_version": "6.8.0",
+            "last_updated": "2025-03-12T15:59:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.7.1",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://grupodigitalnet.com.br/wp-content/plugins/instagram-feed/README.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "show-ip-address": {
+            "slug": "show-ip-address",
+            "location": "https://grupodigitalnet.com.br/wp-content/plugins/show-ip-address/",
+            "latest_version": "1.6",
+            "last_updated": "2023-05-19T07:37:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.6",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://grupodigitalnet.com.br/wp-content/plugins/show-ip-address/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://grupodigitalnet.com.br/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.7",
+            "last_updated": "2025-03-18T08:56:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "24.5",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://grupodigitalnet.com.br/8d848db.html, Match: 'optimized with the Yoast SEO plugin v24.5 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://grupodigitalnet.com.br/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://grupodigitalnet.com.br/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 9,
+        "requests_remaining": 16
+    },
+    "stop_time": 1742381752,
+    "elapsed": 14,
+    "requests_done": 202,
+    "cached_requests": 7,
+    "data_sent": 65497,
+    "data_sent_humanised": "63.962 KB",
+    "data_received": 1023769,
+    "data_received_humanised": "999.774 KB",
+    "used_memory": 268513280,
+    "used_memory_humanised": "256.074 MB"
+}
