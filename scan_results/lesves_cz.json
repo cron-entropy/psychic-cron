@@ -1,0 +1,531 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742467995,
+    "start_memory": 48816128,
+    "target_url": "https://lesves.cz/",
+    "target_ip": "213.168.181.246",
+    "effective_url": "https://lesves.cz/",
+    "interesting_findings": [
+        {
+            "url": "https://lesves.cz/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: openresty",
+                "x-served-by: lesves.cz"
+            ]
+        },
+        {
+            "url": "https://lesves.cz/robots.txt",
+            "to_s": "robots.txt found: https://lesves.cz/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://lesves.cz/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://lesves.cz/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://lesves.cz/readme.html",
+            "to_s": "WordPress readme found: https://lesves.cz/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://lesves.cz/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://lesves.cz/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://lesves.cz/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://lesves.cz/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://lesves.cz/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://lesves.cz/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://lesves.cz/zkusebni-stranka/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "hello-theme-child-master",
+        "location": "https://lesves.cz/wp-content/themes/hello-theme-child-master/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://lesves.cz/wp-content/themes/hello-theme-child-master/readme.txt",
+        "directory_listing": true,
+        "error_log_url": null,
+        "style_url": "https://lesves.cz/wp-content/themes/hello-theme-child-master/style.css?ver=2.0.0",
+        "style_name": "Hello Elementor Child",
+        "style_uri": "https://github.com/elementor/hello-theme-child/",
+        "description": "Hello Elementor Child is a child theme of Hello Elementor, created by Elementor team",
+        "author": "Elementor Team",
+        "author_uri": "https://elementor.com/",
+        "template": "hello-elementor",
+        "license": "GNU General Public License v3 or later.",
+        "license_uri": "https://www.gnu.org/licenses/gpl-3.0.html",
+        "tags": "flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready",
+        "text_domain": "hello-elementor-child",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "2.0.0",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://lesves.cz/wp-content/themes/hello-theme-child-master/style.css?ver=2.0.0, Match: 'Version: 2.0.0'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "booking": {
+            "slug": "booking",
+            "location": "https://lesves.cz/wp-content/plugins/booking/",
+            "latest_version": "10.10.2",
+            "last_updated": "2025-02-10T23:16:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "10.10.2",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://lesves.cz/wp-content/plugins/booking/css/client.css?ver=10.10.2",
+                    "https://lesves.cz/wp-content/plugins/booking/css/calendar.css?ver=10.10.2",
+                    "https://lesves.cz/wp-content/plugins/booking/js/client.js?ver=10.10.2",
+                    "https://lesves.cz/wp-content/plugins/booking/js/wpbc_times.js?ver=10.10.2"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://lesves.cz/wp-content/plugins/booking/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://lesves.cz/wp-content/plugins/elementor/",
+            "latest_version": "3.28.0",
+            "last_updated": "2025-03-17T14:28:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.27.5",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://lesves.cz/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.27.5",
+                    "https://lesves.cz/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.27.5"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://lesves.cz/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://lesves.cz/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor-pro": {
+            "slug": "elementor-pro",
+            "location": "https://lesves.cz/wp-content/plugins/elementor-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.27.4",
+                "confidence": 90,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://lesves.cz/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.27.4",
+                    "https://lesves.cz/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.27.4",
+                    "https://lesves.cz/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.27.4"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://lesves.cz/wp-content/plugins/elementor-pro/changelog.txt, Match: '#### 3.27.4 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "email-encoder-bundle": {
+            "slug": "email-encoder-bundle",
+            "location": "https://lesves.cz/wp-content/plugins/email-encoder-bundle/",
+            "latest_version": "2.2.2",
+            "last_updated": "2024-06-15T10:55:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.2.2",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://lesves.cz/wp-content/plugins/email-encoder-bundle/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://lesves.cz/wp-content/plugins/email-encoder-bundle/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "the-plus-addons-for-elementor-page-builder": {
+            "slug": "the-plus-addons-for-elementor-page-builder",
+            "location": "https://lesves.cz/wp-content/plugins/the-plus-addons-for-elementor-page-builder/",
+            "latest_version": "6.2.4",
+            "last_updated": "2025-03-20T04:22:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.2.4",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://lesves.cz/wp-content/plugins/the-plus-addons-for-elementor-page-builder/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "theplus_elementor_addon": {
+            "slug": "theplus_elementor_addon",
+            "location": "https://lesves.cz/wp-content/plugins/theplus_elementor_addon/",
+            "latest_version": "5.2.9",
+            "last_updated": "2023-06-15T18:07:14.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "The Plus Addons for Elementor Page Builder < 4.1.7 - Authentication Bypass",
+                    "fixed_in": "4.1.7",
+                    "references": {
+                        "cve": [
+                            "2021-24175"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/03/critical-0-day-in-the-plus-addons-for-elementor-allows-site-takeover/",
+                            "https://posimyth.ticksy.com/ticket/2713734/"
+                        ],
+                        "wpvulndb": [
+                            "c311feef-7041-4c21-9525-132b9bd32f89"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor < 4.1.12 - Reflected Cross-Site Scripting (XSS)",
+                    "fixed_in": "4.1.12",
+                    "references": {
+                        "cve": [
+                            "2021-24351"
+                        ],
+                        "url": [
+                            "https://theplusaddons.com/changelog/"
+                        ],
+                        "wpvulndb": [
+                            "2ee62f85-7aea-4b7d-8b2d-5d86d9fb8016"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor Page Builder < 4.1.11 - Arbitrary Reset Pwd Email Sending",
+                    "fixed_in": "4.1.11",
+                    "references": {
+                        "cve": [
+                            "2021-24359"
+                        ],
+                        "url": [
+                            "https://theplusaddons.com/changelog/"
+                        ],
+                        "wpvulndb": [
+                            "486b82d1-30d4-44d2-9542-f33e3f149e92"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor Page Builder < 4.1.10 - Open Redirect",
+                    "fixed_in": "4.1.10",
+                    "references": {
+                        "cve": [
+                            "2021-24358"
+                        ],
+                        "url": [
+                            "https://theplusaddons.com/changelog/"
+                        ],
+                        "wpvulndb": [
+                            "fd4352ad-dae0-4404-94d1-11083cb1f44d"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor Pro < 5.0.7 - Sensitive Data Disclosure",
+                    "fixed_in": "5.0.7",
+                    "references": {
+                        "cve": [
+                            "2021-24948"
+                        ],
+                        "url": [
+                            "https://roadmap.theplusaddons.com/updates"
+                        ],
+                        "wpvulndb": [
+                            "2b67005a-476e-4772-b15c-3191911a50b0"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor Pro < 5.0.7 - Unauthenticated SQL Injection",
+                    "fixed_in": "5.0.7",
+                    "references": {
+                        "cve": [
+                            "2021-24949"
+                        ],
+                        "url": [
+                            "https://roadmap.theplusaddons.com/updates"
+                        ],
+                        "wpvulndb": [
+                            "9d7f8ba8-a5d5-4ec3-a48f-5cd4b115e8d5"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor Pro < 5.2.9 - Unauthenticated Local File Inclusion",
+                    "fixed_in": "5.2.9",
+                    "references": {
+                        "cve": [
+                            "2023-47178"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4d739821-569d-42d7-a4c5-70e32d5d41a1"
+                        ],
+                        "wpvulndb": [
+                            "1a89fdb0-72e6-4f0b-8db4-d021f13939e3"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor \u2013 Elementor Addons, Page Templates, Widgets, Mega Menu, WooCommerce < 5.5.5 - Authenticated (Contributor+) Stored Cross-Site Scripting via Heading Title Widget",
+                    "fixed_in": "5.5.5",
+                    "references": {
+                        "cve": [
+                            "2024-5341"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/39c8e951-8e8c-4a72-9ecf-1dd96392105d"
+                        ],
+                        "wpvulndb": [
+                            "387c4cb4-13cf-49f8-a357-37e9f1761af8"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor Page Builder < 5.6.0 - Reflected Cross-Site Scripting via WP Login and Register Widget",
+                    "fixed_in": "5.6.0",
+                    "references": {
+                        "cve": [
+                            "2024-5344"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/1ac8fb0b-21a9-4b94-bb24-b349a7fe3305"
+                        ],
+                        "wpvulndb": [
+                            "0600d70f-7c42-4abe-a61b-ecbdfc60b443"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Plus Addons for Elementor \u2013 Elementor Addons, Page Templates, Widgets, Mega Menu, WooCommerce < 5.6.0 - Authenticated (Contributor+) Local File Inclusion",
+                    "fixed_in": "5.6.0",
+                    "references": {
+                        "cve": [
+                            "2024-5455"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8699142d-4ddd-4ca1-9886-9b2d905a36cd"
+                        ],
+                        "wpvulndb": [
+                            "339a6e6a-fd1e-43e8-a280-cf5537378e34"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 8,
+        "requests_remaining": 17
+    },
+    "stop_time": 1742468025,
+    "elapsed": 30,
+    "requests_done": 201,
+    "cached_requests": 7,
+    "data_sent": 50663,
+    "data_sent_humanised": "49.476 KB",
+    "data_received": 1043831,
+    "data_received_humanised": "1019.366 KB",
+    "used_memory": 304234496,
+    "used_memory_humanised": "290.141 MB"
+}

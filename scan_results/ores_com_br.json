@@ -1,0 +1,627 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742468034,
+    "start_memory": 48672768,
+    "target_url": "https://ores.com.br/",
+    "target_ip": "172.67.129.24",
+    "effective_url": "https://ores.com.br/",
+    "interesting_findings": [
+        {
+            "url": "https://ores.com.br/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-served-by: ores.com.br",
+                "cf-cache-status: DYNAMIC",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=Ppc02XcwzT4dVNiQCxYqaYtzFCNE7RfrqUX0LemqjF%2BB%2BA9D3UTwXwcwUESrVA0NrxCyh9pdDqEf0rX56OToa8oK7Wf21ntvWxYYNJg3DFV1uIrq7iDzlvE6TcgFwQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "cf-ray: 9234aaf0daaa08a8-LAX",
+                "alt-svc: h3=\":443\"; ma=86400",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=8637&min_rtt=8559&rtt_var=2483&sent=6&recv=7&lost=0&retrans=0&sent_bytes=3386&recv_bytes=806&delivery_rate=333683&cwnd=250&unsent_bytes=0&cid=6db36471bf21ca02&ts=1876&x=0\""
+            ]
+        },
+        {
+            "url": "https://ores.com.br/robots.txt",
+            "to_s": "robots.txt found: https://ores.com.br/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-content/uploads/wpo/wpo-plugins-tables-list.json"
+            ]
+        },
+        {
+            "url": "https://ores.com.br/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://ores.com.br/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://ores.com.br/readme.html",
+            "to_s": "WordPress readme found: https://ores.com.br/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://ores.com.br/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://ores.com.br/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://ores.com.br/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://ores.com.br/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://ores.com.br/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://ores.com.br/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "sierra",
+        "location": "https://ores.com.br/wp-content/themes/sierra/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://ores.com.br/wp-content/themes/sierra/style.css",
+        "style_name": "Sierra",
+        "style_uri": "https://www.sierra.keydesign.xyz/",
+        "description": "Sierra's sleek design and versatile layouts are tailor-made for digital startups and SaaS businesses.",
+        "author": "Key-Design",
+        "author_uri": "https://themeforest.net/user/key-design",
+        "template": null,
+        "license": "Envato Standard License",
+        "license_uri": "https://themeforest.net/licenses/standard",
+        "tags": "one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-menu, featured-images, flexible-header, post-formats, sticky-post, translation-ready",
+        "text_domain": "sierra",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 12,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 6,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.6",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://ores.com.br/wp-content/themes/sierra/style.css, Match: 'Version: 1.6'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://ores.com.br/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.5",
+            "last_updated": "2025-03-11T08:37:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.0.3",
+                "confidence": 90,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://ores.com.br/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.0.3"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://ores.com.br/wp-content/plugins/contact-form-7/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor": {
+            "slug": "elementor",
+            "location": "https://ores.com.br/wp-content/plugins/elementor/",
+            "latest_version": "3.28.0",
+            "last_updated": "2025-03-17T14:28:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Elementor Website Builder < 3.27.5 - Contributor+ Stored XSS",
+                    "fixed_in": "3.27.5",
+                    "references": {
+                        "cve": [
+                            "2024-13445"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a11e702-34d2-49ee-8762-cc3614a7950a"
+                        ],
+                        "wpvulndb": [
+                            "25374232-2f9c-453d-bc47-124f80e67a92"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.27.3",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://ores.com.br/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.27.3",
+                    "https://ores.com.br/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.27.3"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://ores.com.br/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://ores.com.br/wp-content/plugins/elementor/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementor-pro": {
+            "slug": "elementor-pro",
+            "location": "https://ores.com.br/wp-content/plugins/elementor-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.26.2",
+                "confidence": 80,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://ores.com.br/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.26.2",
+                    "https://ores.com.br/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.26.2"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://ores.com.br/wp-content/plugins/elementor-pro/changelog.txt, Match: '#### 3.26.2 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "elementskit": {
+            "slug": "elementskit",
+            "location": "https://ores.com.br/wp-content/plugins/elementskit/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "ElementsKit and ElementsKit Pro < 2.2.0 - Contributor+ Stored XSS",
+                    "fixed_in": "2.2.0",
+                    "references": {
+                        "cve": [
+                            "2021-24258"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/04/recent-patches-rock-the-elementor-ecosystem/"
+                        ],
+                        "wpvulndb": [
+                            "47b47b86-899b-4de3-8a3c-2d5d1774298f"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via 'ekit_btn_id'",
+                    "fixed_in": "3.6.1",
+                    "references": {
+                        "cve": [
+                            "2024-3598"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a9e4b14f-0f55-47bc-8e40-19b262e50561"
+                        ],
+                        "wpvulndb": [
+                            "36f303a8-6482-4013-96dd-c93428adadc2"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.1 - Authenticated (Contributor+) Local File Inclusion via Price Menu, Hotspot, and Advanced Toggle Widgets",
+                    "fixed_in": "3.6.1",
+                    "references": {
+                        "cve": [
+                            "2024-3500"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/c8ae0a47-cba5-468e-8d25-7b7176373b9c"
+                        ],
+                        "wpvulndb": [
+                            "7f210486-4350-450d-aebd-5851f24398b1"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.2 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "3.6.2",
+                    "references": {
+                        "cve": [
+                            "2024-4452"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/488ac848-786e-4100-a387-5a40e8fc4175"
+                        ],
+                        "wpvulndb": [
+                            "fc35b1b8-7cf9-4020-aa9b-491fc1ed54c6"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit PRO < 3.6.3 - Authenticated (Contributor+) Server-Side Request Forgery",
+                    "fixed_in": "3.6.3",
+                    "references": {
+                        "cve": [
+                            "2024-4404"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/6417269d-3d49-4f33-b92a-5aacb052bab0"
+                        ],
+                        "wpvulndb": [
+                            "7ba6054e-3412-46bd-8024-a268523ec9fb"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons and Templates Library < 3.6.3 - Authenticated (Contributor+) Stored Cross-Site Scripting via Motion Text and Table Widgets",
+                    "fixed_in": "3.6.3",
+                    "references": {
+                        "cve": [
+                            "2024-5263"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/2e718554-1096-4a16-968d-f00b65e1361d"
+                        ],
+                        "wpvulndb": [
+                            "64a3f488-b6f7-4466-82ef-5046b0f1dbff"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.6 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "3.6.6",
+                    "references": {
+                        "cve": [
+                            "2024-7064"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/181e6f3a-dbcf-44a6-b725-6325d9e56453"
+                        ],
+                        "wpvulndb": [
+                            "2a342f4c-e56e-438a-b0d2-4476dec30d6e"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.6.7 - Authenticated (Contributor+) Sensitive Information Exposure",
+                    "fixed_in": "3.6.7",
+                    "references": {
+                        "cve": [
+                            "2024-7063"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d35dd18b-0f05-482f-aef3-08977cbec8a0"
+                        ],
+                        "wpvulndb": [
+                            "91bd87df-45a2-4b56-b79e-f274e0677dc2"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Pro < 3.7.9 - Authenticated (Contributor+) DOM-Based Stored Cross-Site Scripting via url Parameter",
+                    "fixed_in": "3.7.9",
+                    "references": {
+                        "cve": [
+                            "2025-0321"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/204cfe20-9df1-4f6c-a38c-a21b43dde385"
+                        ],
+                        "wpvulndb": [
+                            "3f2442ef-123e-4efa-9b49-331405cce87f"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "elementskit-lite": {
+            "slug": "elementskit-lite",
+            "location": "https://ores.com.br/wp-content/plugins/elementskit-lite/",
+            "latest_version": "3.4.7",
+            "last_updated": "2025-03-18T10:59:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "ElementsKit Elementor addons < 3.4.1 - Contributor+ Stored XSS",
+                    "fixed_in": "3.4.1",
+                    "references": {
+                        "cve": [
+                            "2025-1005"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5b74d6aa-ad59-42be-b454-9c27428cab01"
+                        ],
+                        "wpvulndb": [
+                            "ff09d6cd-78b5-4d13-93bb-573725fa86b2"
+                        ]
+                    }
+                },
+                {
+                    "title": "ElementsKit Elementor addons < 3.4.1 - Unauthenticated Information Exposure",
+                    "fixed_in": "3.4.1",
+                    "references": {
+                        "cve": [
+                            "2025-0968"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/432ac3b1-8f1d-442f-8e8d-62a1f26ba259"
+                        ],
+                        "wpvulndb": [
+                            "d21c9a9b-752d-4f61-82bb-84cfff59d46b"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.4.0",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://ores.com.br/wp-content/plugins/elementskit-lite/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "glossario-ninja": {
+            "slug": "glossario-ninja",
+            "location": "https://ores.com.br/wp-content/plugins/glossario-ninja/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "keydesign-framework": {
+            "slug": "keydesign-framework",
+            "location": "https://ores.com.br/wp-content/plugins/keydesign-framework/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "ninja-rank-plugin-integrador": {
+            "slug": "ninja-rank-plugin-integrador",
+            "location": "https://ores.com.br/wp-content/plugins/ninja-rank-plugin-integrador/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://ores.com.br/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.7",
+            "last_updated": "2025-03-18T08:56:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "24.4",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://ores.com.br/, Match: 'optimized with the Yoast SEO plugin v24.4 -'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://ores.com.br/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    },
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://ores.com.br/wp-content/plugins/wordpress-seo/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 11,
+        "requests_remaining": 14
+    },
+    "stop_time": 1742468105,
+    "elapsed": 71,
+    "requests_done": 220,
+    "cached_requests": 7,
+    "data_sent": 67951,
+    "data_sent_humanised": "66.358 KB",
+    "data_received": 1121259,
+    "data_received_humanised": "1.069 MB",
+    "used_memory": 297000960,
+    "used_memory_humanised": "283.242 MB"
+}

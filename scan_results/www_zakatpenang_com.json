@@ -1,0 +1,1280 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742467644,
+    "start_memory": 49049600,
+    "target_url": "https://www.zakatpenang.com/",
+    "target_ip": "124.217.249.151",
+    "effective_url": "https://www.zakatpenang.com/",
+    "interesting_findings": [
+        {
+            "url": "https://www.zakatpenang.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: Apache"
+            ]
+        },
+        {
+            "url": "https://www.zakatpenang.com/robots.txt",
+            "to_s": "robots.txt found: https://www.zakatpenang.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.zakatpenang.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.zakatpenang.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.zakatpenang.com/readme.html",
+            "to_s": "WordPress readme found: https://www.zakatpenang.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.zakatpenang.com/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://www.zakatpenang.com/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.zakatpenang.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://www.zakatpenang.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.zakatpenang.com/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://www.zakatpenang.com/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "jnews",
+        "location": "https://www.zakatpenang.com/wp-content/themes/jnews/",
+        "latest_version": "11.6.11",
+        "last_updated": "2025-03-12T17:46:11.000Z",
+        "outdated": true,
+        "readme_url": "https://www.zakatpenang.com/wp-content/themes/jnews/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.zakatpenang.com/wp-content/themes/jnews/style.css?ver=10.1.3",
+        "style_name": "JNews",
+        "style_uri": "http://themeforest.net",
+        "description": "JNews",
+        "author": "Jegtheme",
+        "author_uri": "http://jegtheme.com/",
+        "template": null,
+        "license": "GNU General Public License v2.0",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "custom-background,custom-colors, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready",
+        "text_domain": "jnews",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [
+            {
+                "title": "JNews - WordPress Newspaper Magazine Blog AMP Theme < 11.6.7 - Unauthorized User Registration",
+                "fixed_in": "11.6.7",
+                "references": {
+                    "cve": [
+                        "2024-8682"
+                    ],
+                    "url": [
+                        "https://www.wordfence.com/threat-intel/vulnerabilities/id/4b0d7ee7-a358-4487-a0cc-31ed810ae8bc"
+                    ],
+                    "wpvulndb": [
+                        "0356f8ad-c1bd-47a1-8ffb-0f3bce0dd2fa"
+                    ]
+                }
+            }
+        ],
+        "version": {
+            "number": "10.1.3",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://www.zakatpenang.com/wp-content/themes/jnews/style.css?ver=10.1.3, Match: 'Version: 10.1.3'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.5",
+            "last_updated": "2025-03-11T08:37:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Contact Form 7 < 5.8.4 - Authenticated (Editor+) Arbitrary File Upload",
+                    "fixed_in": "5.8.4",
+                    "references": {
+                        "cve": [
+                            "2023-6449"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5d7fb020-6acb-445e-a46b-bdb5aaf8f2b6"
+                        ],
+                        "wpvulndb": [
+                            "70e21d9a-b1e6-4083-bcd3-7c1c13fd5382"
+                        ]
+                    }
+                },
+                {
+                    "title": "Contact Form 7 < 5.9.2 - Reflected Cross-Site Scripting",
+                    "fixed_in": "5.9.2",
+                    "references": {
+                        "cve": [
+                            "2024-2242"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d5bf4972-424a-4470-a0bc-7dcc95378e0e"
+                        ],
+                        "wpvulndb": [
+                            "1c070a2c-2ab0-43bf-b10b-6575709918bc"
+                        ]
+                    }
+                },
+                {
+                    "title": " Contact Form 7 < 5.9.5 - Unauthenticated Open Redirect",
+                    "fixed_in": "5.9.5",
+                    "references": {
+                        "cve": [
+                            "2024-4704"
+                        ],
+                        "wpvulndb": [
+                            "8bdcdb5a-9026-4157-8592-345df8fb1a17"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "5.7.7",
+                "confidence": 90,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.7.7"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.zakatpenang.com/wp-content/plugins/contact-form-7/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "content-views-query-and-display-post-page": {
+            "slug": "content-views-query-and-display-post-page",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/content-views-query-and-display-post-page/",
+            "latest_version": "4.1",
+            "last_updated": "2025-02-25T03:37:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Content Views < 3.6.3 - Admin+ Stored XSS",
+                    "fixed_in": "3.6.3",
+                    "references": {
+                        "cve": [
+                            "2024-0612"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/aa4377a8-bcf4-45ba-824b-3505bd8e8c61"
+                        ],
+                        "wpvulndb": [
+                            "1b7ffac2-a042-4047-b402-2557f8becc94"
+                        ]
+                    }
+                },
+                {
+                    "title": "Content Views \u2013 Post Grid & Filter, Recent Posts, Category Posts, & More  < 3.7.1 - Contributor+ Stored Cross-Site Scripting via Widget Post Overlay",
+                    "fixed_in": "3.7.1",
+                    "references": {
+                        "cve": [
+                            "2024-3929"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5666da4a-ffb6-47ed-8b48-a80f09dd2501"
+                        ],
+                        "wpvulndb": [
+                            "b5764e27-2fee-44f2-9932-5b0757b5bafc"
+                        ]
+                    }
+                },
+                {
+                    "title": "Content Views \u2013 Post Grid & Filter, Recent Posts, Category Posts, & More (Gutenberg Blocks and Shortcode) < 3.7.2 - Authenticated (Contributor+) Stored Cross-Site Scripting via pagingType Parameter",
+                    "fixed_in": "3.7.2",
+                    "references": {
+                        "cve": [
+                            "2024-4446"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/65504747-7f1b-43f9-be4d-48b9547e7c45"
+                        ],
+                        "wpvulndb": [
+                            "554cfae4-2d72-4d6f-939e-2e87d81883d5"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.5.0",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/wp-content/plugins/content-views-query-and-display-post-page/public/assets/css/cv.css?ver=3.5.0",
+                    "https://www.zakatpenang.com/wp-content/plugins/content-views-query-and-display-post-page/public/assets/js/cv.js?ver=3.5.0"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.zakatpenang.com/wp-content/plugins/content-views-query-and-display-post-page/README.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "countdown-timer-ultimate": {
+            "slug": "countdown-timer-ultimate",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/countdown-timer-ultimate/",
+            "latest_version": "2.6.4",
+            "last_updated": "2025-01-11T15:32:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.5",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/wp-content/plugins/countdown-timer-ultimate/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.zakatpenang.com/wp-content/plugins/countdown-timer-ultimate/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "intelly-countdown": {
+            "slug": "intelly-countdown",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/intelly-countdown/",
+            "latest_version": "2.0.8",
+            "last_updated": "2023-03-01T16:37:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "2.0.8",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/wp-content/plugins/intelly-countdown/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.zakatpenang.com/wp-content/plugins/intelly-countdown/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "jnews-frontend-submit": {
+            "slug": "jnews-frontend-submit",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/jnews-frontend-submit/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "10.0.1",
+                "confidence": 50,
+                "found_by": "Readme - ChangeLog Section (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/wp-content/plugins/jnews-frontend-submit/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "jnews-like": {
+            "slug": "jnews-like",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/jnews-like/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "10.0.0",
+                "confidence": 50,
+                "found_by": "Readme - ChangeLog Section (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/wp-content/plugins/jnews-like/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "jnews-social-login": {
+            "slug": "jnews-social-login",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/jnews-social-login/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "10.0.2",
+                "confidence": 50,
+                "found_by": "Readme - ChangeLog Section (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/wp-content/plugins/jnews-social-login/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "jnews-social-share": {
+            "slug": "jnews-social-share",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/jnews-social-share/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In 404 Page (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "10.0.2",
+                "confidence": 50,
+                "found_by": "Readme - ChangeLog Section (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/wp-content/plugins/jnews-social-share/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "jnews-video": {
+            "slug": "jnews-video",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/jnews-video/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "10.0.3",
+                "confidence": 50,
+                "found_by": "Readme - ChangeLog Section (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/wp-content/plugins/jnews-video/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "js_composer": {
+            "slug": "js_composer",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/js_composer/",
+            "latest_version": "8.3.1",
+            "last_updated": "2025-03-18T20:01:01.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Body Tag (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WPBakery Page Builder < 6.13.0 - Contributor+ Stored XSS",
+                    "fixed_in": "6.13.0",
+                    "references": {
+                        "cve": [
+                            "2023-31213"
+                        ],
+                        "wpvulndb": [
+                            "ee99521d-be25-41ef-8988-5cfd66e9c5ca"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Title tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1841"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/34d21418-4faf-40bf-a960-79482a592722"
+                        ],
+                        "wpvulndb": [
+                            "787a71f8-1179-4442-9441-87fbe83a7e67"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Custom Heading tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1842"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/674e6722-d293-4572-80bf-984e74c3e33f"
+                        ],
+                        "wpvulndb": [
+                            "8ebfad34-7b46-4783-9fad-c96ab4f4c737"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Button onclick attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1805"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7a571386-fae1-4a56-8567-9d3e23249de1"
+                        ],
+                        "wpvulndb": [
+                            "b87926cd-0fe0-49df-8c61-9df1363a67a8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Author",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1840"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/cb8ecbbc-ada9-4887-92e6-25a587ecfb84"
+                        ],
+                        "wpvulndb": [
+                            "b41c2343-3be4-4bd9-ae5d-69ae96ba23ae"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Page Builder < 7.7 - Authenticated (Contributor+) Stored Cross-Site Scripting via VC Single Image link attribute",
+                    "fixed_in": "7.7",
+                    "references": {
+                        "cve": [
+                            "2024-5265"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/35a5114e-5c5f-4003-8bb3-77243ffbac1a"
+                        ],
+                        "wpvulndb": [
+                            "3b067a13-ee58-44c9-80af-ae04af6256c8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5708"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/23ff12f0-eb9d-4bb3-8db0-0e794c0f0594"
+                        ],
+                        "wpvulndb": [
+                            "992e5d47-e290-420a-adf8-f552a929e51d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Local File Inclusion",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5709"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7fad30c8-fd8a-4cf2-a3aa-16a374231b87"
+                        ],
+                        "wpvulndb": [
+                            "6e3e1944-67f7-405e-ae4f-f0ab8c6c9acd"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "6.8.0",
+                "confidence": 80,
+                "found_by": "Body Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/, Match: 'js-comp-ver-6.8.0'"
+                ],
+                "confirmed_by": {
+                    "Query Parameter (Passive Detection)": {
+                        "confidence": 20,
+                        "interesting_entries": [
+                            "https://www.zakatpenang.com/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=6.8.0",
+                            "https://www.zakatpenang.com/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=6.8.0"
+                        ]
+                    }
+                }
+            }
+        },
+        "organization-chart": {
+            "slug": "organization-chart",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/organization-chart/",
+            "latest_version": "1.5.9",
+            "last_updated": "2025-02-13T08:37:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Organization chart < 1.5.1 - Authenticated (Subscriber+) Stored Cross-Site Scripting via title_input and node_description Parameters",
+                    "fixed_in": "1.5.1",
+                    "references": {
+                        "cve": [
+                            "2024-7355"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/04641506-5b0e-48bc-ad50-c81dda996ecf"
+                        ],
+                        "wpvulndb": [
+                            "e1c4d8e6-77bb-4e23-8b0d-7a2b2baf0626"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "1.5.0",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/wp-content/plugins/organization-chart/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "popup-maker": {
+            "slug": "popup-maker",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/popup-maker/",
+            "latest_version": "1.20.4",
+            "last_updated": "2025-01-30T03:21:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.20.3",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/wp-content/plugins/popup-maker/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.zakatpenang.com/wp-content/plugins/popup-maker/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "revslider": {
+            "slug": "revslider",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/revslider/",
+            "latest_version": "6.7.30",
+            "last_updated": "2025-03-14T01:54:30.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Revolution Slider <= 6.6.12 - Author+ Remote Code Execution",
+                    "fixed_in": "6.6.13",
+                    "references": {
+                        "cve": [
+                            "2023-2359"
+                        ],
+                        "wpvulndb": [
+                            "a8350890-e6d4-4b04-a158-2b0ee3748e65"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.15 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.6.15",
+                    "references": {
+                        "cve": [
+                            "2023-47772"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/772e843b-00ea-45f5-b730-c9a793d4c2db"
+                        ],
+                        "wpvulndb": [
+                            "3cde24f3-aaad-4eb3-b6ba-a518afe66fbe"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.16 - Authenticated (Author+) Arbitrary File Upload",
+                    "fixed_in": "6.6.16",
+                    "references": {
+                        "cve": [
+                            "2023-47784"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e2d29afd-06e8-461a-918f-38228441a51a"
+                        ],
+                        "wpvulndb": [
+                            "1b841a64-fb0a-434f-b7b4-0777f0480c87"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.19 - Author+ Insecure Deserialization leading to RCE",
+                    "fixed_in": "6.6.19",
+                    "references": {
+                        "cve": [
+                            "2023-6528"
+                        ],
+                        "wpvulndb": [
+                            "36ced447-84ea-4162-80d2-6df226cb53cb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Revslider < 6.7.0 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.0",
+                    "references": {
+                        "cve": [
+                            "2024-2306"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f6af1e90-9bad-470b-9e00-137000c0450c"
+                        ],
+                        "wpvulndb": [
+                            "8238962e-feca-4a45-b335-3c92e668c889"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.8 - Authenticated (Author+) Stored Cross-Site Scripting via htmltag Parameter",
+                    "fixed_in": "6.7.8",
+                    "references": {
+                        "cve": [
+                            "2024-4092"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8437abcc-3e34-4a8a-bfe2-2ff7c9f41164"
+                        ],
+                        "wpvulndb": [
+                            "50dd9668-c263-4bfd-8a94-00a3ad9f656d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting via Add Layer class, id, and title Attributes",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-4581"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a99b8eb9-1511-4ec0-98f4-c0e0c989fa28"
+                        ],
+                        "wpvulndb": [
+                            "4a436977-1295-40e8-9957-bda1b0a3e6d6"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Contributor+) Stored Cross-Site Scripting via Elementor wrapperid and zindex",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-4637"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/457b5066-da37-4877-9abe-c912bc201f29"
+                        ],
+                        "wpvulndb": [
+                            "32b1ee26-525a-4b1e-bdf0-881f0d161788"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.0 - Missing Authorization",
+                    "fixed_in": "6.7.0",
+                    "references": {
+                        "cve": [
+                            "2024-34444"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/14feb451-2ece-467b-abf0-7abac26e40c1"
+                        ],
+                        "wpvulndb": [
+                            "f893fd2d-d040-408a-a800-99bf02e32230"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-34443"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/64852bc8-aeba-458d-9235-94bd4c4ec429"
+                        ],
+                        "wpvulndb": [
+                            "f79b835f-a3a2-40e1-91cc-987604b0a593"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.14 - Authenticated (Administrator+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.14",
+                    "references": {
+                        "cve": [
+                            "2024-37449"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a8fc6a5-a28a-4d6b-8d63-c5e2f4d26422"
+                        ],
+                        "wpvulndb": [
+                            "6d7c04cb-b3c1-4003-866b-a3301929e2aa"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.19 - Authenticated (Author+) Stored Cross-Site Scripting via SVG File Upload",
+                    "fixed_in": "6.7.19",
+                    "references": {
+                        "cve": [
+                            "2024-8107"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/22b59b36-ba47-4c10-8f43-a29ae3b9d446"
+                        ],
+                        "wpvulndb": [
+                            "278e6259-cb64-4cc1-91c6-2cf2178dd1d0"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "6.5.15",
+                "confidence": 100,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/, Match: 'Powered by Slider Revolution 6.5.15'"
+                ],
+                "confirmed_by": {
+                    "Release Log (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.zakatpenang.com/wp-content/plugins/revslider/release_log.html, Match: 'Version 6.5.15 (31st January 2022)'"
+                        ]
+                    }
+                }
+            }
+        },
+        "t4b-news-ticker": {
+            "slug": "t4b-news-ticker",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/t4b-news-ticker/",
+            "latest_version": "1.4.0",
+            "last_updated": "2025-02-10T20:59:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.2.8",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/wp-content/plugins/t4b-news-ticker/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "the-post-grid": {
+            "slug": "the-post-grid",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/the-post-grid/",
+            "latest_version": "7.7.19",
+            "last_updated": "2025-03-18T06:19:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "The Post Grid < 7.7.12 - Authenticated (Contributor+) Information Disclosure",
+                    "fixed_in": "7.7.12",
+                    "references": {
+                        "cve": [
+                            "2024-7418"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/dddecb2e-9ad6-4e44-afce-5eba7da6322d"
+                        ],
+                        "wpvulndb": [
+                            "5dd682ca-b295-4fbf-8bfd-dc8aa9d6b6f5"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "7.7.10",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/wp-content/plugins/the-post-grid/README.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://www.zakatpenang.com/wp-content/plugins/the-post-grid/README.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wordpress-seo-premium": {
+            "slug": "wordpress-seo-premium",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/wordpress-seo-premium/",
+            "latest_version": "24.7",
+            "last_updated": "2025-03-18T09:30:47.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "20.13",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/wp-content/plugins/wordpress-seo-premium/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wp-meta-and-date-remover": {
+            "slug": "wp-meta-and-date-remover",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/wp-meta-and-date-remover/",
+            "latest_version": "2.3.6",
+            "last_updated": "2025-03-10T09:49:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WP Meta and Date Remover < 2.3.1 - Cross-Site Request Forgery via updateSettings",
+                    "fixed_in": "2.3.1",
+                    "references": {
+                        "cve": [
+                            "2023-47836"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/faa9ad87-44b2-47b3-a05c-52e59af7255a"
+                        ],
+                        "wpvulndb": [
+                            "7e49c527-0327-4cc0-9f50-7e23a788d098"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "2.2.1",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/wp-content/plugins/wp-meta-and-date-remover/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wp-stats-manager": {
+            "slug": "wp-stats-manager",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/wp-stats-manager/",
+            "latest_version": "7.8",
+            "last_updated": "2025-03-05T11:09:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WP Visitor Statistics (Real Time Traffic) < 6.9.5 - Sensitive Information Exposure via Log File",
+                    "fixed_in": "6.9.5",
+                    "references": {
+                        "cve": [
+                            "2024-24867"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f2d69d59-390d-4f3c-96ba-487707cac7a6"
+                        ],
+                        "wpvulndb": [
+                            "deade0a8-d1fa-4ca6-9d5e-2646758de62d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Visitor Statistics (Real Time Traffic) < 7.6 - Missing Authorization",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2025-22304"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/wordpress/plugin/wp-stats-manager/vulnerability/wordpress-wp-visitor-statistics-plugin-7-2-broken-access-control-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "84cd41e2-be8d-4969-811d-8a8fab5c8130"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Visitor Statistics (Real Time Traffic) < 7.3 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "7.3",
+                    "references": {
+                        "cve": [
+                            "2025-24675"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/27dc105c-aada-4cbb-99ec-4e59d2dd7bbf"
+                        ],
+                        "wpvulndb": [
+                            "8c16e104-6220-422e-b690-0b33cfc9755a"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "6.9.4",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/wp-content/plugins/wp-stats-manager/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "youtube-embed-plus": {
+            "slug": "youtube-embed-plus",
+            "location": "https://www.zakatpenang.com/wp-content/plugins/youtube-embed-plus/",
+            "latest_version": "14.2.1.3",
+            "last_updated": "2024-12-23T21:22:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Javascript Var (Passive Detection)": {
+                    "confidence": 60,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "14.2",
+                "confidence": 100,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.zakatpenang.com/wp-content/plugins/youtube-embed-plus/styles/ytprefs.min.css?ver=14.2",
+                    "https://www.zakatpenang.com/wp-content/plugins/youtube-embed-plus/scripts/ytprefs.min.js?ver=14.2",
+                    "https://www.zakatpenang.com/wp-content/plugins/youtube-embed-plus/scripts/fitvids.min.js?ver=14.2"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://www.zakatpenang.com/wp-content/plugins/youtube-embed-plus/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 21,
+        "requests_remaining": 4
+    },
+    "stop_time": 1742467853,
+    "elapsed": 208,
+    "requests_done": 239,
+    "cached_requests": 7,
+    "data_sent": 81439,
+    "data_sent_humanised": "79.53 KB",
+    "data_received": 1530495,
+    "data_received_humanised": "1.46 MB",
+    "used_memory": 292126720,
+    "used_memory_humanised": "278.594 MB"
+}

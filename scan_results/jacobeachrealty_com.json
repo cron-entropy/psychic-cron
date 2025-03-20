@@ -1,0 +1,999 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742468112,
+    "start_memory": 48705536,
+    "target_url": "https://jacobeachrealty.com/",
+    "target_ip": "173.231.192.44",
+    "effective_url": "https://jacobeachrealty.com/",
+    "interesting_findings": [
+        {
+            "url": "https://jacobeachrealty.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: nginx/1.27.4",
+                "x-proxy-cache: DISABLED"
+            ]
+        },
+        {
+            "url": "https://jacobeachrealty.com/real-estate/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://jacobeachrealty.com/real-estate/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://jacobeachrealty.com/real-estate/readme.html",
+            "to_s": "WordPress readme found: https://jacobeachrealty.com/real-estate/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://jacobeachrealty.com/real-estate/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://jacobeachrealty.com/real-estate/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://jacobeachrealty.com/real-estate/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://jacobeachrealty.com/real-estate/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.2.6",
+        "release_date": "2024-06-24",
+        "status": "outdated",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://jacobeachrealty.com/feed/, <generator>https://wordpress.org/?v=6.2.6</generator>",
+            "https://jacobeachrealty.com/comments/feed/, <generator>https://wordpress.org/?v=6.2.6</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "myhome-child",
+        "location": "https://jacobeachrealty.com/real-estate/wp-content/themes/myhome-child/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": true,
+        "error_log_url": null,
+        "style_url": "https://jacobeachrealty.com/real-estate/wp-content/themes/myhome-child/style.css?ver=3.1.56",
+        "style_name": "MyHome Child",
+        "style_uri": "http://myhome.tangibledesing.net",
+        "description": "Child",
+        "author": "TangibleDesign",
+        "author_uri": "http://themeforest.net/user/tangibledesign",
+        "template": "myhome",
+        "license": "GNU General Public License v2 or later",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-menu, featured-images, post-formats, sticky-post, translation-ready",
+        "text_domain": "myhome-child",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.1",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://jacobeachrealty.com/real-estate/wp-content/themes/myhome-child/style.css?ver=3.1.56, Match: 'Version: 1.1'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "contact-form-7": {
+            "slug": "contact-form-7",
+            "location": "https://jacobeachrealty.com/real-estate/wp-content/plugins/contact-form-7/",
+            "latest_version": "6.0.5",
+            "last_updated": "2025-03-11T08:37:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Contact Form 7 < 5.9.2 - Reflected Cross-Site Scripting",
+                    "fixed_in": "5.9.2",
+                    "references": {
+                        "cve": [
+                            "2024-2242"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d5bf4972-424a-4470-a0bc-7dcc95378e0e"
+                        ],
+                        "wpvulndb": [
+                            "1c070a2c-2ab0-43bf-b10b-6575709918bc"
+                        ]
+                    }
+                },
+                {
+                    "title": " Contact Form 7 < 5.9.5 - Unauthenticated Open Redirect",
+                    "fixed_in": "5.9.5",
+                    "references": {
+                        "cve": [
+                            "2024-4704"
+                        ],
+                        "wpvulndb": [
+                            "8bdcdb5a-9026-4157-8592-345df8fb1a17"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "5.8.5",
+                "confidence": 90,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://jacobeachrealty.com/real-estate/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.8.5"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://jacobeachrealty.com/real-estate/wp-content/plugins/contact-form-7/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "easy-social-share-buttons3": {
+            "slug": "easy-social-share-buttons3",
+            "location": "https://jacobeachrealty.com/real-estate/wp-content/plugins/easy-social-share-buttons3/",
+            "latest_version": "10.1.1",
+            "last_updated": "2025-01-16T08:54:09.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Easy Social Share Buttons < 9.5 - Reflected Cross-Site Scripting",
+                    "fixed_in": "9.5",
+                    "references": {
+                        "cve": [
+                            "2024-30196"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/797faa73-401d-492c-a99d-0724df57b6e9"
+                        ],
+                        "wpvulndb": [
+                            "8a80d26c-2480-4ab2-9e6e-3cb863aa6118"
+                        ]
+                    }
+                },
+                {
+                    "title": "Easy Social Share Buttons < 9.5 - Missing Authorization",
+                    "fixed_in": "9.5",
+                    "references": {
+                        "cve": [
+                            "2024-31307"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/22b742d7-e9fe-48ea-ae7f-579bd3c32c44"
+                        ],
+                        "wpvulndb": [
+                            "9015f594-c6d3-4af9-9c09-2c01d7a1335b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Easy Social Share Buttons < 9.5 - Authenticated (Subscriber+) Local File Inclusion",
+                    "fixed_in": "9.5",
+                    "references": {
+                        "cve": [
+                            "2024-31300"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8fc28132-eae6-4082-988c-2d9e56ff1283"
+                        ],
+                        "wpvulndb": [
+                            "bbf43fe4-2bfb-458a-ab89-8f9bf962a8e2"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "7.9",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://jacobeachrealty.com/real-estate/wp-content/plugins/easy-social-share-buttons3/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "js_composer": {
+            "slug": "js_composer",
+            "location": "https://jacobeachrealty.com/real-estate/wp-content/plugins/js_composer/",
+            "latest_version": "8.3.1",
+            "last_updated": "2025-03-18T20:01:01.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Body Tag (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WPBakery Page Builder < 6.13.0 - Contributor+ Stored XSS",
+                    "fixed_in": "6.13.0",
+                    "references": {
+                        "cve": [
+                            "2023-31213"
+                        ],
+                        "wpvulndb": [
+                            "ee99521d-be25-41ef-8988-5cfd66e9c5ca"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Title tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1841"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/34d21418-4faf-40bf-a960-79482a592722"
+                        ],
+                        "wpvulndb": [
+                            "787a71f8-1179-4442-9441-87fbe83a7e67"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Custom Heading tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1842"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/674e6722-d293-4572-80bf-984e74c3e33f"
+                        ],
+                        "wpvulndb": [
+                            "8ebfad34-7b46-4783-9fad-c96ab4f4c737"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Button onclick attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1805"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7a571386-fae1-4a56-8567-9d3e23249de1"
+                        ],
+                        "wpvulndb": [
+                            "b87926cd-0fe0-49df-8c61-9df1363a67a8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Author",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1840"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/cb8ecbbc-ada9-4887-92e6-25a587ecfb84"
+                        ],
+                        "wpvulndb": [
+                            "b41c2343-3be4-4bd9-ae5d-69ae96ba23ae"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Page Builder < 7.7 - Authenticated (Contributor+) Stored Cross-Site Scripting via VC Single Image link attribute",
+                    "fixed_in": "7.7",
+                    "references": {
+                        "cve": [
+                            "2024-5265"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/35a5114e-5c5f-4003-8bb3-77243ffbac1a"
+                        ],
+                        "wpvulndb": [
+                            "3b067a13-ee58-44c9-80af-ae04af6256c8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5708"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/23ff12f0-eb9d-4bb3-8db0-0e794c0f0594"
+                        ],
+                        "wpvulndb": [
+                            "992e5d47-e290-420a-adf8-f552a929e51d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Local File Inclusion",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5709"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7fad30c8-fd8a-4cf2-a3aa-16a374231b87"
+                        ],
+                        "wpvulndb": [
+                            "6e3e1944-67f7-405e-ae4f-f0ab8c6c9acd"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "6.6.0",
+                "confidence": 80,
+                "found_by": "Body Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://jacobeachrealty.com/, Match: 'js-comp-ver-6.6.0'"
+                ],
+                "confirmed_by": {
+                    "Query Parameter (Passive Detection)": {
+                        "confidence": 20,
+                        "interesting_entries": [
+                            "https://jacobeachrealty.com/real-estate/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=6.6.0",
+                            "https://jacobeachrealty.com/real-estate/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=6.6.0"
+                        ]
+                    }
+                }
+            }
+        },
+        "mega_main_menu": {
+            "slug": "mega_main_menu",
+            "location": "https://jacobeachrealty.com/real-estate/wp-content/plugins/mega_main_menu/",
+            "latest_version": "2.2.4",
+            "last_updated": "2024-12-21T17:46:28.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Mega Main Menu <= 2.2.2 - Admin+ Stored XSS",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2023-1575"
+                        ],
+                        "wpvulndb": [
+                            "10f25cfe-a27d-4cf4-861b-a21f2ab10e76"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "myhome-idx-broker": {
+            "slug": "myhome-idx-broker",
+            "location": "https://jacobeachrealty.com/real-estate/wp-content/plugins/myhome-idx-broker/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "revslider": {
+            "slug": "revslider",
+            "location": "https://jacobeachrealty.com/real-estate/wp-content/plugins/revslider/",
+            "latest_version": "6.7.30",
+            "last_updated": "2025-03-14T01:54:30.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Revolution Slider <= 6.6.12 - Author+ Remote Code Execution",
+                    "fixed_in": "6.6.13",
+                    "references": {
+                        "cve": [
+                            "2023-2359"
+                        ],
+                        "wpvulndb": [
+                            "a8350890-e6d4-4b04-a158-2b0ee3748e65"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.15 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.6.15",
+                    "references": {
+                        "cve": [
+                            "2023-47772"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/772e843b-00ea-45f5-b730-c9a793d4c2db"
+                        ],
+                        "wpvulndb": [
+                            "3cde24f3-aaad-4eb3-b6ba-a518afe66fbe"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.16 - Authenticated (Author+) Arbitrary File Upload",
+                    "fixed_in": "6.6.16",
+                    "references": {
+                        "cve": [
+                            "2023-47784"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e2d29afd-06e8-461a-918f-38228441a51a"
+                        ],
+                        "wpvulndb": [
+                            "1b841a64-fb0a-434f-b7b4-0777f0480c87"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.6.19 - Author+ Insecure Deserialization leading to RCE",
+                    "fixed_in": "6.6.19",
+                    "references": {
+                        "cve": [
+                            "2023-6528"
+                        ],
+                        "wpvulndb": [
+                            "36ced447-84ea-4162-80d2-6df226cb53cb"
+                        ]
+                    }
+                },
+                {
+                    "title": "Revslider < 6.7.0 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.0",
+                    "references": {
+                        "cve": [
+                            "2024-2306"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f6af1e90-9bad-470b-9e00-137000c0450c"
+                        ],
+                        "wpvulndb": [
+                            "8238962e-feca-4a45-b335-3c92e668c889"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.8 - Authenticated (Author+) Stored Cross-Site Scripting via htmltag Parameter",
+                    "fixed_in": "6.7.8",
+                    "references": {
+                        "cve": [
+                            "2024-4092"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8437abcc-3e34-4a8a-bfe2-2ff7c9f41164"
+                        ],
+                        "wpvulndb": [
+                            "50dd9668-c263-4bfd-8a94-00a3ad9f656d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting via Add Layer class, id, and title Attributes",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-4581"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a99b8eb9-1511-4ec0-98f4-c0e0c989fa28"
+                        ],
+                        "wpvulndb": [
+                            "4a436977-1295-40e8-9957-bda1b0a3e6d6"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Contributor+) Stored Cross-Site Scripting via Elementor wrapperid and zindex",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-4637"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/457b5066-da37-4877-9abe-c912bc201f29"
+                        ],
+                        "wpvulndb": [
+                            "32b1ee26-525a-4b1e-bdf0-881f0d161788"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.0 - Missing Authorization",
+                    "fixed_in": "6.7.0",
+                    "references": {
+                        "cve": [
+                            "2024-34444"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/14feb451-2ece-467b-abf0-7abac26e40c1"
+                        ],
+                        "wpvulndb": [
+                            "f893fd2d-d040-408a-a800-99bf02e32230"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.11 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.11",
+                    "references": {
+                        "cve": [
+                            "2024-34443"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/64852bc8-aeba-458d-9235-94bd4c4ec429"
+                        ],
+                        "wpvulndb": [
+                            "f79b835f-a3a2-40e1-91cc-987604b0a593"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.14 - Authenticated (Administrator+) Stored Cross-Site Scripting",
+                    "fixed_in": "6.7.14",
+                    "references": {
+                        "cve": [
+                            "2024-37449"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a8fc6a5-a28a-4d6b-8d63-c5e2f4d26422"
+                        ],
+                        "wpvulndb": [
+                            "6d7c04cb-b3c1-4003-866b-a3301929e2aa"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider Revolution < 6.7.19 - Authenticated (Author+) Stored Cross-Site Scripting via SVG File Upload",
+                    "fixed_in": "6.7.19",
+                    "references": {
+                        "cve": [
+                            "2024-8107"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/22b59b36-ba47-4c10-8f43-a29ae3b9d446"
+                        ],
+                        "wpvulndb": [
+                            "278e6259-cb64-4cc1-91c6-2cf2178dd1d0"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "6.4.11",
+                "confidence": 100,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://jacobeachrealty.com/, Match: 'Powered by Slider Revolution 6.4.11'"
+                ],
+                "confirmed_by": {
+                    "Release Log (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://jacobeachrealty.com/real-estate/wp-content/plugins/revslider/release_log.html, Match: 'Version 6.4.11 (30th April 2021)'"
+                        ]
+                    }
+                }
+            }
+        },
+        "Ultimate_VC_Addons": {
+            "slug": "Ultimate_VC_Addons",
+            "location": "https://jacobeachrealty.com/real-estate/wp-content/plugins/Ultimate_VC_Addons/",
+            "latest_version": "3.20.1",
+            "last_updated": "2025-03-19T20:37:17.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Ultimate Addons for WPBakery Page Builder < 3.19.15 - Contributor+ Stored XSS",
+                    "fixed_in": "3.19.15",
+                    "references": {
+                        "cve": [
+                            "2023-46211"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/ultimate_vc_addons/wordpress-ultimate-addons-for-wpbakery-page-builder-plugin-3-19-14-cross-site-scripting-xss-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "5337d43b-27dd-41fa-a850-c66cdc5fa77c"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ultimate Addons for WPBakery Page Builder < 3.19.15 - Authenticated(Contributor+) Local File Inclusion",
+                    "fixed_in": "3.19.15",
+                    "references": {
+                        "cve": [
+                            "2023-46205"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5222ce69-ac9f-4bb0-9832-8cdff1f8b078"
+                        ],
+                        "wpvulndb": [
+                            "564fc1aa-ed32-4748-b024-7523e3f3bd3a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ultimate Addons for WPBakery < 3.19.18 - Cross-Site Request Forgery",
+                    "fixed_in": "3.19.18",
+                    "references": {
+                        "cve": [
+                            "2023-51402"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ece4eca1-9dc1-4f17-92e4-8b2e3e1a7306"
+                        ],
+                        "wpvulndb": [
+                            "6eaf0bae-926d-455a-ba04-b5283c4007b3"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ultimate Addons for WPBakery Page Builder < 3.19.20.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "3.19.20.1",
+                    "references": {
+                        "cve": [
+                            "2024-5254"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4c8971e0-befd-47ac-8cb5-064f9cd757d7"
+                        ],
+                        "wpvulndb": [
+                            "b12c6462-1a79-47fb-b87d-818e4ddeb87f"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ultimate Addons for WPBakery Page Builder < 3.19.20.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "3.19.20.1",
+                    "references": {
+                        "cve": [
+                            "2024-5255"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/66d77518-a258-4e79-b483-275855c0a416"
+                        ],
+                        "wpvulndb": [
+                            "fa1f3142-c260-4b76-9b81-bf4f2b869b74"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ultimate Addons for WPBakery Page Builder < 3.19.20.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "3.19.20.1",
+                    "references": {
+                        "cve": [
+                            "2024-5252"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/675937dc-a032-4bc4-a449-c815fcb12db6"
+                        ],
+                        "wpvulndb": [
+                            "bb609360-0436-4dc2-abaa-995ad7004544"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ultimate Addons for WPBakery Page Builder < 3.19.20.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "3.19.20.1",
+                    "references": {
+                        "cve": [
+                            "2024-5253"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/97666e54-8e86-4f18-ae32-ad8ca607aeff"
+                        ],
+                        "wpvulndb": [
+                            "8263a3be-2147-4f6f-bdd7-23a6fdc71724"
+                        ]
+                    }
+                },
+                {
+                    "title": "Ultimate Addons for WPBakery Page Builder < 3.19.20.1 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "3.19.20.1",
+                    "references": {
+                        "cve": [
+                            "2024-5251"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e637044d-9b49-4de5-b8b8-d48a0e5e1afc"
+                        ],
+                        "wpvulndb": [
+                            "a7b9a4e6-ae2c-4b0d-a9ae-ecda6c14b1ea"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.19.9",
+                "confidence": 60,
+                "found_by": "Change Log (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://jacobeachrealty.com/real-estate/wp-content/plugins/Ultimate_VC_Addons/changelog.txt, Match: '3.19.9 -'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wordpress-seo-premium": {
+            "slug": "wordpress-seo-premium",
+            "location": "https://jacobeachrealty.com/real-estate/wp-content/plugins/wordpress-seo-premium/",
+            "latest_version": "24.7",
+            "last_updated": "2025-03-18T09:30:47.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "18.0",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://jacobeachrealty.com/real-estate/wp-content/plugins/wordpress-seo-premium/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wp-hotel-booking": {
+            "slug": "wp-hotel-booking",
+            "location": "https://jacobeachrealty.com/real-estate/wp-content/plugins/wp-hotel-booking/",
+            "latest_version": "2.1.7",
+            "last_updated": "2025-02-14T01:49:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WP Hotel Booking <= 2.1.7 - Contributor+ Local File Inclusion",
+                    "fixed_in": null,
+                    "references": {
+                        "cve": [
+                            "2024-51582"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/wordpress/plugin/wp-hotel-booking/vulnerability/wordpress-wp-hotel-booking-plugin-2-1-4-local-file-inclusion-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "86ac5a26-464f-4116-8eeb-7f55578d65a0"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "2.1.7",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://jacobeachrealty.com/real-estate/wp-content/plugins/wp-hotel-booking/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://jacobeachrealty.com/real-estate/wp-content/plugins/wp-hotel-booking/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "wp-whatsapp": {
+            "slug": "wp-whatsapp",
+            "location": "https://jacobeachrealty.com/real-estate/wp-content/plugins/wp-whatsapp/",
+            "latest_version": "3.7.0",
+            "last_updated": "2025-01-14T22:38:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WP Chat App < 3.6.9 - Missing Authorization to Authenticated (Subscriber+) Filebird Plugin Installation",
+                    "fixed_in": "3.6.9",
+                    "references": {
+                        "cve": [
+                            "2024-10533"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/26f73bfe-f41a-4045-9d72-21181a9a704f"
+                        ],
+                        "wpvulndb": [
+                            "c0bed086-81ac-42b6-93f0-e7431529ecdc"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "3.6.7",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://jacobeachrealty.com/real-estate/wp-content/plugins/wp-whatsapp/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 12,
+        "requests_remaining": 13
+    },
+    "stop_time": 1742468159,
+    "elapsed": 47,
+    "requests_done": 224,
+    "cached_requests": 6,
+    "data_sent": 81188,
+    "data_sent_humanised": "79.285 KB",
+    "data_received": 4277431,
+    "data_received_humanised": "4.079 MB",
+    "used_memory": 319459328,
+    "used_memory_humanised": "304.66 MB"
+}

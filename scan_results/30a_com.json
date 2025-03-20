@@ -1,0 +1,451 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742467932,
+    "start_memory": 48816128,
+    "target_url": "https://30a.com/",
+    "target_ip": "104.18.20.206",
+    "effective_url": "https://30a.com/",
+    "interesting_findings": [
+        {
+            "url": "https://30a.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server-Timing: wp-before-template;dur=1261.87",
+                "cf-cache-status: DYNAMIC",
+                "Server: cloudflare",
+                "CF-RAY: 9234a87ffb532ea8-LAX"
+            ]
+        },
+        {
+            "url": "https://30a.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://30a.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://30a.com/readme.html",
+            "to_s": "WordPress readme found: https://30a.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://30a.com/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://30a.com/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://30a.com/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://30a.com/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://30a.com/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+            "https://30a.com/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "30A",
+        "location": "https://30a.com/wp-content/themes/30A/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://30a.com/wp-content/themes/30A/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://30a.com/wp-content/themes/30A/style.css?ver=2.1",
+        "style_name": "30A",
+        "style_uri": "https://teqnite.com/",
+        "description": "Our 30A theme for 2024 is designed to take full advantage of the flexibility of the block editor. Organizations and businesses have the ability to create dynamic landing pages with endless layouts using the group and column blocks. The centered content column and fine-tuned typography also makes it perfect for traditional blogs. Complete editor styles give you a good idea of what your content will look like, even before you publish. You can give your site a personal touch by changing the background colors and the accent color in the Customizer. The colors of all elements on your site are automatically calculated based on the colors you pick, ensuring a high, accessible color contrast for your visitors.",
+        "author": "the Teqnite team",
+        "author_uri": "https://teqnite.com/",
+        "template": null,
+        "license": "GNU General Public License v2 or later",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-patterns, block-styles, wide-blocks, accessibility-ready",
+        "text_domain": "30A",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "2.1",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://30a.com/wp-content/themes/30A/style.css?ver=2.1, Match: 'Version: 2.1'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "events-manager": {
+            "slug": "events-manager",
+            "location": "https://30a.com/wp-content/plugins/events-manager/",
+            "latest_version": "6.6.4.4",
+            "last_updated": "2025-02-22T21:02:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.6.4.4",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://30a.com/wp-content/plugins/events-manager/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://30a.com/wp-content/plugins/events-manager/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "events-manager-pro": {
+            "slug": "events-manager-pro",
+            "location": "https://30a.com/wp-content/plugins/events-manager-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.5",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://30a.com/wp-content/plugins/events-manager-pro/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "formidable": {
+            "slug": "formidable",
+            "location": "https://30a.com/wp-content/plugins/formidable/",
+            "latest_version": "6.19",
+            "last_updated": "2025-03-11T17:07:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "6.19",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://30a.com/wp-content/plugins/formidable/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://30a.com/wp-content/plugins/formidable/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "formidable-pro": {
+            "slug": "formidable-pro",
+            "location": "https://30a.com/wp-content/plugins/formidable-pro/",
+            "latest_version": "6.18.1",
+            "last_updated": "2025-02-20T00:00:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "interactive-3d-flipbook-powered-physics-engine": {
+            "slug": "interactive-3d-flipbook-powered-physics-engine",
+            "location": "https://30a.com/wp-content/plugins/interactive-3d-flipbook-powered-physics-engine/",
+            "latest_version": "1.16.15",
+            "last_updated": "2024-12-30T04:27:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.16.15",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://30a.com/wp-content/plugins/interactive-3d-flipbook-powered-physics-engine/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "popup-maker": {
+            "slug": "popup-maker",
+            "location": "https://30a.com/wp-content/plugins/popup-maker/",
+            "latest_version": "1.20.4",
+            "last_updated": "2025-01-30T03:21:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.20.4",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://30a.com/wp-content/plugins/popup-maker/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://30a.com/wp-content/plugins/popup-maker/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "tablepress": {
+            "slug": "tablepress",
+            "location": "https://30a.com/wp-content/plugins/tablepress/",
+            "latest_version": "3.0.4",
+            "last_updated": "2025-02-20T06:01:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.0.4",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://30a.com/wp-content/plugins/tablepress/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Readme - ChangeLog Section (Aggressive Detection)": {
+                        "confidence": 50,
+                        "interesting_entries": [
+                            "https://30a.com/wp-content/plugins/tablepress/readme.txt"
+                        ]
+                    }
+                }
+            }
+        },
+        "youtube-embed-plus": {
+            "slug": "youtube-embed-plus",
+            "location": "https://30a.com/wp-content/plugins/youtube-embed-plus/",
+            "latest_version": "14.2.1.3",
+            "last_updated": "2024-12-23T21:22:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Javascript Var (Passive Detection)",
+            "confidence": 60,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "YouTube Embed <= 11.8.1 - Cross-Site Request Forgery (CSRF)",
+                    "fixed_in": "11.8.2",
+                    "references": {
+                        "cve": [
+                            "2017-1000224"
+                        ],
+                        "url": [
+                            "https://advisories.dxw.com/advisories/csrf-in-youtube-plugin/",
+                            "https://seclists.org/fulldisclosure/2017/Jul/64"
+                        ],
+                        "wpvulndb": [
+                            "ae5471d7-d252-4101-a3d0-8e4d134e704d"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "youtube-embed-plus-pro": {
+            "slug": "youtube-embed-plus-pro",
+            "location": "https://30a.com/wp-content/plugins/youtube-embed-plus-pro/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "13.4.1",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://30a.com/wp-content/plugins/youtube-embed-plus-pro/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 11,
+        "requests_remaining": 14
+    },
+    "stop_time": 1742467989,
+    "elapsed": 56,
+    "requests_done": 204,
+    "cached_requests": 6,
+    "data_sent": 53388,
+    "data_sent_humanised": "52.137 KB",
+    "data_received": 1827579,
+    "data_received_humanised": "1.743 MB",
+    "used_memory": 291590144,
+    "used_memory_humanised": "278.082 MB"
+}
