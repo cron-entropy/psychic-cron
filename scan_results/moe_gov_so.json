@@ -1,0 +1,177 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742554710,
+    "start_memory": 48922624,
+    "target_url": "https://moe.gov.so/",
+    "target_ip": "104.21.48.1",
+    "effective_url": "https://moe.gov.so/",
+    "interesting_findings": [
+        {
+            "url": "https://moe.gov.so/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-powered-by: PHP/7.4.33",
+                "x-litespeed-cache: hit",
+                "x-turbo-charged-by: LiteSpeed",
+                "cf-cache-status: DYNAMIC",
+                "report-to: {\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=xhqQ4yMc3IJ1450kU7Pzr2hW8FVtLUobVyCA0XkP%2FX%2BZU1xVY6DmPvKIwoixLIWA4WiCD9ke0NQi1oFFO0w4Rn8rxpriP9H4fw3l1FS5FNdhXNsGB%2FaVcZ2nEQSY\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+                "nel: {\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+                "server: cloudflare",
+                "cf-ray: 923cef326daf827e-IAD",
+                "alt-svc: h3=\":443\"; ma=86400",
+                "server-timing: cfL4;desc=\"?proto=TCP&rtt=5200&min_rtt=5079&rtt_var=1522&sent=6&recv=8&lost=0&retrans=0&sent_bytes=3403&recv_bytes=804&delivery_rate=562315&cwnd=253&unsent_bytes=0&cid=bd95129c3e6ebded&ts=75&x=0\""
+            ]
+        }
+    ],
+    "version": null,
+    "main_theme": {
+        "slug": "countdown",
+        "location": "https://moe.gov.so/wp-content/themes/countdown/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://moe.gov.so/wp-content/plugins/cmp-coming-soon-maintenance/themes/countdown/style.css?v=4.1.13",
+        "style_name": "Countdown",
+        "style_uri": "https://niteothemes.com/cmp-coming-soon-maintenance/?theme=countdown",
+        "description": null,
+        "author": "NiteoThemes",
+        "author_uri": "https//niteothemes.com",
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 70,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": null,
+        "parents": []
+    },
+    "plugins": {
+        "cmp-coming-soon-maintenance": {
+            "slug": "cmp-coming-soon-maintenance",
+            "location": "https://moe.gov.so/wp-content/plugins/cmp-coming-soon-maintenance/",
+            "latest_version": "4.1.13",
+            "last_updated": "2024-07-25T17:45:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "CMP - Coming Soon & Maintenance < 3.8.2 - Improper Access Controls on AJAX Calls",
+                    "fixed_in": "3.8.2",
+                    "references": {
+                        "cve": [
+                            "2020-36730"
+                        ],
+                        "url": [
+                            "https://blog.nintechnet.com/multiple-vulnerabilities-fixed-in-cmp-coming-soon-and-maintenance-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "f820452e-37f5-44b9-a232-11d9b91bec3b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Coming Soon & Maintenance Plugin by NiteoThemes < 4.0.19 - Unauthenticated Arbitrary CSS Update",
+                    "fixed_in": "4.0.19",
+                    "references": {
+                        "cve": [
+                            "2022-0188"
+                        ],
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/2657597/cmp-coming-soon-maintenance"
+                        ],
+                        "wpvulndb": [
+                            "50b6f770-6f53-41ef-b2f3-2a58e9afd332"
+                        ]
+                    }
+                },
+                {
+                    "title": "Coming Soon & Maintenance  < 4.1.7 - Unauthenticated Post/Page Access in Maintenance Mode",
+                    "fixed_in": "4.1.7",
+                    "references": {
+                        "cve": [
+                            "2023-1263"
+                        ],
+                        "wpvulndb": [
+                            "2e07ffd9-8e82-4078-96aa-162ef78c417b"
+                        ]
+                    }
+                },
+                {
+                    "title": "CMP \u2013 Coming Soon & Maintenance < 4.1.8 - Maintenance Mode Bypass",
+                    "fixed_in": "4.1.8",
+                    "references": {
+                        "cve": [
+                            "2023-2159"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/wordpress-plugins/cmp-coming-soon-maintenance/cmp-coming-soon-maintenance-417-maintenance-mode-bypass"
+                        ],
+                        "wpvulndb": [
+                            "bbfd623f-11ad-4401-86ba-3a119c233340"
+                        ]
+                    }
+                },
+                {
+                    "title": "CMP \u2013 Coming Soon & Maintenance < 4.1.11 - Authenticated (Admin+) Server-Side Request Forgery",
+                    "fixed_in": "4.1.11",
+                    "references": {
+                        "cve": [
+                            "2023-50374"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/0fdc2dac-b3ea-40bd-987b-e6c47e74aefc"
+                        ],
+                        "wpvulndb": [
+                            "5f5c770e-bd18-4a2e-ae33-86dd37a1ddee"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 2,
+        "requests_remaining": 23
+    },
+    "stop_time": 1742554724,
+    "elapsed": 14,
+    "requests_done": 893,
+    "cached_requests": 5,
+    "data_sent": 194329,
+    "data_sent_humanised": "189.774 KB",
+    "data_received": 637988,
+    "data_received_humanised": "623.035 KB",
+    "used_memory": 286703616,
+    "used_memory_humanised": "273.422 MB"
+}

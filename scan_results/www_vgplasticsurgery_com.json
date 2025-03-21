@@ -1,0 +1,669 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742553961,
+    "start_memory": 48762880,
+    "target_url": "https://www.vgplasticsurgery.com/",
+    "target_ip": "158.106.144.170",
+    "effective_url": "https://www.vgplasticsurgery.com/",
+    "interesting_findings": [
+        {
+            "url": "https://www.vgplasticsurgery.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-litespeed-cache: hit",
+                "server: LiteSpeed",
+                "alt-svc: h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\""
+            ]
+        },
+        {
+            "url": "https://www.vgplasticsurgery.com/robots.txt",
+            "to_s": "robots.txt found: https://www.vgplasticsurgery.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://www.vgplasticsurgery.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://www.vgplasticsurgery.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 30,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.2.6",
+        "release_date": "2024-06-24",
+        "status": "outdated",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://www.vgplasticsurgery.com/feed/, <generator>https://wordpress.org/?v=6.2.6</generator>"
+        ],
+        "confirmed_by": {
+            "Emoji Settings (Passive Detection)": {
+                "confidence": 60,
+                "interesting_entries": [
+                    "https://www.vgplasticsurgery.com/, Match: 'wp-includes\\/js\\/wp-emoji-release.min.js?ver=6.2.6'"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "bridge",
+        "location": "https://www.vgplasticsurgery.com/wp-content/themes/bridge/",
+        "latest_version": "30.8.6",
+        "last_updated": "2025-03-04T00:14:03.000Z",
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://www.vgplasticsurgery.com/wp-content/themes/bridge/style.css",
+        "style_name": null,
+        "style_uri": null,
+        "description": null,
+        "author": null,
+        "author_uri": null,
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [
+            {
+                "title": "Bridge Theme <= 11.1 - DOM Cross-Site Scripting (XSS)",
+                "fixed_in": "11.2",
+                "references": {
+                    "cve": [
+                        "2017-13138"
+                    ],
+                    "url": [
+                        "http://bridge.qodeinteractive.com/change-log/",
+                        "https://themeforest.net/item/bridge-creative-multipurpose-wordpress-theme/7315054"
+                    ],
+                    "wpvulndb": [
+                        "3d7329e4-4921-4211-ae71-d3f39bf41c9c"
+                    ]
+                }
+            },
+            {
+                "title": "Bridge Theme < 18.2.1 - Open Redirect",
+                "fixed_in": "18.2.1",
+                "references": {
+                    "url": [
+                        "https://www.wordfence.com/blog/2019/10/open-redirect-vulnerability-patched-in-bridge-theme/"
+                    ],
+                    "wpvulndb": [
+                        "de815900-173c-4e48-bdbc-bccfaacfbc28"
+                    ]
+                }
+            }
+        ],
+        "version": null,
+        "parents": []
+    },
+    "plugins": {
+        "bridge-core": {
+            "slug": "bridge-core",
+            "location": "https://www.vgplasticsurgery.com/wp-content/plugins/bridge-core/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Bridge Core < 3.1.0 - Reflected XSS",
+                    "fixed_in": "3.1.0",
+                    "references": {
+                        "cve": [
+                            "2023-40333"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/bridge-core/wordpress-bridge-core-plugin-3-0-9-reflected-cross-site-scripting-xss-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "08395b08-b53e-41ed-8def-e203ac3011c8"
+                        ]
+                    }
+                },
+                {
+                    "title": "Bridge Core < 3.3 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode",
+                    "fixed_in": "3.3",
+                    "references": {
+                        "cve": [
+                            "2024-9292"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/1baa93da-9b55-45e7-b9a9-db331b5d0584"
+                        ],
+                        "wpvulndb": [
+                            "42ea3e46-51e3-42fe-9f73-0ada59e0427e"
+                        ]
+                    }
+                },
+                {
+                    "title": "Bridge Core < 3.3.1 - Missing Authorization to Authenticated (Subscriber+) Demo Import",
+                    "fixed_in": "3.3.1",
+                    "references": {
+                        "cve": [
+                            "2024-9860"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/968d5d31-2592-4bed-9d18-5877f0d6062e"
+                        ],
+                        "wpvulndb": [
+                            "cf47978d-9224-4d2f-a564-cf82a244142a"
+                        ]
+                    }
+                },
+                {
+                    "title": "Bridge Core < 3.3.1 - Missing Authorization",
+                    "fixed_in": "3.3.1",
+                    "references": {
+                        "cve": [
+                            "2025-24744"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/cdb5a65a-313f-44b3-9a79-7fae1207e8e2"
+                        ],
+                        "wpvulndb": [
+                            "ce5326ee-dcb8-4ff4-9675-5d38d74e5df3"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "content-views-query-and-display-post-page": {
+            "slug": "content-views-query-and-display-post-page",
+            "location": "https://www.vgplasticsurgery.com/wp-content/plugins/content-views-query-and-display-post-page/",
+            "latest_version": "4.1",
+            "last_updated": "2025-02-25T03:37:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.0.2",
+                "confidence": 20,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.vgplasticsurgery.com/wp-content/plugins/content-views-query-and-display-post-page/public/assets/css/cv.css?ver=4.0.2",
+                    "https://www.vgplasticsurgery.com/wp-content/plugins/content-views-query-and-display-post-page/public/assets/js/cv.js?ver=4.0.2"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "instagram-feed-pro": {
+            "slug": "instagram-feed-pro",
+            "location": "https://www.vgplasticsurgery.com/wp-content/plugins/instagram-feed-pro/",
+            "latest_version": "1.0.0.67",
+            "last_updated": "2025-03-13T19:35:34.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "itro-popup": {
+            "slug": "itro-popup",
+            "location": "https://www.vgplasticsurgery.com/wp-content/plugins/itro-popup/",
+            "latest_version": "5.2.6",
+            "last_updated": "2023-06-14T09:32:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "js_composer": {
+            "slug": "js_composer",
+            "location": "https://www.vgplasticsurgery.com/wp-content/plugins/js_composer/",
+            "latest_version": "8.3.1",
+            "last_updated": "2025-03-18T20:01:01.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Body Tag (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "WPBakery Page Builder < 6.4.1 - Authenticated Stored Cross-Site Scripting (XSS)",
+                    "fixed_in": "6.4.1",
+                    "references": {
+                        "cve": [
+                            "2020-28650"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2020/10/vulnerability-exposes-over-4-million-sites-using-wpbakery/"
+                        ],
+                        "wpvulndb": [
+                            "11285589-1b22-4ec0-adfc-f2add70db4d7"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Page Builder < 6.13.0 - Contributor+ Stored XSS",
+                    "fixed_in": "6.13.0",
+                    "references": {
+                        "cve": [
+                            "2023-31213"
+                        ],
+                        "wpvulndb": [
+                            "ee99521d-be25-41ef-8988-5cfd66e9c5ca"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Title tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1841"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/34d21418-4faf-40bf-a960-79482a592722"
+                        ],
+                        "wpvulndb": [
+                            "787a71f8-1179-4442-9441-87fbe83a7e67"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Custom Heading tag attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1842"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/674e6722-d293-4572-80bf-984e74c3e33f"
+                        ],
+                        "wpvulndb": [
+                            "8ebfad34-7b46-4783-9fad-c96ab4f4c737"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Button onclick attribute",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1805"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7a571386-fae1-4a56-8567-9d3e23249de1"
+                        ],
+                        "wpvulndb": [
+                            "b87926cd-0fe0-49df-8c61-9df1363a67a8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Visual Composer < 7.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via Post Author",
+                    "fixed_in": "7.6",
+                    "references": {
+                        "cve": [
+                            "2024-1840"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/cb8ecbbc-ada9-4887-92e6-25a587ecfb84"
+                        ],
+                        "wpvulndb": [
+                            "b41c2343-3be4-4bd9-ae5d-69ae96ba23ae"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery Page Builder < 7.7 - Authenticated (Contributor+) Stored Cross-Site Scripting via VC Single Image link attribute",
+                    "fixed_in": "7.7",
+                    "references": {
+                        "cve": [
+                            "2024-5265"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/35a5114e-5c5f-4003-8bb3-77243ffbac1a"
+                        ],
+                        "wpvulndb": [
+                            "3b067a13-ee58-44c9-80af-ae04af6256c8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Stored Cross-Site Scripting",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5708"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/23ff12f0-eb9d-4bb3-8db0-0e794c0f0594"
+                        ],
+                        "wpvulndb": [
+                            "992e5d47-e290-420a-adf8-f552a929e51d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WPBakery < 7.8 - Authenticated (Author+) Local File Inclusion",
+                    "fixed_in": "7.8",
+                    "references": {
+                        "cve": [
+                            "2024-5709"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/7fad30c8-fd8a-4cf2-a3aa-16a374231b87"
+                        ],
+                        "wpvulndb": [
+                            "6e3e1944-67f7-405e-ae4f-f0ab8c6c9acd"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "6.2.0",
+                "confidence": 80,
+                "found_by": "Body Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.vgplasticsurgery.com/, Match: 'js-comp-ver-6.2.0'"
+                ],
+                "confirmed_by": {
+                    "Query Parameter (Passive Detection)": {
+                        "confidence": 20,
+                        "interesting_entries": [
+                            "https://www.vgplasticsurgery.com/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=6.2.0",
+                            "https://www.vgplasticsurgery.com/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=6.2.0"
+                        ]
+                    }
+                }
+            }
+        },
+        "matchheight": {
+            "slug": "matchheight",
+            "location": "https://www.vgplasticsurgery.com/wp-content/plugins/matchheight/",
+            "latest_version": "1.2.0",
+            "last_updated": "2021-09-25T04:04:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "widget-options": {
+            "slug": "widget-options",
+            "location": "https://www.vgplasticsurgery.com/wp-content/plugins/widget-options/",
+            "latest_version": "4.1.1",
+            "last_updated": "2025-02-18T13:18:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Widget Options - Extended <= 5.1.0 &  Widget Options <= 4.0.1 - Authenticated (Subscriber+) Information Disclosure",
+                    "fixed_in": "4.0.2",
+                    "references": {
+                        "cve": [
+                            "2024-35691"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d0c4b963-047a-4d41-8dba-9eaa5e555235"
+                        ],
+                        "wpvulndb": [
+                            "0c0715e4-f389-4ed4-a22a-4a14178d46b2"
+                        ]
+                    }
+                },
+                {
+                    "title": "Widget Options < 4.0.8 - Contributor+ Remote Code Execution",
+                    "fixed_in": "4.0.8",
+                    "references": {
+                        "cve": [
+                            "2024-8672"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8d03af4d-a1f9-4c15-a62e-f4cdbcfc9af7"
+                        ],
+                        "wpvulndb": [
+                            "cbc62ccb-5a80-494c-8e8c-05b920e21949"
+                        ]
+                    }
+                },
+                {
+                    "title": "Widget Options < 4.0.8 - Missing Authorization",
+                    "fixed_in": "4.0.8",
+                    "references": {
+                        "cve": [
+                            "2024-56219"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/ccbf6d57-44ba-4064-8880-81cd9136ca33"
+                        ],
+                        "wpvulndb": [
+                            "4e7ed2b1-5447-4784-84ed-cf91d66ab2d8"
+                        ]
+                    }
+                },
+                {
+                    "title": "Widget Options < 4.0.9 - Missing Authorization to Notice Dismissal",
+                    "fixed_in": "4.0.9",
+                    "references": {
+                        "cve": [
+                            "2025-22722"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e0b571c8-d414-4566-a24c-e70fd1740256"
+                        ],
+                        "wpvulndb": [
+                            "f0ac062d-ec7c-4021-8814-097e4503ac55"
+                        ]
+                    }
+                },
+                {
+                    "title": "Widget Options < 4.1.1 - Contributor+ Remote Code Execution",
+                    "fixed_in": "4.1.1",
+                    "references": {
+                        "cve": [
+                            "2025-22630"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/wordpress/plugin/widget-options/vulnerability/wordpress-widget-options-plugin-4-1-0-arbitrary-code-execution-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "c1d806d4-3a84-46a4-ab1d-edaa689ac7a3"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://www.vgplasticsurgery.com/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.7",
+            "last_updated": "2025-03-18T08:56:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Yoast SEO < 21.1 - Authenticated (Seo Manager+) Stored Cross-Site Scripting",
+                    "fixed_in": "21.1",
+                    "references": {
+                        "cve": [
+                            "2023-40680"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/385a82ff-50ad-4787-845b-fb5f639f6466"
+                        ],
+                        "wpvulndb": [
+                            "42b355cc-d7b6-474d-8578-9c1a99b1e3c7"
+                        ]
+                    }
+                },
+                {
+                    "title": "Yoast SEO < 22.6 - Reflected Cross-Site Scripting",
+                    "fixed_in": "22.6",
+                    "references": {
+                        "cve": [
+                            "2024-4041"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4e04b161-3cd0-454d-869c-56f42bd8afb0"
+                        ],
+                        "wpvulndb": [
+                            "6eb8e01b-0bc6-4ca9-b489-38f2a94c2909"
+                        ]
+                    }
+                },
+                {
+                    "title": "Yoast SEO < 22.7 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "22.7",
+                    "references": {
+                        "cve": [
+                            "2024-4984"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/59bcd246-ca2f-4336-9a6e-89afe873ed25"
+                        ],
+                        "wpvulndb": [
+                            "467936e2-fe82-4cdc-afec-6782afee3e4e"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "20.9",
+                "confidence": 60,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://www.vgplasticsurgery.com/, Match: 'optimized with the Yoast SEO plugin v20.9 -'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wp-responsive-menu": {
+            "slug": "wp-responsive-menu",
+            "location": "https://www.vgplasticsurgery.com/wp-content/plugins/wp-responsive-menu/",
+            "latest_version": "3.1.9.2",
+            "last_updated": "2024-10-21T13:24:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "WP Responsive Menu < 3.1.7.1 - Subscriber+ Settings Update to Stored XSS",
+                    "fixed_in": "3.1.7.1",
+                    "references": {
+                        "cve": [
+                            "2021-24971"
+                        ],
+                        "wpvulndb": [
+                            "661cb7e3-d7bd-4bc1-bf78-bdb4ba9610d7"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 11,
+        "requests_remaining": 14
+    },
+    "stop_time": 1742554672,
+    "elapsed": 711,
+    "requests_done": 214,
+    "cached_requests": 6,
+    "data_sent": 30198,
+    "data_sent_humanised": "29.49 KB",
+    "data_received": 848405,
+    "data_received_humanised": "828.521 KB",
+    "used_memory": 272707584,
+    "used_memory_humanised": "260.074 MB"
+}

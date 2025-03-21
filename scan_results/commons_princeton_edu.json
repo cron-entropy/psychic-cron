@@ -1,0 +1,297 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742559889,
+    "start_memory": 48984064,
+    "target_url": "https://commons.princeton.edu/",
+    "target_ip": "128.112.172.142",
+    "effective_url": "https://commons.princeton.edu/",
+    "interesting_findings": [
+        {
+            "url": "https://commons.princeton.edu/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "Server: Apache/2.4.54 (Debian)"
+            ]
+        },
+        {
+            "url": "https://commons.princeton.edu/robots.txt",
+            "to_s": "robots.txt found: https://commons.princeton.edu/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://commons.princeton.edu/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://commons.princeton.edu/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://commons.princeton.edu/readme.html",
+            "to_s": "WordPress readme found: https://commons.princeton.edu/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://commons.princeton.edu/wp-content/debug.log",
+            "to_s": "Debug Log found: https://commons.princeton.edu/wp-content/debug.log",
+            "type": "debug_log",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://codex.wordpress.org/Debugging_in_WordPress"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://commons.princeton.edu/wp-signup.php",
+            "to_s": "This site seems to be a multisite",
+            "type": "multisite",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Glossary#Multisite"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://commons.princeton.edu/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://commons.princeton.edu/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.2",
+        "release_date": "2025-02-11",
+        "status": "latest",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://commons.princeton.edu/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+        ],
+        "confirmed_by": {
+            "Emoji Settings (Passive Detection)": {
+                "confidence": 60,
+                "interesting_entries": [
+                    "https://commons.princeton.edu/, Match: 'wp-includes\\/js\\/wp-emoji-release.min.js?ver=6.7.2'"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "hemingway",
+        "location": "https://commons.princeton.edu/wp-content/themes/hemingway/",
+        "latest_version": "2.3.2",
+        "last_updated": "2022-10-03T00:00:00.000Z",
+        "outdated": false,
+        "readme_url": "https://commons.princeton.edu/wp-content/themes/hemingway/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://commons.princeton.edu/wp-content/themes/hemingway/style.css?ver=2.3.2",
+        "style_name": "Hemingway",
+        "style_uri": "https://andersnoren.se/teman/hemingway-wordpress-theme/",
+        "description": "Hemingway is a clean and beautiful two-column theme for bloggers. It features a responsive design, retina-ready assets, Block Editor support, full-width header image with parallax scrolling effect, custom accent color settings, custom logo upload, and editor styles. Demo: https://andersnoren.se/themes/hemingway/",
+        "author": "Anders Nor\u00e9n",
+        "author_uri": "https://andersnoren.se",
+        "template": "Archives ------------------------",
+        "license": "GNU General Public License version 2.0",
+        "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+        "tags": "blog, two-columns, right-sidebar, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks",
+        "text_domain": "hemingway",
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "2.3.2",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://commons.princeton.edu/wp-content/themes/hemingway/style.css?ver=2.3.2, Match: 'Version: 2.3.2'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "fd-footnotes": {
+            "slug": "fd-footnotes",
+            "location": "https://commons.princeton.edu/wp-content/plugins/fd-footnotes/",
+            "latest_version": "1.36",
+            "last_updated": "2016-06-06T18:08:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.36",
+                "confidence": 50,
+                "found_by": "Readme - ChangeLog Section (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://commons.princeton.edu/wp-content/plugins/fd-footnotes/readme.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "js_composer": {
+            "slug": "js_composer",
+            "location": "https://commons.princeton.edu/wp-content/plugins/js_composer/",
+            "latest_version": "8.3.1",
+            "last_updated": "2025-03-18T20:01:01.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Body Tag (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "8.3",
+                "confidence": 80,
+                "found_by": "Body Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://commons.princeton.edu/, Match: 'js-comp-ver-8.3'"
+                ],
+                "confirmed_by": {
+                    "Query Parameter (Passive Detection)": {
+                        "confidence": 20,
+                        "interesting_entries": [
+                            "https://commons.princeton.edu/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=8.3",
+                            "https://commons.princeton.edu/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=8.3"
+                        ]
+                    }
+                }
+            }
+        },
+        "post-gallery": {
+            "slug": "post-gallery",
+            "location": "https://commons.princeton.edu/wp-content/plugins/post-gallery/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Post Gallery - Cross-Site Scripting (XSS)",
+                    "fixed_in": null,
+                    "references": {
+                        "url": [
+                            "https://packetstormsecurity.com/files/122957/"
+                        ],
+                        "wpvulndb": [
+                            "131d5c8d-c405-4b8d-9aa5-77c9347ec10f"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 5,
+        "requests_remaining": 20
+    },
+    "stop_time": 1742559919,
+    "elapsed": 30,
+    "requests_done": 188,
+    "cached_requests": 7,
+    "data_sent": 43284,
+    "data_sent_humanised": "42.27 KB",
+    "data_received": 604970,
+    "data_received_humanised": "590.791 KB",
+    "used_memory": 274374656,
+    "used_memory_humanised": "261.664 MB"
+}

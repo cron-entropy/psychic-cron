@@ -1,0 +1,229 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742554675,
+    "start_memory": 48701440,
+    "target_url": "https://wordpress.org/",
+    "target_ip": "198.143.164.252",
+    "effective_url": "https://wordpress.org/",
+    "interesting_findings": [
+        {
+            "url": "https://wordpress.org/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: nginx",
+                "x-olaf: \u26c4",
+                "alt-svc: h3=\":443\"; ma=86400",
+                "x-nc: HIT ord 2"
+            ]
+        },
+        {
+            "url": "https://wordpress.org/robots.txt",
+            "to_s": "robots.txt found: https://wordpress.org/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php",
+                "/wp-admin/load-scripts.php",
+                "/wp-admin/load-styles.php",
+                "/search",
+                "/?s=",
+                "/plugins/search/"
+            ]
+        },
+        {
+            "url": "https://wordpress.org/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://wordpress.org/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "URLs In Homepage (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 80
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://wordpress.org/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://wordpress.org/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": null,
+    "main_theme": {
+        "slug": "wporg-parent-2021",
+        "location": "https://wordpress.org/wp-content/themes/wporg-parent-2021/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://wordpress.org/wp-content/themes/wporg-parent-2021/style.css",
+        "style_name": "WordPress.org Parent Theme, 2021 edition",
+        "style_uri": "https://github.com/WordPress/wporg-parent-2021",
+        "description": "The WordPress.org Parent Theme is a foundation for themes used on sites in the WordPress.org ecosystem.",
+        "author": "WordPress.org",
+        "author_uri": "https://wordpress.org/",
+        "template": null,
+        "license": "GNU General Public License v2 or later",
+        "license_uri": null,
+        "tags": null,
+        "text_domain": "wporg",
+        "found_by": "Urls In Homepage (Passive Detection)",
+        "confidence": 12,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Urls In 404 Page (Passive Detection)": {
+                "confidence": 6,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "1.0.0-c1c8d0e",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://wordpress.org/wp-content/themes/wporg-parent-2021/style.css, Match: 'Version: 1.0.0-c1c8d0e'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "gutenberg": {
+            "slug": "gutenberg",
+            "location": "https://wordpress.org/wp-content/plugins/gutenberg/",
+            "latest_version": "20.5.0",
+            "last_updated": "2025-03-20T09:39:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "20.4.0",
+                "confidence": 100,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://wordpress.org/wp-content/plugins/gutenberg/readme.txt"
+                ],
+                "confirmed_by": {
+                    "Change Log (Aggressive Detection)": {
+                        "confidence": 90,
+                        "interesting_entries": [
+                            "https://wordpress.org/wp-content/plugins/gutenberg/changelog.txt, Match: '= 20.4.0'"
+                        ]
+                    }
+                }
+            }
+        },
+        "stream": {
+            "slug": "stream",
+            "location": "https://wordpress.org/wp-content/plugins/stream/",
+            "latest_version": "4.1.1",
+            "last_updated": "2025-02-03T12:27:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Stream < 4.1.0 - Authenticated (Admin+) Server-Side Request Forgery",
+                    "fixed_in": "4.1.0",
+                    "references": {
+                        "cve": [
+                            "2024-13879"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/8680ad0a-7513-408d-a62d-ffb0b0e7addb"
+                        ],
+                        "wpvulndb": [
+                            "838cecb4-42b1-4dc5-a5fb-79a14ac925a3"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "4.0.2",
+                "confidence": 100,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://wordpress.org/, Match: 'Stream WordPress user activity plugin v4.0.2'"
+                ],
+                "confirmed_by": {
+                    "Readme - Stable Tag (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://wordpress.org/wp-content/plugins/stream/readme.txt"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 3,
+        "requests_remaining": 22
+    },
+    "stop_time": 1742554707,
+    "elapsed": 31,
+    "requests_done": 1460,
+    "cached_requests": 8,
+    "data_sent": 434332,
+    "data_sent_humanised": "424.152 KB",
+    "data_received": 37365655,
+    "data_received_humanised": "35.635 MB",
+    "used_memory": 356777984,
+    "used_memory_humanised": "340.25 MB"
+}
