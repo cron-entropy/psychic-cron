@@ -1,0 +1,461 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742641043,
+    "start_memory": 48795648,
+    "target_url": "https://islamic-study.org/",
+    "target_ip": "162.241.253.111",
+    "effective_url": "https://islamic-study.org/",
+    "interesting_findings": [
+        {
+            "url": "https://islamic-study.org/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: nginx/1.25.5",
+                "host-header: c2hhcmVkLmJsdWVob3N0LmNvbQ==",
+                "x-server-cache: true",
+                "x-proxy-cache: HIT"
+            ]
+        },
+        {
+            "url": "https://islamic-study.org/robots.txt",
+            "to_s": "robots.txt found: https://islamic-study.org/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://islamic-study.org/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://islamic-study.org/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://islamic-study.org/readme.html",
+            "to_s": "WordPress readme found: https://islamic-study.org/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://islamic-study.org/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://islamic-study.org/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://islamic-study.org/wp-content/uploads/",
+            "to_s": "Upload directory has listing enabled: https://islamic-study.org/wp-content/uploads/",
+            "type": "upload_directory_listing",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        },
+        {
+            "url": "https://islamic-study.org/wp-cron.php",
+            "to_s": "The external WP-Cron seems to be enabled: https://islamic-study.org/wp-cron.php",
+            "type": "wp_cron",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 60,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://www.iplocation.net/defend-wordpress-from-ddos",
+                    "https://github.com/wpscanteam/wpscan/issues/1299"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.7.1",
+        "release_date": "2024-11-21",
+        "status": "outdated",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://islamic-study.org/feed/, <generator>https://wordpress.org/?v=6.7.1</generator>",
+            "https://islamic-study.org/comments/feed/, <generator>https://wordpress.org/?v=6.7.1</generator>"
+        ],
+        "confirmed_by": {},
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "easyweb",
+        "location": "https://islamic-study.org/wp-content/themes/easyweb/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": "https://islamic-study.org/wp-content/themes/easyweb/readme.txt",
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://islamic-study.org/wp-content/themes/easyweb/style.css?ver=6.7.1",
+        "style_name": "EasyWeb",
+        "style_uri": "http://webnus.net/themes/easyweb",
+        "description": "EasyWeb is a specialized theme in field of hosting, SEO and web design which is fully practical, included with quite real content and you\u2019ll be able to implement your website in couple of minutes. It comes with advanced theme options, live customizer, visual page builder and special host and seo features.",
+        "author": "WEBNUS",
+        "author_uri": "http://webnus.net/",
+        "template": null,
+        "license": "GNU General Public License",
+        "license_uri": "COPYING.txt",
+        "tags": "white, responsive-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready",
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": {
+            "number": "2.4.5",
+            "confidence": 80,
+            "found_by": "Style (Passive Detection)",
+            "interesting_entries": [
+                "https://islamic-study.org/wp-content/themes/easyweb/style.css?ver=6.7.1, Match: 'Version: 2.4.5'"
+            ],
+            "confirmed_by": {}
+        },
+        "parents": []
+    },
+    "plugins": {
+        "enable-jquery-migrate-helper": {
+            "slug": "enable-jquery-migrate-helper",
+            "location": "https://islamic-study.org/wp-content/plugins/enable-jquery-migrate-helper/",
+            "latest_version": "1.4.1",
+            "last_updated": "2024-12-25T13:15:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "forminator": {
+            "slug": "forminator",
+            "location": "https://islamic-study.org/wp-content/plugins/forminator/",
+            "latest_version": "1.40.0",
+            "last_updated": "2025-03-03T11:11:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.41.1",
+                "confidence": 60,
+                "found_by": "Translation File (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://islamic-study.org/wp-content/plugins/forminator/languages/forminator.pot, Match: '\"Project-Id-Version: Forminator 1.41.1'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "js_composer": {
+            "slug": "js_composer",
+            "location": "https://islamic-study.org/wp-content/plugins/js_composer/",
+            "latest_version": "8.3.1",
+            "last_updated": "2025-03-18T20:01:01.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Body Tag (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "7.9",
+                "confidence": 80,
+                "found_by": "Body Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://islamic-study.org/, Match: 'js-comp-ver-7.9'"
+                ],
+                "confirmed_by": {
+                    "Query Parameter (Passive Detection)": {
+                        "confidence": 20,
+                        "interesting_entries": [
+                            "https://islamic-study.org/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=7.9",
+                            "https://islamic-study.org/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js?ver=7.9"
+                        ]
+                    }
+                }
+            }
+        },
+        "revslider": {
+            "slug": "revslider",
+            "location": "https://islamic-study.org/wp-content/plugins/revslider/",
+            "latest_version": "6.7.31",
+            "last_updated": "2025-03-20T21:46:59.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                },
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Slider Revolution < 6.7.19 - Authenticated (Author+) Stored Cross-Site Scripting via SVG File Upload",
+                    "fixed_in": "6.7.19",
+                    "references": {
+                        "cve": [
+                            "2024-8107"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/22b59b36-ba47-4c10-8f43-a29ae3b9d446"
+                        ],
+                        "wpvulndb": [
+                            "278e6259-cb64-4cc1-91c6-2cf2178dd1d0"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "6.7.18",
+                "confidence": 100,
+                "found_by": "Meta Generator (Passive Detection)",
+                "interesting_entries": [
+                    "https://islamic-study.org/, Match: 'Powered by Slider Revolution 6.7.18'"
+                ],
+                "confirmed_by": {
+                    "Release Log (Aggressive Detection)": {
+                        "confidence": 80,
+                        "interesting_entries": [
+                            "https://islamic-study.org/wp-content/plugins/revslider/release_log.html, Match: 'Version 6.7.18 (20th August 2024)'"
+                        ]
+                    }
+                }
+            }
+        },
+        "sassy-social-share": {
+            "slug": "sassy-social-share",
+            "location": "https://islamic-study.org/wp-content/plugins/sassy-social-share/",
+            "latest_version": "3.3.71",
+            "last_updated": "2025-03-20T12:29:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "3.3.71",
+                "confidence": 20,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://islamic-study.org/wp-content/plugins/sassy-social-share/public/css/sassy-social-share-public.css?ver=3.3.71",
+                    "https://islamic-study.org/wp-content/plugins/sassy-social-share/public/js/sassy-social-share-public.js?ver=3.3.71"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "scroll-to-anchor": {
+            "slug": "scroll-to-anchor",
+            "location": "https://islamic-study.org/wp-content/plugins/scroll-to-anchor/",
+            "latest_version": "0.6.0",
+            "last_updated": "2018-09-21T12:36:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "w-time-table": {
+            "slug": "w-time-table",
+            "location": "https://islamic-study.org/wp-content/plugins/w-time-table/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": {
+                "number": "4.3",
+                "confidence": 80,
+                "found_by": "Readme - Stable Tag (Aggressive Detection)",
+                "interesting_entries": [
+                    "https://islamic-study.org/wp-content/plugins/w-time-table/README.txt"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://islamic-study.org/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.7",
+            "last_updated": "2025-03-18T08:56:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "24.7",
+                "confidence": 60,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://islamic-study.org/, Match: 'optimized with the Yoast SEO plugin v24.7 -'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wp-pagenavi": {
+            "slug": "wp-pagenavi",
+            "location": "https://islamic-study.org/wp-content/plugins/wp-pagenavi/",
+            "latest_version": "2.94.5",
+            "last_updated": "2024-12-19T01:02:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        }
+    },
+    "config_backups": {
+        "https://islamic-study.org/wp-config.php1": {
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {}
+        }
+    },
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 11,
+        "requests_remaining": 14
+    },
+    "stop_time": 1742641064,
+    "elapsed": 21,
+    "requests_done": 211,
+    "cached_requests": 7,
+    "data_sent": 56300,
+    "data_sent_humanised": "54.98 KB",
+    "data_received": 1841432,
+    "data_received_humanised": "1.756 MB",
+    "used_memory": 303857664,
+    "used_memory_humanised": "289.781 MB"
+}

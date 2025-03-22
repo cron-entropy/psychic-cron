@@ -1,0 +1,1165 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742640655,
+    "start_memory": 48861184,
+    "target_url": "https://panoramamalloman.com/",
+    "target_ip": "162.0.215.21",
+    "effective_url": "https://panoramamalloman.com/",
+    "interesting_findings": [
+        {
+            "url": "https://panoramamalloman.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "x-tec-api-version: v1",
+                "x-tec-api-root: https://panoramamalloman.com/wp-json/tribe/events/v1/",
+                "x-tec-api-origin: https://panoramamalloman.com",
+                "x-litespeed-cache: hit",
+                "server: LiteSpeed",
+                "x-turbo-charged-by: LiteSpeed"
+            ]
+        },
+        {
+            "url": "https://panoramamalloman.com/robots.txt",
+            "to_s": "robots.txt found: https://panoramamalloman.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://panoramamalloman.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://panoramamalloman.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 30,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://panoramamalloman.com/wp-content/backup-db/",
+            "to_s": "A backup directory has been found: https://panoramamalloman.com/wp-content/backup-db/",
+            "type": "backup_db",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 70,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "https://github.com/wpscanteam/wpscan/issues/422"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://panoramamalloman.com/wp-content/mu-plugins/",
+            "to_s": "This site has 'Must Use Plugins': https://panoramamalloman.com/wp-content/mu-plugins/",
+            "type": "mu_plugins",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 80,
+            "confirmed_by": {},
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/Must_Use_Plugins"
+                ]
+            },
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "5.7.12",
+        "release_date": "2024-06-24",
+        "status": "outdated",
+        "found_by": "Rss Generator (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://panoramamalloman.com/feed/, <generator>https://wordpress.org/?v=5.7.12</generator>"
+        ],
+        "confirmed_by": {
+            "Emoji Settings (Passive Detection)": {
+                "confidence": 60,
+                "interesting_entries": [
+                    "https://panoramamalloman.com/, Match: '-release.min.js?ver=5.7.12'"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "mall",
+        "location": "https://panoramamalloman.com/wp-content/themes/mall/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://panoramamalloman.com/wp-content/themes/mall/style.css?ver=1.0.0",
+        "style_name": null,
+        "style_uri": null,
+        "description": null,
+        "author": null,
+        "author_uri": null,
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 70,
+        "interesting_entries": [],
+        "confirmed_by": {},
+        "vulnerabilities": [],
+        "version": null,
+        "parents": []
+    },
+    "plugins": {
+        "cmsmasters-mega-menu": {
+            "slug": "cmsmasters-mega-menu",
+            "location": "https://panoramamalloman.com/wp-content/plugins/cmsmasters-mega-menu/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "custom-facebook-feed": {
+            "slug": "custom-facebook-feed",
+            "location": "https://panoramamalloman.com/wp-content/plugins/custom-facebook-feed/",
+            "latest_version": "4.3.0",
+            "last_updated": "2025-03-13T14:43:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Comment (Passive Detection)": {
+                    "confidence": 30,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "Smash Balloon Social Post Feed < 2.19.2 - Unauthenticated Stored XSS",
+                    "fixed_in": "2.19.2",
+                    "references": {
+                        "cve": [
+                            "2021-24508"
+                        ],
+                        "wpvulndb": [
+                            "2b543740-d4b0-49b5-a021-454a3a72162f"
+                        ]
+                    }
+                },
+                {
+                    "title": "Smash Balloon Social Post Feed < 4.0.1 - Subscriber+ Arbitrary Plugin Settings Update to Stored XSS",
+                    "fixed_in": "4.0.1",
+                    "references": {
+                        "cve": [
+                            "2021-24918"
+                        ],
+                        "url": [
+                            "https://jetpack.com/2021/10/29/security-issues-patched-in-smash-balloon-social-post-feed-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "5d252ad7-bf28-44f3-8cd0-c4fe05c48f35"
+                        ]
+                    }
+                },
+                {
+                    "title": "Smash Balloon Social Post Feed < 4.1.1 - Authenticated Reflected Cross-Site Scripting (XSS)",
+                    "fixed_in": "4.1.1",
+                    "references": {
+                        "cve": [
+                            "2021-25065"
+                        ],
+                        "wpvulndb": [
+                            "ae1aab4e-b00a-458b-a176-85761655bdcc"
+                        ]
+                    }
+                },
+                {
+                    "title": "Multiple Plugins from Smash Balloon - Reflected Cross-Site Scripting",
+                    "fixed_in": "2.19.2",
+                    "references": {
+                        "wpvulndb": [
+                            "e766e165-1a05-4065-9e71-27b528641dd2"
+                        ]
+                    }
+                },
+                {
+                    "title": "Smash Balloon Social Post Feed < 4.1.6 - Contributor+ Stored XSS",
+                    "fixed_in": "4.1.6",
+                    "references": {
+                        "cve": [
+                            "2022-4477"
+                        ],
+                        "wpvulndb": [
+                            "c32a4c58-9f2b-4afa-9a21-4b4a5c4c4c41"
+                        ]
+                    }
+                },
+                {
+                    "title": "Smash Balloon Social Post Feed < 4.2.2 - Facebook Token Reset/Update via CSRF",
+                    "fixed_in": "4.2.2",
+                    "references": {
+                        "cve": [
+                            "2024-31379"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/custom-facebook-feed/wordpress-smash-balloon-social-post-feed-plugin-4-2-1-cross-site-request-forgery-csrf-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "57002393-b576-41ac-ba22-76300f6a1173"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "custom-twitter-feeds": {
+            "slug": "custom-twitter-feeds",
+            "location": "https://panoramamalloman.com/wp-content/plugins/custom-twitter-feeds/",
+            "latest_version": "2.3.0",
+            "last_updated": "2025-03-12T14:36:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Multiple Plugins from Smash Balloon - Reflected Cross-Site Scripting",
+                    "fixed_in": "1.8.2",
+                    "references": {
+                        "wpvulndb": [
+                            "e766e165-1a05-4065-9e71-27b528641dd2"
+                        ]
+                    }
+                },
+                {
+                    "title": "Custom Twitter Feeds (Tweets Widget) < 2.0 - Cross-Site Request Forgery (CSRF)",
+                    "fixed_in": "2.0",
+                    "references": {
+                        "cve": [
+                            "2022-33974"
+                        ],
+                        "wpvulndb": [
+                            "ed4ef1ab-dd2e-40ce-a86d-43fa1922df37"
+                        ]
+                    }
+                },
+                {
+                    "title": "Custom Twitter Feeds (Tweets Widget) < 2.2 - Cross-Site Request Forgery",
+                    "fixed_in": "2.2",
+                    "references": {
+                        "cve": [
+                            "2023-52136"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/vulnerability/custom-twitter-feeds/wordpress-custom-twitter-feeds-tweets-widget-plugin-2-1-2-cross-site-request-forgery-csrf-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "a5a5ebc3-1c7d-4110-b7df-29c53fbf39c7"
+                        ]
+                    }
+                },
+                {
+                    "title": "Custom Twitter Feeds \u2013 A Tweets Widget or X Feed Widget < 2.2.2 - Cross-Site Request Forgery to Plugin Options Update",
+                    "fixed_in": "2.2.2",
+                    "references": {
+                        "cve": [
+                            "2024-0379"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/29e2ff11-053b-45cc-adf1-d276f1ee576e"
+                        ],
+                        "wpvulndb": [
+                            "c8cdcb75-dab9-4f00-9e5f-9075560411af"
+                        ]
+                    }
+                },
+                {
+                    "title": "Custom Twitter Feeds < 2.2.3 - Admin+ Stored XSS",
+                    "fixed_in": "2.2.3",
+                    "references": {
+                        "cve": [
+                            "2024-8983"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/CVE-2024-XXXX/"
+                        ],
+                        "youtube": [
+                            "https://www.youtube.com/watch?v=https://drive.google.com/file/d/1j7x3q6ta0wNF1GtVE8lWk63GhXBnsxIn/view"
+                        ],
+                        "wpvulndb": [
+                            "29194dde-8d11-4096-a5ae-1d69c2c5dc33"
+                        ]
+                    }
+                },
+                {
+                    "title": "Custom Twitter Feeds (Tweets Widget) < 2.2.4 - Cross-Site Request Forgery",
+                    "fixed_in": "2.2.4",
+                    "references": {
+                        "cve": [
+                            "2024-49685"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e5b4c494-1188-44e2-b07d-5f4d45b36b45"
+                        ],
+                        "wpvulndb": [
+                            "68a2e5c6-c280-40ef-bd85-9d0cd3d236ae"
+                        ]
+                    }
+                },
+                {
+                    "title": "Custom Twitter Feeds < 2.3.0 - Cross-Site Request Forgery to Cache Reset via ctf_clear_cache_admin Function",
+                    "fixed_in": "2.3.0",
+                    "references": {
+                        "cve": [
+                            "2025-1314"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/28d47605-ecb8-42cc-901a-3cf07b946877"
+                        ],
+                        "wpvulndb": [
+                            "345affd0-6c26-4b44-80ec-752cf84c52c1"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "firebox": {
+            "slug": "firebox",
+            "location": "https://panoramamalloman.com/wp-content/plugins/firebox/",
+            "latest_version": "2.1.33",
+            "last_updated": "2025-03-07T11:03:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": null
+        },
+        "instagram-feed": {
+            "slug": "instagram-feed",
+            "location": "https://panoramamalloman.com/wp-content/plugins/instagram-feed/",
+            "latest_version": "6.8.0",
+            "last_updated": "2025-03-12T15:59:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Instagram Feed < 1.4.7 - Authenticated Cross-Site Scripting (XSS) & CSRF",
+                    "fixed_in": "1.4.7",
+                    "references": {
+                        "url": [
+                            "https://sumofpwn.nl/advisory/2016/persistent_cross_site_scripting_in_instagram_feed_plugin_via_csrf.html",
+                            "https://seclists.org/fulldisclosure/2016/Nov/115",
+                            "https://plugins.trac.wordpress.org/changeset/1464504/instagram-feed"
+                        ],
+                        "wpvulndb": [
+                            "d9a57a3a-251b-46cc-8f42-0c64657aaaa3"
+                        ]
+                    }
+                },
+                {
+                    "title": "Instagram Feed < 1.6 - Cross-Site Scripting (XSS)",
+                    "fixed_in": "1.6",
+                    "references": {
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset/1805420/instagram-feed",
+                            "http://dumpco.re/blog/xss-instagram-feed"
+                        ],
+                        "wpvulndb": [
+                            "36d33de7-655e-40d9-9745-ed2e10836360"
+                        ]
+                    }
+                },
+                {
+                    "title": "Instagram Feed < 1.12 - Unspecified Issues",
+                    "fixed_in": "1.12",
+                    "references": {
+                        "url": [
+                            "https://plugins.trac.wordpress.org/changeset?reponame=&new=2061834%40instagram-feed&old=2044806%40instagram-feed"
+                        ],
+                        "wpvulndb": [
+                            "ef357b6f-b37c-43e0-94fe-60ae6d8f68bc"
+                        ]
+                    }
+                },
+                {
+                    "title": "Multiple Plugins from Smash Balloon - Reflected Cross-Site Scripting",
+                    "fixed_in": "2.9.2",
+                    "references": {
+                        "wpvulndb": [
+                            "e766e165-1a05-4065-9e71-27b528641dd2"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "LayerSlider": {
+            "slug": "LayerSlider",
+            "location": "https://panoramamalloman.com/wp-content/plugins/LayerSlider/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Meta Generator (Passive Detection)": {
+                    "confidence": 40,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [
+                {
+                    "title": "LayerSlider < 7.1.2 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "7.1.2",
+                    "references": {
+                        "cve": [
+                            "2022-1153"
+                        ],
+                        "wpvulndb": [
+                            "1d9d5516-f1c3-4134-b6bf-7f2f890533c4"
+                        ]
+                    }
+                },
+                {
+                    "title": "LayerSlider < 7.7.10 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "7.7.10",
+                    "references": {
+                        "cve": [
+                            "2023-47786"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/441bc9fe-3dd6-40a6-b7f3-36511115c083"
+                        ],
+                        "wpvulndb": [
+                            "6c17bf1f-49ca-4087-aa49-50623f787db4"
+                        ]
+                    }
+                },
+                {
+                    "title": "LayerSlider < 7.7.10 - Cross-Site Request Forgery",
+                    "fixed_in": "7.7.10",
+                    "references": {
+                        "cve": [
+                            "2023-47785"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/9225ebc6-bff9-4176-a86e-022ff8ec3b05"
+                        ],
+                        "wpvulndb": [
+                            "81aaec90-69de-4364-86f3-062ab1b27cfe"
+                        ]
+                    }
+                },
+                {
+                    "title": "LayerSlider 7.9.11 - 7.10.0 - Unauthenticated SQL Injection",
+                    "fixed_in": "7.10.1",
+                    "references": {
+                        "cve": [
+                            "2024-2879"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/3fddf96e-029c-4753-ba82-043ca64b78d3"
+                        ],
+                        "wpvulndb": [
+                            "e28e37b0-b11d-489c-bc77-12410cc91e24"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "6.9.1",
+                "confidence": 90,
+                "found_by": "Query Parameter (Passive Detection)",
+                "interesting_entries": [
+                    "https://panoramamalloman.com/wp-content/plugins/LayerSlider/static/layerslider/css/layerslider.css?ver=6.9.1",
+                    "https://panoramamalloman.com/wp-content/plugins/LayerSlider/static/layerslider/js/layerslider.kreaturamedia.jquery.js?ver=6.9.1",
+                    "https://panoramamalloman.com/wp-content/plugins/LayerSlider/static/layerslider/js/layerslider.transitions.js?ver=6.9.1"
+                ],
+                "confirmed_by": {
+                    "Meta Generator (Passive Detection)": {
+                        "confidence": 60,
+                        "interesting_entries": [
+                            "https://panoramamalloman.com/, Match: 'Powered by LayerSlider 6.9.1 -'"
+                        ]
+                    }
+                }
+            }
+        },
+        "reviews-feed": {
+            "slug": "reviews-feed",
+            "location": "https://panoramamalloman.com/wp-content/plugins/reviews-feed/",
+            "latest_version": "2.0",
+            "last_updated": "2025-03-06T16:14:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Reviews Feed \u2013 Add Testimonials and Customer Reviews From Google Reviews, Yelp, TripAdvisor, and More < 1.2.0 - Cross-Site Request Forgery",
+                    "fixed_in": "1.2.0",
+                    "references": {
+                        "cve": [
+                            "2024-8200"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/5d9e20f7-813c-4691-bce4-d0ff4774ae48"
+                        ],
+                        "wpvulndb": [
+                            "862d7b16-95b9-4045-b343-ca311787bf42"
+                        ]
+                    }
+                },
+                {
+                    "title": "Reviews Feed \u2013 Add Testimonials and Customer Reviews From Google Reviews, Yelp, TripAdvisor, and More < 1.2.0 - Missing Authorization to Authenticated (Subscriber+) Limited Settings Update",
+                    "fixed_in": "1.2.0",
+                    "references": {
+                        "cve": [
+                            "2024-8199"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/dc3e89e5-2e7e-497e-b340-b787ebdf3711"
+                        ],
+                        "wpvulndb": [
+                            "7e72f827-8b63-4403-aeab-1879d0598c11"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "the-events-calendar": {
+            "slug": "the-events-calendar",
+            "location": "https://panoramamalloman.com/wp-content/plugins/the-events-calendar/",
+            "latest_version": "6.10.2",
+            "last_updated": "2025-03-04T13:54:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "The Events Calendar <= 3.0 - Reflected Cross-Site Scripting (XSS)",
+                    "fixed_in": "3.0.1",
+                    "references": {
+                        "wpvulndb": [
+                            "57c478a8-9a2d-4f0b-9f9a-9f78b92abf69"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Events Calendar <= 4.1.1 - Open Redirect",
+                    "fixed_in": "4.1.1.1",
+                    "references": {
+                        "url": [
+                            "https://github.com/moderntribe/the-events-calendar/commit/9b945d4c4df8c4f3fa35726aa64bbf6c08b9e3a9#diff-eb6b6c90251ab33cee784713c451e6d8R314"
+                        ],
+                        "wpvulndb": [
+                            "59acb0f7-9150-44bd-ba1f-cd944b56ff41"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Events Calendar < 4.8.2 - XSS",
+                    "fixed_in": "4.8.2",
+                    "references": {
+                        "cve": [
+                            "2019-15109"
+                        ],
+                        "wpvulndb": [
+                            "b595e8b3-4cf3-4f90-9ce6-315648711de4"
+                        ]
+                    }
+                },
+                {
+                    "title": "Unauthorised AJAX Calls via Freemius",
+                    "fixed_in": "5.14.0.4",
+                    "references": {
+                        "wpvulndb": [
+                            "6dae6dca-7474-4008-9fe5-4c62b9f12d0a"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Events Calendar < 5.14.0 - Reflected Cross-Site Scripting",
+                    "fixed_in": "5.14.0",
+                    "references": {
+                        "wpvulndb": [
+                            "533f213b-9fb7-47da-a42c-780aea3aee11"
+                        ]
+                    }
+                },
+                {
+                    "title": "Freemius SDK < 2.5.10 - Reflected Cross-Site Scripting",
+                    "fixed_in": "6.1.0",
+                    "references": {
+                        "cve": [
+                            "2023-33999"
+                        ],
+                        "wpvulndb": [
+                            "35d2f1e7-a4f8-49fd-a8dd-bb2c26710f93"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Events Calendar < 6.2.8.1 - Unauthenticated Arbitrary Password Protected Post Read",
+                    "fixed_in": "6.2.8.1",
+                    "references": {
+                        "cve": [
+                            "2023-6203"
+                        ],
+                        "wpvulndb": [
+                            "229273e6-e849-447f-a95a-0730969ecdae"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Events Calendar < 6.2.9 - Unauthenticated Sensitive Information Exposure",
+                    "fixed_in": "6.2.9",
+                    "references": {
+                        "cve": [
+                            "2023-6557"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/fc40196e-c0f3-4bc6-ac4b-b866902def61"
+                        ],
+                        "wpvulndb": [
+                            "27b3156e-25af-4976-876e-db364a366213"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Events Calendar < 6.4.0.1 - Reflected XSS",
+                    "fixed_in": "6.4.0.1",
+                    "references": {
+                        "cve": [
+                            "2024-4180"
+                        ],
+                        "wpvulndb": [
+                            "b2a92316-e404-4a5e-8426-f88df6e87550"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Events Calendar (Free < 6.4.0.1, Pro < 6.4.0.1) - Contributor+ Arbitrary Events Access",
+                    "fixed_in": "6.4.0.1",
+                    "references": {
+                        "cve": [
+                            "2024-1295"
+                        ],
+                        "wpvulndb": [
+                            "3cffbeb0-545a-4002-b02c-0fa38cada1db"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Events Calendar Free & Pro <= 6.4.0 - Contributor+ Missing Authorization to Authenticated Arbitrary Events Access",
+                    "fixed_in": "6.4.0.1",
+                    "references": {
+                        "cve": [
+                            "2024-1295"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/974c0e94-8d09-488a-9a09-49f0b9ce112c"
+                        ],
+                        "wpvulndb": [
+                            "9b46fd80-f85e-4ae1-ac9a-2fa85361c8a7"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Events Calendar < 6.5.1.5 - Cross-Site Request Forgery via action_restore_events",
+                    "fixed_in": "6.5.1.5",
+                    "references": {
+                        "cve": [
+                            "2024-37518"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/dc762385-a099-4bec-9b30-ebbbc00faaeb"
+                        ],
+                        "wpvulndb": [
+                            "dadc908f-e301-4326-abe2-11c1e4fe0c83"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Events Calendar < 6.5.2 - Unauthenticated Stored Cross-Site Scripting",
+                    "fixed_in": "6.5.2",
+                    "references": {
+                        "cve": [
+                            "2024-6931"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/a5f847d8-323f-47f9-ba10-df8173ff3018"
+                        ],
+                        "wpvulndb": [
+                            "1ec8c194-d005-4d13-b26e-90cff45f2d1b"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Events Calendar < 6.6.4 - Admin+ Stored XSS",
+                    "fixed_in": "6.6.4",
+                    "references": {
+                        "cve": [
+                            "2024-8493"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2024-8493/"
+                        ],
+                        "youtube": [
+                            "https://www.youtube.com/watch?v=https://drive.google.com/file/d/1WwYVbw-Xd1JfOTH3GHKVkfyy5DpcIxwm/view?usp=sharing"
+                        ],
+                        "wpvulndb": [
+                            "561b3185-501a-4a75-b880-226b159c0431"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Events Calendar < 6.6.4.1 - Unauthenticated SQL Injection",
+                    "fixed_in": "6.6.4.1",
+                    "references": {
+                        "cve": [
+                            "2024-8275"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/f59891c7-db1a-4688-8616-8877d7d7960d"
+                        ],
+                        "wpvulndb": [
+                            "d2bef15c-1625-4271-813f-fb917c9c7d92"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Events Calendar < 6.8.2.1 - Unauthenticated Password Protected Event Disclosure",
+                    "fixed_in": "6.8.2.1",
+                    "references": {
+                        "cve": [
+                            "2024-5333"
+                        ],
+                        "wpvulndb": [
+                            "764b5a23-8b51-4882-b899-beb54f684984"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Events Calendar < 6.9.1 - Contributor+ Stored XSS",
+                    "fixed_in": "6.9.1",
+                    "references": {
+                        "cve": [
+                            "2024-12118"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/d67de4f2-b680-49f8-be95-c2464b70f7d0"
+                        ],
+                        "wpvulndb": [
+                            "c4b29496-8908-4aaf-98e6-a966527332c1"
+                        ]
+                    }
+                },
+                {
+                    "title": "The Events Calendar < 6.7.1 - Trashed Events Restoration via CSRF",
+                    "fixed_in": "6.7.1",
+                    "references": {
+                        "cve": [
+                            "2025-24537"
+                        ],
+                        "url": [
+                            "https://patchstack.com/database/wordpress/plugin/the-events-calendar/vulnerability/wordpress-the-events-calendar-plugin-6-7-0-cross-site-request-forgery-csrf-vulnerability"
+                        ],
+                        "wpvulndb": [
+                            "420b37f9-aba9-4873-ad09-e7b05d2a9482"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "wordpress-seo": {
+            "slug": "wordpress-seo",
+            "location": "https://panoramamalloman.com/wp-content/plugins/wordpress-seo/",
+            "latest_version": "24.7",
+            "last_updated": "2025-03-18T08:56:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Yoast SEO < 21.1 - Authenticated (Seo Manager+) Stored Cross-Site Scripting",
+                    "fixed_in": "21.1",
+                    "references": {
+                        "cve": [
+                            "2023-40680"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/385a82ff-50ad-4787-845b-fb5f639f6466"
+                        ],
+                        "wpvulndb": [
+                            "42b355cc-d7b6-474d-8578-9c1a99b1e3c7"
+                        ]
+                    }
+                },
+                {
+                    "title": "Yoast SEO < 22.6 - Reflected Cross-Site Scripting",
+                    "fixed_in": "22.6",
+                    "references": {
+                        "cve": [
+                            "2024-4041"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/4e04b161-3cd0-454d-869c-56f42bd8afb0"
+                        ],
+                        "wpvulndb": [
+                            "6eb8e01b-0bc6-4ca9-b489-38f2a94c2909"
+                        ]
+                    }
+                },
+                {
+                    "title": "Yoast SEO < 22.7 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+                    "fixed_in": "22.7",
+                    "references": {
+                        "cve": [
+                            "2024-4984"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/59bcd246-ca2f-4336-9a6e-89afe873ed25"
+                        ],
+                        "wpvulndb": [
+                            "467936e2-fe82-4cdc-afec-6782afee3e4e"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "12.6.2",
+                "confidence": 60,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://panoramamalloman.com/, Match: 'optimized with the Yoast SEO plugin v12.6.2 -'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "wp-statistics": {
+            "slug": "wp-statistics",
+            "location": "https://panoramamalloman.com/wp-content/plugins/wp-statistics/",
+            "latest_version": "14.12.6",
+            "last_updated": "2025-03-12T12:26:00.000Z",
+            "outdated": true,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Comment (Passive Detection)",
+            "confidence": 30,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "WP Statistics < 13.0.8 - Unauthenticated SQL Injection",
+                    "fixed_in": "13.0.8",
+                    "references": {
+                        "cve": [
+                            "2021-24340"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2021/05/over-600000-sites-impacted-by-wp-statistics-patch/",
+                            "https://plugins.trac.wordpress.org/changeset/2503579/wp-statistics/trunk/includes/admin/pages/class-wp-statistics-admin-page-pages.php"
+                        ],
+                        "wpvulndb": [
+                            "d2970cfb-0aa9-4516-9a4b-32971f41a19c"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistic < 13.1 - Reflected Cross-Site Scripting (XSS)",
+                    "fixed_in": "13.1",
+                    "references": {
+                        "wpvulndb": [
+                            "e868b6f3-22ce-42c5-bb29-d8005c6cb6fd"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.1.5 - Unauthenticated Blind SQL Injection",
+                    "fixed_in": "13.1.5",
+                    "references": {
+                        "cve": [
+                            "2022-0513"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/blog/2022/02/unauthenticated-sql-injection-vulnerability-patched-in-wordpress-statistics-plugin/"
+                        ],
+                        "wpvulndb": [
+                            "ea624361-1df8-4b30-88ef-e97e9798490b"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.1.6 - Unauthenticated Blind SQL Injection via IP",
+                    "fixed_in": "13.1.6",
+                    "references": {
+                        "cve": [
+                            "2022-25149"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/vulnerability-advisories/#CVE-2022-25149"
+                        ],
+                        "wpvulndb": [
+                            "49b25b94-ea1b-4bad-aed5-9ed561524a3e"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.1.6 - Unauthenticated Blind SQL Injection via current_page_id",
+                    "fixed_in": "13.1.6",
+                    "references": {
+                        "cve": [
+                            "2022-25148"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/vulnerability-advisories/#CVE-2022-25148"
+                        ],
+                        "wpvulndb": [
+                            "a5a90dbc-64fd-4278-a098-8c278d0bf00e"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.1.6 - Unauthenticated Blind SQL Injection via current_page_type",
+                    "fixed_in": "13.1.6",
+                    "references": {
+                        "cve": [
+                            "2022-0651"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/vulnerability-advisories/#CVE-2022-0651"
+                        ],
+                        "wpvulndb": [
+                            "da5b5669-7476-47ae-9de0-d398ca408f2f"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.1.6 - Multiple Unauthenticated Stored Cross-Site Scripting",
+                    "fixed_in": "13.1.6",
+                    "references": {
+                        "cve": [
+                            "2022-25305",
+                            "2022-25306",
+                            "2022-25307"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/vulnerability-advisories/#CVE-2022-25305",
+                            "https://www.wordfence.com/vulnerability-advisories/#CVE-2022-25306",
+                            "https://www.wordfence.com/vulnerability-advisories/#CVE-2022-25307"
+                        ],
+                        "wpvulndb": [
+                            "fc822698-1f5a-4371-8c6e-2ca250c3c26d"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.2.2 - Reflected Cross-Site Scripting",
+                    "fixed_in": "13.2.2",
+                    "references": {
+                        "cve": [
+                            "2022-1005"
+                        ],
+                        "wpvulndb": [
+                            "f37d1d55-10cc-4202-8d16-9ec2128f54f9"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistic < 13.2.2 - Admin+ Stored Cross-Site Scripting",
+                    "fixed_in": "13.2.2",
+                    "references": {
+                        "cve": [
+                            "2022-27231"
+                        ],
+                        "url": [
+                            "https://jvn.jp/en/jp/JVN15241647/"
+                        ],
+                        "wpvulndb": [
+                            "63ba9728-bc9f-4c2f-b19d-59c2769fb2a1"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistic < 13.1.6 - Reflected Cross-Site Scripting",
+                    "fixed_in": "13.1.6",
+                    "references": {
+                        "wpvulndb": [
+                            "d6fb5f9e-67cf-4d04-8a09-d585caf008fe"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.2.9 - Authenticated SQLi",
+                    "fixed_in": "13.2.9",
+                    "references": {
+                        "cve": [
+                            "2022-4230"
+                        ],
+                        "wpvulndb": [
+                            "a0e40cfd-b217-481c-8fc4-027a0a023312"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 14.0 - Authenticated SQLi",
+                    "fixed_in": "14.0",
+                    "references": {
+                        "cve": [
+                            "2023-0955"
+                        ],
+                        "wpvulndb": [
+                            "18b7e93f-b038-4f28-918b-4015d62f0eb8"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.1.2 - Arbitrary Plugin Activation/Deactivation via CSRF",
+                    "fixed_in": "13.1.2",
+                    "references": {
+                        "cve": [
+                            "2021-4333"
+                        ],
+                        "wpvulndb": [
+                            "51f73a71-1613-468a-a8cf-1e0ddf1b8284"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 13.2.11 - Subscriber+ SQLi",
+                    "fixed_in": "13.2.11",
+                    "references": {
+                        "cve": [
+                            "2022-38074"
+                        ],
+                        "wpvulndb": [
+                            "0ec129a5-5290-447e-a0fe-c8a470b99343"
+                        ]
+                    }
+                },
+                {
+                    "title": "WP Statistics < 14.5.1 - Unauthenticated Stored Cross-Site Scripting",
+                    "fixed_in": "14.5.1",
+                    "references": {
+                        "cve": [
+                            "2024-2194"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/e44e4bdd-d84e-4315-9232-48a3b240242d"
+                        ],
+                        "wpvulndb": [
+                            "56779ee5-5bf4-47d2-bbaf-b398ea926fbe"
+                        ]
+                    }
+                }
+            ],
+            "version": {
+                "number": "12.6.11",
+                "confidence": 60,
+                "found_by": "Comment (Passive Detection)",
+                "interesting_entries": [
+                    "https://panoramamalloman.com/, Match: 'Analytics by WP-Statistics v12.6.11'"
+                ],
+                "confirmed_by": {}
+            }
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 12,
+        "requests_remaining": 13
+    },
+    "stop_time": 1742641039,
+    "elapsed": 384,
+    "requests_done": 221,
+    "cached_requests": 6,
+    "data_sent": 11486,
+    "data_sent_humanised": "11.217 KB",
+    "data_received": 612905,
+    "data_received_humanised": "598.54 KB",
+    "used_memory": 258551808,
+    "used_memory_humanised": "246.574 MB"
+}

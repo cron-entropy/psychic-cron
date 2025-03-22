@@ -1,0 +1,363 @@
+{
+    "banner": {
+        "description": "WordPress Security Scanner by the WPScan Team",
+        "version": "3.8.28",
+        "authors": [
+            "@_WPScan_",
+            "@ethicalhack3r",
+            "@erwan_lr",
+            "@firefart"
+        ],
+        "sponsor": "Sponsored by Automattic - https://automattic.com/"
+    },
+    "start_time": 1742640421,
+    "start_memory": 48967680,
+    "target_url": "https://mclarenvaleaccommodationpark.com/",
+    "target_ip": "103.146.112.59",
+    "effective_url": "https://mclarenvaleaccommodationpark.com/",
+    "interesting_findings": [
+        {
+            "url": "https://mclarenvaleaccommodationpark.com/",
+            "to_s": "Headers",
+            "type": "headers",
+            "found_by": "Headers (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "server: nginx",
+                "access-control-allow-origin: *",
+                "alt-svc: h3=\":443\"; ma=2592000, h3-29=\":443\"; ma=2592000, h3-Q050=\":443\"; ma=2592000, h3-Q046=\":443\"; ma=2592000, h3-Q043=\":443\"; ma=2592000, quic=\":443\"; ma=2592000; v=\"43,46\"",
+                "x-turbo-charged-by: LiteSpeed"
+            ]
+        },
+        {
+            "url": "https://mclarenvaleaccommodationpark.com/robots.txt",
+            "to_s": "robots.txt found: https://mclarenvaleaccommodationpark.com/robots.txt",
+            "type": "robots_txt",
+            "found_by": "Robots Txt (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": [
+                "/wp-admin/",
+                "/wp-admin/admin-ajax.php"
+            ]
+        },
+        {
+            "url": "https://mclarenvaleaccommodationpark.com/xmlrpc.php",
+            "to_s": "XML-RPC seems to be enabled: https://mclarenvaleaccommodationpark.com/xmlrpc.php",
+            "type": "xmlrpc",
+            "found_by": "Link Tag (Passive Detection)",
+            "confidence": 100,
+            "confirmed_by": {
+                "Direct Access (Aggressive Detection)": {
+                    "confidence": 100
+                }
+            },
+            "references": {
+                "url": [
+                    "http://codex.wordpress.org/XML-RPC_Pingback_API"
+                ],
+                "metasploit": [
+                    "auxiliary/scanner/http/wordpress_ghost_scanner",
+                    "auxiliary/dos/http/wordpress_xmlrpc_dos",
+                    "auxiliary/scanner/http/wordpress_xmlrpc_login",
+                    "auxiliary/scanner/http/wordpress_pingback_access"
+                ]
+            },
+            "interesting_entries": []
+        },
+        {
+            "url": "https://mclarenvaleaccommodationpark.com/readme.html",
+            "to_s": "WordPress readme found: https://mclarenvaleaccommodationpark.com/readme.html",
+            "type": "readme",
+            "found_by": "Direct Access (Aggressive Detection)",
+            "confidence": 100,
+            "confirmed_by": {},
+            "references": {},
+            "interesting_entries": []
+        }
+    ],
+    "version": {
+        "number": "6.4.5",
+        "release_date": "2024-06-24",
+        "status": "outdated",
+        "found_by": "Emoji Settings (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [
+            "https://mclarenvaleaccommodationpark.com/, Match: 'wp-includes\\/js\\/wp-emoji-release.min.js?ver=6.4.5'"
+        ],
+        "confirmed_by": {
+            "Meta Generator (Passive Detection)": {
+                "confidence": 60,
+                "interesting_entries": [
+                    "https://mclarenvaleaccommodationpark.com/, Match: 'WordPress 6.4.5'"
+                ]
+            }
+        },
+        "vulnerabilities": []
+    },
+    "main_theme": {
+        "slug": "rt_kraken",
+        "location": "https://mclarenvaleaccommodationpark.com/wp-content/themes/rt_kraken/",
+        "latest_version": null,
+        "last_updated": null,
+        "outdated": false,
+        "readme_url": false,
+        "directory_listing": false,
+        "error_log_url": null,
+        "style_url": "https://mclarenvaleaccommodationpark.com/wp-content/themes/rt_kraken/style.css?ver=6.4.5",
+        "style_name": null,
+        "style_uri": null,
+        "description": null,
+        "author": null,
+        "author_uri": null,
+        "template": null,
+        "license": null,
+        "license_uri": null,
+        "tags": null,
+        "text_domain": null,
+        "found_by": "Css Style In Homepage (Passive Detection)",
+        "confidence": 100,
+        "interesting_entries": [],
+        "confirmed_by": {
+            "Css Style In 404 Page (Passive Detection)": {
+                "confidence": 70,
+                "interesting_entries": []
+            }
+        },
+        "vulnerabilities": [],
+        "version": null,
+        "parents": []
+    },
+    "plugins": {
+        "gantry5": {
+            "slug": "gantry5",
+            "location": "https://mclarenvaleaccommodationpark.com/wp-content/plugins/gantry5/",
+            "latest_version": "5.5.19",
+            "last_updated": "2024-05-27T12:25:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        },
+        "google-site-kit": {
+            "slug": "google-site-kit",
+            "location": "https://mclarenvaleaccommodationpark.com/wp-content/plugins/google-site-kit/",
+            "latest_version": "1.148.0",
+            "last_updated": "2025-03-10T18:43:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Meta Tag (Passive Detection)",
+            "confidence": 40,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [],
+            "version": {
+                "number": "1.148.0",
+                "confidence": 60,
+                "found_by": "Meta Tag (Passive Detection)",
+                "interesting_entries": [
+                    "https://mclarenvaleaccommodationpark.com/, Match: 'Site Kit by Google 1.148.0'"
+                ],
+                "confirmed_by": {}
+            }
+        },
+        "ml-slider": {
+            "slug": "ml-slider",
+            "location": "https://mclarenvaleaccommodationpark.com/wp-content/plugins/ml-slider/",
+            "latest_version": "3.96.0",
+            "last_updated": "2025-02-13T20:47:00.000Z",
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 80,
+            "interesting_entries": [],
+            "confirmed_by": {},
+            "vulnerabilities": [
+                {
+                    "title": "Meta Slider <= 2.5 - Cross-Site Scripting (XSS)",
+                    "fixed_in": "2.6",
+                    "references": {
+                        "cve": [
+                            "2014-4846"
+                        ],
+                        "url": [
+                            "https://packetstormsecurity.com/files/127288/",
+                            "https://www.securityfocus.com/bid/68283/",
+                            "https://wordpress.org/support/topic/xss-3"
+                        ],
+                        "wpvulndb": [
+                            "d7daaa2c-72ec-443e-b096-2e174ef45995"
+                        ]
+                    }
+                },
+                {
+                    "title": "Meta Slider 2.1.6 - Multiple Full Path Disclosure",
+                    "fixed_in": "2.2",
+                    "references": {
+                        "url": [
+                            "https://wordpress.org/support/topic/xss-3"
+                        ],
+                        "wpvulndb": [
+                            "09890bbf-f385-4614-a91b-e52a71f55f4f"
+                        ]
+                    }
+                },
+                {
+                    "title": "MetaSlider < 3.17.2 - Authenticated Stored Cross-Site Scripting (XSS)",
+                    "fixed_in": "3.17.2",
+                    "references": {
+                        "url": [
+                            "https://www.fortiguard.com/zeroday/FG-VD-20-123"
+                        ],
+                        "wpvulndb": [
+                            "151ec256-7c21-40db-84cb-d8b68f5c4973"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider, Gallery, and Carousel by MetaSlider < 3.27.9 - Admin+ Stored Cross Site Scripting",
+                    "fixed_in": "3.27.9",
+                    "references": {
+                        "cve": [
+                            "2022-2823"
+                        ],
+                        "wpvulndb": [
+                            "c88c85b3-2830-4354-99fd-af6bce6bb4ef"
+                        ]
+                    }
+                },
+                {
+                    "title": "Responsive WordPress Slideshows 3.29.0 - Reflected XSS",
+                    "fixed_in": "3.29.1",
+                    "references": {
+                        "cve": [
+                            "2023-1473"
+                        ],
+                        "wpvulndb": [
+                            "a6e6c67b-7d9b-4fdb-8115-c33add7bfc3d"
+                        ]
+                    }
+                },
+                {
+                    "title": "Meta Slider < 3.70.1 - Contributor+ Stored Cross-Site Scripting via metaslider Shortcode",
+                    "fixed_in": "3.70.1",
+                    "references": {
+                        "cve": [
+                            "2024-3285"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/1cbd95bb-6f13-48c9-a51e-5f7bf7a296df"
+                        ],
+                        "wpvulndb": [
+                            "c43a795e-fd1c-4aae-92f0-51990a5a5a3b"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider, Gallery, and Carousel by MetaSlider \u2013 Image Slider, Video Slider < 3.95.0 - Authenticated (Editor+) PHP Object Injection",
+                    "fixed_in": "3.95.0",
+                    "references": {
+                        "cve": [
+                            "2025-26763"
+                        ],
+                        "url": [
+                            "https://www.wordfence.com/threat-intel/vulnerabilities/id/91e0b45c-e73f-408a-94b8-fdbc5da64b20"
+                        ],
+                        "wpvulndb": [
+                            "5108b13d-0a79-4cfd-bfc7-d4cc15338334"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider, Gallery, Carousel by MetaSlider < 3.95.0 - Editor+ Stored XSS",
+                    "fixed_in": "3.95.0",
+                    "references": {
+                        "cve": [
+                            "2025-1062"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2025-1062/"
+                        ],
+                        "youtube": [
+                            "https://www.youtube.com/watch?v=https://drive.google.com/file/d/1JP7PbtMwUUbjs3HSYbx8YDAUIM-7ocDt/view?usp=sharing"
+                        ],
+                        "wpvulndb": [
+                            "657b355b-e38f-46d6-b574-7ce736d25f31"
+                        ]
+                    }
+                },
+                {
+                    "title": "Slider, Gallery, Carousel by MetaSlider < 3.95.0 - Editor+ Stored XSS",
+                    "fixed_in": "3.95.0",
+                    "references": {
+                        "cve": [
+                            "2025-1203"
+                        ],
+                        "url": [
+                            "https://research.cleantalk.org/cve-2025-1203/"
+                        ],
+                        "wpvulndb": [
+                            "fca0b129-3299-46d6-9231-ca5afd2fdb66"
+                        ]
+                    }
+                }
+            ],
+            "version": null
+        },
+        "wp_roksprocket": {
+            "slug": "wp_roksprocket",
+            "location": "https://mclarenvaleaccommodationpark.com/wp-content/plugins/wp_roksprocket/",
+            "latest_version": null,
+            "last_updated": null,
+            "outdated": false,
+            "readme_url": null,
+            "directory_listing": null,
+            "error_log_url": null,
+            "found_by": "Urls In Homepage (Passive Detection)",
+            "confidence": 100,
+            "interesting_entries": [],
+            "confirmed_by": {
+                "Urls In 404 Page (Passive Detection)": {
+                    "confidence": 80,
+                    "interesting_entries": []
+                }
+            },
+            "vulnerabilities": [],
+            "version": null
+        }
+    },
+    "config_backups": {},
+    "vuln_api": {
+        "plan": "free",
+        "requests_done_during_scan": 6,
+        "requests_remaining": 19
+    },
+    "stop_time": 1742640451,
+    "elapsed": 29,
+    "requests_done": 189,
+    "cached_requests": 7,
+    "data_sent": 55676,
+    "data_sent_humanised": "54.371 KB",
+    "data_received": 500495,
+    "data_received_humanised": "488.765 KB",
+    "used_memory": 297680896,
+    "used_memory_humanised": "283.891 MB"
+}
